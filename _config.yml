@@ -1,0 +1,20 @@
+# Site settings
+title: ourBit
+header-img: img/header-background.jpg
+description: "Write your site description here. It will be used as your sites meta description as well!"
+url: "http://ourbit.github.io/"
+twitter_username: nohorbee
+github_username:  nohorbee
+facebook_username:  nohorbee
+
+# Posts settings
+excerpt_separator: <!--MORE-->
+
+# Build settings
+markdown: kramdown
+#kramdown:
+#  input: GFM
+highlighter: pygments
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]

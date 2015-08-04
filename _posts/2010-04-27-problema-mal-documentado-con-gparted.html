@@ -1,0 +1,16 @@
+---
+layout: post
+title: Problema mal documentado con gParted
+date: '2010-04-27T12:28:00.000-03:00'
+author: nohorbee
+tags:
+- gparted
+- ubuntu
+- installation
+- linux
+modified_time: '2010-06-16T14:40:03.933-03:00'
+blogger_id: tag:blogger.com,1999:blog-8314627212095006227.post-1583062723008836895
+blogger_orig_url: http://ourbit.blogspot.com/2010/04/problema-mal-documentado-con-gparted.html
+---
+
+Intentando instalar ubuntu 9.10 nuevamente, en una 3er partición de la máquina (que ya tenía un Windows XP y otro Ubuntu), e ir pasando paulatínamente los datos y programas de una partición Ubuntu a la otra, me encontré con problemas al intentar utilizar el gParted para ir alterando los tamaños de dichas particiones. El problema subsistió incluso luego de que ya no aparecían mensajes de error, estaba corriendo desde un liveCD con todas las particiones del disco en cuestión desmontadas. Al intentar cambiar el tamaño de la partición <i>resize, </i>la opción aparecía deshabilitada.<div>Finalmente, y luego de haber <i>googleado</i> bastante para encontrar una solución, decidí que resultaría más eficiente en tiempos, eliminar la partición antigua y quedarme con la nueva (a pesar de no poder utilizar los programas hasta que no terminara de instalarlos en la nueva partición). Y fue aquí cuando ocurrió la solución. gParted no me permitió eliminar la partición, ya que existía <i>otra</i> con numeración superior (aparentemente sda6 <i>swap</i>. Pero buscando entre las opciones, encontre <i><a href="http://gparted.sourceforge.net/faq.php">swapoff</a></i>, y luego, no solo me permitía eliminar la partición 6, sino que finalmente pude hacer <i>resize, move, etc.</i></div><div><i><br /></i></div><div>Claro que una vez encontrado swapoff, esta solución aparecía en todos lados, pero no buscándola de la manera tradicional (es decir, <i>googleando</i> los mensajes de error, pasando al <i>parted</i> de línea de comando, etc).</div>
