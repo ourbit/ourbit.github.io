@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+
+    <title>Como configurar Virtual Hosts en Apache (algo básico, para no olvidar) - ourBit</title>
+
+    <link rel="canonical" href="http://ourbit.github.io//en/2011/03/17/como-configurar-virtual-hosts-en-apache/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/en">ourBit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/en">Home</a>
+                </li>
+                <li>
+                    <a href="/en/about">About</a>
+                </li>
+                <li>
+                    <a href="/en/archives">Archives</a>
+                </li>
+                <li>
+                
+                    
+                    <a href="/es/2011/03/17/como-configurar-virtual-hosts-en-apache/" >Versión en Español</a>
+                
+              </li>
+
+                <!-- 
+                <li>
+                    <a href="/es/en/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/es/about/">Acerca de</a>
+                </li>
+                
+                <li>
+                    <a href="/en/archives/">Archives</a>
+                </li>
+                
+                <li>
+                    <a href="/es/archives/">Archivo</a>
+                </li>
+                
+                <li>
+                    <a href="/es/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/en/es/about/">Acerca de</a>
+                </li>
+                
+                <li>
+                    <a href="/es/en/archives/">Archives</a>
+                </li>
+                
+                <li>
+                    <a href="/en/es/archives/">Archivo</a>
+                </li>
+                
+                <li>
+                    <a href="/en/feed.xml"></a>
+                </li>
+                
+                <li>
+                    <a href="/en/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page2/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page3/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page4/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page2/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page3/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page4/">ourBit</a>
+                </li>
+                 -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Como configurar Virtual Hosts en Apache (algo básico, para no olvidar)</h1>
+                    
+                    <span class="meta">Posted by nohorbee on March 17, 2011</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				Algo que hacía constantemente cuando mi principal lenguaje de programación era PHP, era la administración del servidor local para la creación de virtual hosts. Esto me permitía almacenar los proyectos en cualquier parte de la PC y poder apuntarlos sin la necesidad de crearlos en el <i>wwwroot </i>del Apache.<div>Con el correr del tiempo, fui olvidando como hacer tan sencilla tarea, y al retomar, en Linux, lo hacía mediante la creación de Symbolic Links (directamente a los directorios, aprovechando que estos, también son archivos para el File System del S.O.). </div><div>Volviendo a trabajar en un ambiente basado en Windows, tuve nuevamente esta necesidad. Una aclaración: Habiéndo probado el LAMP en Ubuntu, teniendo excelentes resultados, decidí darle una oportunidad al WAMP. <b>No se molesten. </b>Sigamos con el viejo y querido "<a href="http://www.appservnetwork.com/">appserv</a>" que sigue siendo tan bueno como siempre.</div><div>Ahora si, para crear Virtual Hosts (explicación básica, sin meterme en detalles ni configuraciones adicionales).</div><div>Primero debemos chequear que el servidor este soportando esta característica. Para esto buscamos el archivo httpd.conf (suele estar en la carpeta de Apache \conf . En el caso del Appserv por defecto sería C:\AppServ\Apache2.2\conf).</div><div>Lo que haremos aquí es habilitar la variable vhost_alias_module:</div><div>Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#LoadModule vhost_alias_module module/mod_vhost_alias.so </span>y la descomentamos eliminando el "#".</div><div>En este mismo archivo vamos a indicar dónde se almacena la configuración de los virtual hosts. Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#Include conf/extra/httpd-vhosts.conf </span>y la descomentamos eliminando el "#".</div><div>En este momento, Apache "servirá" a los virtual hosts especificados en el archivo ..../conf/extra/httpd-vhosts.conf.</div><div><br /></div><div><b>Ahora es momento de configurar estos virtual hosts.</b></div><div><b><br /></b></div><div>Para no perder la capacidad de servir a todo lo que se encuentre en la carpeta <i>wwwroot </i>o <i>www</i>, creamos un primer virtual host que la apunte: </div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@localhost<br />    DocumentRoot "C:/AppServ/www"<br />    ServerName localhost<br />    ServerAlias localhost<br />    ErrorLog "logs/localhost-error.log"<br />    CustomLog "logs/localhost-access.log" common<br />&lt;/VirtualHost&gt;<br /></div><div><span class="Apple-style-span"></span></div></div><div><br /></div><div>Nótese que utilizamos localhost como ServerName y ServerAlias (motivo por el cual no será necesario en para este vhost, ninguna entrada adicional en el archivo de hosts del S.O.).</div><div><br /></div><div>Ahora, otro Virtual Host:</div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@miproyecto.com<br />    DocumentRoot "C:/AppServ/www/miproyecto"<br />    ServerName www.miproyecto.com<br />    ErrorLog "logs/miproyecto-error.log"<br />    CustomLog "logs/miproyecto-access.log" common<br />&lt;/VirtualHost&gt;<br /></div></div><div><br /></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-size: 12px; line-height: 11px; white-space: pre;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; white-space: normal; ">Solo quedaría un paso para poder apuntar a "Mi Proyecto" desde un browser y es la creación de la entrada en el archivo de HOSTS de windows.</span></span></span></div><div><br /></div><div>Editamos para esto el archivo C:\Windows\System32\drivers\etc\hosts y agregamos la siguiente línea: </div><div><span class="Apple-style-span">127.0.0.1<span class="Apple-tab-span" style="white-space:pre"> </span>www.miproyecto.com</span></div><div><span class="Apple-style-span"><br /></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Al realizar todos estos cambios, es necesario reiniciar el Apache.</span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><br /></span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Espero que sirva esta información.</span></span></div>
+
+                <!-- <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/en/2011/02/24/bases-de-datos-nosql/" data-toggle="tooltip" data-placement="top" title="Bases de datos NoSQL">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/en/2011/04/08/tedxba-cortito-y-al-pie/" data-toggle="tooltip" data-placement="top" title="#TEDxBA cortito y al pie">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul> -->
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ourBit 2015</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>

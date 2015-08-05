@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
+
+    <title>"Copiando" una base de datos DB2 - ourBit</title>
+
+    <link rel="canonical" href="http://ourbit.github.io//es/2010/09/10/copiando-una-base-de-datos-db2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/es">ourBit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/es">Inicio</a>
+                </li>
+                <li>
+                    <a href="/es/about">Acerca</a>
+                </li>
+                <li>
+                    <a href="/es/archives">archivo</a>
+                </li>
+                <li>
+                
+                    
+                    <a href="/en/2010/09/10/copiando-una-base-de-datos-db2/" >English Version</a>
+                
+              </li>
+
+                <!-- 
+                <li>
+                    <a href="/es/en/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/es/about/">Acerca de</a>
+                </li>
+                
+                <li>
+                    <a href="/en/archives/">Archives</a>
+                </li>
+                
+                <li>
+                    <a href="/es/archives/">Archivo</a>
+                </li>
+                
+                <li>
+                    <a href="/es/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/about/">About</a>
+                </li>
+                
+                <li>
+                    <a href="/en/es/about/">Acerca de</a>
+                </li>
+                
+                <li>
+                    <a href="/es/en/archives/">Archives</a>
+                </li>
+                
+                <li>
+                    <a href="/en/es/archives/">Archivo</a>
+                </li>
+                
+                <li>
+                    <a href="/en/feed.xml"></a>
+                </li>
+                
+                <li>
+                    <a href="/en/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page2/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page3/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/es/page4/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page2/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page3/">ourBit</a>
+                </li>
+                
+                <li>
+                    <a href="/en/page4/">ourBit</a>
+                </li>
+                 -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>"Copiando" una base de datos DB2</h1>
+                    
+                    <span class="meta">Publicado por nohorbee el September 10, 2010</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				Si algo tiene DB2 (de bueno y de malo) es que para realizar casi cualquier operación, existen muchas maneras diferentes de hacerlo (más de las necesarias quizas). Pero esto lleva a tener que conocer las diferentes precondiciones para cada procedimiento.<div>En este caso, algo que debería ser sencillo, puede resultar un poco engorroso (la documentación está dando vueltas por allí, pero algo desorganizada). </div><div>¿Como copiar una base de datos? Existen diversas maneras de hacerlo.</div><div><ul><li>Opción 1: Backup &amp; Restore: Esta opción es útil cuando se quiera realizar una copia de seguridad para ser restaurada más tarde en el mismo server del cual se origina, o incluso, en máquinas con características similares (sobretodo, sistema operativo). Existen 2 tipos, pero más allá de sus diferencias técnicas, quiero hacer hincapié en sus pre-requisitos y sus pos-condiciones:<ul><li>Online Backup: La principal ventaja, es que no existe la necesidad de desconectar todas las aplicaciones que estén haciendo uso de la base de datos. Una desventaja: NO SE PUEDE RESTAURAR EN UN ENTORNO CON DISTINTO SISTEMA OPERATIVO (y por este motivo empezó mi búsqueda).</li><li>Offline Backup: No tiene el problema de la restauración en otras plataformas, pero, claro está, necesita que todas las aplicaciones que estén accediendo a la base, cierren sus conexiones. (Nota: para saber que aplicaciones tienen conexión, ver el comando db2 list applications).</li></ul></li><li>Opción 2: DB2move: Estando en el entorno de la base que quiere hacer copiada, DB2move <database> export, realiza una exportación de todos los datos, generando una buena cantidad de archivos dentro de la carpeta donde se ejecuta el comando. Luego, haciendo DB2move <database> load, estando en la carpeta que contiene los archivos, los datos se cargan a la base de datos indicadas. He aquí, que esa base, debe existir y tener la misma estructura de tablas y schemas que la original (incluso constrains). Afortunadamente, esto es facil de obtener también: db2look -d <database> -e -a -o <file> genera el DDL y lo almacena en el file especificado (usando la base de datos, pero no creandola). Luego, Creando la base de datos (CREATE command) y corriendo db2 -tvf <file>, somos capaces de crear la estructura de base de datos, para luego poder correr el db2move <database> load que terminará de importar los datos.</li></ul>Pasando en limpio, los pasos de esta segunda opción serían:</div><div>1. Generar el DDL: db2look -d <database> -e -a -o <file></div><div>2. Generar el export de datos: db2move <database> export</div><div>3. Suponiendo que estamos conectados a un servidor remoto y queremos pasarlo a alguna otra terminal, copiar la carpeta con el archivo con ddl y los exports a la nueva terminal.</div><div>4. En la terminal, db2 create database <database></div><div>5. Generar la estructura: db2 -tvf <file></div><div>5. Importar los datos: db2move <database> load</div><div>
+<br /></div><div>Todos los comandos de DB2 tienen infinidad de opciones, y los mencionados no son la excepción, pero para simplificar, preferí ir directo al punto. En los links adjuntos, paso algunas fuentes que usé, y siempre pueden ver la documentación de TODOS los comandos de DB2 en <a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html">http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html</a> .</div><div>
+<br /></div><div>Links útiles:</div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/pworld/0112mccluney.html">Backup &amp; Restore</a></div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0403melnyk/index.html">DB2 cloning databases across different platforms</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
+
+                <!-- <hr>
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger/" data-toggle="tooltip" data-placement="top" title="Actualizar twitter con posts en blogger">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/es/2010/11/04/estetica-mac-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Estética MAC en Ubuntu">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul> -->
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://twitter.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://github.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; ourBit 2015</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+
+</body>
+
+</html>
