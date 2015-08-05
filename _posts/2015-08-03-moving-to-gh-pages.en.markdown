@@ -5,25 +5,15 @@ date:   2015-08-03 18:43:21
 categories: jekyll update
 ---
 
-With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by *blogger by Google* were not good enough or didn't fulfill requirements that, in my opinion, should be provided by a *blogging* platform out of the box.  
---- - ---  
-Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por *blogger de Google* no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de *blogging* debe tener<!--MORE-->.  
+With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by *blogger by Google* were not good enough or didn't fulfill requirements that, in my opinion, should be provided by a *blogging* platform out of the box<!--MORE-->.  
 
 After researching other tools that could help me with this task (*Wordpress, Joomla*, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.  
---- - ---  
-Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (*Wordpress, Joomla*, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.  
 
 That's how I remembered having used *Jekyll and GitHub Pages* in the past, for building some static page, and so I started evaluating it as an alternative.  
---- - ---  
-Es así como recordé haber usado *Jekyll y GitHub Pages* para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.  
 
 ***Jekyll*** **is definitively not providing better tools than the other platforms**. It doesn't count with a comments feature, it doesn't create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the **flexibility**, which turns *Jekyll* into a **candidate tool for developers** (or other professionals with IT knowledge enough) to becoming their tailored *blogging* "platform".  
---- - ---  
-**Definitivamente, *Jekyll* no provee mejores herramientas que las otras plataformas**. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la **fléxibilidad**, lo cual la convierte en **una herramienta candidata para desarrolladores** (u otros profesionales con conocimientos suficientes de IT) para ser su "plataforma" de *blogging* a la medida.  
 
 The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn't want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free *templates (or themes)* and adapt one of them. I ran into [CleanBlog](https://github.com/IronSummitMedia/startbootstrap-clean-blog) by [David Miller](https://github.com/davidtmiller) to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.  
---- - ---  
-El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar *templates (o themes)* gratuitos y adaptar mínimamente alguno. Me encontré con [CleanBlog](https://github.com/IronSummitMedia/startbootstrap-clean-blog) de [David Miller](https://github.com/davidtmiller) a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.
 
 ### Why am I choosing *Jekyll y GitHub Pages*?/¿Qué me hace elegir *Jekyll y GitHub Pages*?
 
@@ -41,10 +31,6 @@ El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi cas
 {% endhighlight %}
 
 These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won't convince you as a *Blogging* tool, but it worth knowing how *Jekyll and GitHub Pages* works).  
---- - ---  
-Estas son solo algunas razones. Pero cada uno debería tener las suyas. Ante la duda, inviertan 1 hora en aprender a usarlo (quizá no los convenza como herramienta de *Blogging*, pero no está demás saber como funciona *Jekyll y GitHub Pages*).
-
-
 
 Here are some links for kicking off/Les dejo algunos links para comenzar:
 
@@ -53,5 +39,3 @@ Here are some links for kicking off/Les dejo algunos links para comenzar:
 - [Jekyll Themes](http://jekyllthemes.org/)
 
 Please, don't hesitate to reach me if you have any doubt.  
---- - ---  
-Si tienen dudas, espero su contacto.
