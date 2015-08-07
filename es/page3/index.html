@@ -163,7 +163,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el May 6, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  6 de
+  
+  Mayo
+    
+
+
+de 2011
+
+</p>
     Días atrás, instalé en una netbook Ubuntu 11.04 Natty Narwhal. Todo anduvo bastante bien, ningún problema con el Hardware de la máquina. Cuando lo conecté a un monitor externo, noté que a diferencia de sus antecesores (10.04 y 10.10), este no me ofrecía más resoluciones que las del monitor predeterminado de la netbook (lo cual claramente no está bien, ya que la placa de video se banca más resolución).<div>Luego de investigar unos minutos, dí con <a href="https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions">https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions</a>, en donde explican perfectamente como solucionar este y otros problemas relacionados con las resoluciones.</div><div>Básicamente, hay que especificarlas manualmente. La buena noticia es que puede especificarse diferentes sets de resoluciones para las diferentes salidas de la PC. En este caso, la salida que yo necesitaba modificar era la VGA1.</div><div>Los comandos son básicamente 2:</div><div>- xrandr : trabaja sobre el archivo que contiene esas entradas.</div><div>- cvt: dada una resolución, nos da los datos que necesitamos para configurarla.</div><div>
 <br /></div><div>Los pasos serían: CVT para averiguar los datos, xrandr --newmode para crear el modo, xrandr --addmode para agregar el modo a la salida correspondiente.</div><div>
 <br /></div><div>Si ejecutamos estos pasos en la consola, serán válidos para UNA sesión solamente. Para hacerlos permanente hay que ejecutarlos cada vez que se inicia la sesión o, mejor aún para evitar pequeños destellos debido a ajustes de resolución, al iniciar el SO.</div><div>
@@ -184,7 +195,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el April 20, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  20 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
     Para el proyecto en el que estoy trabajando, nos ha llegado un requerimiento de generar un gráfico de líneas (basado en ejes X, Y) indicando las tendencias de un determinado comportamiento. <div>El proyecto utiliza actualmente <a href="http://www.sencha.com/">ExtJs</a>, y desde ya, fue considerado como primer opción, el motor de gráficos que este incluye. Uno de los problemas con que nos topamos al realizar la prueba de tecnología, es que al no presentarse un dato Y para un valor X, automáticamente lo tomaba como CERO, haciéndo que las líneas descendieran. Esto no es un comportamiento deseable en muchas situaciones (siempre depende de Qué se esté midiendo). Una vez descartado, comenzamos a evaluar otros frameworks. <a href="http://jquery.com/">JQuery</a>, cuenta con varios plugins para generar gráficos (muy buenos debo decir), pero se nos pidió no "mezclar" dos frameworks basados en Jscript (no es una decisión muy feliz, pero lo aceptamos). Luego de buscar bastante, el arquitecto en jefe de la aplicación, sugirió que investigáramos <a href="http://www.fusioncharts.com/">FusionCharts </a>(Más precisamente su división PowerCharts), y quien les escribe, se ha encargado de la prueba de tecnología llegando a conclusiones muy favorables:</div><div><ul><li>Es altamente configurable (se puede especificar cada leyenda que aparece en pantalla, colores, escalas, tipo de gráfico, estilo de líneas, transparencias, etc. No solo del gráfico en general, o de una línea particular, sino también entre cualquier segmento entre 2 puntos e incluso cualquiera de los puntos).</li><li>Por defecto, utiliza un archivo Flash para realizar los gráficos (esta versión comienza con una animación de lo que se esta dibujando). Si se detecta (automáticamente) que el navegador no soporta flash, el gráfico se renderiza 100% mediante Jscript (esto es útil para teléfonos celulares, o simplemente si no queremos instalar Shockwave en las máquinas de los usuarios).</li><li>Sin realizar demasiado trabajo, arranca de quienes observan expresiones del estilo "WOW", y esto, muchas veces, hace la diferencia entre una aplicación exitosa y un hermoso algoritmo inutilizable.</li><li>Es muy sencillo de utilizar y está bien documentado.</li><li>Maneja una amplia variedad de tipos de gráficos.</li></ul>Aclaro que el framework es pago, aunque se puede descargar una versión de prueba FULL (solo incluye una marca de agua en el margen superior izquierdo del gráfico).</div><div><a href="http://nohorbee.com.ar/ourbit/FusionChartPost/pocFusion/MyFirstChart/pocChart.html">Aquí </a>dejo una prueba de tecnología, con algunos comentarios basados en los requerimientos que se me presentaron.</div>
 
 
@@ -198,7 +220,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el April 15, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  15 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
     A veces pienso a este, nuestro mundo, como un conjunto de materia tangible, lleno de rocas. Un mundo sólido. Y me dibujo como algo etéreo, entre líquido y gaseoso, al otro mundo: El de las ideas.<br /><div>Y lo mismo que me ocurre con esos mundos, se me da en los universos que los contienen.</div><div>Creo que tenemos un concepto algo simplista de lo que es una <b>idea</b><b style="font-style: italic;">. </b>También creo estar algo obsesionado con la imposibilidad real de describir una idea de forma total.</div><div><br /></div><div>Unas pequeñas "definiciones" (entre comillas, porque no son de manual, sino interpretaciones resumidas) que sirven para lo que intento explicar.</div><div><br /></div><div>Conjunto continuo: Es un grupo de puntos del cual, si tomamos 2 cualesquiera, encontraríamos infinitos puntos entre ellos. O dicho de otra forma, no existen 2 números consecutivos. O más simple aún, si creo haber tomado los 2 puntos más cercanos respecto del otro, voy a poder encontrar infinitos más en el medio. Ej.: Números reales. Tomamos el 1 y el 2. en el medio tenemos el 1.5, entonces decimos "los 2 consecutivos son en realidad el 1 y el 1.5". Pero entre ellos, está justo en el medio el 1.25, y entre el 1 y el 1.25 encontraremos más y más números.</div><div><br /></div><div>Conjunto discreto: Existen puntos consecutivos, y puedo encontrar entre 2 puntos cualesquiera de este conjunto, una cantidad finita de puntos. Ej.: Números naturales. Tomamos el 1 y el 3. En el medio hay un solo punto: El 2. Tomamos el 30 y el 100. En el medio encontramos 69 puntos. Siempre los podemos contar. Y siempre son el número mayor, menos el menor, menos 1.</div><div><br /></div><div>Muestra: Subconjunto de puntos representativos de un conjunto. Ej.: Si tengo 3 litros de sangre, y necesitan analizarla, no pueden extraer los 3 litros. Se toma una <b>muestra </b>de sangre y se analiza.</div><div><br /></div><div>La analogía que me obsesiona, es la que se me da naturalmente. Asocio al universo de las ideas a los conjuntos continuos. Y luego, llega el momento de explicar una idea. Y allí entra el lenguaje. El lenguaje es lo que nos permite comunicarnos, una herramienta bastante bien diseñada, pero con limitaciones. Una idea es infinita y nos puede aparecer en una fracción de segundo, y explicarla, sin llegar a contarla jamás en su totalidad, nos podría llevar una vida. O dicho de otro modo: Mientras que las ideas se manejan en el <b>plano continuo</b>, los lenguajes se manejan en el <b>plano discreto</b>. Esta diferencia hace que lo que contamos, solo pueda ser una <b>muestra</b> de lo que ideamos, logrando que las ideas no puedan ser completamente explicadas y <b>deban canalizarse mediante su realización</b>.</div><div><br /></div><div>Si la explicación es muy técnica, creo que se puede terminar de entender con la siguiente imagen (dejando de lado que una imagen no es un continuo, creo que sirve para el ejemplo):</div><div><br /></div><div style="text-align: center;"><img alt="" border="0" id="BLOGGER_PHOTO_ID_5595873878980289474" src="http://1.bp.blogspot.com/-wf6r3vg4QR0/TaiJpQyB48I/AAAAAAAABqY/ATiY1IFgAxw/s400/IdeaLenguajeExplicacion.jpg" style="cursor: hand; cursor: pointer; height: 157px; width: 400px;" /></div><div style="text-align: center;"><br /></div><div style="text-align: left;">En la imagen, la idea es tan clara como la imagen. Luego, tenemos un "tamiz" que solo nos permite ver una muestra de la imagen cuando la superponemos. Este tamiz es el lenguaje. La explicación, es el resultado, y muestra la diferencia entre lo que puede ser una idea, y lo que puede llegar a ser su transmisión (claro que para el ejemplo, quien explica, lo hace bastante mal, ya que de la idea original no se logra captar casi nada. Quien explica podría intentar refinar el lenguaje, haciendo mas agujeros o agujeros más grandes en el tamiz, pero siempre se va a perder algo).</div><div style="text-align: left;"><br /></div><div style="text-align: left;">Como cierre, puede que esta idea que estoy escribiendo no se entienda completamente. Me atrevo a asegurar que no se va a entender COMPLETAMENTE. Este fue mi muestreo de lo que es mi idea.</div><div><br /></div>
 
 
@@ -212,7 +245,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el April 8, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  8 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
     Antes de comenzar con mis observaciones y opiniones respecto de lo que fue TEDxBuenosAires 2011, quiero agradecer a sus organizadores, oradores, sponsors, y azar por darme la posibilidad de estar allí nuevamente, como hace 1 año. En aquella oportunidad salí muy impresionado, más que satisfecho, pero sobretodo estimulado. Estaba contento de ir, y al salir esa sensación se mantuvo por largo tiempo.<div>Este año fui con la expectativa de encontrar la misma calidad de evento y debo decir que desafortunadamente esto no ocurrió. Sería demasiado decir que salí despecionado, ya que a pesar de las críticas que tengo para hacer, poder asistir sigue siendo agradable y algo que me gustaría que se siga repitiendo.</div><div>En líneas generales:</div><div>- Conductor: Iván de Pineda es una persona "neutra" para mi. En ciertas ocasiones me gusta su estilo de conducción, y en otras, quizas la mayoría, me produce el deseo de cambiar de canal. Más allá de mi posible prejuicio (yo no lo hubiera seleccionado para conducir este evento), los resultados, me parece, saltan a la vista. No es una persona "del palo" de las ideas. Se notaba que no comprendía lo que TED representa, y su soltura sobre un escenario no fue suficiente para disimularlo. Sumado a esto, su antecesor Adrián Paenza, cuenta con una autoridad al momento de tratarse el mundo de las ídeas que hace muy dificil evitar esta tediosa comparación.</div><div>- Manejo de la infrastructura: Durante el primero de los cuatro segmentos, se produjeron algunas fallas al momento de mostrar videos, falta de audio, un micrófono que quedó abierto fuera del escenario, entre otros detalles que hacen al evento.</div><div>- Organización: El conductor no informaba bien los tiempos de los breaks, los horarios eran confusos, las puertas quedaban abiertas mucho antes del término de los breaks, haciendo que la gente pudiera "reservarse" los asientos.</div><div>- Oradores: Aquí debería detenerme uno por uno, pero sería muy largo de contar, y además, preferiría que cada uno pueda evaluarlos cuando vean los videos. En general, me pareció que todos tenían ideas y/o historias que valen la pena ser compartidas. Pero creo que la mitad de ellos falló al exponer. No se como juegan los nervios sobre un escenario, cuánto tiempo antes preparan el speach, el método (si son memorizados, o simplemente ordenan las idas y van viendo sobre la marcha como exponerlo), pero noté muchos baches, frases inconexas que no transmitían los conceptos. Destaco las presentaciones de: Mario Benedetti, Manuel Lima, Fernando Pitossi, Jorge Gronda, Rosario Quispe, Agustín Pichot, Marcelo Arce, y Jorge Melguizo. Al resto, creo que les faltaba mucho para el nivel de TED. Repito igualmente mi agradecimiento hacia todos ellos por intentarlo.</div><div><br /></div><div>De alguna manera es como si TEDxBA2010 hubiese sido organizado por gente completamente distinta a TEDxBA2011. De alguna manera, es una especie de "sospecha". La bajada de nivel fue importante, y me gustaría encontrarme en el TEDxBA2012 nuevamente con el entusiasmo que toda la gente, organizadores, oradores y público, llevaron la primera vez.</div><div><br /></div><div>En algunas semanas estarán publicados los videos en www.tedxbuenosaires.org . Invito a todos a verlos y comentarlos.</div><div><br /></div><div>Espero que nadie se sienta ofendido por estas críticas. Van desde un lugar de mucho respeto al trabajo de todos, y desde el mayor constructivismo posible.</div>
 
 
@@ -226,7 +270,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el April 8, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  8 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
     Un post corto para contarles que mañana estaré asistiendo a la segunda realización del TEDxBuenosAires. Tuve la suerte de estar en el (según mi cálculos) 2% que salió sorteado ambos años. El año pasado salí por la noche, y estuve varios días con la sensación de "TENGO QUE HACER ALGO", y esta inspiración me ha llevado a tomar buenas iniciativas durante lo que siguió del año.<div>Esta segunda edición de TEDxBuenosAires, me llega en un momento en donde el achatamiento mental está llegando a su límite tolerable. Mañana seguramente esto cambie. Este año hay expectativas puestas en ello. Recomiendo a todos los que puedan, intentar ver los videos del año pasado, seguir las conferencias online, y dejarse inspirar y motivar por los oradores. Es un buen ejercicio, lo garantizo.</div><div>Estaré twitteando durante el día (hashtag #TEDxBA) contando sobre la vibra del lugar.</div><div>Los dejo con el link: <a href="http://www.tedxbuenosaires.org/">http://www.tedxbuenosaires.org/</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
 
 
@@ -240,7 +295,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el March 17, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  17 de
+  
+  Marzo
+    
+
+
+de 2011
+
+</p>
     Algo que hacía constantemente cuando mi principal lenguaje de programación era PHP, era la administración del servidor local para la creación de virtual hosts. Esto me permitía almacenar los proyectos en cualquier parte de la PC y poder apuntarlos sin la necesidad de crearlos en el <i>wwwroot </i>del Apache.<div>Con el correr del tiempo, fui olvidando como hacer tan sencilla tarea, y al retomar, en Linux, lo hacía mediante la creación de Symbolic Links (directamente a los directorios, aprovechando que estos, también son archivos para el File System del S.O.). </div><div>Volviendo a trabajar en un ambiente basado en Windows, tuve nuevamente esta necesidad. Una aclaración: Habiéndo probado el LAMP en Ubuntu, teniendo excelentes resultados, decidí darle una oportunidad al WAMP. <b>No se molesten. </b>Sigamos con el viejo y querido "<a href="http://www.appservnetwork.com/">appserv</a>" que sigue siendo tan bueno como siempre.</div><div>Ahora si, para crear Virtual Hosts (explicación básica, sin meterme en detalles ni configuraciones adicionales).</div><div>Primero debemos chequear que el servidor este soportando esta característica. Para esto buscamos el archivo httpd.conf (suele estar en la carpeta de Apache \conf . En el caso del Appserv por defecto sería C:\AppServ\Apache2.2\conf).</div><div>Lo que haremos aquí es habilitar la variable vhost_alias_module:</div><div>Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#LoadModule vhost_alias_module module/mod_vhost_alias.so </span>y la descomentamos eliminando el "#".</div><div>En este mismo archivo vamos a indicar dónde se almacena la configuración de los virtual hosts. Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#Include conf/extra/httpd-vhosts.conf </span>y la descomentamos eliminando el "#".</div><div>En este momento, Apache "servirá" a los virtual hosts especificados en el archivo ..../conf/extra/httpd-vhosts.conf.</div><div><br /></div><div><b>Ahora es momento de configurar estos virtual hosts.</b></div><div><b><br /></b></div><div>Para no perder la capacidad de servir a todo lo que se encuentre en la carpeta <i>wwwroot </i>o <i>www</i>, creamos un primer virtual host que la apunte: </div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@localhost<br />    DocumentRoot "C:/AppServ/www"<br />    ServerName localhost<br />    ServerAlias localhost<br />    ErrorLog "logs/localhost-error.log"<br />    CustomLog "logs/localhost-access.log" common<br />&lt;/VirtualHost&gt;<br /></div><div><span class="Apple-style-span"></span></div></div><div><br /></div><div>Nótese que utilizamos localhost como ServerName y ServerAlias (motivo por el cual no será necesario en para este vhost, ninguna entrada adicional en el archivo de hosts del S.O.).</div><div><br /></div><div>Ahora, otro Virtual Host:</div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@miproyecto.com<br />    DocumentRoot "C:/AppServ/www/miproyecto"<br />    ServerName www.miproyecto.com<br />    ErrorLog "logs/miproyecto-error.log"<br />    CustomLog "logs/miproyecto-access.log" common<br />&lt;/VirtualHost&gt;<br /></div></div><div><br /></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-size: 12px; line-height: 11px; white-space: pre;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; white-space: normal; ">Solo quedaría un paso para poder apuntar a "Mi Proyecto" desde un browser y es la creación de la entrada en el archivo de HOSTS de windows.</span></span></span></div><div><br /></div><div>Editamos para esto el archivo C:\Windows\System32\drivers\etc\hosts y agregamos la siguiente línea: </div><div><span class="Apple-style-span">127.0.0.1<span class="Apple-tab-span" style="white-space:pre"> </span>www.miproyecto.com</span></div><div><span class="Apple-style-span"><br /></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Al realizar todos estos cambios, es necesario reiniciar el Apache.</span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><br /></span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Espero que sirva esta información.</span></span></div>
 
 
@@ -254,7 +320,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el February 24, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  24 de
+  
+  Febrero
+    
+
+
+de 2011
+
+</p>
     Durante estos días, estoy teniendo bastante trabajo (por eso la ausencia de posts por aquí). Uno de los proyectos con los que estoy trabajando, utiliza para la persistencia de datos un enfoque Schemaless/NoSQL aplicado sobre tecnología DB2 pureXML. De esto trata este POST.<br /><br />Primero, una aclaración respecto del término NoSQL. En un principio, surgió el término como forma de diferenciar AMPLIAMENTE una base de datos relacional (consultada mediante SQL) de una que no lo era. Luego, el término quedó como una forma simpática de abreviar <b>N</b>ot <b>O</b>nly <b>SQL</b>, indicando que las bases híbridas, pueden ser consideradas dentro del grupo de las NoSQL.<div><br /></div><div>Pero lo realmente importante, escapa al nombre e incluso a como funciona, y el foco debe realmente ser puesto en primer lugar en ¿Por qué y para qué querríamos abandonar nuestro ya conocido, probado, confiable y robusto esquema relacional?</div><div><br /></div><div>En mi caso la respuesta comienza siendo sencilla. Durante al menos los últimos 6 años de mi carrera, me he encontrado con requerimientos (en el límite de lo funcional y lo no funcional) que exigían representar entidades heterogeneas, configurables, flexibles y adaptables. Exacto, nadie dice qué tan flexibles deben ser estas entidades, pero todos afirman que deben serlo. Entonces, antes de cualquier análisis costo-beneficio, alguien siempre "salta" con el típico diseño de flexibilidad sobre un esquema relacional: "Una tabla con 2 campos. CLAVE - VALOR". Quizas algún campo más que indique a que entidad corresponden las claves y en otra tabla, una relación conteniendo el valor.</div><div style="text-align: center;"><img src="http://4.bp.blogspot.com/-Nycm8O-OiwY/TWcSCu-EXwI/AAAAAAAABok/Aqyo6GhW8tA/s400/catalogue.PNG" style="cursor:pointer; cursor:hand;width: 400px; height: 211px;" border="0" alt="" id="BLOGGER_PHOTO_ID_5577446501699051266" /></div><div><br /></div><div>Ahora bien, esta solución, intenta romper el principal paradigma de una base de datos relacional (con estructura de tablas y relaciones): "Las entidades son <b>tipadas</b>". Esto quiere decir que una entidad se define como un conjunto de campos de un tipo específico, y cada fila de la tabla representa esa entidad y ninguna otra. Este efecto, es la principal ventaja de una base de datos schemaless.</div><div><br /></div><div>Entonces, relacionando los conceptos: <b>La mayoría de los proyectos, de un tiempo a esta parte, necesitan estructuras dinámicas; las bases de datos relacionales persisten estructuras estáticas; Las bases de datos NoSql/Schemaless persisten estructuras dinámicas. ==> Las bases de datos NoSql/Schemaless se adaptan mejor a la mayoría de los proyectos de un tiempo a esta parte.</b></div><div><b><br /></b></div><div>Sumado a esto, el diseño presentado se vuelve muy ineficiente al intentar ejecutar consultas que filtren alguna entidad dinámica por un grupo de valores (consulta trivial en una entidad estática).</div><div><br /></div><div>Habiendo expuesto de esta manera el "por y para qué", indaguemos brevemente en como funciona, para luego dejar algunos links de utilidad a diferentes implementaciones tales como CoachDB, DB2 pureXML, Google BigTable.</div><div><br /></div><div><b>Supongamos un ejemplo sencillo en el cual debamos almacenar los datos de una persona: Nombre, Apellido, Fecha de nacimiento, y Teléfonos (si, más de uno). </b></div><div><b><br /></b></div><div>Un esquema posible para una base de datos relacional sería:</div><div style="text-align: center;"><img src="http://4.bp.blogspot.com/-fM_lXx79d94/TWcUfjNYxPI/AAAAAAAABo0/NV0nmkQ4ErY/s400/CopyofEsquemaCat%25C3%25A1logo.png" style="cursor:pointer; cursor:hand;width: 400px; height: 109px;" border="0" alt="" id="BLOGGER_PHOTO_ID_5577449195781539058" /></div><div style="text-align: left;">Este mismo diseño representado en una estructura schemaless, podría explicarse en una tabla con un solo campo: PERSONA (claramente, no es necesario que se halle en una tabla, puede ser un archivo de texto en un filesystem, o cualquier tipo de almacenamiento). Luego, este <b>store</b>, deberá poder representar la estructura de manera flexible.</div><div style="text-align: left;">Una buena estrategia para lograrlo es representar los datos utilizando una nomenclatura que al tiempo que describe su estructura, representa la información. Una "lenguaje" que cumple con estas características es XML. Por lo tanto, en un enfoque schemaless, un store debería almacenar la siguiente estructura (por cada entidad persistida):</div><div style="text-align: left;"><persona id="x"></persona></div><div style="text-align: left;"><span class="Apple-style-span" style="white-space: pre;"><br /><pre><br />&lt;persona id="xx"&gt;<br />&lt;nombre&gt;xxxx&lt;/nombre&gt;<br />&lt;apellido&gt;xxxx&lt;/apellido&gt;<br />&lt;fechaNacimiento&gt;xx/xx/xxxx&lt;/fechaNacimiento&gt;<br />&lt;telefonos&gt;<br />&lt;telefono id="xx" descripcion="xxxxxx"&gt;<br /> &lt;codigoPais&gt;xx&lt;/codigoPais&gt;<br /> &lt;codigoArea&gt;xx&lt;/codigoArea&gt;<br /> &lt;numero&gt;xxxxx&lt;/numero&gt;<br />&lt;/telefono&gt;<br />&lt;telefono id="xx" descripcion="xxxxxx"&gt;<br /> &lt;codigoPais&gt;xx&lt;/codigoPais&gt;<br /> &lt;codigoArea&gt;xx&lt;/codigoArea&gt;<br /> &lt;numero&gt;xxxxx&lt;/numero&gt;<br />&lt;/telefono&gt;<br />&lt;/telefonos&gt;<br />&lt;/persona&gt;<br /><br /></pre><br /></span></div><div style="text-align: left;"><div style="text-align: left;">Nótese que para lograr ser autodescriptivo, XML almacena la estructura en su contenido (repitiendo esta información gran cantidad de veces. Anotemos esto del lado de los bemoles de este enfoque).</div><div style="text-align: left;"><br /></div><div style="text-align: left;">La flexibilidad comienza cuando el mismo store, puede almacenar un XML diferente:</div><div style="text-align: left;"><div style="text-align: left; "><persona id="x" tipo="proveedor"></persona></div><div style="text-align: left; "><span class="Apple-style-span" style="white-space: pre;"><br /><span class="Apple-style-span" style="font-family: monospace; font-size: 13px; ">&lt;persona id="xx" tipo="proveedor" &gt;</span><br /><pre> &lt;nombre&gt;xxxx&lt;/nombre&gt;<br />&lt;apellido&gt;xxxx&lt;/apellido&gt;<br />&lt;fechaNacimiento&gt;xx/xx/xxxx&lt;/fechaNacimiento&gt;<br />     &lt;CUIT&gt;xxxx&lt;/CUIT&gt;<br />&lt;telefonos&gt;<br />&lt;telefono id="xx" descripcion="xxxxxx"&gt;<br /> &lt;codigoPais&gt;xx&lt;/codigoPais&gt;<br /> &lt;codigoArea&gt;xx&lt;/codigoArea&gt;<br /> &lt;numero&gt;xxxxx&lt;/numero&gt;<br />&lt;/telefono&gt;<br />&lt;telefono id="xx" descripcion="xxxxxx"&gt;<br /> &lt;codigoPais&gt;xx&lt;/codigoPais&gt;<br /> &lt;codigoArea&gt;xx&lt;/codigoArea&gt;<br /> &lt;numero&gt;xxxxx&lt;/numero&gt;<br />&lt;/telefono&gt;<br />&lt;/telefonos&gt;<br />&lt;/persona&gt;<br /><br /></pre></span></div><div style="text-align: left; "><div style="text-align: left; ">Ahora bien, ¿Cómo logramos obtener un dato dentro de esta estructura? </div><div style="text-align: left; ">Para el caso de XML, existe un standard (definido por la W3C) conocido como <a href="http://www.w3.org/TR/xpath/">XPath</a>. Este standard, permite recorrer y extraer una parte específica dentro de un XML. Por ejemplo: /persona/nombre -> retorna <pre>&lt;nombre&gt;xxxxx&lt;/nombre&gt;</pre>. Para redoblar la apuesta, W3C también definió como parte standard <a href="http://www.w3.org/XML/Query/">XQuery</a>, que permite realizar operaciones más complejas sobre un XML (Ej: <a href="http://www.stylusstudio.com/xquery_flwor.html">FLWOR</a>).</div><div style="text-align: left; "><br /></div><div style="text-align: left; ">Una base de datos que soporte estas tecnologías, podría considerarse una base NoSQL.</div><div style="text-align: left; "><br /></div><div style="text-align: left; ">Cabe aclarar que XML no es el único "lenguaje" que permite representar estructuras dinámicas. Otro ejemplo de esto es <a href="http://www.json.org/">JSON (JavaScript Object Notation)</a>, preferido por ejemplo por <a href="http://labs.google.com/papers/bigtable.html">Google BigTable</a>.</div><div style="text-align: left; "><br /></div><div style="text-align: left; ">A continuación una serie de links útiles para conocer distintas tecnologías aplicadas a NoSQL.</div><div style="text-align: left; "><ul><li>IBM DB2 pureXML:</li><ul><li>Sitio oficial:<a href="http://www-01.ibm.com/software/data/db2/xml/">http://www-01.ibm.com/software/data/db2/xml/</a></li><li>Quick Start: <a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0603saracco2/">http://www.ibm.com/developerworks/data/library/techarticle/dm-0603saracco2/</a></li></ul><li>Tutorial XPATH: <a href="http://www.w3schools.com/xpath/default.asp">http://www.w3schools.com/xpath/default.asp</a></li><li>Tutorial XQuery: <a href="http://www.w3schools.com/xquery/default.asp">http://www.w3schools.com/xquery/default.asp</a></li><li>CoachDB: <a href="http://couchdb.apache.org/">http://couchdb.apache.org/</a></li><li>BigTable: <a href="http://blogs.xingular.net/santiago/bases-de-datos/entendiendo-el-modelo-de-datos-de-google-big-table/">http://blogs.xingular.net/santiago/bases-de-datos/entendiendo-el-modelo-de-datos-de-google-big-table/</a></li><li>NoSql: <a href="http://nosql-database.org/">http://nosql-database.org/</a></li></ul>Espero les interese el tema y lo investiguen. Queda pendiente combinar estos conceptos con algo de almacenamiento distrubuido, teorema CAP, escalabilidad y performance, pero creo que es mucho para un solo POST.</div></div></div></div>
 
 
@@ -268,7 +345,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el January 9, 2011</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  9 de
+  
+  Enero
+    
+
+
+de 2011
+
+</p>
     <meta equiv="content-type" content="text/html; charset=utf-8"><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; background-color: transparent; font-family: 'Times New Roman'; font-size: medium; "><span id="internal-source-marker_0.7430963064543903" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Al momento de evaluar tecnologías para el desarrollo de aplicaciones, solemos pasar por alto (incluso menospreciar) a aquella que sin duda ha representado la fuerza motriz para el rápido crecimiento de la Web, que pasó de ser páginas webs estáticas, con contenido e hiper texto, a aplicaciones con manejo de lógica de negocios, bases de datos e interacción con el usuario (Por supuesto no me olvido de otras tecnologías como CGIs, e incluso el problemático ASP, que si bien contribuyeron, creo yo que no tuvieron la relevancia que tuvo PHP).</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; "></span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Los principales argumentos en contra de la utilización de PHP, apuntan generalmente a los problemas típicos de mantenibilidad de código (suele aparecer </span><a href="http://en.wikipedia.org/wiki/Spaghetti_code"><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 153); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap; ">código spaghetti</span></a><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">, legado de un paradigma estructurado debido a que su soporte de OOP suele ser más bien pobre). Estos problemas solían aparecer más bien en versiones anteriores a PHP 5, aunque quedó instaurado el pre-concepto.</span>
@@ -306,7 +394,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el November 4, 2010</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  4 de
+  
+  Noviembre
+    
+
+
+de 2010
+
+</p>
     <span style="font-style:italic;">Antes que nada: ¿Por qué escribir acerca de un tema hiper saturado en la red? Porque en todos los lugares donde busqué como realizar los pasos, los links apuntaban a repositorios que ya no se encuentran disponibles.
 <br />
 <br /></span><div>Existen varias maneras de <i>lookear </i>Ubuntu como MAC. En este caso, yo lo hice mediante el tema <i>MacUbuntu</i> y lo apliqué sobre la versión 10.04 del mismo.</div><div>
@@ -329,7 +428,18 @@
         </h2>
         
     </a>
-    <p class="post-meta">Publicado por nohorbee el September 10, 2010</p>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  10 de
+  
+  Septiembre
+    
+
+
+de 2010
+
+</p>
     Si algo tiene DB2 (de bueno y de malo) es que para realizar casi cualquier operación, existen muchas maneras diferentes de hacerlo (más de las necesarias quizas). Pero esto lleva a tener que conocer las diferentes precondiciones para cada procedimiento.<div>En este caso, algo que debería ser sencillo, puede resultar un poco engorroso (la documentación está dando vueltas por allí, pero algo desorganizada). </div><div>¿Como copiar una base de datos? Existen diversas maneras de hacerlo.</div><div><ul><li>Opción 1: Backup &amp; Restore: Esta opción es útil cuando se quiera realizar una copia de seguridad para ser restaurada más tarde en el mismo server del cual se origina, o incluso, en máquinas con características similares (sobretodo, sistema operativo). Existen 2 tipos, pero más allá de sus diferencias técnicas, quiero hacer hincapié en sus pre-requisitos y sus pos-condiciones:<ul><li>Online Backup: La principal ventaja, es que no existe la necesidad de desconectar todas las aplicaciones que estén haciendo uso de la base de datos. Una desventaja: NO SE PUEDE RESTAURAR EN UN ENTORNO CON DISTINTO SISTEMA OPERATIVO (y por este motivo empezó mi búsqueda).</li><li>Offline Backup: No tiene el problema de la restauración en otras plataformas, pero, claro está, necesita que todas las aplicaciones que estén accediendo a la base, cierren sus conexiones. (Nota: para saber que aplicaciones tienen conexión, ver el comando db2 list applications).</li></ul></li><li>Opción 2: DB2move: Estando en el entorno de la base que quiere hacer copiada, DB2move <database> export, realiza una exportación de todos los datos, generando una buena cantidad de archivos dentro de la carpeta donde se ejecuta el comando. Luego, haciendo DB2move <database> load, estando en la carpeta que contiene los archivos, los datos se cargan a la base de datos indicadas. He aquí, que esa base, debe existir y tener la misma estructura de tablas y schemas que la original (incluso constrains). Afortunadamente, esto es facil de obtener también: db2look -d <database> -e -a -o <file> genera el DDL y lo almacena en el file especificado (usando la base de datos, pero no creandola). Luego, Creando la base de datos (CREATE command) y corriendo db2 -tvf <file>, somos capaces de crear la estructura de base de datos, para luego poder correr el db2move <database> load que terminará de importar los datos.</li></ul>Pasando en limpio, los pasos de esta segunda opción serían:</div><div>1. Generar el DDL: db2look -d <database> -e -a -o <file></div><div>2. Generar el export de datos: db2move <database> export</div><div>3. Suponiendo que estamos conectados a un servidor remoto y queremos pasarlo a alguna otra terminal, copiar la carpeta con el archivo con ddl y los exports a la nueva terminal.</div><div>4. En la terminal, db2 create database <database></div><div>5. Generar la estructura: db2 -tvf <file></div><div>5. Importar los datos: db2move <database> load</div><div>
 <br /></div><div>Todos los comandos de DB2 tienen infinidad de opciones, y los mencionados no son la excepción, pero para simplificar, preferí ir directo al punto. En los links adjuntos, paso algunas fuentes que usé, y siempre pueden ver la documentación de TODOS los comandos de DB2 en <a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html">http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html</a> .</div><div>
 <br /></div><div>Links útiles:</div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/pworld/0112mccluney.html">Backup &amp; Restore</a></div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0403melnyk/index.html">DB2 cloning databases across different platforms</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
