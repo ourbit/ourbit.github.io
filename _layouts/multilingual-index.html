@@ -14,7 +14,8 @@ layout: page
         </h3>
         {% endif %}
     </a>
-    <p class="post-meta">{% t posts.posted-by %} {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} {% t posts.posted-on %} {{ post.date | date: "%B %-d, %Y" }}</p>
+    <p class="post-meta">{% t posts.posted-by %} {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} {% t posts.posted-on %} {% assign convertDate = post.date %}
+    {% include date.fn %}</p>
     {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
     <p class="read-more"><a href="{{ post.url | prepend: site.baseurl }}" class="read-more">{% t posts.read-more %} &rarr;</a></p>
 </div>

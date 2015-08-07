@@ -2,6 +2,7 @@
 layout: post
 title:  "Mudanza a GitHubPages"
 date:   2015-08-03 18:43:21
+author: nohorbee
 categories: jekyll update
 ---
 

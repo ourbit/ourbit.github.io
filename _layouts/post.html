@@ -12,7 +12,10 @@ layout: default
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">{% t posts.posted-by %} {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} {% t posts.posted-on %} {{ page.date | date: "%B %-d, %Y" }}</span>
+                    <span class="meta">{% t posts.posted-by %} {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} {% t posts.posted-on %}
+                      {% assign convertDate = page.date %}
+                      {% include date.fn %}
+                    </span>
                 </div>
             </div>
         </div>
