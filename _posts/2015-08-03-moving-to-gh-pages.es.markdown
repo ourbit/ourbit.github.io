@@ -5,7 +5,8 @@ date:   2015-08-03 18:43:21
 categories: jekyll update
 ---
 
-Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por *blogger de Google* no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de *blogging* debe tener<!--MORE-->.  
+Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por *blogger de Google* no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de *blogging* debe tener.
+<!--MORE-->  
 
 Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (*Wordpress, Joomla*, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.  
 
