@@ -19,6 +19,7 @@ layout: page
     {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
     <p class="read-more"><a href="{{ post.url | prepend: site.baseurl }}" class="read-more">{% t posts.read-more %} &rarr;</a></p>
 </div>
+<hr>
 <br />
 {% endfor %}
 
