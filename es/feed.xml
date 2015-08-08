@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ourBit</title>
+    <title>OurBit</title>
     <description>Write your site description here. It will be used as your sites meta description as well!</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 08 Aug 2015 03:10:14 -0300</pubDate>
-    <lastBuildDate>Sat, 08 Aug 2015 03:10:14 -0300</lastBuildDate>
+    <pubDate>Sat, 08 Aug 2015 03:33:57 -0300</pubDate>
+    <lastBuildDate>Sat, 08 Aug 2015 03:33:57 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -22,25 +22,25 @@
 
 &lt;p&gt;El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar &lt;em&gt;templates (o themes)&lt;/em&gt; gratuitos y adaptar mínimamente alguno. Me encontré con &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; de &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.&lt;/p&gt;
 
-&lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pagesqu-me-hace-elegir-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?/¿Qué me hace elegir &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
+&lt;p&gt;¿Qué me hace elegir &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The possibility of counting with &lt;em&gt;Open Source&lt;/em&gt; tools/La posibilidad de contar con herramientas &lt;em&gt;Open Source&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;Ads-Free: This is free. No strings attached/Libre de publicidad: Esto es gratuito sin letra chica.&lt;/li&gt;
-  &lt;li&gt;Flexibility and Extensibility: I can build plugins and tools on top of the platform/Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.&lt;/li&gt;
-  &lt;li&gt;Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing/Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
-  &lt;li&gt;Capability of receiving &lt;em&gt;Pull Requests&lt;/em&gt;: I;m interested on hacing readers suggesting fixes, or even heving them publishing on this blog. &lt;strong&gt;I hope you send your Posts via Pull Requests&lt;/strong&gt;/Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; Support: This might be a personal taste, but I find very simple and convenient to write in &lt;em&gt;Markdown&lt;/em&gt; instead of dealing with &lt;em&gt;WYSIWYG&lt;/em&gt; editors that end failing when attempting to go beyond their capabilities/Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
-  &lt;li&gt;Code Highlight: Mandatory for a snippet containing blog/&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.  &lt;/li&gt;
+  &lt;li&gt;La posibilidad de contar con herramientas &lt;em&gt;Open Source&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Libre de publicidad: Esto es gratuito sin letra chica.&lt;/li&gt;
+  &lt;li&gt;Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.&lt;/li&gt;
+  &lt;li&gt;Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
+  &lt;li&gt;Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo ourBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Estas son solo algunas razones. Pero cada uno debería tener las suyas. Ante la duda, inviertan 1 hora en aprender a usarlo (quizá no los convenza como herramienta de &lt;em&gt;Blogging&lt;/em&gt;, pero no está demás saber como funciona &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;Here are some links for kicking off/Les dejo algunos links para comenzar:&lt;/p&gt;
+&lt;p&gt;Les dejo algunos links para comenzar:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;  &lt;/li&gt;
@@ -73,25 +73,25 @@
 
 &lt;p&gt;The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free &lt;em&gt;templates (or themes)&lt;/em&gt; and adapt one of them. I ran into &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; by &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.  &lt;/p&gt;
 
-&lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pagesqu-me-hace-elegir-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?/¿Qué me hace elegir &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
+&lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The possibility of counting with &lt;em&gt;Open Source&lt;/em&gt; tools/La posibilidad de contar con herramientas &lt;em&gt;Open Source&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;Ads-Free: This is free. No strings attached/Libre de publicidad: Esto es gratuito sin letra chica.&lt;/li&gt;
-  &lt;li&gt;Flexibility and Extensibility: I can build plugins and tools on top of the platform/Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.&lt;/li&gt;
-  &lt;li&gt;Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing/Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
-  &lt;li&gt;Capability of receiving &lt;em&gt;Pull Requests&lt;/em&gt;: I;m interested on hacing readers suggesting fixes, or even heving them publishing on this blog. &lt;strong&gt;I hope you send your Posts via Pull Requests&lt;/strong&gt;/Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; Support: This might be a personal taste, but I find very simple and convenient to write in &lt;em&gt;Markdown&lt;/em&gt; instead of dealing with &lt;em&gt;WYSIWYG&lt;/em&gt; editors that end failing when attempting to go beyond their capabilities/Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
-  &lt;li&gt;Code Highlight: Mandatory for a snippet containing blog/&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.  &lt;/li&gt;
+  &lt;li&gt;The possibility of counting with &lt;em&gt;Open Source&lt;/em&gt; tools.&lt;/li&gt;
+  &lt;li&gt;Ads-Free: This is free. No strings attached.&lt;/li&gt;
+  &lt;li&gt;Flexibility and Extensibility: I can build plugins and tools on top of the platform.&lt;/li&gt;
+  &lt;li&gt;Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing.&lt;/li&gt;
+  &lt;li&gt;Capability of receiving &lt;em&gt;Pull Requests&lt;/em&gt;: I’;’m interested on having readers suggesting fixes, or even having them publishing on this blog. &lt;strong&gt;I hope you send your Posts via Pull Requests&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; Support: This might be a personal taste, but I find very simple and convenient to write in &lt;em&gt;Markdown&lt;/em&gt; instead of dealing with &lt;em&gt;WYSIWYG&lt;/em&gt; editors that end failing when attempting to go beyond their capabilities&lt;/li&gt;
+  &lt;li&gt;Code Highlight: Mandatory for a snippet containing blog&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo ourBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Welcome to the new OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a &lt;em&gt;Blogging&lt;/em&gt; tool, but it worth knowing how &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; works).  &lt;/p&gt;
 
-&lt;p&gt;Here are some links for kicking off/Les dejo algunos links para comenzar:&lt;/p&gt;
+&lt;p&gt;Here are some links for kicking off&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;  &lt;/li&gt;
