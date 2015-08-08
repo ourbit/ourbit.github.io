@@ -5,7 +5,7 @@
 
 body {
 	.serif;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	color: @gray-dark;
 }
@@ -481,4 +481,47 @@ p.read-more > a {
 // Overriding bootstrap
 blockquote p:last-child, blockquote ul:last-child {
   margin-top: 0px;
+}
+
+
+// Header effects
+
+div.content-wrapper {
+  position: relative;
+  background-color: #FFFFFF;
+  padding-top: 50px;
+}
+
+.intro-header {
+  margin-bottom: 0px;
+}
+
+.img-src {
+  background-position-y: -240px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 456px;
+  line-height: 20px;
+  position: fixed;
+  width: 1680px;
+}
+
+.blur {
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 456px;
+  line-height: 20px;
+  opacity: 0;
+  position: fixed;
+  width: 1680px;
 }
