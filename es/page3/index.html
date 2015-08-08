@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>ourBit - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/page3/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -151,11 +177,14 @@
     </div>
 </header>
 
+
+
 <!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
+<div class="content-wrapper">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  			
 
 <div class="post-preview">
     <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/">
@@ -187,6 +216,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -212,6 +242,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -237,6 +268,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/04/15/el-universo-de-las-ideas/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -262,6 +294,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/04/08/resena-de-tedxba/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -287,6 +320,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -312,6 +346,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/03/17/como-configurar-virtual-hosts-en-apache/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -337,6 +372,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/02/24/bases-de-datos-nosql/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -386,6 +422,7 @@ de 2011
 
     <p class="read-more"><a href="/es/2011/01/09/desarrollo-php/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -420,6 +457,7 @@ de 2010
 
     <p class="read-more"><a href="/es/2010/11/04/estetica-mac-en-ubuntu/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 <div class="post-preview">
@@ -447,6 +485,7 @@ de 2010
 
     <p class="read-more"><a href="/es/2010/09/10/copiando-una-base-de-datos-db2/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
+<hr>
 <br />
 
 
@@ -467,10 +506,10 @@ de 2010
     
 </ul>
 
-		</div>
-	</div>
+  		</div>
+  	</div>
+  </div>
 </div>
-
 <hr>
 
 

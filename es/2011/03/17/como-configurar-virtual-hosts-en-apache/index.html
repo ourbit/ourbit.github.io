@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Como configurar Virtual Hosts en Apache (algo básico, para no olvidar) - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/03/17/como-configurar-virtual-hosts-en-apache/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Algo que hacía constantemente cuando mi principal lenguaje de programación era PHP, era la administración del servidor local para la creación de virtual hosts. Esto me permitía almacenar los proyectos en cualquier parte de la PC y poder apuntarlos sin la necesidad de crearlos en el <i>wwwroot </i>del Apache.<div>Con el correr del tiempo, fui olvidando como hacer tan sencilla tarea, y al retomar, en Linux, lo hacía mediante la creación de Symbolic Links (directamente a los directorios, aprovechando que estos, también son archivos para el File System del S.O.). </div><div>Volviendo a trabajar en un ambiente basado en Windows, tuve nuevamente esta necesidad. Una aclaración: Habiéndo probado el LAMP en Ubuntu, teniendo excelentes resultados, decidí darle una oportunidad al WAMP. <b>No se molesten. </b>Sigamos con el viejo y querido "<a href="http://www.appservnetwork.com/">appserv</a>" que sigue siendo tan bueno como siempre.</div><div>Ahora si, para crear Virtual Hosts (explicación básica, sin meterme en detalles ni configuraciones adicionales).</div><div>Primero debemos chequear que el servidor este soportando esta característica. Para esto buscamos el archivo httpd.conf (suele estar en la carpeta de Apache \conf . En el caso del Appserv por defecto sería C:\AppServ\Apache2.2\conf).</div><div>Lo que haremos aquí es habilitar la variable vhost_alias_module:</div><div>Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#LoadModule vhost_alias_module module/mod_vhost_alias.so </span>y la descomentamos eliminando el "#".</div><div>En este mismo archivo vamos a indicar dónde se almacena la configuración de los virtual hosts. Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#Include conf/extra/httpd-vhosts.conf </span>y la descomentamos eliminando el "#".</div><div>En este momento, Apache "servirá" a los virtual hosts especificados en el archivo ..../conf/extra/httpd-vhosts.conf.</div><div><br /></div><div><b>Ahora es momento de configurar estos virtual hosts.</b></div><div><b><br /></b></div><div>Para no perder la capacidad de servir a todo lo que se encuentre en la carpeta <i>wwwroot </i>o <i>www</i>, creamos un primer virtual host que la apunte: </div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@localhost<br />    DocumentRoot "C:/AppServ/www"<br />    ServerName localhost<br />    ServerAlias localhost<br />    ErrorLog "logs/localhost-error.log"<br />    CustomLog "logs/localhost-access.log" common<br />&lt;/VirtualHost&gt;<br /></div><div><span class="Apple-style-span"></span></div></div><div><br /></div><div>Nótese que utilizamos localhost como ServerName y ServerAlias (motivo por el cual no será necesario en para este vhost, ninguna entrada adicional en el archivo de hosts del S.O.).</div><div><br /></div><div>Ahora, otro Virtual Host:</div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@miproyecto.com<br />    DocumentRoot "C:/AppServ/www/miproyecto"<br />    ServerName www.miproyecto.com<br />    ErrorLog "logs/miproyecto-error.log"<br />    CustomLog "logs/miproyecto-access.log" common<br />&lt;/VirtualHost&gt;<br /></div></div><div><br /></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-size: 12px; line-height: 11px; white-space: pre;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; white-space: normal; ">Solo quedaría un paso para poder apuntar a "Mi Proyecto" desde un browser y es la creación de la entrada en el archivo de HOSTS de windows.</span></span></span></div><div><br /></div><div>Editamos para esto el archivo C:\Windows\System32\drivers\etc\hosts y agregamos la siguiente línea: </div><div><span class="Apple-style-span">127.0.0.1<span class="Apple-tab-span" style="white-space:pre"> </span>www.miproyecto.com</span></div><div><span class="Apple-style-span"><br /></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Al realizar todos estos cambios, es necesario reiniciar el Apache.</span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><br /></span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Espero que sirva esta información.</span></span></div>
+  				Algo que hacía constantemente cuando mi principal lenguaje de programación era PHP, era la administración del servidor local para la creación de virtual hosts. Esto me permitía almacenar los proyectos en cualquier parte de la PC y poder apuntarlos sin la necesidad de crearlos en el <i>wwwroot </i>del Apache.<div>Con el correr del tiempo, fui olvidando como hacer tan sencilla tarea, y al retomar, en Linux, lo hacía mediante la creación de Symbolic Links (directamente a los directorios, aprovechando que estos, también son archivos para el File System del S.O.). </div><div>Volviendo a trabajar en un ambiente basado en Windows, tuve nuevamente esta necesidad. Una aclaración: Habiéndo probado el LAMP en Ubuntu, teniendo excelentes resultados, decidí darle una oportunidad al WAMP. <b>No se molesten. </b>Sigamos con el viejo y querido "<a href="http://www.appservnetwork.com/">appserv</a>" que sigue siendo tan bueno como siempre.</div><div>Ahora si, para crear Virtual Hosts (explicación básica, sin meterme en detalles ni configuraciones adicionales).</div><div>Primero debemos chequear que el servidor este soportando esta característica. Para esto buscamos el archivo httpd.conf (suele estar en la carpeta de Apache \conf . En el caso del Appserv por defecto sería C:\AppServ\Apache2.2\conf).</div><div>Lo que haremos aquí es habilitar la variable vhost_alias_module:</div><div>Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#LoadModule vhost_alias_module module/mod_vhost_alias.so </span>y la descomentamos eliminando el "#".</div><div>En este mismo archivo vamos a indicar dónde se almacena la configuración de los virtual hosts. Buscamos la siguiente línea: <span class="Apple-style-span" style="color: rgb(19, 19, 25); font-family: monospace; font-size: 12px; line-height: 11px; white-space: pre; ">#Include conf/extra/httpd-vhosts.conf </span>y la descomentamos eliminando el "#".</div><div>En este momento, Apache "servirá" a los virtual hosts especificados en el archivo ..../conf/extra/httpd-vhosts.conf.</div><div><br /></div><div><b>Ahora es momento de configurar estos virtual hosts.</b></div><div><b><br /></b></div><div>Para no perder la capacidad de servir a todo lo que se encuentre en la carpeta <i>wwwroot </i>o <i>www</i>, creamos un primer virtual host que la apunte: </div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@localhost<br />    DocumentRoot "C:/AppServ/www"<br />    ServerName localhost<br />    ServerAlias localhost<br />    ErrorLog "logs/localhost-error.log"<br />    CustomLog "logs/localhost-access.log" common<br />&lt;/VirtualHost&gt;<br /></div><div><span class="Apple-style-span"></span></div></div><div><br /></div><div>Nótese que utilizamos localhost como ServerName y ServerAlias (motivo por el cual no será necesario en para este vhost, ninguna entrada adicional en el archivo de hosts del S.O.).</div><div><br /></div><div>Ahora, otro Virtual Host:</div><div><br /></div><div><div><span class="Apple-style-span"><virtualhost></virtualhost></span></div><div><br />&lt;VirtualHost *:80&gt;<br />    ServerAdmin webmaster@miproyecto.com<br />    DocumentRoot "C:/AppServ/www/miproyecto"<br />    ServerName www.miproyecto.com<br />    ErrorLog "logs/miproyecto-error.log"<br />    CustomLog "logs/miproyecto-access.log" common<br />&lt;/VirtualHost&gt;<br /></div></div><div><br /></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-size: 12px; line-height: 11px; white-space: pre;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; white-space: normal; ">Solo quedaría un paso para poder apuntar a "Mi Proyecto" desde un browser y es la creación de la entrada en el archivo de HOSTS de windows.</span></span></span></div><div><br /></div><div>Editamos para esto el archivo C:\Windows\System32\drivers\etc\hosts y agregamos la siguiente línea: </div><div><span class="Apple-style-span">127.0.0.1<span class="Apple-tab-span" style="white-space:pre"> </span>www.miproyecto.com</span></div><div><span class="Apple-style-span"><br /></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Al realizar todos estos cambios, es necesario reiniciar el Apache.</span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><br /></span></span></div><div><span class="Apple-style-span"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; ">Espero que sirva esta información.</span></span></div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/02/24/bases-de-datos-nosql/" data-toggle="tooltip" data-placement="top" title="Bases de datos NoSQL">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" data-toggle="tooltip" data-placement="top" title="#TEDxBA cortito y al pie">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/02/24/bases-de-datos-nosql/" data-toggle="tooltip" data-placement="top" title="Bases de datos NoSQL">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" data-toggle="tooltip" data-placement="top" title="#TEDxBA cortito y al pie">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>No a la reproducción automática de vimeo - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/11/28/no-la-reproduccion-automatica-de-vimeo/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<div>Una pequeña recomendación para aquellos que utilizan videos de <i>vimeo.com</i>. En muchos sitios, se publican con la opción de reproducción automática encendida, es decir, que cuándo entremos al sitio, el video comenzará automáticamente.<br />Esto pasó en este blog. Se incluía un video en un post, y cuando el post fue quedando "debajo" en la lista, uno comenzaba a escuchar un sonido que no se condecía con lo que estaba leyendo (obviamente).<br /><br />La solución es simple:<br />- Buscar este código HTML:&nbsp;<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">&lt;iframe frameborder="0" height="234" src="http://player.vimeo.com/video/27208274?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="398"&gt;&lt;/iframe&gt;</span> (va a variar dependiendo del video cargado).<br />- Reemplazar <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=1</span> por <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=0</span><br /><span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;"><br /></span><br /><span class="Apple-style-span" style="font-family: inherit;">Fin del problema.</span><br />Espero les sirva a quienes usan los videos en sus páginas (recuerden siempre citar las fuentes), y a aquellos que ingresan a páginas que de pronto y sin aviso, comienzan a reproducir contenidos que&nbsp;quizás&nbsp;no nos interesen.</div>
+  				<div>Una pequeña recomendación para aquellos que utilizan videos de <i>vimeo.com</i>. En muchos sitios, se publican con la opción de reproducción automática encendida, es decir, que cuándo entremos al sitio, el video comenzará automáticamente.<br />Esto pasó en este blog. Se incluía un video en un post, y cuando el post fue quedando "debajo" en la lista, uno comenzaba a escuchar un sonido que no se condecía con lo que estaba leyendo (obviamente).<br /><br />La solución es simple:<br />- Buscar este código HTML:&nbsp;<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">&lt;iframe frameborder="0" height="234" src="http://player.vimeo.com/video/27208274?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="398"&gt;&lt;/iframe&gt;</span> (va a variar dependiendo del video cargado).<br />- Reemplazar <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=1</span> por <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=0</span><br /><span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;"><br /></span><br /><span class="Apple-style-span" style="font-family: inherit;">Fin del problema.</span><br />Espero les sirva a quienes usan los videos en sus páginas (recuerden siempre citar las fuentes), y a aquellos que ingresan a páginas que de pronto y sin aviso, comienzan a reproducir contenidos que&nbsp;quizás&nbsp;no nos interesen.</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/11/25/componentes-poco-acoplados-en-la-era-de/" data-toggle="tooltip" data-placement="top" title="Componentes poco acoplados en la era de la integración de aplicaciones">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/11/29/tethering/" data-toggle="tooltip" data-placement="top" title="Tethering">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/11/25/componentes-poco-acoplados-en-la-era-de/" data-toggle="tooltip" data-placement="top" title="Componentes poco acoplados en la era de la integración de aplicaciones">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/11/29/tethering/" data-toggle="tooltip" data-placement="top" title="Tethering">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

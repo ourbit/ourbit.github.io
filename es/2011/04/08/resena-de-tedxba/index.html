@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Reseña de #TEDxBA - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/04/08/resena-de-tedxba/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Antes de comenzar con mis observaciones y opiniones respecto de lo que fue TEDxBuenosAires 2011, quiero agradecer a sus organizadores, oradores, sponsors, y azar por darme la posibilidad de estar allí nuevamente, como hace 1 año. En aquella oportunidad salí muy impresionado, más que satisfecho, pero sobretodo estimulado. Estaba contento de ir, y al salir esa sensación se mantuvo por largo tiempo.<div>Este año fui con la expectativa de encontrar la misma calidad de evento y debo decir que desafortunadamente esto no ocurrió. Sería demasiado decir que salí despecionado, ya que a pesar de las críticas que tengo para hacer, poder asistir sigue siendo agradable y algo que me gustaría que se siga repitiendo.</div><div>En líneas generales:</div><div>- Conductor: Iván de Pineda es una persona "neutra" para mi. En ciertas ocasiones me gusta su estilo de conducción, y en otras, quizas la mayoría, me produce el deseo de cambiar de canal. Más allá de mi posible prejuicio (yo no lo hubiera seleccionado para conducir este evento), los resultados, me parece, saltan a la vista. No es una persona "del palo" de las ideas. Se notaba que no comprendía lo que TED representa, y su soltura sobre un escenario no fue suficiente para disimularlo. Sumado a esto, su antecesor Adrián Paenza, cuenta con una autoridad al momento de tratarse el mundo de las ídeas que hace muy dificil evitar esta tediosa comparación.</div><div>- Manejo de la infrastructura: Durante el primero de los cuatro segmentos, se produjeron algunas fallas al momento de mostrar videos, falta de audio, un micrófono que quedó abierto fuera del escenario, entre otros detalles que hacen al evento.</div><div>- Organización: El conductor no informaba bien los tiempos de los breaks, los horarios eran confusos, las puertas quedaban abiertas mucho antes del término de los breaks, haciendo que la gente pudiera "reservarse" los asientos.</div><div>- Oradores: Aquí debería detenerme uno por uno, pero sería muy largo de contar, y además, preferiría que cada uno pueda evaluarlos cuando vean los videos. En general, me pareció que todos tenían ideas y/o historias que valen la pena ser compartidas. Pero creo que la mitad de ellos falló al exponer. No se como juegan los nervios sobre un escenario, cuánto tiempo antes preparan el speach, el método (si son memorizados, o simplemente ordenan las idas y van viendo sobre la marcha como exponerlo), pero noté muchos baches, frases inconexas que no transmitían los conceptos. Destaco las presentaciones de: Mario Benedetti, Manuel Lima, Fernando Pitossi, Jorge Gronda, Rosario Quispe, Agustín Pichot, Marcelo Arce, y Jorge Melguizo. Al resto, creo que les faltaba mucho para el nivel de TED. Repito igualmente mi agradecimiento hacia todos ellos por intentarlo.</div><div><br /></div><div>De alguna manera es como si TEDxBA2010 hubiese sido organizado por gente completamente distinta a TEDxBA2011. De alguna manera, es una especie de "sospecha". La bajada de nivel fue importante, y me gustaría encontrarme en el TEDxBA2012 nuevamente con el entusiasmo que toda la gente, organizadores, oradores y público, llevaron la primera vez.</div><div><br /></div><div>En algunas semanas estarán publicados los videos en www.tedxbuenosaires.org . Invito a todos a verlos y comentarlos.</div><div><br /></div><div>Espero que nadie se sienta ofendido por estas críticas. Van desde un lugar de mucho respeto al trabajo de todos, y desde el mayor constructivismo posible.</div>
+  				Antes de comenzar con mis observaciones y opiniones respecto de lo que fue TEDxBuenosAires 2011, quiero agradecer a sus organizadores, oradores, sponsors, y azar por darme la posibilidad de estar allí nuevamente, como hace 1 año. En aquella oportunidad salí muy impresionado, más que satisfecho, pero sobretodo estimulado. Estaba contento de ir, y al salir esa sensación se mantuvo por largo tiempo.<div>Este año fui con la expectativa de encontrar la misma calidad de evento y debo decir que desafortunadamente esto no ocurrió. Sería demasiado decir que salí despecionado, ya que a pesar de las críticas que tengo para hacer, poder asistir sigue siendo agradable y algo que me gustaría que se siga repitiendo.</div><div>En líneas generales:</div><div>- Conductor: Iván de Pineda es una persona "neutra" para mi. En ciertas ocasiones me gusta su estilo de conducción, y en otras, quizas la mayoría, me produce el deseo de cambiar de canal. Más allá de mi posible prejuicio (yo no lo hubiera seleccionado para conducir este evento), los resultados, me parece, saltan a la vista. No es una persona "del palo" de las ideas. Se notaba que no comprendía lo que TED representa, y su soltura sobre un escenario no fue suficiente para disimularlo. Sumado a esto, su antecesor Adrián Paenza, cuenta con una autoridad al momento de tratarse el mundo de las ídeas que hace muy dificil evitar esta tediosa comparación.</div><div>- Manejo de la infrastructura: Durante el primero de los cuatro segmentos, se produjeron algunas fallas al momento de mostrar videos, falta de audio, un micrófono que quedó abierto fuera del escenario, entre otros detalles que hacen al evento.</div><div>- Organización: El conductor no informaba bien los tiempos de los breaks, los horarios eran confusos, las puertas quedaban abiertas mucho antes del término de los breaks, haciendo que la gente pudiera "reservarse" los asientos.</div><div>- Oradores: Aquí debería detenerme uno por uno, pero sería muy largo de contar, y además, preferiría que cada uno pueda evaluarlos cuando vean los videos. En general, me pareció que todos tenían ideas y/o historias que valen la pena ser compartidas. Pero creo que la mitad de ellos falló al exponer. No se como juegan los nervios sobre un escenario, cuánto tiempo antes preparan el speach, el método (si son memorizados, o simplemente ordenan las idas y van viendo sobre la marcha como exponerlo), pero noté muchos baches, frases inconexas que no transmitían los conceptos. Destaco las presentaciones de: Mario Benedetti, Manuel Lima, Fernando Pitossi, Jorge Gronda, Rosario Quispe, Agustín Pichot, Marcelo Arce, y Jorge Melguizo. Al resto, creo que les faltaba mucho para el nivel de TED. Repito igualmente mi agradecimiento hacia todos ellos por intentarlo.</div><div><br /></div><div>De alguna manera es como si TEDxBA2010 hubiese sido organizado por gente completamente distinta a TEDxBA2011. De alguna manera, es una especie de "sospecha". La bajada de nivel fue importante, y me gustaría encontrarme en el TEDxBA2012 nuevamente con el entusiasmo que toda la gente, organizadores, oradores y público, llevaron la primera vez.</div><div><br /></div><div>En algunas semanas estarán publicados los videos en www.tedxbuenosaires.org . Invito a todos a verlos y comentarlos.</div><div><br /></div><div>Espero que nadie se sienta ofendido por estas críticas. Van desde un lugar de mucho respeto al trabajo de todos, y desde el mayor constructivismo posible.</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" data-toggle="tooltip" data-placement="top" title="#TEDxBA cortito y al pie">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/04/15/el-universo-de-las-ideas/" data-toggle="tooltip" data-placement="top" title="El universo de las ideas">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" data-toggle="tooltip" data-placement="top" title="#TEDxBA cortito y al pie">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/04/15/el-universo-de-las-ideas/" data-toggle="tooltip" data-placement="top" title="El universo de las ideas">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

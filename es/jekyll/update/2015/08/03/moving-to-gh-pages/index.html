@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Mudanza a GitHubPages - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2015
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por <em>blogger de Google</em> no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de <em>blogging</em> debe tener.
+  				<p>Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por <em>blogger de Google</em> no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de <em>blogging</em> debe tener.
 <!--MORE-->  </p>
 
 <p>Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (<em>Wordpress, Joomla</em>, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.  </p>
@@ -209,19 +236,20 @@ de 2015
 <p>Si tienen dudas, espero su contacto.</p>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Días atrás, instalé en una netbook Ubuntu 11.04 Natty Narwhal. Todo anduvo bastante bien, ningún problema con el Hardware de la máquina. Cuando lo conecté a un monitor externo, noté que a diferencia de sus antecesores (10.04 y 10.10), este no me ofrecía más resoluciones que las del monitor predeterminado de la netbook (lo cual claramente no está bien, ya que la placa de video se banca más resolución).<div>Luego de investigar unos minutos, dí con <a href="https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions">https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions</a>, en donde explican perfectamente como solucionar este y otros problemas relacionados con las resoluciones.</div><div>Básicamente, hay que especificarlas manualmente. La buena noticia es que puede especificarse diferentes sets de resoluciones para las diferentes salidas de la PC. En este caso, la salida que yo necesitaba modificar era la VGA1.</div><div>Los comandos son básicamente 2:</div><div>- xrandr : trabaja sobre el archivo que contiene esas entradas.</div><div>- cvt: dada una resolución, nos da los datos que necesitamos para configurarla.</div><div>
+  				Días atrás, instalé en una netbook Ubuntu 11.04 Natty Narwhal. Todo anduvo bastante bien, ningún problema con el Hardware de la máquina. Cuando lo conecté a un monitor externo, noté que a diferencia de sus antecesores (10.04 y 10.10), este no me ofrecía más resoluciones que las del monitor predeterminado de la netbook (lo cual claramente no está bien, ya que la placa de video se banca más resolución).<div>Luego de investigar unos minutos, dí con <a href="https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions">https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions</a>, en donde explican perfectamente como solucionar este y otros problemas relacionados con las resoluciones.</div><div>Básicamente, hay que especificarlas manualmente. La buena noticia es que puede especificarse diferentes sets de resoluciones para las diferentes salidas de la PC. En este caso, la salida que yo necesitaba modificar era la VGA1.</div><div>Los comandos son básicamente 2:</div><div>- xrandr : trabaja sobre el archivo que contiene esas entradas.</div><div>- cvt: dada una resolución, nos da los datos que necesitamos para configurarla.</div><div>
 <br /></div><div>Los pasos serían: CVT para averiguar los datos, xrandr --newmode para crear el modo, xrandr --addmode para agregar el modo a la salida correspondiente.</div><div>
 <br /></div><div>Si ejecutamos estos pasos en la consola, serán válidos para UNA sesión solamente. Para hacerlos permanente hay que ejecutarlos cada vez que se inicia la sesión o, mejor aún para evitar pequeños destellos debido a ajustes de resolución, al iniciar el SO.</div><div>
 <br /></div><div>Esta última opción se logra agregando los comandos correspondientes al archivo /etc/gdm/Init/Default , justo antes de la línea: <span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">initctl -q emit login-session-start DISPLAY_MANAGER=gdm</span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">
@@ -178,23 +205,24 @@ de 2011
 <br /></div><div>Recordá que tenés que reiniciar para que los cambios tengan efecto.</div><div>
 <br /></div><div>Espero que les sirva.</div><meta equiv="content-type" content="text/html; charset=utf-8"><meta equiv="content-type" content="text/html; charset=utf-8">
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones/" data-toggle="tooltip" data-placement="top" title="Estadísticas y Gráficos en aplicaciones Web">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/06/01/soa-rest-sobre-cakephp-consumido-por/" data-toggle="tooltip" data-placement="top" title="#SOA #REST sobre #cakePHP, consumido por #jQuery">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones/" data-toggle="tooltip" data-placement="top" title="Estadísticas y Gráficos en aplicaciones Web">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/06/01/soa-rest-sobre-cakephp-consumido-por/" data-toggle="tooltip" data-placement="top" title="#SOA #REST sobre #cakePHP, consumido por #jQuery">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

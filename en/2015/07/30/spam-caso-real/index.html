@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>SPAM - Real case - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//en/2015/07/30/spam-caso-real/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -158,11 +184,12 @@
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>Those who understand about technology (and maybe a little more than “understand”), are used to warning, explaining, or <em>scolding</em> our friends and family about misusing the e-mail. There is a particular concept that is usually disregarded despite of being a simple one (mostly because of lack of knowledge or attention. It could happens to anyone).
+  				<p>Those who understand about technology (and maybe a little more than “understand”), are used to warning, explaining, or <em>scolding</em> our friends and family about misusing the e-mail. There is a particular concept that is usually disregarded despite of being a simple one (mostly because of lack of knowledge or attention. It could happens to anyone).
 <!--MORE--></p>
 
 <h2 id="for-rookies">For rookies</h2>
@@ -204,23 +231,24 @@ Sincerely.</p>
 <p>We live in an era where we can do more and more critical and sensitive tasks from our desks. We can transfer money, share our routine, publish our mood, show pictures, share our thoughts and opinions, among others. But every move we make can be watched by others. Thoughtful usage of information tools is the only real way of making sure that these others, are our intended audience and nobody else.</p>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2014/11/21/de-chrome-safari-ida-y-vuelta/" data-toggle="tooltip" data-placement="top" title="De Chrome a Safari ida y vuelta">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Caso Real">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2014/11/21/de-chrome-safari-ida-y-vuelta/" data-toggle="tooltip" data-placement="top" title="De Chrome a Safari ida y vuelta">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Caso Real">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

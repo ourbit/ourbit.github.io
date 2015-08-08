@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>El enfoque #Agile de Gestión de Proyectos - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/08/03/el-enfoque-agile-de-gestion-de/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<div>Tal como contaba en los 2 posts anteriores:</div><div>- <a href="http://ourbit.blogspot.com/2011/07/be-agile.html">Be Agile</a></div><div>- <a href="http://ourbit.blogspot.com/2011/07/be-scrum.html">Be Scrum</a></div><div><br /></div><div>Hace un tiempo se dictó un webinar gratuito, el cual fue grabado y publicado (hace unas horas).</div><div>Debajo les dejo la grabación, que también puede ser vista en el <a href="http://www.facebook.com/pages/Comunidad-Inform%C3%A1tica-y-Sistemas-de-UTN-FRBA/198270316887102?sk=wall">grupo de facebook</a> de los organizadores (de este y otros webinars y cursos).</div><div><br /></div><div>También aprovecho para volver a poner el link de la página donde publican cursos y webinars: <a href="http://www.sceu.frba.utn.edu.ar/e-learning/index.php">http://www.sceu.frba.utn.edu.ar/e-learning/index.php</a> así como también sugerirles la inscripción puntualmente al curso que estarán dando los organizadores de este webinar: <a href="http://www.sceu.frba.utn.edu.ar/e-learning/cursos-a-distancia/Inform%C3%A1tica-y-Sistemas/Metodolog%C3%ADas-%C3%A1giles-para-el-Desarrollo-de-Software/temario.html">http://www.sceu.frba.utn.edu.ar/e-learning/cursos-a-distancia/Inform%C3%A1tica-y-Sistemas/Metodolog%C3%ADas-%C3%A1giles-para-el-Desarrollo-de-Software/temario.html</a></div><div><br /></div><div>La modalidad "a distancia" puede no ser del agrado o costumbre de muchos, pero les aseguro que luego de haber visto la capacidad de los instructores, y la herramienta que utilizan, esto no es impedimento alguno para tener un curso de primera categoría. <b>UPDATE: Me escribieron del centro de e-learning UTN aclarando que "</b><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Los cursos que dictamos con modalidad a distancia no son por la herramienta de videoconferencia, sino a través de un Campus Virtual.&nbsp;</span><br /><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Le detallo la modalidad:</span><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Dentro del Campus Virtual se encuentra todo el material para desarrollar el curso. En caso de dudas, el alumno estará en continuo contacto con el tutor y con el resto de los participantes, para lo cual cuenta con mails personales, foros de consultas y participación, y chat. El curso se ajusta a la disponibilidad horaria de cada uno, pero nosotros recomendamos por lo menos una hora diaria de dedicación al curso. Por lo general, la forma de evaluación es por medio de trabajos prácticos que el tutor solicita al finalizar cada unidad, y al final de la cursada un trabajo final, también se toma en cuenta la participación en los distintos foros, con todo esto resulta una nota final.</span><b>"</b></div><div><br /></div><div style="text-align: center;"><iframe frameborder="0" height="234" src="http://player.vimeo.com/video/27208274?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="398"></iframe></div>
+  				<div>Tal como contaba en los 2 posts anteriores:</div><div>- <a href="http://ourbit.blogspot.com/2011/07/be-agile.html">Be Agile</a></div><div>- <a href="http://ourbit.blogspot.com/2011/07/be-scrum.html">Be Scrum</a></div><div><br /></div><div>Hace un tiempo se dictó un webinar gratuito, el cual fue grabado y publicado (hace unas horas).</div><div>Debajo les dejo la grabación, que también puede ser vista en el <a href="http://www.facebook.com/pages/Comunidad-Inform%C3%A1tica-y-Sistemas-de-UTN-FRBA/198270316887102?sk=wall">grupo de facebook</a> de los organizadores (de este y otros webinars y cursos).</div><div><br /></div><div>También aprovecho para volver a poner el link de la página donde publican cursos y webinars: <a href="http://www.sceu.frba.utn.edu.ar/e-learning/index.php">http://www.sceu.frba.utn.edu.ar/e-learning/index.php</a> así como también sugerirles la inscripción puntualmente al curso que estarán dando los organizadores de este webinar: <a href="http://www.sceu.frba.utn.edu.ar/e-learning/cursos-a-distancia/Inform%C3%A1tica-y-Sistemas/Metodolog%C3%ADas-%C3%A1giles-para-el-Desarrollo-de-Software/temario.html">http://www.sceu.frba.utn.edu.ar/e-learning/cursos-a-distancia/Inform%C3%A1tica-y-Sistemas/Metodolog%C3%ADas-%C3%A1giles-para-el-Desarrollo-de-Software/temario.html</a></div><div><br /></div><div>La modalidad "a distancia" puede no ser del agrado o costumbre de muchos, pero les aseguro que luego de haber visto la capacidad de los instructores, y la herramienta que utilizan, esto no es impedimento alguno para tener un curso de primera categoría. <b>UPDATE: Me escribieron del centro de e-learning UTN aclarando que "</b><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Los cursos que dictamos con modalidad a distancia no son por la herramienta de videoconferencia, sino a través de un Campus Virtual.&nbsp;</span><br /><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Le detallo la modalidad:</span><span class="Apple-style-span" style="background-color: white; color: #333333; font-family: arial, sans-serif; font-size: 13px;">Dentro del Campus Virtual se encuentra todo el material para desarrollar el curso. En caso de dudas, el alumno estará en continuo contacto con el tutor y con el resto de los participantes, para lo cual cuenta con mails personales, foros de consultas y participación, y chat. El curso se ajusta a la disponibilidad horaria de cada uno, pero nosotros recomendamos por lo menos una hora diaria de dedicación al curso. Por lo general, la forma de evaluación es por medio de trabajos prácticos que el tutor solicita al finalizar cada unidad, y al final de la cursada un trabajo final, también se toma en cuenta la participación en los distintos foros, con todo esto resulta una nota final.</span><b>"</b></div><div><br /></div><div style="text-align: center;"><iframe frameborder="0" height="234" src="http://player.vimeo.com/video/27208274?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="398"></iframe></div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/07/30/be-scrum/" data-toggle="tooltip" data-placement="top" title="Be #Scrum">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/10/03/architectural-thinking/" data-toggle="tooltip" data-placement="top" title="Architectural Thinking">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/07/30/be-scrum/" data-toggle="tooltip" data-placement="top" title="Be #Scrum">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/10/03/architectural-thinking/" data-toggle="tooltip" data-placement="top" title="Architectural Thinking">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

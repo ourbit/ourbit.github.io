@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Guardar página completa y CSS - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2010/04/26/guardar-pagina-completa-y-css/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,30 +191,32 @@ de 2010
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Con el avance de las técnicas de diseño de sitios web (escritura de HTML), desde hace ya mucho tiempo, se considera una buena práctica separar lo más posible, el contenido a desplegar, de la manera en que es desplegado. Por este motivo, quienes diseñan y programan (si es que un sitio web se programa), realizan CSS(s) cada vez más completos, en donde incluyen imagenes como fondos, o incluso como objetos de las páginas (lo que comúnmente se hacía simplemente con el tag img). Estas buenas prácticas tienen como efecto colateral, que al momento de querer utilizar la funcionalidad de los browsers "GUARDAR PÁGINA COMPLETA", muchas imágenes no se vean en la página descargada. Esto se debe a que los browsers, descargan las imagenes encontradas en tags HTML y no referenciadas desde CSS.<div>Para solucionar este problema, existe al menos 1 plug-in de firefox, que encontré simplemente buscando "Save page as fails when images in css" en google. Aquí dejo el link en caso de que este sea el problema</div><div><br /></div><div><a href="https://addons.mozilla.org/en-US/firefox/addon/4723">https://addons.mozilla.org/en-US/firefox/addon/4723</a></div><div><br /></div><div>Me gustaría encontrar una extensión para Google Chrome que haga lo mismo.</div>
+  				Con el avance de las técnicas de diseño de sitios web (escritura de HTML), desde hace ya mucho tiempo, se considera una buena práctica separar lo más posible, el contenido a desplegar, de la manera en que es desplegado. Por este motivo, quienes diseñan y programan (si es que un sitio web se programa), realizan CSS(s) cada vez más completos, en donde incluyen imagenes como fondos, o incluso como objetos de las páginas (lo que comúnmente se hacía simplemente con el tag img). Estas buenas prácticas tienen como efecto colateral, que al momento de querer utilizar la funcionalidad de los browsers "GUARDAR PÁGINA COMPLETA", muchas imágenes no se vean en la página descargada. Esto se debe a que los browsers, descargan las imagenes encontradas en tags HTML y no referenciadas desde CSS.<div>Para solucionar este problema, existe al menos 1 plug-in de firefox, que encontré simplemente buscando "Save page as fails when images in css" en google. Aquí dejo el link en caso de que este sea el problema</div><div><br /></div><div><a href="https://addons.mozilla.org/en-US/firefox/addon/4723">https://addons.mozilla.org/en-US/firefox/addon/4723</a></div><div><br /></div><div>Me gustaría encontrar una extensión para Google Chrome que haga lo mismo.</div>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/04/25/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2010/04/27/problema-mal-documentado-con-gparted/" data-toggle="tooltip" data-placement="top" title="Problema mal documentado con gParted">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/04/25/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2010/04/27/problema-mal-documentado-con-gparted/" data-toggle="tooltip" data-placement="top" title="Problema mal documentado con gParted">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

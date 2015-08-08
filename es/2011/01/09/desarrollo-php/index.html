@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Desarrollo PHP - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/01/09/desarrollo-php/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<meta equiv="content-type" content="text/html; charset=utf-8"><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; background-color: transparent; font-family: 'Times New Roman'; font-size: medium; "><span id="internal-source-marker_0.7430963064543903" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Al momento de evaluar tecnologías para el desarrollo de aplicaciones, solemos pasar por alto (incluso menospreciar) a aquella que sin duda ha representado la fuerza motriz para el rápido crecimiento de la Web, que pasó de ser páginas webs estáticas, con contenido e hiper texto, a aplicaciones con manejo de lógica de negocios, bases de datos e interacción con el usuario (Por supuesto no me olvido de otras tecnologías como CGIs, e incluso el problemático ASP, que si bien contribuyeron, creo yo que no tuvieron la relevancia que tuvo PHP).</span>
+  				<meta equiv="content-type" content="text/html; charset=utf-8"><div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; background-color: transparent; font-family: 'Times New Roman'; font-size: medium; "><span id="internal-source-marker_0.7430963064543903" style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Al momento de evaluar tecnologías para el desarrollo de aplicaciones, solemos pasar por alto (incluso menospreciar) a aquella que sin duda ha representado la fuerza motriz para el rápido crecimiento de la Web, que pasó de ser páginas webs estáticas, con contenido e hiper texto, a aplicaciones con manejo de lógica de negocios, bases de datos e interacción con el usuario (Por supuesto no me olvido de otras tecnologías como CGIs, e incluso el problemático ASP, que si bien contribuyeron, creo yo que no tuvieron la relevancia que tuvo PHP).</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; "></span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Los principales argumentos en contra de la utilización de PHP, apuntan generalmente a los problemas típicos de mantenibilidad de código (suele aparecer </span><a href="http://en.wikipedia.org/wiki/Spaghetti_code"><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 153); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: underline; vertical-align: baseline; white-space: pre-wrap; ">código spaghetti</span></a><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">, legado de un paradigma estructurado debido a que su soporte de OOP suele ser más bien pobre). Estos problemas solían aparecer más bien en versiones anteriores a PHP 5, aunque quedó instaurado el pre-concepto.</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; "></span>
@@ -195,23 +222,24 @@ de 2011
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; "></span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Espero que esto sea útil, y ver más gente desarrollando nuevas aplicaciones en PHP.</span></div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/11/04/estetica-mac-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Estética MAC en Ubuntu">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/02/24/bases-de-datos-nosql/" data-toggle="tooltip" data-placement="top" title="Bases de datos NoSQL">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/11/04/estetica-mac-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Estética MAC en Ubuntu">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/02/24/bases-de-datos-nosql/" data-toggle="tooltip" data-placement="top" title="Bases de datos NoSQL">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

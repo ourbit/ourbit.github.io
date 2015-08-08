@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Problema mal documentado con gParted - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2010/04/27/problema-mal-documentado-con-gparted/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,30 +191,32 @@ de 2010
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Intentando instalar ubuntu 9.10 nuevamente, en una 3er partición de la máquina (que ya tenía un Windows XP y otro Ubuntu), e ir pasando paulatínamente los datos y programas de una partición Ubuntu a la otra, me encontré con problemas al intentar utilizar el gParted para ir alterando los tamaños de dichas particiones. El problema subsistió incluso luego de que ya no aparecían mensajes de error, estaba corriendo desde un liveCD con todas las particiones del disco en cuestión desmontadas. Al intentar cambiar el tamaño de la partición <i>resize, </i>la opción aparecía deshabilitada.<div>Finalmente, y luego de haber <i>googleado</i> bastante para encontrar una solución, decidí que resultaría más eficiente en tiempos, eliminar la partición antigua y quedarme con la nueva (a pesar de no poder utilizar los programas hasta que no terminara de instalarlos en la nueva partición). Y fue aquí cuando ocurrió la solución. gParted no me permitió eliminar la partición, ya que existía <i>otra</i> con numeración superior (aparentemente sda6 <i>swap</i>. Pero buscando entre las opciones, encontre <i><a href="http://gparted.sourceforge.net/faq.php">swapoff</a></i>, y luego, no solo me permitía eliminar la partición 6, sino que finalmente pude hacer <i>resize, move, etc.</i></div><div><i><br /></i></div><div>Claro que una vez encontrado swapoff, esta solución aparecía en todos lados, pero no buscándola de la manera tradicional (es decir, <i>googleando</i> los mensajes de error, pasando al <i>parted</i> de línea de comando, etc).</div>
+  				Intentando instalar ubuntu 9.10 nuevamente, en una 3er partición de la máquina (que ya tenía un Windows XP y otro Ubuntu), e ir pasando paulatínamente los datos y programas de una partición Ubuntu a la otra, me encontré con problemas al intentar utilizar el gParted para ir alterando los tamaños de dichas particiones. El problema subsistió incluso luego de que ya no aparecían mensajes de error, estaba corriendo desde un liveCD con todas las particiones del disco en cuestión desmontadas. Al intentar cambiar el tamaño de la partición <i>resize, </i>la opción aparecía deshabilitada.<div>Finalmente, y luego de haber <i>googleado</i> bastante para encontrar una solución, decidí que resultaría más eficiente en tiempos, eliminar la partición antigua y quedarme con la nueva (a pesar de no poder utilizar los programas hasta que no terminara de instalarlos en la nueva partición). Y fue aquí cuando ocurrió la solución. gParted no me permitió eliminar la partición, ya que existía <i>otra</i> con numeración superior (aparentemente sda6 <i>swap</i>. Pero buscando entre las opciones, encontre <i><a href="http://gparted.sourceforge.net/faq.php">swapoff</a></i>, y luego, no solo me permitía eliminar la partición 6, sino que finalmente pude hacer <i>resize, move, etc.</i></div><div><i><br /></i></div><div>Claro que una vez encontrado swapoff, esta solución aparecía en todos lados, pero no buscándola de la manera tradicional (es decir, <i>googleando</i> los mensajes de error, pasando al <i>parted</i> de línea de comando, etc).</div>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/04/26/guardar-pagina-completa-y-css/" data-toggle="tooltip" data-placement="top" title="Guardar página completa y CSS">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2010/05/06/problemas-con-squirrel-y-java/" data-toggle="tooltip" data-placement="top" title="Problemas con SQuirreL y JAVA">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/04/26/guardar-pagina-completa-y-css/" data-toggle="tooltip" data-placement="top" title="Guardar página completa y CSS">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2010/05/06/problemas-con-squirrel-y-java/" data-toggle="tooltip" data-placement="top" title="Problemas con SQuirreL y JAVA">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

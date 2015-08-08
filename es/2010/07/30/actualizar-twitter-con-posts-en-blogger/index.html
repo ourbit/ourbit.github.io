@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Actualizar twitter con posts en blogger - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2010/07/30/actualizar-twitter-con-posts-en-blogger/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2010
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Son infinitas las cosas que se pueden hacer hoy en día mediante RSS o herramientas de feeding. En particular, hoy me interesó poder hacerles llegar a todos, las novedades de este y algún otro blog mediante mi cuenta de Twitter. Para esto, podría haber desarrollado algún programejo que corriera un un cron en algún servidor, chequeando cambios en los feeds de los sites, y luego, mediante la API de twitter, publicar las novedades en mi cuenta.<div>Pero he aquí, que <a href="http://twitterfeed.com/">twitterfeed</a>, lo hace automáticamente (claro, una vez que lo configuramos).</div><div>Les recomiendo ingresar e intentarlo. Si tienen alguna duda, consulten aquí.</div>
+  				Son infinitas las cosas que se pueden hacer hoy en día mediante RSS o herramientas de feeding. En particular, hoy me interesó poder hacerles llegar a todos, las novedades de este y algún otro blog mediante mi cuenta de Twitter. Para esto, podría haber desarrollado algún programejo que corriera un un cron en algún servidor, chequeando cambios en los feeds de los sites, y luego, mediante la API de twitter, publicar las novedades en mi cuenta.<div>Pero he aquí, que <a href="http://twitterfeed.com/">twitterfeed</a>, lo hace automáticamente (claro, una vez que lo configuramos).</div><div>Les recomiendo ingresar e intentarlo. Si tienen alguna duda, consulten aquí.</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/07/29/eclipse-no-arranca-widget-disposed-too/" data-toggle="tooltip" data-placement="top" title="Eclipse no arranca "Widget disposed too early"">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2010/09/10/copiando-una-base-de-datos-db2/" data-toggle="tooltip" data-placement="top" title=""Copiando" una base de datos DB2">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/07/29/eclipse-no-arranca-widget-disposed-too/" data-toggle="tooltip" data-placement="top" title="Eclipse no arranca "Widget disposed too early"">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2010/09/10/copiando-una-base-de-datos-db2/" data-toggle="tooltip" data-placement="top" title=""Copiando" una base de datos DB2">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

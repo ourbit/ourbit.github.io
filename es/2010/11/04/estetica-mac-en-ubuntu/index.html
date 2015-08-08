@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Estética MAC en Ubuntu - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2010/11/04/estetica-mac-en-ubuntu/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2010
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<span style="font-style:italic;">Antes que nada: ¿Por qué escribir acerca de un tema hiper saturado en la red? Porque en todos los lugares donde busqué como realizar los pasos, los links apuntaban a repositorios que ya no se encuentran disponibles.
+  				<span style="font-style:italic;">Antes que nada: ¿Por qué escribir acerca de un tema hiper saturado en la red? Porque en todos los lugares donde busqué como realizar los pasos, los links apuntaban a repositorios que ya no se encuentran disponibles.
 <br />
 <br /></span><div>Existen varias maneras de <i>lookear </i>Ubuntu como MAC. En este caso, yo lo hice mediante el tema <i>MacUbuntu</i> y lo apliqué sobre la versión 10.04 del mismo.</div><div>
 <br /></div><div>Instrucciones:</div><div>1. Descargar <i>MacUbuntu</i>. Al momento de escribir estas líneas, lo hice desde: <a href="https://downloads.sourceforge.net/project/macbuntu/macbuntu-10.04/v2.2/Macbuntu-10.04.tar.gz%20-O%20/tmp/Macbuntu-10.04.tar.gz">https://downloads.sourceforge.net/project/macbuntu/macbuntu-10.04/v2.2/Macbuntu-10.04.tar.gz -O /tmp/Macbuntu-10.04.tar.gz</a></div><div>2. Descomprimir el archivo descargado (en el ejemplo, utilicé la carpeta tmp): tar xzvf /tmp/Macbuntu-10.04.tar.gz -C /tmp</div><div>3. Instalar: </div><div>  a. cd /tmp/Macbuntu-10.04/
@@ -180,23 +207,24 @@ de 2010
 <br /></div><div>Nota: En caso de estar trabajando con Ubuntu 10.10, el link para la descarga de <i>MacUbuntu</i> es: <a href="https://downloads.sourceforge.net/project/macbuntu/macbuntu-10.10/v2.3/Macbuntu-10.10.tar.gz%20-O%20/tmp/Macbuntu-10.10.tar.gz">https://downloads.sourceforge.net/project/macbuntu/macbuntu-10.10/v2.3/Macbuntu-10.10.tar.gz -O /tmp/Macbuntu-10.10.tar.gz</a></div><div>
 <br /></div><div>Espero que les sirva!</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/09/10/copiando-una-base-de-datos-db2/" data-toggle="tooltip" data-placement="top" title=""Copiando" una base de datos DB2">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/01/09/desarrollo-php/" data-toggle="tooltip" data-placement="top" title="Desarrollo PHP">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/09/10/copiando-una-base-de-datos-db2/" data-toggle="tooltip" data-placement="top" title=""Copiando" una base de datos DB2">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/01/09/desarrollo-php/" data-toggle="tooltip" data-placement="top" title="Desarrollo PHP">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

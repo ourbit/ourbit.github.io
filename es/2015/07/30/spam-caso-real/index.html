@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>SPAM - Caso Real - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2015/07/30/spam-caso-real/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2015
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>Quienes entendemos (y un poco más) de tecnología, solemos advertir, explicar, <em>retar</em> a nuestros conocidos y familiares cuando vemos que están usando mal el <em>mail</em>. En particular, un concepto simple pero que siempre se suele dejar de lado (por desconocimiento u olvido, a todos nos puede pasar).
+  				<p>Quienes entendemos (y un poco más) de tecnología, solemos advertir, explicar, <em>retar</em> a nuestros conocidos y familiares cuando vemos que están usando mal el <em>mail</em>. En particular, un concepto simple pero que siempre se suele dejar de lado (por desconocimiento u olvido, a todos nos puede pasar).
 <!--MORE--></p>
 
 <h2 id="para-principiantes">Para principiantes</h2>
@@ -210,23 +237,24 @@ Atte.</p>
 <p>Es una época en donde lo que podemos hacer sentados en nuestros escritorios es cada vez más crítico. Podemos transferir dinero, contar nuestro itinerario, publicar nuestro estado de ánimo, mostrar fotos, publicar nuestros pensamientos y opiniones libremente, entre otras. Pero cada acción que hacemos, puede ser observada por otros. El uso consciente de las herramientas informáticas es la única forma real de asegurarnos que esos otros, sean el público al que apuntamos y nadie más.</p>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/en/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Real case">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/en/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Real case">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

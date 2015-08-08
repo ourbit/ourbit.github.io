@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Moving to GitHub Pages - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//en/jekyll/update/2015/08/03/moving-to-gh-pages/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -158,11 +184,12 @@
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<p>With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by <em>blogger by Google</em> were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a <em>blogging</em> platform out of the box<!--MORE-->.  </p>
+  				<p>With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by <em>blogger by Google</em> were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a <em>blogging</em> platform out of the box<!--MORE-->.  </p>
 
 <p>After researching other tools that could help me with this task (<em>Wordpress, Joomla</em>, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.  </p>
 
@@ -201,23 +228,24 @@
 <p>Please, don’t hesitate to reach me if you have any doubt.  </p>
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Caso Real">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Mudanza a GitHubPages">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Caso Real">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Mudanza a GitHubPages">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

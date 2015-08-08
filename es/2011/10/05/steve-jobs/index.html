@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Steve Jobs - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/10/05/steve-jobs/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Falleció hoy quien posiblemente sea "Ejemplo e Icono" de cómo hacer buenos negocios, pelear todas, y pensar creatívamente.<br />Más allá de todos sus logros, y lo que esta persona representaba en el mundo de la tecnología, un mensaje que siempre me gustó, y perfectamente expuesto en un discurso.<br /><br /><div style="text-align: center;"><object style="height: 390px; width: 640px;"><param name="movie" value="http://www.youtube.com/v/4hv5QtUzKBQ?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/4hv5QtUzKBQ?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object></div><div style="text-align: left;">RIP Steve Jobs</div>
+  				Falleció hoy quien posiblemente sea "Ejemplo e Icono" de cómo hacer buenos negocios, pelear todas, y pensar creatívamente.<br />Más allá de todos sus logros, y lo que esta persona representaba en el mundo de la tecnología, un mensaje que siempre me gustó, y perfectamente expuesto en un discurso.<br /><br /><div style="text-align: center;"><object style="height: 390px; width: 640px;"><param name="movie" value="http://www.youtube.com/v/4hv5QtUzKBQ?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/4hv5QtUzKBQ?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object></div><div style="text-align: left;">RIP Steve Jobs</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/10/05/vida-real-como-experiencia-didactica/" data-toggle="tooltip" data-placement="top" title="Vida real como experiencia didáctica (aplicada a un patrón de diseño)">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/11/25/componentes-poco-acoplados-en-la-era-de/" data-toggle="tooltip" data-placement="top" title="Componentes poco acoplados en la era de la integración de aplicaciones">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/10/05/vida-real-como-experiencia-didactica/" data-toggle="tooltip" data-placement="top" title="Vida real como experiencia didáctica (aplicada a un patrón de diseño)">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/11/25/componentes-poco-acoplados-en-la-era-de/" data-toggle="tooltip" data-placement="top" title="Componentes poco acoplados en la era de la integración de aplicaciones">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

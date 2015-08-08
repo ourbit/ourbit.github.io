@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Eclipse no arranca "Widget disposed too early" - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2010/07/29/eclipse-no-arranca-widget-disposed-too/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2010
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Me topé hoy con un problema con el que ya me había topado, solo que las veces anteriores me rendí antes de tiempo, y hoy encontré una solución, MÁS QUE SENCILLA.<div>Al intentar iniciar una IDE built on eclipse, luego de especificar el workspace, arrojaba un error que decía que debía chequear el LOG de la carpeta .metadata, y eso hice (si no las encontrás, es porque están oculta, así que "View Hidden Files" obligatorio).</div><div>No me gusta citar LOGS enteros pero aquí la línea que me hizo algo de ruido, y que finalmente me llevó al resultado: "<span class="Apple-style-span"  style="  white-space: pre; font-family:monospace;"><span class="Apple-style-span" style="font-size: medium;">Widget disposed too early!</span></span>" (si, con la típica font de un log).</div><div>Buscando una solución, leí varios foros y según las explicaciones, el problema está relacionado con el browser integrado que utiliza el eclipse.</div><div>Entre las miles de soluciones propuestas, una muy simple que funcionó:</div><div>- Abrir el eclipse.ini (se encuentra en el mismo directorio que el launcher de eclipse, aunque puede llamarse diferente si la IDE se llama de otra forma, Ej.: Rational Software Architect, Data Studio Developer, MyEclipse).</div><div>- Incluir la siguiente línea al final del archivo:       "<span class="Apple-style-span" style="font-size: small;">-</span><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;">Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib/xulrunner".</span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><div>Antes de reiniciar, es conveniente borrar la carpeta que se utilizaba como workspace cuando arrojó el error (para evitar cualquier que cualquier estado inconsistente previo, complique la situación).</div><div>- Reiniciar la IDE.</div><div><br /></div><div>Contame si te funcionó. Espero que si.</div></span></span></span></div>
+  				Me topé hoy con un problema con el que ya me había topado, solo que las veces anteriores me rendí antes de tiempo, y hoy encontré una solución, MÁS QUE SENCILLA.<div>Al intentar iniciar una IDE built on eclipse, luego de especificar el workspace, arrojaba un error que decía que debía chequear el LOG de la carpeta .metadata, y eso hice (si no las encontrás, es porque están oculta, así que "View Hidden Files" obligatorio).</div><div>No me gusta citar LOGS enteros pero aquí la línea que me hizo algo de ruido, y que finalmente me llevó al resultado: "<span class="Apple-style-span"  style="  white-space: pre; font-family:monospace;"><span class="Apple-style-span" style="font-size: medium;">Widget disposed too early!</span></span>" (si, con la típica font de un log).</div><div>Buscando una solución, leí varios foros y según las explicaciones, el problema está relacionado con el browser integrado que utiliza el eclipse.</div><div>Entre las miles de soluciones propuestas, una muy simple que funcionó:</div><div>- Abrir el eclipse.ini (se encuentra en el mismo directorio que el launcher de eclipse, aunque puede llamarse diferente si la IDE se llama de otra forma, Ej.: Rational Software Architect, Data Studio Developer, MyEclipse).</div><div>- Incluir la siguiente línea al final del archivo:       "<span class="Apple-style-span" style="font-size: small;">-</span><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;">Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib/xulrunner".</span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><div>Antes de reiniciar, es conveniente borrar la carpeta que se utilizaba como workspace cuando arrojó el error (para evitar cualquier que cualquier estado inconsistente previo, complique la situación).</div><div>- Reiniciar la IDE.</div><div><br /></div><div>Contame si te funcionó. Espero que si.</div></span></span></span></div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2010/07/19/scroll-en-lenovo-thinkpad-t61/" data-toggle="tooltip" data-placement="top" title="Scroll en Lenovo Thinkpad T61">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger/" data-toggle="tooltip" data-placement="top" title="Actualizar twitter con posts en blogger">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/07/19/scroll-en-lenovo-thinkpad-t61/" data-toggle="tooltip" data-placement="top" title="Scroll en Lenovo Thinkpad T61">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger/" data-toggle="tooltip" data-placement="top" title="Actualizar twitter con posts en blogger">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

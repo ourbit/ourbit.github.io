@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>De Chrome a Safari ida y vuelta - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,30 +191,32 @@ de 2014
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				¿Casi 3 años sin poner nada acá y aparecer de repente con poca información? No quiero faltarles el respeto, pero por algún lado hay que empezar (si queremos empezar).<br /><br />Hace un tiempo largo ya me convertí en usuario de Apple, sobretodo por las MacBook. Lo charlé con fundamentalistas, fanáticos, hinchas, simpatizantes, seres racionales, opositores, y <i>odiadores</i> de todo lo que Mac representa y todos entendieron los motivos por los cuales no me muevo de Mac.<!--MORE--><br /><br />Recientemente, instalé Yosemite en una nueva Retina Display de 15''. Todo perfecto, la integración con iPhone mejoró considerablemente, y no tuve demasiados problemas con las herramientas de desarrollo u otras.<br /><br />Pero un par de días más tarde, todo empezó a funcionar raro (como en los tiempos de Windows). La Mac se colgaba, todo andaba "trabado". Empecé a ver los motivos y al abrir el "Monitor" tenía aproximadamente 25 procesos "Google Chrome Helper" consumiendo memoria, procesador, y en estado "Not responding". No esperé demasiado (y ya tenía curiosidad por ver cómo andaba Safari) así que cerré todo y cambié.<br /><br />La realidad es que Safari en Mac es superior en múltiples aspectos:<br />- La velocidad mejora <b>notablemente</b>.<br />- El consumo de recursos disminuye <b>notablemente.</b><br />- User Experience: Mejora salvo por unos detalles, que lograron hacer que vuelva a intentar Chrome:<br /><br />1. "Abrir las últimas ventanas o pestañas cerradas" simplemente no funciona (o no es consistente). Algunas veces, abre como corresponde. Pero otras, por ejemplo si Safari no pudo filtrar un pop-up, esta funcionalidad va a abrir ese pop-up cada vez que lo intentemos. El shortcut de una ventana cerrada es CMD+Z, lo cual dificulta UNDO en un FORM (depende del campo, se ejecuta una u otra función).<br />2. Los "Tabs" no tienen favicon. Las pestañas llegan a achicarse hasta un punto en donde comienzan a desaparecer, y navegarlas se vuelve completamente anti-intuitivo.<br />3. Las "Developer Tools". Una vez que están habilitadas (porque no vienen por <i>default</i>), no nos aportan demasiado. En especial los <i>Timelines. </i>Si fuera por los <i>timelines</i>, las páginas nunca fueron solicitadas.<br /><br />El hecho de que la comunidad de desarrolladores de "extensions" también sea más numerosa para Chrome, influye.<br /><br />Volví a Chrome. Voy a tener que pelear con los problemas de consumo de recursos (sobretodo de los programas que usen el Chrome Helper) hasta que se solucione.<br /><br />De paso: Instalé también la versión más beta <a href="https://www.google.com/intl/en/chrome/browser/canary.html" target="_blank">Chrome Canary</a>&nbsp;para ir probando nuevas funcionalidades. No se cuánto lo vaya a usar, ya que no puedo ponerlo como <i>default browser</i>, pero veremos como evoluciona.<br /><br />Nota: Espero retomar la costumbre de escribir cada tanto por aquí. Consideremos este post como una prueba piloto.
+  				¿Casi 3 años sin poner nada acá y aparecer de repente con poca información? No quiero faltarles el respeto, pero por algún lado hay que empezar (si queremos empezar).<br /><br />Hace un tiempo largo ya me convertí en usuario de Apple, sobretodo por las MacBook. Lo charlé con fundamentalistas, fanáticos, hinchas, simpatizantes, seres racionales, opositores, y <i>odiadores</i> de todo lo que Mac representa y todos entendieron los motivos por los cuales no me muevo de Mac.<!--MORE--><br /><br />Recientemente, instalé Yosemite en una nueva Retina Display de 15''. Todo perfecto, la integración con iPhone mejoró considerablemente, y no tuve demasiados problemas con las herramientas de desarrollo u otras.<br /><br />Pero un par de días más tarde, todo empezó a funcionar raro (como en los tiempos de Windows). La Mac se colgaba, todo andaba "trabado". Empecé a ver los motivos y al abrir el "Monitor" tenía aproximadamente 25 procesos "Google Chrome Helper" consumiendo memoria, procesador, y en estado "Not responding". No esperé demasiado (y ya tenía curiosidad por ver cómo andaba Safari) así que cerré todo y cambié.<br /><br />La realidad es que Safari en Mac es superior en múltiples aspectos:<br />- La velocidad mejora <b>notablemente</b>.<br />- El consumo de recursos disminuye <b>notablemente.</b><br />- User Experience: Mejora salvo por unos detalles, que lograron hacer que vuelva a intentar Chrome:<br /><br />1. "Abrir las últimas ventanas o pestañas cerradas" simplemente no funciona (o no es consistente). Algunas veces, abre como corresponde. Pero otras, por ejemplo si Safari no pudo filtrar un pop-up, esta funcionalidad va a abrir ese pop-up cada vez que lo intentemos. El shortcut de una ventana cerrada es CMD+Z, lo cual dificulta UNDO en un FORM (depende del campo, se ejecuta una u otra función).<br />2. Los "Tabs" no tienen favicon. Las pestañas llegan a achicarse hasta un punto en donde comienzan a desaparecer, y navegarlas se vuelve completamente anti-intuitivo.<br />3. Las "Developer Tools". Una vez que están habilitadas (porque no vienen por <i>default</i>), no nos aportan demasiado. En especial los <i>Timelines. </i>Si fuera por los <i>timelines</i>, las páginas nunca fueron solicitadas.<br /><br />El hecho de que la comunidad de desarrolladores de "extensions" también sea más numerosa para Chrome, influye.<br /><br />Volví a Chrome. Voy a tener que pelear con los problemas de consumo de recursos (sobretodo de los programas que usen el Chrome Helper) hasta que se solucione.<br /><br />De paso: Instalé también la versión más beta <a href="https://www.google.com/intl/en/chrome/browser/canary.html" target="_blank">Chrome Canary</a>&nbsp;para ir probando nuevas funcionalidades. No se cuánto lo vaya a usar, ya que no puedo ponerlo como <i>default browser</i>, pero veremos como evoluciona.<br /><br />Nota: Espero retomar la costumbre de escribir cada tanto por aquí. Consideremos este post como una prueba piloto.
 
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2012/01/27/legislando-lo-que-prospero/" data-toggle="tooltip" data-placement="top" title="Legislando lo que prosperó anárquicamente">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/en/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Real case">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2012/01/27/legislando-lo-que-prospero/" data-toggle="tooltip" data-placement="top" title="Legislando lo que prosperó anárquicamente">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/en/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Real case">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

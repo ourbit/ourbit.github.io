@@ -5,8 +5,7 @@
  */
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #404040;
 }
@@ -196,7 +195,7 @@ hr.small {
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
@@ -417,4 +416,40 @@ p.read-more > a {
 blockquote p:last-child,
 blockquote ul:last-child {
   margin-top: 0px;
+}
+div.content-wrapper {
+  position: relative;
+  background-color: #FFFFFF;
+  padding-top: 50px;
+}
+.intro-header {
+  margin-bottom: 0px;
+}
+.img-src {
+  background-position-y: -240px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #333333;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 456px;
+  line-height: 20px;
+  position: fixed;
+  width: 1680px;
+}
+.blur {
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  color: #333333;
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 456px;
+  line-height: 20px;
+  opacity: 0;
+  position: fixed;
+  width: 1680px;
 }

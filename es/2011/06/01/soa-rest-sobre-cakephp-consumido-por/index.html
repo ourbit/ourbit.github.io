@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>#SOA #REST sobre #cakePHP, consumido por #jQuery - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/06/01/soa-rest-sobre-cakephp-consumido-por/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,11 +191,12 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				<meta equiv="content-type" content="text/html; charset=utf-8"><div style="background-color: transparent; margin-top: 0px; margin-left: 0px; margin-bottom: 0px; margin-right: 0px; "><span class="Apple-style-span"><meta equiv="content-type" content="text/html; charset=utf-8"><div style="background-color: transparent; margin-top: 0px; margin-left: 0px; margin-bottom: 0px; margin-right: 0px; "><h2><span class="Apple-style-span" ><span class="Apple-style-span" style="white-space: pre-wrap;"><meta equiv="content-type" content="text/html; charset=utf-8"><span class="Apple-style-span" style="font-size: 15px; font-weight: normal; ">Post cargadito. Recomendación del autor: Cafecito y media horita para leer en detalle. </span></span></span></h2><h2 style="font-family: 'Times New Roman'; font-size: medium; white-space: normal; "><span style="font-size: 18pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: bold; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Introducción</span></h2><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; font-size: 11pt; background-color: transparent;"></span><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Lo más dificil de este POST fue escribir un título que refleje el contenido. Creo que no lo logré, y por eso estas primeras líneas intentaran explicar el por qué de la mezcla de temas.</span>
+  				<meta equiv="content-type" content="text/html; charset=utf-8"><div style="background-color: transparent; margin-top: 0px; margin-left: 0px; margin-bottom: 0px; margin-right: 0px; "><span class="Apple-style-span"><meta equiv="content-type" content="text/html; charset=utf-8"><div style="background-color: transparent; margin-top: 0px; margin-left: 0px; margin-bottom: 0px; margin-right: 0px; "><h2><span class="Apple-style-span" ><span class="Apple-style-span" style="white-space: pre-wrap;"><meta equiv="content-type" content="text/html; charset=utf-8"><span class="Apple-style-span" style="font-size: 15px; font-weight: normal; ">Post cargadito. Recomendación del autor: Cafecito y media horita para leer en detalle. </span></span></span></h2><h2 style="font-family: 'Times New Roman'; font-size: medium; white-space: normal; "><span style="font-size: 18pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: bold; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Introducción</span></h2><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; font-size: 11pt; background-color: transparent;"></span><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Lo más dificil de este POST fue escribir un título que refleje el contenido. Creo que no lo logré, y por eso estas primeras líneas intentaran explicar el por qué de la mezcla de temas.</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Conociendo los conceptos básicos de REST, y necesitando desarrollar una aplicación por mi cuenta (es decir, sin restricciones corporativas de ningún tipo), decidí profundizar en estos conceptos y llevarlos a la práctica. Cuando quiero desarrollar un proyecto rápido, sin necesidades particulares de performance y escalabilidad, elijo PHP por la simpleza del start up principalmente (luego, si el proyecto crece, evalúo migrar de tecnología). Habiéndo trabajado previamente con cakePHP (de una manera muy básica) decidí profundizar también en su utilización como MVC, no sin antes investigar acerca de su soporte a REST. Consumir los servicios generados mediante jQuery, persigue el objetivo de lograr una RIA (Rich Internet Application) y la elección del framework responde solamente al gusto y la necesidad también de profundizar mis conocimientos sobre el mismo (otros proyectos me han llevado a conocer extJS y DOJO) y quería extenderme en jQuery y jQuery UI.</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">En definitiva (y también a modo de advertencia) lo único que tienen en común estos tópicos, es que no soy experto en ninguno de ellos, lo cual podría llevar a una pregunta final: ¿Por qué escribir sobre algo que hasta hace poco tiempo fue desconocido, y en lo que claramente no soy experto? Simple:</span>
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">1. Me costó bastante trabajo encontrar buena documentación acerca de REST sobre cakePHP. La documentación oficial está sencillamente incompleta, y las mismas preguntas que me surgieron a mi, le surgieron a muchas personas, pero las respuestas no se encontraban fácilmente.</span>
@@ -260,23 +287,24 @@ de 2011
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; font-size: 11pt; background-color: transparent;"></span>
 <br /><h2 style="font-family: 'Times New Roman'; font-size: medium; white-space: normal; "><span style="font-size: 18pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: bold; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Conclusión</span></h2><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">No hace falta ser un experto para implementar una aplicación en CakePHP, y poder publicar su API respetando el modelo arquitectónico REST. Sin embargo, esta simple labor, nos permite implementar soluciones orientadas a servicios en las cuales la vista se encuentra totalmente desacoplada del modelo. Un equipo de desarrollo podría definir la API de la capa negocios, y luego desarrollar en paralelo distintos clientes e incluso dicho modelo.</span></span></span></div></span></div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/06/23/less-is-more/" data-toggle="tooltip" data-placement="top" title="Less is more">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/06/23/less-is-more/" data-toggle="tooltip" data-placement="top" title="Less is more">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 

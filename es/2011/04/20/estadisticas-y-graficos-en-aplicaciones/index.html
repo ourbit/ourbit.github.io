@@ -7,8 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-    
+
     <title>Estadísticas y Gráficos en aplicaciones Web - ourBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <link rel="canonical" href="http://ourbit.github.io//es/2011/04/20/estadisticas-y-graficos-en-aplicaciones/">
 
@@ -137,7 +139,31 @@
 
 
     <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/header-background.jpg')">
+<script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    console.log (oVal);
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -165,29 +191,31 @@ de 2011
 </header>
 <!-- Post Content -->
 <article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-				Para el proyecto en el que estoy trabajando, nos ha llegado un requerimiento de generar un gráfico de líneas (basado en ejes X, Y) indicando las tendencias de un determinado comportamiento. <div>El proyecto utiliza actualmente <a href="http://www.sencha.com/">ExtJs</a>, y desde ya, fue considerado como primer opción, el motor de gráficos que este incluye. Uno de los problemas con que nos topamos al realizar la prueba de tecnología, es que al no presentarse un dato Y para un valor X, automáticamente lo tomaba como CERO, haciéndo que las líneas descendieran. Esto no es un comportamiento deseable en muchas situaciones (siempre depende de Qué se esté midiendo). Una vez descartado, comenzamos a evaluar otros frameworks. <a href="http://jquery.com/">JQuery</a>, cuenta con varios plugins para generar gráficos (muy buenos debo decir), pero se nos pidió no "mezclar" dos frameworks basados en Jscript (no es una decisión muy feliz, pero lo aceptamos). Luego de buscar bastante, el arquitecto en jefe de la aplicación, sugirió que investigáramos <a href="http://www.fusioncharts.com/">FusionCharts </a>(Más precisamente su división PowerCharts), y quien les escribe, se ha encargado de la prueba de tecnología llegando a conclusiones muy favorables:</div><div><ul><li>Es altamente configurable (se puede especificar cada leyenda que aparece en pantalla, colores, escalas, tipo de gráfico, estilo de líneas, transparencias, etc. No solo del gráfico en general, o de una línea particular, sino también entre cualquier segmento entre 2 puntos e incluso cualquiera de los puntos).</li><li>Por defecto, utiliza un archivo Flash para realizar los gráficos (esta versión comienza con una animación de lo que se esta dibujando). Si se detecta (automáticamente) que el navegador no soporta flash, el gráfico se renderiza 100% mediante Jscript (esto es útil para teléfonos celulares, o simplemente si no queremos instalar Shockwave en las máquinas de los usuarios).</li><li>Sin realizar demasiado trabajo, arranca de quienes observan expresiones del estilo "WOW", y esto, muchas veces, hace la diferencia entre una aplicación exitosa y un hermoso algoritmo inutilizable.</li><li>Es muy sencillo de utilizar y está bien documentado.</li><li>Maneja una amplia variedad de tipos de gráficos.</li></ul>Aclaro que el framework es pago, aunque se puede descargar una versión de prueba FULL (solo incluye una marca de agua en el margen superior izquierdo del gráfico).</div><div><a href="http://nohorbee.com.ar/ourbit/FusionChartPost/pocFusion/MyFirstChart/pocChart.html">Aquí </a>dejo una prueba de tecnología, con algunos comentarios basados en los requerimientos que se me presentaron.</div>
+  				Para el proyecto en el que estoy trabajando, nos ha llegado un requerimiento de generar un gráfico de líneas (basado en ejes X, Y) indicando las tendencias de un determinado comportamiento. <div>El proyecto utiliza actualmente <a href="http://www.sencha.com/">ExtJs</a>, y desde ya, fue considerado como primer opción, el motor de gráficos que este incluye. Uno de los problemas con que nos topamos al realizar la prueba de tecnología, es que al no presentarse un dato Y para un valor X, automáticamente lo tomaba como CERO, haciéndo que las líneas descendieran. Esto no es un comportamiento deseable en muchas situaciones (siempre depende de Qué se esté midiendo). Una vez descartado, comenzamos a evaluar otros frameworks. <a href="http://jquery.com/">JQuery</a>, cuenta con varios plugins para generar gráficos (muy buenos debo decir), pero se nos pidió no "mezclar" dos frameworks basados en Jscript (no es una decisión muy feliz, pero lo aceptamos). Luego de buscar bastante, el arquitecto en jefe de la aplicación, sugirió que investigáramos <a href="http://www.fusioncharts.com/">FusionCharts </a>(Más precisamente su división PowerCharts), y quien les escribe, se ha encargado de la prueba de tecnología llegando a conclusiones muy favorables:</div><div><ul><li>Es altamente configurable (se puede especificar cada leyenda que aparece en pantalla, colores, escalas, tipo de gráfico, estilo de líneas, transparencias, etc. No solo del gráfico en general, o de una línea particular, sino también entre cualquier segmento entre 2 puntos e incluso cualquiera de los puntos).</li><li>Por defecto, utiliza un archivo Flash para realizar los gráficos (esta versión comienza con una animación de lo que se esta dibujando). Si se detecta (automáticamente) que el navegador no soporta flash, el gráfico se renderiza 100% mediante Jscript (esto es útil para teléfonos celulares, o simplemente si no queremos instalar Shockwave en las máquinas de los usuarios).</li><li>Sin realizar demasiado trabajo, arranca de quienes observan expresiones del estilo "WOW", y esto, muchas veces, hace la diferencia entre una aplicación exitosa y un hermoso algoritmo inutilizable.</li><li>Es muy sencillo de utilizar y está bien documentado.</li><li>Maneja una amplia variedad de tipos de gráficos.</li></ul>Aclaro que el framework es pago, aunque se puede descargar una versión de prueba FULL (solo incluye una marca de agua en el margen superior izquierdo del gráfico).</div><div><a href="http://nohorbee.com.ar/ourbit/FusionChartPost/pocFusion/MyFirstChart/pocChart.html">Aquí </a>dejo una prueba de tecnología, con algunos comentarios basados en los requerimientos que se me presentaron.</div>
 
-                <!-- <hr>
+                  <!-- <hr>
 
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/es/2011/04/15/el-universo-de-las-ideas/" data-toggle="tooltip" data-placement="top" title="El universo de las ideas">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul> -->
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2011/04/15/el-universo-de-las-ideas/" data-toggle="tooltip" data-placement="top" title="El universo de las ideas">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu/" data-toggle="tooltip" data-placement="top" title="Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
 
-            </div>
-        </div>
+              </div>
+          </div>
+      </div>
     </div>
 </article>
 
