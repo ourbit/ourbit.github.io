@@ -3,10 +3,10 @@ layout: post
 title: 'Código expresivo en Javascript'
 subtitle: Funciones de orden superior
 author: nohorbee
-tags: javascript expresive code array prototype functions forEach map reduce filter every some
+tags: javascript expressive code array prototype functions forEach map reduce filter every some
 ---
 
-Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: *performance, mantentibilidad y legibilidad*, por mencionar algunos.
+Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: *performance, mantenibilidad y legibilidad*, por mencionar algunos.
 Un aspecto que me resulta particularmente interesante es el denominado "expresividad" y significa "la habilidad de enunciar lo que se está haciendo".  
 
 Como buen *Javascript Hipster ("A mi me gustaba antes de que fuera popular")* me gustaría mostrar algunos ejemplos de cómo *Javascript* nos permite ser realmente expresivos trabajando con *arrays* (y algunas funciones en particular): *forEach, filter, map, reduce, every* and *some*.
@@ -37,10 +37,10 @@ Este código es bastante simple, corto y podríamos decir que es bastante legibl
 
 1. Inicializar una variable *i* con el valor *0*.
 2. Siempre y cuando la variable sea menor a la cantidad de personas, incrementarla y ejecutar el siguiente bloque de código:  
-  1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.
-  2. Concatenarle un espacio, un guión y luego otro espacio.
-  3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.
-  4. *Loggear* el resultado en la consola.
+  2.1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.  
+  2.2. Concatenarle un espacio, un guión y luego otro espacio.  
+  2.3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.  
+  2.4. *Loggear* el resultado en la consola.  
 
 Comencemos por quitar la línea dentro del *for* y ubicarla dentro de una función que reciba una *persona* como parámetro e imprima el patrón especificado.
 
@@ -95,7 +95,7 @@ Aún más útiles quizá resulten 2 parámetros adicionales que **el *forEach* l
 - *index*: El índice del elemento que está siendo iterado.
 - *array*: El *array* completo.
 
-El *forEach* no devuelve ningun resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el *array* que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).
+El *forEach* no devuelve ningún resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el *array* que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).
 
 ### No apto para menores de 25 años
 Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del *array* aquellas personas que no alcancen dicha edad. El código podría ser:
@@ -129,7 +129,7 @@ Pero más allá de el mal funcionamiento del código anterior, analicemos su **e
   1.2. Si no lo hace, remover del *array* 1 posición comenzando en *index*.
 2. Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es "por cada persona que haya quedado en el *array*").  
 
-No parece ser tan grave, pero seguimos teniendo conocimiento del *array*, el *index* y la lógica para realizar la comparación. Además, si quisieramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.  
+No parece ser tan grave, pero seguimos teniendo conocimiento del *array*, el *index* y la lógica para realizar la comparación. Además, si quisiéramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.  
 Comencemos por atacar este segundo problema (al menos parte del mismo).
 
 ### Funciones que crean funciones
@@ -142,7 +142,7 @@ function olderThan25() {
  }
 var older = olderThan25();
 {% endhighlight %}
-*olderThan25* esta devolviendo una función que recibe una persona y devuelve *true* si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable *older*, ```older(person)``` realizará la evaluación antes mencionada.  
+*olderThan25* está devolviendo una función que recibe una persona y devuelve *true* si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable *older*, ```older(person)``` realizará la evaluación antes mencionada.  
 Entonces,
 
 {% highlight javascript %}
@@ -153,14 +153,14 @@ imprime ```false```
 
 Siguiendo este mismo concepto, podemos aún lograr un código más reutilizable e incluso más expresivo. Pasemos como parámetro el "umbral" de edad que queremos evaluar.
 {% highlight javascript %}
-function olderThan(threashold) {
-   return function(person) { return !(person.age<threashold) }
+function olderThan(threshold) {
+   return function(person) { return !(person.age<threshold) }
  }
 var olderThan25 = olderThan(25);
 var olderThan3 = olderThan(3);
 {% endhighlight %}
 
-Ahora, podemos crear cuantas funciones querramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.  
+Ahora, podemos crear cuantas funciones queramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.  
 Aplicando al código anterior (que intentaba remover a los menores de 25 años):
 
 {% highlight javascript %}
@@ -180,16 +180,16 @@ persons.forEach(printPattern);
 Afortunadamente, *Javascript* nos da un método del *array* que hace exactamente lo que queremos.  
 El método *filter* recibe 2 parámetros:
 
-- *callback*: La función que evalua la condición que decide si el elemento que está siendo iterado, debe pertenecer (deberá devolver *true* si el elemento debe pertencer al nuevo grupo, y *false* en caso contrario).
+- *callback*: La función que evalua la condición que decide si el elemento que está siendo iterado, debe pertenecer (deberá devolver *true* si el elemento debe pertenecer al nuevo grupo, y *false* en caso contrario).
 - *contextObject* (opcional): El objeto que será utilizado como *this* dentro de la función *callback*.
 
-A su vez, *filter* pasa a *callback* 3 parámetros (al igual que lo hacia *forEach*):
+A su vez, *filter* pasa a *callback* 3 parámetros (al igual que lo hacía *forEach*):
 
 - *element*: El elemento que está siendo iterado.
 - *index*: La posición de dicho elemento dentro del *array*.
 - *array*: El *array* que está siendo iterado.
 
-A diferencia del *forEach*, *filter* devuelve un **nuevo** *array* con los elementos que pasen la prueba evaluada en *calback*.
+A diferencia del *forEach*, *filter* devuelve un **nuevo** *array* con los elementos que pasen la prueba evaluada en *callback*.
 
 Teniendo en cuenta este nuevo método, el siguiente código resuelve el requerimiento expresado anteriormente:
 
@@ -199,7 +199,7 @@ persons.filter(olderThan25).forEach(printPattern);
 
 Respecto de su expresividad, puede ser leído como:
 
-1. Filtrar las personas **que no** sean menores de 25 y por cada una imprimir el patrón.
+1. Filtrar las personas **que no** sean mayores de 25 y por cada una imprimir el patrón.
 
 Un problema de este método (respecto de su expresividad) es el nombre *filter* (y/o el hecho de remueva el elemento cuando *callback* devuelve *false*). Eso haría que sea lea "filtrar los mayores de 25", cuando en realidad se está haciendo lo contrario. *Nada es perfecto*.
 
@@ -218,11 +218,11 @@ console.log(totalWeight);
 
 Algunas observaciones acerca de este código:
 
-- Como vimos, *forEach* recibe como primer parametro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como *function* es una expresión que devuelve una función, la sintáxis de *Javascript* nos permite definir la función diretamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una **función anónima**. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un *post* en sí mismo.
+- Como vimos, *forEach* recibe como primer parámetro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como *function* es una expresión que devuelve una función, la sintaxis de *Javascript* nos permite definir la función directamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una **función anónima**. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un *post* en sí mismo.
 - Como *forEach* no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.
-- El código que vamos a generar, **en mi opinión** no es *automáticamente* más expresivo que el que ya generamos. Pero sin duda, se vuelve increiblemente entendible cuando comprendemos el significado e importancia de los métodos *map* y *reduce*.  
+- El código que vamos a generar, **en mi opinión** no es *automáticamente* más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos *map* y *reduce*.  
 
-Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confiencialidad. Obtengamos un nuevo *array* que solo tenga los pesos de las personas de nuestro grupo.
+Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo *array* que solo tenga los pesos de las personas de nuestro grupo.
 
 {% highlight javascript %}
 var weights = [];
@@ -249,7 +249,7 @@ imprime
 ### Array.prototype.map
 
 En general, llamamos al proceso de asociar los elementos de un conjunto, con los elementos de otro conjunto "[mapear](https://en.wikipedia.org/wiki/Map_(mathematics))", y el criterio de dicha asociación puede variar dependiendo la función utilizada.  
-Es decir, que el código que escribimos anteiormente "mapea las personas con/por su peso".  
+Es decir, que el código que escribimos anteriormente "mapea las personas con/por su peso".  
 Sería bueno poder escribir eso mismo en *Javascript* de la siguiente manera:
 {% highlight javascript %}
 persons.map(weight);
@@ -265,7 +265,7 @@ El método *map*, recibe los mismos 2 parámetros que *filter*:
 - *callback*: La función que determina el criterio de asociación (deberá devolver el valor a mapear con cada elemento).
 - *contextObject* (opcional): El objeto que será utilizado como *this* dentro de la función *callback*.
 
-A su vez, *map* pasa a *callback* 3 parámetros (al igual que lo hacian *forEach* y *filter*):
+A su vez, *map* pasa a *callback* 3 parámetros (al igual que lo hacían *forEach* y *filter*):
 
 - *element*: El elemento que está siendo iterado.
 - *index*: La posición de dicho elemento dentro del *array*.
@@ -275,7 +275,7 @@ A su vez, *map* pasa a *callback* 3 parámetros (al igual que lo hacian *forEach
 
 Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.
 
-Si siguieramos el enfoque anterior, pero aprovechando la función *map*, nuestro código quedaría así:
+Si siguiéramos el enfoque anterior, pero aprovechando la función *map*, nuestro código quedaría así:
 {% highlight javascript %}
 var totalWeight = 0;
 persons.map(weight).forEach(function(weight) {
@@ -313,9 +313,9 @@ A su vez, *reduce* pasa a *callback* 4 parámetros:
 - *index*: La posición de dicho valor dentro del *array*.
 - *array*: El *array* que está siendo iterado.
 
-*reduce* devuelve un **único** valor que coincide con el resultado de la última ejecución de *calback*.  
+*reduce* devuelve un **único** valor que coincide con el resultado de la última ejecución de *callback*.  
 
-Hay algunas características de *reduce* que podrían catalogarlo como un método recursivo. En lugar de pensar a *reduce* como una función que itera el *array* aplicando *callback*, podríamos pensarlo como una función que toma la primera posición del *array* y aplica *callback* pasando esta posición y el resultado de *reduce* para un segundo *array* que va desde la segunda hasta la última posición del primer *array*. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender como funciona, por qué **acumula** y como funciona el *initialValue*.
+Hay algunas características de *reduce* que podrían catalogarlo como un método recursivo. En lugar de pensar a *reduce* como una función que itera el *array* aplicando *callback*, podríamos pensarlo como una función que toma la primera posición del *array* y aplica *callback* pasando esta posición y el resultado de *reduce* para un segundo *array* que va desde la segunda hasta la última posición del primer *array*. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender cómo funciona, por qué **acumula** y cómo funciona el *initialValue*.
 
 ### Una visita al autocine
 
@@ -328,7 +328,7 @@ persons.forEach(function(person) {
   areOlder = areOlder && olderThan18(person);
 });
 {% endhighlight %}
-Estamos utilizando la función *olderThan(threashold)* para generar la función *olderThan18*.
+Estamos utilizando la función *olderThan(threshold)* para generar la función *olderThan18*.
 
 - Reducir mediante el operador lógico "Y"  
 {% highlight javascript %}
@@ -356,8 +356,8 @@ false && whatever // -> false
 {% endhighlight %}
 En ambos casos, es innecesario evaluar *whatever*.
 
-Esto parece ser irrelevante en un *array* de 4 elementos. Pero ¿qué pasaría si tuvieramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como **mala performance**.  
-La forma de solucionar esto es *rompiendo* las iteraciones cuando no es necesario seguir evaluando. La instrucción *break* hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al *for* clásico). Existen otras "técnicas" para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar "0" a *array.length*, si no necesitaramos seguir trabajando con el *array*. O hacer una copia del mismo, para poder cambiar el *length* sin problemas. También podríanos *lanzar una excepción* y *capturarla* inmediatamente al salir del método).  
+Esto parece ser irrelevante en un *array* de 4 elementos. Pero ¿qué pasaría si tuviéramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como **mala performance**.  
+La forma de solucionar esto es *rompiendo* las iteraciones cuando no es necesario seguir evaluando. La instrucción *break* hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al *for* clásico). Existen otras "técnicas" para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar "0" a *array.length*, si no necesitaramos seguir trabajando con el *array*. O hacer una copia del mismo, para poder cambiar el *length* sin problemas. También podríamos *lanzar una excepción* y *capturarla* inmediatamente al salir del método).  
 
 Pero hay un motivo por el cual este problema se presenta al utilizar estos métodos. En el caso del *forEach* el motivo es incluso explícito en el nombre de la función. **Por cada** elemento de un *array* implica que **todos** los elementos van a ser iterados.
 
@@ -376,7 +376,7 @@ El método *every* recibe 2 parámetros:
 - *callback*: La función que evalua la condición a cumplir (deberá devolver *true* o *false*).
 - *contextObject* (opcional): El objeto que será utilizado como *this* dentro de la función *callback*.
 
-A su vez, *every* pasa a *callback* 3 parámetros (al igual que lo hacian los demás métodos):
+A su vez, *every* pasa a *callback* 3 parámetros (al igual que lo hacían los demás métodos):
 
 - *element*: El elemento que está siendo iterado.
 - *index*: La posición de dicho elemento dentro del *array*.
@@ -388,7 +388,7 @@ A su vez, *every* pasa a *callback* 3 parámetros (al igual que lo hacian los de
 ### En busca de una película apta
 
 Las restricciones de edad en las películas deben ser respetadas. Y si bien nuestras personas no  encontraron ninguna película apta para todo público, apareció un nuevo estreno que puede ser vista por menores con la supervisión de un adulto. Dejando de lado el criterio del adulto, escribamos la solución que nos permita evaluar si alguna persona es mayor de 18 años. Pero antes de comenzar a mostrar todas las alternativas (como hicimos con el caso anterior *every*) pensemos ¿no existirá algún otro método que diga y haga lo estamos buscando?  
-Mi respuesta rápida es **si**:
+Mi respuesta rápida es **sí**:
 
 {% highlight javascript %}
 persons.some(olderThan18);
@@ -396,10 +396,10 @@ persons.some(olderThan18);
 
 El método *some* recibe 2 parámetros:
 
-- *callback*: La función que evalua la condición a cumplir (debrá devolver *true* o *false*).
+- *callback*: La función que evalua la condición a cumplir (deberá devolver *true* o *false*).
 - *contextObject* (opcional): El objeto que será utilizado como *this* dentro de la función *callback*.
 
-A su vez, *some* pasa a *callback* 3 parámetros (al igual que lo hacian los demás métodos):
+A su vez, *some* pasa a *callback* 3 parámetros (al igual que lo hacían los demás métodos):
 
 - *element*: El elemento que está siendo iterado.
 - *index*: La posición de dicho elemento dentro del *array*.
@@ -435,4 +435,4 @@ Al negociar un aspecto por otro, es necesario considerar el caso de uso. Si nues
 
 ### Conclusión
 
-La misma sintaxis de *Javascript* nos permite trabajar con partes buenas de los paradigmas *estructurado*, *orientado a objetos* y *funcional*. Las buenas prácticas de cada paradigma pueden favorecernos a la hora de mejorar algunos aspectos de nuestro código. En la mayoría de los casos, al mejorar un aspecto, estaremos empeorando otros (Ej: Mayor Expresividad -> Menor Performance). Muchas veces estos aspectos se conjugarán de formas más complejas (Ej: Mayor Performance y Buena Expresividad -> Poca Flexibilidad). Es parte de nuestro trabajo cuando escibimos una pieza de código, evaluar qué aspectos queremos favorecer y cuáles podemos castigar. La mayoria de las veces caeremos en la trampa y favoreceremos los aspectos que más nos gusten. Eso es algo a evitar. Para saber qué aspectos favorecer, la mejor opción es analizar el caso de uso.
+La misma sintaxis de *Javascript* nos permite trabajar con partes buenas de los paradigmas *estructurado*, *orientado a objetos* y *funcional*. Las buenas prácticas de cada paradigma pueden favorecernos a la hora de mejorar algunos aspectos de nuestro código. En la mayoría de los casos, al mejorar un aspecto, estaremos empeorando otros (Ej: Mayor Expresividad -> Menor Performance). Muchas veces estos aspectos se conjugarán de formas más complejas (Ej: Mayor Performance y Buena Expresividad -> Poca Flexibilidad). Es parte de nuestro trabajo cuando escribimos una pieza de código, evaluar qué aspectos queremos favorecer y cuáles podemos castigar. La mayoría de las veces caeremos en la trampa y favoreceremos los aspectos que más nos gusten. Eso es algo a evitar. Para saber qué aspectos favorecer, la mejor opción es analizar el caso de uso.
