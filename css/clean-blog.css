@@ -434,7 +434,7 @@ div.content-wrapper {
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  height: 456px;
+  height: 600px;
   line-height: 20px;
   position: fixed;
   width: 1680px;
@@ -447,7 +447,7 @@ div.content-wrapper {
   display: block;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
-  height: 456px;
+  height: 600px;
   line-height: 20px;
   opacity: 0;
   position: fixed;

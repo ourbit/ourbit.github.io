@@ -5,9 +5,940 @@
     <description>Write your site description here. It will be used as your sites meta description as well!</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 08 Aug 2015 03:33:57 -0300</pubDate>
-    <lastBuildDate>Sat, 08 Aug 2015 03:33:57 -0300</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 22:56:31 -0300</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 22:56:31 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Código expresivo en Javascript</title>
+        <description>&lt;p&gt;Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: &lt;em&gt;performance, mantenibilidad y legibilidad&lt;/em&gt;, por mencionar algunos.
+Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.  &lt;/p&gt;
+
+&lt;p&gt;Como buen &lt;em&gt;Javascript Hipster (“A mi me gustaba antes de que fuera popular”)&lt;/em&gt; me gustaría mostrar algunos ejemplos de cómo &lt;em&gt;Javascript&lt;/em&gt; nos permite ser realmente expresivos trabajando con &lt;em&gt;arrays&lt;/em&gt; (y algunas funciones en particular): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;p&gt;Si bien habitualmente la característica de “Expresivo” se le atribuye al lenguaje, en todos los lenguajes se puede ser más o menos expresivo al escribir diferentes versiones de código que hagan lo mismo. De esta manera, sería más preciso definir a una pieza de código como “expresiva” si realmente es capaz de enunciar lo que está haciendo.&lt;/p&gt;
+
+&lt;p&gt;Tomemos como ejemplo un conjunto de personas:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;176&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Jane Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Julian Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ahora, recorramos este &lt;em&gt;array&lt;/em&gt; y por cada persona imprimamos “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Este código es bastante simple, corto y podríamos decir que es bastante legible. Pero esto no lo hace necesariamente &lt;strong&gt;expresivo&lt;/strong&gt;. Lo que queríamos hacer era: Imprimir “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old” por cada persona. Esto es lo que dice el código que acabamos de escribir:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Inicializar una variable &lt;em&gt;i&lt;/em&gt; con el valor &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Siempre y cuando la variable sea menor a la cantidad de personas, incrementarla y ejecutar el siguiente bloque de código:&lt;br /&gt;
+  2.1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
+  2.2. Concatenarle un espacio, un guión y luego otro espacio.&lt;br /&gt;
+  2.3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
+  2.4. &lt;em&gt;Loggear&lt;/em&gt; el resultado en la consola.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Comencemos por quitar la línea dentro del &lt;em&gt;for&lt;/em&gt; y ubicarla dentro de una función que reciba una &lt;em&gt;persona&lt;/em&gt; como parámetro e imprima el patrón especificado.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si estás pensando “esto no tiene nada que ver con &lt;em&gt;Javascript&lt;/em&gt; y las funciones de sus &lt;em&gt;arrays&lt;/em&gt;”, estás en lo cierto, pero no te impacientes.&lt;br /&gt;
+No hicimos más que &lt;em&gt;encapsular&lt;/em&gt; una funcionalidad para ocultar su complejidad. &lt;em&gt;Encapsulamiento&lt;/em&gt; es un concepto habitualmente relacionado al Paradigma de Programación orientada a objetos, pero en realidad puede lograrse de muchas maneras, y las &lt;em&gt;funciones&lt;/em&gt; son una forma ancestral de lograrlo. El objetivo de &lt;em&gt;encapsular&lt;/em&gt; código no es el de hacerlo más expresivo, pero en la mayoría de los casos, es un efecto colateral.&lt;/p&gt;
+
+&lt;p&gt;Si leemos nuevamente el código (y obviamos describir la nueva función):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Inicializar una variable &lt;em&gt;i&lt;/em&gt; con el valor &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Siempre y cuando la variable sea menor a la cantidad de personas, incrementarla e&lt;/li&gt;
+  &lt;li&gt;Imprimir el patrón para la persona en la posición indicada por la variable previamente inicializada.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;arrayprototypeforeach&quot;&gt;Array.Prototype.forEach&lt;/h3&gt;
+&lt;p&gt;Si bien el código se ha vuelto un poco más expresivo, parece estar más preocupado por la variable &lt;em&gt;i&lt;/em&gt;, su inicialización, y su cota, que por la persona en sí misma.&lt;br /&gt;
+Afortunadamente hay otras formas de recorrer un &lt;em&gt;array&lt;/em&gt;. Por ejemplo el método &lt;code&gt;Array.prototype.forEach(function)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si leemos nuevamente el código:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Por cada persona, imprimir el patrón.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;De esta forma, el código &lt;em&gt;hace&lt;/em&gt; y &lt;em&gt;expresa&lt;/em&gt; exactamente lo que queremos.&lt;br /&gt;
+Pero, si bien la lectura resulta más simple, es necesario comprender que es lo que está ocurriendo detrás del telón.&lt;br /&gt;
+En primer lugar, algo a destacar de &lt;em&gt;Javascript&lt;/em&gt; es que &lt;em&gt;todo (o casi todo) es un mensaje.&lt;/em&gt; Esto significa que objetos, funciones, métodos y valores son mensajes (o expresiones) y como tales pueden ser pasadas como parámetros.&lt;br /&gt;
+A diferencia del &lt;em&gt;for&lt;/em&gt; que es una instrucción, el &lt;em&gt;forEach&lt;/em&gt; es un método del objeto &lt;em&gt;Array&lt;/em&gt; (o de su &lt;em&gt;prototipo&lt;/em&gt;). Combinando estos conceptos, &lt;em&gt;forEach&lt;/em&gt; recorre el &lt;em&gt;array&lt;/em&gt; y en cada iteración invoca a la función que recibió como parámetro. En dicha invocación, &lt;em&gt;forEach&lt;/em&gt; le pasa como parámetro a la otra función, el elemento que está siendo iterado.&lt;br /&gt;
+Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Adicionalmente, el &lt;em&gt;forEach&lt;/em&gt; recibe un segundo parámetro opcional que representa una función que será invocada cuando se haya finalizado la recorrida del &lt;em&gt;array&lt;/em&gt;. En los ejemplos que se están mostrando esto puede parecer inútil, pero cuando se está en un entorno de programación &lt;em&gt;asincrónica&lt;/em&gt; (como &lt;a href=&quot;http://nodejs.org&quot;&gt;NodeJS&lt;/a&gt;), este tipo de implementaciones se vuelve indispensable.&lt;/p&gt;
+
+&lt;p&gt;Aún más útiles quizá resulten 2 parámetros adicionales que &lt;strong&gt;el &lt;em&gt;forEach&lt;/em&gt; le pasa a la función especificada en el primer parámetro:&lt;/strong&gt;  &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: El índice del elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; completo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;El &lt;em&gt;forEach&lt;/em&gt; no devuelve ningún resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el &lt;em&gt;array&lt;/em&gt; que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).&lt;/p&gt;
+
+&lt;h3 id=&quot;no-apto-para-menores-de-25-aos&quot;&gt;No apto para menores de 25 años&lt;/h3&gt;
+&lt;p&gt;Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del &lt;em&gt;array&lt;/em&gt; aquellas personas que no alcancen dicha edad. El código podría ser:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice&quot;&gt;&lt;em&gt;splice&lt;/em&gt;&lt;/a&gt; es útil para eliminar elementos de un &lt;em&gt;array&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si ejecutamos este código, vamos a obtener el siguiente resultado:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;John Doe - 27&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Jane Doe - 24&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Julian Doe - 32&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Por algún motivo, Jane Doe logró vencer la seguridad de nuestro bar, e ingresar. Dicho motivo es causa de incontables &lt;em&gt;bugs&lt;/em&gt; en incontables piezas de código.&lt;br /&gt;
+En cada iteración, &lt;em&gt;index&lt;/em&gt; incrementa 1. La primera vez (&lt;em&gt;index=0&lt;/em&gt;) encontramos a John Doe de 27 años. Queda en el &lt;em&gt;array&lt;/em&gt;. La segunda vez (&lt;em&gt;index=1&lt;/em&gt;), encontramos a John Doe Jr de 3 años (quien claramente no debería estar en nuestro bar). Al removerlo del &lt;em&gt;array&lt;/em&gt; Jane Doe pasa a estar en el &lt;em&gt;index 1&lt;/em&gt; y Julian Doe en el &lt;em&gt;index 2&lt;/em&gt;. La tercera iteración (&lt;em&gt;index=2&lt;/em&gt;) aparece Julian Doe. Es decir que Jane Doe ha sido salteada. &lt;strong&gt;Es como si el guardia de seguridad se diera vuelta cada vez que saca a alguien de la fila del bar y en ese momento dejara pasar a una persona sin importar su edad.&lt;/strong&gt;&lt;br /&gt;
+No siempre es buena idea modificar el &lt;em&gt;array&lt;/em&gt; que se está iterando. Como soluciones alternativas, se puede utilizar un &lt;em&gt;array&lt;/em&gt; auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.  &lt;/p&gt;
+
+&lt;p&gt;Pero más allá de el mal funcionamiento del código anterior, analicemos su &lt;strong&gt;expresividad&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Por cada persona:&lt;br /&gt;
+  1.1. Verificar si supera o iguala los 25 años.&lt;br /&gt;
+  1.2. Si no lo hace, remover del &lt;em&gt;array&lt;/em&gt; 1 posición comenzando en &lt;em&gt;index&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el &lt;em&gt;array&lt;/em&gt;”).  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No parece ser tan grave, pero seguimos teniendo conocimiento del &lt;em&gt;array&lt;/em&gt;, el &lt;em&gt;index&lt;/em&gt; y la lógica para realizar la comparación. Además, si quisiéramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.&lt;br /&gt;
+Comencemos por atacar este segundo problema (al menos parte del mismo).&lt;/p&gt;
+
+&lt;h3 id=&quot;funciones-que-crean-funciones&quot;&gt;Funciones que crean funciones&lt;/h3&gt;
+&lt;p&gt;Esta es una característica de &lt;em&gt;Javascript&lt;/em&gt; que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.&lt;br /&gt;
+Tomemos por ejemplo el siguiente código:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;olderThan25&lt;/em&gt; está devolviendo una función que recibe una persona y devuelve &lt;em&gt;true&lt;/em&gt; si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable &lt;em&gt;older&lt;/em&gt;, &lt;code&gt;older(person)&lt;/code&gt; realizará la evaluación antes mencionada.&lt;br /&gt;
+Entonces,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;imprime &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Siguiendo este mismo concepto, podemos aún lograr un código más reutilizable e incluso más expresivo. Pasemos como parámetro el “umbral” de edad que queremos evaluar.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ahora, podemos crear cuantas funciones queramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.&lt;br /&gt;
+Aplicando al código anterior (que intentaba remover a los menores de 25 años):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El código sigue sin funcionar (el problema descripto anteriormente sigue allí).&lt;/li&gt;
+  &lt;li&gt;Si bien la legibilidad del código mejoró, se sigue leyendo “si la persona es mayor de 25, remover una posición del &lt;em&gt;array&lt;/em&gt; comenzando en &lt;em&gt;index&lt;/em&gt;”. Es decir que la expresividad sigue siendo similar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;arrayprototypefilter&quot;&gt;Array.Prototype.filter&lt;/h3&gt;
+
+&lt;p&gt;Afortunadamente, &lt;em&gt;Javascript&lt;/em&gt; nos da un método del &lt;em&gt;array&lt;/em&gt; que hace exactamente lo que queremos.&lt;br /&gt;
+El método &lt;em&gt;filter&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición que decide si el elemento que está siendo iterado, debe pertenecer (deberá devolver &lt;em&gt;true&lt;/em&gt; si el elemento debe pertenecer al nuevo grupo, y &lt;em&gt;false&lt;/em&gt; en caso contrario).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;filter&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacía &lt;em&gt;forEach&lt;/em&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A diferencia del &lt;em&gt;forEach&lt;/em&gt;, &lt;em&gt;filter&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos que pasen la prueba evaluada en &lt;em&gt;callback&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Teniendo en cuenta este nuevo método, el siguiente código resuelve el requerimiento expresado anteriormente:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Respecto de su expresividad, puede ser leído como:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Filtrar las personas &lt;strong&gt;que no&lt;/strong&gt; sean mayores de 25 y por cada una imprimir el patrón.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Un problema de este método (respecto de su expresividad) es el nombre &lt;em&gt;filter&lt;/em&gt; (y/o el hecho de remueva el elemento cuando &lt;em&gt;callback&lt;/em&gt; devuelve &lt;em&gt;false&lt;/em&gt;). Eso haría que sea lea “filtrar los mayores de 25”, cuando en realidad se está haciendo lo contrario. &lt;em&gt;Nada es perfecto&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;cuida-tu-peso&quot;&gt;Cuida tu peso&lt;/h3&gt;
+
+&lt;p&gt;Hemos logrado trabajar con cada persona de nuestro grupo, y realizar operaciones con cada una de ellas. Pero muchas veces, es necesario trabajar con el grupo como un todo.&lt;br /&gt;
+Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascensor. Por motivos de seguridad, los ascensores más modernos incluyen una balanza para asegurarse de que no se haya superado el peso máximo soportado por el mismo. Intentemos evitar la vergüenza de escuchar la chicharra indicando que nos hemos excedido y calculemos el peso total previamente:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Algunas observaciones acerca de este código:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Como vimos, &lt;em&gt;forEach&lt;/em&gt; recibe como primer parámetro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como &lt;em&gt;function&lt;/em&gt; es una expresión que devuelve una función, la sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite definir la función directamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una &lt;strong&gt;función anónima&lt;/strong&gt;. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un &lt;em&gt;post&lt;/em&gt; en sí mismo.&lt;/li&gt;
+  &lt;li&gt;Como &lt;em&gt;forEach&lt;/em&gt; no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.&lt;/li&gt;
+  &lt;li&gt;El código que vamos a generar, &lt;strong&gt;en mi opinión&lt;/strong&gt; no es &lt;em&gt;automáticamente&lt;/em&gt; más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos &lt;em&gt;map&lt;/em&gt; y &lt;em&gt;reduce&lt;/em&gt;.  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo &lt;em&gt;array&lt;/em&gt; que solo tenga los pesos de las personas de nuestro grupo.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Este código puede leerse de la siguiente manera:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Crear un array vacío llamado &lt;em&gt;weights&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Por cada persona, invocar una función que reciba a dicha persona y el índice de la misma en el &lt;em&gt;array&lt;/em&gt; original.&lt;/li&gt;
+  &lt;li&gt;La función obtiene el peso de la persona y lo asigna a la posición indicada en el nuevo &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;imprime&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;[ 176, 22, 127, 160 ]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;arrayprototypemap&quot;&gt;Array.prototype.map&lt;/h3&gt;
+
+&lt;p&gt;En general, llamamos al proceso de asociar los elementos de un conjunto, con los elementos de otro conjunto “&lt;a href=&quot;https://en.wikipedia.org/wiki/Map_(mathematics)&quot;&gt;mapear&lt;/a&gt;”, y el criterio de dicha asociación puede variar dependiendo la función utilizada.&lt;br /&gt;
+Es decir, que el código que escribimos anteriormente “mapea las personas con/por su peso”.&lt;br /&gt;
+Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la siguiente manera:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;De hecho, definiendo &lt;em&gt;weight&lt;/em&gt; como una función que dada una persona, devuelva su peso, la línea anterior hace &lt;strong&gt;exactamente&lt;/strong&gt; lo que dice.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El método &lt;em&gt;map&lt;/em&gt;, recibe los mismos 2 parámetros que &lt;em&gt;filter&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que determina el criterio de asociación (deberá devolver el valor a mapear con cada elemento).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;map&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían &lt;em&gt;forEach&lt;/em&gt; y &lt;em&gt;filter&lt;/em&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;map&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos del segundo conjunto. En nuestro ejemplo, un &lt;em&gt;array&lt;/em&gt; con los pesos de las personas.  &lt;/p&gt;
+
+&lt;p&gt;Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.&lt;/p&gt;
+
+&lt;p&gt;Si siguiéramos el enfoque anterior, pero aprovechando la función &lt;em&gt;map&lt;/em&gt;, nuestro código quedaría así:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Es decir que primero obtenemos el &lt;em&gt;array&lt;/em&gt; de pesos y luego lo iteramos realizando la acumulación. Es una pequeña (casi insignificante) mejora respecto de nuestra versión anterior.&lt;/p&gt;
+
+&lt;h3 id=&quot;arrayprototypereduce&quot;&gt;Array.prototype.reduce&lt;/h3&gt;
+
+&lt;p&gt;El término &lt;em&gt;reduce&lt;/em&gt; resulta, al menos para mi, poco descriptivo respecto del objetivo de este método. Otros lenguajes (asociados al paradigma &lt;em&gt;funcional&lt;/em&gt;) suelen referirse a esta función como &lt;a href=&quot;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&quot;&gt;&lt;em&gt;fold&lt;/em&gt;&lt;/a&gt;. Pero una buena forma de entenderlo es pensar en &lt;em&gt;reduce&lt;/em&gt; como “resumir”. Queremos encontrar un solo valor que &lt;em&gt;resuma&lt;/em&gt; de alguna manera a todos los demás. Por ejemplo, 10 resume a 4, 3, 2 y 1 si consideramos a la suma como forma de resumir. 24 resume a 4, 3, 2, 1 si consideramos a la multiplicación como forma de resumir.&lt;br /&gt;
+Entonces, Definiendo &lt;em&gt;sum&lt;/em&gt; como&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;y considerando el siguiente código&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;se podría leer: resumir mediante la suma, el peso de las personas. O, sumar el peso de las personas.&lt;/p&gt;
+
+&lt;p&gt;El método &lt;em&gt;reduce&lt;/em&gt;, recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que contiene la lógica de reducción (la forma de resumir).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;initialValue&lt;/em&gt; (opcional): El valor inicial del &lt;em&gt;acumulador&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;reduce&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 4 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;previousValue&lt;/em&gt;: El resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt; o &lt;em&gt;initialValue&lt;/em&gt; (la primera vez que se ejecuta).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;currentValue&lt;/em&gt;: El valor que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho valor dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; devuelve un &lt;strong&gt;único&lt;/strong&gt; valor que coincide con el resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Hay algunas características de &lt;em&gt;reduce&lt;/em&gt; que podrían catalogarlo como un método recursivo. En lugar de pensar a &lt;em&gt;reduce&lt;/em&gt; como una función que itera el &lt;em&gt;array&lt;/em&gt; aplicando &lt;em&gt;callback&lt;/em&gt;, podríamos pensarlo como una función que toma la primera posición del &lt;em&gt;array&lt;/em&gt; y aplica &lt;em&gt;callback&lt;/em&gt; pasando esta posición y el resultado de &lt;em&gt;reduce&lt;/em&gt; para un segundo &lt;em&gt;array&lt;/em&gt; que va desde la segunda hasta la última posición del primer &lt;em&gt;array&lt;/em&gt;. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender cómo funciona, por qué &lt;strong&gt;acumula&lt;/strong&gt; y cómo funciona el &lt;em&gt;initialValue&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;una-visita-al-autocine&quot;&gt;Una visita al autocine&lt;/h3&gt;
+
+&lt;p&gt;Las personas salieron del ascensor, subieron al auto y partieron con rumbo al auto-cine. Eligieron una película no apta para menores de 18 años. Al intentar ingresar, debemos preguntar si &lt;strong&gt;todas&lt;/strong&gt; las personas en el auto alcanzan dicha edad.&lt;br /&gt;
+Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Iterar y preguntar  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Estamos utilizando la función &lt;em&gt;olderThan(threshold)&lt;/em&gt; para generar la función &lt;em&gt;olderThan18&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reducir mediante el operador lógico “Y”  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mapear al &lt;em&gt;array&lt;/em&gt; de edades y reducir mediante el operador lógico “Y”  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greaterThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Es similar a la anterior, pero antes de &lt;em&gt;reducir&lt;/em&gt;, obtenemos el &lt;em&gt;array&lt;/em&gt; de edades (y por lo tanto, en lugar de utilizar una función que reciba una persona y compare su edad, utilizamos una similar pero que compare directamente la edad. &lt;em&gt;greaterThan18&lt;/em&gt; es generada de forma similar que &lt;em&gt;olderThan18&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Todas estas soluciones tienen un problema (u oportunidad de mejora): Evalúan todo el &lt;em&gt;array&lt;/em&gt; sin importar lo que ocurra. En nuestro caso, evaluando el segundo elemento podríamos concluir que no todas las personas son mayores de 18. En evaluaciones de expresiones &lt;em&gt;booleanas&lt;/em&gt; esto se conoce como “evaluación de cortocircuito”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;En ambos casos, es innecesario evaluar &lt;em&gt;whatever&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto parece ser irrelevante en un &lt;em&gt;array&lt;/em&gt; de 4 elementos. Pero ¿qué pasaría si tuviéramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como &lt;strong&gt;mala performance&lt;/strong&gt;.&lt;br /&gt;
+La forma de solucionar esto es &lt;em&gt;rompiendo&lt;/em&gt; las iteraciones cuando no es necesario seguir evaluando. La instrucción &lt;em&gt;break&lt;/em&gt; hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al &lt;em&gt;for&lt;/em&gt; clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a &lt;em&gt;array.length&lt;/em&gt;, si no necesitaramos seguir trabajando con el &lt;em&gt;array&lt;/em&gt;. O hacer una copia del mismo, para poder cambiar el &lt;em&gt;length&lt;/em&gt; sin problemas. También podríamos &lt;em&gt;lanzar una excepción&lt;/em&gt; y &lt;em&gt;capturarla&lt;/em&gt; inmediatamente al salir del método).  &lt;/p&gt;
+
+&lt;p&gt;Pero hay un motivo por el cual este problema se presenta al utilizar estos métodos. En el caso del &lt;em&gt;forEach&lt;/em&gt; el motivo es incluso explícito en el nombre de la función. &lt;strong&gt;Por cada&lt;/strong&gt; elemento de un &lt;em&gt;array&lt;/em&gt; implica que &lt;strong&gt;todos&lt;/strong&gt; los elementos van a ser iterados.&lt;/p&gt;
+
+&lt;h3 id=&quot;every-some&quot;&gt;Every-Some&lt;/h3&gt;
+
+&lt;p&gt;Volviendo al tema de la &lt;em&gt;expresividad&lt;/em&gt;, ninguna de las soluciones resultan demasiado expresivas (hagan el ejercicio de identificar lo que cada una está diciendo y lo que cada una está haciendo). El enunciado debería ser más sencillo. Verificar que todas las personas sean mayores de 18.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Esta solución dice y hace exactamente lo que buscamos. Devuelve &lt;em&gt;true&lt;/em&gt; si todas las personas son mayores de 18 años. Caso contrario, devuelve &lt;em&gt;false&lt;/em&gt;.&lt;br /&gt;
+Además de ser altamente expresiva, &lt;em&gt;every&lt;/em&gt; respeta la evaluación de cortocircuito, es decir que dejará de iterar ni bien encuentre una persona que no cumpla la condición.&lt;/p&gt;
+
+&lt;p&gt;El método &lt;em&gt;every&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición a cumplir (deberá devolver &lt;em&gt;true&lt;/em&gt; o &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;every&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían los demás métodos):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;every&lt;/em&gt; devuelve &lt;em&gt;true&lt;/em&gt; si todos los elementos iterados cumplieron con la condición, y &lt;em&gt;false&lt;/em&gt; si al menos un elemento no lo hace (y deja de iterar cuando lo encuentra).&lt;/p&gt;
+
+&lt;h3 id=&quot;en-busca-de-una-pelcula-apta&quot;&gt;En busca de una película apta&lt;/h3&gt;
+
+&lt;p&gt;Las restricciones de edad en las películas deben ser respetadas. Y si bien nuestras personas no  encontraron ninguna película apta para todo público, apareció un nuevo estreno que puede ser vista por menores con la supervisión de un adulto. Dejando de lado el criterio del adulto, escribamos la solución que nos permita evaluar si alguna persona es mayor de 18 años. Pero antes de comenzar a mostrar todas las alternativas (como hicimos con el caso anterior &lt;em&gt;every&lt;/em&gt;) pensemos ¿no existirá algún otro método que diga y haga lo estamos buscando?&lt;br /&gt;
+Mi respuesta rápida es &lt;strong&gt;sí&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;El método &lt;em&gt;some&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición a cumplir (deberá devolver &lt;em&gt;true&lt;/em&gt; o &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;some&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían los demás métodos):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;some&lt;/em&gt; devuelve &lt;em&gt;false&lt;/em&gt; si ningún elemento cumple con la condición, y &lt;em&gt;true&lt;/em&gt; si al menos un elemento lo hace (y deja de iterar cuando lo encuentra).&lt;/p&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;Como mencioné al comienzo del &lt;em&gt;post&lt;/em&gt;, la &lt;em&gt;expresividad&lt;/em&gt; es solo uno de muchos aspectos a considerar. Muchas veces, estos aspectos entran en conflicto y es necesario evaluar cuál prima.&lt;br /&gt;
+Consideremos el siguiente problema: Debo obtener un &lt;em&gt;array&lt;/em&gt; con las personas con peso menor a 130 libras, que tengan más de 10 años.&lt;br /&gt;
+Con todo lo que hemos visto, naturalmente podríamos pensar que la siguiente solución es ideal:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;La realidad es que esta solución no es ideal, tan solo es expresiva.&lt;br /&gt;
+Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, estamos iterando 2 &lt;em&gt;arrays&lt;/em&gt;. Si &lt;em&gt;persons&lt;/em&gt; contiene N elementos y M son mayores de 10, la solución anterior recorrerá N + M elementos. La siguiente solución puede ser un poco menos expresiva pero nos asegura que solo se recorrerán N elementos:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;considerando&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Al negociar un aspecto por otro, es necesario considerar el caso de uso. Si nuestros &lt;em&gt;arrays&lt;/em&gt; contienen familias (es decir, pocos elementos), quizá podamos darnos el lujo de tener el código más expresivo. Si estamos procesando el padrón electoral completo, mejor preocuparse por la &lt;em&gt;performance&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h3&gt;
+
+&lt;p&gt;La misma sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite trabajar con partes buenas de los paradigmas &lt;em&gt;estructurado&lt;/em&gt;, &lt;em&gt;orientado a objetos&lt;/em&gt; y &lt;em&gt;funcional&lt;/em&gt;. Las buenas prácticas de cada paradigma pueden favorecernos a la hora de mejorar algunos aspectos de nuestro código. En la mayoría de los casos, al mejorar un aspecto, estaremos empeorando otros (Ej: Mayor Expresividad -&amp;gt; Menor Performance). Muchas veces estos aspectos se conjugarán de formas más complejas (Ej: Mayor Performance y Buena Expresividad -&amp;gt; Poca Flexibilidad). Es parte de nuestro trabajo cuando escribimos una pieza de código, evaluar qué aspectos queremos favorecer y cuáles podemos castigar. La mayoría de las veces caeremos en la trampa y favoreceremos los aspectos que más nos gusten. Eso es algo a evitar. Para saber qué aspectos favorecer, la mejor opción es analizar el caso de uso.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Aug 2015 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</guid>
+        
+        <category>javascript</category>
+        
+        <category>expressive</category>
+        
+        <category>code</category>
+        
+        <category>array</category>
+        
+        <category>prototype</category>
+        
+        <category>functions</category>
+        
+        <category>forEach</category>
+        
+        <category>map</category>
+        
+        <category>reduce</category>
+        
+        <category>filter</category>
+        
+        <category>every</category>
+        
+        <category>some</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Expressive code in Javascript</title>
+        <description>&lt;p&gt;There are many (maybe too many) aspects to take care of when writing a piece of code: &lt;em&gt;performance, maintainability and readability&lt;/em&gt;, for mentioning a few of them.&lt;br /&gt;
+One aspect I find particularly interesting is “expressiveness” which means “the ability of enunciate what is being done”.&lt;/p&gt;
+
+&lt;p&gt;Since I am a &lt;em&gt;Javascript Hipster (“I loved it before it was catching on”)&lt;/em&gt; I would like to show some examples of how &lt;em&gt;Javascript&lt;/em&gt; lets us be really expressive working with &lt;em&gt;arrays&lt;/em&gt; (and some particular functions): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;p&gt;Even though “Expressiveness” is an attribute often associated to the language, all of them let us be more or less expressive when writing different pieces of code that do the same. Because of that, it would be more precise to say that a piece of code is “expressive” if it is capable of really enunciate what is it doing.&lt;/p&gt;
+
+&lt;p&gt;Let’s consider, for example, this group of people:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;176&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Jane Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Julian Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s traverse this &lt;em&gt;array&lt;/em&gt; and, for each person, print “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This piece of code is fairly straightforward, short and readable enough. Though, that doesn’t make it necessarily &lt;strong&gt;expressive&lt;/strong&gt;. What we were trying to do: Print “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old” per each person. This is what our code is actually saying:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Initialize a variable named &lt;em&gt;i&lt;/em&gt; with the value &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;As long as the variable is lower than the persons quantity, increment it and run the following code block:&lt;br /&gt;
+  2.1. Get the name of the person at the index equals to the previously initialized variable.&lt;br /&gt;
+  2.2. Concatenate a space, a hyphen and then another space.&lt;br /&gt;
+  2.3. Concatenate the age of the person at the index equals to the previously initialized variable.&lt;br /&gt;
+  2.4. Log the result on the console.  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Let’s start by extracting the code inside the &lt;em&gt;for&lt;/em&gt; to a function receiving a &lt;em&gt;person&lt;/em&gt; as parameter. The function prints the specified pattern.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you are now thinking “this is not even related to &lt;em&gt;Javascript&lt;/em&gt; and its &lt;em&gt;arrays&lt;/em&gt; functions”, you are right. &lt;em&gt;All you need is to have a little patience&lt;/em&gt;.&lt;br /&gt;
+We just &lt;em&gt;encapsulated&lt;/em&gt; a functionality in order to hide it complexity. Even though &lt;em&gt;encapsulation&lt;/em&gt; is a concept mainly related to the Object Oriented Programming paradigm, it can be achieved in so many different ways and &lt;em&gt;functions&lt;/em&gt; are an ancient way of doing it. The goal of &lt;em&gt;encapsulating&lt;/em&gt; code is not to make it more expressive, but it does it in most of the cases as a collateral effect.&lt;/p&gt;
+
+&lt;p&gt;If we read the new code (skipping the new function description):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Initialize a variable named  &lt;em&gt;i&lt;/em&gt; with the value &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;As long as the variable is lower to the persons quantity, increment it and&lt;/li&gt;
+  &lt;li&gt;Print the pattern for the person at the index equals to the previously initialized variable.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;arrayprototypeforeach&quot;&gt;Array.Prototype.forEach&lt;/h3&gt;
+&lt;p&gt;Though the code has turned into something a little bit more expressive, it seems to be more concerned for the variable &lt;em&gt;i&lt;/em&gt;, its initialization and limit than focused on the person itself.
+Fortunately, there are other ways of traversing an &lt;em&gt;array&lt;/em&gt;. For example, the  &lt;code&gt;Array.prototype.forEach(function)&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If we read this new code:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;For each person, print the pattern.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This way, this piece of code &lt;em&gt;does&lt;/em&gt; and &lt;em&gt;expresses&lt;/em&gt; exactly what we want it to.
+However, regardless reading it is much simpler, it’s necessary to understand what’s going on behind the curtain.&lt;br /&gt;
+For starter, something to highlight about &lt;em&gt;Javascript&lt;/em&gt; is that &lt;em&gt;everything (or almost everything) is a message.&lt;/em&gt; This means that objects, functions, methods and values are messages (or expressions) and hence, can be passed as parameters.
+Unlike the &lt;em&gt;for&lt;/em&gt; that is a statement, the &lt;em&gt;forEach&lt;/em&gt; is a method belonging to the object &lt;em&gt;Array&lt;/em&gt; (or its &lt;em&gt;prototype&lt;/em&gt;). Combining these concepts, &lt;em&gt;forEach&lt;/em&gt; traverses the &lt;em&gt;array&lt;/em&gt; and invokes the function it received as parameter, on each iteration. During that invocation &lt;em&gt;forEach&lt;/em&gt; passes to the other function, the element that is being iterated.
+This could be a homemade &lt;em&gt;forEach&lt;/em&gt; impleentation:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Additionally &lt;em&gt;forEach&lt;/em&gt; receives a second (and optional) parameter that represents a function that will be invoked when the &lt;em&gt;array&lt;/em&gt; traversing is over.
+This could look useless for the examples we are working on, however, it becomes essential when working on an asynchronous development scenario (as you would have working with &lt;a href=&quot;http://nodejs.org&quot;&gt;NodeJS&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;There are 2 other parameters that &lt;strong&gt;&lt;em&gt;forEach&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;passes to the other function&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The index of the element being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The full &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;forEach&lt;/em&gt; does not return any result, but it’s possible to modify the &lt;em&gt;array&lt;/em&gt; being iterated inside the function it calls (we will learn that it must be done carefully).&lt;/p&gt;
+
+&lt;h3 id=&quot;not-suitable-for-under-25s&quot;&gt;Not suitable for under 25s&lt;/h3&gt;
+&lt;p&gt;Let’s suppose that a really exclusive bar is not suitable for under 25s. We could try to write a piece of code that removes from the &lt;em&gt;array&lt;/em&gt; those people that don’t match that criteria. The piece of code looks like:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice&quot;&gt;&lt;em&gt;splice&lt;/em&gt;&lt;/a&gt; is useful for removing elements from an &lt;em&gt;array&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;If we run this code, we will get the following output:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;John Doe - 27&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Jane Doe - 24&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Julian Doe - 32&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For some reason, Jane Doe successfully beat our bar’s security and slunk. That reason is cause of countless &lt;em&gt;bugs&lt;/em&gt; on countless pieces of code.&lt;br /&gt;
+On each iteration &lt;em&gt;index&lt;/em&gt; is incremented by 1. First time (&lt;em&gt;index=0&lt;/em&gt;) we find John Doe, 27 years old. It is kept in the &lt;em&gt;array&lt;/em&gt;. Second time (&lt;em&gt;index=1&lt;/em&gt;) we find John Doe Jr, 3 years old (who, of course, &lt;em&gt;shall not pass&lt;/em&gt;). When we remove him from the &lt;em&gt;array&lt;/em&gt; Jane Doe is moved to the &lt;em&gt;index 1&lt;/em&gt; and Julian Doe to the &lt;em&gt;index 2&lt;/em&gt;. Third time (&lt;em&gt;index=2&lt;/em&gt;) Julian Doe appears. This means that Jane Doe has been skipped. &lt;strong&gt;It’s like if the security guy turned away each time he pull someone away from the bar, and at that moment let anybody go in regardless its age.&lt;/strong&gt;
+It’s usually not a good idea to modify the &lt;em&gt;array&lt;/em&gt; being iterated. As a workaround we could use an auxiliary &lt;em&gt;array&lt;/em&gt; and overwrite the original once the iteration is over.&lt;/p&gt;
+
+&lt;p&gt;Regardless of the previous code malfunctioning, let’s analyze its &lt;strong&gt;expressivity&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;For each person:&lt;br /&gt;
+  1.1. Check if it’s age is greater or equals than 25.&lt;br /&gt;
+  1.2. If it isn’t, remove 1 position from the &lt;em&gt;array&lt;/em&gt; starting at &lt;em&gt;index&lt;/em&gt;.  &lt;/li&gt;
+  &lt;li&gt;For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the &lt;em&gt;array&lt;/em&gt;).  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It doesn’t seem to be that bad, but we are still aware of the &lt;em&gt;array&lt;/em&gt;, the &lt;em&gt;index&lt;/em&gt; and the comparison logic. Furthermore, if we wanted to reuse this code for removing people younger than 18 we would need to duplicate it.
+Let’s start by tackling this second issue&lt;/p&gt;
+
+&lt;h3 id=&quot;functions-creating-functions&quot;&gt;Functions creating functions&lt;/h3&gt;
+&lt;p&gt;This is a &lt;em&gt;Javascript&lt;/em&gt; feature that, properly used, allows us to write expressive and highly reusable code.
+Let’s take this code as an example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;olderThan25&lt;/em&gt; is returning a function that receives a person and returns &lt;em&gt;true&lt;/em&gt; if that person is older than 25. It means that, when we assign the result of its execution to the &lt;em&gt;older&lt;/em&gt; variable, &lt;code&gt;older(person)&lt;/code&gt; will perform the previously mentioned evaluation.&lt;br /&gt;
+Thus,&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;outputs &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Applying this same concept we can achieve a more reusable and even more expressive piece of code. Let’s pass the “age threshold” we want to evaluate as a parameter&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can create as many functions we want with different thresholds and name these in a way that represent what it’s being done.&lt;br /&gt;
+Applied to the previous code (that was trying to remove people younger than 25):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The code is still not working (the problem described above is still there).&lt;/li&gt;
+  &lt;li&gt;Even though the readability has improved, it’s still being read as “if the person is older than 25, remove 1 position from the &lt;em&gt;array&lt;/em&gt; starting at &lt;em&gt;index&lt;/em&gt;”. Expressivity is almost the same.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;arrayprototypefilter&quot;&gt;Array.Prototype.filter&lt;/h3&gt;
+
+&lt;p&gt;Fortunately &lt;em&gt;JavaScript&lt;/em&gt; gives us an &lt;em&gt;array&lt;/em&gt; method that does exactly what we are looking for.
+The &lt;em&gt;filter&lt;/em&gt; method receives 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: The function that evaluates the condition that defines if the element being iterated belongs to the set. It needs to return &lt;em&gt;true&lt;/em&gt; if the element belongs, and &lt;em&gt;false&lt;/em&gt; otherwise.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (optional): The object that will be used as &lt;em&gt;this&lt;/em&gt; inside the &lt;em&gt;callback&lt;/em&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time,  &lt;em&gt;filter&lt;/em&gt; passes 3 parameters to &lt;em&gt;callback&lt;/em&gt; (the same way &lt;em&gt;forEach&lt;/em&gt; does):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: The element being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The position of that element inside the &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Unlike the &lt;em&gt;forEach&lt;/em&gt;, &lt;em&gt;filter&lt;/em&gt; does return a &lt;strong&gt;new&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; with the elements that match the test performed by &lt;em&gt;callback&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Considering this new method, the next piece of code solves the requirement:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;About its expressivity, it could be read as:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Filter those persons &lt;strong&gt;not&lt;/strong&gt; older than 25 and print the pattern for each one.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;An issue about this method expressivity is its name &lt;em&gt;filter&lt;/em&gt; (and/or the fact that it removes the element when &lt;em&gt;callback&lt;/em&gt; returns &lt;em&gt;false&lt;/em&gt;). This would make us to read “filter older than 25”, when we are doing exactly the opposite. &lt;em&gt;Well, nothing is perfect&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;watch-your-weight&quot;&gt;Watch your weight&lt;/h3&gt;
+
+&lt;p&gt;We have succeeded at working with each person in our group and performing operations with each one of them. But lot of times we’ll need to work with the group as a whole.&lt;br /&gt;
+Let’s suppose that &lt;em&gt;our&lt;/em&gt; persons are stepping into an elevator. For security reasons, moderns elevators use a scale in order to make sure that the maximum allowed weight is not exceeded. Let’s try to avoid the shame of hearing the buzzer and calculate the total weight in advance:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Some observations about this code:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;As we have seen, &lt;em&gt;forEach&lt;/em&gt; receives a function as its first parameter. This far, we used to create the function as a previous step and pass its name as parameter. However, since &lt;em&gt;function&lt;/em&gt; is an expression that returns a function, &lt;em&gt;Javascript&lt;/em&gt; syntax lets us to define the function in place. This function in particular has no name. These kind of functions are called &lt;strong&gt;anonymous functions&lt;/strong&gt;. Functions categorization would worth its own post.&lt;/li&gt;
+  &lt;li&gt;Since &lt;em&gt;forEach&lt;/em&gt; is not returning any value, it’s necessary to define an external variable that accumulates the successive sums.&lt;/li&gt;
+  &lt;li&gt;The code we are going to write is not &lt;em&gt;automatically&lt;/em&gt; more expressive than the one we wrote above (&lt;strong&gt;IMO&lt;/strong&gt;), but doubtless, it turns amazingly easy to get when we understand the meaning and importance of &lt;em&gt;map&lt;/em&gt; and &lt;em&gt;reduce&lt;/em&gt; methods.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Step by step. Let’s first consider how sensitive people are about their weight and let’s try to keep it confidential. Let’s obtain a new &lt;em&gt;array&lt;/em&gt; that only contains the weight of the people in our group.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This code can be read as:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Declare an empty &lt;em&gt;weights&lt;/em&gt; array.&lt;/li&gt;
+  &lt;li&gt;For each person, invoke a function that receives the person and its index inside the original &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;The function gets the person weight and assign it to that index but in the new &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;outputs&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;[ 176, 22, 127, 160 ]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;arrayprototypemap&quot;&gt;Array.prototype.map&lt;/h3&gt;
+
+&lt;p&gt;In general, we call “&lt;a href=&quot;https://en.wikipedia.org/wiki/Map_(mathematics)&quot;&gt;to map&lt;/a&gt;” to the process of associating elements from one set with elements from a different set. This means that the code above “maps people with/by their corresponding weights”.
+It would be nice to be able to write that same thing in &lt;em&gt;Javascript&lt;/em&gt; the following way:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As a matter of fact, if we defined &lt;em&gt;weight&lt;/em&gt; as a function that returns the weight of a person, the code above does &lt;strong&gt;exactly&lt;/strong&gt; what it says.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;em&gt;map&lt;/em&gt; method receives the same 2 parameters than &lt;em&gt;filter&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: The function that determines the association criteria (it must return the value to map to each element).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (optional): The object that will be used as &lt;em&gt;this&lt;/em&gt; inside the &lt;em&gt;callback&lt;/em&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time &lt;em&gt;map&lt;/em&gt; passes 3 parameters to &lt;em&gt;callback&lt;/em&gt; (the same way &lt;em&gt;forEach&lt;/em&gt; and &lt;em&gt;filter&lt;/em&gt; do):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: The element being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The &lt;em&gt;index&lt;/em&gt; of that element in the &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;map&lt;/em&gt; returns a &lt;strong&gt;new&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; with the elements of the second set. In our case it returns an &lt;em&gt;array&lt;/em&gt; with people weights.  &lt;/p&gt;
+
+&lt;p&gt;Going back to our example, each weight doesn’t help us to determine whether is dangerous to activate the elevator or not. We still need to get the total weight.&lt;/p&gt;
+
+&lt;p&gt;Following the previous approach, and taking advantage of the &lt;em&gt;map&lt;/em&gt; function, our code would look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;It means that we first get the weights &lt;em&gt;array&lt;/em&gt; and then we iterate it performing the sum. This is a small (almost trivial) improvement in comparison with our last version.&lt;/p&gt;
+
+&lt;h3 id=&quot;arrayprototypereduce&quot;&gt;Array.prototype.reduce&lt;/h3&gt;
+
+&lt;p&gt;The term &lt;em&gt;reduce&lt;/em&gt; is, IMO, not too much descriptive in regards to the goal of this method. Other languages (associated to the &lt;em&gt;functional&lt;/em&gt; paradigm) usually refers to this function as &lt;a href=&quot;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&quot;&gt;&lt;em&gt;fold&lt;/em&gt;&lt;/a&gt;. A good approach to understand it is to think about &lt;em&gt;reduce&lt;/em&gt; as “summarize”. We want to find a single value that &lt;em&gt;summarizes&lt;/em&gt; every other values. For example, 10 summarizes 4, 3, 2 and 1 if we consider the addition as a way of summarizing. 24 summarizes 4, 3, 2, 1 if we consider multiplication as a way of summarizing.&lt;br /&gt;
+So, defining sum as:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;and considering the following piece of code:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;we could read: summarize by sum the weight of the people. Or, sum the weight of the people.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; method receives 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: The function containing the reduction logic (the way of summarizing).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;initialValue&lt;/em&gt; (optional): The initial value of the &lt;em&gt;acummulator&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time, &lt;em&gt;reduce&lt;/em&gt; passes 4 parameters to &lt;em&gt;callback&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;previousValue&lt;/em&gt;: The result of &lt;em&gt;callback&lt;/em&gt; last execution, or &lt;em&gt;initialValue&lt;/em&gt; (the first time it’s executed).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;currentValue&lt;/em&gt;: The value being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The position of that value inside the &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; returns an &lt;strong&gt;only&lt;/strong&gt; value that matches the result of &lt;em&gt;callback&lt;/em&gt; last execution.  &lt;/p&gt;
+
+&lt;p&gt;There are some qualities of &lt;em&gt;reduce&lt;/em&gt; that could label it as a recursive method. Instead of thinking &lt;em&gt;reduce&lt;/em&gt; as a function that iterates the &lt;em&gt;array&lt;/em&gt; applying &lt;em&gt;callback&lt;/em&gt;, we could think about it as a function that takes the &lt;em&gt;array&lt;/em&gt; first position and applies &lt;em&gt;callback&lt;/em&gt; passing the current position and the result of &lt;em&gt;reduce&lt;/em&gt; for a second &lt;em&gt;array&lt;/em&gt; that goes from the original &lt;em&gt;array&lt;/em&gt; second position to the last one. This is meaningless when using it, but knowing this, will help us to understand how it works, why it &lt;strong&gt;accumulates&lt;/strong&gt; and how the &lt;em&gt;initialValue&lt;/em&gt; works.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-visit-to-the-drive-in-cinema&quot;&gt;A visit to the drive-in cinema&lt;/h3&gt;
+
+&lt;p&gt;People get out of the elevator, jumped into the car and drove to the drive-in cinema. They choose a not suitable for under 18s movie. We need to figure out if &lt;strong&gt;every&lt;/strong&gt; person in the car matches the criteria.&lt;/p&gt;
+
+&lt;p&gt;There are several ways of achieving this. For example:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Iterate and query  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We are using the &lt;em&gt;olderThan(threshold)&lt;/em&gt; in order to generate the function &lt;em&gt;olderThan18&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reduce by applying the logical “AND”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mapping the ages &lt;em&gt;array&lt;/em&gt; and reduce by applying the logical “AND”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greaterThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This one is similar to the previous one, but before &lt;em&gt;reducing&lt;/em&gt; we get the ages &lt;em&gt;array&lt;/em&gt; and hence, instead of using a function that receives a person and compares it age, we are now using a similar one that simply compares the age. &lt;em&gt;greaterThan18&lt;/em&gt; is generated in a similar way than &lt;em&gt;olderThan18&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;All these solutions have the same problem (or improvement opportunity): These are evaluating the entire &lt;em&gt;array&lt;/em&gt; regardless what happens with each element. In our case, evaluating the second element we could tell that not every people are older than 18. In &lt;em&gt;boolean&lt;/em&gt; evaluations, this is known as “short circuit evaluation”.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In both cases, evaluating &lt;em&gt;whatever&lt;/em&gt; is useless.&lt;/p&gt;
+
+&lt;p&gt;This seems to be meaningless in a 4 elements &lt;em&gt;array&lt;/em&gt;. However, what would happen if we had a bus, train, or plain trying to enter the drive-in cinema? Aside from the probable venue space issue, our solutions would be using unnecesary processing cycles A.K.A &lt;strong&gt;bad performance&lt;/strong&gt;.&lt;br /&gt;
+The way of solving this issue is &lt;em&gt;breaking&lt;/em&gt; the iterations when evaluation is no longer needed. The instruction &lt;em&gt;break&lt;/em&gt; does exactly that, but is not suitable for the methods we are using (as it is for the classic &lt;em&gt;for&lt;/em&gt;). There are other “techniques” for quitting these methods, but none of them is smart nor recommended (for example, we could assign 0 to the &lt;em&gt;array.length&lt;/em&gt; if we didn’t need to keep working with the &lt;em&gt;array&lt;/em&gt;. We could also make a copy of that &lt;em&gt;array&lt;/em&gt; if we wanted to change its length without any problem. Or we could just &lt;em&gt;throw an exception&lt;/em&gt; and &lt;em&gt;catch it&lt;/em&gt; immediately after the method call).&lt;/p&gt;
+
+&lt;p&gt;But there is a reason for this problem to appear when using these methods. On the &lt;em&gt;forEach&lt;/em&gt; case, that reason is even explicit at its name. &lt;em&gt;For Each&lt;/em&gt; element in the &lt;em&gt;array&lt;/em&gt; implies that &lt;em&gt;all&lt;/em&gt; of its elements will be iterated.&lt;/p&gt;
+
+&lt;h3 id=&quot;every-some&quot;&gt;Every-Some&lt;/h3&gt;
+
+&lt;p&gt;Going back to the &lt;strong&gt;expressiveness&lt;/strong&gt; topic, none of our solutions turned to be too much expressive (do the exercise yourselves of identifying what is being said by each one and what is being done). The statement should be simpler. Verify that every person is older than 18.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This solution says and does exactly what we are looking for. It returns &lt;em&gt;true&lt;/em&gt; if every people in the array are older than 18. Otherwise, it returns &lt;em&gt;false&lt;/em&gt;.
+In addition of being highly expressive, &lt;em&gt;every&lt;/em&gt; respects the short circuit evaluation. This means that it will stop iterating as soon as it founds a not matching person.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;every&lt;/em&gt; method receives 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: The function evaluating the condition to match (it must return &lt;em&gt;true&lt;/em&gt; or &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (optional): The object that will be used as &lt;em&gt;this&lt;/em&gt; inside the &lt;em&gt;callback&lt;/em&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time, &lt;em&gt;every&lt;/em&gt; passes 3 parameters to &lt;em&gt;callback&lt;/em&gt; (the same way that the other methods do):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: The element being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The &lt;em&gt;index&lt;/em&gt; of that element inside the &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;every&lt;/em&gt; returns &lt;em&gt;true&lt;/em&gt; if all its elements match the condition, or &lt;em&gt;false&lt;/em&gt; as soon as it find one element that doesn’t.&lt;/p&gt;
+
+&lt;h3 id=&quot;looking-for-a-suitable-movie&quot;&gt;Looking for a suitable movie&lt;/h3&gt;
+
+&lt;p&gt;Movies age restrictions must be observed. Although our people didn’t find any “suitable for all audiences”, a new release has just appeared and it can be watched even by children with adult supervision. Putting aside these adults criteria, let’s write a solution that evaluates if at least one person is older than 18. Before showing all the alternatives (the way we did for the previous scenario &lt;em&gt;every&lt;/em&gt;), let’s think: wouldn’t exist any other method capable of saying and doing what we are looking for?
+The short answer is &lt;strong&gt;yes&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;some&lt;/em&gt; method receives 2 parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: The function evaluating the condition to match (it must return &lt;em&gt;true&lt;/em&gt; or &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (optional): The object that will be used as &lt;em&gt;this&lt;/em&gt; inside the &lt;em&gt;callback&lt;/em&gt; function.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;At the same time, &lt;em&gt;every&lt;/em&gt; passes 3 parameters to &lt;em&gt;callback&lt;/em&gt; (the same way that the other methods do):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: The element being iterated.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: The &lt;em&gt;index&lt;/em&gt; of that element inside the &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;some&lt;/em&gt; returns &lt;em&gt;false&lt;/em&gt; if none of its elements matches the condition, or &lt;em&gt;false&lt;/em&gt; as soon as it find one element that does.&lt;/p&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;As I mentioned at the very beginning, &lt;em&gt;expressivity&lt;/em&gt; is just one of many aspects that must be considered. Many times this aspects run into conflict and it’s necessary to evaluate which one is the most important.&lt;br /&gt;
+Let’s consider the following problem: I must get an &lt;em&gt;array&lt;/em&gt; with people with weight under 130 pounds and older than 10.
+Using what we have seen, we could naturally think that the following solution is the ideal one:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As a matter of fact, this solution is not ideal. It’s just expressive.
+When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering twice, we are iterating 2 &lt;em&gt;arrays&lt;/em&gt;. If &lt;em&gt;persons&lt;/em&gt; contains N elements and M are older than 10, the solution will iterate N + M elements. The following solution might be a little bit less expressive, but we can be sure that only N elements will be iterated:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;considering&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When compromising aspects, it’s necessary to consider the use case. If our &lt;em&gt;arrays&lt;/em&gt; are containing families (a few elements), we might allow ourselves to have the most expressive code. But if we were processing the entire electoral roll, we should better worry about the &lt;em&gt;performance&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Javascript&lt;/em&gt; syntax is powerful enough to let us work with the good parts of the &lt;em&gt;procedural&lt;/em&gt;, &lt;em&gt;object oriented&lt;/em&gt; and &lt;em&gt;functional&lt;/em&gt; paradigms. Good practices of each paradigm could give us advantages when trying to improve some aspect of our code. Most of the times, when improving one aspect, we will be worsening others (For example: More Expressivity -&amp;gt; Less Performance). In occasions, these aspects will be related in more complex ways (For example: More Performance and Good Expressivity -&amp;gt; Less Flexibility). It’s part of our job when writing a piece of code, to evaluate which aspects we want to favor and which ones we will be punishing. Most of the times we will jump into the pitfall and favor those aspects that we like the most. That’s something to avoid. In order to know which aspects should be improved, the best option is to consider the use case.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 13 Aug 2015 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//en/2015/08/13/expressive-code-javscript/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//en/2015/08/13/expressive-code-javscript/</guid>
+        
+        <category>javascript</category>
+        
+        <category>expressive</category>
+        
+        <category>code</category>
+        
+        <category>array</category>
+        
+        <category>prototype</category>
+        
+        <category>functions</category>
+        
+        <category>forEach</category>
+        
+        <category>map</category>
+        
+        <category>reduce</category>
+        
+        <category>filter</category>
+        
+        <category>every</category>
+        
+        <category>some</category>
+        
+        
+      </item>
     
       <item>
         <title>Mudanza a GitHubPages</title>
@@ -293,49 +1224,6 @@ Sincerely.&lt;/p&gt;
         <category>Facebook</category>
         
         <category>social network</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>MonsterDivX está robando</title>
-        <description>Esas son las palabras, para mi &lt;br /&gt;Todo comienza con un post que me recomiendan leer en el blog de sirviejo: &lt;a href=&quot;http://www.sirviejo.com/monsterdivx-es-un-virus/&quot;&gt;MonsterDivX es un virus&lt;/a&gt;. Si leen con atención, y bien en criollo, explica cómo el plugin o extensión que MonsterDivX nos pide instalar, reemplaza las publicidades de cualquier sitio que naveguemos por las de ellos (desviando todas las ganancias).&lt;!--MORE--&gt;&lt;br /&gt;Yo ya desconfío de todo lo que no veo probado, y este era el caso del post (estimo que era para no entrar en mayores&amp;nbsp;tecnicismos). Por lo tanto, le dejé a su redactor este mensaje:&lt;br /&gt;&lt;blockquote class=&quot;tr_bq&quot;&gt;&lt;span class=&quot;Apple-style-span&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 21px;&quot;&gt;Por favor, ya que te tomaste el laburo de leer los .js, podrías compartir en un post más técnico o por mail qué pasos seguiste para detectarlo? Ojo, no digo que no sea cierto lo que decis, pero yo no lo noté. Si es cierto, me sumaré a comunicarlo, pero ya llegamos a un punto en donde sin evidencia, primero dudo (nada personal).&lt;/span&gt;&lt;span class=&quot;Apple-style-span&quot; style=&quot;font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 21px;&quot;&gt;Te dejé mi mail en el comentario, sentite libre de escribirme si podés, o usar twitter: @nohorbee …&lt;/span&gt;&amp;nbsp;&lt;/blockquote&gt;Me interesó corroborar versiones sobretodo por los recientes supuestos hackeos, rediseño y censura a Cuevana, y el coincidente (bueno, con un mes de diferencia) arribo de Netflix (servicio pago que brinda servicios similares de forma &quot;más legal&quot;).&lt;br /&gt;&lt;br /&gt;El autor me respondió vía Twitter:&lt;br /&gt;&lt;br /&gt;&lt;blockquote class=&quot;tr_bq&quot;&gt;&lt;span class=&quot;tweet-user-name&quot; style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;a class=&quot;tweet-screen-name user-profile-link js-action-profile-name&quot; data-user-id=&quot;15206123&quot; href=&quot;https://twitter.com/#%21/sirviejo&quot; style=&quot;color: rgb(0, 132, 180) !important; cursor: pointer; font-weight: bold; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot; title=&quot;sirviejo&quot;&gt;sirviejo&lt;/a&gt;&amp;nbsp;&lt;span class=&quot;tweet-full-name&quot; style=&quot;color: #999999; font-size: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;sirviejo&lt;/span&gt;&amp;nbsp;&lt;/span&gt;&lt;a class=&quot;  twitter-atreply pretty-link&quot; data-screen-name=&quot;nohorbee&quot; href=&quot;https://twitter.com/#%21/nohorbee&quot; rel=&quot;nofollow&quot; style=&quot;color: #0084b4; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-decoration: none; white-space: nowrap;&quot;&gt;&lt;s style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; opacity: 0.5; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-decoration: none;&quot;&gt;@&lt;/s&gt;&lt;/a&gt;&lt;b style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; white-space: normal;&quot;&gt;nohorbee&lt;/b&gt;&amp;nbsp;ahi vi tu comentario, mira este link donde se esparcio la noticia&amp;nbsp;&lt;a class=&quot;twitter-timeline-link&quot; data-expanded-url=&quot;http://forobeta.com/off-topic/62332-atencion-monsterdivx-altera-tu-navegador-mostrar-propios-anuncios.html&quot; href=&quot;http://t.co/FMYyyu8b&quot; rel=&quot;nofollow&quot; style=&quot;color: #0084b4; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; text-decoration: none;&quot; target=&quot;_blank&quot; title=&quot;http://forobeta.com/off-topic/62332-atencion-monsterdivx-altera-tu-navegador-mostrar-propios-anuncios.html&quot;&gt;forobeta.com/off-topic/6233…&lt;/a&gt;&lt;/blockquote&gt;Nobleza obliga, a leer cuidadosamente los scripts y verificar. La conclusión: &lt;b&gt;ES CIERTO. MONSTERDIVX ESTÁ REEMPLAZANDO LOS ANUNCIOS DE TODOS LOS SITIOS QUE NAVEGAMOS (SI TENEMOS SU EXTENSIÓN INSTALADA).&lt;/b&gt;&lt;br /&gt;Mi intención, además de sumarme a la campaña para informar al usuario, es mostrar la verificación (simple) que hice, desde un costado más técnico (solo para aquellos interesados en leer). Si crees que esta información tiene suficiente nivel de detalle, y no vas a seguir leyendo la parte técnica, me permito una última aclaración. No es necesario desinstalar la extensión (al menos desde Chrome). Con deshabilitarla, el efecto ya no ocurre. ¿Por qué lo menciono? Quizás el usuario desee seguir utilizando esta página. Puede activar la extensión al ingresar, y desactivarla al salir. Por supuesto, no lo recomiendo, y aquí los motivos:&lt;br /&gt;&lt;br /&gt;&lt;ol&gt;&lt;li&gt;No estaríamos castigando una gran estafa.&lt;/li&gt;&lt;li&gt;Tarde o temprano nos olvidaríamos de desactivar la extensión.&lt;/li&gt;&lt;li&gt;Algún día, actualizan la extensión para realizar otras operaciones ilegales (loguear nuestras contraseñas mientras accedemos a nuestros Homebanking, por ejemplo) y bueno, nos lo merecemos por pseudo-complicidad.&lt;/li&gt;&lt;/ol&gt;Dudé al escribir esto, si mencionar este pequeño &lt;i&gt;workaround&lt;/i&gt;. Pero considero que la información debe darnos libertad para tomar nuestras propias decisiones. Sean concientes al tomar las suyas.&lt;br /&gt;&lt;br /&gt;He aquí la verificación:&lt;br /&gt;La respuesta de @sirviejo, me llevó al foro donde todo inició:&amp;nbsp;&lt;a href=&quot;http://forobeta.com/off-topic/62332-atencion-monsterdivx-altera-tu-navegador-mostrar-propios-anuncios.html&quot;&gt;http://forobeta.com/off-topic/62332-atencion-monsterdivx-altera-tu-navegador-mostrar-propios-anuncios.html&lt;/a&gt;. Aquí se hace referencia al archivo .js que la extensión carga en TODAS las páginas que navegamos (dentro y fuera de monsterdivx):&amp;nbsp;&lt;a href=&quot;http://www.monsterdivx.com/core/hosts.js&quot; rel=&quot;nofollow&quot; style=&quot;background-color: #fafafa; color: #417394; font-family: Verdana, Arial, Tahoma, Calibri, Geneva, sans-serif; font-size: 13px; text-decoration: none;&quot; target=&quot;_blank&quot;&gt;http://www.monsterdivx.com/core/hosts.js&lt;/a&gt;. Como notarán, el código está algo ofuscado (sin espacios ni indentación). Para facilitar la lectura, lo pasé por&amp;nbsp;&lt;a href=&quot;http://jsbeautifier.org/&quot;&gt;http://jsbeautifier.org/&lt;/a&gt;. Al hacerlo, noté un código bastante simple, que verifica las fuentes de ciertos iframes, y en caso de detectar que son publicidad, los reemplaza con una URL fija (que, aunque no pude verificarlo, supongo que es la URL que carga sus publicidades. Así no lo fuera, el comportamiento ya es por demás abusivo).&lt;br /&gt;¿Es esto suficiente para decir que &quot;están reemplazando las publicidades&quot;? &lt;b&gt;NO.&lt;/b&gt;&amp;nbsp;Aún falta un último paso: Verificar que este .js, se esté cargando en otras páginas. Para verificarlo, utilizando las herramientas para desarrolladores de Chrome, analicé el &quot;tráfico&quot; de red (a alto nivel, claramente: solapa Network). Allí estaba cargado clarito.&lt;br /&gt;&lt;br /&gt;&lt;div class=&quot;separator&quot; style=&quot;clear: both; text-align: center;&quot;&gt;&lt;a href=&quot;http://4.bp.blogspot.com/-GL_0awrMQeM/Ttqig_xF0mI/AAAAAAAAByE/K1U6zTs722g/s1600/hosts.PNG&quot; imageanchor=&quot;1&quot; style=&quot;margin-left: 1em; margin-right: 1em;&quot;&gt;&lt;img border=&quot;0&quot; src=&quot;http://4.bp.blogspot.com/-GL_0awrMQeM/Ttqig_xF0mI/AAAAAAAAByE/K1U6zTs722g/s1600/hosts.PNG&quot; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;br /&gt;La fiscalía descansa.&lt;br /&gt;&lt;br /&gt;Por último, agradecer:&lt;br /&gt;&lt;ul&gt;&lt;li&gt; A Mariano, por compartir el post de sirviejo.&lt;/li&gt;&lt;li&gt;A Sirviejo, no solo por publicar, sino por tomarse el trabajo de responderme en mi rol (muy hinchapelotas) de pedir pruebas. Recomiendo que antes de creer, quienes puedan, intenten verificar la información. En este caso, era verdadera.&lt;/li&gt;&lt;li&gt;A Webayunate en ForosBeta, por compartir el código detectado.&lt;/li&gt;&lt;/ul&gt;Una última recomendación, o pedido: Divulguen esta información (verifíquenla si quieren, comenten, pregunten, no se queden con lo que yo digo, pero terminen por divulgar esta información). Y quienes puedan, difundan el trabajo de Sirviejo (al menos como forma de agradecimiento). &lt;br /&gt;&lt;br /&gt;&lt;span id=&quot;goog_742194791&quot;&gt;&lt;/span&gt;&lt;span id=&quot;goog_742194792&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;div class=&quot;tweet-row&quot; style=&quot;background-color: rgba(0, 132, 180, 0.0976563); color: #444444; font-family: &#39;Helvetica Neue&#39;, Arial, Helvetica, &#39;Liberation Sans&#39;, FreeSans, sans-serif; font-size: 15px; line-height: 15px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; position: relative; text-align: left;&quot;&gt;&lt;div class=&quot;tweet-corner&quot; style=&quot;display: inline-block; margin-bottom: 0px; margin-left: 0px; margin-right: 10px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;div class=&quot;tweet-meta&quot; style=&quot;color: #999999; font-size: 11px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;span class=&quot;icons&quot; style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;/span&gt;&lt;br /&gt;&lt;div class=&quot;extra-icons&quot; style=&quot;margin-bottom: 0px; margin-left: 2px; margin-right: 2px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px; position: absolute; right: 5px; top: 0px;&quot;&gt;&lt;span class=&quot;icons&quot; style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;span class=&quot;inlinemedia-icons js-icon-container&quot; style=&quot;display: inline-block; margin-bottom: 0px; margin-left: 2px; margin-right: 2px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;icons&quot; style=&quot;margin-bottom: 0px; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-bottom: 0px; padding-left: 0px; padding-right: 0px; padding-top: 0px;&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Sat, 03 Dec 2011 19:05:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2011/12/03/monsterdivx-esta-robando/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2011/12/03/monsterdivx-esta-robando/</guid>
-        
-        <category>ad sense</category>
-        
-        <category>monsterDivX</category>
-        
-        <category>robo</category>
-        
-        <category>streaming</category>
-        
-        <category>cuevana</category>
-        
-        <category>sirviejo</category>
-        
-        <category>estafa</category>
-        
-        <category>hosts.js</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Tethering</title>
-        <description>Estoy en aeroparque a 7 minutos de que abran la puerta de embarque. Tanto aquí, como en Ezeiza, no hay WIFI gratis. Este motivo fue más que suficiente para poner a prueba una de las aplicaciones de mi teléfono celular. &lt;i&gt;Wireless Tethering: &lt;/i&gt;En lenguaje simple y de poco tiempo antes de embarcar, permite utilizar tu teléfono como una fuente WIFI, y si este, se encuentra conectado a internet (mediante 3G, por ejemplo) compartir esta conexión con otros dispositivos, controlando quién tiene acceso y quién no.&lt;br /&gt;Claro que todo depende de la velocidad de 3G, que no es de lo mejor, ni muy constante, pero es lo suficiente en este caso para cargar un capítulo de 24 antes de subir al avión, chequear mail, chequear la página de aeroparque para ver si el vuelo está en horario, y escribir este post.&lt;br /&gt;Hay muchas aplicaciones para realizar Tethering en Android. En particular, yo estoy utilizando uno llamado &lt;a href=&quot;https://market.android.com/details?id=android.tether&amp;amp;feature=search_result#?t=W251bGwsMSwxLDEsImFuZHJvaWQudGV0aGVyIl0.&quot;&gt;Wireless Tether for root users&lt;/a&gt;. Como su nombre lo indica, necesita un teléfono rooteado. Los invito a probarlo (este o algún otro) y compartir los resultados.&lt;br /&gt;&lt;br /&gt;Espero les sea de utilidad&lt;br /&gt;&lt;br /&gt;&lt;b&gt;Update: &lt;/b&gt;Suelo compartir la conexión de mi casa. Buen ancho de banda, da lo mismo 10 que 100. Pero que intenten conectarse a un Tethering ya es mucho. Y peor aún: De las 15 conexiones que me quisieron entrar, 12 eran desde iphones!!! USEN 3G desde los dispósitivos móbiles. Gracias :)&lt;br /&gt;&lt;br /&gt;__________________________________________</description>
-        <pubDate>Tue, 29 Nov 2011 08:14:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2011/11/29/tethering/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2011/11/29/tethering/</guid>
-        
-        <category>Tethering</category>
-        
-        <category>Tether</category>
-        
-        <category>Android</category>
         
         
       </item>
