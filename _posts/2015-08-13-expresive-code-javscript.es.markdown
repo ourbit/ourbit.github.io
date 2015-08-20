@@ -9,7 +9,7 @@ tags: javascript expresive code array prototype functions forEach map reduce fil
 Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: *performance, mantentibilidad y legibilidad*, por mencionar algunos.
 Un aspecto que me resulta particularmente interesante es el denominado "expresividad" y significa "la habilidad de enunciar lo que se está haciendo".  
 
-Como buen *JavaScript Hipster ("A mi me gustaba antes de que fuera popular")* me gustaría mostrar algunos ejemplos de cómo *JavaScript* nos permite ser realmente expresivos trabajando con *Arrays* (y algunas funciones en particular): *forEach, filter, map, reduce, every* and *some*.
+Como buen *Javascript Hipster ("A mi me gustaba antes de que fuera popular")* me gustaría mostrar algunos ejemplos de cómo *Javascript* nos permite ser realmente expresivos trabajando con *arrays* (y algunas funciones en particular): *forEach, filter, map, reduce, every* and *some*.
 <!--MORE-->
 
 Si bien habitualmente la característica de "Expresivo" se le atribuye al lenguaje, en todos los lenguajes se puede ser más o menos expresivo al escribir diferentes versiones de código que hagan lo mismo. De esta manera, sería más preciso definir a una pieza de código como "expresiva" si realmente es capaz de enunciar lo que está haciendo.
@@ -53,7 +53,7 @@ for(var i=0;i<persons.length;i++) {
   printPattern(persons[i]);
 }
 {% endhighlight %}
-Si estás pensando "esto no tiene nada que ver con *JavaScript* y las funciones de sus *arrays*", estás en lo cierto, pero no te impacientes.  
+Si estás pensando "esto no tiene nada que ver con *Javascript* y las funciones de sus *arrays*", estás en lo cierto, pero no te impacientes.  
 No hicimos más que *encapsular* una funcionalidad para ocultar su complejidad. *Encapsulamiento* es un concepto habitualmente relacionado al Paradigma de Programación orientada a objetos, pero en realidad puede lograrse de muchas maneras, y las *funciones* son una forma ancestral de lograrlo. El objetivo de *encapsular* código no es el de hacerlo más expresivo, pero en la mayoría de los casos, es un efecto colateral.
 
 Si leemos nuevamente el código (y obviamos describir la nueva función):
@@ -76,7 +76,7 @@ Si leemos nuevamente el código:
 
 De esta forma, el código *hace* y *expresa* exactamente lo que queremos.  
 Pero, si bien la lectura resulta más simple, es necesario comprender que es lo que está ocurriendo detrás del telón.  
-En primer lugar, algo a destacar de *JavaScript* es que *todo (o casi todo) es un mensaje.* Esto significa que objetos, funciones, métodos y valores son mensajes (o expresiones) y como tales pueden ser pasadas como parámetros.  
+En primer lugar, algo a destacar de *Javascript* es que *todo (o casi todo) es un mensaje.* Esto significa que objetos, funciones, métodos y valores son mensajes (o expresiones) y como tales pueden ser pasadas como parámetros.  
 A diferencia del *for* que es una instrucción, el *forEach* es un método del objeto *Array* (o de su *prototipo*). Combinando estos conceptos, *forEach* recorre el *array* y en cada iteración invoca a la función que recibió como parámetro. En dicha invocación, *forEach* le pasa como parámetro a la otra función, el elemento que está siendo iterado.  
 Una implementación muy básica del *forEach* podría ser:
 
@@ -95,7 +95,7 @@ Aún más útiles quizá resulten 2 parámetros adicionales que **el *forEach* l
 - *index*: El índice del elemento que está siendo iterado.
 - *array*: El *array* completo.
 
-El *forEach* no devuelve ningun resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el array que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).
+El *forEach* no devuelve ningun resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el *array* que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).
 
 ### No apto para menores de 25 años
 Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del *array* aquellas personas que no alcancen dicha edad. El código podría ser:
@@ -133,7 +133,7 @@ No parece ser tan grave, pero seguimos teniendo conocimiento del *array*, el *in
 Comencemos por atacar este segundo problema (al menos parte del mismo).
 
 ### Funciones que crean funciones
-Esta es una característica de *JavaScript* que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.  
+Esta es una característica de *Javascript* que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.  
 Tomemos por ejemplo el siguiente código:
 
 {% highlight javascript %}
@@ -177,7 +177,7 @@ persons.forEach(printPattern);
 
 ### Array.Prototype.filter
 
-Afortunadamente, *JavaScript* nos da un método del *array* que hace exactamente lo que queremos.  
+Afortunadamente, *Javascript* nos da un método del *array* que hace exactamente lo que queremos.  
 El método *filter* recibe 2 parámetros:
 
 - *callback*: La función que evalua la condición que decide si el elemento que está siendo iterado, debe pertenecer (deberá devolver *true* si el elemento debe pertencer al nuevo grupo, y *false* en caso contrario).
@@ -218,7 +218,7 @@ console.log(totalWeight);
 
 Algunas observaciones acerca de este código:
 
-- Como vimos, *forEach* recibe como primer parametro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como *function* es una expresión que devuelve una función, la sintáxis de *JavaScript* nos permite definir la función diretamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una **función anónima**. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un *post* en sí mismo.
+- Como vimos, *forEach* recibe como primer parametro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como *function* es una expresión que devuelve una función, la sintáxis de *Javascript* nos permite definir la función diretamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una **función anónima**. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un *post* en sí mismo.
 - Como *forEach* no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.
 - El código que vamos a generar, **en mi opinión** no es *automáticamente* más expresivo que el que ya generamos. Pero sin duda, se vuelve increiblemente entendible cuando comprendemos el significado e importancia de los métodos *map* y *reduce*.  
 
@@ -250,7 +250,7 @@ imprime
 
 En general, llamamos al proceso de asociar los elementos de un conjunto, con los elementos de otro conjunto "[mapear](https://en.wikipedia.org/wiki/Map_(mathematics))", y el criterio de dicha asociación puede variar dependiendo la función utilizada.  
 Es decir, que el código que escribimos anteiormente "mapea las personas con/por su peso".  
-Sería bueno poder escribir eso mismo en *JavaScript* de la siguiente manera:
+Sería bueno poder escribir eso mismo en *Javascript* de la siguiente manera:
 {% highlight javascript %}
 persons.map(weight);
 {% endhighlight %}
@@ -271,7 +271,7 @@ A su vez, *map* pasa a *callback* 3 parámetros (al igual que lo hacian *forEach
 - *index*: La posición de dicho elemento dentro del *array*.
 - *array*: El *array* que está siendo iterado.
 
-*map* devuelve un **nuevo** *array* con los elementos del siguiente conjunto. En nuestro ejemplo, un *array* con los pesos de las personas.  
+*map* devuelve un **nuevo** *array* con los elementos del segundo conjunto. En nuestro ejemplo, un *array* con los pesos de las personas.  
 
 Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.
 
@@ -328,7 +328,7 @@ persons.forEach(function(person) {
   areOlder = areOlder && olderThan18(person);
 });
 {% endhighlight %}
-Estamos utilizando la función *olderThan(threashold)* para generar la función *olderThan18*
+Estamos utilizando la función *olderThan(threashold)* para generar la función *olderThan18*.
 
 - Reducir mediante el operador lógico "Y"  
 {% highlight javascript %}
@@ -347,7 +347,7 @@ persons.map(function(person) {
   return (isPreviousGreater18 && greaterThan18(age));
 },true);
 {% endhighlight %}
-Es similar a la anterior, pero antes de *reducir*, obtenemos el *array* de edades (y por lo tanto, en lugar de utilizar una función que reciba una persona y compare su edad, utilizamos una similar pero que compare directamente la edad. *greaterThan18* es generada de forma similar que *olderThan18*)
+Es similar a la anterior, pero antes de *reducir*, obtenemos el *array* de edades (y por lo tanto, en lugar de utilizar una función que reciba una persona y compare su edad, utilizamos una similar pero que compare directamente la edad. *greaterThan18* es generada de forma similar que *olderThan18*).
 
 Todas estas soluciones tienen un problema (u oportunidad de mejora): Evalúan todo el *array* sin importar lo que ocurra. En nuestro caso, evaluando el segundo elemento podríamos concluir que no todas las personas son mayores de 18. En evaluaciones de expresiones *booleanas* esto se conoce como "evaluación de cortocircuito".
 {% highlight javascript %}
@@ -373,7 +373,7 @@ Además de ser altamente expresiva, *every* respeta la evaluación de cortocircu
 
 El método *every* recibe 2 parámetros:
 
-- *callback*: La función que evalua la condición a cumplir (debrá devolver *true* o *false*).
+- *callback*: La función que evalua la condición a cumplir (deberá devolver *true* o *false*).
 - *contextObject* (opcional): El objeto que será utilizado como *this* dentro de la función *callback*.
 
 A su vez, *every* pasa a *callback* 3 parámetros (al igual que lo hacian los demás métodos):
