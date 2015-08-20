@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OurBit</title>
-    <description>Write your site description here. It will be used as your sites meta description as well!</description>
+    <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 19 Aug 2015 23:01:51 -0300</pubDate>
-    <lastBuildDate>Wed, 19 Aug 2015 23:01:51 -0300</lastBuildDate>
+    <pubDate>Thu, 20 Aug 2015 15:48:55 -0300</pubDate>
+    <lastBuildDate>Thu, 20 Aug 2015 15:48:55 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
