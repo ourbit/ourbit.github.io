@@ -9,7 +9,7 @@ tags: javascript expressive code array prototype functions forEach map reduce fi
 There are many (maybe too many) aspects to take care of when writing a piece of code: *performance, maintainability and readability*, for mentioning a few of them.  
 One aspect I find particularly interesting is "expressiveness" which means "the ability of enunciate what is being done".
 
-Since I am a *Javascript Hipster ("I loved it before it was catching on")* I would like to show some examples of how *Javascript* lets us be really expressive working with *arrays* (and some particular functions): *forEach, filter, map, reduce, every* and *some*
+Since I am a *Javascript Hipster ("I loved it before it was catching on")* I would like to show some examples of how *Javascript* lets us be really expressive working with *arrays* (and some particular functions): *forEach, filter, map, reduce, every* and *some*.
 <!--MORE-->
 
 Even though "Expressiveness" is an attribute often associated to the language, all of them let us be more or less expressive when writing different pieces of code that do the same. Because of that, it would be more precise to say that a piece of code is "expressive" if it is capable of really enunciate what is it doing.
