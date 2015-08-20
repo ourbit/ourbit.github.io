@@ -4,6 +4,7 @@ title: 'Expressive code in Javascript'
 subtitle: High order functions
 author: nohorbee
 tags: javascript expressive code array prototype functions forEach map reduce filter every some
+description: "Writing expressive code in Javascript using foreforEach, filter, map, reduce, every and some methods"
 ---
 
 There are many (maybe too many) aspects to take care of when writing a piece of code: *performance, maintainability and readability*, for mentioning a few of them.  
