@@ -5,8 +5,8 @@
     <description>Write your site description here. It will be used as your sites meta description as well!</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 19 Aug 2015 22:56:31 -0300</pubDate>
-    <lastBuildDate>Wed, 19 Aug 2015 22:56:31 -0300</lastBuildDate>
+    <pubDate>Wed, 19 Aug 2015 23:01:51 -0300</pubDate>
+    <lastBuildDate>Wed, 19 Aug 2015 23:01:51 -0300</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -479,7 +479,7 @@ Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, 
         <description>&lt;p&gt;There are many (maybe too many) aspects to take care of when writing a piece of code: &lt;em&gt;performance, maintainability and readability&lt;/em&gt;, for mentioning a few of them.&lt;br /&gt;
 One aspect I find particularly interesting is “expressiveness” which means “the ability of enunciate what is being done”.&lt;/p&gt;
 
-&lt;p&gt;Since I am a &lt;em&gt;Javascript Hipster (“I loved it before it was catching on”)&lt;/em&gt; I would like to show some examples of how &lt;em&gt;Javascript&lt;/em&gt; lets us be really expressive working with &lt;em&gt;arrays&lt;/em&gt; (and some particular functions): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;
+&lt;p&gt;Since I am a &lt;em&gt;Javascript Hipster (“I loved it before it was catching on”)&lt;/em&gt; I would like to show some examples of how &lt;em&gt;Javascript&lt;/em&gt; lets us be really expressive working with &lt;em&gt;arrays&lt;/em&gt; (and some particular functions): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;.
 &lt;!--MORE--&gt;&lt;/p&gt;
 
 &lt;p&gt;Even though “Expressiveness” is an attribute often associated to the language, all of them let us be more or less expressive when writing different pieces of code that do the same. Because of that, it would be more precise to say that a piece of code is “expressive” if it is capable of really enunciate what is it doing.&lt;/p&gt;
