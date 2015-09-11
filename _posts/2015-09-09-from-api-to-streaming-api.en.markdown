@@ -1,15 +1,15 @@
 ---
 layout: post
-title: 'De una API a una Streaming API'
+title: 'From API to Streaming API'
 author: nohorbee
 tags: API Streaming Long Polling
-description: "Entendiendo las diferencias entre una API y una Stremaing API y utilizando streamdata.io para convertir una en la otra sin tocar una sola línea de código"
+description: "Understanding the differences between an API and a Streaming API and using streamdata.io for converting one into another without writing a single line of code"
 ---
 
-Son muchas las ventajas de desarrollar una *API* que exponga los recursos de nuestra aplicación. En particular, se logra reducir al mínimo el acoplamiento entre *capas*, y mejor aún **permite que distintas aplicaciones accedan a nuestros recursos**. En el caso de *APIs* bien diseñadas, además, esto ocurrirá de una forma intuitiva.  
-Pero incluso las mejores *APIs* pueden estar implementadas para que el cliente realice una llamada cada vez que quiere conocer el estado de un recurso. Para este caso, la *API* deberá devolver el recurso entero cada vez que sea solicitado.  
-Pero, ¿no sería más eficiente si la *API* solo devolviera lo que cambió desde la última vez que fue consultada? ¿Y no sería incluso más eficiente si el cliente no necesitara llamar a la *API* para chequear si algo cambió?  
-***Streaming APIs*** (y su buena implementación) apuntan exactamente a esto. En este *post* veremos cómo pueden ser implementadas, y cómo funciona [streamdata.io](http://streamdata.io) para convertir una *API* tradicional en una *Streaming API*.
+There are so many pros of building an *API* that exposes our application resources. It's particularly important to achieve reducing tiers coupling to the minimum, but even better, **this allows different applications to access our resources**. For well designed *APIs* this will also happen in an intuitive way.  
+But even the best *APIs* could be implemented in a way that the client needs to make a call every time it needs to know the state of a resource. For this case, the *API* will have to return the entire resource every time it's requested.  
+But, wouldn't it be more efficient if the *API* only returned what has changed since the last time it was queried? And wouldn't it be even more efficient if the client didn't need to call the *API* to check if something changed?  
+***Streaming APIs*** (when implemented properly) try to solve exactly that. On this post we will see how these could be implemented and how [streamdata.io](http://streamdata.io) works in order to turn a traditional *API* into a *Streaming API*.
 <!--MORE-->
 
 ## Streaming APIs
