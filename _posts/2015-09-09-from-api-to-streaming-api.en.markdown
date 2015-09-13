@@ -6,7 +6,7 @@ tags: API Streaming Long Polling
 description: "Understanding the differences between an API and a Streaming API and using streamdata.io for converting one into another without writing a single line of code"
 ---
 
-There are so many pros of building an *API* that exposes our application resources. It's particularly important to achieve reducing tiers coupling to the minimum, but even better, **this allows different applications to access our resources**. For well designed *APIs* this will also happen in an intuitive way.  
+There are so many pros on building an *API* that exposes our application resources. It's particularly important to achieve reducing tiers coupling to the minimum, but even better, **this allows different applications to access our resources**. For well designed *APIs* this will also happen in an intuitive way.  
 But even the best *APIs* could be implemented in a way that the client needs to make a call every time it needs to know the state of a resource. For this case, the *API* will have to return the entire resource every time it's requested.  
 But, wouldn't it be more efficient if the *API* only returned what has changed since the last time it was queried? And wouldn't it be even more efficient if the client didn't need to call the *API* to check if something changed?  
 ***Streaming APIs*** (when implemented properly) try to solve exactly that. On this post we will see how these could be implemented and how [streamdata.io](http://streamdata.io) works in order to turn a traditional *API* into a *Streaming API*.
@@ -14,24 +14,24 @@ But, wouldn't it be more efficient if the *API* only returned what has changed s
 
 ## Streaming APIs
 
-**Una *Streaming API* es capaz de enviar notificaciones al cliente.**  
-En los esquemas tradicionales de *HTTP* (protocolo en el que se basan las *webAPIs*), el cliente envía un *request* al servidor. El servidor lo recibe, interpreta, incluso llama a los *listeners* correspondientes (si los hubiera) y devuelve un *response* al cliente. Bajo este esquema, una vez que el servidor envió el *response*, no puede enviar nada más al cliente hasta que este último realice un nuevo request.
+**A *Streaming API* is capable of sending notifications to the client.**  
+In traditional *HTTP* (base protocol for *webAPIs*) schemas, the client sends a *request* to the server. The server receives it, understands, even call the proper *listeners* (if any) and ends returning a *response* to the client. On this schema, once the server sent the *response*, it can't send anything else to the client until this one makes a new *request*.
 
 ![Traditional HTTP Request](/img/posts/traditional-request.png)
 
-Pero es posible que nuestro servidor reciba el *request*, lo procese, incluso envíe un *response* pero en lugar de cerrarlo, lo deje en un estado *on-hold*. De esta forma, el server podría seguir enviando información al cliente por un período prolongado de tiempo. Esta técnica es conocida como ***long polling***
+But it's possible for our server to receive the *request*, process it and even send a *response*, but leave it *on-hold* instead of closing it. This way the server could keep sending information to the client for a long period of time. This technique is better known as ***long polling***.
 
 ![Long Polling HTTP Request](/img/posts/long-polling-request.png)
 
-Mediante *long polling*, nuestra *API* podría recibir una llamada y proveer el recurso que está siendo solicitado como primer *response* pero, en lugar de cerrar la conexión, la *API* podría enviar nuevos *responses* en caso de que el recurso cambie luego del primer *response*.  
-Adicionalmente, la *API* podría enviar solo las "novedades" referentes al recurso, o en otras palabras "lo que cambió".  
+By *long polling*, our *API* could receive a call and provide the resource that is being requested as a first *response*. But instead of closing the connection, the *API* could send new *responses* in case the resource changes after the first *response*.  
+Furthermore, the *API* could send just the changes that impacted the resource.
 
-Analicemos el siguiente ejemplo
+Let's consider the following example
 
 ![Streaming API example](/img/posts/streaming-API-example.png)
 
-1- El cliente 1 envía un *request* con método *GET* para solicitar el libro con id 123321.  
-2- El servidor devuelve un *response* al cliente 1 con código *200 OK* y un *JSON* con la información del libro.
+1- Client 1 sends a *request* with method *GET* in order to request a book with id 123321.  
+2- The server returns a *response* to the client 1 with a *200 OK* code and a *JSON* containing the book information
 {% highlight javascript %}
 {
   "id": 123321,
@@ -39,12 +39,12 @@ Analicemos el siguiente ejemplo
   "ISBN": 123321,
   "Edition": "4th"
   "Year": 2015,
-  ... // Asumamos una estructura compleja y una gran cantidad de campos
+  ... // Let's assume a complex structure with a lot of fields
 }
 {% endhighlight %}
-3- El cliente 2 envía un *request* con método *PATCH* para modificar la edición (ahora "5th").  
-4- El servidor envía un *response* al cliente 2 con código *200 OK*.  
-5- El servidor envía un *response* al cliente 1 con código *200 OK* y un *JSON* con la información del libro.  
+3- Client 2 sends a *request* with method *PATCH* in order to modify the book edition (now "5th").  
+4- The server sends a *response* to the client 2 with a *200 OK* code.  
+5- The server sends a  *response* to the client 1 with a *200 OK* code and a *JSON* with the book information.  
 {% highlight javascript %}
 {
   "id": 123321,
@@ -52,17 +52,17 @@ Analicemos el siguiente ejemplo
   "ISBN": 123321,
   "Edition": "5th"
   "Year": 2015,
-  ... // Asumamos una estructura compleja y una gran cantidad de campos
+  ... // Let's assume a complex structure with a lot of fields
 }
 {% endhighlight %}
 
 
-**Nota:** Se deja de lado la discusión acerca de los métodos a utilizar (*PATCH* o *PUT*) y los códigos *HTTP* correspondientes. Esta temática amerita un *post* aparte.
+**Note:** We are not going into any discussion about which methods should be used (*PATCH* o *PUT*) or which *HTTP* codes. This topics deserve their own post.
 
-Gracias a que el servidor implementa *long polling*, la *API* puede informar al cliente, que el recurso que había solicitado en primer lugar ha cambiado, sin que el cliente realice una segunda consulta.  
-Al proceso por el cual las *APIs* notifican *proactivamente* al cliente sobre cambios en los recursos se lo conoce como *Push Notification*. Cabe aclarar que *long polling* no es la única forma de lograr este comportamiento. [*WebSockets*](https://www.websocket.org/) es otra especificación que logra un comportamiento similar.  
+Because the server implements *long polling*, the *API* is able to notify the client that the previously requested resource has changed, without having the client sending a second *request*.  
+The process where *APIs proactively* notify the client about changes on the resources is known as *Push Notification*. It worth clarifying that *long polling* is not the only way of achieving this behaviour. [*WebSockets*](https://www.websocket.org/) is another specification that does the trick.  
 
-A pesar de que en el ejemplo se puede ver la conveniencia de implementar *Push Notifications* como parte de nuestra *Streaming API*, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un request periódicamente para verificar si el recurso cambió, cada vez que la *API* haga un *push* se estará enviando el recurso completo al cliente. Implementando una lógica *diferencial* en el servidor, nuestra *API* podría enviar solo las actualizaciones al momento de realizar un *Push*. Para nuestro ejemplo, esto podría ser:
+Although the example shows the benefits of implementing *Push Notifications* as a feature of our *Streaming API*, the impact regarding to the performance is not neatly visible. Even though is true that the client won't be periodically sending *requests* in order to check if the resource changed, each time the *API* makes a *push* it will be sending the complete resource to the client. By implementing a *differential* logic (server side), our *API* would be able to just notify the updates when sending a *push*. Considering our previous example, this could go like this:
 
 {% highlight javascript %}
 {
@@ -71,53 +71,54 @@ A pesar de que en el ejemplo se puede ver la conveniencia de implementar *Push N
 }
 {% endhighlight %}
 
-Este *JSON* informa al cliente que se ha modificado el campo "Edition" y su nuevo valor. El cliente podrá actualizar su modelo apropiadamente con esta información. De esta forma, sin importar que tan grande sea el recurso solicitado, el *push* solo envía los campos que han cambiado desde la última actualización.
+This *JSON* informs the client that the field "Edition" has changed. It also informs its new value. The client is now able to update its model according to this information. This way regardless how big a resource is, the *push* is only sending the fields that have changed since the last update.
 
-### Tiempo máximo de request  
+### Request timeout  
 
-Es una buena práctica evitar *requests* de tiempo infinito. Las conexiones pueden tener un *timeout* o incluso podrían perderse por condiciones físicas de los servidores. El impacto en código puede generalizarse:
+Avoiding infinite time *requests* is a good practice. Connections could *timeout* or even could be loss because of servers or network physical conditions. The code impact could be described (in a general way) as
 
-- Servidor: Chequear que el *response* se encuentre abierto antes de enviar datos.
-- Cliente: Chequear que el *request* se encuentre activo. En caso contrario, realizar un nuevo *request*.  
+- Server: Checks that the *response* is open before sending data.
+- Client: Check that the *request* is active. Otherwise, make a new *request*.  
 
-En caso que los *timeout* sean demasiado cortos, cada nuevo *request* estaría recibiendo el recurso entero (nuevamente). Una solución frecuente es enviar al servidor el *timestamp* de la última notificación recibida. De esta manera, en caso de no ser el primer *request*, el servidor podría responder con las novedades ocurridas a partir de ese *timestamp*. Para una correcta implementación, la lógica corriendo del lado del servidor debe guardar un histórico de cambios.  
+In case of having too short *timeouts*, each new *request* would be receiving the complete resource (again). A known solution consists in sending the server the *timestamp* of the last received notification. This way, for every *request* that is not the first one, the server could respond with the updates happened since that *timestamp*. For a proper implementation, the server side logic should hold a change log of every resource.  
 
-Hasta aquí hemos visto una explicación de lo que es una *Streaming API* y algunos enfoques de implementación (no es el objetivo de este *post* mostrar un ejemplo concreto).
 
-## Convirtiendo una API en una Streaming API
+This far we have covered an explanation about *Streaming APIs* and some impelmentation approaches. It's not this post goal to show a whole concrete example.
 
-Ahora ¿Que ocurre cuando una *API* no es una *Streaming API*? La respuesta corta: La utilizamos como una *API*. Es decir que, cada vez que necesitemos conocer el estado de un recurso, realizaremos un *request*.  
-Una respuesta un poco más completa incluye la implementación de un *proxy* que sea capaz de capturar un *request*, almacenar la respuesta, informarla al cliente y repetir la operación las veces que sea necesario. Este *proxy* implementaría *long polling*, es decir que podría notificar al cliente acerca de los cambios ni bien los los detecte. El siguiente diagrama ilustra este escenario.
+## From an API to a Streaming API
+
+But, what happens when an *API* is not a *Streaming API*? The short answer is: We use it as a regular *API*. It means that, each time we need to know the state of a resource, we will be sending a *request*.  
+A more complete answer includes a *proxy* implementation capable of intercepting a *request*, storing the *response*, informing it to the original client, and repeat the operation as many time as needed. This *proxy* implements *long polling* which means that it is able to notify the client as soon as a change on a resource is detected. Next diagram shows this scenario.
 
 ![Streaming API proxy](/img/posts/streaming-API-proxy.png)
 
-Veamos lo que ocurre en cada uno de los instantes (1-4):
+Let's see what happens on each of the instants (1-4):
 
-1. El cliente 1 solicita el recurso "book" con id "123321".  
-  1.1 El *request* no es atendido por el servidor sino por un *proxy*.  
-  1.2 El *proxy* redirecciona el *request* al servidor.  
-  1.3 El servidor devuelve un *response* al *proxy*.  
-  1.4 El *proxy* redirecciona el *response* al cliente.  
-2. El *proxy* envía un nuevo *request* al servidor (y lo hará cada X segundos).  
-  2.1 El servidor devuelve un *response* al *proxy*.  
-  2.2 El *proxy* compara el recurso obtenido durante este *request* con el obtenido durante el *request* anterior y detecta que no hubo cambios.  
-  2.3 El *proxy* no realiza ningún *Push* hacia el cliente.  
-3. El cliente 2 envía un *request* con método *PATCH*.  
-  3.1 El cliente envía el request directamente al servidor (no hay motivos para involucrar a **este tipo de** ***proxy*** en una operación de escritura).  
-  3.2 El servidor devuelve el *response* confirmando la operación.  
-4. El *proxy* envía un nuevo *request* al servidor (uno más de los que envía cada X segundos).  
-  4.1 El servidor devuelve un *response* al *proxy*.  
-  4.2 El *proxy* compara el recurso obtenido durante este *request* con el obtenido durante el *request* anterior y detecta que hubo cambios.  
-  4.3 El *proxy* realiza un *Push* hacia el cliente informando los cambios (idealmente, informa solo las novedades en lugar de reenviar el recurso completo).  
+1. Client 1 *requests* the "book" with id "123321".  
+  1.1 The *request* is not got by the server but by a *proxy*.  
+  1.2 The *proxy* redirects the *request* to the server.  
+  1.3 The server returns a *response* to the *proxy*.  
+  1.4 The *proxy* redirects the *response* to the client.  
+2. The *proxy* sends a new *request* to the server (and it will do that every  X seconds).  
+  2.1 The server returns a *response* to the *proxy*.  
+  2.2 The *proxy* compares the fetched resource during this *request* with the previous one and detects no changes.  
+  2.3 The *proxy* doesn't *Push* anything to the client.  
+3. Client 2 sends a *request* with a *PATCH* method.  
+  3.1 The client sends the *request* directly to the server (there is no reason for involving **this kind of** ***proxy*** for a "write" operation).  
+  3.2 The server sends the *response* confirming the operation.  
+4. The *proxy* sends a new *request* to the server (one of those being sent every X segundos).  
+  4.1 The server sends a  *response* to the *proxy*.  
+  4.2 The *proxy* compares the fetched resource during this *request* with the previous one and detects changes.  
+  4.3 The *proxy* sends a *Push* to the client informing the changes (ideally, just the news instead of the complete resource).  
 
-De esta forma, y sin modificar una sola línea del código de la *API*, logramos emular el comportamiento de una *streaming API* (al menos desde el punto de vista del cliente).  
+This way, and without modifying a single line of the *API* code, we can emulate the behaviour of a *streaming API* (from the client perspective at least).  
 
-Lo interesante de esta implementación es que no resulta difícil generalizarla para prácticamente cualquier *API* existente. Es decir que se podría implementar una plataforma que ponga esta lógica a disposición de los usuarios de una *API* convirtiéndola en una *streaming API* de manera transparente para el proveedor de la *API* y casi transparente para el cliente.  
-Esto es precisamente lo que hace [streamdata.io](http://streamdata.io).
+What is most interesting about this implementation is that it's not hard to make it generic for virtually every existing *API*. It means that we could implement a platform that offers this logic to an *API* users turning it into a *streaming API* transparently for both, the *API* provider and the client.  
+This is exactly what [streamdata.io](http://streamdata.io) does.
 
-### Ejemplo utilizando streamdata.io
+### Example using streamdata.io
 
-Tomando el servicio provisto por [BitcoinAverage](https://bitcoinaverage.com), y viendo algún método simple de su [*API*](https://bitcoinaverage.com/api), escribimos un código sencillo que nos permita consultar cada 5 segundos, el siguiente reucrso: https://api.bitcoinaverage.com/ticker/global/EUR/
+Considering the service provided by [BitcoinAverage](https://bitcoinaverage.com), and looking at a simple method of its  [*API*](https://bitcoinaverage.com/api), we will write a simple code that allows us to query the following resource every 5 seconds: https://api.bitcoinaverage.com/ticker/global/EUR/
 
 {% highlight html %}
 <html>
@@ -138,31 +139,31 @@ Tomando el servicio provisto por [BitcoinAverage](https://bitcoinaverage.com), y
 </html>
 {% endhighlight %}
 
-Utilizando [JQuery](https://jquery.com/) para obtener los beneficios del método ```ajax```, y la función ```setInterval``` que nos permite ejecutar una función repetidas veces espaciadas por un intervalo de tiempo, obtenemos la siguiente respuesta en la consola:
+By using [JQuery](https://jquery.com/) for getting the benefits of the ```ajax``` method and the ```setInterval``` function (that lets us execute a function repeatedly on a time interval basis) we get the following response on the console:
 
 ![Streaming API proxy](/img/posts/setIntervalClientConsole.png)
 
-Como se puede ver, los *requests* son enviados cada 5 segundos y el objeto entero es devuelto sin importar si fue modificado o no.
+As it can be seen, the *requests* are being sent every 5 seconds and the complete object is being returned regardless if it was modified.
 
-Desde la vista de *Network* también podemos ver algo interesante
+From the *Network* perspective we can also discover an interesting thing
 
 ![Streaming API proxy](/img/posts/setIntervalClientNetwork.png)
 
-Cada *request* queda evidenciado por un nuevo *GET* al servidor. Además, algunos códigos de respuesta son *200 OK* mientras que otros son *304 Not Modified*. Este último código indica que un recurso no cambió desde la última vez que fue solicitado.
+Each *request* is proven by a new *GET*. Also, some *HTTP* response codes are *200 OK* while others are *304 Not Modified*. This last code points that the resource hasn't changed since last time it has been requested.
 
-### Utilizando streamdata.io
+### Using streamdata.io
 
-Los pasos para comenzar a utilizar [streamdata.io](http://streamdata.io) son realmente sencillos y pueden ser encontrados en su web. A modo de resumen:
+Steps for getting started with [streamdata.io](http://streamdata.io) are really simple and can be found on its web site. As a summary:
 
-1. Crear una cuenta.
-2. Al acceder a nuestra cuenta veremos la pantalla principal con un *dashboard*.
-3. Crear una aplicación (llamémosla "OutBitApp" para el ejemplo).
-4. Ingresar en la aplicación.
-5. Chequear la configuración y asegurarse que "Client Request Signature" esté desactivado (**solo para este ejemplo, no queremos poner más complejidad de la necesaria**).
-6. En esta misma pantalla se puede ver (e incluso renovar) el *App Token* (será necesario para autenticar el código del cliente).
-7. Seguir las instrucciones en el [repositorio oficial](https://github.com/streamdataio/streamdataio-js-sdk) para generar la *SDK* que nos permite interactuar con *streamdata.io*.
+1. Create an account.
+2. Once logged in we will see the Home page with a *dashboard* in it.
+3. Create an application (let's call it "OutBitApp" for this example).
+4. Access the application.
+5. Check the configuration and make sure that the "Client Request Signature" option is disabled (**only for this example, we want to avoid any not mandatory complexity**).
+6. On that same screen we can see (and renew) the *App Token* (it will be required for authenticating the client code).
+7. Follow the instructions at the [official GH repo](https://github.com/streamdataio/streamdataio-js-sdk) in order to generate the *SDK* that lets us interact with *streamdata.io*.
 
-Con estos pasos cumplidos, el siguiente código accede a la misma *API* del ejemplo anterior pero recibiendo *Push notifications*.
+Having accomplished these steps, the following code accesses the same *API* from the previous example but receiving *Push notifications* instead.
 
 {% highlight html %}
 <html>
@@ -191,28 +192,29 @@ Con estos pasos cumplidos, el siguiente código accede a la misma *API* del ejem
 </html>
 {% endhighlight %}
 
-**Nota:** Se debe reemplazar el "APP TOKEN" por el generado para su aplicación. Recuerden que *JavaScript* puede correr en un cliente cualquiera (browser) por lo que no debe incluirse el *Token* en dicho código. Esto es válido solo para pruebas y ejemplos.
+**Note:** The "APP TOKEN" must be replaced with the one generated for the application. Remember that *JavaScript* runs on any client/browser and because of that, it's not a good idea to place the *Token* on that code. This is only valid for proof of concept and examples.
 
-Observemos la respuesta obtenida en la consola:
+Let's check the response at the console:
 
 ![Streaming API proxy](/img/posts/longPollingClientConsole.png)
 
-- Si bien no se alcanza a ver, los objetos no son *loggeados* en intervalos regulares de tiempo. Esto se debe a que el cliente solo *loggea* cuando recibe una respuesta y esto solo ocurre cuando hay cambios en el recurso *observado*.
-- El primer objeto recibido (se distingue porque está acompañado por un "init") es similar al del ejemplo anterior, es decir, el objeto completo. Los demás (acompañados por un "update") son en realidad, *arrays* de objetos.  
+- Even though these are hidden, objects are not being logged in regular intervals. This is due to the client only logs those when it receives a *response* and this only happens when the observed resource changes.
+- The first received object (logged after an "init") is similar to the one on the previous example, it means, the complete object. The following ones (logged after an "update") are actually *arrays of objects*..  
 
-Analicemos uno de dichos *arrays*:
+Let's analyze one of these *arrays*:
 
 ![Streaming API proxy](/img/posts/longPollingClientparticularUpdate.png)
 
-Cada objeto del *array* indica que se ha reemplazado un atributo y especifica su nuevo valor. No todos los *arrays* tienen  la misma longitud (4, 1 y 2 como se ve en la imagen anterior). Esto indica la cantidad de cambios que se detectaron en cada respuesta.  
+Each object in the *array* indicates that an attribute has been replaced, and its new value is specified. Not every *array* has the same length (4, 1 and 2 as can be seen on the previous image). This indicates the quantity of changes that has been detected on each *response*.  
 
-Finalmente, observemos lo que ocurre con la vista *network*:
+Finally, let's see what happens on the *network* view:
+
 
 ![Streaming API proxy](/img/posts/longPollingClientNetwork.png)
 
-Se puede observar un solo *request* a una *url* perteneciente a *streamdata* (el *proxy*) y como parámetros, el *token* (sólo aquellos clientes que lo conozcan podrán acceder a la aplicación de *streamdata.io*) y la *url* del *request* original. Ese request estuvo abierto por 2.5 minutos recibiendo notificaciones cada vez que el recurso cambiaba en el servidor.
+It can be seen an ONLY *request* to a *url* belonging to *streamdata* (the *proxy*) and as parameters, the *token* (only those clients knowing it will be able to access the app at *streamdata.io*) and the *url* of the original *request*. That request has been opened for 2.5 minutes receiving notifications every time the resource changed at the server.
 
-## Conclusión
+## Summary
 
-Es clara la practicidad e incluso posibles mejoras en *performance* al utilizar una *Stremaing API*. Basta con pensar en las *web applications* actuales para ver la utilidad de recibir notificaciones cuando cambia el modelo en nuestro servidor.  
-Pero no siempre contamos con una *Streaming API*. A menudo no estamos consultando una *API* propia y muchas veces, nuestra *API* ya existe y no hay tiempo o dinero para cambiarla (convertirla en una *streaming API*). Mediante un *proxy* se puede emular el comportamiento de una *streaming API* e incluso si no contramos con el tiempo para implementar esta solución, es posible utilizar una plataforma como *streamdata.io* la cual provee esta funcionalidad como un servicio en la nube.
+It's clear how practical and even how *performant* using a *Streaming API* could be. Only thinking of the current *web applications* helps us understanding how useful is to receive notifications when the model changes at the server.  
+But we won't always count with a *Streaming API*. We are often hitting a 3rd party *API* and lot of times, our *API* already exists and we don't count with time or money enough to change it (turn it into a *streaming API*). By implementing a *proxy* we can emulate that behaviour, and even if we didn't count with the resources for implementing this solution, it would be possible to take advantage of a platform like *streamdata.io* that provides this functionality as a service in the cloud.

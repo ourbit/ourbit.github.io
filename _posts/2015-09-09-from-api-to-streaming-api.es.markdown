@@ -15,11 +15,11 @@ Pero, ¿no sería más eficiente si la *API* solo devolviera lo que cambió desd
 ## Streaming APIs
 
 **Una *Streaming API* es capaz de enviar notificaciones al cliente.**  
-En los esquemas tradicionales de *HTTP* (protocolo en el que se basan las *webAPIs*), el cliente envía un *request* al servidor. El servidor lo recibe, interpreta, incluso llama a los *listeners* correspondientes (si los hubiera) y devuelve un *response* al cliente. Bajo este esquema, una vez que el servidor envió el *response*, no puede enviar nada más al cliente hasta que este último realice un nuevo request.
+En los esquemas tradicionales de *HTTP* (protocolo en el que se basan las *webAPIs*), el cliente envía un *request* al servidor. El servidor lo recibe, interpreta, incluso llama a los *listeners* correspondientes (si los hubiera) y devuelve un *response* al cliente. Bajo este esquema, una vez que el servidor envió el *response*, no puede enviar nada más al cliente hasta que este último realice un nuevo *request*.
 
 ![Traditional HTTP Request](/img/posts/traditional-request.png)
 
-Pero es posible que nuestro servidor reciba el *request*, lo procese, incluso envíe un *response* pero en lugar de cerrarlo, lo deje en un estado *on-hold*. De esta forma, el server podría seguir enviando información al cliente por un período prolongado de tiempo. Esta técnica es conocida como ***long polling***
+Pero es posible que nuestro servidor reciba el *request*, lo procese, incluso envíe un *response* pero en lugar de cerrarlo, lo deje en un estado *on-hold*. De esta forma, el server podría seguir enviando información al cliente por un período prolongado de tiempo. Esta técnica es conocida como ***long polling***.
 
 ![Long Polling HTTP Request](/img/posts/long-polling-request.png)
 
@@ -62,7 +62,7 @@ Analicemos el siguiente ejemplo
 Gracias a que el servidor implementa *long polling*, la *API* puede informar al cliente, que el recurso que había solicitado en primer lugar ha cambiado, sin que el cliente realice una segunda consulta.  
 Al proceso por el cual las *APIs* notifican *proactivamente* al cliente sobre cambios en los recursos se lo conoce como *Push Notification*. Cabe aclarar que *long polling* no es la única forma de lograr este comportamiento. [*WebSockets*](https://www.websocket.org/) es otra especificación que logra un comportamiento similar.  
 
-A pesar de que en el ejemplo se puede ver la conveniencia de implementar *Push Notifications* como parte de nuestra *Streaming API*, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un request periódicamente para verificar si el recurso cambió, cada vez que la *API* haga un *push* se estará enviando el recurso completo al cliente. Implementando una lógica *diferencial* en el servidor, nuestra *API* podría enviar solo las actualizaciones al momento de realizar un *Push*. Para nuestro ejemplo, esto podría ser:
+A pesar de que en el ejemplo se puede ver la conveniencia de implementar *Push Notifications* como parte de nuestra *Streaming API*, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un *request* periódicamente para verificar si el recurso cambió, cada vez que la *API* haga un *push* se estará enviando el recurso completo al cliente. Implementando una lógica *diferencial* en el servidor, nuestra *API* podría enviar solo las actualizaciones al momento de realizar un *push*. Para nuestro ejemplo, esto podría ser:
 
 {% highlight javascript %}
 {
@@ -75,7 +75,7 @@ Este *JSON* informa al cliente que se ha modificado el campo "Edition" y su nuev
 
 ### Tiempo máximo de request  
 
-Es una buena práctica evitar *requests* de tiempo infinito. Las conexiones pueden tener un *timeout* o incluso podrían perderse por condiciones físicas de los servidores. El impacto en código puede generalizarse:
+Es una buena práctica evitar *requests* de tiempo infinito. Las conexiones pueden tener un *timeout* o incluso podrían perderse por condiciones físicas de los servidores o la red. El impacto en código puede generalizarse:
 
 - Servidor: Chequear que el *response* se encuentre abierto antes de enviar datos.
 - Cliente: Chequear que el *request* se encuentre activo. En caso contrario, realizar un nuevo *request*.  
@@ -86,7 +86,7 @@ Hasta aquí hemos visto una explicación de lo que es una *Streaming API* y algu
 
 ## Convirtiendo una API en una Streaming API
 
-Ahora ¿Que ocurre cuando una *API* no es una *Streaming API*? La respuesta corta: La utilizamos como una *API*. Es decir que, cada vez que necesitemos conocer el estado de un recurso, realizaremos un *request*.  
+Ahora ¿Que ocurre cuando una *API* no es una *Streaming API*? La respuesta corta: La utilizamos como una *API* normal. Es decir que, cada vez que necesitemos conocer el estado de un recurso, realizaremos un *request*.  
 Una respuesta un poco más completa incluye la implementación de un *proxy* que sea capaz de capturar un *request*, almacenar la respuesta, informarla al cliente y repetir la operación las veces que sea necesario. Este *proxy* implementaría *long polling*, es decir que podría notificar al cliente acerca de los cambios ni bien los los detecte. El siguiente diagrama ilustra este escenario.
 
 ![Streaming API proxy](/img/posts/streaming-API-proxy.png)
@@ -215,4 +215,4 @@ Se puede observar un solo *request* a una *url* perteneciente a *streamdata* (el
 ## Conclusión
 
 Es clara la practicidad e incluso posibles mejoras en *performance* al utilizar una *Stremaing API*. Basta con pensar en las *web applications* actuales para ver la utilidad de recibir notificaciones cuando cambia el modelo en nuestro servidor.  
-Pero no siempre contamos con una *Streaming API*. A menudo no estamos consultando una *API* propia y muchas veces, nuestra *API* ya existe y no hay tiempo o dinero para cambiarla (convertirla en una *streaming API*). Mediante un *proxy* se puede emular el comportamiento de una *streaming API* e incluso si no contramos con el tiempo para implementar esta solución, es posible utilizar una plataforma como *streamdata.io* la cual provee esta funcionalidad como un servicio en la nube.
+Pero no siempre contamos con una *Streaming API*. A menudo no estamos consultando una *API* propia y muchas veces, nuestra *API* ya existe y no hay tiempo o dinero para cambiarla (convertirla en una *streaming API*). Mediante un *proxy* se puede emular el comportamiento de una *streaming API* e incluso si no contáramos con el tiempo para implementar esta solución, es posible utilizar una plataforma como *streamdata.io* la cual provee esta funcionalidad como un servicio en la nube.
