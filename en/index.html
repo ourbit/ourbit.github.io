@@ -97,11 +97,11 @@
                 </li>
                 
                 <li>
-                    <a href="/en/archives/">Archives</a>
+                    <a href="/es/archives/">Archivo</a>
                 </li>
                 
                 <li>
-                    <a href="/es/archives/">Archivo</a>
+                    <a href="/en/archives/">Archives</a>
                 </li>
                 
                 <li>
@@ -113,11 +113,11 @@
                 </li>
                 
                 <li>
-                    <a href="/es/en/archives/">Archives</a>
+                    <a href="/en/es/archives/">Archivo</a>
                 </li>
                 
                 <li>
-                    <a href="/en/es/archives/">Archivo</a>
+                    <a href="/es/en/archives/">Archives</a>
                 </li>
                 
                 <li>
@@ -183,6 +183,28 @@ $(window).scroll(function(e) {
   	<div class="row">
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
+
+<div class="post-preview">
+    <a href="/en/2015/09/09/from-api-to-streaming-api/">
+        <h2 class="post-title">From API to Streaming API
+        </h2>
+        
+    </a>
+    <p class="post-meta">Posted by nohorbee on 
+    
+  September 9, 2015
+
+</p>
+    There are so many pros on building an <em>API</em> that exposes our application resources. It’s particularly important to achieve reducing tiers coupling to the minimum, but even better, <strong>this allows different applications to access our resources</strong>. For well designed <em>APIs</em> this will also happen in an intuitive way.<br />
+But even the best <em>APIs</em> could be implemented in a way that the client needs to make a call every time it needs to know the state of a resource. For this case, the <em>API</em> will have to return the entire resource every time it’s requested.<br />
+But, wouldn’t it be more efficient if the <em>API</em> only returned what has changed since the last time it was queried? And wouldn’t it be even more efficient if the client didn’t need to call the <em>API</em> to check if something changed?<br />
+<strong><em>Streaming APIs</em></strong> (when implemented properly) try to solve exactly that. On this post we will see how these could be implemented and how <a href="http://streamdata.io">streamdata.io</a> works in order to turn a traditional <em>API</em> into a <em>Streaming API</em>.
+
+
+    <p class="read-more"><a href="/en/2015/09/09/from-api-to-streaming-api/" class="read-more">Read more &rarr;</a></p>
+</div>
+<hr>
+<br />
 
 <div class="post-preview">
     <a href="/en/2015/08/13/expressive-code-javscript/">

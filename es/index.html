@@ -97,11 +97,11 @@
                 </li>
                 
                 <li>
-                    <a href="/en/archives/">Archives</a>
+                    <a href="/es/archives/">Archivo</a>
                 </li>
                 
                 <li>
-                    <a href="/es/archives/">Archivo</a>
+                    <a href="/en/archives/">Archives</a>
                 </li>
                 
                 <li>
@@ -113,11 +113,11 @@
                 </li>
                 
                 <li>
-                    <a href="/es/en/archives/">Archives</a>
+                    <a href="/en/es/archives/">Archivo</a>
                 </li>
                 
                 <li>
-                    <a href="/en/es/archives/">Archivo</a>
+                    <a href="/es/en/archives/">Archives</a>
                 </li>
                 
                 <li>
@@ -183,6 +183,35 @@ $(window).scroll(function(e) {
   	<div class="row">
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
+
+<div class="post-preview">
+    <a href="/es/2015/09/09/from-api-to-streaming-api/">
+        <h2 class="post-title">De una API a una Streaming API
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  9 de
+  
+  Septiembre
+    
+
+
+de 2015
+
+</p>
+    Son muchas las ventajas de desarrollar una <em>API</em> que exponga los recursos de nuestra aplicación. En particular, se logra reducir al mínimo el acoplamiento entre <em>capas</em>, y mejor aún <strong>permite que distintas aplicaciones accedan a nuestros recursos</strong>. En el caso de <em>APIs</em> bien diseñadas, además, esto ocurrirá de una forma intuitiva.<br />
+Pero incluso las mejores <em>APIs</em> pueden estar implementadas para que el cliente realice una llamada cada vez que quiere conocer el estado de un recurso. Para este caso, la <em>API</em> deberá devolver el recurso entero cada vez que sea solicitado.<br />
+Pero, ¿no sería más eficiente si la <em>API</em> solo devolviera lo que cambió desde la última vez que fue consultada? ¿Y no sería incluso más eficiente si el cliente no necesitara llamar a la <em>API</em> para chequear si algo cambió?<br />
+<strong><em>Streaming APIs</em></strong> (y su buena implementación) apuntan exactamente a esto. En este <em>post</em> veremos cómo pueden ser implementadas, y cómo funciona <a href="http://streamdata.io">streamdata.io</a> para convertir una <em>API</em> tradicional en una <em>Streaming API</em>.
+
+
+    <p class="read-more"><a href="/es/2015/09/09/from-api-to-streaming-api/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
 
 <div class="post-preview">
     <a href="/es/2015/08/13/expressive-code-javscript/">
@@ -421,32 +450,6 @@ de 2011
 
 
     <p class="read-more"><a href="/es/2011/11/29/tethering/" class="read-more">Seguir leyendo &rarr;</a></p>
-</div>
-<hr>
-<br />
-
-<div class="post-preview">
-    <a href="/es/2011/11/28/no-la-reproduccion-automatica-de-vimeo/">
-        <h2 class="post-title">No a la reproducción automática de vimeo
-        </h2>
-        
-    </a>
-    <p class="post-meta">Publicado por nohorbee el 
-    
-  
-  28 de
-  
-  Noviembre
-    
-
-
-de 2011
-
-</p>
-    <div>Una pequeña recomendación para aquellos que utilizan videos de <i>vimeo.com</i>. En muchos sitios, se publican con la opción de reproducción automática encendida, es decir, que cuándo entremos al sitio, el video comenzará automáticamente.<br />Esto pasó en este blog. Se incluía un video en un post, y cuando el post fue quedando "debajo" en la lista, uno comenzaba a escuchar un sonido que no se condecía con lo que estaba leyendo (obviamente).<br /><br />La solución es simple:<br />- Buscar este código HTML:&nbsp;<span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">&lt;iframe frameborder="0" height="234" src="http://player.vimeo.com/video/27208274?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="398"&gt;&lt;/iframe&gt;</span> (va a variar dependiendo del video cargado).<br />- Reemplazar <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=1</span> por <span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;">autoplay=0</span><br /><span class="Apple-style-span" style="font-family: 'Courier New', Courier, monospace; font-size: x-small;"><br /></span><br /><span class="Apple-style-span" style="font-family: inherit;">Fin del problema.</span><br />Espero les sirva a quienes usan los videos en sus páginas (recuerden siempre citar las fuentes), y a aquellos que ingresan a páginas que de pronto y sin aviso, comienzan a reproducir contenidos que&nbsp;quizás&nbsp;no nos interesen.</div>
-
-
-    <p class="read-more"><a href="/es/2011/11/28/no-la-reproduccion-automatica-de-vimeo/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
 <hr>
 <br />
