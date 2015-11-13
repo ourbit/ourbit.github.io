@@ -453,3 +453,10 @@ div.content-wrapper {
   position: fixed;
   width: 1680px;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
