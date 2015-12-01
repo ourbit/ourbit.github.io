@@ -426,7 +426,7 @@ div.content-wrapper {
   margin-bottom: 0px;
 }
 .img-src {
-  background-position-y: -240px;
+  background-position-y: -550px;
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
@@ -437,7 +437,7 @@ div.content-wrapper {
   height: 600px;
   line-height: 20px;
   position: fixed;
-  width: 1680px;
+  width: 2560px;
 }
 .blur {
   background-repeat: no-repeat;
@@ -451,7 +451,7 @@ div.content-wrapper {
   line-height: 20px;
   opacity: 0;
   position: fixed;
-  width: 1680px;
+  width: 2560;
 }
 
 img {
@@ -459,4 +459,3 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
