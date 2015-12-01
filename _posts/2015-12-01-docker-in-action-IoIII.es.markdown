@@ -1,15 +1,16 @@
 ---
 layout: post
-title: 'Docker en acción'
+title: 'Docker en acción I'
 author: nohorbee
 tags: Docker Container Microservices DevOps
-description: "Entendiendo los conceptos básicos detrás de Docker, y usándolos para instalar una Docker Registry"
+description: "Entendiendo los conceptos de DevOps y la transformación cultural que estos traen aparejada"
+#description: "Entendiendo los conceptos básicos detrás de Docker, y usándolos para instalar una Docker Registry"
 ---
 
 Hace unos (cuantos) años, hablar de *escalabilidad* traía a la mesa una serie de sorpresas de todo tipo. Gente hablando de *escalabilidad* como una cualidad del *hardware*, gente demasiado soprendida al escuchar que el que escala no es el *hardware* sino que las aplicaciones deben estar diseñadas de forma que puedan escalar, y por supuesto, la poca distinción entre *escalabilidad* horizontal y vertical.  
 Afortunadamente, en estos días, el concepto ha sido digerido, explicado y aparentemente entendido, pero sigue resultando curioso entender por qué durante tantos años, hubo tanta confusión al respecto.  
 No se si es causa o efecto de esta *nueva era*, pero la virtualización juega un rol principal, y especialmente, la virtualización mediante *containers*.  
-Este *post* cubre los conceptos básicos de *Docker*, y una explicación y guía para su instalación, primeros pasos y configuración de una *docker regisrty*.
+Este es el primer *post* de una saga de tres, en la cual se cubrirán los conceptos básicos de *escalabilidad*, el rol/cultura *DevOps*, introducción a *Docker*, una explicación y guía para su instalación, primeros pasos y configuración de una *docker regisrty*. En este primer post, *DevOps*, y *escalabilidad*.
 <!--MORE-->
 
 ## Los DevOps
@@ -39,8 +40,11 @@ Al *escalar verticalmente*, incorporando un servidor con mayores prestaciones de
 ### Escalabilidad Horizontal
 
 Para superar las limitaciones presentadas por la *escalabilidad vertical*, se produjo un cambio de paradigma en donde, en lugar de pensar en equipos con más potencia, se piensa en mayor cantidad de equipos con menor potencia.  
-A diferencia de la *escalabilidad vertical*, en este paradigma, la administración se vuelve más compleja, y el desarrollo necesita considerar el hecho de que el software estará distribuido en distintos equipos (con recursos separados). Pero, además de superar las limitaciones de la *escalabiliad vertical*, el hecho de poder *escalar* aumentando la cantidad de equipos (o nodos), termina siendo menos costoso e incluso, aprovechando técnicas avanzadas de virtualización como las ofrecidas por *Docker* pueden automatizarse para responder dinámicamente a la carga en tiempo real.
+A diferencia de la *escalabilidad vertical*, en este paradigma, la administración se vuelve más compleja, y el desarrollo necesita considerar el hecho de que el software estará distribuido en distintos equipos (con recursos separados). Pero, además de superar las limitaciones de la *escalabiliad vertical*, el hecho de poder *escalar* aumentando la cantidad de equipos (o nodos), termina siendo menos costoso e incluso, aprovechando técnicas avanzadas de virtualización como las ofrecidas por *Docker*, pueden automatizarse para responder dinámicamente a la carga en tiempo real.
 
 ![Escalabilidad Horizontal - Performance / Carga](/img/posts/horizontalScaling.png)
 
-Como se ve en la imagen, hay un punto en donde un servidor ya no logra mantener la performance necesaria para soportar la carga. En el momento donde la curva de performance cruza la recta de *escalabilidad perfecta* (o quizás un poco antes), es tiempo de iniciar un nuevo servidor. De esta manera, por aproximación, se logra mantener una relación carga/performance que se ajusta a la *escalabilidad perfecta* y, en tanto y en cuanto el inicio de un nuevo servidor pueda realizarse de manera automática y veloz, el aprovisionamiento podría realizarse *a demanda*.
+Como se ve en la imagen, hay un punto en donde un servidor ya no logra mantener la performance necesaria para soportar la carga. En el momento donde la curva de performance cruza la recta de *escalabilidad perfecta* (o quizás un poco antes), es tiempo de iniciar un nuevo servidor. De esta manera, por aproximación, se logra mantener una relación carga/performance que se ajusta a la *escalabilidad perfecta* y, en tanto y en cuanto el inicio de un nuevo servidor pueda realizarse de manera automática y veloz, el aprovisionamiento podría realizarse *a demanda*.  
+
+El concepto de *virtualización mediante containers* apunta exáctamente a brindar una solución para ese requerimiento. Como se verá en el siguiente *post*, *Docker* ofrece una manera más eficaz de *virtualización* que las tradicionales *Virtual Machine*, y si bien sus beneficios resultan instantáneos, se vuelven un verdadero diferencial al pensar en pequeños nodos que se *levantan* en cuestión de segundos cuando es necesario.  
+Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es una combinación de las capacidades de la tecnología (que reutiliza el Kernel de un solo Sistema Operativo que ya está corriendo) y el diseño de componentes pequeños que levantarán al mismo tiempo en distintos nodos (reduciendo el tiempo de arranque y paralelizandolo).
