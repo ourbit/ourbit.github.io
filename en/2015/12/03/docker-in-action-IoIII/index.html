@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Understanding DevOps concepts, and the cultural transformation driven by these">
 
-    <title>Moving to GitHub Pages - OurBit</title>
+    <title>Docker in acción I - OurBit</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//en/jekyll/update/2015/08/03/moving-to-gh-pages/">
+    <link rel="canonical" href="http://ourbit.github.io//en/2015/12/03/docker-in-action-IoIII/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
                 <li>
                 
                     
-                    <a href="/es/jekyll/update/2015/08/03/moving-to-gh-pages/" >Versión en Español</a>
+                    <a href="/es/2015/12/03/docker-in-action-IoIII/" >Versión en Español</a>
                 
               </li>
 
@@ -165,12 +165,12 @@ $(window).scroll(function(e) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Moving to GitHub Pages</h1>
+                    <h1>Docker in acción I</h1>
                     
                     <span class="meta">Posted by nohorbee on
                       
                       
-  August 3, 2015
+  December 3, 2015
 
 
                     </span>
@@ -186,43 +186,46 @@ $(window).scroll(function(e) {
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-  				<p>With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by <em>blogger by Google</em> were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a <em>blogging</em> platform out of the box<!--MORE-->.</p>
+  				<p>Several years ago, speaking of <em>scalability</em> used to bring up a series of surprises of all kind. People talking about <em>scalability</em> as a <em>hardware</em> quality, people getting too much surprised when listening that it’s not the <em>hardware</em> just scaling, but the applications being written in such a way that can <em>scale</em>, and for sure, the little distinction between <em>horizontal and vertical scaling</em>.<br />
+Fortunately these days, the concept has been digested, explained, and apparently understood. However, I’m still curious about getting why this topic was source of so much confusion.
+I’m not sure which ones is the cause and which one the effect of this <em>new era</em>, but virtualization plays a starring role, and specially the <em>containers based virtualization</em>.
+This is the first of a three posts saga, in which I’ll be covering some <em>scalability</em> fundamentals, <em>DevOps</em> rol/culture, <em>Docker</em> introduction, installation walkthrough, first steps, and <em>docker registry</em> configuration. This first post is about <em>DevOps</em> and <em>scalability</em>.
+<!--MORE--></p>
 
-<p>After researching other tools that could help me with this task (<em>Wordpress, Joomla</em>, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.</p>
+<h2 id="devops">DevOps</h2>
 
-<p>That’s how I remembered having used <em>Jekyll and GitHub Pages</em> in the past, for building some static page, and so I started evaluating it as an alternative.</p>
+<p>For so long, the developer role was well defined and set appart from the operator’s. The developer <strong>built</strong> software while the operator was in charge of <strong>infrastructure</strong> and software packages <strong>deployment</strong>. The software industry was proud of this separation claiming that the developer could (and should) be completely abstracted from hardware and deployment, in order to focus in writing and refactoring code. <strong>Finding developers having troubles trying to write</strong> <strong><em>scalable</em></strong> <strong>code is not that surprising anymore</strong>.<br />
+Not only was the developer totally isolated from hardware and the platform running the programs, but also was unworried about that infrastructure <em>topology</em>. It was not necessary to know if the server was going to be running on an <em>Intel, AMD or other vendor</em>, neither to worry about the OS (for instance, <em>Java</em> was supposed to be multi-platform thanks to the <em>JVM</em> exposing a unified one). But it also seemed to be unnecessary knowing if the server was going to be running in 1 or 10 machines, if it was going to be a <em>cluster</em>, what would happen if a machine was down, etc. As a direct consequence, and this is just one of many examples, storing the <em>logged in</em> user data on the <em>HTTP session</em> was so simple and useful that had been quickly adopted as a <em>web applications</em> development dogma.</p>
 
-<p><strong><em>Jekyll</em></strong> <strong>is definitively not providing better tools than the other platforms</strong>. It doesn’t count with a comments feature, it doesn’t create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the <strong>flexibility</strong>, which turns <em>Jekyll</em> into a <strong>candidate tool for developers</strong> (or other professionals with IT knowledge enough) to becoming their tailored <em>blogging</em> “platform”.</p>
+<p>Even though many of these abstractions turned to be reasonably profitable (reasonably: it isn’t that distractive to know the hardware where our application will run), others have become extremely inconvenient. <em>Scalable</em> applications development is a clear example of the troubles that come with the total abstraction.<br />
+<em>DevOps</em> concept stands up as an alternative to this abstraction (or a redefinition at least). Though most of the companies think about <em>DevOps</em> as a role mostly biased to the <em>Ops</em> part, the concept represents a culture where collaboration between developers and operators benefits frequent and reliable development, testing and <em>releases</em>. As a (positive) side effect, developers get into infrastructure early enough to consider it when writing applications (and dismissing that information that doesn’t add any value).</p>
 
-<p>The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free <em>templates (or themes)</em> and adapt one of them. I ran into <a href="https://github.com/IronSummitMedia/startbootstrap-clean-blog">CleanBlog</a> by <a href="https://github.com/davidtmiller">David Miller</a> to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.</p>
+<h2 id="scalability">Scalability</h2>
+<p><strong>An application scales if it’s able keep its performance over a workload increase</strong></p>
 
-<h3 id="why-am-i-choosing-jekyll-y-github-pages">Why am I choosing <em>Jekyll y GitHub Pages</em>?</h3>
+<h3 id="vertical-scalability">Vertical Scalability</h3>
 
-<ul>
-  <li>The possibility of counting with <em>Open Source</em> tools.</li>
-  <li>Ads-Free: This is free. No strings attached.</li>
-  <li>Flexibility and Extensibility: I can build plugins and tools on top of the platform.</li>
-  <li>Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing.</li>
-  <li>Capability of receiving <em>Pull Requests</em>: I’;’m interested on having readers suggesting fixes, or even having them publishing on this blog. <strong>I hope you send your Posts via Pull Requests</strong></li>
-  <li><em>Markdown</em> Support: This might be a personal taste, but I find very simple and convenient to write in <em>Markdown</em> instead of dealing with <em>WYSIWYG</em> editors that end failing when attempting to go beyond their capabilities</li>
-  <li>Code Highlight: Mandatory for a snippet containing blog</li>
-</ul>
+<p>More powerful processors, with more <em>cores</em>, can process more <em>threads</em>. More memory can store more running processes’ data, and that way, an application can support a higher workload. This kind of scalability is known as <em>vertical scalability</em>. A (relative) advantage of this approach, is that it can be achieved by taking advantage of most popular languages capabilities (such as JAVA). But a big disadvantage is that, at some point, the relationship <em>performance increase</em> over  <em>workload increase</em> becomes asymptotic.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
-<span class="p">})(</span><span class="s2">&quot;Welcome to the new OurBit&quot;</span><span class="p">);</span></code></pre></div>
+<p><img src="/img/posts/verticalScaling.png" alt="Vertical Scalability - Performance / Workload" /></p>
 
-<p>These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a <em>Blogging</em> tool, but it worth knowing how <em>Jekyll and GitHub Pages</em> works).</p>
+<p>The previous image shows that as far as the workload increases, the performance increase becomes harder, until reaching the point of no increasing any longer. This means that every user will experience a performance degree, or even worst, a complete system interruption.<br />
+When <em>verticaly scaling</em>, by adding a more powerful server we are able to improve the performance. However, when comparing the curves against the <em>perfect scalability</em> the moment when the new server stops supporting the workload happens pretty earlier than achieving the <em>perfect scalability</em>. A progression over this behaviour would conclude that, at some point, investing in more powerful (and expensive) hardware won’t help us to achieve the <em>perfect scalability</em>, but it will reach a <strong>scalability limit</strong> (also asymptotic).</p>
 
-<p>Here are some links for kicking off</p>
+<p><img src="/img/posts/verticalScalingSummary.png" alt="Vertical Scalability - Gain / Power" /></p>
 
-<ul>
-  <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-  <li><a href="http://jekyllrb.com/">Jekyll</a></li>
-  <li><a href="http://jekyllthemes.org/">Jekyll Themes</a></li>
-</ul>
+<h3 id="horizontal-scalability">Horizontal Scalability</h3>
 
-<p>Please, don’t hesitate to reach me if you have any doubt.</p>
+<p>In order to overcome the limitations of <em>vertical scalability</em>, a paradigm rupture occured and, in place of thinking about more powerful machines, the key seems to be to think about more qunatity of less powerful machines.</p>
+
+<p>Unlike with <em>vertical scalability</em>, in this paradigm, the infrastructure administration becomes more complex, and the development needs to consider the fact that the software will be distributed among different machines (with physically separated resources). But, in addition to overcomming <em>vertical scalability</em> limitations, the fact of being able to <em>scale</em> by augmenting the quantity of machines (or nodes) ends up being cheaper and furthermore, by taking advantage of the advanced virtualization techniques such as the ones offered by <em>Docker</em>, administration can be automated to dynamically adapt to the changing workload in realtime.</p>
+
+<p><img src="/img/posts/horizontalScaling.png" alt="Horizontal Scalability - Performance / Workload" /></p>
+
+<p>The previous image shows that there is a moment when the server is no longer able to support the workload. At that moment (when the performance curve touches the <em>perfect scalability</em>, or maybe a little bit earlier), it’s time to start a new server. This way, by aproximation, the workload/performance relationship can be maintained close to the <em>perfect scalability</em>. Furthermore, if the new server starts automatically and quickly enough, the provisioning could be done in an <em>on-demand</em> way.</p>
+
+<p><em>Container based virtualization</em> aims exactly to provide a solution for that requirement. As it will be covered on the following post, <em>Docker</em> offers a more efficient <em>virtualization</em> than the traditional <em>Virtual Machines</em>. And even though the benefits appear immediately, they become a real difference when thinking of small nodes that <em>start</em> in seconds when it’s necessary.<br />
+We will also see that, the reason for these nodes to start that quickly, is a combination of the technology capabilities (that reuses a unique OS Kernel that is already running) and the good design: small components that start at the same time in different nodes (reducing the starting time by starting in parallel).</p>
 
 
                   <!-- <hr>
@@ -230,12 +233,12 @@ $(window).scroll(function(e) {
                   <ul class="pager">
                       
                       <li class="previous">
-                          <a href="/es/2015/07/30/spam-caso-real/" data-toggle="tooltip" data-placement="top" title="SPAM - Caso Real">&larr; Previous Post</a>
+                          <a href="/es/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="De una API a una Streaming API">&larr; Previous Post</a>
                       </li>
                       
                       
                       <li class="next">
-                          <a href="/es/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Mudanza a GitHubPages">Next Post &rarr;</a>
+                          <a href="/es/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker en acción I">Next Post &rarr;</a>
                       </li>
                       
                   </ul> -->

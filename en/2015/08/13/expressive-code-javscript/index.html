@@ -219,7 +219,7 @@ One aspect I find particularly interesting is “expressiveness” which means �
   2.1. Get the name of the person at the index equals to the previously initialized variable.<br />
   2.2. Concatenate a space, a hyphen and then another space.<br />
   2.3. Concatenate the age of the person at the index equals to the previously initialized variable.<br />
-  2.4. Log the result on the console.  </li>
+  2.4. Log the result on the console.</li>
 </ol>
 
 <p>Let’s start by extracting the code inside the <em>for</em> to a function receiving a <em>person</em> as parameter. The function prints the specified pattern.</p>
@@ -306,8 +306,8 @@ It’s usually not a good idea to modify the <em>array</em> being iterated. As a
 <ol>
   <li>For each person:<br />
   1.1. Check if it’s age is greater or equals than 25.<br />
-  1.2. If it isn’t, remove 1 position from the <em>array</em> starting at <em>index</em>.  </li>
-  <li>For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the <em>array</em>).  </li>
+  1.2. If it isn’t, remove 1 position from the <em>array</em> starting at <em>index</em>.</li>
+  <li>For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the <em>array</em>).</li>
 </ol>
 
 <p>It doesn’t seem to be that bad, but we are still aware of the <em>array</em>, the <em>index</em> and the comparison logic. Furthermore, if we wanted to reuse this code for removing people younger than 18 we would need to duplicate it.
@@ -450,7 +450,7 @@ It would be nice to be able to write that same thing in <em>Javascript</em> the 
   <li><em>array</em>: The <em>array</em> being iterated.</li>
 </ul>
 
-<p><em>map</em> returns a <strong>new</strong> <em>array</em> with the elements of the second set. In our case it returns an <em>array</em> with people weights.  </p>
+<p><em>map</em> returns a <strong>new</strong> <em>array</em> with the elements of the second set. In our case it returns an <em>array</em> with people weights.</p>
 
 <p>Going back to our example, each weight doesn’t help us to determine whether is dangerous to activate the elevator or not. We still need to get the total weight.</p>
 
@@ -493,7 +493,7 @@ So, defining sum as:</p>
   <li><em>array</em>: The <em>array</em> being iterated.</li>
 </ul>
 
-<p><em>reduce</em> returns an <strong>only</strong> value that matches the result of <em>callback</em> last execution.  </p>
+<p><em>reduce</em> returns an <strong>only</strong> value that matches the result of <em>callback</em> last execution.</p>
 
 <p>There are some qualities of <em>reduce</em> that could label it as a recursive method. Instead of thinking <em>reduce</em> as a function that iterates the <em>array</em> applying <em>callback</em>, we could think about it as a function that takes the <em>array</em> first position and applies <em>callback</em> passing the current position and the result of <em>reduce</em> for a second <em>array</em> that goes from the original <em>array</em> second position to the last one. This is meaningless when using it, but knowing this, will help us to understand how it works, why it <strong>accumulates</strong> and how the <em>initialValue</em> works.</p>
 
@@ -504,7 +504,7 @@ So, defining sum as:</p>
 <p>There are several ways of achieving this. For example:</p>
 
 <ul>
-  <li>Iterate and query  </li>
+  <li>Iterate and query</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>

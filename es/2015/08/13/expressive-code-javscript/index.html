@@ -196,7 +196,7 @@ de 2015
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
   				<p>Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: <em>performance, mantenibilidad y legibilidad</em>, por mencionar algunos.
-Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.  </p>
+Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.</p>
 
 <p>Como buen <em>Javascript Hipster (“A mi me gustaba antes de que fuera popular”)</em> me gustaría mostrar algunos ejemplos de cómo <em>Javascript</em> nos permite ser realmente expresivos trabajando con <em>arrays</em> (y algunas funciones en particular): <em>forEach, filter, map, reduce, every</em> and <em>some</em>.
 <!--MORE--></p>
@@ -226,7 +226,7 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
   2.1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.<br />
   2.2. Concatenarle un espacio, un guión y luego otro espacio.<br />
   2.3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.<br />
-  2.4. <em>Loggear</em> el resultado en la consola.  </li>
+  2.4. <em>Loggear</em> el resultado en la consola.</li>
 </ol>
 
 <p>Comencemos por quitar la línea dentro del <em>for</em> y ubicarla dentro de una función que reciba una <em>persona</em> como parámetro e imprima el patrón especificado.</p>
@@ -276,7 +276,7 @@ Una implementación muy básica del <em>forEach</em> podría ser:</p>
 
 <p>Adicionalmente, el <em>forEach</em> recibe un segundo parámetro opcional que representa una función que será invocada cuando se haya finalizado la recorrida del <em>array</em>. En los ejemplos que se están mostrando esto puede parecer inútil, pero cuando se está en un entorno de programación <em>asincrónica</em> (como <a href="http://nodejs.org">NodeJS</a>), este tipo de implementaciones se vuelve indispensable.</p>
 
-<p>Aún más útiles quizá resulten 2 parámetros adicionales que <strong>el <em>forEach</em> le pasa a la función especificada en el primer parámetro:</strong>  </p>
+<p>Aún más útiles quizá resulten 2 parámetros adicionales que <strong>el <em>forEach</em> le pasa a la función especificada en el primer parámetro:</strong></p>
 
 <ul>
   <li><em>index</em>: El índice del elemento que está siendo iterado.</li>
@@ -305,7 +305,7 @@ Una implementación muy básica del <em>forEach</em> podría ser:</p>
 
 <p>Por algún motivo, Jane Doe logró vencer la seguridad de nuestro bar, e ingresar. Dicho motivo es causa de incontables <em>bugs</em> en incontables piezas de código.<br />
 En cada iteración, <em>index</em> incrementa 1. La primera vez (<em>index=0</em>) encontramos a John Doe de 27 años. Queda en el <em>array</em>. La segunda vez (<em>index=1</em>), encontramos a John Doe Jr de 3 años (quien claramente no debería estar en nuestro bar). Al removerlo del <em>array</em> Jane Doe pasa a estar en el <em>index 1</em> y Julian Doe en el <em>index 2</em>. La tercera iteración (<em>index=2</em>) aparece Julian Doe. Es decir que Jane Doe ha sido salteada. <strong>Es como si el guardia de seguridad se diera vuelta cada vez que saca a alguien de la fila del bar y en ese momento dejara pasar a una persona sin importar su edad.</strong><br />
-No siempre es buena idea modificar el <em>array</em> que se está iterando. Como soluciones alternativas, se puede utilizar un <em>array</em> auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.  </p>
+No siempre es buena idea modificar el <em>array</em> que se está iterando. Como soluciones alternativas, se puede utilizar un <em>array</em> auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.</p>
 
 <p>Pero más allá de el mal funcionamiento del código anterior, analicemos su <strong>expresividad</strong>:</p>
 
@@ -313,7 +313,7 @@ No siempre es buena idea modificar el <em>array</em> que se está iterando. Como
   <li>Por cada persona:<br />
   1.1. Verificar si supera o iguala los 25 años.<br />
   1.2. Si no lo hace, remover del <em>array</em> 1 posición comenzando en <em>index</em>.</li>
-  <li>Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el <em>array</em>”).  </li>
+  <li>Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el <em>array</em>”).</li>
 </ol>
 
 <p>No parece ser tan grave, pero seguimos teniendo conocimiento del <em>array</em>, el <em>index</em> y la lógica para realizar la comparación. Además, si quisiéramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.<br />
@@ -406,7 +406,7 @@ Supongamos que <em>nuestras</em> personas están subiendo a un ascensor. Por mot
 <ul>
   <li>Como vimos, <em>forEach</em> recibe como primer parámetro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como <em>function</em> es una expresión que devuelve una función, la sintaxis de <em>Javascript</em> nos permite definir la función directamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una <strong>función anónima</strong>. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un <em>post</em> en sí mismo.</li>
   <li>Como <em>forEach</em> no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.</li>
-  <li>El código que vamos a generar, <strong>en mi opinión</strong> no es <em>automáticamente</em> más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos <em>map</em> y <em>reduce</em>.  </li>
+  <li>El código que vamos a generar, <strong>en mi opinión</strong> no es <em>automáticamente</em> más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos <em>map</em> y <em>reduce</em>.</li>
 </ul>
 
 <p>Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo <em>array</em> que solo tenga los pesos de las personas de nuestro grupo.</p>
@@ -457,7 +457,7 @@ Sería bueno poder escribir eso mismo en <em>Javascript</em> de la siguiente man
   <li><em>array</em>: El <em>array</em> que está siendo iterado.</li>
 </ul>
 
-<p><em>map</em> devuelve un <strong>nuevo</strong> <em>array</em> con los elementos del segundo conjunto. En nuestro ejemplo, un <em>array</em> con los pesos de las personas.  </p>
+<p><em>map</em> devuelve un <strong>nuevo</strong> <em>array</em> con los elementos del segundo conjunto. En nuestro ejemplo, un <em>array</em> con los pesos de las personas.</p>
 
 <p>Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.</p>
 
@@ -500,7 +500,7 @@ Entonces, Definiendo <em>sum</em> como</p>
   <li><em>array</em>: El <em>array</em> que está siendo iterado.</li>
 </ul>
 
-<p><em>reduce</em> devuelve un <strong>único</strong> valor que coincide con el resultado de la última ejecución de <em>callback</em>.  </p>
+<p><em>reduce</em> devuelve un <strong>único</strong> valor que coincide con el resultado de la última ejecución de <em>callback</em>.</p>
 
 <p>Hay algunas características de <em>reduce</em> que podrían catalogarlo como un método recursivo. En lugar de pensar a <em>reduce</em> como una función que itera el <em>array</em> aplicando <em>callback</em>, podríamos pensarlo como una función que toma la primera posición del <em>array</em> y aplica <em>callback</em> pasando esta posición y el resultado de <em>reduce</em> para un segundo <em>array</em> que va desde la segunda hasta la última posición del primer <em>array</em>. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender cómo funciona, por qué <strong>acumula</strong> y cómo funciona el <em>initialValue</em>.</p>
 
@@ -510,7 +510,7 @@ Entonces, Definiendo <em>sum</em> como</p>
 Hay muchas formas de lograrlo. Entre ellas:</p>
 
 <ul>
-  <li>Iterar y preguntar  </li>
+  <li>Iterar y preguntar</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
@@ -520,7 +520,7 @@ Hay muchas formas de lograrlo. Entre ellas:</p>
 <p>Estamos utilizando la función <em>olderThan(threshold)</em> para generar la función <em>olderThan18</em>.</p>
 
 <ul>
-  <li>Reducir mediante el operador lógico “Y”  </li>
+  <li>Reducir mediante el operador lógico “Y”</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousOlder18</span><span class="p">,</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
@@ -529,7 +529,7 @@ Hay muchas formas de lograrlo. Entre ellas:</p>
 <span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></div>
 
 <ul>
-  <li>Mapear al <em>array</em> de edades y reducir mediante el operador lógico “Y”  </li>
+  <li>Mapear al <em>array</em> de edades y reducir mediante el operador lógico “Y”</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
@@ -548,7 +548,7 @@ Hay muchas formas de lograrlo. Entre ellas:</p>
 <p>En ambos casos, es innecesario evaluar <em>whatever</em>.</p>
 
 <p>Esto parece ser irrelevante en un <em>array</em> de 4 elementos. Pero ¿qué pasaría si tuviéramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como <strong>mala performance</strong>.<br />
-La forma de solucionar esto es <em>rompiendo</em> las iteraciones cuando no es necesario seguir evaluando. La instrucción <em>break</em> hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al <em>for</em> clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a <em>array.length</em>, si no necesitaramos seguir trabajando con el <em>array</em>. O hacer una copia del mismo, para poder cambiar el <em>length</em> sin problemas. También podríamos <em>lanzar una excepción</em> y <em>capturarla</em> inmediatamente al salir del método).  </p>
+La forma de solucionar esto es <em>rompiendo</em> las iteraciones cuando no es necesario seguir evaluando. La instrucción <em>break</em> hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al <em>for</em> clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a <em>array.length</em>, si no necesitaramos seguir trabajando con el <em>array</em>. O hacer una copia del mismo, para poder cambiar el <em>length</em> sin problemas. También podríamos <em>lanzar una excepción</em> y <em>capturarla</em> inmediatamente al salir del método).</p>
 
 <p>Pero hay un motivo por el cual este problema se presenta al utilizar estos métodos. En el caso del <em>forEach</em> el motivo es incluso explícito en el nombre de la función. <strong>Por cada</strong> elemento de un <em>array</em> implica que <strong>todos</strong> los elementos van a ser iterados.</p>
 

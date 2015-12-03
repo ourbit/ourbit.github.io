@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Entendiendo los conceptos de DevOps y la transformación cultural que estos traen aparejada">
 
-    <title>Mudanza a GitHubPages - OurBit</title>
+    <title>Docker en acción I - OurBit</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/">
+    <link rel="canonical" href="http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
                 <li>
                 
                     
-                    <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" >English Version</a>
+                    <a href="/en/2015/12/03/docker-in-action-IoIII/" >English Version</a>
                 
               </li>
 
@@ -165,7 +165,7 @@ $(window).scroll(function(e) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Mudanza a GitHubPages</h1>
+                    <h1>Docker en acción I</h1>
                     
                     <span class="meta">Publicado por nohorbee el
                       
@@ -173,8 +173,8 @@ $(window).scroll(function(e) {
   
   3 de
   
-  Agosto
-    
+  Diciembre
+  
 
 
 de 2015
@@ -193,44 +193,47 @@ de 2015
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-  				<p>Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por <em>blogger de Google</em> no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de <em>blogging</em> debe tener.
+  				<p>Hace unos (cuantos) años, hablar de <em>escalabilidad</em> traía a la mesa una serie de sorpresas de todo tipo. Gente hablando de <em>escalabilidad</em> como una cualidad del <em>hardware</em>, gente demasiado soprendida al escuchar que el que escala no es el <em>hardware</em> sino que las aplicaciones deben estar diseñadas de forma que puedan escalar, y por supuesto, la poca distinción entre <em>escalabilidad</em> horizontal y vertical.<br />
+Afortunadamente, en estos días, el concepto ha sido digerido, explicado y aparentemente entendido, pero sigue resultando curioso entender por qué durante tantos años, hubo tanta confusión al respecto.<br />
+No se si es causa o efecto de esta <em>nueva era</em>, pero la virtualización juega un rol principal, y especialmente, la virtualización mediante <em>containers</em>.<br />
+Este es el primer <em>post</em> de una saga de tres, en la cual se cubrirán los conceptos básicos de <em>escalabilidad</em>, el rol/cultura <em>DevOps</em>, introducción a <em>Docker</em>, una explicación y guía para su instalación, primeros pasos y configuración de una <em>docker regisrty</em>. En este primer post, <em>DevOps</em>, y <em>escalabilidad</em>.
 <!--MORE--></p>
 
-<p>Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (<em>Wordpress, Joomla</em>, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.</p>
+<h2 id="los-devops">Los DevOps</h2>
 
-<p>Es así como recordé haber usado <em>Jekyll y GitHub Pages</em> para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.</p>
+<p>Durante mucho tiempo el rol del desarrollador se encontraba bien definido y diferenciado del rol del operador. El desarrollador <strong>construía</strong> software mientras que el operador se encargaba de la <strong>infraestructura</strong> y el <em>deployment</em> de los <strong>paquetes</strong> de software a instalar. La industria del software mantuvo con orgullo esta separación alegando que el desarrollador podía abstraerse por completo del hardware y el modo de <em>deploy</em>, concentrándose en escribir y refinar código.  <strong>Empieza a ser menos sorprendente que muchos desarrolladores no pudieran escribir código</strong> <strong><em>escalable</em></strong>.<br />
+Al abstraerse por completo, el desarrollador no solo se despreocupaba del hardware y la plataforma que fuera a ejecutar sus programas; también se despreocupaba de la <em>topología</em> de dicha infraestructura. No era necesario saber si el servidor estaría corriendo en un <em>Intel, AMD u otro fabricante</em>, ni conocer el sistema operativo (en el caso de <em>Java</em>, se suponía que la <em>JVM</em> exponía una plataforma unificada). Pero tampoco parecía ser necesario saber si habría una máquina como servidor o si serían 10, si estarían en <em>cluster</em>, que pasaría si una máquina se encontrara apagada, etc. Como consecuencia, y a modo de ejemplo, guardar los datos del usuario <em>logueado</em> en una sesión <em>HTTP</em> resultaba tan sencillo y beneficioso que se convirtió en un dogma del desarrollo de aplicaciones <em>web</em>.</p>
 
-<p><strong>Definitivamente, <em>Jekyll</em> no provee mejores herramientas que las otras plataformas</strong>. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la <strong>fléxibilidad</strong>, lo cual la convierte en <strong>una herramienta candidata para desarrolladores</strong> (u otros profesionales con conocimientos suficientes de IT) para ser su “plataforma” de <em>blogging</em> a la medida.</p>
+<p>Si bien muchas de las abstracciones resultaron medianamente beneficiosas (medianamente: no resulta tan distractivo conocer el <em>hardware</em> donde correrá nuestra aplicación), otras se volvieron extremadamente inconvenientes. El desarrollo de aplicaciones <em>que escalen</em> es un claro ejemplo de los inconvenientes de la abstracción total.<br />
+El concepto de <em>DevOps</em> surge como una alternativa a esta abstracción (o al menos una redefinición). Si bien para la mayoría de las empresas <em>DevOps</em> es un rol más bien vinculado con el <em>Ops</em>, el concepto radica en una cultura de colaboración entre los desarrolladores y los operadores que beneficia el desarrollo, prueba, y <em>releases</em> frecuentes y confiables. Como un efecto colateral (positivo), los desarrolladores se involucran en forma temprana en el entendimiento de la infraestructura pudiendo tenerla en cuenta al escribir las aplicaciones (y descartando aquella información que no les resulte relevante).</p>
 
-<p>El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar <em>templates (o themes)</em> gratuitos y adaptar mínimamente alguno. Me encontré con <a href="https://github.com/IronSummitMedia/startbootstrap-clean-blog">CleanBlog</a> de <a href="https://github.com/davidtmiller">David Miller</a> a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.</p>
+<h2 id="escalabilidad">Escalabilidad</h2>
 
-<p>¿Qué me hace elegir <em>Jekyll y GitHub Pages</em>?</p>
+<p><strong>Una aplicación escala si puede ajustarse a una mayor exigencia de carga</strong>.</p>
 
-<ul>
-  <li>La posibilidad de contar con herramientas <em>Open Source</em>.</li>
-  <li>Libre de publicidad: Esto es gratuito sin letra chica.</li>
-  <li>Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.</li>
-  <li>Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.</li>
-  <li>Capacidad de Recibir <em>Pull Requests</em>: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. <strong>Espero Pull Requests con sus Posts</strong>.</li>
-  <li>Soporte a <em>Markdown</em>: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en <em>Markdown</em> en lugar de lidiar con editores <em>WYSIWYG</em> que terminan fallando cuando quiero ir más allá que las opciones soportadas.</li>
-  <li><em>Highlight</em> de código: Escencial para un Blog dónde haya snippets.</li>
-</ul>
+<h3 id="escalabilidad-vertical">Escalabilidad Vertical</h3>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
-<span class="p">})(</span><span class="s2">&quot;Bienvenidos al nuevo OurBit&quot;</span><span class="p">);</span></code></pre></div>
+<p>Procesadores más potentes, con mayor cantidad de <em>cores</em> pueden procesar mayor cantidad de <em>threads</em>. Más memoria puede almacenar mayor cantidad de datos de los procesos en ejecución, y de esa forma, una aplicación puede soportar mayor carga. A este tipo de <em>escalabilidad</em> se la conoce como <em>escalabilidad vertical</em>.<br />
+Una ventaja (relativa), es que puede lograrse aprovechando capacidades de los lenguajes más populares (como ser JAVA). Pero una gran desventaja es que, llegado a un punto, el aumento de <em>performance</em> en relación al aumento de <em>carga</em> se vuelve asintótico.</p>
 
-<p>Estas son solo algunas razones. Pero cada uno debería tener las suyas. Ante la duda, inviertan 1 hora en aprender a usarlo (quizá no los convenza como herramienta de <em>Blogging</em>, pero no está demás saber como funciona <em>Jekyll y GitHub Pages</em>).</p>
+<p><img src="/img/posts/verticalScaling.png" alt="Escalabilidad Vertical - Performance / Carga" /></p>
 
-<p>Les dejo algunos links para comenzar:</p>
+<p>En la imagen se puede ver como, a medida que aumenta la carga, la performance aumenta cada vez con mayor dificultad hasta llegar a un punto en donde no puede aumentar más. Esto implica que todos los usuarios de una aplicación, comenzarán a experimentar una baja de performance, o incluso, una interrupción total del sistema.<br />
+Al <em>escalar verticalmente</em>, incorporando un servidor con mayores prestaciones de hardware, logramos mejorar la performance. Pero como se puede ver al comparar las curvas con la línea de <em>escalabilidad perfecta</em> (o <em>escalabilidad lineal</em>), el punto en donde el nuevo servidor deja de soportar la carga de trabajo, ocurre bastante antes de alcanzar la <em>escalabilidad perfecta</em>. Una progresión de este comportamiento indicaría que, en cierto punto, invertir en <em>hardware</em> más potente (y costoso), no lograría acercarnos a la <em>escalabilidad perfecta</em>, alcanzando un <strong>límite de escalabilidad</strong> (también asintótico).</p>
 
-<ul>
-  <li><a href="https://pages.github.com/">GitHub Pages</a></li>
-  <li><a href="http://jekyllrb.com/">Jekyll</a></li>
-  <li><a href="http://jekyllthemes.org/">Jekyll Themes</a></li>
-</ul>
+<p><img src="/img/posts/verticalScalingSummary.png" alt="Escalabilidad Vertical - Ganancia / Potencia" /></p>
 
-<p>Si tienen dudas, espero su contacto.</p>
+<h3 id="escalabilidad-horizontal">Escalabilidad Horizontal</h3>
+
+<p>Para superar las limitaciones presentadas por la <em>escalabilidad vertical</em>, se produjo un cambio de paradigma en donde, en lugar de pensar en equipos con más potencia, se piensa en mayor cantidad de equipos con menor potencia.<br />
+A diferencia de la <em>escalabilidad vertical</em>, en este paradigma, la administración se vuelve más compleja, y el desarrollo necesita considerar el hecho de que el software estará distribuido en distintos equipos (con recursos separados). Pero, además de superar las limitaciones de la <em>escalabiliad vertical</em>, el hecho de poder <em>escalar</em> aumentando la cantidad de equipos (o nodos), termina siendo menos costoso e incluso, aprovechando técnicas avanzadas de virtualización como las ofrecidas por <em>Docker</em>, pueden automatizarse para responder dinámicamente a la carga en tiempo real.</p>
+
+<p><img src="/img/posts/horizontalScaling.png" alt="Escalabilidad Horizontal - Performance / Carga" /></p>
+
+<p>Como se ve en la imagen, hay un punto en donde un servidor ya no logra mantener la performance necesaria para soportar la carga. En el momento donde la curva de performance cruza la recta de <em>escalabilidad perfecta</em> (o quizás un poco antes), es tiempo de iniciar un nuevo servidor. De esta manera, por aproximación, se logra mantener una relación carga/performance que se ajusta a la <em>escalabilidad perfecta</em> y, en tanto y en cuanto el inicio de un nuevo servidor pueda realizarse de manera automática y veloz, el aprovisionamiento podría realizarse <em>a demanda</em>.</p>
+
+<p>El concepto de <em>virtualización mediante containers</em> apunta exáctamente a brindar una solución para ese requerimiento. Como se verá en el siguiente <em>post</em>, <em>Docker</em> ofrece una manera más eficaz de <em>virtualización</em> que las tradicionales <em>Virtual Machine</em>, y si bien sus beneficios resultan instantáneos, se vuelven un verdadero diferencial al pensar en pequeños nodos que se <em>levantan</em> en cuestión de segundos cuando es necesario.<br />
+Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es una combinación de las capacidades de la tecnología (que reutiliza el Kernel de un solo Sistema Operativo que ya está corriendo) y el diseño de componentes pequeños que levantarán al mismo tiempo en distintos nodos (reduciendo el tiempo de arranque y paralelizandolo).</p>
 
 
                   <!-- <hr>
@@ -238,13 +241,9 @@ de 2015
                   <ul class="pager">
                       
                       <li class="previous">
-                          <a href="/en/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">&larr; Previous Post</a>
+                          <a href="/en/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker in acción I">&larr; Previous Post</a>
                       </li>
                       
-                      
-                      <li class="next">
-                          <a href="/en/2015/08/13/expressive-code-javscript/" data-toggle="tooltip" data-placement="top" title="Expressive code in Javascript">Next Post &rarr;</a>
-                      </li>
                       
                   </ul> -->
                   <div id="disqus_thread"></div>

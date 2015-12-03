@@ -5,9 +5,126 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 13 Sep 2015 13:45:06 -0300</pubDate>
-    <lastBuildDate>Sun, 13 Sep 2015 13:45:06 -0300</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Thu, 03 Dec 2015 15:30:45 -0300</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2015 15:30:45 -0300</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Docker en acción I</title>
+        <description>&lt;p&gt;Hace unos (cuantos) años, hablar de &lt;em&gt;escalabilidad&lt;/em&gt; traía a la mesa una serie de sorpresas de todo tipo. Gente hablando de &lt;em&gt;escalabilidad&lt;/em&gt; como una cualidad del &lt;em&gt;hardware&lt;/em&gt;, gente demasiado soprendida al escuchar que el que escala no es el &lt;em&gt;hardware&lt;/em&gt; sino que las aplicaciones deben estar diseñadas de forma que puedan escalar, y por supuesto, la poca distinción entre &lt;em&gt;escalabilidad&lt;/em&gt; horizontal y vertical.&lt;br /&gt;
+Afortunadamente, en estos días, el concepto ha sido digerido, explicado y aparentemente entendido, pero sigue resultando curioso entender por qué durante tantos años, hubo tanta confusión al respecto.&lt;br /&gt;
+No se si es causa o efecto de esta &lt;em&gt;nueva era&lt;/em&gt;, pero la virtualización juega un rol principal, y especialmente, la virtualización mediante &lt;em&gt;containers&lt;/em&gt;.&lt;br /&gt;
+Este es el primer &lt;em&gt;post&lt;/em&gt; de una saga de tres, en la cual se cubrirán los conceptos básicos de &lt;em&gt;escalabilidad&lt;/em&gt;, el rol/cultura &lt;em&gt;DevOps&lt;/em&gt;, introducción a &lt;em&gt;Docker&lt;/em&gt;, una explicación y guía para su instalación, primeros pasos y configuración de una &lt;em&gt;docker regisrty&lt;/em&gt;. En este primer post, &lt;em&gt;DevOps&lt;/em&gt;, y &lt;em&gt;escalabilidad&lt;/em&gt;.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;los-devops&quot;&gt;Los DevOps&lt;/h2&gt;
+
+&lt;p&gt;Durante mucho tiempo el rol del desarrollador se encontraba bien definido y diferenciado del rol del operador. El desarrollador &lt;strong&gt;construía&lt;/strong&gt; software mientras que el operador se encargaba de la &lt;strong&gt;infraestructura&lt;/strong&gt; y el &lt;em&gt;deployment&lt;/em&gt; de los &lt;strong&gt;paquetes&lt;/strong&gt; de software a instalar. La industria del software mantuvo con orgullo esta separación alegando que el desarrollador podía abstraerse por completo del hardware y el modo de &lt;em&gt;deploy&lt;/em&gt;, concentrándose en escribir y refinar código.  &lt;strong&gt;Empieza a ser menos sorprendente que muchos desarrolladores no pudieran escribir código&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;escalable&lt;/em&gt;&lt;/strong&gt;.&lt;br /&gt;
+Al abstraerse por completo, el desarrollador no solo se despreocupaba del hardware y la plataforma que fuera a ejecutar sus programas; también se despreocupaba de la &lt;em&gt;topología&lt;/em&gt; de dicha infraestructura. No era necesario saber si el servidor estaría corriendo en un &lt;em&gt;Intel, AMD u otro fabricante&lt;/em&gt;, ni conocer el sistema operativo (en el caso de &lt;em&gt;Java&lt;/em&gt;, se suponía que la &lt;em&gt;JVM&lt;/em&gt; exponía una plataforma unificada). Pero tampoco parecía ser necesario saber si habría una máquina como servidor o si serían 10, si estarían en &lt;em&gt;cluster&lt;/em&gt;, que pasaría si una máquina se encontrara apagada, etc. Como consecuencia, y a modo de ejemplo, guardar los datos del usuario &lt;em&gt;logueado&lt;/em&gt; en una sesión &lt;em&gt;HTTP&lt;/em&gt; resultaba tan sencillo y beneficioso que se convirtió en un dogma del desarrollo de aplicaciones &lt;em&gt;web&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Si bien muchas de las abstracciones resultaron medianamente beneficiosas (medianamente: no resulta tan distractivo conocer el &lt;em&gt;hardware&lt;/em&gt; donde correrá nuestra aplicación), otras se volvieron extremadamente inconvenientes. El desarrollo de aplicaciones &lt;em&gt;que escalen&lt;/em&gt; es un claro ejemplo de los inconvenientes de la abstracción total.&lt;br /&gt;
+El concepto de &lt;em&gt;DevOps&lt;/em&gt; surge como una alternativa a esta abstracción (o al menos una redefinición). Si bien para la mayoría de las empresas &lt;em&gt;DevOps&lt;/em&gt; es un rol más bien vinculado con el &lt;em&gt;Ops&lt;/em&gt;, el concepto radica en una cultura de colaboración entre los desarrolladores y los operadores que beneficia el desarrollo, prueba, y &lt;em&gt;releases&lt;/em&gt; frecuentes y confiables. Como un efecto colateral (positivo), los desarrolladores se involucran en forma temprana en el entendimiento de la infraestructura pudiendo tenerla en cuenta al escribir las aplicaciones (y descartando aquella información que no les resulte relevante).&lt;/p&gt;
+
+&lt;h2 id=&quot;escalabilidad&quot;&gt;Escalabilidad&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Una aplicación escala si puede ajustarse a una mayor exigencia de carga&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;escalabilidad-vertical&quot;&gt;Escalabilidad Vertical&lt;/h3&gt;
+
+&lt;p&gt;Procesadores más potentes, con mayor cantidad de &lt;em&gt;cores&lt;/em&gt; pueden procesar mayor cantidad de &lt;em&gt;threads&lt;/em&gt;. Más memoria puede almacenar mayor cantidad de datos de los procesos en ejecución, y de esa forma, una aplicación puede soportar mayor carga. A este tipo de &lt;em&gt;escalabilidad&lt;/em&gt; se la conoce como &lt;em&gt;escalabilidad vertical&lt;/em&gt;.&lt;br /&gt;
+Una ventaja (relativa), es que puede lograrse aprovechando capacidades de los lenguajes más populares (como ser JAVA). Pero una gran desventaja es que, llegado a un punto, el aumento de &lt;em&gt;performance&lt;/em&gt; en relación al aumento de &lt;em&gt;carga&lt;/em&gt; se vuelve asintótico.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScaling.png&quot; alt=&quot;Escalabilidad Vertical - Performance / Carga&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En la imagen se puede ver como, a medida que aumenta la carga, la performance aumenta cada vez con mayor dificultad hasta llegar a un punto en donde no puede aumentar más. Esto implica que todos los usuarios de una aplicación, comenzarán a experimentar una baja de performance, o incluso, una interrupción total del sistema.&lt;br /&gt;
+Al &lt;em&gt;escalar verticalmente&lt;/em&gt;, incorporando un servidor con mayores prestaciones de hardware, logramos mejorar la performance. Pero como se puede ver al comparar las curvas con la línea de &lt;em&gt;escalabilidad perfecta&lt;/em&gt; (o &lt;em&gt;escalabilidad lineal&lt;/em&gt;), el punto en donde el nuevo servidor deja de soportar la carga de trabajo, ocurre bastante antes de alcanzar la &lt;em&gt;escalabilidad perfecta&lt;/em&gt;. Una progresión de este comportamiento indicaría que, en cierto punto, invertir en &lt;em&gt;hardware&lt;/em&gt; más potente (y costoso), no lograría acercarnos a la &lt;em&gt;escalabilidad perfecta&lt;/em&gt;, alcanzando un &lt;strong&gt;límite de escalabilidad&lt;/strong&gt; (también asintótico).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScalingSummary.png&quot; alt=&quot;Escalabilidad Vertical - Ganancia / Potencia&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;escalabilidad-horizontal&quot;&gt;Escalabilidad Horizontal&lt;/h3&gt;
+
+&lt;p&gt;Para superar las limitaciones presentadas por la &lt;em&gt;escalabilidad vertical&lt;/em&gt;, se produjo un cambio de paradigma en donde, en lugar de pensar en equipos con más potencia, se piensa en mayor cantidad de equipos con menor potencia.&lt;br /&gt;
+A diferencia de la &lt;em&gt;escalabilidad vertical&lt;/em&gt;, en este paradigma, la administración se vuelve más compleja, y el desarrollo necesita considerar el hecho de que el software estará distribuido en distintos equipos (con recursos separados). Pero, además de superar las limitaciones de la &lt;em&gt;escalabiliad vertical&lt;/em&gt;, el hecho de poder &lt;em&gt;escalar&lt;/em&gt; aumentando la cantidad de equipos (o nodos), termina siendo menos costoso e incluso, aprovechando técnicas avanzadas de virtualización como las ofrecidas por &lt;em&gt;Docker&lt;/em&gt;, pueden automatizarse para responder dinámicamente a la carga en tiempo real.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/horizontalScaling.png&quot; alt=&quot;Escalabilidad Horizontal - Performance / Carga&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Como se ve en la imagen, hay un punto en donde un servidor ya no logra mantener la performance necesaria para soportar la carga. En el momento donde la curva de performance cruza la recta de &lt;em&gt;escalabilidad perfecta&lt;/em&gt; (o quizás un poco antes), es tiempo de iniciar un nuevo servidor. De esta manera, por aproximación, se logra mantener una relación carga/performance que se ajusta a la &lt;em&gt;escalabilidad perfecta&lt;/em&gt; y, en tanto y en cuanto el inicio de un nuevo servidor pueda realizarse de manera automática y veloz, el aprovisionamiento podría realizarse &lt;em&gt;a demanda&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;El concepto de &lt;em&gt;virtualización mediante containers&lt;/em&gt; apunta exáctamente a brindar una solución para ese requerimiento. Como se verá en el siguiente &lt;em&gt;post&lt;/em&gt;, &lt;em&gt;Docker&lt;/em&gt; ofrece una manera más eficaz de &lt;em&gt;virtualización&lt;/em&gt; que las tradicionales &lt;em&gt;Virtual Machine&lt;/em&gt;, y si bien sus beneficios resultan instantáneos, se vuelven un verdadero diferencial al pensar en pequeños nodos que se &lt;em&gt;levantan&lt;/em&gt; en cuestión de segundos cuando es necesario.&lt;br /&gt;
+Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es una combinación de las capacidades de la tecnología (que reutiliza el Kernel de un solo Sistema Operativo que ya está corriendo) y el diseño de componentes pequeños que levantarán al mismo tiempo en distintos nodos (reduciendo el tiempo de arranque y paralelizandolo).&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/</guid>
+        
+        <category>Docker</category>
+        
+        <category>Container</category>
+        
+        <category>Microservices</category>
+        
+        <category>DevOps</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Docker in acción I</title>
+        <description>&lt;p&gt;Several years ago, speaking of &lt;em&gt;scalability&lt;/em&gt; used to bring up a series of surprises of all kind. People talking about &lt;em&gt;scalability&lt;/em&gt; as a &lt;em&gt;hardware&lt;/em&gt; quality, people getting too much surprised when listening that it’s not the &lt;em&gt;hardware&lt;/em&gt; just scaling, but the applications being written in such a way that can &lt;em&gt;scale&lt;/em&gt;, and for sure, the little distinction between &lt;em&gt;horizontal and vertical scaling&lt;/em&gt;.&lt;br /&gt;
+Fortunately these days, the concept has been digested, explained, and apparently understood. However, I’m still curious about getting why this topic was source of so much confusion.
+I’m not sure which ones is the cause and which one the effect of this &lt;em&gt;new era&lt;/em&gt;, but virtualization plays a starring role, and specially the &lt;em&gt;containers based virtualization&lt;/em&gt;.
+This is the first of a three posts saga, in which I’ll be covering some &lt;em&gt;scalability&lt;/em&gt; fundamentals, &lt;em&gt;DevOps&lt;/em&gt; rol/culture, &lt;em&gt;Docker&lt;/em&gt; introduction, installation walkthrough, first steps, and &lt;em&gt;docker registry&lt;/em&gt; configuration. This first post is about &lt;em&gt;DevOps&lt;/em&gt; and &lt;em&gt;scalability&lt;/em&gt;.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;devops&quot;&gt;DevOps&lt;/h2&gt;
+
+&lt;p&gt;For so long, the developer role was well defined and set appart from the operator’s. The developer &lt;strong&gt;built&lt;/strong&gt; software while the operator was in charge of &lt;strong&gt;infrastructure&lt;/strong&gt; and software packages &lt;strong&gt;deployment&lt;/strong&gt;. The software industry was proud of this separation claiming that the developer could (and should) be completely abstracted from hardware and deployment, in order to focus in writing and refactoring code. &lt;strong&gt;Finding developers having troubles trying to write&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;scalable&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;code is not that surprising anymore&lt;/strong&gt;.&lt;br /&gt;
+Not only was the developer totally isolated from hardware and the platform running the programs, but also was unworried about that infrastructure &lt;em&gt;topology&lt;/em&gt;. It was not necessary to know if the server was going to be running on an &lt;em&gt;Intel, AMD or other vendor&lt;/em&gt;, neither to worry about the OS (for instance, &lt;em&gt;Java&lt;/em&gt; was supposed to be multi-platform thanks to the &lt;em&gt;JVM&lt;/em&gt; exposing a unified one). But it also seemed to be unnecessary knowing if the server was going to be running in 1 or 10 machines, if it was going to be a &lt;em&gt;cluster&lt;/em&gt;, what would happen if a machine was down, etc. As a direct consequence, and this is just one of many examples, storing the &lt;em&gt;logged in&lt;/em&gt; user data on the &lt;em&gt;HTTP session&lt;/em&gt; was so simple and useful that had been quickly adopted as a &lt;em&gt;web applications&lt;/em&gt; development dogma.&lt;/p&gt;
+
+&lt;p&gt;Even though many of these abstractions turned to be reasonably profitable (reasonably: it isn’t that distractive to know the hardware where our application will run), others have become extremely inconvenient. &lt;em&gt;Scalable&lt;/em&gt; applications development is a clear example of the troubles that come with the total abstraction.&lt;br /&gt;
+&lt;em&gt;DevOps&lt;/em&gt; concept stands up as an alternative to this abstraction (or a redefinition at least). Though most of the companies think about &lt;em&gt;DevOps&lt;/em&gt; as a role mostly biased to the &lt;em&gt;Ops&lt;/em&gt; part, the concept represents a culture where collaboration between developers and operators benefits frequent and reliable development, testing and &lt;em&gt;releases&lt;/em&gt;. As a (positive) side effect, developers get into infrastructure early enough to consider it when writing applications (and dismissing that information that doesn’t add any value).&lt;/p&gt;
+
+&lt;h2 id=&quot;scalability&quot;&gt;Scalability&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;An application scales if it’s able keep its performance over a workload increase&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;vertical-scalability&quot;&gt;Vertical Scalability&lt;/h3&gt;
+
+&lt;p&gt;More powerful processors, with more &lt;em&gt;cores&lt;/em&gt;, can process more &lt;em&gt;threads&lt;/em&gt;. More memory can store more running processes’ data, and that way, an application can support a higher workload. This kind of scalability is known as &lt;em&gt;vertical scalability&lt;/em&gt;. A (relative) advantage of this approach, is that it can be achieved by taking advantage of most popular languages capabilities (such as JAVA). But a big disadvantage is that, at some point, the relationship &lt;em&gt;performance increase&lt;/em&gt; over  &lt;em&gt;workload increase&lt;/em&gt; becomes asymptotic.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScaling.png&quot; alt=&quot;Vertical Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The previous image shows that as far as the workload increases, the performance increase becomes harder, until reaching the point of no increasing any longer. This means that every user will experience a performance degree, or even worst, a complete system interruption.&lt;br /&gt;
+When &lt;em&gt;verticaly scaling&lt;/em&gt;, by adding a more powerful server we are able to improve the performance. However, when comparing the curves against the &lt;em&gt;perfect scalability&lt;/em&gt; the moment when the new server stops supporting the workload happens pretty earlier than achieving the &lt;em&gt;perfect scalability&lt;/em&gt;. A progression over this behaviour would conclude that, at some point, investing in more powerful (and expensive) hardware won’t help us to achieve the &lt;em&gt;perfect scalability&lt;/em&gt;, but it will reach a &lt;strong&gt;scalability limit&lt;/strong&gt; (also asymptotic).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScalingSummary.png&quot; alt=&quot;Vertical Scalability - Gain / Power&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;horizontal-scalability&quot;&gt;Horizontal Scalability&lt;/h3&gt;
+
+&lt;p&gt;In order to overcome the limitations of &lt;em&gt;vertical scalability&lt;/em&gt;, a paradigm rupture occured and, in place of thinking about more powerful machines, the key seems to be to think about more qunatity of less powerful machines.&lt;/p&gt;
+
+&lt;p&gt;Unlike with &lt;em&gt;vertical scalability&lt;/em&gt;, in this paradigm, the infrastructure administration becomes more complex, and the development needs to consider the fact that the software will be distributed among different machines (with physically separated resources). But, in addition to overcomming &lt;em&gt;vertical scalability&lt;/em&gt; limitations, the fact of being able to &lt;em&gt;scale&lt;/em&gt; by augmenting the quantity of machines (or nodes) ends up being cheaper and furthermore, by taking advantage of the advanced virtualization techniques such as the ones offered by &lt;em&gt;Docker&lt;/em&gt;, administration can be automated to dynamically adapt to the changing workload in realtime.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/horizontalScaling.png&quot; alt=&quot;Horizontal Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The previous image shows that there is a moment when the server is no longer able to support the workload. At that moment (when the performance curve touches the &lt;em&gt;perfect scalability&lt;/em&gt;, or maybe a little bit earlier), it’s time to start a new server. This way, by aproximation, the workload/performance relationship can be maintained close to the &lt;em&gt;perfect scalability&lt;/em&gt;. Furthermore, if the new server starts automatically and quickly enough, the provisioning could be done in an &lt;em&gt;on-demand&lt;/em&gt; way.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Container based virtualization&lt;/em&gt; aims exactly to provide a solution for that requirement. As it will be covered on the following post, &lt;em&gt;Docker&lt;/em&gt; offers a more efficient &lt;em&gt;virtualization&lt;/em&gt; than the traditional &lt;em&gt;Virtual Machines&lt;/em&gt;. And even though the benefits appear immediately, they become a real difference when thinking of small nodes that &lt;em&gt;start&lt;/em&gt; in seconds when it’s necessary.&lt;br /&gt;
+We will also see that, the reason for these nodes to start that quickly, is a combination of the technology capabilities (that reuses a unique OS Kernel that is already running) and the good design: small components that start at the same time in different nodes (reducing the starting time by starting in parallel).&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//en/2015/12/03/docker-in-action-IoIII/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//en/2015/12/03/docker-in-action-IoIII/</guid>
+        
+        <category>Docker</category>
+        
+        <category>Container</category>
+        
+        <category>Microservices</category>
+        
+        <category>DevOps</category>
+        
+        
+      </item>
     
       <item>
         <title>De una API a una Streaming API</title>
@@ -29,7 +146,7 @@ En los esquemas tradicionales de &lt;em&gt;HTTP&lt;/em&gt; (protocolo en el que 
 &lt;p&gt;&lt;img src=&quot;/img/posts/long-polling-request.png&quot; alt=&quot;Long Polling HTTP Request&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Mediante &lt;em&gt;long polling&lt;/em&gt;, nuestra &lt;em&gt;API&lt;/em&gt; podría recibir una llamada y proveer el recurso que está siendo solicitado como primer &lt;em&gt;response&lt;/em&gt; pero, en lugar de cerrar la conexión, la &lt;em&gt;API&lt;/em&gt; podría enviar nuevos &lt;em&gt;responses&lt;/em&gt; en caso de que el recurso cambie luego del primer &lt;em&gt;response&lt;/em&gt;.&lt;br /&gt;
-Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades” referentes al recurso, o en otras palabras “lo que cambió”.  &lt;/p&gt;
+Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades” referentes al recurso, o en otras palabras “lo que cambió”.&lt;/p&gt;
 
 &lt;p&gt;Analicemos el siguiente ejemplo&lt;/p&gt;
 
@@ -49,7 +166,7 @@ Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades
 
 &lt;p&gt;3- El cliente 2 envía un &lt;em&gt;request&lt;/em&gt; con método &lt;em&gt;PATCH&lt;/em&gt; para modificar la edición (ahora “5th”).&lt;br /&gt;
 4- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 2 con código &lt;em&gt;200 OK&lt;/em&gt;.&lt;br /&gt;
-5- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.  &lt;/p&gt;
+5- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -63,7 +180,7 @@ Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades
 &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Se deja de lado la discusión acerca de los métodos a utilizar (&lt;em&gt;PATCH&lt;/em&gt; o &lt;em&gt;PUT&lt;/em&gt;) y los códigos &lt;em&gt;HTTP&lt;/em&gt; correspondientes. Esta temática amerita un &lt;em&gt;post&lt;/em&gt; aparte.&lt;/p&gt;
 
 &lt;p&gt;Gracias a que el servidor implementa &lt;em&gt;long polling&lt;/em&gt;, la &lt;em&gt;API&lt;/em&gt; puede informar al cliente, que el recurso que había solicitado en primer lugar ha cambiado, sin que el cliente realice una segunda consulta.&lt;br /&gt;
-Al proceso por el cual las &lt;em&gt;APIs&lt;/em&gt; notifican &lt;em&gt;proactivamente&lt;/em&gt; al cliente sobre cambios en los recursos se lo conoce como &lt;em&gt;Push Notification&lt;/em&gt;. Cabe aclarar que &lt;em&gt;long polling&lt;/em&gt; no es la única forma de lograr este comportamiento. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; es otra especificación que logra un comportamiento similar.  &lt;/p&gt;
+Al proceso por el cual las &lt;em&gt;APIs&lt;/em&gt; notifican &lt;em&gt;proactivamente&lt;/em&gt; al cliente sobre cambios en los recursos se lo conoce como &lt;em&gt;Push Notification&lt;/em&gt;. Cabe aclarar que &lt;em&gt;long polling&lt;/em&gt; no es la única forma de lograr este comportamiento. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; es otra especificación que logra un comportamiento similar.&lt;/p&gt;
 
 &lt;p&gt;A pesar de que en el ejemplo se puede ver la conveniencia de implementar &lt;em&gt;Push Notifications&lt;/em&gt; como parte de nuestra &lt;em&gt;Streaming API&lt;/em&gt;, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un &lt;em&gt;request&lt;/em&gt; periódicamente para verificar si el recurso cambió, cada vez que la &lt;em&gt;API&lt;/em&gt; haga un &lt;em&gt;push&lt;/em&gt; se estará enviando el recurso completo al cliente. Implementando una lógica &lt;em&gt;diferencial&lt;/em&gt; en el servidor, nuestra &lt;em&gt;API&lt;/em&gt; podría enviar solo las actualizaciones al momento de realizar un &lt;em&gt;push&lt;/em&gt;. Para nuestro ejemplo, esto podría ser:&lt;/p&gt;
 
@@ -80,10 +197,10 @@ Al proceso por el cual las &lt;em&gt;APIs&lt;/em&gt; notifican &lt;em&gt;proacti
 
 &lt;ul&gt;
   &lt;li&gt;Servidor: Chequear que el &lt;em&gt;response&lt;/em&gt; se encuentre abierto antes de enviar datos.&lt;/li&gt;
-  &lt;li&gt;Cliente: Chequear que el &lt;em&gt;request&lt;/em&gt; se encuentre activo. En caso contrario, realizar un nuevo &lt;em&gt;request&lt;/em&gt;.  &lt;/li&gt;
+  &lt;li&gt;Cliente: Chequear que el &lt;em&gt;request&lt;/em&gt; se encuentre activo. En caso contrario, realizar un nuevo &lt;em&gt;request&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;En caso que los &lt;em&gt;timeout&lt;/em&gt; sean demasiado cortos, cada nuevo &lt;em&gt;request&lt;/em&gt; estaría recibiendo el recurso entero (nuevamente). Una solución frecuente es enviar al servidor el &lt;em&gt;timestamp&lt;/em&gt; de la última notificación recibida. De esta manera, en caso de no ser el primer &lt;em&gt;request&lt;/em&gt;, el servidor podría responder con las novedades ocurridas a partir de ese &lt;em&gt;timestamp&lt;/em&gt;. Para una correcta implementación, la lógica corriendo del lado del servidor debe guardar un histórico de cambios.  &lt;/p&gt;
+&lt;p&gt;En caso que los &lt;em&gt;timeout&lt;/em&gt; sean demasiado cortos, cada nuevo &lt;em&gt;request&lt;/em&gt; estaría recibiendo el recurso entero (nuevamente). Una solución frecuente es enviar al servidor el &lt;em&gt;timestamp&lt;/em&gt; de la última notificación recibida. De esta manera, en caso de no ser el primer &lt;em&gt;request&lt;/em&gt;, el servidor podría responder con las novedades ocurridas a partir de ese &lt;em&gt;timestamp&lt;/em&gt;. Para una correcta implementación, la lógica corriendo del lado del servidor debe guardar un histórico de cambios.&lt;/p&gt;
 
 &lt;p&gt;Hasta aquí hemos visto una explicación de lo que es una &lt;em&gt;Streaming API&lt;/em&gt; y algunos enfoques de implementación (no es el objetivo de este &lt;em&gt;post&lt;/em&gt; mostrar un ejemplo concreto).&lt;/p&gt;
 
@@ -101,21 +218,21 @@ Una respuesta un poco más completa incluye la implementación de un &lt;em&gt;p
   1.1 El &lt;em&gt;request&lt;/em&gt; no es atendido por el servidor sino por un &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   1.2 El &lt;em&gt;proxy&lt;/em&gt; redirecciona el &lt;em&gt;request&lt;/em&gt; al servidor.&lt;br /&gt;
   1.3 El servidor devuelve un &lt;em&gt;response&lt;/em&gt; al &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  1.4 El &lt;em&gt;proxy&lt;/em&gt; redirecciona el &lt;em&gt;response&lt;/em&gt; al cliente.  &lt;/li&gt;
+  1.4 El &lt;em&gt;proxy&lt;/em&gt; redirecciona el &lt;em&gt;response&lt;/em&gt; al cliente.&lt;/li&gt;
   &lt;li&gt;El &lt;em&gt;proxy&lt;/em&gt; envía un nuevo &lt;em&gt;request&lt;/em&gt; al servidor (y lo hará cada X segundos).&lt;br /&gt;
   2.1 El servidor devuelve un &lt;em&gt;response&lt;/em&gt; al &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   2.2 El &lt;em&gt;proxy&lt;/em&gt; compara el recurso obtenido durante este &lt;em&gt;request&lt;/em&gt; con el obtenido durante el &lt;em&gt;request&lt;/em&gt; anterior y detecta que no hubo cambios.&lt;br /&gt;
-  2.3 El &lt;em&gt;proxy&lt;/em&gt; no realiza ningún &lt;em&gt;Push&lt;/em&gt; hacia el cliente.  &lt;/li&gt;
+  2.3 El &lt;em&gt;proxy&lt;/em&gt; no realiza ningún &lt;em&gt;Push&lt;/em&gt; hacia el cliente.&lt;/li&gt;
   &lt;li&gt;El cliente 2 envía un &lt;em&gt;request&lt;/em&gt; con método &lt;em&gt;PATCH&lt;/em&gt;.&lt;br /&gt;
   3.1 El cliente envía el request directamente al servidor (no hay motivos para involucrar a &lt;strong&gt;este tipo de&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;proxy&lt;/em&gt;&lt;/strong&gt; en una operación de escritura).&lt;br /&gt;
-  3.2 El servidor devuelve el &lt;em&gt;response&lt;/em&gt; confirmando la operación.  &lt;/li&gt;
+  3.2 El servidor devuelve el &lt;em&gt;response&lt;/em&gt; confirmando la operación.&lt;/li&gt;
   &lt;li&gt;El &lt;em&gt;proxy&lt;/em&gt; envía un nuevo &lt;em&gt;request&lt;/em&gt; al servidor (uno más de los que envía cada X segundos).&lt;br /&gt;
   4.1 El servidor devuelve un &lt;em&gt;response&lt;/em&gt; al &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   4.2 El &lt;em&gt;proxy&lt;/em&gt; compara el recurso obtenido durante este &lt;em&gt;request&lt;/em&gt; con el obtenido durante el &lt;em&gt;request&lt;/em&gt; anterior y detecta que hubo cambios.&lt;br /&gt;
-  4.3 El &lt;em&gt;proxy&lt;/em&gt; realiza un &lt;em&gt;Push&lt;/em&gt; hacia el cliente informando los cambios (idealmente, informa solo las novedades en lugar de reenviar el recurso completo).  &lt;/li&gt;
+  4.3 El &lt;em&gt;proxy&lt;/em&gt; realiza un &lt;em&gt;Push&lt;/em&gt; hacia el cliente informando los cambios (idealmente, informa solo las novedades en lugar de reenviar el recurso completo).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;De esta forma, y sin modificar una sola línea del código de la &lt;em&gt;API&lt;/em&gt;, logramos emular el comportamiento de una &lt;em&gt;streaming API&lt;/em&gt; (al menos desde el punto de vista del cliente).  &lt;/p&gt;
+&lt;p&gt;De esta forma, y sin modificar una sola línea del código de la &lt;em&gt;API&lt;/em&gt;, logramos emular el comportamiento de una &lt;em&gt;streaming API&lt;/em&gt; (al menos desde el punto de vista del cliente).&lt;/p&gt;
 
 &lt;p&gt;Lo interesante de esta implementación es que no resulta difícil generalizarla para prácticamente cualquier &lt;em&gt;API&lt;/em&gt; existente. Es decir que se podría implementar una plataforma que ponga esta lógica a disposición de los usuarios de una &lt;em&gt;API&lt;/em&gt; convirtiéndola en una &lt;em&gt;streaming API&lt;/em&gt; de manera transparente para el proveedor de la &lt;em&gt;API&lt;/em&gt; y casi transparente para el cliente.&lt;br /&gt;
 Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt;.&lt;/p&gt;
@@ -202,14 +319,14 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Si bien no se alcanza a ver, los objetos no son &lt;em&gt;loggeados&lt;/em&gt; en intervalos regulares de tiempo. Esto se debe a que el cliente solo &lt;em&gt;loggea&lt;/em&gt; cuando recibe una respuesta y esto solo ocurre cuando hay cambios en el recurso &lt;em&gt;observado&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;El primer objeto recibido (se distingue porque está acompañado por un “init”) es similar al del ejemplo anterior, es decir, el objeto completo. Los demás (acompañados por un “update”) son en realidad, &lt;em&gt;arrays&lt;/em&gt; de objetos.  &lt;/li&gt;
+  &lt;li&gt;El primer objeto recibido (se distingue porque está acompañado por un “init”) es similar al del ejemplo anterior, es decir, el objeto completo. Los demás (acompañados por un “update”) son en realidad, &lt;em&gt;arrays&lt;/em&gt; de objetos.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Analicemos uno de dichos &lt;em&gt;arrays&lt;/em&gt;:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientparticularUpdate.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Cada objeto del &lt;em&gt;array&lt;/em&gt; indica que se ha reemplazado un atributo y especifica su nuevo valor. No todos los &lt;em&gt;arrays&lt;/em&gt; tienen  la misma longitud (4, 1 y 2 como se ve en la imagen anterior). Esto indica la cantidad de cambios que se detectaron en cada respuesta.  &lt;/p&gt;
+&lt;p&gt;Cada objeto del &lt;em&gt;array&lt;/em&gt; indica que se ha reemplazado un atributo y especifica su nuevo valor. No todos los &lt;em&gt;arrays&lt;/em&gt; tienen  la misma longitud (4, 1 y 2 como se ve en la imagen anterior). Esto indica la cantidad de cambios que se detectaron en cada respuesta.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, observemos lo que ocurre con la vista &lt;em&gt;network&lt;/em&gt;:&lt;/p&gt;
 
@@ -277,7 +394,7 @@ Furthermore, the &lt;em&gt;API&lt;/em&gt; could send just the changes that impac
 
 &lt;p&gt;3- Client 2 sends a &lt;em&gt;request&lt;/em&gt; with method &lt;em&gt;PATCH&lt;/em&gt; in order to modify the book edition (now “5th”).&lt;br /&gt;
 4- The server sends a &lt;em&gt;response&lt;/em&gt; to the client 2 with a &lt;em&gt;200 OK&lt;/em&gt; code.&lt;br /&gt;
-5- The server sends a  &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; with the book information.  &lt;/p&gt;
+5- The server sends a  &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; with the book information.&lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -291,7 +408,7 @@ Furthermore, the &lt;em&gt;API&lt;/em&gt; could send just the changes that impac
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We are not going into any discussion about which methods should be used (&lt;em&gt;PATCH&lt;/em&gt; o &lt;em&gt;PUT&lt;/em&gt;) or which &lt;em&gt;HTTP&lt;/em&gt; codes. This topics deserve their own post.&lt;/p&gt;
 
 &lt;p&gt;Because the server implements &lt;em&gt;long polling&lt;/em&gt;, the &lt;em&gt;API&lt;/em&gt; is able to notify the client that the previously requested resource has changed, without having the client sending a second &lt;em&gt;request&lt;/em&gt;.&lt;br /&gt;
-The process where &lt;em&gt;APIs proactively&lt;/em&gt; notify the client about changes on the resources is known as &lt;em&gt;Push Notification&lt;/em&gt;. It worth clarifying that &lt;em&gt;long polling&lt;/em&gt; is not the only way of achieving this behaviour. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; is another specification that does the trick.  &lt;/p&gt;
+The process where &lt;em&gt;APIs proactively&lt;/em&gt; notify the client about changes on the resources is known as &lt;em&gt;Push Notification&lt;/em&gt;. It worth clarifying that &lt;em&gt;long polling&lt;/em&gt; is not the only way of achieving this behaviour. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; is another specification that does the trick.&lt;/p&gt;
 
 &lt;p&gt;Although the example shows the benefits of implementing &lt;em&gt;Push Notifications&lt;/em&gt; as a feature of our &lt;em&gt;Streaming API&lt;/em&gt;, the impact regarding to the performance is not neatly visible. Even though is true that the client won’t be periodically sending &lt;em&gt;requests&lt;/em&gt; in order to check if the resource changed, each time the &lt;em&gt;API&lt;/em&gt; makes a &lt;em&gt;push&lt;/em&gt; it will be sending the complete resource to the client. By implementing a &lt;em&gt;differential&lt;/em&gt; logic (server side), our &lt;em&gt;API&lt;/em&gt; would be able to just notify the updates when sending a &lt;em&gt;push&lt;/em&gt;. Considering our previous example, this could go like this:&lt;/p&gt;
 
@@ -308,10 +425,10 @@ The process where &lt;em&gt;APIs proactively&lt;/em&gt; notify the client about 
 
 &lt;ul&gt;
   &lt;li&gt;Server: Checks that the &lt;em&gt;response&lt;/em&gt; is open before sending data.&lt;/li&gt;
-  &lt;li&gt;Client: Check that the &lt;em&gt;request&lt;/em&gt; is active. Otherwise, make a new &lt;em&gt;request&lt;/em&gt;.  &lt;/li&gt;
+  &lt;li&gt;Client: Check that the &lt;em&gt;request&lt;/em&gt; is active. Otherwise, make a new &lt;em&gt;request&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;In case of having too short &lt;em&gt;timeouts&lt;/em&gt;, each new &lt;em&gt;request&lt;/em&gt; would be receiving the complete resource (again). A known solution consists in sending the server the &lt;em&gt;timestamp&lt;/em&gt; of the last received notification. This way, for every &lt;em&gt;request&lt;/em&gt; that is not the first one, the server could respond with the updates happened since that &lt;em&gt;timestamp&lt;/em&gt;. For a proper implementation, the server side logic should hold a change log of every resource.  &lt;/p&gt;
+&lt;p&gt;In case of having too short &lt;em&gt;timeouts&lt;/em&gt;, each new &lt;em&gt;request&lt;/em&gt; would be receiving the complete resource (again). A known solution consists in sending the server the &lt;em&gt;timestamp&lt;/em&gt; of the last received notification. This way, for every &lt;em&gt;request&lt;/em&gt; that is not the first one, the server could respond with the updates happened since that &lt;em&gt;timestamp&lt;/em&gt;. For a proper implementation, the server side logic should hold a change log of every resource.&lt;/p&gt;
 
 &lt;p&gt;This far we have covered an explanation about &lt;em&gt;Streaming APIs&lt;/em&gt; and some impelmentation approaches. It’s not this post goal to show a whole concrete example.&lt;/p&gt;
 
@@ -329,21 +446,21 @@ A more complete answer includes a &lt;em&gt;proxy&lt;/em&gt; implementation capa
   1.1 The &lt;em&gt;request&lt;/em&gt; is not got by the server but by a &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   1.2 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;request&lt;/em&gt; to the server.&lt;br /&gt;
   1.3 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  1.4 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;response&lt;/em&gt; to the client.  &lt;/li&gt;
+  1.4 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;response&lt;/em&gt; to the client.&lt;/li&gt;
   &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (and it will do that every  X seconds).&lt;br /&gt;
   2.1 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   2.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects no changes.&lt;br /&gt;
-  2.3 The &lt;em&gt;proxy&lt;/em&gt; doesn’t &lt;em&gt;Push&lt;/em&gt; anything to the client.  &lt;/li&gt;
+  2.3 The &lt;em&gt;proxy&lt;/em&gt; doesn’t &lt;em&gt;Push&lt;/em&gt; anything to the client.&lt;/li&gt;
   &lt;li&gt;Client 2 sends a &lt;em&gt;request&lt;/em&gt; with a &lt;em&gt;PATCH&lt;/em&gt; method.&lt;br /&gt;
   3.1 The client sends the &lt;em&gt;request&lt;/em&gt; directly to the server (there is no reason for involving &lt;strong&gt;this kind of&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;proxy&lt;/em&gt;&lt;/strong&gt; for a “write” operation).&lt;br /&gt;
-  3.2 The server sends the &lt;em&gt;response&lt;/em&gt; confirming the operation.  &lt;/li&gt;
+  3.2 The server sends the &lt;em&gt;response&lt;/em&gt; confirming the operation.&lt;/li&gt;
   &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (one of those being sent every X segundos).&lt;br /&gt;
   4.1 The server sends a  &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
   4.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects changes.&lt;br /&gt;
-  4.3 The &lt;em&gt;proxy&lt;/em&gt; sends a &lt;em&gt;Push&lt;/em&gt; to the client informing the changes (ideally, just the news instead of the complete resource).  &lt;/li&gt;
+  4.3 The &lt;em&gt;proxy&lt;/em&gt; sends a &lt;em&gt;Push&lt;/em&gt; to the client informing the changes (ideally, just the news instead of the complete resource).&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This way, and without modifying a single line of the &lt;em&gt;API&lt;/em&gt; code, we can emulate the behaviour of a &lt;em&gt;streaming API&lt;/em&gt; (from the client perspective at least).  &lt;/p&gt;
+&lt;p&gt;This way, and without modifying a single line of the &lt;em&gt;API&lt;/em&gt; code, we can emulate the behaviour of a &lt;em&gt;streaming API&lt;/em&gt; (from the client perspective at least).&lt;/p&gt;
 
 &lt;p&gt;What is most interesting about this implementation is that it’s not hard to make it generic for virtually every existing &lt;em&gt;API&lt;/em&gt;. It means that we could implement a platform that offers this logic to an &lt;em&gt;API&lt;/em&gt; users turning it into a &lt;em&gt;streaming API&lt;/em&gt; transparently for both, the &lt;em&gt;API&lt;/em&gt; provider and the client.&lt;br /&gt;
 This is exactly what &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; does.&lt;/p&gt;
@@ -430,14 +547,14 @@ This is exactly what &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.i
 
 &lt;ul&gt;
   &lt;li&gt;Even though these are hidden, objects are not being logged in regular intervals. This is due to the client only logs those when it receives a &lt;em&gt;response&lt;/em&gt; and this only happens when the observed resource changes.&lt;/li&gt;
-  &lt;li&gt;The first received object (logged after an “init”) is similar to the one on the previous example, it means, the complete object. The following ones (logged after an “update”) are actually &lt;em&gt;arrays of objects&lt;/em&gt;..  &lt;/li&gt;
+  &lt;li&gt;The first received object (logged after an “init”) is similar to the one on the previous example, it means, the complete object. The following ones (logged after an “update”) are actually &lt;em&gt;arrays of objects&lt;/em&gt;..&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Let’s analyze one of these &lt;em&gt;arrays&lt;/em&gt;:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientparticularUpdate.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Each object in the &lt;em&gt;array&lt;/em&gt; indicates that an attribute has been replaced, and its new value is specified. Not every &lt;em&gt;array&lt;/em&gt; has the same length (4, 1 and 2 as can be seen on the previous image). This indicates the quantity of changes that has been detected on each &lt;em&gt;response&lt;/em&gt;.  &lt;/p&gt;
+&lt;p&gt;Each object in the &lt;em&gt;array&lt;/em&gt; indicates that an attribute has been replaced, and its new value is specified. Not every &lt;em&gt;array&lt;/em&gt; has the same length (4, 1 and 2 as can be seen on the previous image). This indicates the quantity of changes that has been detected on each &lt;em&gt;response&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Finally, let’s see what happens on the &lt;em&gt;network&lt;/em&gt; view:&lt;/p&gt;
 
@@ -468,7 +585,7 @@ But we won’t always count with a &lt;em&gt;Streaming API&lt;/em&gt;. We are of
       <item>
         <title>Código expresivo en Javascript</title>
         <description>&lt;p&gt;Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: &lt;em&gt;performance, mantenibilidad y legibilidad&lt;/em&gt;, por mencionar algunos.
-Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.  &lt;/p&gt;
+Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.&lt;/p&gt;
 
 &lt;p&gt;Como buen &lt;em&gt;Javascript Hipster (“A mi me gustaba antes de que fuera popular”)&lt;/em&gt; me gustaría mostrar algunos ejemplos de cómo &lt;em&gt;Javascript&lt;/em&gt; nos permite ser realmente expresivos trabajando con &lt;em&gt;arrays&lt;/em&gt; (y algunas funciones en particular): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;.
 &lt;!--MORE--&gt;&lt;/p&gt;
@@ -498,7 +615,7 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
   2.1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
   2.2. Concatenarle un espacio, un guión y luego otro espacio.&lt;br /&gt;
   2.3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
-  2.4. &lt;em&gt;Loggear&lt;/em&gt; el resultado en la consola.  &lt;/li&gt;
+  2.4. &lt;em&gt;Loggear&lt;/em&gt; el resultado en la consola.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Comencemos por quitar la línea dentro del &lt;em&gt;for&lt;/em&gt; y ubicarla dentro de una función que reciba una &lt;em&gt;persona&lt;/em&gt; como parámetro e imprima el patrón especificado.&lt;/p&gt;
@@ -548,7 +665,7 @@ Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt
 
 &lt;p&gt;Adicionalmente, el &lt;em&gt;forEach&lt;/em&gt; recibe un segundo parámetro opcional que representa una función que será invocada cuando se haya finalizado la recorrida del &lt;em&gt;array&lt;/em&gt;. En los ejemplos que se están mostrando esto puede parecer inútil, pero cuando se está en un entorno de programación &lt;em&gt;asincrónica&lt;/em&gt; (como &lt;a href=&quot;http://nodejs.org&quot;&gt;NodeJS&lt;/a&gt;), este tipo de implementaciones se vuelve indispensable.&lt;/p&gt;
 
-&lt;p&gt;Aún más útiles quizá resulten 2 parámetros adicionales que &lt;strong&gt;el &lt;em&gt;forEach&lt;/em&gt; le pasa a la función especificada en el primer parámetro:&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;Aún más útiles quizá resulten 2 parámetros adicionales que &lt;strong&gt;el &lt;em&gt;forEach&lt;/em&gt; le pasa a la función especificada en el primer parámetro:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: El índice del elemento que está siendo iterado.&lt;/li&gt;
@@ -577,7 +694,7 @@ Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt
 
 &lt;p&gt;Por algún motivo, Jane Doe logró vencer la seguridad de nuestro bar, e ingresar. Dicho motivo es causa de incontables &lt;em&gt;bugs&lt;/em&gt; en incontables piezas de código.&lt;br /&gt;
 En cada iteración, &lt;em&gt;index&lt;/em&gt; incrementa 1. La primera vez (&lt;em&gt;index=0&lt;/em&gt;) encontramos a John Doe de 27 años. Queda en el &lt;em&gt;array&lt;/em&gt;. La segunda vez (&lt;em&gt;index=1&lt;/em&gt;), encontramos a John Doe Jr de 3 años (quien claramente no debería estar en nuestro bar). Al removerlo del &lt;em&gt;array&lt;/em&gt; Jane Doe pasa a estar en el &lt;em&gt;index 1&lt;/em&gt; y Julian Doe en el &lt;em&gt;index 2&lt;/em&gt;. La tercera iteración (&lt;em&gt;index=2&lt;/em&gt;) aparece Julian Doe. Es decir que Jane Doe ha sido salteada. &lt;strong&gt;Es como si el guardia de seguridad se diera vuelta cada vez que saca a alguien de la fila del bar y en ese momento dejara pasar a una persona sin importar su edad.&lt;/strong&gt;&lt;br /&gt;
-No siempre es buena idea modificar el &lt;em&gt;array&lt;/em&gt; que se está iterando. Como soluciones alternativas, se puede utilizar un &lt;em&gt;array&lt;/em&gt; auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.  &lt;/p&gt;
+No siempre es buena idea modificar el &lt;em&gt;array&lt;/em&gt; que se está iterando. Como soluciones alternativas, se puede utilizar un &lt;em&gt;array&lt;/em&gt; auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.&lt;/p&gt;
 
 &lt;p&gt;Pero más allá de el mal funcionamiento del código anterior, analicemos su &lt;strong&gt;expresividad&lt;/strong&gt;:&lt;/p&gt;
 
@@ -585,7 +702,7 @@ No siempre es buena idea modificar el &lt;em&gt;array&lt;/em&gt; que se está it
   &lt;li&gt;Por cada persona:&lt;br /&gt;
   1.1. Verificar si supera o iguala los 25 años.&lt;br /&gt;
   1.2. Si no lo hace, remover del &lt;em&gt;array&lt;/em&gt; 1 posición comenzando en &lt;em&gt;index&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el &lt;em&gt;array&lt;/em&gt;”).  &lt;/li&gt;
+  &lt;li&gt;Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el &lt;em&gt;array&lt;/em&gt;”).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;No parece ser tan grave, pero seguimos teniendo conocimiento del &lt;em&gt;array&lt;/em&gt;, el &lt;em&gt;index&lt;/em&gt; y la lógica para realizar la comparación. Además, si quisiéramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.&lt;br /&gt;
@@ -678,7 +795,7 @@ Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascen
 &lt;ul&gt;
   &lt;li&gt;Como vimos, &lt;em&gt;forEach&lt;/em&gt; recibe como primer parámetro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como &lt;em&gt;function&lt;/em&gt; es una expresión que devuelve una función, la sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite definir la función directamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una &lt;strong&gt;función anónima&lt;/strong&gt;. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un &lt;em&gt;post&lt;/em&gt; en sí mismo.&lt;/li&gt;
   &lt;li&gt;Como &lt;em&gt;forEach&lt;/em&gt; no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.&lt;/li&gt;
-  &lt;li&gt;El código que vamos a generar, &lt;strong&gt;en mi opinión&lt;/strong&gt; no es &lt;em&gt;automáticamente&lt;/em&gt; más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos &lt;em&gt;map&lt;/em&gt; y &lt;em&gt;reduce&lt;/em&gt;.  &lt;/li&gt;
+  &lt;li&gt;El código que vamos a generar, &lt;strong&gt;en mi opinión&lt;/strong&gt; no es &lt;em&gt;automáticamente&lt;/em&gt; más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos &lt;em&gt;map&lt;/em&gt; y &lt;em&gt;reduce&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo &lt;em&gt;array&lt;/em&gt; que solo tenga los pesos de las personas de nuestro grupo.&lt;/p&gt;
@@ -729,7 +846,7 @@ Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la s
   &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;map&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos del segundo conjunto. En nuestro ejemplo, un &lt;em&gt;array&lt;/em&gt; con los pesos de las personas.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;map&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos del segundo conjunto. En nuestro ejemplo, un &lt;em&gt;array&lt;/em&gt; con los pesos de las personas.&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.&lt;/p&gt;
 
@@ -772,7 +889,7 @@ Entonces, Definiendo &lt;em&gt;sum&lt;/em&gt; como&lt;/p&gt;
   &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; devuelve un &lt;strong&gt;único&lt;/strong&gt; valor que coincide con el resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt;.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; devuelve un &lt;strong&gt;único&lt;/strong&gt; valor que coincide con el resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Hay algunas características de &lt;em&gt;reduce&lt;/em&gt; que podrían catalogarlo como un método recursivo. En lugar de pensar a &lt;em&gt;reduce&lt;/em&gt; como una función que itera el &lt;em&gt;array&lt;/em&gt; aplicando &lt;em&gt;callback&lt;/em&gt;, podríamos pensarlo como una función que toma la primera posición del &lt;em&gt;array&lt;/em&gt; y aplica &lt;em&gt;callback&lt;/em&gt; pasando esta posición y el resultado de &lt;em&gt;reduce&lt;/em&gt; para un segundo &lt;em&gt;array&lt;/em&gt; que va desde la segunda hasta la última posición del primer &lt;em&gt;array&lt;/em&gt;. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender cómo funciona, por qué &lt;strong&gt;acumula&lt;/strong&gt; y cómo funciona el &lt;em&gt;initialValue&lt;/em&gt;.&lt;/p&gt;
 
@@ -782,7 +899,7 @@ Entonces, Definiendo &lt;em&gt;sum&lt;/em&gt; como&lt;/p&gt;
 Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Iterar y preguntar  &lt;/li&gt;
+  &lt;li&gt;Iterar y preguntar&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -792,7 +909,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
 &lt;p&gt;Estamos utilizando la función &lt;em&gt;olderThan(threshold)&lt;/em&gt; para generar la función &lt;em&gt;olderThan18&lt;/em&gt;.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Reducir mediante el operador lógico “Y”  &lt;/li&gt;
+  &lt;li&gt;Reducir mediante el operador lógico “Y”&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -801,7 +918,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Mapear al &lt;em&gt;array&lt;/em&gt; de edades y reducir mediante el operador lógico “Y”  &lt;/li&gt;
+  &lt;li&gt;Mapear al &lt;em&gt;array&lt;/em&gt; de edades y reducir mediante el operador lógico “Y”&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -820,7 +937,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
 &lt;p&gt;En ambos casos, es innecesario evaluar &lt;em&gt;whatever&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Esto parece ser irrelevante en un &lt;em&gt;array&lt;/em&gt; de 4 elementos. Pero ¿qué pasaría si tuviéramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como &lt;strong&gt;mala performance&lt;/strong&gt;.&lt;br /&gt;
-La forma de solucionar esto es &lt;em&gt;rompiendo&lt;/em&gt; las iteraciones cuando no es necesario seguir evaluando. La instrucción &lt;em&gt;break&lt;/em&gt; hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al &lt;em&gt;for&lt;/em&gt; clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a &lt;em&gt;array.length&lt;/em&gt;, si no necesitaramos seguir trabajando con el &lt;em&gt;array&lt;/em&gt;. O hacer una copia del mismo, para poder cambiar el &lt;em&gt;length&lt;/em&gt; sin problemas. También podríamos &lt;em&gt;lanzar una excepción&lt;/em&gt; y &lt;em&gt;capturarla&lt;/em&gt; inmediatamente al salir del método).  &lt;/p&gt;
+La forma de solucionar esto es &lt;em&gt;rompiendo&lt;/em&gt; las iteraciones cuando no es necesario seguir evaluando. La instrucción &lt;em&gt;break&lt;/em&gt; hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al &lt;em&gt;for&lt;/em&gt; clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a &lt;em&gt;array.length&lt;/em&gt;, si no necesitaramos seguir trabajando con el &lt;em&gt;array&lt;/em&gt;. O hacer una copia del mismo, para poder cambiar el &lt;em&gt;length&lt;/em&gt; sin problemas. También podríamos &lt;em&gt;lanzar una excepción&lt;/em&gt; y &lt;em&gt;capturarla&lt;/em&gt; inmediatamente al salir del método).&lt;/p&gt;
 
 &lt;p&gt;Pero hay un motivo por el cual este problema se presenta al utilizar estos métodos. En el caso del &lt;em&gt;forEach&lt;/em&gt; el motivo es incluso explícito en el nombre de la función. &lt;strong&gt;Por cada&lt;/strong&gt; elemento de un &lt;em&gt;array&lt;/em&gt; implica que &lt;strong&gt;todos&lt;/strong&gt; los elementos van a ser iterados.&lt;/p&gt;
 
@@ -963,7 +1080,7 @@ One aspect I find particularly interesting is “expressiveness” which means �
   2.1. Get the name of the person at the index equals to the previously initialized variable.&lt;br /&gt;
   2.2. Concatenate a space, a hyphen and then another space.&lt;br /&gt;
   2.3. Concatenate the age of the person at the index equals to the previously initialized variable.&lt;br /&gt;
-  2.4. Log the result on the console.  &lt;/li&gt;
+  2.4. Log the result on the console.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Let’s start by extracting the code inside the &lt;em&gt;for&lt;/em&gt; to a function receiving a &lt;em&gt;person&lt;/em&gt; as parameter. The function prints the specified pattern.&lt;/p&gt;
@@ -1050,8 +1167,8 @@ It’s usually not a good idea to modify the &lt;em&gt;array&lt;/em&gt; being it
 &lt;ol&gt;
   &lt;li&gt;For each person:&lt;br /&gt;
   1.1. Check if it’s age is greater or equals than 25.&lt;br /&gt;
-  1.2. If it isn’t, remove 1 position from the &lt;em&gt;array&lt;/em&gt; starting at &lt;em&gt;index&lt;/em&gt;.  &lt;/li&gt;
-  &lt;li&gt;For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the &lt;em&gt;array&lt;/em&gt;).  &lt;/li&gt;
+  1.2. If it isn’t, remove 1 position from the &lt;em&gt;array&lt;/em&gt; starting at &lt;em&gt;index&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the &lt;em&gt;array&lt;/em&gt;).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;It doesn’t seem to be that bad, but we are still aware of the &lt;em&gt;array&lt;/em&gt;, the &lt;em&gt;index&lt;/em&gt; and the comparison logic. Furthermore, if we wanted to reuse this code for removing people younger than 18 we would need to duplicate it.
@@ -1194,7 +1311,7 @@ It would be nice to be able to write that same thing in &lt;em&gt;Javascript&lt;
   &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;map&lt;/em&gt; returns a &lt;strong&gt;new&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; with the elements of the second set. In our case it returns an &lt;em&gt;array&lt;/em&gt; with people weights.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;map&lt;/em&gt; returns a &lt;strong&gt;new&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; with the elements of the second set. In our case it returns an &lt;em&gt;array&lt;/em&gt; with people weights.&lt;/p&gt;
 
 &lt;p&gt;Going back to our example, each weight doesn’t help us to determine whether is dangerous to activate the elevator or not. We still need to get the total weight.&lt;/p&gt;
 
@@ -1237,7 +1354,7 @@ So, defining sum as:&lt;/p&gt;
   &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: The &lt;em&gt;array&lt;/em&gt; being iterated.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; returns an &lt;strong&gt;only&lt;/strong&gt; value that matches the result of &lt;em&gt;callback&lt;/em&gt; last execution.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; returns an &lt;strong&gt;only&lt;/strong&gt; value that matches the result of &lt;em&gt;callback&lt;/em&gt; last execution.&lt;/p&gt;
 
 &lt;p&gt;There are some qualities of &lt;em&gt;reduce&lt;/em&gt; that could label it as a recursive method. Instead of thinking &lt;em&gt;reduce&lt;/em&gt; as a function that iterates the &lt;em&gt;array&lt;/em&gt; applying &lt;em&gt;callback&lt;/em&gt;, we could think about it as a function that takes the &lt;em&gt;array&lt;/em&gt; first position and applies &lt;em&gt;callback&lt;/em&gt; passing the current position and the result of &lt;em&gt;reduce&lt;/em&gt; for a second &lt;em&gt;array&lt;/em&gt; that goes from the original &lt;em&gt;array&lt;/em&gt; second position to the last one. This is meaningless when using it, but knowing this, will help us to understand how it works, why it &lt;strong&gt;accumulates&lt;/strong&gt; and how the &lt;em&gt;initialValue&lt;/em&gt; works.&lt;/p&gt;
 
@@ -1248,7 +1365,7 @@ So, defining sum as:&lt;/p&gt;
 &lt;p&gt;There are several ways of achieving this. For example:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Iterate and query  &lt;/li&gt;
+  &lt;li&gt;Iterate and query&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1399,13 +1516,13 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
       <item>
         <title>Mudanza a GitHubPages</title>
         <description>&lt;p&gt;Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por &lt;em&gt;blogger de Google&lt;/em&gt; no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de &lt;em&gt;blogging&lt;/em&gt; debe tener.
-&lt;!--MORE--&gt;  &lt;/p&gt;
+&lt;!--MORE--&gt;&lt;/p&gt;
 
-&lt;p&gt;Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.  &lt;/p&gt;
+&lt;p&gt;Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.&lt;/p&gt;
 
-&lt;p&gt;Es así como recordé haber usado &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt; para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.  &lt;/p&gt;
+&lt;p&gt;Es así como recordé haber usado &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt; para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Definitivamente, &lt;em&gt;Jekyll&lt;/em&gt; no provee mejores herramientas que las otras plataformas&lt;/strong&gt;. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la &lt;strong&gt;fléxibilidad&lt;/strong&gt;, lo cual la convierte en &lt;strong&gt;una herramienta candidata para desarrolladores&lt;/strong&gt; (u otros profesionales con conocimientos suficientes de IT) para ser su “plataforma” de &lt;em&gt;blogging&lt;/em&gt; a la medida.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definitivamente, &lt;em&gt;Jekyll&lt;/em&gt; no provee mejores herramientas que las otras plataformas&lt;/strong&gt;. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la &lt;strong&gt;fléxibilidad&lt;/strong&gt;, lo cual la convierte en &lt;strong&gt;una herramienta candidata para desarrolladores&lt;/strong&gt; (u otros profesionales con conocimientos suficientes de IT) para ser su “plataforma” de &lt;em&gt;blogging&lt;/em&gt; a la medida.&lt;/p&gt;
 
 &lt;p&gt;El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar &lt;em&gt;templates (o themes)&lt;/em&gt; gratuitos y adaptar mínimamente alguno. Me encontré con &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; de &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.&lt;/p&gt;
 
@@ -1418,7 +1535,7 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
   &lt;li&gt;Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
   &lt;li&gt;Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
   &lt;li&gt;Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -1430,8 +1547,8 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
 &lt;p&gt;Les dejo algunos links para comenzar:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1450,15 +1567,15 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
     
       <item>
         <title>Moving to GitHub Pages</title>
-        <description>&lt;p&gt;With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by &lt;em&gt;blogger by Google&lt;/em&gt; were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a &lt;em&gt;blogging&lt;/em&gt; platform out of the box&lt;!--MORE--&gt;.  &lt;/p&gt;
+        <description>&lt;p&gt;With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by &lt;em&gt;blogger by Google&lt;/em&gt; were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a &lt;em&gt;blogging&lt;/em&gt; platform out of the box&lt;!--MORE--&gt;.&lt;/p&gt;
 
-&lt;p&gt;After researching other tools that could help me with this task (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.  &lt;/p&gt;
+&lt;p&gt;After researching other tools that could help me with this task (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.&lt;/p&gt;
 
-&lt;p&gt;That’s how I remembered having used &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; in the past, for building some static page, and so I started evaluating it as an alternative.  &lt;/p&gt;
+&lt;p&gt;That’s how I remembered having used &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; in the past, for building some static page, and so I started evaluating it as an alternative.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;is definitively not providing better tools than the other platforms&lt;/strong&gt;. It doesn’t count with a comments feature, it doesn’t create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the &lt;strong&gt;flexibility&lt;/strong&gt;, which turns &lt;em&gt;Jekyll&lt;/em&gt; into a &lt;strong&gt;candidate tool for developers&lt;/strong&gt; (or other professionals with IT knowledge enough) to becoming their tailored &lt;em&gt;blogging&lt;/em&gt; “platform”.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;is definitively not providing better tools than the other platforms&lt;/strong&gt;. It doesn’t count with a comments feature, it doesn’t create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the &lt;strong&gt;flexibility&lt;/strong&gt;, which turns &lt;em&gt;Jekyll&lt;/em&gt; into a &lt;strong&gt;candidate tool for developers&lt;/strong&gt; (or other professionals with IT knowledge enough) to becoming their tailored &lt;em&gt;blogging&lt;/em&gt; “platform”.&lt;/p&gt;
 
-&lt;p&gt;The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free &lt;em&gt;templates (or themes)&lt;/em&gt; and adapt one of them. I ran into &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; by &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.  &lt;/p&gt;
+&lt;p&gt;The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free &lt;em&gt;templates (or themes)&lt;/em&gt; and adapt one of them. I ran into &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; by &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.&lt;/p&gt;
 
 &lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
 
@@ -1476,17 +1593,17 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
   &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Welcome to the new OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a &lt;em&gt;Blogging&lt;/em&gt; tool, but it worth knowing how &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; works).  &lt;/p&gt;
+&lt;p&gt;These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a &lt;em&gt;Blogging&lt;/em&gt; tool, but it worth knowing how &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; works).&lt;/p&gt;
 
 &lt;p&gt;Here are some links for kicking off&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Please, don’t hesitate to reach me if you have any doubt.  &lt;/p&gt;
+&lt;p&gt;Please, don’t hesitate to reach me if you have any doubt.&lt;/p&gt;
 </description>
         <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
         <link>http://ourbit.github.io//en/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
@@ -1510,7 +1627,7 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
 &lt;ul&gt;
   &lt;li&gt;Para: A quienes está dirigido el &lt;em&gt;mail&lt;/em&gt;. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;Copia Carbón: Gente en copia porque no son los principales destinatarios, pero queremos que estén enterados. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Copia Oculta: Gente a la que queremos que le llegue el &lt;em&gt;mail&lt;/em&gt;, sin que los demás se enteren. &lt;strong&gt;Nadie más que el remitente y el destinatario puede ver las direcciones que se escriban en este campo.&lt;/strong&gt;  &lt;/li&gt;
+  &lt;li&gt;Copia Oculta: Gente a la que queremos que le llegue el &lt;em&gt;mail&lt;/em&gt;, sin que los demás se enteren. &lt;strong&gt;Nadie más que el remitente y el destinatario puede ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Y es esta última opción la que sugerimos/rogamos utilizar cuando no podés evitar mandar ese &lt;em&gt;PPT&lt;/em&gt; con música de fondo y fotos de volcanes o cachorros siendo salvados por bomberos voluntarios. Es decir, si lo vas a mandar de todos modos, y a un montón de gente, al menos no publiques/compartas las direcciones con todo el mundo.&lt;br /&gt;
@@ -1594,28 +1711,6 @@ Sincerely.&lt;/p&gt;
         <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
         <link>http://ourbit.github.io//en/2015/07/30/spam-caso-real/</link>
         <guid isPermaLink="true">http://ourbit.github.io//en/2015/07/30/spam-caso-real/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>De Chrome a Safari ida y vuelta</title>
-        <description>¿Casi 3 años sin poner nada acá y aparecer de repente con poca información? No quiero faltarles el respeto, pero por algún lado hay que empezar (si queremos empezar).&lt;br /&gt;&lt;br /&gt;Hace un tiempo largo ya me convertí en usuario de Apple, sobretodo por las MacBook. Lo charlé con fundamentalistas, fanáticos, hinchas, simpatizantes, seres racionales, opositores, y &lt;i&gt;odiadores&lt;/i&gt; de todo lo que Mac representa y todos entendieron los motivos por los cuales no me muevo de Mac.&lt;!--MORE--&gt;&lt;br /&gt;&lt;br /&gt;Recientemente, instalé Yosemite en una nueva Retina Display de 15&#39;&#39;. Todo perfecto, la integración con iPhone mejoró considerablemente, y no tuve demasiados problemas con las herramientas de desarrollo u otras.&lt;br /&gt;&lt;br /&gt;Pero un par de días más tarde, todo empezó a funcionar raro (como en los tiempos de Windows). La Mac se colgaba, todo andaba &quot;trabado&quot;. Empecé a ver los motivos y al abrir el &quot;Monitor&quot; tenía aproximadamente 25 procesos &quot;Google Chrome Helper&quot; consumiendo memoria, procesador, y en estado &quot;Not responding&quot;. No esperé demasiado (y ya tenía curiosidad por ver cómo andaba Safari) así que cerré todo y cambié.&lt;br /&gt;&lt;br /&gt;La realidad es que Safari en Mac es superior en múltiples aspectos:&lt;br /&gt;- La velocidad mejora &lt;b&gt;notablemente&lt;/b&gt;.&lt;br /&gt;- El consumo de recursos disminuye &lt;b&gt;notablemente.&lt;/b&gt;&lt;br /&gt;- User Experience: Mejora salvo por unos detalles, que lograron hacer que vuelva a intentar Chrome:&lt;br /&gt;&lt;br /&gt;1. &quot;Abrir las últimas ventanas o pestañas cerradas&quot; simplemente no funciona (o no es consistente). Algunas veces, abre como corresponde. Pero otras, por ejemplo si Safari no pudo filtrar un pop-up, esta funcionalidad va a abrir ese pop-up cada vez que lo intentemos. El shortcut de una ventana cerrada es CMD+Z, lo cual dificulta UNDO en un FORM (depende del campo, se ejecuta una u otra función).&lt;br /&gt;2. Los &quot;Tabs&quot; no tienen favicon. Las pestañas llegan a achicarse hasta un punto en donde comienzan a desaparecer, y navegarlas se vuelve completamente anti-intuitivo.&lt;br /&gt;3. Las &quot;Developer Tools&quot;. Una vez que están habilitadas (porque no vienen por &lt;i&gt;default&lt;/i&gt;), no nos aportan demasiado. En especial los &lt;i&gt;Timelines. &lt;/i&gt;Si fuera por los &lt;i&gt;timelines&lt;/i&gt;, las páginas nunca fueron solicitadas.&lt;br /&gt;&lt;br /&gt;El hecho de que la comunidad de desarrolladores de &quot;extensions&quot; también sea más numerosa para Chrome, influye.&lt;br /&gt;&lt;br /&gt;Volví a Chrome. Voy a tener que pelear con los problemas de consumo de recursos (sobretodo de los programas que usen el Chrome Helper) hasta que se solucione.&lt;br /&gt;&lt;br /&gt;De paso: Instalé también la versión más beta &lt;a href=&quot;https://www.google.com/intl/en/chrome/browser/canary.html&quot; target=&quot;_blank&quot;&gt;Chrome Canary&lt;/a&gt;&amp;nbsp;para ir probando nuevas funcionalidades. No se cuánto lo vaya a usar, ya que no puedo ponerlo como &lt;i&gt;default browser&lt;/i&gt;, pero veremos como evoluciona.&lt;br /&gt;&lt;br /&gt;Nota: Espero retomar la costumbre de escribir cada tanto por aquí. Consideremos este post como una prueba piloto.
-</description>
-        <pubDate>Fri, 21 Nov 2014 18:37:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Legislando lo que prosperó anárquicamente</title>
-        <description>Es claro que el titulo es tendencioso. Decir que Internet es un ente anárquico es, desde mi humilde opinión, una falacia no menor. Internet contiene lo que un numeroso grupo de individuos (personas físicas o jurídicas) publica, al menos conceptualmente y sin entrar en detalles técnicos que no aportan al tema a desarrollar. &lt;!--MORE--&gt;Estas personas se rigen por legislaciones existentes (algunas correspondientes a sus países y otras comunes al globo). Si yo violo una ley existente, ya sea por publicar un contenido no debido en una red, o por arrojar basura en la vía pública, no estoy realizando nada que no ocurriera antes de internet (masiva). Lo que quizás provee internet es cierta impunidad que brinda el anonimato. Estas características permitieron que internet se desarrollara y llegara a ser el lugar en donde millones de personas podemos compartir contenidos y potenciar nuestras capacidades. Quienes entendemos internet no podemos imaginarla de otra manera. Y creo que aquí es momento de mencionar algo que puede ser controversial: &quot;No es incorrecto legislar internet&quot;. Todos podemos querer que nuestros derechos de autor se vean resguardados al tiempo que queremos utilizar el medio que facilita su &quot;violación&quot; para difundir lo que queremos proteger. Probablemente, si el cine no fuera un gran negocio, su difusión sería limitada, y eso también sería una lástima. Lo que creo que no se puede dejar de lado, es el análisis COSTO-BENEFICIO de aplicar una ley. De alguna manera, se realiza este análisis (quizás de forma implícita) ante situaciones mucho más graves. Por ejemplo: tras muchos años de ver CANSADOS, que los accidentes de tránsito causados por conductores ebrios se cobran miles de vidas al año, nadie piensa en prohibir el alcohol. Se sigue penalizando su consumo al momento de manejar. Prohibir el alcohol sería, teóricamente, una medida más eficaz para evitar tragedias (Enorme beneficio). Pero el costo es también muy elevado, y sobretodo &lt;b&gt;corta libertades.&lt;/b&gt;&amp;nbsp;Si yo soy una persona responsable, que quiere disfrutar un buen vino con un plato de carne, sería ilógico que esta práctica se me&amp;nbsp;prohíba&amp;nbsp;(al menos bajo las normas culturales de mi región). Prohibir el alcohol, cambiaría rotundamente los hábitos de los individuos. Transformaría el objeto a legislar en algo completamente distinto. Imponer una legislación demasiado estricta sobre internet, haciendo que sitios que funcionan como herramientas para compartir todo tipo de contenidos, cierren, es cambiar la escencia de lo legislado: empeorar internet, prohibirme cenar con vino, enjaularme por ser Argentino.&lt;br /&gt;Pero más allá del análisis conceptual y el impacto negativo que tendría sobre internet, la aplicación de las leyes que intentaron aprobarse, e incluso más allá de lo retrógrado que esto sea (hoy noté el inmenso retroceso tecnológico y cultural que representa haber tenido que resguardar archivos de una cuenta de MediaFire en el disco rígido de una PC, y dejar de compartirlos en caso que este sitio cierre), lo que molesta, es la motivación. No hay una motivación real de cuidar a un artista (ya sea escritor, cineasta, músico o fotógrafo). La intención real, es &lt;b&gt;no perder un negocio.&lt;/b&gt;&amp;nbsp;Y no voy a juzgar a nadie que quiera conservar su medio de vida. Ni siquiera voy a juzgar a aquellos que quieran conservar su billetera abultada gracias a sus negocios.&lt;br /&gt;&lt;br /&gt;Pero sí me animo a juzgar a todos aquellos quienes en lugar de pensar creativamente, para adaptar sus negocios a nuevas eras, intenten imponer restricciones que modifiquen la escencia de una herramienta que fomenta la generación y sinergia de conocimiento, en pos del beneficio propio y sobretodo, &lt;b&gt;la comodidad.&lt;/b&gt;&amp;nbsp;Y luego de juzgarlos, me gustaría poder castigar, a todo aquel que además de intentarlo, lo haga por la fuerza, gracias a los favoritismos que un gobierno, y sus servicios de inteligencia, pueda tener, imponiendo el miedo con &quot;castigos ejemplares&quot; sentenciando a cárcel a personas que desarrollaron un negocio montado en software que permite almacenar archivos, pero dejando impunes y fomentando genocidios.
-</description>
-        <pubDate>Fri, 27 Jan 2012 10:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero/</guid>
         
         
       </item>

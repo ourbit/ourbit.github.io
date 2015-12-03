@@ -211,7 +211,7 @@ En los esquemas tradicionales de <em>HTTP</em> (protocolo en el que se basan las
 <p><img src="/img/posts/long-polling-request.png" alt="Long Polling HTTP Request" /></p>
 
 <p>Mediante <em>long polling</em>, nuestra <em>API</em> podría recibir una llamada y proveer el recurso que está siendo solicitado como primer <em>response</em> pero, en lugar de cerrar la conexión, la <em>API</em> podría enviar nuevos <em>responses</em> en caso de que el recurso cambie luego del primer <em>response</em>.<br />
-Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referentes al recurso, o en otras palabras “lo que cambió”.  </p>
+Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referentes al recurso, o en otras palabras “lo que cambió”.</p>
 
 <p>Analicemos el siguiente ejemplo</p>
 
@@ -231,7 +231,7 @@ Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referent
 
 <p>3- El cliente 2 envía un <em>request</em> con método <em>PATCH</em> para modificar la edición (ahora “5th”).<br />
 4- El servidor envía un <em>response</em> al cliente 2 con código <em>200 OK</em>.<br />
-5- El servidor envía un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.  </p>
+5- El servidor envía un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.</p>
 
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
@@ -245,7 +245,7 @@ Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referent
 <p><strong>Nota:</strong> Se deja de lado la discusión acerca de los métodos a utilizar (<em>PATCH</em> o <em>PUT</em>) y los códigos <em>HTTP</em> correspondientes. Esta temática amerita un <em>post</em> aparte.</p>
 
 <p>Gracias a que el servidor implementa <em>long polling</em>, la <em>API</em> puede informar al cliente, que el recurso que había solicitado en primer lugar ha cambiado, sin que el cliente realice una segunda consulta.<br />
-Al proceso por el cual las <em>APIs</em> notifican <em>proactivamente</em> al cliente sobre cambios en los recursos se lo conoce como <em>Push Notification</em>. Cabe aclarar que <em>long polling</em> no es la única forma de lograr este comportamiento. <a href="https://www.websocket.org/"><em>WebSockets</em></a> es otra especificación que logra un comportamiento similar.  </p>
+Al proceso por el cual las <em>APIs</em> notifican <em>proactivamente</em> al cliente sobre cambios en los recursos se lo conoce como <em>Push Notification</em>. Cabe aclarar que <em>long polling</em> no es la única forma de lograr este comportamiento. <a href="https://www.websocket.org/"><em>WebSockets</em></a> es otra especificación que logra un comportamiento similar.</p>
 
 <p>A pesar de que en el ejemplo se puede ver la conveniencia de implementar <em>Push Notifications</em> como parte de nuestra <em>Streaming API</em>, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un <em>request</em> periódicamente para verificar si el recurso cambió, cada vez que la <em>API</em> haga un <em>push</em> se estará enviando el recurso completo al cliente. Implementando una lógica <em>diferencial</em> en el servidor, nuestra <em>API</em> podría enviar solo las actualizaciones al momento de realizar un <em>push</em>. Para nuestro ejemplo, esto podría ser:</p>
 
@@ -262,10 +262,10 @@ Al proceso por el cual las <em>APIs</em> notifican <em>proactivamente</em> al cl
 
 <ul>
   <li>Servidor: Chequear que el <em>response</em> se encuentre abierto antes de enviar datos.</li>
-  <li>Cliente: Chequear que el <em>request</em> se encuentre activo. En caso contrario, realizar un nuevo <em>request</em>.  </li>
+  <li>Cliente: Chequear que el <em>request</em> se encuentre activo. En caso contrario, realizar un nuevo <em>request</em>.</li>
 </ul>
 
-<p>En caso que los <em>timeout</em> sean demasiado cortos, cada nuevo <em>request</em> estaría recibiendo el recurso entero (nuevamente). Una solución frecuente es enviar al servidor el <em>timestamp</em> de la última notificación recibida. De esta manera, en caso de no ser el primer <em>request</em>, el servidor podría responder con las novedades ocurridas a partir de ese <em>timestamp</em>. Para una correcta implementación, la lógica corriendo del lado del servidor debe guardar un histórico de cambios.  </p>
+<p>En caso que los <em>timeout</em> sean demasiado cortos, cada nuevo <em>request</em> estaría recibiendo el recurso entero (nuevamente). Una solución frecuente es enviar al servidor el <em>timestamp</em> de la última notificación recibida. De esta manera, en caso de no ser el primer <em>request</em>, el servidor podría responder con las novedades ocurridas a partir de ese <em>timestamp</em>. Para una correcta implementación, la lógica corriendo del lado del servidor debe guardar un histórico de cambios.</p>
 
 <p>Hasta aquí hemos visto una explicación de lo que es una <em>Streaming API</em> y algunos enfoques de implementación (no es el objetivo de este <em>post</em> mostrar un ejemplo concreto).</p>
 
@@ -283,21 +283,21 @@ Una respuesta un poco más completa incluye la implementación de un <em>proxy</
   1.1 El <em>request</em> no es atendido por el servidor sino por un <em>proxy</em>.<br />
   1.2 El <em>proxy</em> redirecciona el <em>request</em> al servidor.<br />
   1.3 El servidor devuelve un <em>response</em> al <em>proxy</em>.<br />
-  1.4 El <em>proxy</em> redirecciona el <em>response</em> al cliente.  </li>
+  1.4 El <em>proxy</em> redirecciona el <em>response</em> al cliente.</li>
   <li>El <em>proxy</em> envía un nuevo <em>request</em> al servidor (y lo hará cada X segundos).<br />
   2.1 El servidor devuelve un <em>response</em> al <em>proxy</em>.<br />
   2.2 El <em>proxy</em> compara el recurso obtenido durante este <em>request</em> con el obtenido durante el <em>request</em> anterior y detecta que no hubo cambios.<br />
-  2.3 El <em>proxy</em> no realiza ningún <em>Push</em> hacia el cliente.  </li>
+  2.3 El <em>proxy</em> no realiza ningún <em>Push</em> hacia el cliente.</li>
   <li>El cliente 2 envía un <em>request</em> con método <em>PATCH</em>.<br />
   3.1 El cliente envía el request directamente al servidor (no hay motivos para involucrar a <strong>este tipo de</strong> <strong><em>proxy</em></strong> en una operación de escritura).<br />
-  3.2 El servidor devuelve el <em>response</em> confirmando la operación.  </li>
+  3.2 El servidor devuelve el <em>response</em> confirmando la operación.</li>
   <li>El <em>proxy</em> envía un nuevo <em>request</em> al servidor (uno más de los que envía cada X segundos).<br />
   4.1 El servidor devuelve un <em>response</em> al <em>proxy</em>.<br />
   4.2 El <em>proxy</em> compara el recurso obtenido durante este <em>request</em> con el obtenido durante el <em>request</em> anterior y detecta que hubo cambios.<br />
-  4.3 El <em>proxy</em> realiza un <em>Push</em> hacia el cliente informando los cambios (idealmente, informa solo las novedades en lugar de reenviar el recurso completo).  </li>
+  4.3 El <em>proxy</em> realiza un <em>Push</em> hacia el cliente informando los cambios (idealmente, informa solo las novedades en lugar de reenviar el recurso completo).</li>
 </ol>
 
-<p>De esta forma, y sin modificar una sola línea del código de la <em>API</em>, logramos emular el comportamiento de una <em>streaming API</em> (al menos desde el punto de vista del cliente).  </p>
+<p>De esta forma, y sin modificar una sola línea del código de la <em>API</em>, logramos emular el comportamiento de una <em>streaming API</em> (al menos desde el punto de vista del cliente).</p>
 
 <p>Lo interesante de esta implementación es que no resulta difícil generalizarla para prácticamente cualquier <em>API</em> existente. Es decir que se podría implementar una plataforma que ponga esta lógica a disposición de los usuarios de una <em>API</em> convirtiéndola en una <em>streaming API</em> de manera transparente para el proveedor de la <em>API</em> y casi transparente para el cliente.<br />
 Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a>.</p>
@@ -384,14 +384,14 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <ul>
   <li>Si bien no se alcanza a ver, los objetos no son <em>loggeados</em> en intervalos regulares de tiempo. Esto se debe a que el cliente solo <em>loggea</em> cuando recibe una respuesta y esto solo ocurre cuando hay cambios en el recurso <em>observado</em>.</li>
-  <li>El primer objeto recibido (se distingue porque está acompañado por un “init”) es similar al del ejemplo anterior, es decir, el objeto completo. Los demás (acompañados por un “update”) son en realidad, <em>arrays</em> de objetos.  </li>
+  <li>El primer objeto recibido (se distingue porque está acompañado por un “init”) es similar al del ejemplo anterior, es decir, el objeto completo. Los demás (acompañados por un “update”) son en realidad, <em>arrays</em> de objetos.</li>
 </ul>
 
 <p>Analicemos uno de dichos <em>arrays</em>:</p>
 
 <p><img src="/img/posts/longPollingClientparticularUpdate.png" alt="Streaming API proxy" /></p>
 
-<p>Cada objeto del <em>array</em> indica que se ha reemplazado un atributo y especifica su nuevo valor. No todos los <em>arrays</em> tienen  la misma longitud (4, 1 y 2 como se ve en la imagen anterior). Esto indica la cantidad de cambios que se detectaron en cada respuesta.  </p>
+<p>Cada objeto del <em>array</em> indica que se ha reemplazado un atributo y especifica su nuevo valor. No todos los <em>arrays</em> tienen  la misma longitud (4, 1 y 2 como se ve en la imagen anterior). Esto indica la cantidad de cambios que se detectaron en cada respuesta.</p>
 
 <p>Finalmente, observemos lo que ocurre con la vista <em>network</em>:</p>
 
@@ -413,6 +413,10 @@ Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos con
                           <a href="/en/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="From API to Streaming API">&larr; Previous Post</a>
                       </li>
                       
+                      
+                      <li class="next">
+                          <a href="/en/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker in acción I">Next Post &rarr;</a>
+                      </li>
                       
                   </ul> -->
                   <div id="disqus_thread"></div>
