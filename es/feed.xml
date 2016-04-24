@@ -5,9 +5,125 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 03 Dec 2015 15:30:45 -0300</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2015 15:30:45 -0300</lastBuildDate>
+    <pubDate>Sun, 24 Apr 2016 20:26:38 -0300</pubDate>
+    <lastBuildDate>Sun, 24 Apr 2016 20:26:38 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Nobel 0.2 soporta Swagger y RAML</title>
+        <description>&lt;p&gt;Tiempo atrás, cuando trabajaba con el equipo que desarrolló &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, aproveché el tiempo de una &lt;em&gt;hackathon&lt;/em&gt; para crear una primera versión de &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. En pocas palabras, Nobel es una aplicación que utiliza una definición de una API en un lenguaje de alto nivel (&lt;a href=&quot;http://swagger.io&quot;&gt;Swagger&lt;/a&gt; o &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;) para generar el código &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; que implementa dicha API. Esta primera versión solo soportaba RAML como lenguaje de definición. Recientemente, habiendo podido investigar un poco más Swagger y sus herramientas, pude agregar soporte para este lenguaje también. 
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;swagger-o-raml&quot;&gt;Swagger o RAML&lt;/h2&gt;
+
+&lt;p&gt;Creo haber visto más de 25 posts que hablan de esta temática (aquí comparto algunos links con ustedes: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;).&lt;br /&gt;
+Independientemente de los resultados de estos análisis, tengo una pequeña lista de propios pensamientos al respecto habiéndo trabajado con ambos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RAML me resulta más fácil de entender y de escribir. Considero que la expresividad del lenguaje es superior.&lt;/li&gt;
+  &lt;li&gt;RAML introdujo YAML desde el comienzo, mientras que swagger nos pedía que escribiéramos la definición directamente en JSON.&lt;/li&gt;
+  &lt;li&gt;Swagger tiene mayor comunidad y sus herramientas parecen más completas y robustas.&lt;/li&gt;
+  &lt;li&gt;Con el lanzamiento de Swagger 2.0, la capacidad expresiva del lenguaje mejoró notablemente, aunque la tendencia a traducir 1:1 el antiguo JSON al nuevo YAML no lo pone a la altura de RAML.&lt;/li&gt;
+  &lt;li&gt;Mientras que el lanzamiento de RAML 1.0 trajo novedades más que interesantes (Noviembre 2015), el parser para Node.js sigue en “beta”, lo que hace que la piedra angular de una gran rama de herramientas pueda no ser lo suficientemente robusta para ser lanzada a producción.&lt;/li&gt;
+  &lt;li&gt;El objeto que devuelve el parser de RAML (0.8) es realmente mucho más intuitivo y fácil de “navegar” que el que devuelve el parser de Swagger (2.0).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Independientemente de todo análisis, nada me impide hacer que la herramienta soporte ambos lenguajes y esto se debe principalmente a la capacidad de crear un objeto intermedio que es el que será utilizado para generar el código fuente. El siguiente diagrama representa dicho comportamiento.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Flujo de la aplicación&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;cmo-comenzar&quot;&gt;Cómo comenzar&lt;/h2&gt;
+
+&lt;p&gt;El principal objetivo de Nobel es que cualquier persona con mínimos conocimientos sobre programación en Arduino, pueda desarrollar su propio dispositivo controlado remotamente vía HTTP. Habiendo dicho esto, es necesario:
+- Contar con una placa Arduino y las herramientas de desarrollo instaladas.
+- Contar con un &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;.
+- Contar con conocimientos básicos de Swagger o RAML.
+- Tener instalado &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;En la &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;documentación de Nobel&lt;/a&gt; se puede encontrar toda la información necesaria para entender su funcionamiento en profundidad, así como un &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;ejemplo práctico&lt;/a&gt; para tener nuestro primer dispositivo funcionando en minutos.&lt;/p&gt;
+
+&lt;h2 id=&quot;para-qu&quot;&gt;Para qué&lt;/h2&gt;
+
+&lt;p&gt;La intención de Nobel es solucionar una problemática relativamente compleja: Exponer una API REST utilizando una placa Arduino. De esta forma, los desarrolladores pueden concentrarse en construir sus propios dispositivos. Ahora podés pensar en aquellos proyectos que venías postergando y comenzar a controlar tus propios dispositivos de forma remota.&lt;/p&gt;
+
+&lt;h2 id=&quot;contribuir&quot;&gt;Contribuir&lt;/h2&gt;
+
+&lt;p&gt;Nobel es una aplicación Open Source. Podés contribuir mejorando el código, incorporando nuevas funcionalidades, probando y reportando errores. En este link podés encontrar el &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;repositorio GitHub&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</guid>
+        
+        <category>IoT</category>
+        
+        <category>REST</category>
+        
+        <category>APIs</category>
+        
+        <category>Arduino</category>
+        
+        <category>Ethernet</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Nobel 0.2 supports Swagger and RAML</title>
+        <description>&lt;p&gt;Time ago, while I was working with the team building &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, I took advantage of a &lt;em&gt;hackathon&lt;/em&gt; to build the first version of &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. Briefly, Nobel is an application that uses an API high level definition (written with (&lt;a href=&quot;http://swagger.io&quot;&gt;Swagger&lt;/a&gt; or &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;)) to generate the &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; code implementing that API. That first version only supported RAML as the definition language. Recently working and researching a bit more about Swagger and its toolset, I was able to add support for this language as well.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;swagger-or-raml&quot;&gt;Swagger or RAML&lt;/h2&gt;
+
+&lt;p&gt;I think I’ve seen more than 25 posts talking about this (here I share a couple of links with you: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;).&lt;br /&gt;
+Regardless of these analysis results, I’ve a short list of self opinions after having been working with both:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I find RAML easier to understand and write. I consider that the language expressivity is higher.&lt;/li&gt;
+  &lt;li&gt;RAML used YAML from the beginning, while Swagger requested us to write the definition with plain JSON.&lt;/li&gt;
+  &lt;li&gt;Swagger has a greater community and its toolset seem to be more complete and robust.&lt;/li&gt;
+  &lt;li&gt;When Swagger 2.0 was launched, the improvement of the language expressivity was remarkable . Though, the trend of translating the old JSON to the new YAML 1:1 stops from making it comparable to RAML.&lt;/li&gt;
+  &lt;li&gt;While RAML 1.0 release brought interesting news to the table (on November 2015), the Node.js parser is still “beta” which makes that the cornerstone for writing a great branch of tools is not robust enough for being production ready.&lt;/li&gt;
+  &lt;li&gt;The object returned by the RAML (0.8) parser is much more intuitive and easy to “browse” than the one returned by the Swagger (2.0) parser.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regardless of this analysis, nothing stops me from making the tool support both language. This is due to the capacity of creating an intermediate object that is the one used for generating the Arduino source code. The next diagram shows that behavior&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Flujo de la aplicación&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Nobel’s main goal is to give people with a minimum knowledge on Arduino coding the chance of building their own device controlled remotely via HTTP. That said, it is required:
+- An Arduino board and the development toolset installed.
+- An &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;.
+- Basic knowledge of Swagger or RAML.
+- &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; installed.&lt;/p&gt;
+
+&lt;p&gt;Reading the &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel’s documentation&lt;/a&gt; you will find all the information needed to deeply understand its behavior. You will also find a &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;walkthrough example&lt;/a&gt; for having your first device working in minutes.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-for&quot;&gt;What for&lt;/h2&gt;
+
+&lt;p&gt;The goal of Nobel is to solve a relatively complex problem: Exposing a REST API over an Arduino board. This way developers can focus on building their own devices. Now you can think about those projects you have been delaying, and start controlling your own devices remotely.&lt;/p&gt;
+
+&lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
+
+&lt;p&gt;Nobel is an Open Source application. You can contribute by improving the code, adding new features, testing and reporting bugs. Here is the link to the &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;GitHub repository &lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</guid>
+        
+        <category>IoT</category>
+        
+        <category>REST</category>
+        
+        <category>APIs</category>
+        
+        <category>Arduino</category>
+        
+        <category>Ethernet</category>
+        
+        
+      </item>
     
       <item>
         <title>Docker en acción I</title>
@@ -1613,105 +1729,6 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
         <category>jekyll</category>
         
         <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>SPAM - Caso Real</title>
-        <description>&lt;p&gt;Quienes entendemos (y un poco más) de tecnología, solemos advertir, explicar, &lt;em&gt;retar&lt;/em&gt; a nuestros conocidos y familiares cuando vemos que están usando mal el &lt;em&gt;mail&lt;/em&gt;. En particular, un concepto simple pero que siempre se suele dejar de lado (por desconocimiento u olvido, a todos nos puede pasar).
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;para-principiantes&quot;&gt;Para principiantes&lt;/h2&gt;
-&lt;p&gt;Cuando enviamos un &lt;em&gt;mail&lt;/em&gt;, tenemos que especificar las direcciones de los destinatarios. Pero hay 3 formas de hacerlo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Para: A quienes está dirigido el &lt;em&gt;mail&lt;/em&gt;. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Copia Carbón: Gente en copia porque no son los principales destinatarios, pero queremos que estén enterados. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Copia Oculta: Gente a la que queremos que le llegue el &lt;em&gt;mail&lt;/em&gt;, sin que los demás se enteren. &lt;strong&gt;Nadie más que el remitente y el destinatario puede ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y es esta última opción la que sugerimos/rogamos utilizar cuando no podés evitar mandar ese &lt;em&gt;PPT&lt;/em&gt; con música de fondo y fotos de volcanes o cachorros siendo salvados por bomberos voluntarios. Es decir, si lo vas a mandar de todos modos, y a un montón de gente, al menos no publiques/compartas las direcciones con todo el mundo.&lt;br /&gt;
-Personalmente me dio buenos resultados explicar &lt;strong&gt;por qué&lt;/strong&gt; está mal compartir las direcciones. Al enviar estas direcciones, y ser públicas para cualquiera, quien la recibe puede utilizarla para enviarme contenido que no me interesa (lo cual, en gran volumen, representa una molesta pérdida de tiempo). Pero aún peor: Muchos de tus contactos de confianza van a reenviar tu &lt;em&gt;mail&lt;/em&gt; (porque les resultó digno de ser compartido) y a su vez, sus contactos lo reenviarán en una cadena que podría propagarse hasta que todos hayamos recibido ese &lt;em&gt;mail&lt;/em&gt; (quizá más de una vez).&lt;br /&gt;
-En toda esa cadena, &lt;strong&gt;al menos&lt;/strong&gt; uno de los eventuales destinatarios, se dedica a recolectar direcciones de &lt;em&gt;mail&lt;/em&gt; y armar “bases de datos” de los mismos. Estas bases de datos, o listas con gran cantidad de contactos tienen gran valor para empresas que publicitan sus productos y/o servicios vía internet, y por lo tanto, están dispuestas a pagar por ellas. Al final del recorrido, lo que ocurre es que uno empieza a recibir &lt;em&gt;mail&lt;/em&gt; no solicitado, de interés nulo, y &lt;strong&gt;en abundancia.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;caso-real&quot;&gt;Caso real&lt;/h2&gt;
-
-&lt;p&gt;Esta mañana, un empleado de una compañía dedicada a proyectos de inversión, envió las novedades e imágenes de la demolición de un espacio para un nuevo emprendimiento. &lt;strong&gt;Mis felicitaciones a ellos, de paso.&lt;/strong&gt; Yo no conozco a esta persona, por lo que estimo que obtuvo mi &lt;em&gt;mail&lt;/em&gt; gracias a alguna cadena previa enviada de manera incorrecta. Pero aquí lo curioso: Puso a todos los destinatarios en el campo “Para”. Si, ese error que un familiar comete y al que le advertimos, explicamos, &lt;em&gt;retamos&lt;/em&gt;, fue cometido por un &lt;strong&gt;profesional de la industria del envío del &lt;em&gt;mail&lt;/em&gt; masivo (probablemente certificado por el instituto nacional del envío de correo electrónico y otras competencias altamente redituables, mejor conocido como el INdEdCEyOCAR).&lt;/strong&gt; Y obviamente, si a un familiar se lo marco, cómo no arremeter ante tal falta de profesionalismo. Respondí su &lt;em&gt;mail&lt;/em&gt; moviendo a los otros destinatarios desde el campo “Para” al campo “Copia Oculta” (si bien el mal estaba hecho, con esto evitaba cualquier problema que pudiera surgir por algún “Responder a Todos”). Puse en el campo “Copia Carbón” la dirección info@&lt;em&gt;laempresaencuestion&lt;/em&gt;.com (que obtuve de internet) a modo de “comunicame con un supervisor”. Y escribí mi respuesta:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Hola &lt;em&gt;XXXX&lt;/em&gt;,&lt;br /&gt;
-Te agradecería que la próxima vez que envíes un correo no solicitado (A.K.A SPAM) lo hagas utilizando la opción Copia Oculta (o BCC) para que no todos puedan ver mis datos de contacto así como yo no debería ver los datos de todas las personas que están recibiendo este mensaje.&lt;br /&gt;
-Atte.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Aparentemente, el &lt;em&gt;mal&lt;/em&gt; ya está hecho. Uno tiene a minimizar estas cuestiones al nivel de “bueno, como mucho, recibis correo no deseado”. Pero al poner en copia (oculta) a las otras &lt;em&gt;víctimas&lt;/em&gt; de esta práctica ocurrieron algunas cosas que habitualmente se nos pasan por alto.&lt;/p&gt;
-
-&lt;h2 id=&quot;consecuencias&quot;&gt;Consecuencias&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Muchas de las direcciones de destino eran pertenecientes a &lt;em&gt;mails&lt;/em&gt; laborales. Es decir que esta gente podrá empezar a recibir SPAM en sus correos laborales.&lt;/li&gt;
-  &lt;li&gt;30 de Julio: Muchas de las personas tenían configurado la respuesta automática “Estoy de vacaciones hasta el día tal”. Es decir que, &lt;strong&gt;cualquiera de estas 400 personas podría saber que alguien (con nombre y apellido) probablemente no esté en casa&lt;/strong&gt; hasta dentro de unos días. Y déjenme decirles que, obtener el domicilio y otros datos de una persona con solo tener su nombre no es precisamente algo demasiado complicado (aunque no sea exacto).&lt;/li&gt;
-  &lt;li&gt;Las direcciones inexistentes (o inválidas) son informadas ya que uno recibe el correo típico de “Correo no entregado” (Undelivered mail). Por lo que puedo asumir que las demás direcciones son válidas y usarlas con fines comerciales.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;En mi caso particular, las posibilidades que acabo de mencionar no se encuentran dentro del grupo de mis actividades, lo cual deja conformes solo a quienes me conocen y confían en mi. El resto puede dudar. Pero hay otras 399 personas en esa cadena. 399 personas que tienen mi dirección de correo. 399 personas que quizá tengan tu dirección de correo.&lt;/p&gt;
-
-&lt;p&gt;Es una época en donde lo que podemos hacer sentados en nuestros escritorios es cada vez más crítico. Podemos transferir dinero, contar nuestro itinerario, publicar nuestro estado de ánimo, mostrar fotos, publicar nuestros pensamientos y opiniones libremente, entre otras. Pero cada acción que hacemos, puede ser observada por otros. El uso consciente de las herramientas informáticas es la única forma real de asegurarnos que esos otros, sean el público al que apuntamos y nadie más.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2015/07/30/spam-caso-real/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2015/07/30/spam-caso-real/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>SPAM - Real case</title>
-        <description>&lt;p&gt;Those who understand about technology (and maybe a little more than “understand”), are used to warning, explaining, or &lt;em&gt;scolding&lt;/em&gt; our friends and family about misusing the e-mail. There is a particular concept that is usually disregarded despite of being a simple one (mostly because of lack of knowledge or attention. It could happens to anyone).
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;for-rookies&quot;&gt;For rookies&lt;/h2&gt;
-
-&lt;p&gt;When we send an e-mail, we need to specify the receivers addresses. There are 3 ways of doing this:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;To: To whom this e-mail is targeted. &lt;strong&gt;All receivers can see the addresses typed in this field.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Carbon Copy: People that, despite not being the main target, we want notify about something.  &lt;strong&gt;All receivers can see the addresses typed in this field.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Blind Carbon Copy: People we want to read the e-mail, but we don’t want other people notice. &lt;strong&gt;Nobody excepting the sender and the receiver can see the addresses typed in this field.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This last option is the one we recommend/beg to use when you can’t help sending that &lt;em&gt;PPT&lt;/em&gt; with a background sound and pictures of volcanoes or puppies being saved by volunteer firefighters. Thus, if sending to a bunch of people anyway, at least avoid publishing/sharing everyone else email addresses.
-Personally I got great results by explaining &lt;strong&gt;why&lt;/strong&gt; sharing the addresses is that bad. When we send the addresses publicly to anyone, the receiver can use these for sending back to me content I am not interested in (which in high volumes, turns to be a really annoying waste of time). Even worse: Many of your trusted contacts will forward your email (since they think it’s worthy) and following, their contacts will forward the thread that might propagate until all of us have received that e-mail (maybe, even more than once).&lt;br /&gt;
-At some point, there will probably be &lt;strong&gt;at least&lt;/strong&gt; one link of this chain dedicated to collecting email addresses for creating email databases. Databases are really valuable for companies that advertise their products and/or services via internet, and therefore, are willing to pay for these. At the end of the road, what happens is that you start receiving spam. &lt;strong&gt;A lot of spam.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;real-case&quot;&gt;Real case&lt;/h2&gt;
-
-&lt;p&gt;This morning, an employee working at a company dedicated to investment projects, sent some news and images about a building wrecking for a new entrepreneurship. &lt;strong&gt;Congratulations to them, by the way&lt;/strong&gt;. I don’t know this person so I’m assuming that he got my email address thanks to some previous carelessly forwarded thread. But the funny thing: He placed all the receivers into the “To” field. Yes, that mistake typically committed by friends and family and that we warn, explain or &lt;em&gt;scold&lt;/em&gt; because of, was committed this time by a &lt;strong&gt;spam sending industry professional (probably certified by the National e-mail sending and other highly profitable competences institute A.K.A NESaOHPCI).&lt;/strong&gt; And obviously, if I blame a relative when doing this, how not to lash out at such lack of professionalism. I replied his email moving the other receivers from the “To” to the “BCC” field (avoiding any possible “reply to all” related problem). I put info@&lt;em&gt;thecompany&lt;/em&gt;.com in “CC” as an escalation, and wrote my answer:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Hi XXXX,&lt;br /&gt;
-I would appreciate if next time you send a spam message you could use the BCC option so my contact information is not shared with everyone, the same way I shouldn’t be seeing the contact information of all these people receiving this message.&lt;br /&gt;
-Sincerely.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So, &lt;em&gt;evil&lt;/em&gt; was done. People tend to understate these issues with thoughts like “well, it’s not a big deal. At most you will receive some SPAM”. But when I placed the other &lt;em&gt;victims&lt;/em&gt; in (B)CC some things happened. Things that we usually overlook.&lt;/p&gt;
-
-&lt;h2 id=&quot;consequences&quot;&gt;Consequences&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Many of the addresses were work email addresses. This means that this people will probably start receiving SPAM at work.&lt;/li&gt;
-  &lt;li&gt;July 30: At least on this region, lot of people are out for vacations. Lot of people had configured the automatic response “I’m out for vacations until some date”. This means that, &lt;strong&gt;any of these 400 persons might know first and last name of someone that is out of home&lt;/strong&gt; for the next days. And let me say that, getting the home address and other personal information with just the person name, is not exactly rocket science.&lt;/li&gt;
-  &lt;li&gt;Non-existing or invalid addresses are informed by getting the “Undelivered email”. Because of that, I can assume that the other ones are valid and use these with commercial purposes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In my case, the options I’ve just mentioned are not inside the set of activities I usually perform, which only assures the ones that know me and trust me. The rest of you are allowed to have second thougts. But there are other 399 persons on that thread. 399 persons that have my e-mail address. 399 that might have your e-mail address.&lt;/p&gt;
-
-&lt;p&gt;We live in an era where we can do more and more critical and sensitive tasks from our desks. We can transfer money, share our routine, publish our mood, show pictures, share our thoughts and opinions, among others. But every move we make can be watched by others. Thoughtful usage of information tools is the only real way of making sure that these others, are our intended audience and nobody else.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2015/07/30/spam-caso-real/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2015/07/30/spam-caso-real/</guid>
-        
         
       </item>
     

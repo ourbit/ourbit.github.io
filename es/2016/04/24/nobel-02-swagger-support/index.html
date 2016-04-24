@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Entendiendo los conceptos de DevOps y la transformación cultural que estos traen aparejada">
+    <meta name="description" content="Nobel: El generador de código que expone una REST API en Arduino">
 
-    <title>Docker en acción I - OurBit</title>
+    <title>Nobel 0.2 soporta Swagger y RAML - OurBit</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/">
+    <link rel="canonical" href="http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
                 <li>
                 
                     
-                    <a href="/en/2015/12/03/docker-in-action-IoIII/" >English Version</a>
+                    <a href="/en/2016/04/24/nobel-02-swagger-support/" >English Version</a>
                 
               </li>
 
@@ -165,19 +165,19 @@ $(window).scroll(function(e) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Docker en acción I</h1>
+                    <h1>Nobel 0.2 soporta Swagger y RAML</h1>
                     
                     <span class="meta">Publicado por nohorbee el
                       
                       
   
-  3 de
+  24 de
   
-  Diciembre
-  
+  Abril
+    
 
 
-de 2015
+de 2016
 
 
                     </span>
@@ -193,47 +193,44 @@ de 2015
           <div class="row">
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-  				<p>Hace unos (cuantos) años, hablar de <em>escalabilidad</em> traía a la mesa una serie de sorpresas de todo tipo. Gente hablando de <em>escalabilidad</em> como una cualidad del <em>hardware</em>, gente demasiado soprendida al escuchar que el que escala no es el <em>hardware</em> sino que las aplicaciones deben estar diseñadas de forma que puedan escalar, y por supuesto, la poca distinción entre <em>escalabilidad</em> horizontal y vertical.<br />
-Afortunadamente, en estos días, el concepto ha sido digerido, explicado y aparentemente entendido, pero sigue resultando curioso entender por qué durante tantos años, hubo tanta confusión al respecto.<br />
-No se si es causa o efecto de esta <em>nueva era</em>, pero la virtualización juega un rol principal, y especialmente, la virtualización mediante <em>containers</em>.<br />
-Este es el primer <em>post</em> de una saga de tres, en la cual se cubrirán los conceptos básicos de <em>escalabilidad</em>, el rol/cultura <em>DevOps</em>, introducción a <em>Docker</em>, una explicación y guía para su instalación, primeros pasos y configuración de una <em>docker regisrty</em>. En este primer post, <em>DevOps</em>, y <em>escalabilidad</em>.
+  				<p>Tiempo atrás, cuando trabajaba con el equipo que desarrolló <a href="http://raml.org">RAML</a>, aproveché el tiempo de una <em>hackathon</em> para crear una primera versión de <a href="https://www.npmjs.com/package/nobel">Nobel</a>. En pocas palabras, Nobel es una aplicación que utiliza una definición de una API en un lenguaje de alto nivel (<a href="http://swagger.io">Swagger</a> o <a href="http://raml.org">RAML</a>) para generar el código <a href="http://www.arduino.cc/">Arduino</a> que implementa dicha API. Esta primera versión solo soportaba RAML como lenguaje de definición. Recientemente, habiendo podido investigar un poco más Swagger y sus herramientas, pude agregar soporte para este lenguaje también. 
 <!--MORE--></p>
 
-<h2 id="los-devops">Los DevOps</h2>
+<h2 id="swagger-o-raml">Swagger o RAML</h2>
 
-<p>Durante mucho tiempo el rol del desarrollador se encontraba bien definido y diferenciado del rol del operador. El desarrollador <strong>construía</strong> software mientras que el operador se encargaba de la <strong>infraestructura</strong> y el <em>deployment</em> de los <strong>paquetes</strong> de software a instalar. La industria del software mantuvo con orgullo esta separación alegando que el desarrollador podía abstraerse por completo del hardware y el modo de <em>deploy</em>, concentrándose en escribir y refinar código.  <strong>Empieza a ser menos sorprendente que muchos desarrolladores no pudieran escribir código</strong> <strong><em>escalable</em></strong>.<br />
-Al abstraerse por completo, el desarrollador no solo se despreocupaba del hardware y la plataforma que fuera a ejecutar sus programas; también se despreocupaba de la <em>topología</em> de dicha infraestructura. No era necesario saber si el servidor estaría corriendo en un <em>Intel, AMD u otro fabricante</em>, ni conocer el sistema operativo (en el caso de <em>Java</em>, se suponía que la <em>JVM</em> exponía una plataforma unificada). Pero tampoco parecía ser necesario saber si habría una máquina como servidor o si serían 10, si estarían en <em>cluster</em>, que pasaría si una máquina se encontrara apagada, etc. Como consecuencia, y a modo de ejemplo, guardar los datos del usuario <em>logueado</em> en una sesión <em>HTTP</em> resultaba tan sencillo y beneficioso que se convirtió en un dogma del desarrollo de aplicaciones <em>web</em>.</p>
+<p>Creo haber visto más de 25 posts que hablan de esta temática (aquí comparto algunos links con ustedes: <a href="http://modeling-languages.com/modeling-web-api-comparing/">1</a> <a href="http://iasaglobal.org/swagger-vs-raml/">2</a> <a href="https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en">3</a>).<br />
+Independientemente de los resultados de estos análisis, tengo una pequeña lista de propios pensamientos al respecto habiéndo trabajado con ambos:</p>
 
-<p>Si bien muchas de las abstracciones resultaron medianamente beneficiosas (medianamente: no resulta tan distractivo conocer el <em>hardware</em> donde correrá nuestra aplicación), otras se volvieron extremadamente inconvenientes. El desarrollo de aplicaciones <em>que escalen</em> es un claro ejemplo de los inconvenientes de la abstracción total.<br />
-El concepto de <em>DevOps</em> surge como una alternativa a esta abstracción (o al menos una redefinición). Si bien para la mayoría de las empresas <em>DevOps</em> es un rol más bien vinculado con el <em>Ops</em>, el concepto radica en una cultura de colaboración entre los desarrolladores y los operadores que beneficia el desarrollo, prueba, y <em>releases</em> frecuentes y confiables. Como un efecto colateral (positivo), los desarrolladores se involucran en forma temprana en el entendimiento de la infraestructura pudiendo tenerla en cuenta al escribir las aplicaciones (y descartando aquella información que no les resulte relevante).</p>
+<ul>
+  <li>RAML me resulta más fácil de entender y de escribir. Considero que la expresividad del lenguaje es superior.</li>
+  <li>RAML introdujo YAML desde el comienzo, mientras que swagger nos pedía que escribiéramos la definición directamente en JSON.</li>
+  <li>Swagger tiene mayor comunidad y sus herramientas parecen más completas y robustas.</li>
+  <li>Con el lanzamiento de Swagger 2.0, la capacidad expresiva del lenguaje mejoró notablemente, aunque la tendencia a traducir 1:1 el antiguo JSON al nuevo YAML no lo pone a la altura de RAML.</li>
+  <li>Mientras que el lanzamiento de RAML 1.0 trajo novedades más que interesantes (Noviembre 2015), el parser para Node.js sigue en “beta”, lo que hace que la piedra angular de una gran rama de herramientas pueda no ser lo suficientemente robusta para ser lanzada a producción.</li>
+  <li>El objeto que devuelve el parser de RAML (0.8) es realmente mucho más intuitivo y fácil de “navegar” que el que devuelve el parser de Swagger (2.0).</li>
+</ul>
 
-<h2 id="escalabilidad">Escalabilidad</h2>
+<p>Independientemente de todo análisis, nada me impide hacer que la herramienta soporte ambos lenguajes y esto se debe principalmente a la capacidad de crear un objeto intermedio que es el que será utilizado para generar el código fuente. El siguiente diagrama representa dicho comportamiento.</p>
 
-<p><strong>Una aplicación escala si puede ajustarse a una mayor exigencia de carga</strong>.</p>
+<p><img src="/img/posts/nobel-flow.png" alt="Nobel - Flujo de la aplicación" /></p>
 
-<h3 id="escalabilidad-vertical">Escalabilidad Vertical</h3>
+<h2 id="cmo-comenzar">Cómo comenzar</h2>
 
-<p>Procesadores más potentes, con mayor cantidad de <em>cores</em> pueden procesar mayor cantidad de <em>threads</em>. Más memoria puede almacenar mayor cantidad de datos de los procesos en ejecución, y de esa forma, una aplicación puede soportar mayor carga. A este tipo de <em>escalabilidad</em> se la conoce como <em>escalabilidad vertical</em>.<br />
-Una ventaja (relativa), es que puede lograrse aprovechando capacidades de los lenguajes más populares (como ser JAVA). Pero una gran desventaja es que, llegado a un punto, el aumento de <em>performance</em> en relación al aumento de <em>carga</em> se vuelve asintótico.</p>
+<p>El principal objetivo de Nobel es que cualquier persona con mínimos conocimientos sobre programación en Arduino, pueda desarrollar su propio dispositivo controlado remotamente vía HTTP. Habiendo dicho esto, es necesario:
+- Contar con una placa Arduino y las herramientas de desarrollo instaladas.
+- Contar con un <a href="https://www.arduino.cc/en/Main/ArduinoEthernetShield">Ethernet Shield</a>.
+- Contar con conocimientos básicos de Swagger o RAML.
+- Tener instalado <a href="https://nodejs.org/">Node.js</a></p>
 
-<p><img src="/img/posts/verticalScaling.png" alt="Escalabilidad Vertical - Performance / Carga" /></p>
+<p>En la <a href="https://www.npmjs.com/package/nobel">documentación de Nobel</a> se puede encontrar toda la información necesaria para entender su funcionamiento en profundidad, así como un <a href="https://www.npmjs.com/package/nobel#hands-on-example">ejemplo práctico</a> para tener nuestro primer dispositivo funcionando en minutos.</p>
 
-<p>En la imagen se puede ver como, a medida que aumenta la carga, la performance aumenta cada vez con mayor dificultad hasta llegar a un punto en donde no puede aumentar más. Esto implica que todos los usuarios de una aplicación, comenzarán a experimentar una baja de performance, o incluso, una interrupción total del sistema.<br />
-Al <em>escalar verticalmente</em>, incorporando un servidor con mayores prestaciones de hardware, logramos mejorar la performance. Pero como se puede ver al comparar las curvas con la línea de <em>escalabilidad perfecta</em> (o <em>escalabilidad lineal</em>), el punto en donde el nuevo servidor deja de soportar la carga de trabajo, ocurre bastante antes de alcanzar la <em>escalabilidad perfecta</em>. Una progresión de este comportamiento indicaría que, en cierto punto, invertir en <em>hardware</em> más potente (y costoso), no lograría acercarnos a la <em>escalabilidad perfecta</em>, alcanzando un <strong>límite de escalabilidad</strong> (también asintótico).</p>
+<h2 id="para-qu">Para qué</h2>
 
-<p><img src="/img/posts/verticalScalingSummary.png" alt="Escalabilidad Vertical - Ganancia / Potencia" /></p>
+<p>La intención de Nobel es solucionar una problemática relativamente compleja: Exponer una API REST utilizando una placa Arduino. De esta forma, los desarrolladores pueden concentrarse en construir sus propios dispositivos. Ahora podés pensar en aquellos proyectos que venías postergando y comenzar a controlar tus propios dispositivos de forma remota.</p>
 
-<h3 id="escalabilidad-horizontal">Escalabilidad Horizontal</h3>
+<h2 id="contribuir">Contribuir</h2>
 
-<p>Para superar las limitaciones presentadas por la <em>escalabilidad vertical</em>, se produjo un cambio de paradigma en donde, en lugar de pensar en equipos con más potencia, se piensa en mayor cantidad de equipos con menor potencia.<br />
-A diferencia de la <em>escalabilidad vertical</em>, en este paradigma, la administración se vuelve más compleja, y el desarrollo necesita considerar el hecho de que el software estará distribuido en distintos equipos (con recursos separados). Pero, además de superar las limitaciones de la <em>escalabiliad vertical</em>, el hecho de poder <em>escalar</em> aumentando la cantidad de equipos (o nodos), termina siendo menos costoso e incluso, aprovechando técnicas avanzadas de virtualización como las ofrecidas por <em>Docker</em>, pueden automatizarse para responder dinámicamente a la carga en tiempo real.</p>
-
-<p><img src="/img/posts/horizontalScaling.png" alt="Escalabilidad Horizontal - Performance / Carga" /></p>
-
-<p>Como se ve en la imagen, hay un punto en donde un servidor ya no logra mantener la performance necesaria para soportar la carga. En el momento donde la curva de performance cruza la recta de <em>escalabilidad perfecta</em> (o quizás un poco antes), es tiempo de iniciar un nuevo servidor. De esta manera, por aproximación, se logra mantener una relación carga/performance que se ajusta a la <em>escalabilidad perfecta</em> y, en tanto y en cuanto el inicio de un nuevo servidor pueda realizarse de manera automática y veloz, el aprovisionamiento podría realizarse <em>a demanda</em>.</p>
-
-<p>El concepto de <em>virtualización mediante containers</em> apunta exáctamente a brindar una solución para ese requerimiento. Como se verá en el siguiente <em>post</em>, <em>Docker</em> ofrece una manera más eficaz de <em>virtualización</em> que las tradicionales <em>Virtual Machine</em>, y si bien sus beneficios resultan instantáneos, se vuelven un verdadero diferencial al pensar en pequeños nodos que se <em>levantan</em> en cuestión de segundos cuando es necesario.<br />
-Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es una combinación de las capacidades de la tecnología (que reutiliza el Kernel de un solo Sistema Operativo que ya está corriendo) y el diseño de componentes pequeños que levantarán al mismo tiempo en distintos nodos (reduciendo el tiempo de arranque y paralelizandolo).</p>
+<p>Nobel es una aplicación Open Source. Podés contribuir mejorando el código, incorporando nuevas funcionalidades, probando y reportando errores. En este link podés encontrar el <a href="https://github.com/nohorbee/nobel">repositorio GitHub</a></p>
 
 
                   <!-- <hr>
@@ -241,13 +238,9 @@ Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es
                   <ul class="pager">
                       
                       <li class="previous">
-                          <a href="/en/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker in acción I">&larr; Previous Post</a>
+                          <a href="/en/2016/04/24/nobel-02-swagger-support/" data-toggle="tooltip" data-placement="top" title="Nobel 0.2 supports Swagger and RAML">&larr; Previous Post</a>
                       </li>
                       
-                      
-                      <li class="next">
-                          <a href="/en/2016/04/24/nobel-02-swagger-support/" data-toggle="tooltip" data-placement="top" title="Nobel 0.2 supports Swagger and RAML">Next Post &rarr;</a>
-                      </li>
                       
                   </ul> -->
                   <div id="disqus_thread"></div>
