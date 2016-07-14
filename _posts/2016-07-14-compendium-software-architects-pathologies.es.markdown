@@ -2,7 +2,7 @@
 layout: post
 title: 'Una recopilación de patologías de los Arquitectos de Software'
 author: nohorbee
-tags: Nobel APIs Arduino IoT codegen RAML Swagger
+tags: Software Arquitercura Rol Management Trampas
 description: "Nobel: The code generator that exposes a REST API for your Arduino board"
 ---
 

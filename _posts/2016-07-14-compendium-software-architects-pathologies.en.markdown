@@ -2,7 +2,7 @@
 layout: post
 title: 'A Compendium of Software Architects’ Pathologies'
 author: nohorbee
-tags: Nobel APIs Arduino IoT codegen RAML Swagger
+tags: Software Architecture Role Management Pitfall
 description: "Nobel: The code generator that exposes a REST API for your Arduino board"
 ---
 
