@@ -7,9 +7,10 @@ description: "Nobel: The code generator that exposes a REST API for your Arduino
 ---
 
 *By Marcos Chicote, Guido de Caso, and Norberto Herz*
+<br /><br />
 
-
-Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the "Software Architect" emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect's job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation. However, in practice things are not that simple, and the architect's job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.
+Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the "Software Architect" emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect's job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation.  
+However, in practice things are not that simple, and the architect's job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.
 
 <!--MORE-->
 
