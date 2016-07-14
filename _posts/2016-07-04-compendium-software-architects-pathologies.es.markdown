@@ -6,7 +6,7 @@ tags: Nobel APIs Arduino IoT codegen RAML Swagger
 description: "Nobel: The code generator that exposes a REST API for your Arduino board"
 ---
 
-*Por Marcos Chicote, Guido de Caso, and Norberto Herz*
+*Por [Marcos Chicote](https://ar.linkedin.com/in/mchicote), [Guido de Caso](https://twitter.com/guidodecaso), y [Norberto Herz](https://twitter.com/nohorbee)*
 <br /><br />
 
 Poco después de que el campo de las arquitecturas de software naciera formalmente, gracias al trabajo de Garlan, Shaw, Notkin y otros a principios de los 90s, el rol del "Arquitecto de Software" apareció en el área del desarrollo de software. De acuerdo con las definiciones de la comunidad de Arquitectura de Software, el trabajo de un arquitecto es definir el diseño de alto nivel de un sistema de software, o en otras palabras, tomar las principales decisiones de diseño para construir ese puente entre requerimientos e implementación.  
