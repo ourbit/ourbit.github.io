@@ -3,7 +3,7 @@ layout: post
 title: 'Una recopilación de patologías de los Arquitectos de Software'
 author: nohorbee
 tags: Software Arquitercura Rol Management Trampas
-description: "Nobel: The code generator that exposes a REST API for your Arduino board"
+description: "El trabajo del arquitecto está lleno de trampas y contradicciones. En este artículo describimos cinco patologías que pueden afectar a los arquitectos de software"
 ---
 
 *Por [Marcos Chicote](https://ar.linkedin.com/in/mchicote), [Guido de Caso](https://twitter.com/guidodecaso), y [Norberto Herz](https://twitter.com/nohorbee)*

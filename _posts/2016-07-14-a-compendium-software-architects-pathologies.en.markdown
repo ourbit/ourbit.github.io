@@ -3,7 +3,7 @@ layout: post
 title: 'A Compendium of Software Architects’ Pathologies'
 author: nohorbee
 tags: Software Architecture Role Management Pitfall
-description: "Nobel: The code generator that exposes a REST API for your Arduino board"
+description: "The architect's job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects"
 ---
 
 *By [Marcos Chicote](https://ar.linkedin.com/in/mchicote), [Guido de Caso](https://twitter.com/guidodecaso), and [Norberto Herz](https://twitter.com/nohorbee)*
