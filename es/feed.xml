@@ -5,8 +5,8 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 14 Jul 2016 09:47:43 -0300</pubDate>
-    <lastBuildDate>Thu, 14 Jul 2016 09:47:43 -0300</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2016 10:02:13 -0300</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2016 10:02:13 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -208,8 +208,8 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 &lt;p&gt;Esperamos que el análisis de estas patologías ayude a disparar más discusiones acerca de cómo debería evolucionar el rol del Arquitecto de Software, cómo evaluar su impacto, cómo deben crecer y cómo deben ser &lt;em&gt;coacheados&lt;/em&gt;. Esta es nuestra humilde pero sentida contribución al respecto.&lt;/p&gt;
 </description>
         <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/07/14/compendium-software-architects-pathologies/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/07/14/compendium-software-architects-pathologies/</guid>
+        <link>http://ourbit.github.io//es/2016/07/14/a-compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2016/07/14/a-compendium-software-architects-pathologies/</guid>
         
         <category>Software</category>
         
@@ -422,8 +422,8 @@ So, as a  Software Architect, make sure to master the aforementioned skills and 
 
 </description>
         <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2016/07/14/compendium-software-architects-pathologies/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2016/07/14/compendium-software-architects-pathologies/</guid>
+        <link>http://ourbit.github.io//en/2016/07/14/a-compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//en/2016/07/14/a-compendium-software-architects-pathologies/</guid>
         
         <category>Software</category>
         
