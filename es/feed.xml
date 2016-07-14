@@ -5,18 +5,447 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//</link>
     <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 24 Apr 2016 20:26:38 -0300</pubDate>
-    <lastBuildDate>Sun, 24 Apr 2016 20:26:38 -0300</lastBuildDate>
+    <pubDate>Thu, 14 Jul 2016 09:47:43 -0300</pubDate>
+    <lastBuildDate>Thu, 14 Jul 2016 09:47:43 -0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Una recopilación de patologías de los Arquitectos de Software</title>
+        <description>&lt;p&gt;&lt;em&gt;Por &lt;a href=&quot;https://ar.linkedin.com/in/mchicote&quot;&gt;Marcos Chicote&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/guidodecaso&quot;&gt;Guido de Caso&lt;/a&gt;, y &lt;a href=&quot;https://twitter.com/nohorbee&quot;&gt;Norberto Herz&lt;/a&gt;&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Poco después de que el campo de las arquitecturas de software naciera formalmente, gracias al trabajo de Garlan, Shaw, Notkin y otros a principios de los 90s, el rol del “Arquitecto de Software” apareció en el área del desarrollo de software. De acuerdo con las definiciones de la comunidad de Arquitectura de Software, el trabajo de un arquitecto es definir el diseño de alto nivel de un sistema de software, o en otras palabras, tomar las principales decisiones de diseño para construir ese puente entre requerimientos e implementación.&lt;br /&gt;
+Sin embargo, llevado a la práctica no es tan sencillo. El trabajo del arquitecto está lleno de “trampas” y contradicciones. En este artículo describimos cinco patologías que pueden afectar a los arquitectos de software, incluyendo síntomas y tratamiento, con el objeto de disparar algunas discusiones acerca del rol y su evolución esperada.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;introduccin&quot;&gt;Introducción&lt;/h2&gt;
+
+&lt;p&gt;No hay duda de que la Ingeniería de Software ha evolucionado constantemente durante las últimas cinco décadas. Los sistemas operativos nos han provisto cada vez mejor de una capa de abstracción de las complejidades del hardware moderno. Los procesos Lean y Agile nos han permitido iterar más velozmente. Tecnologías más económicos y accesibles han disminuido la barrera para obtener equipos de alta performance y han abierto la puerta a solucionar problemas más ambiciosos en diversos campos tales como la medicina, la industria aeroespacial, ámbito académico o comercio electrónico.&lt;/p&gt;
+
+&lt;p&gt;La forma en que los ingenieros nos organizamos para construir software que soluciona problemas complejos también ha cambiado. Desde personas escribiendo programas para mainframes hasta grandes empresas con varias líneas de productos y plataformas. El rol del Arquitecto de Software ha aparecido mayormente en el contexto de aplicaciónes multi-capa en las cuales la cantidad de opciones de implementación creció exponencialmente. &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=579257&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;http://www.bredemeyer.com/pdf_files/role.pdf&quot;&gt;[2]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Las responsabilidades y tareas de los Arquitectos de Software son variadas y dependen en gran medida de la compañía y el contexto. Hay leves variaciones de estas responsabilidades dependiendo de si nos referimos a un Arquitecto de Aplicación o un Enterprise Architect. Pero, independientemente de dichas diferencias, podemos definir el alcance del Arquitecto de Software mayormente por las siguientes áreas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Subdividir el diseño de aplicaciónes grandes en partes más pequeñas y fáciles de manejar.&lt;/li&gt;
+  &lt;li&gt;Identificar tecnologías, frameworks, patrones, mejoras de proceso y mejores prácticas que son adoptadas por una organización y comunicarlas a los desarrolladores, estableciendo relaciones de mentoring.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Pero, mientras esta enumeración sirve al propósito de describir un &lt;em&gt;template&lt;/em&gt; de la descripción del trabajo de un Arquitecto de Software, no responde a preguntas tales como qué características o tareas diferencian a los Arquitectos de Software que más impacto generan, de sus colegas. Cómo está definido el Path de carrera de un Arquitecto de Software y de dónde vienen la mayoría de ellos. Cómo pueden encontrar el equilibrio entre convertirse en grandes generalistas en lugar de los mejores especialistas.&lt;/p&gt;
+
+&lt;p&gt;En este artículo nos proponemos explorar y discutir algunos de estos temas. Lo hacemos mediante una serie de posibles contradicciones o falacias que surgen de la tensión entre fuerzas opuestas en la vida de un Arquitecto de Software: Ser un mentor vs. evangelizar, escribir código vs. estar en reuniones, entre otros dilemas.&lt;/p&gt;
+
+&lt;p&gt;Presentamos estas aparentes contradicciones como patologías. La palabra “patología” tiene su origen en el antiguo Griego en donde pathos (πάθος) significa “experiencia” o “sufrimiento”, y -logia (-λογία) significa “estudio de”. Esperamos que este artículo dispare discusiones interesantes entre los compañeros Arquitectos de Software y nos haga pensar acerca de algunos problemas frecuentes que enfrentamos en nuestra práctica profesional.&lt;/p&gt;
+
+&lt;p&gt;El lector atento debería ser advertido de que algunas de las patologías serán particularmente más acertadas para Arquitectos de Software en situaciones específicas como ser compañías con equipos de desarrollo distribuidos geográficamente, o compañías de tamaño medio a grande. En cualquier caso, creemos que las mismas abarcan temas relevantes a la forma de pensar acerca de los Arquitectos de Software, su rol, su carrera, y finalmente, su impacto.&lt;/p&gt;
+
+&lt;h2 id=&quot;las-patologas&quot;&gt;Las Patologías&lt;/h2&gt;
+
+&lt;p&gt;En las siguientes subsecciones describiremos algunas de las patologías mencionadas anteriormente en términos de cómo detectarlas y resolverlas&lt;/p&gt;
+
+&lt;h3 id=&quot;el-sndrome-del-mejor-desarrollador-sin-impacto&quot;&gt;El Síndrome del mejor desarrollador sin impacto&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“Esta funcionalidad es extremadamente compleja. Debería estar escribiéndola yo mismo”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;descripcin&quot;&gt;Descripción&lt;/h4&gt;
+
+&lt;p&gt;De acuerdo al Principio de Pareto, acordamos que el 80% de la complejidad de una aplicación proviene del 20% de sus funcionalidades. Siendo el Arquitecto de Software el mejor programador del equipo, todo parece indicar que gran parte de estas funcionalidades deberían ser escritas por el.&lt;/p&gt;
+
+&lt;h4 id=&quot;sntomas-y-diagnstico&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Arquitecto de Software con stress: “Nunca encuentro el tiempo para trabajar en estas funcionalidades”&lt;/li&gt;
+  &lt;li&gt;Planos faltantes o vagamente definidos: “El diseño de alto nivel está completo, el resto de las partes son deducibles”&lt;/li&gt;
+  &lt;li&gt;Desarrollador con stress: “Los diseños no tienen sentido. Mis colegas parecen estar escribiendo aplicaciónes diferentes”&lt;/li&gt;
+  &lt;li&gt;Desarrolladores Senior incómodos: “Esta funcionalidad debería escribirla otra persona. Yo debería estar escribiendo el 20% más complejo”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tratamiento&quot;&gt;Tratamiento&lt;/h4&gt;
+
+&lt;p&gt;Antes de hablar del tratamiento, proponemos discutir el concepto de que el Arquitecto de Software es de hecho el mejor desarrollador del equipo. Si bien es cierto que un buen Arquitecto de Software debería tener habilidades de programación sobresalientes, el rol requiere un set de habilidades más pulidas y algo diferentes que las del desarrollador. Habiendo dicho esto, tiene sentido que no todos los Arquitectos de Software surjan del mejor desarrollador de un equipo, sino de uno realmente bueno que encontró la forma de desarrollar otras habilidades.&lt;/p&gt;
+
+&lt;p&gt;Creemos que el mejor desarrollador debería ser responsable de escribir las funcionalidades más complejas mientras que el Arquitecto de Software debería estar trabajando en hacer esas funcionalidades más sencillas de escribir. Construir un gran diseño de alto nivel tiende a simplificar las cosas evitando ambigüedades, e identificando oportunidades de reutilización. En muchos casos, cuando esas oportunidades son lo suficientemente claras, surgen los beneficios de utilizar librerías y frameworks existente o la necesidad de escribir nuevos. Este también es el trabajo de un buen Arquitecto de Software.&lt;/p&gt;
+
+&lt;p&gt;Entonces, como un Arquitecto de Software, pensá una buena arquitectura para: construir un buen diseño, crear los mejores diseños, encontrar oportunidades de simplificación y ejecutarlas ya sea escribiendo o utilizando los frameworks adecuados, ayudar al equipo a definir y adoptar mejores prácticas y un proceso de desarrollo. De esa forma no vás a estar pensando “Yo debería estar escribiendo este código” tan frecuentemente. En su lugar, vas a notar que tus contribuciones impactan cada una de las funcionalidades.&lt;/p&gt;
+
+&lt;h3 id=&quot;el-dilema-del-especialista-que-todo-lo-sabe&quot;&gt;El dilema del especialista que todo lo sabe&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“El mundo es demasiado grande para que yo lo domine totalmente”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;descripcin-1&quot;&gt;Descripción&lt;/h4&gt;
+
+&lt;p&gt;Front-end, back-end, orientado a objetos, funcional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Realidad Virtual, COBOL, Mainframes, Docker, APIs, Scala. La lista de tecnologías sigue creciendo. La capacidad del Arquitecto de Software no es infinita, así como tampoco lo es el tiempo que cualquier ser humano puede emplear en un set de tareas. De todos modos, pareciera como si al Arquitecto de Software se le pidiera que domine la lista entera. No podemos elegir ambas: ser especialistas y generalistas, ¿o si?&lt;/p&gt;
+
+&lt;h4 id=&quot;sntomas-y-diagnstico-1&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Arquitecto de Software dubitativo: “Todos me preguntan acerca de todo y no hay forma de tener una buena respuesta a todas las preguntas”&lt;/li&gt;
+  &lt;li&gt;Falta de &lt;em&gt;ownership&lt;/em&gt;: “No soy un experto en la materia. No puedo tomar esa decisión”&lt;/li&gt;
+  &lt;li&gt;Decisiones en diferentes direcciones: “No estoy seguro de por qué estamos haciendo esto de esta manera. Parece como si todos hubieran tomado sus propias decisiones”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tratamiento-1&quot;&gt;Tratamiento&lt;/h4&gt;
+
+&lt;p&gt;Un Arquitecto de Software debería ser un generalista por naturaleza. Incluso si no posee un gran conocimiento acerca de una tecnología, el camino al éxito es la capacidad de combinar un rango amplio de habilidades que solo pueden ser alcanzadas entendiendo qué tan profundo se debe investigar un determinado tema. De todos modos, hay áreas que un Arquitecto de Software debería dominar. La siguiente lista incluye algunas de estas áreas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Principios de Software: El Arquitecto de Software necesita dominar temas tales como los atributos de calidad del software: escalabilidad, disponibilidad, recuperabilidad, seguridad, mantenibilidad, entre otros &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ee658094.aspx&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_system_quality_attributes&quot;&gt;[2]&lt;/a&gt;. También es requerido entender y poder diseñar aplicaciónes de forma en que fomenten no guardar estado, división en capas y desacoplamiento &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/bb402962.aspx&quot;&gt;[3]&lt;/a&gt;. Observen que estos conceptos son independientes de la tecnología, a pesar de que estas los logren de formas diversas.&lt;/li&gt;
+  &lt;li&gt;Liderazgo: Poder convertirse en un líder técnico para el equipo es vital. Dominar conceptos y conductas tales como coaching y mentoring se vuelve realmente útil para los Arquitectos de Software.&lt;/li&gt;
+  &lt;li&gt;Comunicación: Diseñar se trata de tomar decisiones. Estas decisiones deberían incluir conocimiento y experiencia, pero son el resultado de entender las necesidades de los distintos interesados. El diseño se vuelve más completo cuando miembros claves del equipo de desarrollo dan su opinión visión e ideas. Adicionalmente, una vez construido, el diseño debe ser compartido para que pueda ser implementado. El Arquitecto de Software es el punto central en donde todo se conecta. Dominar habilidades de comunicación no es opcional para este rol.&lt;/li&gt;
+  &lt;li&gt;Investigación: Como se mencionó anteriormente, el Arquitecto de Software debería ser un generalista por naturaleza. Ser un buen investigador es la forma perfecta de estar al día con las últimas tecnologías y tendencias. Un Arquitecto de Software debería poder elegir qué tecnologías aprender y tener un buen entendimiento de las mismas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Con esto en mente, es correcto decir que un Arquitecto de Software es un especialistas en temas de arquitectura, y como la arquitectura es acerca de los generalismos, los Arquitectos de Software son especialistas en ser generalistas.&lt;/p&gt;
+
+&lt;p&gt;La razón por la cual la lista de tecnologías mencionadas en esta patología es virtualmente infinita es básicamente que hay demasiados profesionales desarrollando tecnologías nuevas y fascinantes todos los días. Entonces, la forma de dirigir un proyecto desde el punto de vista arquitectural es intercambiar conocimientos con un equipo mayor que será el verdadero dueño del conocimiento compartido.&lt;br /&gt;
+De este modo, como un Arquitecto de Software, asegúrate de dominar las habilidades mencionadas anteriormente y vas a poder:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Construir una arquitectura que garantice los atributos de calidad del software&lt;/li&gt;
+  &lt;li&gt;Entender qué tecnologías merecen más atención en cada momento&lt;/li&gt;
+  &lt;li&gt;Tener un conocimiento general de estas tecnologías y tomar decisiones respecto de cuáles son necesarias para un proyecto particular&lt;/li&gt;
+  &lt;li&gt;Investigar y empujar al equipo para utilizar estas tecnologías&lt;/li&gt;
+  &lt;li&gt;Liderar al equipo para construir las mejores aplicaciones&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;un-pie-en-cada-continente&quot;&gt;Un pie en cada continente&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“Todavía no me pongo al día con todos los libros sobre soft skills y ya me estoy olvidando qué hacer después de atrapar una excepción”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;descripcin-2&quot;&gt;Descripción&lt;/h4&gt;
+
+&lt;p&gt;El camino y los primeros pasos para convertirse en un Arquitecto de Software son realmente emocionantes. Empezamos a abstraernos de un montón de detalles innecesarios, dejamos de lidiar con funcionalidades tediosas, y empezamos a encarar desafíos más a la altura. También comenzamos a pasar más tiempo dibujando, hablando, enseñando, reuniéndonos, y menos tiempo escribiendo código. Y de repente, allí estamos, con esa sensación de que aún no somos lo suficientemente buenos en todo lo nuevo pero ya estamos muy lejos de donde empezamos. Viajamos lejos de casa y ahora estamos en el medio del océano. Una mezcla entre un Ingeniero de Software oxidado y un Arquitecto de Software inexperto.&lt;/p&gt;
+
+&lt;h4 id=&quot;sntomas-y-diagnstico-2&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Éxito por accidente: “Siento que la gente me elogia por cosas que se dieron por casualidad y no como resultado de mi trabajo”&lt;/li&gt;
+  &lt;li&gt;Miedo a ser descubiertos: “Me asusta que alguien se de cuenta de que no estoy listo para ser un Arquitecto de Software”&lt;/li&gt;
+  &lt;li&gt;Repetibilidad: “No se como terminé acá y estoy bastante seguro de que no voy a poder crecer hacia el siguiente nivel”&lt;/li&gt;
+  &lt;li&gt;Buscando validación externa: “Alguien debería chequear que todas mis decisiones sean correctas”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tratamiento-2&quot;&gt;Tratamiento&lt;/h4&gt;
+
+&lt;p&gt;No es fácil lidiar con estos sentimientos pero he aquí algo que siempre puede ayudar: no estás solo. En realidad estos síntomas (entre otros) son más frecuente de lo que la mayoría de nosotros creemos y, además, están agrupados bajo el nombre de “Síndrome del Impostor” &lt;a href=&quot;https://counseling.caltech.edu/general/InfoandResources/Impostor&quot;&gt;[1]&lt;/a&gt;, descubierto por Dr. Pauline R. Clance en 1978&lt;a href=&quot;https://en.wikipedia.org/wiki/Impostor_syndrome&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hay varias maneras de superar este síndrome, incluyendo&lt;a href=&quot;http://www.apa.org/gradpsych/2013/11/fraud.aspx&quot;&gt;[3]&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hablar con tus mentores&lt;/li&gt;
+  &lt;li&gt;Reconocer tus habilidades&lt;/li&gt;
+  &lt;li&gt;Recordando lo hacés bien&lt;/li&gt;
+  &lt;li&gt;Reconociendo que nadie es perfecto&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Quizá la parte más difícil es vencer el miedo de ser transparente y reflexivo acerca de esto con alguien, un amigo, un colega, o un jefe. Una vez que reconocemos y hacemos las paces con estos temas, todo se vuelve más fácil y estamos listos para dejarlo atrás y liberar nuestro potencial como Arquitectos de Software.&lt;/p&gt;
+
+&lt;h3 id=&quot;el-dilema-del-mentor-sin-preparacin&quot;&gt;El dilema del mentor sin preparación&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“Si querías que fuera mentor de otros, deberías haberme preparado para eso”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;descripcin-3&quot;&gt;Descripción&lt;/h4&gt;
+
+&lt;p&gt;Incluir “mentoring” como parte de las responsabilidades del Arquitecto de Software tiene amplio consenso. Se espera que los Arquitectos de Software pasen tiempo con los Ingenieros aconsejándolos acerca de cómo desarrollar las habilidades faltantes, aprender nuevas técnicas de programación, frameworks y en general, preparándolos para dar el siguiente paso. Sin embargo a medida que los desarrolladores avanzan en sus carreras y eventualmente se convierten en Arquitectos de Software, empiezan a necesitar habilidades para las cuales no han sido entrenados, como el “mentoring” en sí mismo.&lt;/p&gt;
+
+&lt;h4 id=&quot;sntomas-y-diagnstico-3&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cuello de botella para “mentoring”: “Todos quieren que los ayude a crecer ¿Qué está ocurriendo?” La mayoría de los desarrolladores comienzan a buscar “mentoring” en el mismo Arquitecto de Software&lt;/li&gt;
+  &lt;li&gt;Empatía superficial: “No estoy conectado con aquellos a quien estoy dando mentoring”. El mentor y el “mentoreado” suelen generar una relación cercana. Si la empatía flaquea, el mentoring probablemente falle&lt;/li&gt;
+  &lt;li&gt;Comunicación ineficiente: “No logro que los desarrolladores sigan mi diseño”. Los Ingenieros de Software no entienden el diseño o no logran ver por qué se ha realizado de tal manera&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tratamiento-3&quot;&gt;Tratamiento&lt;/h4&gt;
+
+&lt;p&gt;Los Arquitectos de Software deberían ser alentados a dar mentoreo en todas las habilidades necesarias para crecer en el aspecto de la carrera. Particularmente aquellas habilidades necesitadas para puestos más altos como ser el del Arquitecto de Software. Si el mentoreo se limita a las habilidades técnicas, el Ingeniero en Software probablemente no esté a la altura cuando se encuentre en una posición de liderazgo.&lt;/p&gt;
+
+&lt;p&gt;Cabe mencionar que, a pesar de que no entraremos en temas antropológicos o sociológicos tales como la capacidad del ser humano de adquirir nuevos conocimientos, entendemos que algunas personas tienen una tendencia más natural al mentoreo. Incluso cuando un Arquitecto de Software debería ayudar a los Ingenieros de Software a desarrollar sus soft skills, cualquiera que aspire a convertirse en un Arquitecto de Software debería aprender sobre mentoreo en general. Una posibilidad para los Arquitectos de Software es buscar ayuda respecto del mentoreo en el liderazgo más senior de la organización de ingeniería (como ser VPs o Senior Directors).&lt;/p&gt;
+
+&lt;h3 id=&quot;el-sndrome-de-la-prdida-de-enfoque&quot;&gt;El síndrome de la pérdida de enfoque&lt;/h3&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“Cuando me siento y me concentro por 20 minutos sin interrupción, logro construir cosas asombrosas! ¿Cómo no hago esto 8 horas por día?”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;descripcin-4&quot;&gt;Descripción&lt;/h4&gt;
+
+&lt;p&gt;Como Paul Graham describe en su ensayo “Maker’s Schedule, Manager’s Schedule”, mientras que la agenda de un manager puede cambiar cada hora, para los constructores ir a una reunión es como arrojar una excepción, lo cual puede ser muy costoso en términos de performance. A medida que estudiamos el rol y analizamos sus contradicciones, nos preguntamos: ¿Qué agenda seguimos los Arquitectos de Software?&lt;/p&gt;
+
+&lt;h4 id=&quot;sntomas-y-diagnstico-4&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Adaptarse a los managers: “Los managers me arrastran a reuniones en cualquier momento”&lt;/li&gt;
+  &lt;li&gt;Tiempo desperdiciado: “Soy un constructor. Construyo software que termina en producción, esa es mi mayor responsabilidad, no estar respondiendo las preguntas de los managers”&lt;/li&gt;
+  &lt;li&gt;Agenda espaciada: “Déjenme escribir código por 4 horas seguidas y los voy a sorprender”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En la mayoría de las organizaciones, los Arquitectos de Software no son managers y por ende no se rigen por la agenda de un manager, e incluso demostrando que se rigen por la agenda de un constructor, suelen aparecer algunas dificultades.&lt;/p&gt;
+
+&lt;p&gt;Como se mencionó en la sección “El Síndrome del mejor desarrollador sin impacto”, los Arquitectos de Software no necesariamente deberían ser responsables de escribir las funcionalidades más complejas, y este concepto podría usarse para argumentar que los Arquitectos de Software no son constructores. Sin embargo, como fue discutido, los Arquitectos de Software son los responsables de construir software de forma más transversal, definiendo mejores prácticas y los procesos de desarrollo, escribiendo frameworks o diseñando los planos de la aplicación. Estas tareas son, innegablemente, atribuibles a constructores.&lt;/p&gt;
+
+&lt;p&gt;Los componentes transversales a menudo afectan a una gran variedad de actores e impactan en nuevas funcionalidades y bugs complejos. Los Arquitectos de Software son fecuentemente convocados a reuniones para analizar y comentar sobre estos temas, robándoles tiempo de diseño y mentoring. Cuanto más construye un Arquitecto de Software, a más reuniones será convocado, presentando un importante dilema.&lt;/p&gt;
+
+&lt;h4 id=&quot;tratamiento-4&quot;&gt;Tratamiento&lt;/h4&gt;
+
+&lt;p&gt;Los Arquitectos de Software son constructores y, como tales, necesitan tiempo para hacer. Construir software, incluso a niveles de arquitectura, requiere concentración y enfoque. Los Arquitectos de Software, como en cualquier posición prestigiosa, son consultados a menudo sobre un conjunto diverso de temas y son requeridos en reuniones. En lugar de luchar con eso, proponemos algunas ideas para minimizar el impacto que tienen estas reuniones sobre tus responsabilidades:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Se recomienda a los Arquitectos de Software que expliquen claramente a todos, que son constructores, y que deben estar profundamente involucrados en el proceso de construir software. El entendimiento por parte de los pares acerca de la posición del Arquitecto de Software es vital para minimizar las invitaciones a reuniones innecesarias.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Office Hours&lt;/em&gt;: Los Arquitectos de Software deberían apartar algo de tiempo para estar disponibles para otras personas. En lugar de adaptarse a las agendas de los managers, se recomienda que el Arquitecto de Softwarwe cree mecanismos para permitir a los managers adaptarse por su cuenta.&lt;/li&gt;
+  &lt;li&gt;Delegar: No toda reunión a la que estés invitado necesita un Arquitecto de Software. La delegación a líderes técnicos o especialistas no solo te va a ahorrar tiempo, también va a permitir que otros crezcan.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Mientras que la analogía con las patologías puede ser algo trillada, creemos que hay valor en estudiarlas como las trampas habituales en el rol del Arquitecto de Software.&lt;/p&gt;
+
+&lt;p&gt;Tal como se discutió en la introducción de este artículo, la Ingeniería de Software ha cambiado dramáticamente desde sus orígenes en el siglo pasado, pero sin duda sigue siendo un campo de estudio joven. Es entendible que un rol más nuevo no haya sido estudiado o estandarizado en profundidad.&lt;/p&gt;
+
+&lt;p&gt;Esperamos que el análisis de estas patologías ayude a disparar más discusiones acerca de cómo debería evolucionar el rol del Arquitecto de Software, cómo evaluar su impacto, cómo deben crecer y cómo deben ser &lt;em&gt;coacheados&lt;/em&gt;. Esta es nuestra humilde pero sentida contribución al respecto.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2016/07/14/compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2016/07/14/compendium-software-architects-pathologies/</guid>
+        
+        <category>Software</category>
+        
+        <category>Arquitercura</category>
+        
+        <category>Rol</category>
+        
+        <category>Management</category>
+        
+        <category>Trampas</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A Compendium of Software Architects’ Pathologies</title>
+        <description>&lt;p&gt;&lt;em&gt;By &lt;a href=&quot;https://ar.linkedin.com/in/mchicote&quot;&gt;Marcos Chicote&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/guidodecaso&quot;&gt;Guido de Caso&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/nohorbee&quot;&gt;Norberto Herz&lt;/a&gt;&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the “Software Architect” emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect’s job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation.&lt;br /&gt;
+However, in practice things are not that simple, and the architect’s job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;There is no doubt that Software Engineering has been constantly evolving over the last five decades. Operating systems have provided an ever improving layer to abstract us away from the complexities of modern hardware. Lean and agile processes have allowed for faster iteration. Cheaper and more accessible data center technologies have lowered the barrier to entry for high performance computing and opened the gate to tackling more ambitious problems diverse fields such as medicine, the aerospatial industry, academy or e-commerce.&lt;/p&gt;
+
+&lt;p&gt;The way engineers organize ourselves to go build software that solves these complex problems has also shifted. From individuals writing programs for mainframes to big corporations with multiple product lines and platforms. The role of Software Architects appeared as such mostly in the context of multi-tier applications where the amount of implementation choices grew exponentially. &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=579257&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;http://www.bredemeyer.com/pdf_files/role.pdf&quot;&gt;[2]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Software Architects’ responsibilities and duties are varied and depend heavily on the company and environment. There are slight variations of these responsibilities depending on whether we consider an Application Architect or an Enterprise Architect. But, regardless of such differences we can define the Software Architect’s scope as driven by these areas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Subdividing the design of large applications into smaller and more manageable parts.&lt;/li&gt;
+  &lt;li&gt;Identifying technologies, frameworks, patterns, process improvements and best practices that are to be adopted by an organization and communicating these to developers, establishing thus key mentorship relations.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But while this enumeration serves the purpose of a Software Architect’s job description template, it does not answer questions such as what traits or tasks separate the most impactful Software Architects from their peers. How is the Software Architect career path defined and where do Software Architects come from. How can they walk the fine balance between becoming great generalists as opposed to incredible specialists.&lt;/p&gt;
+
+&lt;p&gt;In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas.&lt;/p&gt;
+
+&lt;p&gt;We introduce these apparent contradictions as pathologies. Pathology is rooted in the Ancient Greek concept of pathos (πάθος), meaning “experience” or “suffering”, and -logia (-λογία), “study of”. We hope that this article can spark interesting discussions among fellow Software Architects and make us reflect about certain common issues that we face in our professional practice.&lt;/p&gt;
+
+&lt;p&gt;The careful reader should be warned that some of the following will be particularly more suited for Software Architects in specific situations such as companies with geographically distributed development teams or companies of medium to large size. In any case, we believe that these encompass various relevant topics when it comes to how we think about Software Architects, their role, their career and, ultimately, their impact.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-pathologies&quot;&gt;The Pathologies&lt;/h2&gt;
+
+&lt;p&gt;In the next subsections we will describe some of the aforementioned pathologies in terms of how to detect and how to resolve them.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-impactless-best-coder-syndrome&quot;&gt;The Impactless Best Coder Syndrome&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“This functionality is extremely complex. I should be coding it myself”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;According to the Pareto Principle we acknowledge that 80% of an application’s complexity comes from the 20% of its functionalities. Being the Software Architect the best coder in the team seems to indicate that a big piece of these functionalities should be written by no one else.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stressed Software Architect: “I can never find the time to work on these functionalities”&lt;/li&gt;
+  &lt;li&gt;Missing or poorly written blueprints: “The high level design is complete, the remaining parts can be inferred”&lt;/li&gt;
+  &lt;li&gt;Stressed Developer: “The blueprints don’t make sense. My peers seem to be writing different applications”&lt;/li&gt;
+  &lt;li&gt;Uncomfortable Senior Developer: “This functionality could be written by somebody else. I should be coding the top 20%”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Before jumping to the correct treatment, we propose to discuss the concept of whether the Software Architect is indeed the best coder on the team. Even though it is true that a good Software Architect should have outstanding coding abilities, the role demands a fairly different and more rounded skillset when compared to that of a developer’s. That said, it makes sense that not every Software Architect raised from being the best developer of a team, but a really good one who found a way of growing another skillset as well.&lt;/p&gt;
+
+&lt;p&gt;We argue that the best developer should be the one responsible for coding the most complex functionalities, while the Software Architect should be the one making those functionalities easier to code. Putting in place a great high level design tends to simplify things by avoiding ambiguities, and identifying reuse opportunities. In many cases, when these opportunities are clear enough, the benefits of using some libraries and frameworks, or the necessity of writing some new ones rise. That is the job of a good Software Architect too.&lt;/p&gt;
+
+&lt;p&gt;So, as a Software Architect, put a great architecture in order: build a great design, write the best blueprints, find the simplification opportunities and execute these by writing or using the proper frameworks, help the definition and adoption of the team’s best practices and development processes. That way you should not have to  think “I should be coding this” as often. Instead you will realize that your contributions are enabling a great part of every single functionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-know-it-all-specialist-dilemma&quot;&gt;The Know-it-all Specialist Dilemma&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“The world is too big for me to master it all”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-1&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Front-end, back-end, object oriented, functional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Virtual Reality, COBOL, Mainframes, Docker, APIs, Scala. The list of technologies and frameworks goes on and on. The Software Architect’s bandwidth is not infinite, as it is not the time any human has to spend on any set of tasks. Yet it seems as if Software Architects were demanded to master the entire list. We can not choose both being specialists and generalists, or can we?&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-1&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Waverer Software Architect: “Everyone asks me about everything and there is no way I can have a good answer for all the questions”&lt;/li&gt;
+  &lt;li&gt;Lack of ownership: “I’m not an expert on the subject, so, I simply can’t make a decision on this”&lt;/li&gt;
+  &lt;li&gt;Multi-directional decisions: “I’m not sure why we are doing it this way. It seems like if everyone has made it own call”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-1&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;A Software Architect should be a generalist by nature. Even if she or he possesses deep knowledge about a particular technology, the driver to success is the capability of combining a wide range set of skills that can only be achieved by understanding how far to dig on something. Though, there are a set of areas that a Software Architect should master. The following list includes some of them:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Software principles: The Software Architect needs to master subjects such as the software quality attributes: scalability, availability, resiliency, securability, maintainability, among others &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ee658094.aspx&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_system_quality_attributes&quot;&gt;[2]&lt;/a&gt;. It is also required to understand and be able to design applications in a way that enables statelessness, layering, decoupling &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/bb402962.aspx&quot;&gt;[3]&lt;/a&gt;. Note that these concepts are technology independent, even though different technologies achieve them in different ways.&lt;/li&gt;
+  &lt;li&gt;Leadership: Being able to become a Technical Leader for the team is crucial. Mastering principles and behaviors such as coaching and mentoring becomes really handy for Software Architects.&lt;/li&gt;
+  &lt;li&gt;Communication: Designing is all about making decisions. These decisions should contemplate knowledge and experience, but are also the result of understanding different stakeholders’ needs. The design becomes even richer when key members from the development team provide their input in the form of vision and ideas. Furthermore, once the design is in place, it needs to be shared so it can be built. The Software Architect is the central point where all these ends meet. Mastering communication skills is not optional for their role.&lt;/li&gt;
+  &lt;li&gt;Research: As said, a Software Architect should be a generalist by nature. Being a good researcher is the perfect way of being up to date with the latest in technology trends. A Software Architect should be able to choose which technologies to know and have a fairly good understanding of these.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists.&lt;/p&gt;
+
+&lt;p&gt;The reason why the list of technologies mentioned on this pathology’s description is virtually infinite is basically that there are so many professionals developing new and exciting technologies everyday. Thus, the way of running a project from the architectural point of view is to exchange knowledge with a bigger team that will be the real knowledge owner.
+So, as a  Software Architect, make sure to master the aforementioned skills and you will be able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Put together an architecture that guarantees high software quality attributes.&lt;/li&gt;
+  &lt;li&gt;Understand which technologies requires most attention at every moment.&lt;/li&gt;
+  &lt;li&gt;Incorporate general knowledge of these technologies, and make decisions on which ones are needed for a particular project.&lt;/li&gt;
+  &lt;li&gt;Conduct investigations to push the team to use these technologies.&lt;/li&gt;
+  &lt;li&gt;Lead the team to build great applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;one-feet-on-each-continent&quot;&gt;One Feet on Each Continent&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“I haven’t caught up with all the latest books on soft skills, and I’m already starting to forget what to do after catching an exception”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-2&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;The path and first steps for becoming a Software Architect are really exciting. We start getting abstracted from a lot of unnecessary and dirty details, we stop dealing with tedious functionalities, and we start facing more “suitable” challenges. We also start spending more time sketching, talking, teaching, meeting, and less time coding. And suddenly there we are, feeling that we are not yet good enough at the new stuff, and yet too far away from where we started. We journeyed far from home and now we are in the middle of the ocean between a rusty Software Engineer and an inexpert Software Architect.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-2&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Succeed by accident: “I feel that people praise me for things that were just happenstance and not the result of my work”&lt;/li&gt;
+  &lt;li&gt;Fear of being discovered: “I’m afraid someone is going to find out that I’m not ready to be a Software Architect”.&lt;/li&gt;
+  &lt;li&gt;Repeatability: “I don’t know how I ended up here, and I’m pretty sure I won’t be able to grow and level up again”&lt;/li&gt;
+  &lt;li&gt;Pursuing external validation: “Someone should check that every one of my decisions is correct”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-2&quot;&gt;Prognosis&lt;/h4&gt;
+&lt;p&gt;It is not easy to cope with these feelings but there is something that can help: you are not alone. Actually, these symptoms (among others) are most common than most of us believe and, on top of that, these are grouped under the name of “Impostor Syndrome”&lt;a href=&quot;https://counseling.caltech.edu/general/InfoandResources/Impostor&quot;&gt;[1]&lt;/a&gt;, that was discovered by Dr. Pauline R. Clance in 1978&lt;a href=&quot;https://en.wikipedia.org/wiki/Impostor_syndrome&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to overcome this syndrome, including but not limited to&lt;a href=&quot;http://www.apa.org/gradpsych/2013/11/fraud.aspx&quot;&gt;[3]&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Talking to your mentors&lt;/li&gt;
+  &lt;li&gt;Recognizing your expertise&lt;/li&gt;
+  &lt;li&gt;Remembering what you do well&lt;/li&gt;
+  &lt;li&gt;Realizing no one is perfect&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But maybe the most difficult part is to defeat the fear of being transparent and reflective about this with somebody, be it a friend, a colleague or your boss. Once that we recognize and make peace with this, everything becomes easier and we are ready to put this behind and unleash our full potential as Software Architects.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-unprepared-mentor-conundrum&quot;&gt;The Unprepared Mentor Conundrum&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“If you wanted me to mentor others you should have prepared me for that”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-3&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Broad consensus exists on including technical mentoring as part of a Software Architect’s responsibilities. Software Architects are expected to spend time with Software Engineers beneath them in the career path advising them on how to develop key missing skills, learn new programming techniques or frameworks and, generally speaking, preparing them to take the next step in the ladder. However as developers progress in their careers and eventually become Software Architects, they require abilities and skills on which they have not been trained on, such as mentoring itself.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-3&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mentoring bottleneck: “Everyone wants me to help them grow, what’s going on?” most Software Engineers start seeking mentoring from the same Software Architect.&lt;/li&gt;
+  &lt;li&gt;Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing.&lt;/li&gt;
+  &lt;li&gt;Inefficient communication: “I can’t get developers to follow my lead on system design” Software Engineers do not understand a system design or can not see why it was designed that way.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-3&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Software Architects should be encouraged to give mentorship to their protégés on all skills required to climb up the career ladder. Particularly on skills needed on higher positions such as Software Architect itself. If mentoring is limited to  technical skills only, it will quite likely fall short once Software Engineers reach a leading position.&lt;/p&gt;
+
+&lt;p&gt;It is worth mentioning that, even though we will not get into anthropological and sociological issues like the human capacity to acquire new skills, we do recognize that some people have a more natural tendency for mentorship. Even when Software Architects should help Software Engineers develop soft skills, anyone aspiring to become a Software Architect should learn about mentorship in general. One possibility is for Software Architects to seek guidance from senior leadership in the engineering organization (e.g., VP or Senior Director level) on how to become great mentors.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-lost-focus-syndrome&quot;&gt;The Lost Focus Syndrome&lt;/h3&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“When I sit and focus for 20 minutes straight I get to build amazing things! How come I am not doing that 8 hours a day?”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-4&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;As Paul Graham states on the essay Maker’s Schedule, Manager’s Schedule while managers are on schedules that can change every hour, for makers having a meeting is like throwing an exception, which can be very expensive in terms of performance. As we study the role and analyze its contradictions we wonder: what schedule do Software Architects follow?&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-4&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Adapt to managers: “Managers are dragging me into meetings at any time”.&lt;/li&gt;
+  &lt;li&gt;Wasted time: “I’m a maker, I build working software that goes into production, that is my main responsibility, not answering managers questions”.&lt;/li&gt;
+  &lt;li&gt;Sparse schedule: “Let me code for four hours straight and I’ll blow your mind”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker’s schedule can encounter some difficulties.&lt;/p&gt;
+
+&lt;p&gt;As mentioned on section “The impactless best coder syndrome”, Software Architects should not necessarily be responsible for coding even the most complex functionalities and this could be used to make a case against Software Architects being makers. However, as discussed, Software Architects are responsible for building software in a more transversal manner, defining best practices and development processes, or writing frameworks and blueprints. Such duties are undeniable characteristics of a maker.&lt;/p&gt;
+
+&lt;p&gt;Transversal components often affect a variety of different actors and have a profound impact on production environments, new features and complex bugs. Software Architects are recurringly called into meetings to analyze and comment on these different topics, taking them time away from designing and mentoring developers. The more a Software Architect builds the  more meetings she will be pulled into, presenting an interesting dylemma.&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-4&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Software Architects are makers and, as such, need time to make. Building software, even at the architectural level, requires concentration and focus. Software Architects, as any prestigious position, are frequently consulted on a wide array of topics and will be summoned into meetings. Instead of fighting against it we propose guidelines to minimize the impact of meetings on your real responsibilities:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Software Architects are advised to have everyone understand that they are makers and they have to be deeply invested in the process of building great software. Peer’s understanding of the Software Architect position and priorities is crucial to minimize invitations to spurious meetings.&lt;/li&gt;
+  &lt;li&gt;Office hours: Software Architects should set aside time to be available to others. Instead of having managers push Software Architects into adapting to their schedule we advocate Software Architects to create mechanisms to have managers adapt themselves.&lt;/li&gt;
+  &lt;li&gt;Delegate: Not every meeting you are invited to needs a Software Architect. Delegation to tech leads or specialists will not only save your precious time, it will also help others grow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role.&lt;/p&gt;
+
+&lt;p&gt;As we discussed when we opened this article, Software Engineering has changed quite dramatically from its humble origins in the last century but it yet remains a pretty novel and somewhat adolescent field of study. It is understandable then that an even newer role such as that of the Software Architect has been yet barely standardized or studied.&lt;/p&gt;
+
+&lt;p&gt;We hope that the analysis of the pathologies here presented can help spark more discussion about topics such as how the Software Architect’s role should evolve, how can we evaluate their impact, how can we grow them and coach them. This is our humble yet heartfelt contribution in that spirit.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//en/2016/07/14/compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//en/2016/07/14/compendium-software-architects-pathologies/</guid>
+        
+        <category>Software</category>
+        
+        <category>Architecture</category>
+        
+        <category>Role</category>
+        
+        <category>Management</category>
+        
+        <category>Pitfall</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Nobel 0.2 soporta Swagger y RAML</title>
-        <description>&lt;p&gt;Tiempo atrás, cuando trabajaba con el equipo que desarrolló &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, aproveché el tiempo de una &lt;em&gt;hackathon&lt;/em&gt; para crear una primera versión de &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. En pocas palabras, Nobel es una aplicación que utiliza una definición de una API en un lenguaje de alto nivel (&lt;a href=&quot;http://swagger.io&quot;&gt;Swagger&lt;/a&gt; o &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;) para generar el código &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; que implementa dicha API. Esta primera versión solo soportaba RAML como lenguaje de definición. Recientemente, habiendo podido investigar un poco más Swagger y sus herramientas, pude agregar soporte para este lenguaje también. 
+        <description>&lt;p&gt;Tiempo atrás, cuando trabajaba con el equipo que desarrolló &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, aproveché el tiempo de una &lt;em&gt;hackathon&lt;/em&gt; para crear una primera versión de &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. En pocas palabras, Nobel es una aplicación que utiliza una definición de una API en un lenguaje de alto nivel (&lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; o &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;) para generar el código &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; que implementa dicha API. Esta primera versión solo soportaba RAML como lenguaje de definición. Recientemente, habiendo podido investigar un poco más Swagger y sus herramientas, pude agregar soporte para este lenguaje también.
 &lt;!--MORE--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;swagger-o-raml&quot;&gt;Swagger o RAML&lt;/h2&gt;
 
-&lt;p&gt;Creo haber visto más de 25 posts que hablan de esta temática (aquí comparto algunos links con ustedes: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;).&lt;br /&gt;
+&lt;p&gt;Creo haber visto más de 25 posts que hablan de esta temática (aquí comparto algunos links con ustedes: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;).
 Independientemente de los resultados de estos análisis, tengo una pequeña lista de propios pensamientos al respecto habiéndo trabajado con ambos:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -34,11 +463,7 @@ Independientemente de los resultados de estos análisis, tengo una pequeña list
 
 &lt;h2 id=&quot;cmo-comenzar&quot;&gt;Cómo comenzar&lt;/h2&gt;
 
-&lt;p&gt;El principal objetivo de Nobel es que cualquier persona con mínimos conocimientos sobre programación en Arduino, pueda desarrollar su propio dispositivo controlado remotamente vía HTTP. Habiendo dicho esto, es necesario:
-- Contar con una placa Arduino y las herramientas de desarrollo instaladas.
-- Contar con un &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;.
-- Contar con conocimientos básicos de Swagger o RAML.
-- Tener instalado &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;El principal objetivo de Nobel es que cualquier persona con mínimos conocimientos sobre programación en Arduino, pueda desarrollar su propio dispositivo controlado remotamente vía HTTP. Habiendo dicho esto, es necesario: - Contar con una placa Arduino y las herramientas de desarrollo instaladas. - Contar con un &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;. - Contar con conocimientos básicos de Swagger o RAML. - Tener instalado &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;En la &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;documentación de Nobel&lt;/a&gt; se puede encontrar toda la información necesaria para entender su funcionamiento en profundidad, así como un &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;ejemplo práctico&lt;/a&gt; para tener nuestro primer dispositivo funcionando en minutos.&lt;/p&gt;
 
@@ -49,33 +474,37 @@ Independientemente de los resultados de estos análisis, tengo una pequeña list
 &lt;h2 id=&quot;contribuir&quot;&gt;Contribuir&lt;/h2&gt;
 
 &lt;p&gt;Nobel es una aplicación Open Source. Podés contribuir mejorando el código, incorporando nuevas funcionalidades, probando y reportando errores. En este link podés encontrar el &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;repositorio GitHub&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
         <link>http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</link>
         <guid isPermaLink="true">http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</guid>
         
-        <category>IoT</category>
-        
-        <category>REST</category>
+        <category>Nobel</category>
         
         <category>APIs</category>
         
         <category>Arduino</category>
         
-        <category>Ethernet</category>
+        <category>IoT</category>
+        
+        <category>codegen</category>
+        
+        <category>RAML</category>
+        
+        <category>Swagger</category>
         
         
       </item>
     
       <item>
         <title>Nobel 0.2 supports Swagger and RAML</title>
-        <description>&lt;p&gt;Time ago, while I was working with the team building &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, I took advantage of a &lt;em&gt;hackathon&lt;/em&gt; to build the first version of &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. Briefly, Nobel is an application that uses an API high level definition (written with (&lt;a href=&quot;http://swagger.io&quot;&gt;Swagger&lt;/a&gt; or &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;)) to generate the &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; code implementing that API. That first version only supported RAML as the definition language. Recently working and researching a bit more about Swagger and its toolset, I was able to add support for this language as well.
+        <description>&lt;p&gt;Time ago, while I was working with the team building &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, I took advantage of a hackathon to build the first version of &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. Briefly, Nobel is an application that uses an API high level definition written with (&lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; or &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt; to generate the &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; code implementing that API. That first version only supported RAML as the definition language. Recently working and researching a bit more about Swagger and its toolset, I was able to add support for this language as well.
 &lt;!--MORE--&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;swagger-or-raml&quot;&gt;Swagger or RAML&lt;/h2&gt;
 
-&lt;p&gt;I think I’ve seen more than 25 posts talking about this (here I share a couple of links with you: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;).&lt;br /&gt;
-Regardless of these analysis results, I’ve a short list of self opinions after having been working with both:&lt;/p&gt;
+&lt;p&gt;I think I’ve seen more than 25 posts talking about this (here I share a couple of links with you: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;). Regardless of these analysis results, I’ve a short list of self opinions after having been working with both:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;I find RAML easier to understand and write. I consider that the language expressivity is higher.&lt;/li&gt;
@@ -88,15 +517,11 @@ Regardless of these analysis results, I’ve a short list of self opinions after
 
 &lt;p&gt;Regardless of this analysis, nothing stops me from making the tool support both language. This is due to the capacity of creating an intermediate object that is the one used for generating the Arduino source code. The next diagram shows that behavior&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Flujo de la aplicación&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Application Flow&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
 
-&lt;p&gt;Nobel’s main goal is to give people with a minimum knowledge on Arduino coding the chance of building their own device controlled remotely via HTTP. That said, it is required:
-- An Arduino board and the development toolset installed.
-- An &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;.
-- Basic knowledge of Swagger or RAML.
-- &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; installed.&lt;/p&gt;
+&lt;p&gt;Nobel’s main goal is to give people with a minimum knowledge on Arduino coding the chance of building their own device controlled remotely via HTTP. That said, it is required: - An Arduino board and the development toolset installed. - An &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;. - Basic knowledge of Swagger or RAML. - &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; installed.&lt;/p&gt;
 
 &lt;p&gt;Reading the &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel’s documentation&lt;/a&gt; you will find all the information needed to deeply understand its behavior. You will also find a &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;walkthrough example&lt;/a&gt; for having your first device working in minutes.&lt;/p&gt;
 
@@ -106,21 +531,25 @@ Regardless of these analysis results, I’ve a short list of self opinions after
 
 &lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
 
-&lt;p&gt;Nobel is an Open Source application. You can contribute by improving the code, adding new features, testing and reporting bugs. Here is the link to the &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;GitHub repository &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nobel is an Open Source application. You can contribute by improving the code, adding new features, testing and reporting bugs. Here is the link to the &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
         <link>http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</link>
         <guid isPermaLink="true">http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</guid>
         
-        <category>IoT</category>
-        
-        <category>REST</category>
+        <category>Nobel</category>
         
         <category>APIs</category>
         
         <category>Arduino</category>
         
-        <category>Ethernet</category>
+        <category>IoT</category>
+        
+        <category>codegen</category>
+        
+        <category>RAML</category>
+        
+        <category>Swagger</category>
         
         
       </item>
@@ -1626,109 +2055,6 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
         
         <category>some</category>
         
-        
-      </item>
-    
-      <item>
-        <title>Mudanza a GitHubPages</title>
-        <description>&lt;p&gt;Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por &lt;em&gt;blogger de Google&lt;/em&gt; no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de &lt;em&gt;blogging&lt;/em&gt; debe tener.
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;p&gt;Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.&lt;/p&gt;
-
-&lt;p&gt;Es así como recordé haber usado &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt; para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Definitivamente, &lt;em&gt;Jekyll&lt;/em&gt; no provee mejores herramientas que las otras plataformas&lt;/strong&gt;. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la &lt;strong&gt;fléxibilidad&lt;/strong&gt;, lo cual la convierte en &lt;strong&gt;una herramienta candidata para desarrolladores&lt;/strong&gt; (u otros profesionales con conocimientos suficientes de IT) para ser su “plataforma” de &lt;em&gt;blogging&lt;/em&gt; a la medida.&lt;/p&gt;
-
-&lt;p&gt;El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar &lt;em&gt;templates (o themes)&lt;/em&gt; gratuitos y adaptar mínimamente alguno. Me encontré con &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; de &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.&lt;/p&gt;
-
-&lt;p&gt;¿Qué me hace elegir &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;La posibilidad de contar con herramientas &lt;em&gt;Open Source&lt;/em&gt;.&lt;/li&gt;
-  &lt;li&gt;Libre de publicidad: Esto es gratuito sin letra chica.&lt;/li&gt;
-  &lt;li&gt;Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.&lt;/li&gt;
-  &lt;li&gt;Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
-  &lt;li&gt;Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Estas son solo algunas razones. Pero cada uno debería tener las suyas. Ante la duda, inviertan 1 hora en aprender a usarlo (quizá no los convenza como herramienta de &lt;em&gt;Blogging&lt;/em&gt;, pero no está demás saber como funciona &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Les dejo algunos links para comenzar:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si tienen dudas, espero su contacto.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
-        <link>http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>Moving to GitHub Pages</title>
-        <description>&lt;p&gt;With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by &lt;em&gt;blogger by Google&lt;/em&gt; were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a &lt;em&gt;blogging&lt;/em&gt; platform out of the box&lt;!--MORE--&gt;.&lt;/p&gt;
-
-&lt;p&gt;After researching other tools that could help me with this task (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.&lt;/p&gt;
-
-&lt;p&gt;That’s how I remembered having used &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; in the past, for building some static page, and so I started evaluating it as an alternative.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;is definitively not providing better tools than the other platforms&lt;/strong&gt;. It doesn’t count with a comments feature, it doesn’t create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the &lt;strong&gt;flexibility&lt;/strong&gt;, which turns &lt;em&gt;Jekyll&lt;/em&gt; into a &lt;strong&gt;candidate tool for developers&lt;/strong&gt; (or other professionals with IT knowledge enough) to becoming their tailored &lt;em&gt;blogging&lt;/em&gt; “platform”.&lt;/p&gt;
-
-&lt;p&gt;The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free &lt;em&gt;templates (or themes)&lt;/em&gt; and adapt one of them. I ran into &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; by &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The possibility of counting with &lt;em&gt;Open Source&lt;/em&gt; tools.&lt;/li&gt;
-  &lt;li&gt;Ads-Free: This is free. No strings attached.&lt;/li&gt;
-  &lt;li&gt;Flexibility and Extensibility: I can build plugins and tools on top of the platform.&lt;/li&gt;
-  &lt;li&gt;Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing.&lt;/li&gt;
-  &lt;li&gt;Capability of receiving &lt;em&gt;Pull Requests&lt;/em&gt;: I’;’m interested on having readers suggesting fixes, or even having them publishing on this blog. &lt;strong&gt;I hope you send your Posts via Pull Requests&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; Support: This might be a personal taste, but I find very simple and convenient to write in &lt;em&gt;Markdown&lt;/em&gt; instead of dealing with &lt;em&gt;WYSIWYG&lt;/em&gt; editors that end failing when attempting to go beyond their capabilities&lt;/li&gt;
-  &lt;li&gt;Code Highlight: Mandatory for a snippet containing blog&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Welcome to the new OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a &lt;em&gt;Blogging&lt;/em&gt; tool, but it worth knowing how &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; works).&lt;/p&gt;
-
-&lt;p&gt;Here are some links for kicking off&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Please, don’t hesitate to reach me if you have any doubt.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
-        <link>http://ourbit.github.io//en/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
         
       </item>
     

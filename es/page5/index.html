@@ -185,6 +185,33 @@ $(window).scroll(function(e) {
   			
 
 <div class="post-preview">
+    <a href="/es/2010/04/27/problema-mal-documentado-con-gparted/">
+        <h2 class="post-title">Problema mal documentado con gParted
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  27 de
+  
+  Abril
+    
+
+
+de 2010
+
+</p>
+    Intentando instalar ubuntu 9.10 nuevamente, en una 3er partición de la máquina (que ya tenía un Windows XP y otro Ubuntu), e ir pasando paulatínamente los datos y programas de una partición Ubuntu a la otra, me encontré con problemas al intentar utilizar el gParted para ir alterando los tamaños de dichas particiones. El problema subsistió incluso luego de que ya no aparecían mensajes de error, estaba corriendo desde un liveCD con todas las particiones del disco en cuestión desmontadas. Al intentar cambiar el tamaño de la partición <i>resize, </i>la opción aparecía deshabilitada.<div>Finalmente, y luego de haber <i>googleado</i> bastante para encontrar una solución, decidí que resultaría más eficiente en tiempos, eliminar la partición antigua y quedarme con la nueva (a pesar de no poder utilizar los programas hasta que no terminara de instalarlos en la nueva partición). Y fue aquí cuando ocurrió la solución. gParted no me permitió eliminar la partición, ya que existía <i>otra</i> con numeración superior (aparentemente sda6 <i>swap</i>. Pero buscando entre las opciones, encontre <i><a href="http://gparted.sourceforge.net/faq.php">swapoff</a></i>, y luego, no solo me permitía eliminar la partición 6, sino que finalmente pude hacer <i>resize, move, etc.</i></div><div><i><br /></i></div><div>Claro que una vez encontrado swapoff, esta solución aparecía en todos lados, pero no buscándola de la manera tradicional (es decir, <i>googleando</i> los mensajes de error, pasando al <i>parted</i> de línea de comando, etc).</div>
+
+
+
+    <p class="read-more"><a href="/es/2010/04/27/problema-mal-documentado-con-gparted/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
+<div class="post-preview">
     <a href="/es/2010/04/26/guardar-pagina-completa-y-css/">
         <h2 class="post-title">Guardar página completa y CSS
         </h2>
@@ -274,6 +301,17 @@ de 2010
                         </a>
                     </li>
                     
+                    
+                    <li>
+                        <a href="skype:norberto.herz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
                     <li>
                         <a href="https://twitter.com/nohorbee">
                             <span class="fa-stack fa-lg">
@@ -289,6 +327,16 @@ de 2010
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.linkedin.com/pub/norberto-herz/5/887/177">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
                             </span>
                         </a>
                     </li>
