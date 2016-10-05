@@ -185,6 +185,32 @@ $(window).scroll(function(e) {
   			
 
 <div class="post-preview">
+    <a href="/es/2011/04/08/tedxba-cortito-y-al-pie/">
+        <h2 class="post-title">#TEDxBA cortito y al pie
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  8 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
+    Un post corto para contarles que mañana estaré asistiendo a la segunda realización del TEDxBuenosAires. Tuve la suerte de estar en el (según mi cálculos) 2% que salió sorteado ambos años. El año pasado salí por la noche, y estuve varios días con la sensación de "TENGO QUE HACER ALGO", y esta inspiración me ha llevado a tomar buenas iniciativas durante lo que siguió del año.<div>Esta segunda edición de TEDxBuenosAires, me llega en un momento en donde el achatamiento mental está llegando a su límite tolerable. Mañana seguramente esto cambie. Este año hay expectativas puestas en ello. Recomiendo a todos los que puedan, intentar ver los videos del año pasado, seguir las conferencias online, y dejarse inspirar y motivar por los oradores. Es un buen ejercicio, lo garantizo.</div><div>Estaré twitteando durante el día (hashtag #TEDxBA) contando sobre la vibra del lugar.</div><div>Los dejo con el link: <a href="http://www.tedxbuenosaires.org/">http://www.tedxbuenosaires.org/</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
+
+
+    <p class="read-more"><a href="/es/2011/04/08/tedxba-cortito-y-al-pie/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
+<div class="post-preview">
     <a href="/es/2011/03/17/como-configurar-virtual-hosts-en-apache/">
         <h2 class="post-title">Como configurar Virtual Hosts en Apache (algo básico, para no olvidar)
         </h2>
@@ -449,32 +475,6 @@ de 2010
 
 
     <p class="read-more"><a href="/es/2010/06/21/requerimientos-cripticos/" class="read-more">Seguir leyendo &rarr;</a></p>
-</div>
-<hr>
-<br />
-
-<div class="post-preview">
-    <a href="/es/2010/05/06/problemas-con-squirrel-y-java/">
-        <h2 class="post-title">Problemas con SQuirreL y JAVA
-        </h2>
-        
-    </a>
-    <p class="post-meta">Publicado por nohorbee el 
-    
-  
-  6 de
-  
-  Mayo
-    
-
-
-de 2010
-
-</p>
-    Luego de haber desinstalado alguna vez el SQuirreL de mi PC, me encontré con la necesidad de volver a instalarlo.<br />Para hacerlo se debe tener JAVA instalado (una JRE es suficiente), descargar el JAR correspondiente <a href="http://squirrel-sql.sourceforge.net/#installation">aquí</a> y desde una consola ejecutar: java -jar <path>/archivodescargado.jar<div><br /></div><div>En las ventanas de instalación, pedirá que se defina la RUTA de instalación (llamémosla PATH_INSTALL de ahora en más).</div><div><br /></div><div>Al finalizar, se puede ejecutar PATH_INSTALL/squirrel-sql.sh (en caso de estar trabajando con Linux. Supongo que será un squirrel-sql.bat para el caso de windows), y debería correr la aplicación.</div><div><br /></div><div>Lo que me ocurrió en esta oportunidad (y aún desconozco la causa, pero si como solucionarlo) fue que al intentar correr la aplicación, la consola mostró los siguientes errores:</div><div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"></span></span></div><blockquote><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;">./squirrel-sql.sh: line 37: /usr/lib/jvm/java-6-sun-1.6.0.15/jre/bin/java: No such file or directory</span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;">./squirrel-sql.sh: line 89: /usr/lib/jvm/java-6-sun-1.6.0.15/jre/bin/java: No such file or directory</span></span></div></blockquote><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"></span></span></div><div>Yo sabía que la jvm estaba instalada. Pero sospeché que la versión podía ser otra. Por lo cual, busque la ruta <span class="Apple-style-span"   style="  ;font-family:'courier new';font-size:small;">/usr/lib/jvm/java-6-sun-1.6.0.<b>15</b>/jre/bin/java </span>y encontré que en realidad mi versión era la 1.6.0.<b>20</b>. Por este motivo, decidí modificar el .sh para ver si esto solucionaba el problema, y así fue.</div><div>La línea 3 de squirrel-sql.sh define:</div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"><blockquote>[ ${JAVA_HOME} ] &amp;&amp; JAVA=${JAVA_HOME}/bin/java || [ /usr/lib/jvm/java-6-sun-1.6.0.<b>15</b>/jre ]  &amp;&amp; JAVA=/usr/lib/jvm/java-6-sun-1.6.0.<b>15</b>/jre/bin/java  || JAVA=java</blockquote><span class="Apple-style-span"   style="  ;font-family:Georgia, serif;font-size:16px;">Reemplacé por: </span></span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"><blockquote>[ ${JAVA_HOME} ] &amp;&amp; JAVA=${JAVA_HOME}/bin/java || [ /usr/lib/jvm/java-6-sun-1.6.0.<b>20</b>/jre ]  &amp;&amp; JAVA=/usr/lib/jvm/java-6-sun-1.6.0.<b>20</b>/jre/bin/java  || JAVA=java</blockquote><span class="Apple-style-span"   style="font-family:Georgia, serif;font-size:130%;"><span class="Apple-style-span"  style="font-size:16px;">y volví a correr ./squirrel-sql.sh</span></span></span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"><span class="Apple-style-span"   style="font-family:Georgia, serif;font-size:130%;"><span class="Apple-style-span"  style="font-size:16px;"><br /></span></span></span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span"  style="font-size:small;"><span class="Apple-style-span"   style="font-family:Georgia, serif;font-size:130%;"><span class="Apple-style-span"  style="font-size:16px;">Actualmente lo estoy utilizando, y para mi sorpresa, aún conserva los aliases que había creado en la instalación anterior.</span></span></span></span></div><div><br /></div></div></path>
-
-
-    <p class="read-more"><a href="/es/2010/05/06/problemas-con-squirrel-y-java/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
 <hr>
 <br />
