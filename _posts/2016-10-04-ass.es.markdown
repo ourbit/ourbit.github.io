@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'Los acrónimos realmente apestan'
+author: nohorbee
+tags: Elon Musk SpaceX Tesla SolarCity Acronyms fun
+description: "Cómo una vez Elon Musk lidió con el uso excesivo de acrónimos en SpaceX (la empresa que nos llevará a Marte)"
+---
+
+Mientras leía "Elon Musk", en un colectivo, camino a casa, no pude evitar reirme de un email que envió a todos los empleados de SpaceX acerca del mal o excesivo uso de acrónimos. El asunto del mail era "Acronyms Seriously Suck" (Los acrónimos realmente apestan) (ustedes mismos pueden resolver el acrónimo para esa línea).
+
+<!--MORE-->
+
+Me hizo acordar a mis tiempos en IBM Argentina, en donde este anti-patrón era tan popular que incluso existía un rumor que contaba que alguna vez, los acrónimos estaban prohibidos (y yo particularmente, creo en este rumor. ¡Hasta el nombre de la empresa es un acrónimo!)
+
+Este es un claro ejemplo de que no siempre "Menos es Más". A veces, "Suficiente es simple y exáctamente Suficiente". ¡Que lo disfruten!
+
+
+>Hay una tendencia progresiva en el uso de acrónimos inventados en SpaceX. El uso excesivo de acrónimos inventados es un impedimento de comunicación significativo, y es imperativamente importante mantener una buena comunicación a medida que vamos creciendo. Individualmente, un par de acrónimos aquí y allá pueden no parecer tan malos, pero si mil personas los están inventando, con el correr del tiempo el resultado va a ser un enorme glosario que deberá ser entregado a los empleados que ingresan a la compañía. Nadie realmente puede recordar todos estos acrónimos y a nadie le gusta quedar como un tonto en una reunión, por lo que simplemente nos sentamos allí y permanecemos ignorantes. Esto es particularmente difícil para los nuevos empleados.
+>
+Esto necesita parar inmediatamente o voy a tomar medidas drásticas. Ya he advertido lo suficiente con el correr de los años. A menos que un acrónimo sea aprobado por mi, no debe ser parte del glosario de SpaceX. Si existe algún acrónimo que no pueda ser razonablemente justificado, debe ser eliminado, como ya lo he solicitado en el pasado.
+>
+>Por ejemplo, no debería haber acrónimos como "BPH" [banco de pruebas horizontal] (originalmente “HTS” [horizontal test stand]) o "BPV" [banco de pruebas vertical] (originalmente “VTS” [vertical test stand]) para bancos de prueba. Estos son particularmente ridículos ya que contienen palabras innecesarias. Un banco (stand) en nuestro sitio de pruebas es obviamente un banco de *pruebas*. BPV-3 (VTS-3) tiene cuatro sílabas comparado con "Trípode" (tripod) que tiene solo dos, por lo que el maldito acrónimo en realidad ¡es más largo de pronunciar que el nombre real! La clave para probar un acrónimo es preguntarse si ayuda o daña la comunicación. Un acrónimo que la mayoría de los ingenieros fuera de SpaceX ya conocen, como ser GUI, puede ser usado. Está bien también inventar un par de acrónimos/contracciones de vez en cuando, asumiendo que yo los he aprobado, por ejemplo MVac and M9 en lugar de Merlin 1C-Vacuum o Merlin 1C-Sea Level, pero estos casos deben ser mantenidos al mínimo.
