@@ -10,7 +10,7 @@ While I was reading "Elon Musk", on a bus while commuting home, I couldn't help 
 
 <!--MORE-->
 
-It made me remember my time working at IBM Argentina, where this antipattern was so popular that it was also a rumor saying that once upon a time, acronyms had been forbidden (and I believe it. Even the company name is an acronym!)
+It made me remember my time working at IBM Argentina, where this antipattern was so popular that there was even a rumor saying that once upon a time, acronyms had been forbidden (and I believe it. Even the company name is an acronym!)
 
 This is a clearly showing it is not always true that "Less is More". Sometimes, "Enough is simply and exactly Enough". Enjoy!
 
