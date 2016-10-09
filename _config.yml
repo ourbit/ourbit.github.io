@@ -1,0 +1,24 @@
+# Site settings
+title: OurBit
+header-img: img/header-background.jpg
+header-img-blur: img/header-background-blur.jpg
+description: "Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general"
+url: "http://ourbit.github.io/"
+twitter_username: nohorbee
+github_username:  nohorbee
+facebook_username:  nohorbee
+
+# Posts settings
+excerpt_separator: <!--MORE-->
+
+# Build settings
+markdown: kramdown
+#kramdown:
+#  input: GFM
+highlighter: pygments
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+#Multilingual
+languages: ['es', 'en']

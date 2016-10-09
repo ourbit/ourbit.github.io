@@ -1,0 +1,13 @@
+navigation:
+  home: "Inicio"
+  about: "Acerca"
+  archives: "archivo"
+languages:
+  spanish-version: "Spanish Version"
+  english-version: "English Version"
+posts:
+  posted-by: "Publicado por"
+  posted-on: "el"
+  newer: "Posts más recientes"
+  older: "Posts más antiguos"
+  read-more: Seguir leyendo

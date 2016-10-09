@@ -1,0 +1,21 @@
+---
+layout: post
+title: 'Acronyms seriously suck'
+author: nohorbee
+tags: Elon Musk SpaceX Tesla SolarCity Acronyms fun
+description: "How Elon Musk once dealt with the excessive use of acronyms on SpaceX (the company that will take us to Mars)"
+---
+
+While I was reading "Elon Musk", on a bus while commuting home, I couldn't help laughing of an email he sent to all SpaceX employees regarding to the misuse or excessive use of acronyms. The subject line was: "Acronyms Seriously Suck" (you can figure out the acronym for it by yourselves).
+
+<!--MORE-->
+
+It made me remember my time working at IBM Argentina, where this antipattern was so popular that there was even a rumor saying that once upon a time, acronyms had been forbidden (and I believe it. Even the company name is an acronym!)
+
+This is a clearly showing it is not always true that "Less is More". Sometimes, "Enough is simply and exactly Enough". Enjoy!
+
+> There is a creeping tendency to use made up acronyms at SpaceX. Excessive use of made up acronyms is a significant impediment to communication and keeping communication good as we grow is incredibly important. Individually, a few acronyms here and there may not seem so bad, but if a thousand people are making these up, over time the result will be a huge glossary that we have to issue to new employees. No one can actually remember all these acronyms and people don’t want to seem dumb in a meeting, so they just sit there in ignorance. This is particularly tough on new employees.
+>
+> That needs to stop immediately or I will take drastic action. I have given enough warnings over the years. Unless an acronym is approved by me, it should not enter the SpaceX glossary. If there is an existing acronym that cannot reasonably be justified, it should be eliminated, as I have requested in the past.
+>
+> For example, there should be no “HTS” [horizontal test stand] or “VTS” [vertical test stand] designations for test stands. Those are particularly dumb, as they contain unnecessary words. A “stand” at our test site is obviously a *test* stand. VTS-3 is four syllables compared with “Tripod,” which is two, so the bloody acronym version actually takes longer to say than the name! The key test for an acronym is to ask whether it helps or hurts communication. An acronym that most engineers outside of SpaceX already know, such as GUI, is fine to use. It is also ok to make up a few acronyms/contractions every now and again, assuming I have approved them, eg MVac and M9 instead of Merlin 1C-Vacuum or Merlin 1C-Sea Level, but those need to be kept to a minimum.

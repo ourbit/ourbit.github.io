@@ -1,0 +1,17 @@
+---
+layout: post
+title: Eclipse no arranca "Widget disposed too early"
+date: '2010-07-29T15:30:00.000-03:00'
+author: nohorbee
+tags:
+- built on eclipse
+- eclipse
+- xulrunner
+- troubleshoot
+- Widget disposed too early
+modified_time: '2010-07-29T20:17:49.403-03:00'
+blogger_id: tag:blogger.com,1999:blog-8314627212095006227.post-7422339444883734333
+blogger_orig_url: http://ourbit.blogspot.com/2010/07/eclipse-no-arranca-widget-disposed-too.html
+---
+
+Me topé hoy con un problema con el que ya me había topado, solo que las veces anteriores me rendí antes de tiempo, y hoy encontré una solución, MÁS QUE SENCILLA.<div>Al intentar iniciar una IDE built on eclipse, luego de especificar el workspace, arrojaba un error que decía que debía chequear el LOG de la carpeta .metadata, y eso hice (si no las encontrás, es porque están oculta, así que "View Hidden Files" obligatorio).</div><div>No me gusta citar LOGS enteros pero aquí la línea que me hizo algo de ruido, y que finalmente me llevó al resultado: "<span class="Apple-style-span"  style="  white-space: pre; font-family:monospace;"><span class="Apple-style-span" style="font-size: medium;">Widget disposed too early!</span></span>" (si, con la típica font de un log).</div><div>Buscando una solución, leí varios foros y según las explicaciones, el problema está relacionado con el browser integrado que utiliza el eclipse.</div><div>Entre las miles de soluciones propuestas, una muy simple que funcionó:</div><div>- Abrir el eclipse.ini (se encuentra en el mismo directorio que el launcher de eclipse, aunque puede llamarse diferente si la IDE se llama de otra forma, Ej.: Rational Software Architect, Data Studio Developer, MyEclipse).</div><div>- Incluir la siguiente línea al final del archivo:       "<span class="Apple-style-span" style="font-size: small;">-</span><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;">Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib/xulrunner".</span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><div>Antes de reiniciar, es conveniente borrar la carpeta que se utilizaba como workspace cuando arrojó el error (para evitar cualquier que cualquier estado inconsistente previo, complique la situación).</div><div>- Reiniciar la IDE.</div><div><br /></div><div>Contame si te funcionó. Espero que si.</div></span></span></span></div>
