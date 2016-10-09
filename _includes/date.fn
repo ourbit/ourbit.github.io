@@ -1,8 +1,0 @@
-{% if page.language == "en" %}
-  {{ convertDate | date: "%B %-d, %Y" }}
-{% else if page.language == "es" %}
-  {% assign convertMonth = convertDate | date: "%-m" %}
-  {{ convertDate | date: "%-d" }} de
-  {% include month.fn %}
-de {{ convertDate | date: "%Y"}}
-{% endif %}
