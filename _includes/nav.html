@@ -19,10 +19,16 @@
                     <a href="{{ site.baseurl }}/{{ page.language }}">{% t navigation.home %}</a>
                 </li>
                 <li>
-                    <a href="{{ site.baseurl }}/{{ page.language }}/about">{% t navigation.about %}</a>
-                </li>
-                <li>
                     <a href="{{ site.baseurl }}/{{ page.language }}/archives">{% t navigation.archives %}</a>
+                </li>
+                <li><a>|</a></li>
+                <li>
+                  {% if page.language == "es" %}
+                      <a href="http://norbertoherz.com/es">{% t navigation.about %}</a>
+                  {% else if page.language == "en" %}
+                      <a href="http://norbertoherz.com/en">{% t navigation.about %}</a>
+                  {% endif %}
+
                 </li>
                 <li>
                 {% if page.language == "es" %}
@@ -32,7 +38,7 @@
                     {% capture link2 %}{{ site.baseurl }}/es/{{ page.url | remove_language }}{% endcapture %}
                     <a href="{{ link2 }}" >{% t languages.spanish-version %}</a>
                 {% endif %}
-              </li>
+                </li>
 
                 <!-- {% for page in site.pages %}{% if page.title %}
                 <li>
