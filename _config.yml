@@ -17,8 +17,12 @@ markdown: kramdown
 #  input: GFM
 highlighter: pygments
 permalink: pretty
-paginate: 10
+#paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 #Multilingual
 languages: ['es', 'en']
+
+gems:
+  - jekyll-multiple-languages-plugin
+  - jekyll-paginate
