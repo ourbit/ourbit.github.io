@@ -3,11 +3,11 @@
   <channel>
     <title>OurBit</title>
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
-    <link>http://ourbit.github.io//</link>
-    <atom:link href="http://ourbit.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Oct 2016 18:49:57 -0300</pubDate>
-    <lastBuildDate>Sun, 09 Oct 2016 18:49:57 -0300</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <link>http://ourbit.github.io//es/</link>
+    <atom:link href="http://ourbit.github.io//es/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 25 Oct 2016 07:28:46 -0300</pubDate>
+    <lastBuildDate>Tue, 25 Oct 2016 07:28:46 -0300</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Los acrónimos realmente apestan</title>
@@ -30,45 +30,6 @@
         <pubDate>Tue, 04 Oct 2016 00:00:00 -0300</pubDate>
         <link>http://ourbit.github.io//es/2016/10/04/ass/</link>
         <guid isPermaLink="true">http://ourbit.github.io//es/2016/10/04/ass/</guid>
-        
-        <category>Elon</category>
-        
-        <category>Musk</category>
-        
-        <category>SpaceX</category>
-        
-        <category>Tesla</category>
-        
-        <category>SolarCity</category>
-        
-        <category>Acronyms</category>
-        
-        <category>fun</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Acronyms seriously suck</title>
-        <description>&lt;p&gt;While I was reading “Elon Musk”, on a bus while commuting home, I couldn’t help laughing of an email he sent to all SpaceX employees regarding to the misuse or excessive use of acronyms. The subject line was: “Acronyms Seriously Suck” (you can figure out the acronym for it by yourselves).&lt;/p&gt;
-
-&lt;!--MORE--&gt;
-
-&lt;p&gt;It made me remember my time working at IBM Argentina, where this antipattern was so popular that there was even a rumor saying that once upon a time, acronyms had been forbidden (and I believe it. Even the company name is an acronym!)&lt;/p&gt;
-
-&lt;p&gt;This is a clearly showing it is not always true that “Less is More”. Sometimes, “Enough is simply and exactly Enough”. Enjoy!&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There is a creeping tendency to use made up acronyms at SpaceX. Excessive use of made up acronyms is a significant impediment to communication and keeping communication good as we grow is incredibly important. Individually, a few acronyms here and there may not seem so bad, but if a thousand people are making these up, over time the result will be a huge glossary that we have to issue to new employees. No one can actually remember all these acronyms and people don’t want to seem dumb in a meeting, so they just sit there in ignorance. This is particularly tough on new employees.&lt;/p&gt;
-
-  &lt;p&gt;That needs to stop immediately or I will take drastic action. I have given enough warnings over the years. Unless an acronym is approved by me, it should not enter the SpaceX glossary. If there is an existing acronym that cannot reasonably be justified, it should be eliminated, as I have requested in the past.&lt;/p&gt;
-
-  &lt;p&gt;For example, there should be no “HTS” [horizontal test stand] or “VTS” [vertical test stand] designations for test stands. Those are particularly dumb, as they contain unnecessary words. A “stand” at our test site is obviously a &lt;em&gt;test&lt;/em&gt; stand. VTS-3 is four syllables compared with “Tripod,” which is two, so the bloody acronym version actually takes longer to say than the name! The key test for an acronym is to ask whether it helps or hurts communication. An acronym that most engineers outside of SpaceX already know, such as GUI, is fine to use. It is also ok to make up a few acronyms/contractions every now and again, assuming I have approved them, eg MVac and M9 instead of Merlin 1C-Vacuum or Merlin 1C-Sea Level, but those need to be kept to a minimum.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2016/10/04/ass/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2016/10/04/ass/</guid>
         
         <category>Elon</category>
         
@@ -303,220 +264,6 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
       </item>
     
       <item>
-        <title>A Compendium of Software Architects’ Pathologies</title>
-        <description>&lt;p&gt;&lt;em&gt;By &lt;a href=&quot;https://ar.linkedin.com/in/mchicote&quot;&gt;Marcos Chicote&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/guidodecaso&quot;&gt;Guido de Caso&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/nohorbee&quot;&gt;Norberto Herz&lt;/a&gt;&lt;/em&gt;
-&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the “Software Architect” emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect’s job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation.&lt;br /&gt;
-However, in practice things are not that simple, and the architect’s job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.&lt;/p&gt;
-
-&lt;!--MORE--&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;There is no doubt that Software Engineering has been constantly evolving over the last five decades. Operating systems have provided an ever improving layer to abstract us away from the complexities of modern hardware. Lean and agile processes have allowed for faster iteration. Cheaper and more accessible data center technologies have lowered the barrier to entry for high performance computing and opened the gate to tackling more ambitious problems diverse fields such as medicine, the aerospatial industry, academy or e-commerce.&lt;/p&gt;
-
-&lt;p&gt;The way engineers organize ourselves to go build software that solves these complex problems has also shifted. From individuals writing programs for mainframes to big corporations with multiple product lines and platforms. The role of Software Architects appeared as such mostly in the context of multi-tier applications where the amount of implementation choices grew exponentially. &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=579257&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;http://www.bredemeyer.com/pdf_files/role.pdf&quot;&gt;[2]&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Software Architects’ responsibilities and duties are varied and depend heavily on the company and environment. There are slight variations of these responsibilities depending on whether we consider an Application Architect or an Enterprise Architect. But, regardless of such differences we can define the Software Architect’s scope as driven by these areas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Subdividing the design of large applications into smaller and more manageable parts.&lt;/li&gt;
-  &lt;li&gt;Identifying technologies, frameworks, patterns, process improvements and best practices that are to be adopted by an organization and communicating these to developers, establishing thus key mentorship relations.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;But while this enumeration serves the purpose of a Software Architect’s job description template, it does not answer questions such as what traits or tasks separate the most impactful Software Architects from their peers. How is the Software Architect career path defined and where do Software Architects come from. How can they walk the fine balance between becoming great generalists as opposed to incredible specialists.&lt;/p&gt;
-
-&lt;p&gt;In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas.&lt;/p&gt;
-
-&lt;p&gt;We introduce these apparent contradictions as pathologies. Pathology is rooted in the Ancient Greek concept of pathos (πάθος), meaning “experience” or “suffering”, and -logia (-λογία), “study of”. We hope that this article can spark interesting discussions among fellow Software Architects and make us reflect about certain common issues that we face in our professional practice.&lt;/p&gt;
-
-&lt;p&gt;The careful reader should be warned that some of the following will be particularly more suited for Software Architects in specific situations such as companies with geographically distributed development teams or companies of medium to large size. In any case, we believe that these encompass various relevant topics when it comes to how we think about Software Architects, their role, their career and, ultimately, their impact.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-pathologies&quot;&gt;The Pathologies&lt;/h2&gt;
-
-&lt;p&gt;In the next subsections we will describe some of the aforementioned pathologies in terms of how to detect and how to resolve them.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-impactless-best-coder-syndrome&quot;&gt;The Impactless Best Coder Syndrome&lt;/h3&gt;
-&lt;p&gt;&lt;big&gt;&lt;i&gt;“This functionality is extremely complex. I should be coding it myself”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;description&quot;&gt;Description&lt;/h4&gt;
-
-&lt;p&gt;According to the Pareto Principle we acknowledge that 80% of an application’s complexity comes from the 20% of its functionalities. Being the Software Architect the best coder in the team seems to indicate that a big piece of these functionalities should be written by no one else.&lt;/p&gt;
-
-&lt;h4 id=&quot;symptoms-and-diagnosis&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Stressed Software Architect: “I can never find the time to work on these functionalities”&lt;/li&gt;
-  &lt;li&gt;Missing or poorly written blueprints: “The high level design is complete, the remaining parts can be inferred”&lt;/li&gt;
-  &lt;li&gt;Stressed Developer: “The blueprints don’t make sense. My peers seem to be writing different applications”&lt;/li&gt;
-  &lt;li&gt;Uncomfortable Senior Developer: “This functionality could be written by somebody else. I should be coding the top 20%”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;prognosis&quot;&gt;Prognosis&lt;/h4&gt;
-
-&lt;p&gt;Before jumping to the correct treatment, we propose to discuss the concept of whether the Software Architect is indeed the best coder on the team. Even though it is true that a good Software Architect should have outstanding coding abilities, the role demands a fairly different and more rounded skillset when compared to that of a developer’s. That said, it makes sense that not every Software Architect raised from being the best developer of a team, but a really good one who found a way of growing another skillset as well.&lt;/p&gt;
-
-&lt;p&gt;We argue that the best developer should be the one responsible for coding the most complex functionalities, while the Software Architect should be the one making those functionalities easier to code. Putting in place a great high level design tends to simplify things by avoiding ambiguities, and identifying reuse opportunities. In many cases, when these opportunities are clear enough, the benefits of using some libraries and frameworks, or the necessity of writing some new ones rise. That is the job of a good Software Architect too.&lt;/p&gt;
-
-&lt;p&gt;So, as a Software Architect, put a great architecture in order: build a great design, write the best blueprints, find the simplification opportunities and execute these by writing or using the proper frameworks, help the definition and adoption of the team’s best practices and development processes. That way you should not have to  think “I should be coding this” as often. Instead you will realize that your contributions are enabling a great part of every single functionality.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-know-it-all-specialist-dilemma&quot;&gt;The Know-it-all Specialist Dilemma&lt;/h3&gt;
-&lt;p&gt;&lt;big&gt;&lt;i&gt;“The world is too big for me to master it all”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;description-1&quot;&gt;Description&lt;/h4&gt;
-
-&lt;p&gt;Front-end, back-end, object oriented, functional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Virtual Reality, COBOL, Mainframes, Docker, APIs, Scala. The list of technologies and frameworks goes on and on. The Software Architect’s bandwidth is not infinite, as it is not the time any human has to spend on any set of tasks. Yet it seems as if Software Architects were demanded to master the entire list. We can not choose both being specialists and generalists, or can we?&lt;/p&gt;
-
-&lt;h4 id=&quot;symptoms-and-diagnosis-1&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Waverer Software Architect: “Everyone asks me about everything and there is no way I can have a good answer for all the questions”&lt;/li&gt;
-  &lt;li&gt;Lack of ownership: “I’m not an expert on the subject, so, I simply can’t make a decision on this”&lt;/li&gt;
-  &lt;li&gt;Multi-directional decisions: “I’m not sure why we are doing it this way. It seems like if everyone has made it own call”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;prognosis-1&quot;&gt;Prognosis&lt;/h4&gt;
-
-&lt;p&gt;A Software Architect should be a generalist by nature. Even if she or he possesses deep knowledge about a particular technology, the driver to success is the capability of combining a wide range set of skills that can only be achieved by understanding how far to dig on something. Though, there are a set of areas that a Software Architect should master. The following list includes some of them:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Software principles: The Software Architect needs to master subjects such as the software quality attributes: scalability, availability, resiliency, securability, maintainability, among others &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ee658094.aspx&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_system_quality_attributes&quot;&gt;[2]&lt;/a&gt;. It is also required to understand and be able to design applications in a way that enables statelessness, layering, decoupling &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/bb402962.aspx&quot;&gt;[3]&lt;/a&gt;. Note that these concepts are technology independent, even though different technologies achieve them in different ways.&lt;/li&gt;
-  &lt;li&gt;Leadership: Being able to become a Technical Leader for the team is crucial. Mastering principles and behaviors such as coaching and mentoring becomes really handy for Software Architects.&lt;/li&gt;
-  &lt;li&gt;Communication: Designing is all about making decisions. These decisions should contemplate knowledge and experience, but are also the result of understanding different stakeholders’ needs. The design becomes even richer when key members from the development team provide their input in the form of vision and ideas. Furthermore, once the design is in place, it needs to be shared so it can be built. The Software Architect is the central point where all these ends meet. Mastering communication skills is not optional for their role.&lt;/li&gt;
-  &lt;li&gt;Research: As said, a Software Architect should be a generalist by nature. Being a good researcher is the perfect way of being up to date with the latest in technology trends. A Software Architect should be able to choose which technologies to know and have a fairly good understanding of these.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists.&lt;/p&gt;
-
-&lt;p&gt;The reason why the list of technologies mentioned on this pathology’s description is virtually infinite is basically that there are so many professionals developing new and exciting technologies everyday. Thus, the way of running a project from the architectural point of view is to exchange knowledge with a bigger team that will be the real knowledge owner.
-So, as a  Software Architect, make sure to master the aforementioned skills and you will be able to:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Put together an architecture that guarantees high software quality attributes.&lt;/li&gt;
-  &lt;li&gt;Understand which technologies requires most attention at every moment.&lt;/li&gt;
-  &lt;li&gt;Incorporate general knowledge of these technologies, and make decisions on which ones are needed for a particular project.&lt;/li&gt;
-  &lt;li&gt;Conduct investigations to push the team to use these technologies.&lt;/li&gt;
-  &lt;li&gt;Lead the team to build great applications.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;one-feet-on-each-continent&quot;&gt;One Feet on Each Continent&lt;/h3&gt;
-&lt;p&gt;&lt;big&gt;&lt;i&gt;“I haven’t caught up with all the latest books on soft skills, and I’m already starting to forget what to do after catching an exception”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;description-2&quot;&gt;Description&lt;/h4&gt;
-
-&lt;p&gt;The path and first steps for becoming a Software Architect are really exciting. We start getting abstracted from a lot of unnecessary and dirty details, we stop dealing with tedious functionalities, and we start facing more “suitable” challenges. We also start spending more time sketching, talking, teaching, meeting, and less time coding. And suddenly there we are, feeling that we are not yet good enough at the new stuff, and yet too far away from where we started. We journeyed far from home and now we are in the middle of the ocean between a rusty Software Engineer and an inexpert Software Architect.&lt;/p&gt;
-
-&lt;h4 id=&quot;symptoms-and-diagnosis-2&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Succeed by accident: “I feel that people praise me for things that were just happenstance and not the result of my work”&lt;/li&gt;
-  &lt;li&gt;Fear of being discovered: “I’m afraid someone is going to find out that I’m not ready to be a Software Architect”.&lt;/li&gt;
-  &lt;li&gt;Repeatability: “I don’t know how I ended up here, and I’m pretty sure I won’t be able to grow and level up again”&lt;/li&gt;
-  &lt;li&gt;Pursuing external validation: “Someone should check that every one of my decisions is correct”.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;prognosis-2&quot;&gt;Prognosis&lt;/h4&gt;
-&lt;p&gt;It is not easy to cope with these feelings but there is something that can help: you are not alone. Actually, these symptoms (among others) are most common than most of us believe and, on top of that, these are grouped under the name of “Impostor Syndrome”&lt;a href=&quot;https://counseling.caltech.edu/general/InfoandResources/Impostor&quot;&gt;[1]&lt;/a&gt;, that was discovered by Dr. Pauline R. Clance in 1978&lt;a href=&quot;https://en.wikipedia.org/wiki/Impostor_syndrome&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;There are several ways to overcome this syndrome, including but not limited to&lt;a href=&quot;http://www.apa.org/gradpsych/2013/11/fraud.aspx&quot;&gt;[3]&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Talking to your mentors&lt;/li&gt;
-  &lt;li&gt;Recognizing your expertise&lt;/li&gt;
-  &lt;li&gt;Remembering what you do well&lt;/li&gt;
-  &lt;li&gt;Realizing no one is perfect&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;But maybe the most difficult part is to defeat the fear of being transparent and reflective about this with somebody, be it a friend, a colleague or your boss. Once that we recognize and make peace with this, everything becomes easier and we are ready to put this behind and unleash our full potential as Software Architects.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-unprepared-mentor-conundrum&quot;&gt;The Unprepared Mentor Conundrum&lt;/h3&gt;
-&lt;p&gt;&lt;big&gt;&lt;i&gt;“If you wanted me to mentor others you should have prepared me for that”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;description-3&quot;&gt;Description&lt;/h4&gt;
-
-&lt;p&gt;Broad consensus exists on including technical mentoring as part of a Software Architect’s responsibilities. Software Architects are expected to spend time with Software Engineers beneath them in the career path advising them on how to develop key missing skills, learn new programming techniques or frameworks and, generally speaking, preparing them to take the next step in the ladder. However as developers progress in their careers and eventually become Software Architects, they require abilities and skills on which they have not been trained on, such as mentoring itself.&lt;/p&gt;
-
-&lt;h4 id=&quot;symptoms-and-diagnosis-3&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Mentoring bottleneck: “Everyone wants me to help them grow, what’s going on?” most Software Engineers start seeking mentoring from the same Software Architect.&lt;/li&gt;
-  &lt;li&gt;Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing.&lt;/li&gt;
-  &lt;li&gt;Inefficient communication: “I can’t get developers to follow my lead on system design” Software Engineers do not understand a system design or can not see why it was designed that way.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;prognosis-3&quot;&gt;Prognosis&lt;/h4&gt;
-
-&lt;p&gt;Software Architects should be encouraged to give mentorship to their protégés on all skills required to climb up the career ladder. Particularly on skills needed on higher positions such as Software Architect itself. If mentoring is limited to  technical skills only, it will quite likely fall short once Software Engineers reach a leading position.&lt;/p&gt;
-
-&lt;p&gt;It is worth mentioning that, even though we will not get into anthropological and sociological issues like the human capacity to acquire new skills, we do recognize that some people have a more natural tendency for mentorship. Even when Software Architects should help Software Engineers develop soft skills, anyone aspiring to become a Software Architect should learn about mentorship in general. One possibility is for Software Architects to seek guidance from senior leadership in the engineering organization (e.g., VP or Senior Director level) on how to become great mentors.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-lost-focus-syndrome&quot;&gt;The Lost Focus Syndrome&lt;/h3&gt;
-
-&lt;p&gt;&lt;big&gt;&lt;i&gt;“When I sit and focus for 20 minutes straight I get to build amazing things! How come I am not doing that 8 hours a day?”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;description-4&quot;&gt;Description&lt;/h4&gt;
-
-&lt;p&gt;As Paul Graham states on the essay Maker’s Schedule, Manager’s Schedule while managers are on schedules that can change every hour, for makers having a meeting is like throwing an exception, which can be very expensive in terms of performance. As we study the role and analyze its contradictions we wonder: what schedule do Software Architects follow?&lt;/p&gt;
-
-&lt;h4 id=&quot;symptoms-and-diagnosis-4&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Adapt to managers: “Managers are dragging me into meetings at any time”.&lt;/li&gt;
-  &lt;li&gt;Wasted time: “I’m a maker, I build working software that goes into production, that is my main responsibility, not answering managers questions”.&lt;/li&gt;
-  &lt;li&gt;Sparse schedule: “Let me code for four hours straight and I’ll blow your mind”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker’s schedule can encounter some difficulties.&lt;/p&gt;
-
-&lt;p&gt;As mentioned on section “The impactless best coder syndrome”, Software Architects should not necessarily be responsible for coding even the most complex functionalities and this could be used to make a case against Software Architects being makers. However, as discussed, Software Architects are responsible for building software in a more transversal manner, defining best practices and development processes, or writing frameworks and blueprints. Such duties are undeniable characteristics of a maker.&lt;/p&gt;
-
-&lt;p&gt;Transversal components often affect a variety of different actors and have a profound impact on production environments, new features and complex bugs. Software Architects are recurringly called into meetings to analyze and comment on these different topics, taking them time away from designing and mentoring developers. The more a Software Architect builds the  more meetings she will be pulled into, presenting an interesting dylemma.&lt;/p&gt;
-
-&lt;h4 id=&quot;prognosis-4&quot;&gt;Prognosis&lt;/h4&gt;
-
-&lt;p&gt;Software Architects are makers and, as such, need time to make. Building software, even at the architectural level, requires concentration and focus. Software Architects, as any prestigious position, are frequently consulted on a wide array of topics and will be summoned into meetings. Instead of fighting against it we propose guidelines to minimize the impact of meetings on your real responsibilities:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Software Architects are advised to have everyone understand that they are makers and they have to be deeply invested in the process of building great software. Peer’s understanding of the Software Architect position and priorities is crucial to minimize invitations to spurious meetings.&lt;/li&gt;
-  &lt;li&gt;Office hours: Software Architects should set aside time to be available to others. Instead of having managers push Software Architects into adapting to their schedule we advocate Software Architects to create mechanisms to have managers adapt themselves.&lt;/li&gt;
-  &lt;li&gt;Delegate: Not every meeting you are invited to needs a Software Architect. Delegation to tech leads or specialists will not only save your precious time, it will also help others grow.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
-
-&lt;p&gt;While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role.&lt;/p&gt;
-
-&lt;p&gt;As we discussed when we opened this article, Software Engineering has changed quite dramatically from its humble origins in the last century but it yet remains a pretty novel and somewhat adolescent field of study. It is understandable then that an even newer role such as that of the Software Architect has been yet barely standardized or studied.&lt;/p&gt;
-
-&lt;p&gt;We hope that the analysis of the pathologies here presented can help spark more discussion about topics such as how the Software Architect’s role should evolve, how can we evaluate their impact, how can we grow them and coach them. This is our humble yet heartfelt contribution in that spirit.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2016/07/14/a-compendium-software-architects-pathologies/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2016/07/14/a-compendium-software-architects-pathologies/</guid>
-        
-        <category>Software</category>
-        
-        <category>Architecture</category>
-        
-        <category>Role</category>
-        
-        <category>Management</category>
-        
-        <category>Pitfall</category>
-        
-        
-      </item>
-    
-      <item>
         <title>Nobel 0.2 soporta Swagger y RAML</title>
         <description>&lt;p&gt;Tiempo atrás, cuando trabajaba con el equipo que desarrolló &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, aproveché el tiempo de una &lt;em&gt;hackathon&lt;/em&gt; para crear una primera versión de &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. En pocas palabras, Nobel es una aplicación que utiliza una definición de una API en un lenguaje de alto nivel (&lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; o &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;) para generar el código &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; que implementa dicha API. Esta primera versión solo soportaba RAML como lenguaje de definición. Recientemente, habiendo podido investigar un poco más Swagger y sus herramientas, pude agregar soporte para este lenguaje también.
 &lt;!--MORE--&gt;&lt;/p&gt;
@@ -557,63 +304,6 @@ Independientemente de los resultados de estos análisis, tengo una pequeña list
         <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
         <link>http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</link>
         <guid isPermaLink="true">http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</guid>
-        
-        <category>Nobel</category>
-        
-        <category>APIs</category>
-        
-        <category>Arduino</category>
-        
-        <category>IoT</category>
-        
-        <category>codegen</category>
-        
-        <category>RAML</category>
-        
-        <category>Swagger</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Nobel 0.2 supports Swagger and RAML</title>
-        <description>&lt;p&gt;Time ago, while I was working with the team building &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, I took advantage of a hackathon to build the first version of &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. Briefly, Nobel is an application that uses an API high level definition written with (&lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; or &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt; to generate the &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; code implementing that API. That first version only supported RAML as the definition language. Recently working and researching a bit more about Swagger and its toolset, I was able to add support for this language as well.
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;swagger-or-raml&quot;&gt;Swagger or RAML&lt;/h2&gt;
-
-&lt;p&gt;I think I’ve seen more than 25 posts talking about this (here I share a couple of links with you: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;). Regardless of these analysis results, I’ve a short list of self opinions after having been working with both:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;I find RAML easier to understand and write. I consider that the language expressivity is higher.&lt;/li&gt;
-  &lt;li&gt;RAML used YAML from the beginning, while Swagger requested us to write the definition with plain JSON.&lt;/li&gt;
-  &lt;li&gt;Swagger has a greater community and its toolset seem to be more complete and robust.&lt;/li&gt;
-  &lt;li&gt;When Swagger 2.0 was launched, the improvement of the language expressivity was remarkable . Though, the trend of translating the old JSON to the new YAML 1:1 stops from making it comparable to RAML.&lt;/li&gt;
-  &lt;li&gt;While RAML 1.0 release brought interesting news to the table (on November 2015), the Node.js parser is still “beta” which makes that the cornerstone for writing a great branch of tools is not robust enough for being production ready.&lt;/li&gt;
-  &lt;li&gt;The object returned by the RAML (0.8) parser is much more intuitive and easy to “browse” than the one returned by the Swagger (2.0) parser.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Regardless of this analysis, nothing stops me from making the tool support both language. This is due to the capacity of creating an intermediate object that is the one used for generating the Arduino source code. The next diagram shows that behavior&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Application Flow&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
-
-&lt;p&gt;Nobel’s main goal is to give people with a minimum knowledge on Arduino coding the chance of building their own device controlled remotely via HTTP. That said, it is required: - An Arduino board and the development toolset installed. - An &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;. - Basic knowledge of Swagger or RAML. - &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; installed.&lt;/p&gt;
-
-&lt;p&gt;Reading the &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel’s documentation&lt;/a&gt; you will find all the information needed to deeply understand its behavior. You will also find a &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;walkthrough example&lt;/a&gt; for having your first device working in minutes.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-for&quot;&gt;What for&lt;/h2&gt;
-
-&lt;p&gt;The goal of Nobel is to solve a relatively complex problem: Exposing a REST API over an Arduino board. This way developers can focus on building their own devices. Now you can think about those projects you have been delaying, and start controlling your own devices remotely.&lt;/p&gt;
-
-&lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
-
-&lt;p&gt;Nobel is an Open Source application. You can contribute by improving the code, adding new features, testing and reporting bugs. Here is the link to the &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2016/04/24/nobel-02-swagger-support/</guid>
         
         <category>Nobel</category>
         
@@ -692,64 +382,6 @@ Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es
       </item>
     
       <item>
-        <title>Docker in acción I</title>
-        <description>&lt;p&gt;Several years ago, speaking of &lt;em&gt;scalability&lt;/em&gt; used to bring up a series of surprises of all kind. People talking about &lt;em&gt;scalability&lt;/em&gt; as a &lt;em&gt;hardware&lt;/em&gt; quality, people getting too much surprised when listening that it’s not the &lt;em&gt;hardware&lt;/em&gt; just scaling, but the applications being written in such a way that can &lt;em&gt;scale&lt;/em&gt;, and for sure, the little distinction between &lt;em&gt;horizontal and vertical scaling&lt;/em&gt;.&lt;br /&gt;
-Fortunately these days, the concept has been digested, explained, and apparently understood. However, I’m still curious about getting why this topic was source of so much confusion.
-I’m not sure which ones is the cause and which one the effect of this &lt;em&gt;new era&lt;/em&gt;, but virtualization plays a starring role, and specially the &lt;em&gt;containers based virtualization&lt;/em&gt;.
-This is the first of a three posts saga, in which I’ll be covering some &lt;em&gt;scalability&lt;/em&gt; fundamentals, &lt;em&gt;DevOps&lt;/em&gt; rol/culture, &lt;em&gt;Docker&lt;/em&gt; introduction, installation walkthrough, first steps, and &lt;em&gt;docker registry&lt;/em&gt; configuration. This first post is about &lt;em&gt;DevOps&lt;/em&gt; and &lt;em&gt;scalability&lt;/em&gt;.
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;devops&quot;&gt;DevOps&lt;/h2&gt;
-
-&lt;p&gt;For so long, the developer role was well defined and set appart from the operator’s. The developer &lt;strong&gt;built&lt;/strong&gt; software while the operator was in charge of &lt;strong&gt;infrastructure&lt;/strong&gt; and software packages &lt;strong&gt;deployment&lt;/strong&gt;. The software industry was proud of this separation claiming that the developer could (and should) be completely abstracted from hardware and deployment, in order to focus in writing and refactoring code. &lt;strong&gt;Finding developers having troubles trying to write&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;scalable&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;code is not that surprising anymore&lt;/strong&gt;.&lt;br /&gt;
-Not only was the developer totally isolated from hardware and the platform running the programs, but also was unworried about that infrastructure &lt;em&gt;topology&lt;/em&gt;. It was not necessary to know if the server was going to be running on an &lt;em&gt;Intel, AMD or other vendor&lt;/em&gt;, neither to worry about the OS (for instance, &lt;em&gt;Java&lt;/em&gt; was supposed to be multi-platform thanks to the &lt;em&gt;JVM&lt;/em&gt; exposing a unified one). But it also seemed to be unnecessary knowing if the server was going to be running in 1 or 10 machines, if it was going to be a &lt;em&gt;cluster&lt;/em&gt;, what would happen if a machine was down, etc. As a direct consequence, and this is just one of many examples, storing the &lt;em&gt;logged in&lt;/em&gt; user data on the &lt;em&gt;HTTP session&lt;/em&gt; was so simple and useful that had been quickly adopted as a &lt;em&gt;web applications&lt;/em&gt; development dogma.&lt;/p&gt;
-
-&lt;p&gt;Even though many of these abstractions turned to be reasonably profitable (reasonably: it isn’t that distractive to know the hardware where our application will run), others have become extremely inconvenient. &lt;em&gt;Scalable&lt;/em&gt; applications development is a clear example of the troubles that come with the total abstraction.&lt;br /&gt;
-&lt;em&gt;DevOps&lt;/em&gt; concept stands up as an alternative to this abstraction (or a redefinition at least). Though most of the companies think about &lt;em&gt;DevOps&lt;/em&gt; as a role mostly biased to the &lt;em&gt;Ops&lt;/em&gt; part, the concept represents a culture where collaboration between developers and operators benefits frequent and reliable development, testing and &lt;em&gt;releases&lt;/em&gt;. As a (positive) side effect, developers get into infrastructure early enough to consider it when writing applications (and dismissing that information that doesn’t add any value).&lt;/p&gt;
-
-&lt;h2 id=&quot;scalability&quot;&gt;Scalability&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;An application scales if it’s able keep its performance over a workload increase&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;vertical-scalability&quot;&gt;Vertical Scalability&lt;/h3&gt;
-
-&lt;p&gt;More powerful processors, with more &lt;em&gt;cores&lt;/em&gt;, can process more &lt;em&gt;threads&lt;/em&gt;. More memory can store more running processes’ data, and that way, an application can support a higher workload. This kind of scalability is known as &lt;em&gt;vertical scalability&lt;/em&gt;. A (relative) advantage of this approach, is that it can be achieved by taking advantage of most popular languages capabilities (such as JAVA). But a big disadvantage is that, at some point, the relationship &lt;em&gt;performance increase&lt;/em&gt; over  &lt;em&gt;workload increase&lt;/em&gt; becomes asymptotic.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScaling.png&quot; alt=&quot;Vertical Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The previous image shows that as far as the workload increases, the performance increase becomes harder, until reaching the point of no increasing any longer. This means that every user will experience a performance degree, or even worst, a complete system interruption.&lt;br /&gt;
-When &lt;em&gt;verticaly scaling&lt;/em&gt;, by adding a more powerful server we are able to improve the performance. However, when comparing the curves against the &lt;em&gt;perfect scalability&lt;/em&gt; the moment when the new server stops supporting the workload happens pretty earlier than achieving the &lt;em&gt;perfect scalability&lt;/em&gt;. A progression over this behaviour would conclude that, at some point, investing in more powerful (and expensive) hardware won’t help us to achieve the &lt;em&gt;perfect scalability&lt;/em&gt;, but it will reach a &lt;strong&gt;scalability limit&lt;/strong&gt; (also asymptotic).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScalingSummary.png&quot; alt=&quot;Vertical Scalability - Gain / Power&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;horizontal-scalability&quot;&gt;Horizontal Scalability&lt;/h3&gt;
-
-&lt;p&gt;In order to overcome the limitations of &lt;em&gt;vertical scalability&lt;/em&gt;, a paradigm rupture occured and, in place of thinking about more powerful machines, the key seems to be to think about more qunatity of less powerful machines.&lt;/p&gt;
-
-&lt;p&gt;Unlike with &lt;em&gt;vertical scalability&lt;/em&gt;, in this paradigm, the infrastructure administration becomes more complex, and the development needs to consider the fact that the software will be distributed among different machines (with physically separated resources). But, in addition to overcomming &lt;em&gt;vertical scalability&lt;/em&gt; limitations, the fact of being able to &lt;em&gt;scale&lt;/em&gt; by augmenting the quantity of machines (or nodes) ends up being cheaper and furthermore, by taking advantage of the advanced virtualization techniques such as the ones offered by &lt;em&gt;Docker&lt;/em&gt;, administration can be automated to dynamically adapt to the changing workload in realtime.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/horizontalScaling.png&quot; alt=&quot;Horizontal Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The previous image shows that there is a moment when the server is no longer able to support the workload. At that moment (when the performance curve touches the &lt;em&gt;perfect scalability&lt;/em&gt;, or maybe a little bit earlier), it’s time to start a new server. This way, by aproximation, the workload/performance relationship can be maintained close to the &lt;em&gt;perfect scalability&lt;/em&gt;. Furthermore, if the new server starts automatically and quickly enough, the provisioning could be done in an &lt;em&gt;on-demand&lt;/em&gt; way.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Container based virtualization&lt;/em&gt; aims exactly to provide a solution for that requirement. As it will be covered on the following post, &lt;em&gt;Docker&lt;/em&gt; offers a more efficient &lt;em&gt;virtualization&lt;/em&gt; than the traditional &lt;em&gt;Virtual Machines&lt;/em&gt;. And even though the benefits appear immediately, they become a real difference when thinking of small nodes that &lt;em&gt;start&lt;/em&gt; in seconds when it’s necessary.&lt;br /&gt;
-We will also see that, the reason for these nodes to start that quickly, is a combination of the technology capabilities (that reuses a unique OS Kernel that is already running) and the good design: small components that start at the same time in different nodes (reducing the starting time by starting in parallel).&lt;/p&gt;
-</description>
-        <pubDate>Thu, 03 Dec 2015 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2015/12/03/docker-in-action-IoIII/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2015/12/03/docker-in-action-IoIII/</guid>
-        
-        <category>Docker</category>
-        
-        <category>Container</category>
-        
-        <category>Microservices</category>
-        
-        <category>DevOps</category>
-        
-        
-      </item>
-    
-      <item>
         <title>De una API a una Streaming API</title>
         <description>&lt;p&gt;Son muchas las ventajas de desarrollar una &lt;em&gt;API&lt;/em&gt; que exponga los recursos de nuestra aplicación. En particular, se logra reducir al mínimo el acoplamiento entre &lt;em&gt;capas&lt;/em&gt;, y mejor aún &lt;strong&gt;permite que distintas aplicaciones accedan a nuestros recursos&lt;/strong&gt;. En el caso de &lt;em&gt;APIs&lt;/em&gt; bien diseñadas, además, esto ocurrirá de una forma intuitiva.&lt;br /&gt;
 Pero incluso las mejores &lt;em&gt;APIs&lt;/em&gt; pueden estar implementadas para que el cliente realice una llamada cada vez que quiere conocer el estado de un recurso. Para este caso, la &lt;em&gt;API&lt;/em&gt; deberá devolver el recurso entero cada vez que sea solicitado.&lt;br /&gt;
@@ -778,27 +410,27 @@ Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades
 &lt;p&gt;1- El cliente 1 envía un &lt;em&gt;request&lt;/em&gt; con método &lt;em&gt;GET&lt;/em&gt; para solicitar el libro con id 123321.&lt;br /&gt;
 2- El servidor devuelve un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;4th&amp;quot;&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Asumamos una estructura compleja y una gran cantidad de campos&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;3- El cliente 2 envía un &lt;em&gt;request&lt;/em&gt; con método &lt;em&gt;PATCH&lt;/em&gt; para modificar la edición (ahora “5th”).&lt;br /&gt;
 4- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 2 con código &lt;em&gt;200 OK&lt;/em&gt;.&lt;br /&gt;
 5- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Asumamos una estructura compleja y una gran cantidad de campos&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Se deja de lado la discusión acerca de los métodos a utilizar (&lt;em&gt;PATCH&lt;/em&gt; o &lt;em&gt;PUT&lt;/em&gt;) y los códigos &lt;em&gt;HTTP&lt;/em&gt; correspondientes. Esta temática amerita un &lt;em&gt;post&lt;/em&gt; aparte.&lt;/p&gt;
 
@@ -807,10 +439,10 @@ Al proceso por el cual las &lt;em&gt;APIs&lt;/em&gt; notifican &lt;em&gt;proacti
 
 &lt;p&gt;A pesar de que en el ejemplo se puede ver la conveniencia de implementar &lt;em&gt;Push Notifications&lt;/em&gt; como parte de nuestra &lt;em&gt;Streaming API&lt;/em&gt;, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un &lt;em&gt;request&lt;/em&gt; periódicamente para verificar si el recurso cambió, cada vez que la &lt;em&gt;API&lt;/em&gt; haga un &lt;em&gt;push&lt;/em&gt; se estará enviando el recurso completo al cliente. Implementando una lógica &lt;em&gt;diferencial&lt;/em&gt; en el servidor, nuestra &lt;em&gt;API&lt;/em&gt; podría enviar solo las actualizaciones al momento de realizar un &lt;em&gt;push&lt;/em&gt;. Para nuestro ejemplo, esto podría ser:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PATCH&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Este &lt;em&gt;JSON&lt;/em&gt; informa al cliente que se ha modificado el campo “Edition” y su nuevo valor. El cliente podrá actualizar su modelo apropiadamente con esta información. De esta forma, sin importar que tan grande sea el recurso solicitado, el &lt;em&gt;push&lt;/em&gt; solo envía los campos que han cambiado desde la última actualización.&lt;/p&gt;
 
@@ -864,7 +496,7 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;p&gt;Tomando el servicio provisto por &lt;a href=&quot;https://bitcoinaverage.com&quot;&gt;BitcoinAverage&lt;/a&gt;, y viendo algún método simple de su &lt;a href=&quot;https://bitcoinaverage.com/api&quot;&gt;&lt;em&gt;API&lt;/em&gt;&lt;/a&gt;, escribimos un código sencillo que nos permita consultar cada 5 segundos, el siguiente reucrso: https://api.bitcoinaverage.com/ticker/global/EUR/&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
@@ -879,7 +511,7 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
       &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Utilizando &lt;a href=&quot;https://jquery.com/&quot;&gt;JQuery&lt;/a&gt; para obtener los beneficios del método &lt;code&gt;ajax&lt;/code&gt;, y la función &lt;code&gt;setInterval&lt;/code&gt; que nos permite ejecutar una función repetidas veces espaciadas por un intervalo de tiempo, obtenemos la siguiente respuesta en la consola:&lt;/p&gt;
 
@@ -909,7 +541,7 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;p&gt;Con estos pasos cumplidos, el siguiente código accede a la misma &lt;em&gt;API&lt;/em&gt; del ejemplo anterior pero recibiendo &lt;em&gt;Push notifications&lt;/em&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./js/streamdataio.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
@@ -932,7 +564,7 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;See the console&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Se debe reemplazar el “APP TOKEN” por el generado para su aplicación. Recuerden que &lt;em&gt;JavaScript&lt;/em&gt; puede correr en un cliente cualquiera (browser) por lo que no debe incluirse el &lt;em&gt;Token&lt;/em&gt; en dicho código. Esto es válido solo para pruebas y ejemplos.&lt;/p&gt;
 
@@ -978,229 +610,589 @@ Pero no siempre contamos con una &lt;em&gt;Streaming API&lt;/em&gt;. A menudo no
       </item>
     
       <item>
-        <title>From API to Streaming API</title>
-        <description>&lt;p&gt;There are so many pros on building an &lt;em&gt;API&lt;/em&gt; that exposes our application resources. It’s particularly important to achieve reducing tiers coupling to the minimum, but even better, &lt;strong&gt;this allows different applications to access our resources&lt;/strong&gt;. For well designed &lt;em&gt;APIs&lt;/em&gt; this will also happen in an intuitive way.&lt;br /&gt;
-But even the best &lt;em&gt;APIs&lt;/em&gt; could be implemented in a way that the client needs to make a call every time it needs to know the state of a resource. For this case, the &lt;em&gt;API&lt;/em&gt; will have to return the entire resource every time it’s requested.&lt;br /&gt;
-But, wouldn’t it be more efficient if the &lt;em&gt;API&lt;/em&gt; only returned what has changed since the last time it was queried? And wouldn’t it be even more efficient if the client didn’t need to call the &lt;em&gt;API&lt;/em&gt; to check if something changed?&lt;br /&gt;
-&lt;strong&gt;&lt;em&gt;Streaming APIs&lt;/em&gt;&lt;/strong&gt; (when implemented properly) try to solve exactly that. On this post we will see how these could be implemented and how &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; works in order to turn a traditional &lt;em&gt;API&lt;/em&gt; into a &lt;em&gt;Streaming API&lt;/em&gt;.
+        <title>Código expresivo en Javascript</title>
+        <description>&lt;p&gt;Hay varios (si no demasiados) aspectos a tener en cuenta al momento de escribir una pieza de código: &lt;em&gt;performance, mantenibilidad y legibilidad&lt;/em&gt;, por mencionar algunos.
+Un aspecto que me resulta particularmente interesante es el denominado “expresividad” y significa “la habilidad de enunciar lo que se está haciendo”.&lt;/p&gt;
+
+&lt;p&gt;Como buen &lt;em&gt;Javascript Hipster (“A mi me gustaba antes de que fuera popular”)&lt;/em&gt; me gustaría mostrar algunos ejemplos de cómo &lt;em&gt;Javascript&lt;/em&gt; nos permite ser realmente expresivos trabajando con &lt;em&gt;arrays&lt;/em&gt; (y algunas funciones en particular): &lt;em&gt;forEach, filter, map, reduce, every&lt;/em&gt; and &lt;em&gt;some&lt;/em&gt;.
 &lt;!--MORE--&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;streaming-apis&quot;&gt;Streaming APIs&lt;/h2&gt;
+&lt;p&gt;Si bien habitualmente la característica de “Expresivo” se le atribuye al lenguaje, en todos los lenguajes se puede ser más o menos expresivo al escribir diferentes versiones de código que hagan lo mismo. De esta manera, sería más preciso definir a una pieza de código como “expresiva” si realmente es capaz de enunciar lo que está haciendo.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;A &lt;em&gt;Streaming API&lt;/em&gt; is capable of sending notifications to the client.&lt;/strong&gt;&lt;br /&gt;
-In traditional &lt;em&gt;HTTP&lt;/em&gt; (base protocol for &lt;em&gt;webAPIs&lt;/em&gt;) schemas, the client sends a &lt;em&gt;request&lt;/em&gt; to the server. The server receives it, understands, even call the proper &lt;em&gt;listeners&lt;/em&gt; (if any) and ends returning a &lt;em&gt;response&lt;/em&gt; to the client. On this schema, once the server sent the &lt;em&gt;response&lt;/em&gt;, it can’t send anything else to the client until this one makes a new &lt;em&gt;request&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Tomemos como ejemplo un conjunto de personas:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/traditional-request.png&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;176&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Jane Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Julian Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;160&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;But it’s possible for our server to receive the &lt;em&gt;request&lt;/em&gt;, process it and even send a &lt;em&gt;response&lt;/em&gt;, but leave it &lt;em&gt;on-hold&lt;/em&gt; instead of closing it. This way the server could keep sending information to the client for a long period of time. This technique is better known as &lt;strong&gt;&lt;em&gt;long polling&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora, recorramos este &lt;em&gt;array&lt;/em&gt; y por cada persona imprimamos “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/long-polling-request.png&quot; alt=&quot;Long Polling HTTP Request&quot; /&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;By &lt;em&gt;long polling&lt;/em&gt;, our &lt;em&gt;API&lt;/em&gt; could receive a call and provide the resource that is being requested as a first &lt;em&gt;response&lt;/em&gt;. But instead of closing the connection, the &lt;em&gt;API&lt;/em&gt; could send new &lt;em&gt;responses&lt;/em&gt; in case the resource changes after the first &lt;em&gt;response&lt;/em&gt;.&lt;br /&gt;
-Furthermore, the &lt;em&gt;API&lt;/em&gt; could send just the changes that impacted the resource.&lt;/p&gt;
-
-&lt;p&gt;Let’s consider the following example&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/streaming-API-example.png&quot; alt=&quot;Streaming API example&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1- Client 1 sends a &lt;em&gt;request&lt;/em&gt; with method &lt;em&gt;GET&lt;/em&gt; in order to request a book with id 123321.&lt;br /&gt;
-2- The server returns a &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; containing the book information&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;4th&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s assume a complex structure with a lot of fields&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;3- Client 2 sends a &lt;em&gt;request&lt;/em&gt; with method &lt;em&gt;PATCH&lt;/em&gt; in order to modify the book edition (now “5th”).&lt;br /&gt;
-4- The server sends a &lt;em&gt;response&lt;/em&gt; to the client 2 with a &lt;em&gt;200 OK&lt;/em&gt; code.&lt;br /&gt;
-5- The server sends a  &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; with the book information.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s assume a complex structure with a lot of fields&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We are not going into any discussion about which methods should be used (&lt;em&gt;PATCH&lt;/em&gt; o &lt;em&gt;PUT&lt;/em&gt;) or which &lt;em&gt;HTTP&lt;/em&gt; codes. This topics deserve their own post.&lt;/p&gt;
-
-&lt;p&gt;Because the server implements &lt;em&gt;long polling&lt;/em&gt;, the &lt;em&gt;API&lt;/em&gt; is able to notify the client that the previously requested resource has changed, without having the client sending a second &lt;em&gt;request&lt;/em&gt;.&lt;br /&gt;
-The process where &lt;em&gt;APIs proactively&lt;/em&gt; notify the client about changes on the resources is known as &lt;em&gt;Push Notification&lt;/em&gt;. It worth clarifying that &lt;em&gt;long polling&lt;/em&gt; is not the only way of achieving this behaviour. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; is another specification that does the trick.&lt;/p&gt;
-
-&lt;p&gt;Although the example shows the benefits of implementing &lt;em&gt;Push Notifications&lt;/em&gt; as a feature of our &lt;em&gt;Streaming API&lt;/em&gt;, the impact regarding to the performance is not neatly visible. Even though is true that the client won’t be periodically sending &lt;em&gt;requests&lt;/em&gt; in order to check if the resource changed, each time the &lt;em&gt;API&lt;/em&gt; makes a &lt;em&gt;push&lt;/em&gt; it will be sending the complete resource to the client. By implementing a &lt;em&gt;differential&lt;/em&gt; logic (server side), our &lt;em&gt;API&lt;/em&gt; would be able to just notify the updates when sending a &lt;em&gt;push&lt;/em&gt;. Considering our previous example, this could go like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PATCH&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This &lt;em&gt;JSON&lt;/em&gt; informs the client that the field “Edition” has changed. It also informs its new value. The client is now able to update its model according to this information. This way regardless how big a resource is, the &lt;em&gt;push&lt;/em&gt; is only sending the fields that have changed since the last update.&lt;/p&gt;
-
-&lt;h3 id=&quot;request-timeout&quot;&gt;Request timeout&lt;/h3&gt;
-
-&lt;p&gt;Avoiding infinite time &lt;em&gt;requests&lt;/em&gt; is a good practice. Connections could &lt;em&gt;timeout&lt;/em&gt; or even could be loss because of servers or network physical conditions. The code impact could be described (in a general way) as&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Server: Checks that the &lt;em&gt;response&lt;/em&gt; is open before sending data.&lt;/li&gt;
-  &lt;li&gt;Client: Check that the &lt;em&gt;request&lt;/em&gt; is active. Otherwise, make a new &lt;em&gt;request&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In case of having too short &lt;em&gt;timeouts&lt;/em&gt;, each new &lt;em&gt;request&lt;/em&gt; would be receiving the complete resource (again). A known solution consists in sending the server the &lt;em&gt;timestamp&lt;/em&gt; of the last received notification. This way, for every &lt;em&gt;request&lt;/em&gt; that is not the first one, the server could respond with the updates happened since that &lt;em&gt;timestamp&lt;/em&gt;. For a proper implementation, the server side logic should hold a change log of every resource.&lt;/p&gt;
-
-&lt;p&gt;This far we have covered an explanation about &lt;em&gt;Streaming APIs&lt;/em&gt; and some impelmentation approaches. It’s not this post goal to show a whole concrete example.&lt;/p&gt;
-
-&lt;h2 id=&quot;from-an-api-to-a-streaming-api&quot;&gt;From an API to a Streaming API&lt;/h2&gt;
-
-&lt;p&gt;But, what happens when an &lt;em&gt;API&lt;/em&gt; is not a &lt;em&gt;Streaming API&lt;/em&gt;? The short answer is: We use it as a regular &lt;em&gt;API&lt;/em&gt;. It means that, each time we need to know the state of a resource, we will be sending a &lt;em&gt;request&lt;/em&gt;.&lt;br /&gt;
-A more complete answer includes a &lt;em&gt;proxy&lt;/em&gt; implementation capable of intercepting a &lt;em&gt;request&lt;/em&gt;, storing the &lt;em&gt;response&lt;/em&gt;, informing it to the original client, and repeat the operation as many time as needed. This &lt;em&gt;proxy&lt;/em&gt; implements &lt;em&gt;long polling&lt;/em&gt; which means that it is able to notify the client as soon as a change on a resource is detected. Next diagram shows this scenario.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/streaming-API-proxy.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Let’s see what happens on each of the instants (1-4):&lt;/p&gt;
+&lt;p&gt;Este código es bastante simple, corto y podríamos decir que es bastante legible. Pero esto no lo hace necesariamente &lt;strong&gt;expresivo&lt;/strong&gt;. Lo que queríamos hacer era: Imprimir “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old” por cada persona. Esto es lo que dice el código que acabamos de escribir:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Client 1 &lt;em&gt;requests&lt;/em&gt; the “book” with id “123321”.&lt;br /&gt;
-  1.1 The &lt;em&gt;request&lt;/em&gt; is not got by the server but by a &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  1.2 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;request&lt;/em&gt; to the server.&lt;br /&gt;
-  1.3 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  1.4 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;response&lt;/em&gt; to the client.&lt;/li&gt;
-  &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (and it will do that every  X seconds).&lt;br /&gt;
-  2.1 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  2.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects no changes.&lt;br /&gt;
-  2.3 The &lt;em&gt;proxy&lt;/em&gt; doesn’t &lt;em&gt;Push&lt;/em&gt; anything to the client.&lt;/li&gt;
-  &lt;li&gt;Client 2 sends a &lt;em&gt;request&lt;/em&gt; with a &lt;em&gt;PATCH&lt;/em&gt; method.&lt;br /&gt;
-  3.1 The client sends the &lt;em&gt;request&lt;/em&gt; directly to the server (there is no reason for involving &lt;strong&gt;this kind of&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;proxy&lt;/em&gt;&lt;/strong&gt; for a “write” operation).&lt;br /&gt;
-  3.2 The server sends the &lt;em&gt;response&lt;/em&gt; confirming the operation.&lt;/li&gt;
-  &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (one of those being sent every X segundos).&lt;br /&gt;
-  4.1 The server sends a  &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
-  4.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects changes.&lt;br /&gt;
-  4.3 The &lt;em&gt;proxy&lt;/em&gt; sends a &lt;em&gt;Push&lt;/em&gt; to the client informing the changes (ideally, just the news instead of the complete resource).&lt;/li&gt;
+  &lt;li&gt;Inicializar una variable &lt;em&gt;i&lt;/em&gt; con el valor &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Siempre y cuando la variable sea menor a la cantidad de personas, incrementarla y ejecutar el siguiente bloque de código:&lt;br /&gt;
+  2.1. Obtener el nombre de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
+  2.2. Concatenarle un espacio, un guión y luego otro espacio.&lt;br /&gt;
+  2.3. Concatenarle la edad de la persona en la posición indicada por la variable previamente inicializada.&lt;br /&gt;
+  2.4. &lt;em&gt;Loggear&lt;/em&gt; el resultado en la consola.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;This way, and without modifying a single line of the &lt;em&gt;API&lt;/em&gt; code, we can emulate the behaviour of a &lt;em&gt;streaming API&lt;/em&gt; (from the client perspective at least).&lt;/p&gt;
+&lt;p&gt;Comencemos por quitar la línea dentro del &lt;em&gt;for&lt;/em&gt; y ubicarla dentro de una función que reciba una &lt;em&gt;persona&lt;/em&gt; como parámetro e imprima el patrón especificado.&lt;/p&gt;
 
-&lt;p&gt;What is most interesting about this implementation is that it’s not hard to make it generic for virtually every existing &lt;em&gt;API&lt;/em&gt;. It means that we could implement a platform that offers this logic to an &lt;em&gt;API&lt;/em&gt; users turning it into a &lt;em&gt;streaming API&lt;/em&gt; transparently for both, the &lt;em&gt;API&lt;/em&gt; provider and the client.&lt;br /&gt;
-This is exactly what &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; does.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;h3 id=&quot;example-using-streamdataio&quot;&gt;Example using streamdata.io&lt;/h3&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Considering the service provided by &lt;a href=&quot;https://bitcoinaverage.com&quot;&gt;BitcoinAverage&lt;/a&gt;, and looking at a simple method of its  &lt;a href=&quot;https://bitcoinaverage.com/api&quot;&gt;&lt;em&gt;API&lt;/em&gt;&lt;/a&gt;, we will write a simple code that allows us to query the following resource every 5 seconds: https://api.bitcoinaverage.com/ticker/global/EUR/&lt;/p&gt;
+&lt;p&gt;Si estás pensando “esto no tiene nada que ver con &lt;em&gt;Javascript&lt;/em&gt; y las funciones de sus &lt;em&gt;arrays&lt;/em&gt;”, estás en lo cierto, pero no te impacientes.&lt;br /&gt;
+No hicimos más que &lt;em&gt;encapsular&lt;/em&gt; una funcionalidad para ocultar su complejidad. &lt;em&gt;Encapsulamiento&lt;/em&gt; es un concepto habitualmente relacionado al Paradigma de Programación orientada a objetos, pero en realidad puede lograrse de muchas maneras, y las &lt;em&gt;funciones&lt;/em&gt; son una forma ancestral de lograrlo. El objetivo de &lt;em&gt;encapsular&lt;/em&gt; código no es el de hacerlo más expresivo, pero en la mayoría de los casos, es un efecto colateral.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;dataType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;json&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.bitcoinaverage.com/ticker/global/EUR/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;By using &lt;a href=&quot;https://jquery.com/&quot;&gt;JQuery&lt;/a&gt; for getting the benefits of the &lt;code&gt;ajax&lt;/code&gt; method and the &lt;code&gt;setInterval&lt;/code&gt; function (that lets us execute a function repeatedly on a time interval basis) we get the following response on the console:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/setIntervalClientConsole.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As it can be seen, the &lt;em&gt;requests&lt;/em&gt; are being sent every 5 seconds and the complete object is being returned regardless if it was modified.&lt;/p&gt;
-
-&lt;p&gt;From the &lt;em&gt;Network&lt;/em&gt; perspective we can also discover an interesting thing&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/posts/setIntervalClientNetwork.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Each &lt;em&gt;request&lt;/em&gt; is proven by a new &lt;em&gt;GET&lt;/em&gt;. Also, some &lt;em&gt;HTTP&lt;/em&gt; response codes are &lt;em&gt;200 OK&lt;/em&gt; while others are &lt;em&gt;304 Not Modified&lt;/em&gt;. This last code points that the resource hasn’t changed since last time it has been requested.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-streamdataio&quot;&gt;Using streamdata.io&lt;/h3&gt;
-
-&lt;p&gt;Steps for getting started with &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; are really simple and can be found on its web site. As a summary:&lt;/p&gt;
+&lt;p&gt;Si leemos nuevamente el código (y obviamos describir la nueva función):&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;Create an account.&lt;/li&gt;
-  &lt;li&gt;Once logged in we will see the Home page with a &lt;em&gt;dashboard&lt;/em&gt; in it.&lt;/li&gt;
-  &lt;li&gt;Create an application (let’s call it “OutBitApp” for this example).&lt;/li&gt;
-  &lt;li&gt;Access the application.&lt;/li&gt;
-  &lt;li&gt;Check the configuration and make sure that the “Client Request Signature” option is disabled (&lt;strong&gt;only for this example, we want to avoid any not mandatory complexity&lt;/strong&gt;).&lt;/li&gt;
-  &lt;li&gt;On that same screen we can see (and renew) the &lt;em&gt;App Token&lt;/em&gt; (it will be required for authenticating the client code).&lt;/li&gt;
-  &lt;li&gt;Follow the instructions at the &lt;a href=&quot;https://github.com/streamdataio/streamdataio-js-sdk&quot;&gt;official GH repo&lt;/a&gt; in order to generate the &lt;em&gt;SDK&lt;/em&gt; that lets us interact with &lt;em&gt;streamdata.io&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Inicializar una variable &lt;em&gt;i&lt;/em&gt; con el valor &lt;em&gt;0&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Siempre y cuando la variable sea menor a la cantidad de personas, incrementarla e&lt;/li&gt;
+  &lt;li&gt;Imprimir el patrón para la persona en la posición indicada por la variable previamente inicializada.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Having accomplished these steps, the following code accesses the same &lt;em&gt;API&lt;/em&gt; from the previous example but receiving &lt;em&gt;Push notifications&lt;/em&gt; instead.&lt;/p&gt;
+&lt;h3 id=&quot;arrayprototypeforeach&quot;&gt;Array.Prototype.forEach&lt;/h3&gt;
+&lt;p&gt;Si bien el código se ha vuelto un poco más expresivo, parece estar más preocupado por la variable &lt;em&gt;i&lt;/em&gt;, su inicialización, y su cota, que por la persona en sí misma.&lt;br /&gt;
+Afortunadamente hay otras formas de recorrer un &lt;em&gt;array&lt;/em&gt;. Por ejemplo el método &lt;code&gt;Array.prototype.forEach(function)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./js/streamdataio.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;streamdataio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.bitcoinaverage.com/ticker/global/EUR/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/APP TOKEN/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onPatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;update&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;open&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-     &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;See the console&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The “APP TOKEN” must be replaced with the one generated for the application. Remember that &lt;em&gt;JavaScript&lt;/em&gt; runs on any client/browser and because of that, it’s not a good idea to place the &lt;em&gt;Token&lt;/em&gt; on that code. This is only valid for proof of concept and examples.&lt;/p&gt;
+&lt;p&gt;Si leemos nuevamente el código:&lt;/p&gt;
 
-&lt;p&gt;Let’s check the response at the console:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Por cada persona, imprimir el patrón.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientConsole.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;De esta forma, el código &lt;em&gt;hace&lt;/em&gt; y &lt;em&gt;expresa&lt;/em&gt; exactamente lo que queremos.&lt;br /&gt;
+Pero, si bien la lectura resulta más simple, es necesario comprender que es lo que está ocurriendo detrás del telón.&lt;br /&gt;
+En primer lugar, algo a destacar de &lt;em&gt;Javascript&lt;/em&gt; es que &lt;em&gt;todo (o casi todo) es un mensaje.&lt;/em&gt; Esto significa que objetos, funciones, métodos y valores son mensajes (o expresiones) y como tales pueden ser pasadas como parámetros.&lt;br /&gt;
+A diferencia del &lt;em&gt;for&lt;/em&gt; que es una instrucción, el &lt;em&gt;forEach&lt;/em&gt; es un método del objeto &lt;em&gt;Array&lt;/em&gt; (o de su &lt;em&gt;prototipo&lt;/em&gt;). Combinando estos conceptos, &lt;em&gt;forEach&lt;/em&gt; recorre el &lt;em&gt;array&lt;/em&gt; y en cada iteración invoca a la función que recibió como parámetro. En dicha invocación, &lt;em&gt;forEach&lt;/em&gt; le pasa como parámetro a la otra función, el elemento que está siendo iterado.&lt;br /&gt;
+Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Adicionalmente, el &lt;em&gt;forEach&lt;/em&gt; recibe un segundo parámetro opcional que representa una función que será invocada cuando se haya finalizado la recorrida del &lt;em&gt;array&lt;/em&gt;. En los ejemplos que se están mostrando esto puede parecer inútil, pero cuando se está en un entorno de programación &lt;em&gt;asincrónica&lt;/em&gt; (como &lt;a href=&quot;http://nodejs.org&quot;&gt;NodeJS&lt;/a&gt;), este tipo de implementaciones se vuelve indispensable.&lt;/p&gt;
+
+&lt;p&gt;Aún más útiles quizá resulten 2 parámetros adicionales que &lt;strong&gt;el &lt;em&gt;forEach&lt;/em&gt; le pasa a la función especificada en el primer parámetro:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Even though these are hidden, objects are not being logged in regular intervals. This is due to the client only logs those when it receives a &lt;em&gt;response&lt;/em&gt; and this only happens when the observed resource changes.&lt;/li&gt;
-  &lt;li&gt;The first received object (logged after an “init”) is similar to the one on the previous example, it means, the complete object. The following ones (logged after an “update”) are actually &lt;em&gt;arrays of objects&lt;/em&gt;..&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: El índice del elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; completo.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Let’s analyze one of these &lt;em&gt;arrays&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;El &lt;em&gt;forEach&lt;/em&gt; no devuelve ningún resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el &lt;em&gt;array&lt;/em&gt; que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientparticularUpdate.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;no-apto-para-menores-de-25-aos&quot;&gt;No apto para menores de 25 años&lt;/h3&gt;
+&lt;p&gt;Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del &lt;em&gt;array&lt;/em&gt; aquellas personas que no alcancen dicha edad. El código podría ser:&lt;/p&gt;
 
-&lt;p&gt;Each object in the &lt;em&gt;array&lt;/em&gt; indicates that an attribute has been replaced, and its new value is specified. Not every &lt;em&gt;array&lt;/em&gt; has the same length (4, 1 and 2 as can be seen on the previous image). This indicates the quantity of changes that has been detected on each &lt;em&gt;response&lt;/em&gt;.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Finally, let’s see what happens on the &lt;em&gt;network&lt;/em&gt; view:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Nota&lt;/strong&gt;: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice&quot;&gt;&lt;em&gt;splice&lt;/em&gt;&lt;/a&gt; es útil para eliminar elementos de un &lt;em&gt;array&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientNetwork.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Si ejecutamos este código, vamos a obtener el siguiente resultado:&lt;/p&gt;
 
-&lt;p&gt;It can be seen an ONLY &lt;em&gt;request&lt;/em&gt; to a &lt;em&gt;url&lt;/em&gt; belonging to &lt;em&gt;streamdata&lt;/em&gt; (the &lt;em&gt;proxy&lt;/em&gt;) and as parameters, the &lt;em&gt;token&lt;/em&gt; (only those clients knowing it will be able to access the app at &lt;em&gt;streamdata.io&lt;/em&gt;) and the &lt;em&gt;url&lt;/em&gt; of the original &lt;em&gt;request&lt;/em&gt;. That request has been opened for 2.5 minutes receiving notifications every time the resource changed at the server.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;John Doe - 27&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Jane Doe - 24&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Julian Doe - 32&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Por algún motivo, Jane Doe logró vencer la seguridad de nuestro bar, e ingresar. Dicho motivo es causa de incontables &lt;em&gt;bugs&lt;/em&gt; en incontables piezas de código.&lt;br /&gt;
+En cada iteración, &lt;em&gt;index&lt;/em&gt; incrementa 1. La primera vez (&lt;em&gt;index=0&lt;/em&gt;) encontramos a John Doe de 27 años. Queda en el &lt;em&gt;array&lt;/em&gt;. La segunda vez (&lt;em&gt;index=1&lt;/em&gt;), encontramos a John Doe Jr de 3 años (quien claramente no debería estar en nuestro bar). Al removerlo del &lt;em&gt;array&lt;/em&gt; Jane Doe pasa a estar en el &lt;em&gt;index 1&lt;/em&gt; y Julian Doe en el &lt;em&gt;index 2&lt;/em&gt;. La tercera iteración (&lt;em&gt;index=2&lt;/em&gt;) aparece Julian Doe. Es decir que Jane Doe ha sido salteada. &lt;strong&gt;Es como si el guardia de seguridad se diera vuelta cada vez que saca a alguien de la fila del bar y en ese momento dejara pasar a una persona sin importar su edad.&lt;/strong&gt;&lt;br /&gt;
+No siempre es buena idea modificar el &lt;em&gt;array&lt;/em&gt; que se está iterando. Como soluciones alternativas, se puede utilizar un &lt;em&gt;array&lt;/em&gt; auxiliar y sobreescribir el original una vez que ya se haya finalizado la iteración.&lt;/p&gt;
 
-&lt;p&gt;It’s clear how practical and even how &lt;em&gt;performant&lt;/em&gt; using a &lt;em&gt;Streaming API&lt;/em&gt; could be. Only thinking of the current &lt;em&gt;web applications&lt;/em&gt; helps us understanding how useful is to receive notifications when the model changes at the server.&lt;br /&gt;
-But we won’t always count with a &lt;em&gt;Streaming API&lt;/em&gt;. We are often hitting a 3rd party &lt;em&gt;API&lt;/em&gt; and lot of times, our &lt;em&gt;API&lt;/em&gt; already exists and we don’t count with time or money enough to change it (turn it into a &lt;em&gt;streaming API&lt;/em&gt;). By implementing a &lt;em&gt;proxy&lt;/em&gt; we can emulate that behaviour, and even if we didn’t count with the resources for implementing this solution, it would be possible to take advantage of a platform like &lt;em&gt;streamdata.io&lt;/em&gt; that provides this functionality as a service in the cloud.&lt;/p&gt;
+&lt;p&gt;Pero más allá de el mal funcionamiento del código anterior, analicemos su &lt;strong&gt;expresividad&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Por cada persona:&lt;br /&gt;
+  1.1. Verificar si supera o iguala los 25 años.&lt;br /&gt;
+  1.2. Si no lo hace, remover del &lt;em&gt;array&lt;/em&gt; 1 posición comenzando en &lt;em&gt;index&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Por cada persona, imprimir el patrón (hay que prestar atención al código para entender que es “por cada persona que haya quedado en el &lt;em&gt;array&lt;/em&gt;”).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No parece ser tan grave, pero seguimos teniendo conocimiento del &lt;em&gt;array&lt;/em&gt;, el &lt;em&gt;index&lt;/em&gt; y la lógica para realizar la comparación. Además, si quisiéramos reutilizar este código para quitar menores de edad, deberíamos duplicarlo.&lt;br /&gt;
+Comencemos por atacar este segundo problema (al menos parte del mismo).&lt;/p&gt;
+
+&lt;h3 id=&quot;funciones-que-crean-funciones&quot;&gt;Funciones que crean funciones&lt;/h3&gt;
+&lt;p&gt;Esta es una característica de &lt;em&gt;Javascript&lt;/em&gt; que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.&lt;br /&gt;
+Tomemos por ejemplo el siguiente código:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;olderThan25&lt;/em&gt; está devolviendo una función que recibe una persona y devuelve &lt;em&gt;true&lt;/em&gt; si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable &lt;em&gt;older&lt;/em&gt;, &lt;code&gt;older(person)&lt;/code&gt; realizará la evaluación antes mencionada.&lt;br /&gt;
+Entonces,&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;imprime &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Siguiendo este mismo concepto, podemos aún lograr un código más reutilizable e incluso más expresivo. Pasemos como parámetro el “umbral” de edad que queremos evaluar.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Ahora, podemos crear cuantas funciones queramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.&lt;br /&gt;
+Aplicando al código anterior (que intentaba remover a los menores de 25 años):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El código sigue sin funcionar (el problema descripto anteriormente sigue allí).&lt;/li&gt;
+  &lt;li&gt;Si bien la legibilidad del código mejoró, se sigue leyendo “si la persona es mayor de 25, remover una posición del &lt;em&gt;array&lt;/em&gt; comenzando en &lt;em&gt;index&lt;/em&gt;”. Es decir que la expresividad sigue siendo similar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;arrayprototypefilter&quot;&gt;Array.Prototype.filter&lt;/h3&gt;
+
+&lt;p&gt;Afortunadamente, &lt;em&gt;Javascript&lt;/em&gt; nos da un método del &lt;em&gt;array&lt;/em&gt; que hace exactamente lo que queremos.&lt;br /&gt;
+El método &lt;em&gt;filter&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición que decide si el elemento que está siendo iterado, debe pertenecer (deberá devolver &lt;em&gt;true&lt;/em&gt; si el elemento debe pertenecer al nuevo grupo, y &lt;em&gt;false&lt;/em&gt; en caso contrario).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;filter&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacía &lt;em&gt;forEach&lt;/em&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A diferencia del &lt;em&gt;forEach&lt;/em&gt;, &lt;em&gt;filter&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos que pasen la prueba evaluada en &lt;em&gt;callback&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Teniendo en cuenta este nuevo método, el siguiente código resuelve el requerimiento expresado anteriormente:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Respecto de su expresividad, puede ser leído como:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Filtrar las personas &lt;strong&gt;que no&lt;/strong&gt; sean mayores de 25 y por cada una imprimir el patrón.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Un problema de este método (respecto de su expresividad) es el nombre &lt;em&gt;filter&lt;/em&gt; (y/o el hecho de remueva el elemento cuando &lt;em&gt;callback&lt;/em&gt; devuelve &lt;em&gt;false&lt;/em&gt;). Eso haría que sea lea “filtrar los mayores de 25”, cuando en realidad se está haciendo lo contrario. &lt;em&gt;Nada es perfecto&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;cuida-tu-peso&quot;&gt;Cuida tu peso&lt;/h3&gt;
+
+&lt;p&gt;Hemos logrado trabajar con cada persona de nuestro grupo, y realizar operaciones con cada una de ellas. Pero muchas veces, es necesario trabajar con el grupo como un todo.&lt;br /&gt;
+Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascensor. Por motivos de seguridad, los ascensores más modernos incluyen una balanza para asegurarse de que no se haya superado el peso máximo soportado por el mismo. Intentemos evitar la vergüenza de escuchar la chicharra indicando que nos hemos excedido y calculemos el peso total previamente:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Algunas observaciones acerca de este código:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Como vimos, &lt;em&gt;forEach&lt;/em&gt; recibe como primer parámetro una función. Hasta aquí, solíamos crear la función como un paso previo y pasar el nombre de la función como parámetro. Pero, como &lt;em&gt;function&lt;/em&gt; es una expresión que devuelve una función, la sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite definir la función directamente en el lugar donde escribiríamos el valor del parámetro. En particular, esta función no tiene nombre, lo que la convierte en una &lt;strong&gt;función anónima&lt;/strong&gt;. Los diferentes tipos de funciones y las diferentes formas de definirlas, ameritan un &lt;em&gt;post&lt;/em&gt; en sí mismo.&lt;/li&gt;
+  &lt;li&gt;Como &lt;em&gt;forEach&lt;/em&gt; no devuelve nada, es necesario definir una variable externa que acumule el valor de la suma.&lt;/li&gt;
+  &lt;li&gt;El código que vamos a generar, &lt;strong&gt;en mi opinión&lt;/strong&gt; no es &lt;em&gt;automáticamente&lt;/em&gt; más expresivo que el que ya generamos. Pero sin duda, se vuelve increíblemente entendible cuando comprendemos el significado e importancia de los métodos &lt;em&gt;map&lt;/em&gt; y &lt;em&gt;reduce&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo &lt;em&gt;array&lt;/em&gt; que solo tenga los pesos de las personas de nuestro grupo.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Este código puede leerse de la siguiente manera:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Crear un array vacío llamado &lt;em&gt;weights&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Por cada persona, invocar una función que reciba a dicha persona y el índice de la misma en el &lt;em&gt;array&lt;/em&gt; original.&lt;/li&gt;
+  &lt;li&gt;La función obtiene el peso de la persona y lo asigna a la posición indicada en el nuevo &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;imprime&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;[ 176, 22, 127, 160 ]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;arrayprototypemap&quot;&gt;Array.prototype.map&lt;/h3&gt;
+
+&lt;p&gt;En general, llamamos al proceso de asociar los elementos de un conjunto, con los elementos de otro conjunto “&lt;a href=&quot;https://en.wikipedia.org/wiki/Map_(mathematics)&quot;&gt;mapear&lt;/a&gt;”, y el criterio de dicha asociación puede variar dependiendo la función utilizada.&lt;br /&gt;
+Es decir, que el código que escribimos anteriormente “mapea las personas con/por su peso”.&lt;br /&gt;
+Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la siguiente manera:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;De hecho, definiendo &lt;em&gt;weight&lt;/em&gt; como una función que dada una persona, devuelva su peso, la línea anterior hace &lt;strong&gt;exactamente&lt;/strong&gt; lo que dice.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;El método &lt;em&gt;map&lt;/em&gt;, recibe los mismos 2 parámetros que &lt;em&gt;filter&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que determina el criterio de asociación (deberá devolver el valor a mapear con cada elemento).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;map&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían &lt;em&gt;forEach&lt;/em&gt; y &lt;em&gt;filter&lt;/em&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;map&lt;/em&gt; devuelve un &lt;strong&gt;nuevo&lt;/strong&gt; &lt;em&gt;array&lt;/em&gt; con los elementos del segundo conjunto. En nuestro ejemplo, un &lt;em&gt;array&lt;/em&gt; con los pesos de las personas.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, volviendo a nuestro ejemplo, los pesos por separado no nos ayudan a determinar si es peligroso o no activar el ascensor. Aún debemos obtener el peso total.&lt;/p&gt;
+
+&lt;p&gt;Si siguiéramos el enfoque anterior, pero aprovechando la función &lt;em&gt;map&lt;/em&gt;, nuestro código quedaría así:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Es decir que primero obtenemos el &lt;em&gt;array&lt;/em&gt; de pesos y luego lo iteramos realizando la acumulación. Es una pequeña (casi insignificante) mejora respecto de nuestra versión anterior.&lt;/p&gt;
+
+&lt;h3 id=&quot;arrayprototypereduce&quot;&gt;Array.prototype.reduce&lt;/h3&gt;
+
+&lt;p&gt;El término &lt;em&gt;reduce&lt;/em&gt; resulta, al menos para mi, poco descriptivo respecto del objetivo de este método. Otros lenguajes (asociados al paradigma &lt;em&gt;funcional&lt;/em&gt;) suelen referirse a esta función como &lt;a href=&quot;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&quot;&gt;&lt;em&gt;fold&lt;/em&gt;&lt;/a&gt;. Pero una buena forma de entenderlo es pensar en &lt;em&gt;reduce&lt;/em&gt; como “resumir”. Queremos encontrar un solo valor que &lt;em&gt;resuma&lt;/em&gt; de alguna manera a todos los demás. Por ejemplo, 10 resume a 4, 3, 2 y 1 si consideramos a la suma como forma de resumir. 24 resume a 4, 3, 2, 1 si consideramos a la multiplicación como forma de resumir.&lt;br /&gt;
+Entonces, Definiendo &lt;em&gt;sum&lt;/em&gt; como&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;y considerando el siguiente código&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;se podría leer: resumir mediante la suma, el peso de las personas. O, sumar el peso de las personas.&lt;/p&gt;
+
+&lt;p&gt;El método &lt;em&gt;reduce&lt;/em&gt;, recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que contiene la lógica de reducción (la forma de resumir).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;initialValue&lt;/em&gt; (opcional): El valor inicial del &lt;em&gt;acumulador&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;reduce&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 4 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;previousValue&lt;/em&gt;: El resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt; o &lt;em&gt;initialValue&lt;/em&gt; (la primera vez que se ejecuta).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;currentValue&lt;/em&gt;: El valor que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho valor dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;reduce&lt;/em&gt; devuelve un &lt;strong&gt;único&lt;/strong&gt; valor que coincide con el resultado de la última ejecución de &lt;em&gt;callback&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hay algunas características de &lt;em&gt;reduce&lt;/em&gt; que podrían catalogarlo como un método recursivo. En lugar de pensar a &lt;em&gt;reduce&lt;/em&gt; como una función que itera el &lt;em&gt;array&lt;/em&gt; aplicando &lt;em&gt;callback&lt;/em&gt;, podríamos pensarlo como una función que toma la primera posición del &lt;em&gt;array&lt;/em&gt; y aplica &lt;em&gt;callback&lt;/em&gt; pasando esta posición y el resultado de &lt;em&gt;reduce&lt;/em&gt; para un segundo &lt;em&gt;array&lt;/em&gt; que va desde la segunda hasta la última posición del primer &lt;em&gt;array&lt;/em&gt;. Al usarlo, esto es transparente, pero saberlo nos ayuda a entender cómo funciona, por qué &lt;strong&gt;acumula&lt;/strong&gt; y cómo funciona el &lt;em&gt;initialValue&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;una-visita-al-autocine&quot;&gt;Una visita al autocine&lt;/h3&gt;
+
+&lt;p&gt;Las personas salieron del ascensor, subieron al auto y partieron con rumbo al auto-cine. Eligieron una película no apta para menores de 18 años. Al intentar ingresar, debemos preguntar si &lt;strong&gt;todas&lt;/strong&gt; las personas en el auto alcanzan dicha edad.&lt;br /&gt;
+Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Iterar y preguntar&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Estamos utilizando la función &lt;em&gt;olderThan(threshold)&lt;/em&gt; para generar la función &lt;em&gt;olderThan18&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Reducir mediante el operador lógico “Y”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mapear al &lt;em&gt;array&lt;/em&gt; de edades y reducir mediante el operador lógico “Y”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greaterThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Es similar a la anterior, pero antes de &lt;em&gt;reducir&lt;/em&gt;, obtenemos el &lt;em&gt;array&lt;/em&gt; de edades (y por lo tanto, en lugar de utilizar una función que reciba una persona y compare su edad, utilizamos una similar pero que compare directamente la edad. &lt;em&gt;greaterThan18&lt;/em&gt; es generada de forma similar que &lt;em&gt;olderThan18&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Todas estas soluciones tienen un problema (u oportunidad de mejora): Evalúan todo el &lt;em&gt;array&lt;/em&gt; sin importar lo que ocurra. En nuestro caso, evaluando el segundo elemento podríamos concluir que no todas las personas son mayores de 18. En evaluaciones de expresiones &lt;em&gt;booleanas&lt;/em&gt; esto se conoce como “evaluación de cortocircuito”.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
+&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;En ambos casos, es innecesario evaluar &lt;em&gt;whatever&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto parece ser irrelevante en un &lt;em&gt;array&lt;/em&gt; de 4 elementos. Pero ¿qué pasaría si tuviéramos un colectivo, tren o avión intentando ingresar al auto-cine? Además del posible problema de espacio del predio, nuestras soluciones estarían ocupando ciclos de procesamiento innecesarios, lo que se conoce como &lt;strong&gt;mala performance&lt;/strong&gt;.&lt;br /&gt;
+La forma de solucionar esto es &lt;em&gt;rompiendo&lt;/em&gt; las iteraciones cuando no es necesario seguir evaluando. La instrucción &lt;em&gt;break&lt;/em&gt; hace exactamente eso, pero no es aplicable a los métodos que estamos utilizando (es aplicable al &lt;em&gt;for&lt;/em&gt; clásico). Existen otras “técnicas” para salir de estos métodos, pero ninguna es elegante ni recomendable (por ejemplo, podríamos asignar “0” a &lt;em&gt;array.length&lt;/em&gt;, si no necesitaramos seguir trabajando con el &lt;em&gt;array&lt;/em&gt;. O hacer una copia del mismo, para poder cambiar el &lt;em&gt;length&lt;/em&gt; sin problemas. También podríamos &lt;em&gt;lanzar una excepción&lt;/em&gt; y &lt;em&gt;capturarla&lt;/em&gt; inmediatamente al salir del método).&lt;/p&gt;
+
+&lt;p&gt;Pero hay un motivo por el cual este problema se presenta al utilizar estos métodos. En el caso del &lt;em&gt;forEach&lt;/em&gt; el motivo es incluso explícito en el nombre de la función. &lt;strong&gt;Por cada&lt;/strong&gt; elemento de un &lt;em&gt;array&lt;/em&gt; implica que &lt;strong&gt;todos&lt;/strong&gt; los elementos van a ser iterados.&lt;/p&gt;
+
+&lt;h3 id=&quot;every-some&quot;&gt;Every-Some&lt;/h3&gt;
+
+&lt;p&gt;Volviendo al tema de la &lt;em&gt;expresividad&lt;/em&gt;, ninguna de las soluciones resultan demasiado expresivas (hagan el ejercicio de identificar lo que cada una está diciendo y lo que cada una está haciendo). El enunciado debería ser más sencillo. Verificar que todas las personas sean mayores de 18.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Esta solución dice y hace exactamente lo que buscamos. Devuelve &lt;em&gt;true&lt;/em&gt; si todas las personas son mayores de 18 años. Caso contrario, devuelve &lt;em&gt;false&lt;/em&gt;.&lt;br /&gt;
+Además de ser altamente expresiva, &lt;em&gt;every&lt;/em&gt; respeta la evaluación de cortocircuito, es decir que dejará de iterar ni bien encuentre una persona que no cumpla la condición.&lt;/p&gt;
+
+&lt;p&gt;El método &lt;em&gt;every&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición a cumplir (deberá devolver &lt;em&gt;true&lt;/em&gt; o &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;every&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían los demás métodos):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;every&lt;/em&gt; devuelve &lt;em&gt;true&lt;/em&gt; si todos los elementos iterados cumplieron con la condición, y &lt;em&gt;false&lt;/em&gt; si al menos un elemento no lo hace (y deja de iterar cuando lo encuentra).&lt;/p&gt;
+
+&lt;h3 id=&quot;en-busca-de-una-pelcula-apta&quot;&gt;En busca de una película apta&lt;/h3&gt;
+
+&lt;p&gt;Las restricciones de edad en las películas deben ser respetadas. Y si bien nuestras personas no  encontraron ninguna película apta para todo público, apareció un nuevo estreno que puede ser vista por menores con la supervisión de un adulto. Dejando de lado el criterio del adulto, escribamos la solución que nos permita evaluar si alguna persona es mayor de 18 años. Pero antes de comenzar a mostrar todas las alternativas (como hicimos con el caso anterior &lt;em&gt;every&lt;/em&gt;) pensemos ¿no existirá algún otro método que diga y haga lo estamos buscando?&lt;br /&gt;
+Mi respuesta rápida es &lt;strong&gt;sí&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;El método &lt;em&gt;some&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;callback&lt;/em&gt;: La función que evalua la condición a cumplir (deberá devolver &lt;em&gt;true&lt;/em&gt; o &lt;em&gt;false&lt;/em&gt;).&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;contextObject&lt;/em&gt; (opcional): El objeto que será utilizado como &lt;em&gt;this&lt;/em&gt; dentro de la función &lt;em&gt;callback&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A su vez, &lt;em&gt;some&lt;/em&gt; pasa a &lt;em&gt;callback&lt;/em&gt; 3 parámetros (al igual que lo hacían los demás métodos):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;element&lt;/em&gt;: El elemento que está siendo iterado.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;index&lt;/em&gt;: La posición de dicho elemento dentro del &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;array&lt;/em&gt;: El &lt;em&gt;array&lt;/em&gt; que está siendo iterado.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;some&lt;/em&gt; devuelve &lt;em&gt;false&lt;/em&gt; si ningún elemento cumple con la condición, y &lt;em&gt;true&lt;/em&gt; si al menos un elemento lo hace (y deja de iterar cuando lo encuentra).&lt;/p&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;Como mencioné al comienzo del &lt;em&gt;post&lt;/em&gt;, la &lt;em&gt;expresividad&lt;/em&gt; es solo uno de muchos aspectos a considerar. Muchas veces, estos aspectos entran en conflicto y es necesario evaluar cuál prima.&lt;br /&gt;
+Consideremos el siguiente problema: Debo obtener un &lt;em&gt;array&lt;/em&gt; con las personas con peso menor a 130 libras, que tengan más de 10 años.&lt;br /&gt;
+Con todo lo que hemos visto, naturalmente podríamos pensar que la siguiente solución es ideal:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La realidad es que esta solución no es ideal, tan solo es expresiva.&lt;br /&gt;
+Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, estamos iterando 2 &lt;em&gt;arrays&lt;/em&gt;. Si &lt;em&gt;persons&lt;/em&gt; contiene N elementos y M son mayores de 10, la solución anterior recorrerá N + M elementos. La siguiente solución puede ser un poco menos expresiva pero nos asegura que solo se recorrerán N elementos:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;considerando&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Al negociar un aspecto por otro, es necesario considerar el caso de uso. Si nuestros &lt;em&gt;arrays&lt;/em&gt; contienen familias (es decir, pocos elementos), quizá podamos darnos el lujo de tener el código más expresivo. Si estamos procesando el padrón electoral completo, mejor preocuparse por la &lt;em&gt;performance&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h3&gt;
+
+&lt;p&gt;La misma sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite trabajar con partes buenas de los paradigmas &lt;em&gt;estructurado&lt;/em&gt;, &lt;em&gt;orientado a objetos&lt;/em&gt; y &lt;em&gt;funcional&lt;/em&gt;. Las buenas prácticas de cada paradigma pueden favorecernos a la hora de mejorar algunos aspectos de nuestro código. En la mayoría de los casos, al mejorar un aspecto, estaremos empeorando otros (Ej: Mayor Expresividad -&amp;gt; Menor Performance). Muchas veces estos aspectos se conjugarán de formas más complejas (Ej: Mayor Performance y Buena Expresividad -&amp;gt; Poca Flexibilidad). Es parte de nuestro trabajo cuando escribimos una pieza de código, evaluar qué aspectos queremos favorecer y cuáles podemos castigar. La mayoría de las veces caeremos en la trampa y favoreceremos los aspectos que más nos gusten. Eso es algo a evitar. Para saber qué aspectos favorecer, la mejor opción es analizar el caso de uso.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 09 Sep 2015 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//en/2015/09/09/from-api-to-streaming-api/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//en/2015/09/09/from-api-to-streaming-api/</guid>
+        <pubDate>Thu, 13 Aug 2015 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</guid>
         
-        <category>API</category>
+        <category>javascript</category>
         
-        <category>Streaming</category>
+        <category>expressive</category>
         
-        <category>Long</category>
+        <category>code</category>
         
-        <category>Polling</category>
+        <category>array</category>
+        
+        <category>prototype</category>
+        
+        <category>functions</category>
+        
+        <category>forEach</category>
+        
+        <category>map</category>
+        
+        <category>reduce</category>
+        
+        <category>filter</category>
+        
+        <category>every</category>
+        
+        <category>some</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Mudanza a GitHubPages</title>
+        <description>&lt;p&gt;Con estas (no tan) recientes ganas de volver a escribir en ourBit me di cuenta de que las herramientas provistas por &lt;em&gt;blogger de Google&lt;/em&gt; no eran suficientes, o al menos, no cumplían los requerimientos que, en mi opinión, una plataforma de &lt;em&gt;blogging&lt;/em&gt; debe tener.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;p&gt;Luego de investigar un poco otras herramientas que podían ayudarme en esta tarea (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), llegué a la conclusión de que, por diferentes motivos, ninguna de estas iba a cumplir mis expectativas. Y básicamente me inclino a pensar que el motivo es que, si bien son buenas plataformas, apuntan a un usuario general no tan especializado como para utilizar otro tipo de herramientas.&lt;/p&gt;
+
+&lt;p&gt;Es así como recordé haber usado &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt; para construir alguna página estática en el pasado, y comencé a evaluarlo como alternativa.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definitivamente, &lt;em&gt;Jekyll&lt;/em&gt; no provee mejores herramientas que las otras plataformas&lt;/strong&gt;. No tiene comentarios, no crea un blog en minutos con sus correspondientes archivos, templates aplicables con solo un click, etc. Lo que termina primando aquí es la &lt;strong&gt;fléxibilidad&lt;/strong&gt;, lo cual la convierte en &lt;strong&gt;una herramienta candidata para desarrolladores&lt;/strong&gt; (u otros profesionales con conocimientos suficientes de IT) para ser su “plataforma” de &lt;em&gt;blogging&lt;/em&gt; a la medida.&lt;/p&gt;
+
+&lt;p&gt;El tiempo de adopción fue de apróximadamente 1 hora (si, nada más). En mi caso, ya contaba con algo de experiencia y fue solo cuestión de refrescar algunos conceptos, buscar algunos detalles de configuración y salir andando. Bueno, casi. Una vez que tenía todo funcionando, me puse a pensar en el diseño. No quería nada lujoso, pero si algo que fuera cómodo para el lector (y obviamente, respondiera a mis gustos personales). Pero claro, mis habilidades como diseñador son casi nulas, por lo cual decidí buscar &lt;em&gt;templates (o themes)&lt;/em&gt; gratuitos y adaptar mínimamente alguno. Me encontré con &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; de &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; a quien agradezco por haber disponibilizado este material. Adaptarlo y aplicarlo al blog que ya estaba funcionando fue cuestión de minutos.&lt;/p&gt;
+
+&lt;p&gt;¿Qué me hace elegir &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La posibilidad de contar con herramientas &lt;em&gt;Open Source&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;Libre de publicidad: Esto es gratuito sin letra chica.&lt;/li&gt;
+  &lt;li&gt;Flexibilidad y Extensibilidad: Puedo desarrollar plugins y herramientas sobre la plataforma.&lt;/li&gt;
+  &lt;li&gt;Simpleza: Crear Posts es tan simple como escribir en un archivo de texto y seguir el flujo normal de GitHub para publicar.&lt;/li&gt;
+  &lt;li&gt;Capacidad de Recibir &lt;em&gt;Pull Requests&lt;/em&gt;: Me interesa que cualquier lector pueda sugerir correcciones, o incluso, publicar en este blog. &lt;strong&gt;Espero Pull Requests con sus Posts&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Soporte a &lt;em&gt;Markdown&lt;/em&gt;: Esto quizá es un gusto personal. Pero encuentro muy simple y conveniente escribir en &lt;em&gt;Markdown&lt;/em&gt; en lugar de lidiar con editores &lt;em&gt;WYSIWYG&lt;/em&gt; que terminan fallando cuando quiero ir más allá que las opciones soportadas.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Estas son solo algunas razones. Pero cada uno debería tener las suyas. Ante la duda, inviertan 1 hora en aprender a usarlo (quizá no los convenza como herramienta de &lt;em&gt;Blogging&lt;/em&gt;, pero no está demás saber como funciona &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Les dejo algunos links para comenzar:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si tienen dudas, espero su contacto.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
+        <link>http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>SPAM - Caso Real</title>
+        <description>&lt;p&gt;Quienes entendemos (y un poco más) de tecnología, solemos advertir, explicar, &lt;em&gt;retar&lt;/em&gt; a nuestros conocidos y familiares cuando vemos que están usando mal el &lt;em&gt;mail&lt;/em&gt;. En particular, un concepto simple pero que siempre se suele dejar de lado (por desconocimiento u olvido, a todos nos puede pasar).
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;para-principiantes&quot;&gt;Para principiantes&lt;/h2&gt;
+&lt;p&gt;Cuando enviamos un &lt;em&gt;mail&lt;/em&gt;, tenemos que especificar las direcciones de los destinatarios. Pero hay 3 formas de hacerlo:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Para: A quienes está dirigido el &lt;em&gt;mail&lt;/em&gt;. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Copia Carbón: Gente en copia porque no son los principales destinatarios, pero queremos que estén enterados. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Copia Oculta: Gente a la que queremos que le llegue el &lt;em&gt;mail&lt;/em&gt;, sin que los demás se enteren. &lt;strong&gt;Nadie más que el remitente y el destinatario puede ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Y es esta última opción la que sugerimos/rogamos utilizar cuando no podés evitar mandar ese &lt;em&gt;PPT&lt;/em&gt; con música de fondo y fotos de volcanes o cachorros siendo salvados por bomberos voluntarios. Es decir, si lo vas a mandar de todos modos, y a un montón de gente, al menos no publiques/compartas las direcciones con todo el mundo.&lt;br /&gt;
+Personalmente me dio buenos resultados explicar &lt;strong&gt;por qué&lt;/strong&gt; está mal compartir las direcciones. Al enviar estas direcciones, y ser públicas para cualquiera, quien la recibe puede utilizarla para enviarme contenido que no me interesa (lo cual, en gran volumen, representa una molesta pérdida de tiempo). Pero aún peor: Muchos de tus contactos de confianza van a reenviar tu &lt;em&gt;mail&lt;/em&gt; (porque les resultó digno de ser compartido) y a su vez, sus contactos lo reenviarán en una cadena que podría propagarse hasta que todos hayamos recibido ese &lt;em&gt;mail&lt;/em&gt; (quizá más de una vez).&lt;br /&gt;
+En toda esa cadena, &lt;strong&gt;al menos&lt;/strong&gt; uno de los eventuales destinatarios, se dedica a recolectar direcciones de &lt;em&gt;mail&lt;/em&gt; y armar “bases de datos” de los mismos. Estas bases de datos, o listas con gran cantidad de contactos tienen gran valor para empresas que publicitan sus productos y/o servicios vía internet, y por lo tanto, están dispuestas a pagar por ellas. Al final del recorrido, lo que ocurre es que uno empieza a recibir &lt;em&gt;mail&lt;/em&gt; no solicitado, de interés nulo, y &lt;strong&gt;en abundancia.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;caso-real&quot;&gt;Caso real&lt;/h2&gt;
+
+&lt;p&gt;Esta mañana, un empleado de una compañía dedicada a proyectos de inversión, envió las novedades e imágenes de la demolición de un espacio para un nuevo emprendimiento. &lt;strong&gt;Mis felicitaciones a ellos, de paso.&lt;/strong&gt; Yo no conozco a esta persona, por lo que estimo que obtuvo mi &lt;em&gt;mail&lt;/em&gt; gracias a alguna cadena previa enviada de manera incorrecta. Pero aquí lo curioso: Puso a todos los destinatarios en el campo “Para”. Si, ese error que un familiar comete y al que le advertimos, explicamos, &lt;em&gt;retamos&lt;/em&gt;, fue cometido por un &lt;strong&gt;profesional de la industria del envío del &lt;em&gt;mail&lt;/em&gt; masivo (probablemente certificado por el instituto nacional del envío de correo electrónico y otras competencias altamente redituables, mejor conocido como el INdEdCEyOCAR).&lt;/strong&gt; Y obviamente, si a un familiar se lo marco, cómo no arremeter ante tal falta de profesionalismo. Respondí su &lt;em&gt;mail&lt;/em&gt; moviendo a los otros destinatarios desde el campo “Para” al campo “Copia Oculta” (si bien el mal estaba hecho, con esto evitaba cualquier problema que pudiera surgir por algún “Responder a Todos”). Puse en el campo “Copia Carbón” la dirección info@&lt;em&gt;laempresaencuestion&lt;/em&gt;.com (que obtuve de internet) a modo de “comunicame con un supervisor”. Y escribí mi respuesta:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Hola &lt;em&gt;XXXX&lt;/em&gt;,&lt;br /&gt;
+Te agradecería que la próxima vez que envíes un correo no solicitado (A.K.A SPAM) lo hagas utilizando la opción Copia Oculta (o BCC) para que no todos puedan ver mis datos de contacto así como yo no debería ver los datos de todas las personas que están recibiendo este mensaje.&lt;br /&gt;
+Atte.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Aparentemente, el &lt;em&gt;mal&lt;/em&gt; ya está hecho. Uno tiene a minimizar estas cuestiones al nivel de “bueno, como mucho, recibis correo no deseado”. Pero al poner en copia (oculta) a las otras &lt;em&gt;víctimas&lt;/em&gt; de esta práctica ocurrieron algunas cosas que habitualmente se nos pasan por alto.&lt;/p&gt;
+
+&lt;h2 id=&quot;consecuencias&quot;&gt;Consecuencias&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Muchas de las direcciones de destino eran pertenecientes a &lt;em&gt;mails&lt;/em&gt; laborales. Es decir que esta gente podrá empezar a recibir SPAM en sus correos laborales.&lt;/li&gt;
+  &lt;li&gt;30 de Julio: Muchas de las personas tenían configurado la respuesta automática “Estoy de vacaciones hasta el día tal”. Es decir que, &lt;strong&gt;cualquiera de estas 400 personas podría saber que alguien (con nombre y apellido) probablemente no esté en casa&lt;/strong&gt; hasta dentro de unos días. Y déjenme decirles que, obtener el domicilio y otros datos de una persona con solo tener su nombre no es precisamente algo demasiado complicado (aunque no sea exacto).&lt;/li&gt;
+  &lt;li&gt;Las direcciones inexistentes (o inválidas) son informadas ya que uno recibe el correo típico de “Correo no entregado” (Undelivered mail). Por lo que puedo asumir que las demás direcciones son válidas y usarlas con fines comerciales.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En mi caso particular, las posibilidades que acabo de mencionar no se encuentran dentro del grupo de mis actividades, lo cual deja conformes solo a quienes me conocen y confían en mi. El resto puede dudar. Pero hay otras 399 personas en esa cadena. 399 personas que tienen mi dirección de correo. 399 personas que quizá tengan tu dirección de correo.&lt;/p&gt;
+
+&lt;p&gt;Es una época en donde lo que podemos hacer sentados en nuestros escritorios es cada vez más crítico. Podemos transferir dinero, contar nuestro itinerario, publicar nuestro estado de ánimo, mostrar fotos, publicar nuestros pensamientos y opiniones libremente, entre otras. Pero cada acción que hacemos, puede ser observada por otros. El uso consciente de las herramientas informáticas es la única forma real de asegurarnos que esos otros, sean el público al que apuntamos y nadie más.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2015/07/30/spam-caso-real/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2015/07/30/spam-caso-real/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>De Chrome a Safari ida y vuelta</title>
+        <description>¿Casi 3 años sin poner nada acá y aparecer de repente con poca información? No quiero faltarles el respeto, pero por algún lado hay que empezar (si queremos empezar).&lt;br /&gt;&lt;br /&gt;Hace un tiempo largo ya me convertí en usuario de Apple, sobretodo por las MacBook. Lo charlé con fundamentalistas, fanáticos, hinchas, simpatizantes, seres racionales, opositores, y &lt;i&gt;odiadores&lt;/i&gt; de todo lo que Mac representa y todos entendieron los motivos por los cuales no me muevo de Mac.&lt;!--MORE--&gt;&lt;br /&gt;&lt;br /&gt;Recientemente, instalé Yosemite en una nueva Retina Display de 15''. Todo perfecto, la integración con iPhone mejoró considerablemente, y no tuve demasiados problemas con las herramientas de desarrollo u otras.&lt;br /&gt;&lt;br /&gt;Pero un par de días más tarde, todo empezó a funcionar raro (como en los tiempos de Windows). La Mac se colgaba, todo andaba &quot;trabado&quot;. Empecé a ver los motivos y al abrir el &quot;Monitor&quot; tenía aproximadamente 25 procesos &quot;Google Chrome Helper&quot; consumiendo memoria, procesador, y en estado &quot;Not responding&quot;. No esperé demasiado (y ya tenía curiosidad por ver cómo andaba Safari) así que cerré todo y cambié.&lt;br /&gt;&lt;br /&gt;La realidad es que Safari en Mac es superior en múltiples aspectos:&lt;br /&gt;- La velocidad mejora &lt;b&gt;notablemente&lt;/b&gt;.&lt;br /&gt;- El consumo de recursos disminuye &lt;b&gt;notablemente.&lt;/b&gt;&lt;br /&gt;- User Experience: Mejora salvo por unos detalles, que lograron hacer que vuelva a intentar Chrome:&lt;br /&gt;&lt;br /&gt;1. &quot;Abrir las últimas ventanas o pestañas cerradas&quot; simplemente no funciona (o no es consistente). Algunas veces, abre como corresponde. Pero otras, por ejemplo si Safari no pudo filtrar un pop-up, esta funcionalidad va a abrir ese pop-up cada vez que lo intentemos. El shortcut de una ventana cerrada es CMD+Z, lo cual dificulta UNDO en un FORM (depende del campo, se ejecuta una u otra función).&lt;br /&gt;2. Los &quot;Tabs&quot; no tienen favicon. Las pestañas llegan a achicarse hasta un punto en donde comienzan a desaparecer, y navegarlas se vuelve completamente anti-intuitivo.&lt;br /&gt;3. Las &quot;Developer Tools&quot;. Una vez que están habilitadas (porque no vienen por &lt;i&gt;default&lt;/i&gt;), no nos aportan demasiado. En especial los &lt;i&gt;Timelines. &lt;/i&gt;Si fuera por los &lt;i&gt;timelines&lt;/i&gt;, las páginas nunca fueron solicitadas.&lt;br /&gt;&lt;br /&gt;El hecho de que la comunidad de desarrolladores de &quot;extensions&quot; también sea más numerosa para Chrome, influye.&lt;br /&gt;&lt;br /&gt;Volví a Chrome. Voy a tener que pelear con los problemas de consumo de recursos (sobretodo de los programas que usen el Chrome Helper) hasta que se solucione.&lt;br /&gt;&lt;br /&gt;De paso: Instalé también la versión más beta &lt;a href=&quot;https://www.google.com/intl/en/chrome/browser/canary.html&quot; target=&quot;_blank&quot;&gt;Chrome Canary&lt;/a&gt;&amp;nbsp;para ir probando nuevas funcionalidades. No se cuánto lo vaya a usar, ya que no puedo ponerlo como &lt;i&gt;default browser&lt;/i&gt;, pero veremos como evoluciona.&lt;br /&gt;&lt;br /&gt;Nota: Espero retomar la costumbre de escribir cada tanto por aquí. Consideremos este post como una prueba piloto.
+</description>
+        <pubDate>Fri, 21 Nov 2014 18:37:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Legislando lo que prosperó anárquicamente</title>
+        <description>Es claro que el titulo es tendencioso. Decir que Internet es un ente anárquico es, desde mi humilde opinión, una falacia no menor. Internet contiene lo que un numeroso grupo de individuos (personas físicas o jurídicas) publica, al menos conceptualmente y sin entrar en detalles técnicos que no aportan al tema a desarrollar. &lt;!--MORE--&gt;Estas personas se rigen por legislaciones existentes (algunas correspondientes a sus países y otras comunes al globo). Si yo violo una ley existente, ya sea por publicar un contenido no debido en una red, o por arrojar basura en la vía pública, no estoy realizando nada que no ocurriera antes de internet (masiva). Lo que quizás provee internet es cierta impunidad que brinda el anonimato. Estas características permitieron que internet se desarrollara y llegara a ser el lugar en donde millones de personas podemos compartir contenidos y potenciar nuestras capacidades. Quienes entendemos internet no podemos imaginarla de otra manera. Y creo que aquí es momento de mencionar algo que puede ser controversial: &quot;No es incorrecto legislar internet&quot;. Todos podemos querer que nuestros derechos de autor se vean resguardados al tiempo que queremos utilizar el medio que facilita su &quot;violación&quot; para difundir lo que queremos proteger. Probablemente, si el cine no fuera un gran negocio, su difusión sería limitada, y eso también sería una lástima. Lo que creo que no se puede dejar de lado, es el análisis COSTO-BENEFICIO de aplicar una ley. De alguna manera, se realiza este análisis (quizás de forma implícita) ante situaciones mucho más graves. Por ejemplo: tras muchos años de ver CANSADOS, que los accidentes de tránsito causados por conductores ebrios se cobran miles de vidas al año, nadie piensa en prohibir el alcohol. Se sigue penalizando su consumo al momento de manejar. Prohibir el alcohol sería, teóricamente, una medida más eficaz para evitar tragedias (Enorme beneficio). Pero el costo es también muy elevado, y sobretodo &lt;b&gt;corta libertades.&lt;/b&gt;&amp;nbsp;Si yo soy una persona responsable, que quiere disfrutar un buen vino con un plato de carne, sería ilógico que esta práctica se me&amp;nbsp;prohíba&amp;nbsp;(al menos bajo las normas culturales de mi región). Prohibir el alcohol, cambiaría rotundamente los hábitos de los individuos. Transformaría el objeto a legislar en algo completamente distinto. Imponer una legislación demasiado estricta sobre internet, haciendo que sitios que funcionan como herramientas para compartir todo tipo de contenidos, cierren, es cambiar la escencia de lo legislado: empeorar internet, prohibirme cenar con vino, enjaularme por ser Argentino.&lt;br /&gt;Pero más allá del análisis conceptual y el impacto negativo que tendría sobre internet, la aplicación de las leyes que intentaron aprobarse, e incluso más allá de lo retrógrado que esto sea (hoy noté el inmenso retroceso tecnológico y cultural que representa haber tenido que resguardar archivos de una cuenta de MediaFire en el disco rígido de una PC, y dejar de compartirlos en caso que este sitio cierre), lo que molesta, es la motivación. No hay una motivación real de cuidar a un artista (ya sea escritor, cineasta, músico o fotógrafo). La intención real, es &lt;b&gt;no perder un negocio.&lt;/b&gt;&amp;nbsp;Y no voy a juzgar a nadie que quiera conservar su medio de vida. Ni siquiera voy a juzgar a aquellos que quieran conservar su billetera abultada gracias a sus negocios.&lt;br /&gt;&lt;br /&gt;Pero sí me animo a juzgar a todos aquellos quienes en lugar de pensar creativamente, para adaptar sus negocios a nuevas eras, intenten imponer restricciones que modifiquen la escencia de una herramienta que fomenta la generación y sinergia de conocimiento, en pos del beneficio propio y sobretodo, &lt;b&gt;la comodidad.&lt;/b&gt;&amp;nbsp;Y luego de juzgarlos, me gustaría poder castigar, a todo aquel que además de intentarlo, lo haga por la fuerza, gracias a los favoritismos que un gobierno, y sus servicios de inteligencia, pueda tener, imponiendo el miedo con &quot;castigos ejemplares&quot; sentenciando a cárcel a personas que desarrollaron un negocio montado en software que permite almacenar archivos, pero dejando impunes y fomentando genocidios.
+</description>
+        <pubDate>Fri, 27 Jan 2012 10:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero.es/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero.es/</guid>
         
         
       </item>

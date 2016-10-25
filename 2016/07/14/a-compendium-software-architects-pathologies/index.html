@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The architect's job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects">
+
+    <title>A Compendium of Software Architects’ Pathologies - OurBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55d608d53393428d" async="async"></script>
+    <!-- Post Header -->
+    <!--Google Analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66576431-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <link rel="canonical" href="http://ourbit.github.io//2016/07/14/a-compendium-software-architects-pathologies/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">OurBit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/archives">Archives</a>
+                </li>
+                <li><a>|</a></li>
+                <li>
+                  
+                      <a href="http://norbertoherz.com/">norbertoherz.com</a>
+                  
+
+                </li>
+                <li>
+                
+                    
+                    <a href="/es/2016/07/14/a-compendium-software-architects-pathologies/" >Versión en Español</a>
+                
+                </li>
+
+                <!--  -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>A Compendium of Software Architects’ Pathologies</h1>
+                    
+                    <span class="meta">Posted by nohorbee on
+                      
+                      
+  
+  14 de
+  
+  Julio
+    
+
+
+de 2016
+
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+  				<p><em>By <a href="https://ar.linkedin.com/in/mchicote">Marcos Chicote</a>, <a href="https://twitter.com/guidodecaso">Guido de Caso</a>, and <a href="https://twitter.com/nohorbee">Norberto Herz</a></em>
+<br /><br /></p>
+
+<p>Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the “Software Architect” emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect’s job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation.<br />
+However, in practice things are not that simple, and the architect’s job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.</p>
+
+<!--MORE-->
+
+<h2 id="introduction">Introduction</h2>
+
+<p>There is no doubt that Software Engineering has been constantly evolving over the last five decades. Operating systems have provided an ever improving layer to abstract us away from the complexities of modern hardware. Lean and agile processes have allowed for faster iteration. Cheaper and more accessible data center technologies have lowered the barrier to entry for high performance computing and opened the gate to tackling more ambitious problems diverse fields such as medicine, the aerospatial industry, academy or e-commerce.</p>
+
+<p>The way engineers organize ourselves to go build software that solves these complex problems has also shifted. From individuals writing programs for mainframes to big corporations with multiple product lines and platforms. The role of Software Architects appeared as such mostly in the context of multi-tier applications where the amount of implementation choices grew exponentially. <a href="http://dl.acm.org/citation.cfm?id=579257">[1]</a> <a href="http://www.bredemeyer.com/pdf_files/role.pdf">[2]</a></p>
+
+<p>Software Architects’ responsibilities and duties are varied and depend heavily on the company and environment. There are slight variations of these responsibilities depending on whether we consider an Application Architect or an Enterprise Architect. But, regardless of such differences we can define the Software Architect’s scope as driven by these areas:</p>
+
+<ol>
+  <li>Subdividing the design of large applications into smaller and more manageable parts.</li>
+  <li>Identifying technologies, frameworks, patterns, process improvements and best practices that are to be adopted by an organization and communicating these to developers, establishing thus key mentorship relations.</li>
+</ol>
+
+<p>But while this enumeration serves the purpose of a Software Architect’s job description template, it does not answer questions such as what traits or tasks separate the most impactful Software Architects from their peers. How is the Software Architect career path defined and where do Software Architects come from. How can they walk the fine balance between becoming great generalists as opposed to incredible specialists.</p>
+
+<p>In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas.</p>
+
+<p>We introduce these apparent contradictions as pathologies. Pathology is rooted in the Ancient Greek concept of pathos (πάθος), meaning “experience” or “suffering”, and -logia (-λογία), “study of”. We hope that this article can spark interesting discussions among fellow Software Architects and make us reflect about certain common issues that we face in our professional practice.</p>
+
+<p>The careful reader should be warned that some of the following will be particularly more suited for Software Architects in specific situations such as companies with geographically distributed development teams or companies of medium to large size. In any case, we believe that these encompass various relevant topics when it comes to how we think about Software Architects, their role, their career and, ultimately, their impact.</p>
+
+<h2 id="the-pathologies">The Pathologies</h2>
+
+<p>In the next subsections we will describe some of the aforementioned pathologies in terms of how to detect and how to resolve them.</p>
+
+<h3 id="the-impactless-best-coder-syndrome">The Impactless Best Coder Syndrome</h3>
+<p><big><i>“This functionality is extremely complex. I should be coding it myself”</i></big></p>
+
+<h4 id="description">Description</h4>
+
+<p>According to the Pareto Principle we acknowledge that 80% of an application’s complexity comes from the 20% of its functionalities. Being the Software Architect the best coder in the team seems to indicate that a big piece of these functionalities should be written by no one else.</p>
+
+<h4 id="symptoms-and-diagnosis">Symptoms and Diagnosis</h4>
+
+<ul>
+  <li>Stressed Software Architect: “I can never find the time to work on these functionalities”</li>
+  <li>Missing or poorly written blueprints: “The high level design is complete, the remaining parts can be inferred”</li>
+  <li>Stressed Developer: “The blueprints don’t make sense. My peers seem to be writing different applications”</li>
+  <li>Uncomfortable Senior Developer: “This functionality could be written by somebody else. I should be coding the top 20%”</li>
+</ul>
+<p></p>
+
+<h4 id="prognosis">Prognosis</h4>
+
+<p>Before jumping to the correct treatment, we propose to discuss the concept of whether the Software Architect is indeed the best coder on the team. Even though it is true that a good Software Architect should have outstanding coding abilities, the role demands a fairly different and more rounded skillset when compared to that of a developer’s. That said, it makes sense that not every Software Architect raised from being the best developer of a team, but a really good one who found a way of growing another skillset as well.</p>
+
+<p>We argue that the best developer should be the one responsible for coding the most complex functionalities, while the Software Architect should be the one making those functionalities easier to code. Putting in place a great high level design tends to simplify things by avoiding ambiguities, and identifying reuse opportunities. In many cases, when these opportunities are clear enough, the benefits of using some libraries and frameworks, or the necessity of writing some new ones rise. That is the job of a good Software Architect too.</p>
+
+<p>So, as a Software Architect, put a great architecture in order: build a great design, write the best blueprints, find the simplification opportunities and execute these by writing or using the proper frameworks, help the definition and adoption of the team’s best practices and development processes. That way you should not have to  think “I should be coding this” as often. Instead you will realize that your contributions are enabling a great part of every single functionality.</p>
+
+<h3 id="the-know-it-all-specialist-dilemma">The Know-it-all Specialist Dilemma</h3>
+<p><big><i>“The world is too big for me to master it all”</i></big></p>
+
+<h4 id="description-1">Description</h4>
+
+<p>Front-end, back-end, object oriented, functional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Virtual Reality, COBOL, Mainframes, Docker, APIs, Scala. The list of technologies and frameworks goes on and on. The Software Architect’s bandwidth is not infinite, as it is not the time any human has to spend on any set of tasks. Yet it seems as if Software Architects were demanded to master the entire list. We can not choose both being specialists and generalists, or can we?</p>
+
+<h4 id="symptoms-and-diagnosis-1">Symptoms and Diagnosis</h4>
+
+<ul>
+  <li>Waverer Software Architect: “Everyone asks me about everything and there is no way I can have a good answer for all the questions”</li>
+  <li>Lack of ownership: “I’m not an expert on the subject, so, I simply can’t make a decision on this”</li>
+  <li>Multi-directional decisions: “I’m not sure why we are doing it this way. It seems like if everyone has made it own call”</li>
+</ul>
+<p></p>
+
+<h4 id="prognosis-1">Prognosis</h4>
+
+<p>A Software Architect should be a generalist by nature. Even if she or he possesses deep knowledge about a particular technology, the driver to success is the capability of combining a wide range set of skills that can only be achieved by understanding how far to dig on something. Though, there are a set of areas that a Software Architect should master. The following list includes some of them:</p>
+
+<ul>
+  <li>Software principles: The Software Architect needs to master subjects such as the software quality attributes: scalability, availability, resiliency, securability, maintainability, among others <a href="https://msdn.microsoft.com/en-us/library/ee658094.aspx">[1]</a> <a href="https://en.wikipedia.org/wiki/List_of_system_quality_attributes">[2]</a>. It is also required to understand and be able to design applications in a way that enables statelessness, layering, decoupling <a href="https://msdn.microsoft.com/en-us/library/bb402962.aspx">[3]</a>. Note that these concepts are technology independent, even though different technologies achieve them in different ways.</li>
+  <li>Leadership: Being able to become a Technical Leader for the team is crucial. Mastering principles and behaviors such as coaching and mentoring becomes really handy for Software Architects.</li>
+  <li>Communication: Designing is all about making decisions. These decisions should contemplate knowledge and experience, but are also the result of understanding different stakeholders’ needs. The design becomes even richer when key members from the development team provide their input in the form of vision and ideas. Furthermore, once the design is in place, it needs to be shared so it can be built. The Software Architect is the central point where all these ends meet. Mastering communication skills is not optional for their role.</li>
+  <li>Research: As said, a Software Architect should be a generalist by nature. Being a good researcher is the perfect way of being up to date with the latest in technology trends. A Software Architect should be able to choose which technologies to know and have a fairly good understanding of these.</li>
+</ul>
+
+<p>With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists.</p>
+
+<p>The reason why the list of technologies mentioned on this pathology’s description is virtually infinite is basically that there are so many professionals developing new and exciting technologies everyday. Thus, the way of running a project from the architectural point of view is to exchange knowledge with a bigger team that will be the real knowledge owner.
+So, as a  Software Architect, make sure to master the aforementioned skills and you will be able to:</p>
+
+<ul>
+  <li>Put together an architecture that guarantees high software quality attributes.</li>
+  <li>Understand which technologies requires most attention at every moment.</li>
+  <li>Incorporate general knowledge of these technologies, and make decisions on which ones are needed for a particular project.</li>
+  <li>Conduct investigations to push the team to use these technologies.</li>
+  <li>Lead the team to build great applications.</li>
+</ul>
+<p></p>
+
+<h3 id="one-feet-on-each-continent">One Feet on Each Continent</h3>
+<p><big><i>“I haven’t caught up with all the latest books on soft skills, and I’m already starting to forget what to do after catching an exception”</i></big></p>
+
+<h4 id="description-2">Description</h4>
+
+<p>The path and first steps for becoming a Software Architect are really exciting. We start getting abstracted from a lot of unnecessary and dirty details, we stop dealing with tedious functionalities, and we start facing more “suitable” challenges. We also start spending more time sketching, talking, teaching, meeting, and less time coding. And suddenly there we are, feeling that we are not yet good enough at the new stuff, and yet too far away from where we started. We journeyed far from home and now we are in the middle of the ocean between a rusty Software Engineer and an inexpert Software Architect.</p>
+
+<h4 id="symptoms-and-diagnosis-2">Symptoms and Diagnosis</h4>
+
+<ul>
+  <li>Succeed by accident: “I feel that people praise me for things that were just happenstance and not the result of my work”</li>
+  <li>Fear of being discovered: “I’m afraid someone is going to find out that I’m not ready to be a Software Architect”.</li>
+  <li>Repeatability: “I don’t know how I ended up here, and I’m pretty sure I won’t be able to grow and level up again”</li>
+  <li>Pursuing external validation: “Someone should check that every one of my decisions is correct”.</li>
+</ul>
+<p></p>
+
+<h4 id="prognosis-2">Prognosis</h4>
+<p>It is not easy to cope with these feelings but there is something that can help: you are not alone. Actually, these symptoms (among others) are most common than most of us believe and, on top of that, these are grouped under the name of “Impostor Syndrome”<a href="https://counseling.caltech.edu/general/InfoandResources/Impostor">[1]</a>, that was discovered by Dr. Pauline R. Clance in 1978<a href="https://en.wikipedia.org/wiki/Impostor_syndrome">[2]</a>.</p>
+
+<p>There are several ways to overcome this syndrome, including but not limited to<a href="http://www.apa.org/gradpsych/2013/11/fraud.aspx">[3]</a>:</p>
+
+<ul>
+  <li>Talking to your mentors</li>
+  <li>Recognizing your expertise</li>
+  <li>Remembering what you do well</li>
+  <li>Realizing no one is perfect</li>
+</ul>
+
+<p>But maybe the most difficult part is to defeat the fear of being transparent and reflective about this with somebody, be it a friend, a colleague or your boss. Once that we recognize and make peace with this, everything becomes easier and we are ready to put this behind and unleash our full potential as Software Architects.</p>
+
+<h3 id="the-unprepared-mentor-conundrum">The Unprepared Mentor Conundrum</h3>
+<p><big><i>“If you wanted me to mentor others you should have prepared me for that”</i></big></p>
+
+<h4 id="description-3">Description</h4>
+
+<p>Broad consensus exists on including technical mentoring as part of a Software Architect’s responsibilities. Software Architects are expected to spend time with Software Engineers beneath them in the career path advising them on how to develop key missing skills, learn new programming techniques or frameworks and, generally speaking, preparing them to take the next step in the ladder. However as developers progress in their careers and eventually become Software Architects, they require abilities and skills on which they have not been trained on, such as mentoring itself.</p>
+
+<h4 id="symptoms-and-diagnosis-3">Symptoms and Diagnosis</h4>
+
+<ul>
+  <li>Mentoring bottleneck: “Everyone wants me to help them grow, what’s going on?” most Software Engineers start seeking mentoring from the same Software Architect.</li>
+  <li>Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing.</li>
+  <li>Inefficient communication: “I can’t get developers to follow my lead on system design” Software Engineers do not understand a system design or can not see why it was designed that way.</li>
+</ul>
+
+<p></p>
+
+<h4 id="prognosis-3">Prognosis</h4>
+
+<p>Software Architects should be encouraged to give mentorship to their protégés on all skills required to climb up the career ladder. Particularly on skills needed on higher positions such as Software Architect itself. If mentoring is limited to  technical skills only, it will quite likely fall short once Software Engineers reach a leading position.</p>
+
+<p>It is worth mentioning that, even though we will not get into anthropological and sociological issues like the human capacity to acquire new skills, we do recognize that some people have a more natural tendency for mentorship. Even when Software Architects should help Software Engineers develop soft skills, anyone aspiring to become a Software Architect should learn about mentorship in general. One possibility is for Software Architects to seek guidance from senior leadership in the engineering organization (e.g., VP or Senior Director level) on how to become great mentors.</p>
+
+<h3 id="the-lost-focus-syndrome">The Lost Focus Syndrome</h3>
+
+<p><big><i>“When I sit and focus for 20 minutes straight I get to build amazing things! How come I am not doing that 8 hours a day?”</i></big></p>
+
+<h4 id="description-4">Description</h4>
+
+<p>As Paul Graham states on the essay Maker’s Schedule, Manager’s Schedule while managers are on schedules that can change every hour, for makers having a meeting is like throwing an exception, which can be very expensive in terms of performance. As we study the role and analyze its contradictions we wonder: what schedule do Software Architects follow?</p>
+
+<h4 id="symptoms-and-diagnosis-4">Symptoms and Diagnosis</h4>
+
+<ul>
+  <li>Adapt to managers: “Managers are dragging me into meetings at any time”.</li>
+  <li>Wasted time: “I’m a maker, I build working software that goes into production, that is my main responsibility, not answering managers questions”.</li>
+  <li>Sparse schedule: “Let me code for four hours straight and I’ll blow your mind”</li>
+</ul>
+
+<p>In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker’s schedule can encounter some difficulties.</p>
+
+<p>As mentioned on section “The impactless best coder syndrome”, Software Architects should not necessarily be responsible for coding even the most complex functionalities and this could be used to make a case against Software Architects being makers. However, as discussed, Software Architects are responsible for building software in a more transversal manner, defining best practices and development processes, or writing frameworks and blueprints. Such duties are undeniable characteristics of a maker.</p>
+
+<p>Transversal components often affect a variety of different actors and have a profound impact on production environments, new features and complex bugs. Software Architects are recurringly called into meetings to analyze and comment on these different topics, taking them time away from designing and mentoring developers. The more a Software Architect builds the  more meetings she will be pulled into, presenting an interesting dylemma.</p>
+
+<h4 id="prognosis-4">Prognosis</h4>
+
+<p>Software Architects are makers and, as such, need time to make. Building software, even at the architectural level, requires concentration and focus. Software Architects, as any prestigious position, are frequently consulted on a wide array of topics and will be summoned into meetings. Instead of fighting against it we propose guidelines to minimize the impact of meetings on your real responsibilities:</p>
+
+<ul>
+  <li>Software Architects are advised to have everyone understand that they are makers and they have to be deeply invested in the process of building great software. Peer’s understanding of the Software Architect position and priorities is crucial to minimize invitations to spurious meetings.</li>
+  <li>Office hours: Software Architects should set aside time to be available to others. Instead of having managers push Software Architects into adapting to their schedule we advocate Software Architects to create mechanisms to have managers adapt themselves.</li>
+  <li>Delegate: Not every meeting you are invited to needs a Software Architect. Delegation to tech leads or specialists will not only save your precious time, it will also help others grow.</li>
+</ul>
+<p></p>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role.</p>
+
+<p>As we discussed when we opened this article, Software Engineering has changed quite dramatically from its humble origins in the last century but it yet remains a pretty novel and somewhat adolescent field of study. It is understandable then that an even newer role such as that of the Software Architect has been yet barely standardized or studied.</p>
+
+<p>We hope that the analysis of the pathologies here presented can help spark more discussion about topics such as how the Software Architect’s role should evolve, how can we evaluate their impact, how can we grow them and coach them. This is our humble yet heartfelt contribution in that spirit.</p>
+
+
+
+                  <!-- <hr>
+
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/2016/04/24/nobel-02-swagger-support/" data-toggle="tooltip" data-placement="top" title="Nobel 0.2 supports Swagger and RAML">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/2016/10/04/ass/" data-toggle="tooltip" data-placement="top" title="Acronyms seriously suck">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES * * */
+                      var disqus_shortname = 'ourbitblog';
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+              </div>
+          </div>
+      </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="skype:norberto.herz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://twitter.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <li>
+                        <a href="https://www.linkedin.com/pub/norberto-herz/5/887/177">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://github.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<script type="text/javascript">
+var addthis_share = addthis_share || {}
+addthis_share = {
+  passthrough : {
+    twitter: {
+      via: "nohorbee"
+    }
+  }
+}
+</script>
+
+
+</body>
+
+</html>

@@ -29,13 +29,13 @@
     <link rel="canonical" href="http://ourbit.github.io//es/2015/09/09/from-api-to-streaming-api/">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/es/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
+    <link rel="stylesheet" href="/es/css/clean-blog.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/es/css/syntax.css">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -65,14 +65,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/es">OurBit</a>
+            <a class="navbar-brand" href="/es/">OurBit</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/es">Inicio</a>
+                    <a href="/es/">Inicio</a>
                 </li>
                 <li>
                     <a href="/es/archives">archivo</a>
@@ -87,51 +87,11 @@
                 <li>
                 
                     
-                    <a href="/en/2015/09/09/from-api-to-streaming-api/" >English Version</a>
+                    <a href="/2015/09/09/from-api-to-streaming-api/" >English Version</a>
                 
                 </li>
 
-                <!-- 
-                <li>
-                    <a href="/es/en/about/">About</a>
-                </li>
-                
-                <li>
-                    <a href="/es/about/">Acerca de</a>
-                </li>
-                
-                <li>
-                    <a href="/es/archives/">Archivo</a>
-                </li>
-                
-                <li>
-                    <a href="/en/archives/">Archives</a>
-                </li>
-                
-                <li>
-                    <a href="/en/about/">About</a>
-                </li>
-                
-                <li>
-                    <a href="/en/es/about/">Acerca de</a>
-                </li>
-                
-                <li>
-                    <a href="/en/es/archives/">Archivo</a>
-                </li>
-                
-                <li>
-                    <a href="/es/en/archives/">Archives</a>
-                </li>
-                
-                <li>
-                    <a href="/en/feed.xml"></a>
-                </li>
-                
-                <li>
-                    <a href="/en/"></a>
-                </li>
-                 -->
+                <!--  -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -161,8 +121,8 @@ $(window).scroll(function(e) {
 });
 </script>
 
-<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
-<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+<div class="img-src" style="background-image: url('/es/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/es/img/header-background-blur.jpg')"></div>
 
 <header class="intro-header">
     <div class="container">
@@ -224,27 +184,27 @@ Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referent
 <p>1- El cliente 1 envía un <em>request</em> con método <em>GET</em> para solicitar el libro con id 123321.<br />
 2- El servidor devuelve un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;Edition&quot;</span><span class="o">:</span> <span class="s2">&quot;4th&quot;</span>
   <span class="s2">&quot;Year&quot;</span><span class="o">:</span> <span class="mi">2015</span><span class="p">,</span>
   <span class="p">...</span> <span class="c1">// Asumamos una estructura compleja y una gran cantidad de campos</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>3- El cliente 2 envía un <em>request</em> con método <em>PATCH</em> para modificar la edición (ahora “5th”).<br />
 4- El servidor envía un <em>response</em> al cliente 2 con código <em>200 OK</em>.<br />
 5- El servidor envía un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;Edition&quot;</span><span class="o">:</span> <span class="s2">&quot;5th&quot;</span>
   <span class="s2">&quot;Year&quot;</span><span class="o">:</span> <span class="mi">2015</span><span class="p">,</span>
   <span class="p">...</span> <span class="c1">// Asumamos una estructura compleja y una gran cantidad de campos</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p><strong>Nota:</strong> Se deja de lado la discusión acerca de los métodos a utilizar (<em>PATCH</em> o <em>PUT</em>) y los códigos <em>HTTP</em> correspondientes. Esta temática amerita un <em>post</em> aparte.</p>
 
@@ -253,10 +213,10 @@ Al proceso por el cual las <em>APIs</em> notifican <em>proactivamente</em> al cl
 
 <p>A pesar de que en el ejemplo se puede ver la conveniencia de implementar <em>Push Notifications</em> como parte de nuestra <em>Streaming API</em>, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un <em>request</em> periódicamente para verificar si el recurso cambió, cada vez que la <em>API</em> haga un <em>push</em> se estará enviando el recurso completo al cliente. Implementando una lógica <em>diferencial</em> en el servidor, nuestra <em>API</em> podría enviar solo las actualizaciones al momento de realizar un <em>push</em>. Para nuestro ejemplo, esto podría ser:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="s2">&quot;op&quot;</span><span class="o">:</span> <span class="s2">&quot;PATCH&quot;</span><span class="p">,</span>
   <span class="s2">&quot;/Edition&quot;</span><span class="o">:</span> <span class="s2">&quot;5th&quot;</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Este <em>JSON</em> informa al cliente que se ha modificado el campo “Edition” y su nuevo valor. El cliente podrá actualizar su modelo apropiadamente con esta información. De esta forma, sin importar que tan grande sea el recurso solicitado, el <em>push</em> solo envía los campos que han cambiado desde la última actualización.</p>
 
@@ -310,7 +270,7 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <p>Tomando el servicio provisto por <a href="https://bitcoinaverage.com">BitcoinAverage</a>, y viendo algún método simple de su <a href="https://bitcoinaverage.com/api"><em>API</em></a>, escribimos un código sencillo que nos permita consultar cada 5 segundos, el siguiente reucrso: https://api.bitcoinaverage.com/ticker/global/EUR/</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script&gt;</span>
@@ -325,7 +285,7 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
       <span class="p">},</span> <span class="mi">5000</span><span class="p">)</span>
     <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
 <p>Utilizando <a href="https://jquery.com/">JQuery</a> para obtener los beneficios del método <code>ajax</code>, y la función <code>setInterval</code> que nos permite ejecutar una función repetidas veces espaciadas por un intervalo de tiempo, obtenemos la siguiente respuesta en la consola:</p>
 
@@ -355,7 +315,7 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <p>Con estos pasos cumplidos, el siguiente código accede a la misma <em>API</em> del ejemplo anterior pero recibiendo <em>Push notifications</em>.</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./js/streamdataio.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script&gt;</span>
@@ -378,7 +338,7 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
     <span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>See the console<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
 <p><strong>Nota:</strong> Se debe reemplazar el “APP TOKEN” por el generado para su aplicación. Recuerden que <em>JavaScript</em> puede correr en un cliente cualquiera (browser) por lo que no debe incluirse el <em>Token</em> en dicho código. Esto es válido solo para pruebas y ejemplos.</p>
 
@@ -414,12 +374,12 @@ Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos con
                   <ul class="pager">
                       
                       <li class="previous">
-                          <a href="/en/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="From API to Streaming API">&larr; Previous Post</a>
+                          <a href="/es/2015/08/13/expressive-code-javscript/" data-toggle="tooltip" data-placement="top" title="Código expresivo en Javascript">&larr; Previous Post</a>
                       </li>
                       
                       
                       <li class="next">
-                          <a href="/en/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker in acción I">Next Post &rarr;</a>
+                          <a href="/es/2015/12/03/docker-in-action-IoIII/" data-toggle="tooltip" data-placement="top" title="Docker en acción I">Next Post &rarr;</a>
                       </li>
                       
                   </ul> -->
@@ -452,7 +412,7 @@ Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos con
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="/feed.xml">
+                        <a href="/es/feed.xml">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -518,13 +478,13 @@ Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos con
 </footer>
 
 <!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+<script src="/es/js/jquery.min.js "></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+<script src="/es/js/bootstrap.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
+<script src="/es/js/clean-blog.min.js "></script>
 
 <script type="text/javascript">
 var addthis_share = addthis_share || {}

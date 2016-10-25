@@ -29,13 +29,13 @@
     <link rel="canonical" href="http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/es/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
+    <link rel="stylesheet" href="/es/css/clean-blog.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/es/css/syntax.css">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -65,14 +65,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/es">OurBit</a>
+            <a class="navbar-brand" href="/es/">OurBit</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/es">Inicio</a>
+                    <a href="/es/">Inicio</a>
                 </li>
                 <li>
                     <a href="/es/archives">archivo</a>
@@ -87,51 +87,11 @@
                 <li>
                 
                     
-                    <a href="/en/2015/08/13/expressive-code-javscript/" >English Version</a>
+                    <a href="/2015/08/13/expressive-code-javscript/" >English Version</a>
                 
                 </li>
 
-                <!-- 
-                <li>
-                    <a href="/es/en/about/">About</a>
-                </li>
-                
-                <li>
-                    <a href="/es/about/">Acerca de</a>
-                </li>
-                
-                <li>
-                    <a href="/es/archives/">Archivo</a>
-                </li>
-                
-                <li>
-                    <a href="/en/archives/">Archives</a>
-                </li>
-                
-                <li>
-                    <a href="/en/about/">About</a>
-                </li>
-                
-                <li>
-                    <a href="/en/es/about/">Acerca de</a>
-                </li>
-                
-                <li>
-                    <a href="/en/es/archives/">Archivo</a>
-                </li>
-                
-                <li>
-                    <a href="/es/en/archives/">Archives</a>
-                </li>
-                
-                <li>
-                    <a href="/en/feed.xml"></a>
-                </li>
-                
-                <li>
-                    <a href="/en/"></a>
-                </li>
-                 -->
+                <!--  -->
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -161,8 +121,8 @@ $(window).scroll(function(e) {
 });
 </script>
 
-<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
-<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+<div class="img-src" style="background-image: url('/es/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/es/img/header-background-blur.jpg')"></div>
 
 <header class="intro-header">
     <div class="container">
@@ -209,18 +169,18 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
 
 <p>Tomemos como ejemplo un conjunto de personas:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">persons</span> <span class="o">=</span> <span class="p">[</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">persons</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">176</span><span class="p">},</span>
   <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe Jr.&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">22</span><span class="p">},</span>
   <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">127</span><span class="p">},</span>
   <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Julian Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">160</span><span class="p">}</span>
-<span class="p">];</span></code></pre></div>
+<span class="p">];</span></code></pre></figure>
 
 <p>Ahora, recorramos este <em>array</em> y por cada persona imprimamos “<em>Name</em> is <em>age</em> years old”.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">persons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">persons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">age</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Este código es bastante simple, corto y podríamos decir que es bastante legible. Pero esto no lo hace necesariamente <strong>expresivo</strong>. Lo que queríamos hacer era: Imprimir “<em>Name</em> is <em>age</em> years old” por cada persona. Esto es lo que dice el código que acabamos de escribir:</p>
 
@@ -235,13 +195,13 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
 
 <p>Comencemos por quitar la línea dentro del <em>for</em> y ubicarla dentro de una función que reciba una <em>persona</em> como parámetro e imprima el patrón especificado.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">printPattern</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">printPattern</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>
 <span class="p">}</span>
 
 <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">persons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">printPattern</span><span class="p">(</span><span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Si estás pensando “esto no tiene nada que ver con <em>Javascript</em> y las funciones de sus <em>arrays</em>”, estás en lo cierto, pero no te impacientes.<br />
 No hicimos más que <em>encapsular</em> una funcionalidad para ocultar su complejidad. <em>Encapsulamiento</em> es un concepto habitualmente relacionado al Paradigma de Programación orientada a objetos, pero en realidad puede lograrse de muchas maneras, y las <em>funciones</em> son una forma ancestral de lograrlo. El objetivo de <em>encapsular</em> código no es el de hacerlo más expresivo, pero en la mayoría de los casos, es un efecto colateral.</p>
@@ -258,7 +218,7 @@ No hicimos más que <em>encapsular</em> una funcionalidad para ocultar su comple
 <p>Si bien el código se ha vuelto un poco más expresivo, parece estar más preocupado por la variable <em>i</em>, su inicialización, y su cota, que por la persona en sí misma.<br />
 Afortunadamente hay otras formas de recorrer un <em>array</em>. Por ejemplo el método <code>Array.prototype.forEach(function)</code>.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
 
 <p>Si leemos nuevamente el código:</p>
 
@@ -272,11 +232,11 @@ En primer lugar, algo a destacar de <em>Javascript</em> es que <em>todo (o casi 
 A diferencia del <em>for</em> que es una instrucción, el <em>forEach</em> es un método del objeto <em>Array</em> (o de su <em>prototipo</em>). Combinando estos conceptos, <em>forEach</em> recorre el <em>array</em> y en cada iteración invoca a la función que recibió como parámetro. En dicha invocación, <em>forEach</em> le pasa como parámetro a la otra función, el elemento que está siendo iterado.<br />
 Una implementación muy básica del <em>forEach</em> podría ser:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">func</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
   <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Adicionalmente, el <em>forEach</em> recibe un segundo parámetro opcional que representa una función que será invocada cuando se haya finalizado la recorrida del <em>array</em>. En los ejemplos que se están mostrando esto puede parecer inútil, pero cuando se está en un entorno de programación <em>asincrónica</em> (como <a href="http://nodejs.org">NodeJS</a>), este tipo de implementaciones se vuelve indispensable.</p>
 
@@ -292,20 +252,20 @@ Una implementación muy básica del <em>forEach</em> podría ser:</p>
 <h3 id="no-apto-para-menores-de-25-aos">No apto para menores de 25 años</h3>
 <p>Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del <em>array</em> aquellas personas que no alcancen dicha edad. El código podría ser:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="mi">25</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
-<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></div>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
 
 <p><strong>Nota</strong>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><em>splice</em></a> es útil para eliminar elementos de un <em>array</em>.</p>
 
 <p>Si ejecutamos este código, vamos a obtener el siguiente resultado:</p>
 
-<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">John Doe - 27</span>
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">John Doe - 27</span>
 <span class="go">Jane Doe - 24</span>
-<span class="go">Julian Doe - 32</span></code></pre></div>
+<span class="go">Julian Doe - 32</span></code></pre></figure>
 
 <p>Por algún motivo, Jane Doe logró vencer la seguridad de nuestro bar, e ingresar. Dicho motivo es causa de incontables <em>bugs</em> en incontables piezas de código.<br />
 En cada iteración, <em>index</em> incrementa 1. La primera vez (<em>index=0</em>) encontramos a John Doe de 27 años. Queda en el <em>array</em>. La segunda vez (<em>index=1</em>), encontramos a John Doe Jr de 3 años (quien claramente no debería estar en nuestro bar). Al removerlo del <em>array</em> Jane Doe pasa a estar en el <em>index 1</em> y Julian Doe en el <em>index 2</em>. La tercera iteración (<em>index=2</em>) aparece Julian Doe. Es decir que Jane Doe ha sido salteada. <strong>Es como si el guardia de seguridad se diera vuelta cada vez que saca a alguien de la fila del bar y en ese momento dejara pasar a una persona sin importar su edad.</strong><br />
@@ -327,35 +287,35 @@ Comencemos por atacar este segundo problema (al menos parte del mismo).</p>
 <p>Esta es una característica de <em>Javascript</em> que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.<br />
 Tomemos por ejemplo el siguiente código:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan25</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan25</span><span class="p">()</span> <span class="p">{</span>
    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="mi">25</span><span class="p">)</span> <span class="p">}</span>
  <span class="p">}</span>
-<span class="kd">var</span> <span class="nx">older</span> <span class="o">=</span> <span class="nx">olderThan25</span><span class="p">();</span></code></pre></div>
+<span class="kd">var</span> <span class="nx">older</span> <span class="o">=</span> <span class="nx">olderThan25</span><span class="p">();</span></code></pre></figure>
 
 <p><em>olderThan25</em> está devolviendo una función que recibe una persona y devuelve <em>true</em> si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable <em>older</em>, <code>older(person)</code> realizará la evaluación antes mencionada.<br />
 Entonces,</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">older</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe Jr.&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}));</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">older</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe Jr.&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}));</span></code></pre></figure>
 
 <p>imprime <code>false</code></p>
 
 <p>Siguiendo este mismo concepto, podemos aún lograr un código más reutilizable e incluso más expresivo. Pasemos como parámetro el “umbral” de edad que queremos evaluar.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan</span><span class="p">(</span><span class="nx">threshold</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan</span><span class="p">(</span><span class="nx">threshold</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="nx">threshold</span><span class="p">)</span> <span class="p">}</span>
  <span class="p">}</span>
 <span class="kd">var</span> <span class="nx">olderThan25</span> <span class="o">=</span> <span class="nx">olderThan</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">olderThan3</span> <span class="o">=</span> <span class="nx">olderThan</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span></code></pre></div>
+<span class="kd">var</span> <span class="nx">olderThan3</span> <span class="o">=</span> <span class="nx">olderThan</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span></code></pre></figure>
 
 <p>Ahora, podemos crear cuantas funciones queramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.<br />
 Aplicando al código anterior (que intentaba remover a los menores de 25 años):</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">olderThan25</span><span class="p">(</span><span class="nx">person</span><span class="p">))</span> <span class="p">{</span>
     <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
-<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></div>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
 
 <ul>
   <li>El código sigue sin funcionar (el problema descripto anteriormente sigue allí).</li>
@@ -384,7 +344,7 @@ El método <em>filter</em> recibe 2 parámetros:</p>
 
 <p>Teniendo en cuenta este nuevo método, el siguiente código resuelve el requerimiento expresado anteriormente:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan25</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan25</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
 
 <p>Respecto de su expresividad, puede ser leído como:</p>
 
@@ -399,11 +359,11 @@ El método <em>filter</em> recibe 2 parámetros:</p>
 <p>Hemos logrado trabajar con cada persona de nuestro grupo, y realizar operaciones con cada una de ellas. Pero muchas veces, es necesario trabajar con el grupo como un todo.<br />
 Supongamos que <em>nuestras</em> personas están subiendo a un ascensor. Por motivos de seguridad, los ascensores más modernos incluyen una balanza para asegurarse de que no se haya superado el peso máximo soportado por el mismo. Intentemos evitar la vergüenza de escuchar la chicharra indicando que nos hemos excedido y calculemos el peso total previamente:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">totalWeight</span> <span class="o">+=</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span> <span class="p">;</span>
 <span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></div>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></figure>
 
 <p>Algunas observaciones acerca de este código:</p>
 
@@ -415,10 +375,10 @@ Supongamos que <em>nuestras</em> personas están subiendo a un ascensor. Por mot
 
 <p>Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo <em>array</em> que solo tenga los pesos de las personas de nuestro grupo.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">weights</span> <span class="o">=</span> <span class="p">[];</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">weights</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">weights</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span><span class="p">;</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Este código puede leerse de la siguiente manera:</p>
 
@@ -428,11 +388,11 @@ Supongamos que <em>nuestras</em> personas están subiendo a un ascensor. Por mot
   <li>La función obtiene el peso de la persona y lo asigna a la posición indicada en el nuevo <em>array</em>.</li>
 </ol>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">weights</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">weights</span><span class="p">);</span></code></pre></figure>
 
 <p>imprime</p>
 
-<div class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">[ 176, 22, 127, 160 ]</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span class="go">[ 176, 22, 127, 160 ]</span></code></pre></figure>
 
 <h3 id="arrayprototypemap">Array.prototype.map</h3>
 
@@ -440,11 +400,11 @@ Supongamos que <em>nuestras</em> personas están subiendo a un ascensor. Por mot
 Es decir, que el código que escribimos anteriormente “mapea las personas con/por su peso”.<br />
 Sería bueno poder escribir eso mismo en <em>Javascript</em> de la siguiente manera:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">);</span></code></pre></figure>
 
 <p>De hecho, definiendo <em>weight</em> como una función que dada una persona, devuelva su peso, la línea anterior hace <strong>exactamente</strong> lo que dice.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">weight</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">weight</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
 
 <p>El método <em>map</em>, recibe los mismos 2 parámetros que <em>filter</em>:</p>
 
@@ -467,11 +427,11 @@ Sería bueno poder escribir eso mismo en <em>Javascript</em> de la siguiente man
 
 <p>Si siguiéramos el enfoque anterior, pero aprovechando la función <em>map</em>, nuestro código quedaría así:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 <span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">weight</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">totalWeight</span> <span class="o">+=</span> <span class="nx">weight</span> <span class="p">;</span>
 <span class="p">});</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></div>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></figure>
 
 <p>Es decir que primero obtenemos el <em>array</em> de pesos y luego lo iteramos realizando la acumulación. Es una pequeña (casi insignificante) mejora respecto de nuestra versión anterior.</p>
 
@@ -480,11 +440,11 @@ Sería bueno poder escribir eso mismo en <em>Javascript</em> de la siguiente man
 <p>El término <em>reduce</em> resulta, al menos para mi, poco descriptivo respecto del objetivo de este método. Otros lenguajes (asociados al paradigma <em>funcional</em>) suelen referirse a esta función como <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><em>fold</em></a>. Pero una buena forma de entenderlo es pensar en <em>reduce</em> como “resumir”. Queremos encontrar un solo valor que <em>resuma</em> de alguna manera a todos los demás. Por ejemplo, 10 resume a 4, 3, 2 y 1 si consideramos a la suma como forma de resumir. 24 resume a 4, 3, 2, 1 si consideramos a la multiplicación como forma de resumir.<br />
 Entonces, Definiendo <em>sum</em> como</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span> <span class="p">}</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
 
 <p>y considerando el siguiente código</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span></code></pre></figure>
 
 <p>se podría leer: resumir mediante la suma, el peso de las personas. O, sumar el peso de las personas.</p>
 
@@ -517,9 +477,9 @@ Hay muchas formas de lograrlo. Entre ellas:</p>
   <li>Iterar y preguntar</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">areOlder</span> <span class="o">=</span> <span class="nx">areOlder</span> <span class="o">&amp;&amp;</span> <span class="nx">olderThan18</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>Estamos utilizando la función <em>olderThan(threshold)</em> para generar la función <em>olderThan18</em>.</p>
 
@@ -527,27 +487,27 @@ Hay muchas formas de lograrlo. Entre ellas:</p>
   <li>Reducir mediante el operador lógico “Y”</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousOlder18</span><span class="p">,</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousOlder18</span><span class="p">,</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
   <span class="k">return</span> <span class="p">(</span><span class="nx">isPreviousOlder18</span> <span class="o">&amp;&amp;</span> <span class="nx">olderThan18</span><span class="p">(</span><span class="nx">person</span><span class="p">));</span>
-<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></div>
+<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></figure>
 
 <ul>
   <li>Mapear al <em>array</em> de edades y reducir mediante el operador lógico “Y”</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
 <span class="p">}).</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousGreater18</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span><span class="nx">isPreviousGreater18</span> <span class="o">&amp;&amp;</span> <span class="nx">greaterThan18</span><span class="p">(</span><span class="nx">age</span><span class="p">));</span>
-<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></div>
+<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></figure>
 
 <p>Es similar a la anterior, pero antes de <em>reducir</em>, obtenemos el <em>array</em> de edades (y por lo tanto, en lugar de utilizar una función que reciba una persona y compare su edad, utilizamos una similar pero que compare directamente la edad. <em>greaterThan18</em> es generada de forma similar que <em>olderThan18</em>).</p>
 
 <p>Todas estas soluciones tienen un problema (u oportunidad de mejora): Evalúan todo el <em>array</em> sin importar lo que ocurra. En nuestro caso, evaluando el segundo elemento podríamos concluir que no todas las personas son mayores de 18. En evaluaciones de expresiones <em>booleanas</em> esto se conoce como “evaluación de cortocircuito”.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kc">true</span> <span class="o">||</span> <span class="nx">whatever</span> <span class="c1">// -&gt; true</span>
-<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="nx">whatever</span> <span class="c1">// -&gt; false</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kc">true</span> <span class="o">||</span> <span class="nx">whatever</span> <span class="c1">// -&gt; true</span>
+<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="nx">whatever</span> <span class="c1">// -&gt; false</span></code></pre></figure>
 
 <p>En ambos casos, es innecesario evaluar <em>whatever</em>.</p>
 
@@ -560,7 +520,7 @@ La forma de solucionar esto es <em>rompiendo</em> las iteraciones cuando no es n
 
 <p>Volviendo al tema de la <em>expresividad</em>, ninguna de las soluciones resultan demasiado expresivas (hagan el ejercicio de identificar lo que cada una está diciendo y lo que cada una está haciendo). El enunciado debería ser más sencillo. Verificar que todas las personas sean mayores de 18.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></figure>
 
 <p>Esta solución dice y hace exactamente lo que buscamos. Devuelve <em>true</em> si todas las personas son mayores de 18 años. Caso contrario, devuelve <em>false</em>.<br />
 Además de ser altamente expresiva, <em>every</em> respeta la evaluación de cortocircuito, es decir que dejará de iterar ni bien encuentre una persona que no cumpla la condición.</p>
@@ -587,7 +547,7 @@ Además de ser altamente expresiva, <em>every</em> respeta la evaluación de cor
 <p>Las restricciones de edad en las películas deben ser respetadas. Y si bien nuestras personas no  encontraron ninguna película apta para todo público, apareció un nuevo estreno que puede ser vista por menores con la supervisión de un adulto. Dejando de lado el criterio del adulto, escribamos la solución que nos permita evaluar si alguna persona es mayor de 18 años. Pero antes de comenzar a mostrar todas las alternativas (como hicimos con el caso anterior <em>every</em>) pensemos ¿no existirá algún otro método que diga y haga lo estamos buscando?<br />
 Mi respuesta rápida es <strong>sí</strong>:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></figure>
 
 <p>El método <em>some</em> recibe 2 parámetros:</p>
 
@@ -612,18 +572,18 @@ Mi respuesta rápida es <strong>sí</strong>:</p>
 Consideremos el siguiente problema: Debo obtener un <em>array</em> con las personas con peso menor a 130 libras, que tengan más de 10 años.<br />
 Con todo lo que hemos visto, naturalmente podríamos pensar que la siguiente solución es ideal:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">softerThan130</span><span class="p">);</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">softerThan130</span><span class="p">);</span></code></pre></figure>
 
 <p>La realidad es que esta solución no es ideal, tan solo es expresiva.<br />
 Al filtrar, estamos iterando el <em>array</em>. Al filtrar 2 veces, estamos iterando 2 <em>arrays</em>. Si <em>persons</em> contiene N elementos y M son mayores de 10, la solución anterior recorrerá N + M elementos. La siguiente solución puede ser un poco menos expresiva pero nos asegura que solo se recorrerán N elementos:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10AndsofterThan130</span><span class="p">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10AndsofterThan130</span><span class="p">)</span></code></pre></figure>
 
 <p>considerando</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan10AndsofterThan130</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">olderThan10AndsofterThan130</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">olderThan10</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">softerThan130</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>Al negociar un aspecto por otro, es necesario considerar el caso de uso. Si nuestros <em>arrays</em> contienen familias (es decir, pocos elementos), quizá podamos darnos el lujo de tener el código más expresivo. Si estamos procesando el padrón electoral completo, mejor preocuparse por la <em>performance</em>.</p>
 
@@ -637,12 +597,12 @@ Al filtrar, estamos iterando el <em>array</em>. Al filtrar 2 veces, estamos iter
                   <ul class="pager">
                       
                       <li class="previous">
-                          <a href="/en/2015/08/13/expressive-code-javscript/" data-toggle="tooltip" data-placement="top" title="Expressive code in Javascript">&larr; Previous Post</a>
+                          <a href="/es/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Mudanza a GitHubPages">&larr; Previous Post</a>
                       </li>
                       
                       
                       <li class="next">
-                          <a href="/en/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="From API to Streaming API">Next Post &rarr;</a>
+                          <a href="/es/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="De una API a una Streaming API">Next Post &rarr;</a>
                       </li>
                       
                   </ul> -->
@@ -675,7 +635,7 @@ Al filtrar, estamos iterando el <em>array</em>. Al filtrar 2 veces, estamos iter
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="/feed.xml">
+                        <a href="/es/feed.xml">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -741,13 +701,13 @@ Al filtrar, estamos iterando el <em>array</em>. Al filtrar 2 veces, estamos iter
 </footer>
 
 <!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+<script src="/es/js/jquery.min.js "></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+<script src="/es/js/bootstrap.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
+<script src="/es/js/clean-blog.min.js "></script>
 
 <script type="text/javascript">
 var addthis_share = addthis_share || {}
