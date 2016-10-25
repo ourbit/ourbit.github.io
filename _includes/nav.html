@@ -19,7 +19,7 @@
                     <a href="{{ site.baseurl }}/{{ page.language }}">{% t navigation.home %}</a>
                 </li>
                 <li>
-                    <a href="{{ site.baseurl }}/{{ page.language }}/archives">{% t navigation.archives %}</a>
+                    <a href="{{ site.baseurl }}/{{ page.language }}archives">{% t navigation.archives %}</a>
                 </li>
                 <li><a>|</a></li>
                 <li>
@@ -31,11 +31,11 @@
 
                 </li>
                 <li>
-                {% if page.language == "es" %}
-                    {% capture link1 %}{{ site.baseurl }}/en/{{ page.url | remove_language }}{% endcapture %}
+                {% if site.lang == "es" %}
+                    {% capture link1 %}{{ page.url | remove_language }}{% endcapture %}
                     <a href="{{ link1 }}" >{% t languages.english-version %}</a>
                 {% else if page.language == "en" %}
-                    {% capture link2 %}{{ site.baseurl }}/es/{{ page.url | remove_language }}{% endcapture %}
+                    {% capture link2 %}/es{{ page.url | remove_language }}{% endcapture %}
                     <a href="{{ link2 }}" >{% t languages.spanish-version %}</a>
                 {% endif %}
                 </li>
