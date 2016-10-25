@@ -23,10 +23,10 @@
                 </li>
                 <li><a>|</a></li>
                 <li>
-                  {% if page.language == "es" %}
+                  {% if site.lang == "es" %}
                       <a href="http://norbertoherz.com/es">{% t navigation.about %}</a>
                   {% else if page.language == "en" %}
-                      <a href="http://norbertoherz.com/en">{% t navigation.about %}</a>
+                      <a href="http://norbertoherz.com/">{% t navigation.about %}</a>
                   {% endif %}
 
                 </li>
@@ -34,7 +34,7 @@
                 {% if site.lang == "es" %}
                     {% capture link1 %}{{ page.url | remove_language }}{% endcapture %}
                     <a href="{{ link1 }}" >{% t languages.english-version %}</a>
-                {% else if page.language == "en" %}
+                {% else if site.lang == "en" %}
                     {% capture link2 %}/es{{ page.url | remove_language }}{% endcapture %}
                     <a href="{{ link2 }}" >{% t languages.spanish-version %}</a>
                 {% endif %}
