@@ -27,13 +27,13 @@ Software Architects’ responsibilities and duties are varied and depend heavily
 
 But while this enumeration serves the purpose of a Software Architect’s job description template, it does not answer questions such as what traits or tasks separate the most impactful Software Architects from their peers. How is the Software Architect career path defined and where do Software Architects come from. How can they walk the fine balance between becoming great generalists as opposed to incredible specialists.
 
-In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas. 
+In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas.
 
 We introduce these apparent contradictions as pathologies. Pathology is rooted in the Ancient Greek concept of pathos (πάθος), meaning "experience" or "suffering", and -logia (-λογία), "study of". We hope that this article can spark interesting discussions among fellow Software Architects and make us reflect about certain common issues that we face in our professional practice.
 
 The careful reader should be warned that some of the following will be particularly more suited for Software Architects in specific situations such as companies with geographically distributed development teams or companies of medium to large size. In any case, we believe that these encompass various relevant topics when it comes to how we think about Software Architects, their role, their career and, ultimately, their impact.
 
-## The Pathologies 
+## The Pathologies
 
 In the next subsections we will describe some of the aforementioned pathologies in terms of how to detect and how to resolve them.
 
@@ -89,7 +89,7 @@ A Software Architect should be a generalist by nature. Even if she or he possess
 - Communication: Designing is all about making decisions. These decisions should contemplate knowledge and experience, but are also the result of understanding different stakeholders’ needs. The design becomes even richer when key members from the development team provide their input in the form of vision and ideas. Furthermore, once the design is in place, it needs to be shared so it can be built. The Software Architect is the central point where all these ends meet. Mastering communication skills is not optional for their role.
 - Research: As said, a Software Architect should be a generalist by nature. Being a good researcher is the perfect way of being up to date with the latest in technology trends. A Software Architect should be able to choose which technologies to know and have a fairly good understanding of these.
 
-With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists. 
+With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists.
 
 The reason why the list of technologies mentioned on this pathology’s description is virtually infinite is basically that there are so many professionals developing new and exciting technologies everyday. Thus, the way of running a project from the architectural point of view is to exchange knowledge with a bigger team that will be the real knowledge owner.
 So, as a  Software Architect, make sure to master the aforementioned skills and you will be able to:
@@ -117,7 +117,7 @@ The path and first steps for becoming a Software Architect are really exciting. 
 - Pursuing external validation: “Someone should check that every one of my decisions is correct”.
 <p></p>
 
-  
+
 #### Prognosis
 It is not easy to cope with these feelings but there is something that can help: you are not alone. Actually, these symptoms (among others) are most common than most of us believe and, on top of that, these are grouped under the name of "Impostor Syndrome"[[1]](https://counseling.caltech.edu/general/InfoandResources/Impostor), that was discovered by Dr. Pauline R. Clance in 1978[[2]](https://en.wikipedia.org/wiki/Impostor_syndrome).
 
@@ -148,13 +148,13 @@ Broad consensus exists on including technical mentoring as part of a Software Ar
 
 #### Symptoms and Diagnosis
 
-- Mentoring bottleneck: "Everyone wants me to help them grow, what's going on?" most Software Engineers start seeking mentoring from the same Software Architect. 
-- Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing. 
+- Mentoring bottleneck: "Everyone wants me to help them grow, what's going on?" most Software Engineers start seeking mentoring from the same Software Architect.
+- Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing.
 - Inefficient communication: "I can't get developers to follow my lead on system design" Software Engineers do not understand a system design or can not see why it was designed that way.
 
 <p></p>
 
-  
+
 #### Prognosis
 
 Software Architects should be encouraged to give mentorship to their protégés on all skills required to climb up the career ladder. Particularly on skills needed on higher positions such as Software Architect itself. If mentoring is limited to  technical skills only, it will quite likely fall short once Software Engineers reach a leading position.
@@ -177,11 +177,11 @@ As Paul Graham states on the essay Maker's Schedule, Manager's Schedule while ma
 
 #### Symptoms and Diagnosis
 
-- Adapt to managers: "Managers are dragging me into meetings at any time". 
+- Adapt to managers: "Managers are dragging me into meetings at any time".
 - Wasted time: "I'm a maker, I build working software that goes into production, that is my main responsibility, not answering managers questions".
 - Sparse schedule: "Let me code for four hours straight and I'll blow your mind"
 
-In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker's schedule can encounter some difficulties. 
+In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker's schedule can encounter some difficulties.
 
 As mentioned on section "The impactless best coder syndrome", Software Architects should not necessarily be responsible for coding even the most complex functionalities and this could be used to make a case against Software Architects being makers. However, as discussed, Software Architects are responsible for building software in a more transversal manner, defining best practices and development processes, or writing frameworks and blueprints. Such duties are undeniable characteristics of a maker.
 
@@ -189,7 +189,7 @@ Transversal components often affect a variety of different actors and have a pro
 
 
 
-  
+
 #### Prognosis
 
 Software Architects are makers and, as such, need time to make. Building software, even at the architectural level, requires concentration and focus. Software Architects, as any prestigious position, are frequently consulted on a wide array of topics and will be summoned into meetings. Instead of fighting against it we propose guidelines to minimize the impact of meetings on your real responsibilities:
@@ -201,9 +201,8 @@ Software Architects are makers and, as such, need time to make. Building softwar
 
 ## Final Thoughts
 
-While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role. 
+While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role.
 
 As we discussed when we opened this article, Software Engineering has changed quite dramatically from its humble origins in the last century but it yet remains a pretty novel and somewhat adolescent field of study. It is understandable then that an even newer role such as that of the Software Architect has been yet barely standardized or studied.
 
 We hope that the analysis of the pathologies here presented can help spark more discussion about topics such as how the Software Architect’s role should evolve, how can we evaluate their impact, how can we grow them and coach them. This is our humble yet heartfelt contribution in that spirit.
-
