@@ -1,6 +1,6 @@
-{% if page.language == "en" %}
+{% if site.lang == "en" %}
   {{ convertDate | date: "%B %-d, %Y" }}
-{% else if page.language == "es" %}
+{% else if site.lang == "es" %}
   {% assign convertMonth = convertDate | date: "%-m" %}
   {{ convertDate | date: "%-d" }} de
   {% include month.fn %}

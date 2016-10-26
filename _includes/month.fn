@@ -1,4 +1,4 @@
-{% if page.language == "en" %}
+{% if site.lang == "en" %}
 {% case convertMonth %}
   {% when '1' %}January
   {% when '2' %}February
@@ -13,7 +13,7 @@
   {% when '11' %}November
   {% when '12' %}December
 {% endcase %}
-{% else if page.language == "es" %}
+{% else if site.lang == "es" %}
   {% case convertMonth %}
     {% when '1' %}Enero
     {% when '2' %}Febrero
