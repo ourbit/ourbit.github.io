@@ -27,7 +27,7 @@ Let's jump to the story
 
 ## Chapter I: A self-aware team
 
-My team and I were having a really bad time. The roadmap was at some point between aggressive and impossible. We weren't stopping to over-commit (and of course, under-achieve), the predictability was low and falling fast (lower than 40% several sprints in a row), and even though backups were starting to arrive, the ramp up effort was going to led us to an even worst scenario (at least, temporarily). Little by little, higher level managers started to jump in to our daily meetings trying to figure out what was going on. I called up to a non-regular meeting where I was going to throw all my ideas on the table and suddenly, the unthinkable. One of the team-members asked "What's the deal with predictability? Why suddenly is so important to be predictable? Why are we worrying this bad about commitments that are falling?". I was astonished. I couldn't honestly think that these questions were powered by legit doubts and I needed to hold myself back from answering to somebody that, at that moment, I thought was simply trolling me.
+My team and I were having a really bad time. The roadmap was at some point between aggressive and impossible. We weren't stopping to over-commit (and of course, under-achieve), the predictability was low and falling fast (lower than 40% several sprints in a row), and even though backups were starting to arrive, the ramp up effort was going to led us to an even worst scenario (at least, temporarily). Little by little, higher level managers started to jump into our daily meetings trying to figure out what was going on. I called up to a non-regular meeting where I was going to throw all my ideas on the table and suddenly, the unthinkable. One of the team-members asked "What's the deal with predictability? Why suddenly is so important to be predictable? Why are we worrying this bad about commitments that are falling?". I was astonished. I couldn't honestly think that these questions were powered by legit doubts and I needed to hold myself back from answering to somebody that, at that moment, I thought was simply trolling me.
 
 And luckily I did it, because that forced me to start a dialogue with this person and the entire team to discover that there was no common understanding of what we were trying to accomplish.
 
@@ -42,7 +42,7 @@ During the one-on-one meetings I had with the members of the team (after the "ho
 - Jointly define the team and individual goals clearly.
 - Understand the root causes that were stopping the team from achieving those (from every team member perspective).
 
-For the second item there is an important pre-condition that I hadn't mention because it was not a problem in our team (but it could be in yours): As a manager you must make sure that you create a safety work environment. Every team member should be able to reach you (and even a skip level if necessary) with his/her thoughts without any kind of fear. For example: No matter how unnatural it was for me having a team member asking "Why is predictability that important?". I refrained my natural instinct to cut that conversation off. It was meaningful, but even if it wasn't, it's always a great chance to build strong and trust relationships. **If you can't accomplish this, you and your team are doomed**.
+For the second item there is an important precondition that I hadn't mention because it was not a problem in our team (but it could be in yours): As a manager you must make sure that you create a safety work environment. Every team member should be able to reach you (and even a skip level if necessary) with his/her thoughts without any kind of fear. For example: No matter how unnatural it was for me having a team member asking "Why is predictability that important?". I refrained my natural instinct to cut that conversation off. It was meaningful, but even if it wasn't, it's always a great chance to build strong and trust relationships. **If you can't accomplish this, you and your team are doomed**.
 
 As it turned out, there were plenty of possible root causes for the low predictability. It could vary from team to team, but in this case:
 
@@ -100,9 +100,9 @@ Never let this kind of issues to stop you. You need to start with something, mea
 ## Conclusion
 
 At the end of the third sprint since the team started this refactor (achieved items):
-- The team behavior dramatically improved. Any team member was able to jump in to help another one.
+- The team behavior dramatically improved. Any team member was able to jump into help another one.
 - The team was able to identify which stories were at risk and the reasons for the delays (underestimation, issues with the tools, individual underperform).
-- The team had data enough to make informed decisions (start partial tests before the story was completed, jump in to a different story to avoid risks).
+- The team had data enough to make informed decisions (start partial tests before the story was completed, jump into a different story to avoid risks).
 
 By the end of the fourth sprint:
 - The team was estimating quicker and more precisely.
