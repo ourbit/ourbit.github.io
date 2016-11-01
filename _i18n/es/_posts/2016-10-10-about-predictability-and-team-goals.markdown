@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 'About predictability and clearly defining team goals'
+title: 'Acerca de predictibilidad y definir claramente los objetivos del equipo'
 author: nohorbee
 tags: Predictability Accountability Team Building Management Goals Communication Expectations
-description: "A short story/leasson learned about achieving predictability as a team, while defining clear goals and expectations by communicating effectively"
+description: "Un cuento corto y lecciones aprendidas acerca de alcanzar predictibilidad como un equipo, y definir claramente objetivos y expectativas mediante una comunicación efectiva"
 ---
 
-It's an Engineering Manager responsibility to guarantee the team health measured in terms of qualities such as performance, commitment, accountability and predictability (among lot of others). However this can't be forced by the Manager. It's actually the team effort and its proper channelling the decisive factors for achieving these goals. Because these are goals, aren't these?
+Es responsabilidad de un Manager de Ingeniería garantizar la salud del equipo medida en terminos de cualidades tales como performance, compromiso, responsabilidad y predictibilidad (entre un montón de otras). Sin embargo, esto no puede ser forzado por el Manager. En realidad el esfuerzo del equipo, y su correcta canalización son factores decisivos para alcanzar estos objetivos. Porque estos, son objetivos, ¿o no?
 
 <!--MORE-->
 
