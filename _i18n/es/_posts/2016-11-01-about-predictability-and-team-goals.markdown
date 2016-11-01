@@ -64,7 +64,7 @@ La anterior es una versión abreviada de lo que pasaba en la realidad, pero:
 - Establece un par de situaciones fáciles de arreglar, pero difíciles de detectar.
 
 
-## Chapter III: Acciones impulsadas por objetivos
+## Capítulo III: Acciones impulsadas por objetivos
 
 No era cuestión de conocer las respuestas, sino de hacer las preguntas. Como mencioné, estaba (y siempre estuve) listo para aparecer con mi caja de herramientas, solucionar los problemas y salvar el día, cuando mi equipo me enseñó una valiosa lección: primero acordemos los objetivos y luego discutamos acerca de cómo alcanzarlos. Una vez que todos coincidimos en que queríamos ser predecibles (y por qué lo necesitábamos), sugerir las herramientas fue mucho más sencillo. Pero más importante que esto:
 
