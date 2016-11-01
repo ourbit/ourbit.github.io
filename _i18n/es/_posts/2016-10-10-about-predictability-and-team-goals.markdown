@@ -10,53 +10,59 @@ Es responsabilidad de un Manager de Ingeniería garantizar la salud del equipo m
 
 <!--MORE-->
 
-Well, that's an interesting first discussion. What is the real value of having these qualities accomplished? Can the company sell "predictability" to its customers? Is predictability a new application feature?
+Bueno, esta primer discusión es interesante. ¿Cuál es el valor real de alcanzar estas cualidades? La compañía ¿puede vender "predictibilidad" a sus clientes? ¿Es la predictibilidad una feature de la aplicación?
 
-## Predictability: A team quality or a team goal?
+## Predictabilidad: ¿Una cualidad o un objectivo del equipo?
 
-If we stand on the "product guy" shoes, we could say that predictability is a way of achieving the team goals. Even more, from the product perspective, we might think "predictability" is not even a thing (until the team is no longer predictable). But from the team standpoint, predictability is a goal itself. The tricky part for understanding this (among a lot of other confusing issues) is which one is the cause and which one the effect. This far, predictability seems to be the cause, and a new feature in time is the effect. That's right. Predictability is a cause, hence, it can't be an effect, can it?. Of course it can! when we analyze "cause and effect" relationships, we always need to remember that it's all about a chain. A->B->C->...->Z. Now, let's say that a feature in time is <strike>the</strike> a possible effect caused by Predictability (among other causes). And the key of this analysis: So, which are the causes for predictability (as an effect/goal)?
+Si nos paramos en los zapatos de la "persona de producto", podriamos decir que la predictibilidad es una forma de alcanzar los objetivos del equipo. Auún más, desde la perspectiva de producto, podríamos pensar que "predictibilidad" ni siquiera es algo (al menos hasta que el equipo deja de ser predecible). Pero desde el punto de vista del equipo, la predicitibilidad es un objetivo en si mismo. La parte engañosa para entender esto (entre otros tantos temas medio confusos) es analizar cuál es la causa y cuál el efecto. Hasta ahora, la predictibilidad parece ser la causa, y tener una nueva feature en tiempo y forma es el efecto. Esto es correcto. La predictibilidad es una causa, y por lo tanto no puede ser un efecto. ¿O si? ¡Por supuesto que si! Cuando analizamos relaciones de "causa-efecto" siempre debemos recordar que todo se trata de una cadena. A->B->C->...Z. Ahora, digamos que una feaure en tiempo y forma es <strike>el</strike> un posible efecto causado por la predictibilidad (entre otro conjunto de causas). Y ahora, la parte importante: ¿Cuáles son las causas para lograr predictibilidad (como efecto/objetivo)?
 
-This long introduction is not just the effect of me being long-winded. I'm just trying to establish these 2 facts:
+Esta larga introducción no es solo el efecto de mi incapacidad de resumir. Estoy intentando establecer 2 hechos:
 
-- Predictability is a team goal (in the middle of a cause-effect chain).
-- The team needs to feel its own bias for being a predictable one.
+- La predictibilidad es un objetivo del equipo (en medio de una cadena de causas y efectos).
+- El equipo necesita sentir su propia inclinación por ser predecible.
 
-Now, it's an Engineering Manager responsibility to encourage the team to go for it, and to **provide the necessary tools for this to be achieved**.
+Ahora si, es una responsabilidad del Manager de Ingeniería alentar al equipo a lograrlo, y **proveer las herramientas necesarias para que esto ocurra**.
 
-Let's jump to the story
 
-## Chapter I: A self-aware team
+Pasemos a la historia
 
-My team and I were having a really bad time. The roadmap was at some point between aggressive and impossible. We weren't stopping to over-commit (and of course, under-achieve), the predictability was low and falling fast (lower than 40% several sprints in a row), and even though backups were starting to arrive, the ramp up effort was going to led us to an even worst scenario (at least, temporarily). Little by little, higher level managers started to jump in to our daily meetings trying to figure out what was going on. I called up to a non-regular meeting where I was going to throw all my ideas on the table and suddenly, the unthinkable. One of the team-members asked "What's the deal with predictability? Why suddenly is so important to be predictable? Why are we worrying this bad about commitments that are falling?". I was astonished. I couldn't honestly think that these questions were powered by legit doubts and I needed to hold myself back from answering to somebody that, at that moment, I thought was simply trolling me.
+## Capítulo I: Un equipo consciente
 
-And luckily I did it, because that forced me to start a dialogue with this person and the entire team to discover that there was no common understanding of what we were trying to accomplish.
+Mi equipo y yo la estabamos pasando mal. El roadmap estaba en un punto intermedio entre intenso e imposible. No parabamos de comprometer funcionalidades de más (y no cumplir), la predictibilidad era baja y cayendo rápidamente (or debajo del 40% durante varias sprints seguidas), y a pesar de que los refuerzos estaban comenzando a llegar, el esfuerzo inicial (ramp up) estaba por dejarnos en una situación incluso peor (al menos temporalmente). De a poco, managers de mayor jerarquía empezaban a aparecerse en nuestras daily meetings intentando descifrar lo que estaba pasando. Yo llamé a una reunión "no regular" en donde estaba a punto de tirar todas mis ideas arriba de la mesa cuando de repente, lo impensado. Uno de los miembros del equipo preguntó "¿Cuál es el problema con la predictibilidad? ¿Por qué de pronto es tan imporante ser predecibles? ¿Por qué nos estamos preocupando tanto por los compromisos que no estamos cumpliendo?". Yo estaba desconcertado. No podía pensar que esas preguntas estaban impulsadas por dudas legítimas, y tuve que frenarme de responder a alguien que, en ese momento, pensé que me estaba "trolleando".
 
-**Lesson 1**: Make sure that we are all on board. Identify that Predictability is a team goal and hence, it needs to be defined and communicated [S.M.A.R.T](https://en.wikipedia.org/wiki/SMART_criteria)-ishly. As said, it is impossible for a manager to achieve this goal by himself/herself. It's a team goal, and it will become a team's achievement.
+Y por suerte me frené, porque eso me obligó a comenzar un diálogo con esta persona y el equipo entero para descubrir que no había un entendimiento compartido acerca de lo que estabamos intentando lograr.
 
-## Chapter II: Root causes
 
-I was already an experienced manager, and had been a successful one. I knew all sort of tricks and methods to make things happen. Or that's what I thought. I had been trying to push some ideas to the team that were, in my opinion, going to lead us to improve the way we were working (Predictability included). But for some reason, sprint after sprint I failed to make the team to implement those. "We are not even trying", I used to think from time to time. Most of these ideas required to implement some sort of time-tracking mechanism, and it's no news that developers don't like it at all. Well, that's actually not true and even a quite a bit unfair enunciate. The real "problem" is that, developers are usually smart people. If your team is not populated with this specie, you are in big troubles. Smart people trend to avoid running meaningless errands and, being honest, unless there is a good reason behind it, time-tracking is exactly that.
 
-During the one-on-one meetings I had with the members of the team (after the "honestly-not-a-troll" incident) I focused a lot in two main topics:
+**Lección 1**: Asegurate de que todos estén en el barco. Entiendan que la predictibilidad es un objetivo del equipo y como tal, necesita ser definida y comunicada de una manera [S.M.A.R.T](https://en.wikipedia.org/wiki/SMART_criteria). Como mencioné al comienzo, es imposible para un manager lograr este objetivo por si mismo. Es un objetivo del equipo, y va a ser un logro del equipo.
 
-- Jointly define the team and individual goals clearly.
-- Understand the root causes that were stopping the team from achieving those (from every team member perspective).
 
-For the second item there is an important pre-condition that I hadn't mention because it was not a problem in our team (but it could be in yours): As a manager you must make sure that you create a safety work environment. Every team member should be able to reach you (and even a skip level if necessary) with his/her thoughts without any kind of fear. For example: No matter how unnatural it was for me having a team member asking "Why is predictability that important?". I refrained my natural instinct to cut that conversation off. It was meaningful, but even if it wasn't, it's always a great chance to build strong and trust relationships. **If you can't accomplish this, you and your team are doomed**.
+## Capítulo II: Causas primordiales
 
-As it turned out, there were plenty of possible root causes for the low predictability. It could vary from team to team, but in this case:
+Yo ya era un manager experimentado, y había sido uno exitoso. Conocía todo tipo de trucos y métodos para hacer que las cosas pasaran. O al menos eso pensaba. Había estado intentando impulsar algunas ideas en el equpo que, en mi opinión, nos iban a llevar a mejorar la manera en la que estabamos trabajando (Predictibilidad incluida). Pero poralguna rason, sprint tras sprint no lograba que el equipo implementara estas ideas. Cada tanto solía pensar "ni estamos tratando". La mayoría de estas ideas dependían de la implementación de algún mecanismo de seguimiento de tiempo, y no es novedad que esto no les gusta a los desarrolladores. Bueno, esto no es del todo cierto, y a decir verdad, es hasta un enunciado injusto. El "problema" real es que los developers generalmente son gente inteligente. Si tu equipo no está poblado con esta especie, estás en grandes problemas. La gente inteligente tienden a evitar los trámites sin sentido y, siendo honestos, salvo que haya una buena rason detrás de esto, realizar seguimiento del tiempo es exáctamente eso.
 
-- Lack of team behavior: Stories were being tackled by individuals, not the team. Hence, there was no interaction during the daily meetings, almost no maneuver capability for stories that were in path to not being completed, no unified design, and no knowledge sharing.
-- Unclear product vision: The team was not aware of the big picture, and didn't receive the functional specs with time enough to understand those. This caused constant highly imprecise estimations.
-- No convention over story points: Talking with one of the devs, we agreed that a story should have been finished since it was properly estimated in 5 points which seemed to be the doable points per person during a sprint. Nevertheless, the story had not been completed. When I asked other devs about their opinion about how many story points they thought was the average per person, I didn't receive even a matching pair of answers.
-- Lack of metrics: Like (almost) everything, estimations can't be improved if you can't measure these. And it is very unlikely that you are predictable if your estimations suck. How much time are we able to code per day? How inaccurate are our estimations? How are we doing with this story? among other questions, should be easy to answer if we want to control our capacity (first) and our predictability (then).
-- Tools and processes stuck in the middle: Tools and processes are great. Properly implemented can proactively avoid bugs, accelerate the development speed, assure smoother deployments, among a long list of perks. But when some tool is misbehaving, it could be a real nightmare and a ```devs.forEach(frustrate)``` statement. Nobody likes to work endlessly hours, but we all accept it can happen from time to time. It turns out that additional efforts caused by a "stupid test tool" going out of resources and becoming the biggest engineering bottleneck is not even close to be acceptable by a group of smart people. On top of the demotivating effect, how can anybody claim predictability when unexpected things like this happen all the time?
+Durante una de las reuniones individuales que tuve con los miembros del equpo (luego del incidente "honestamente-no-un-troll"), me enfoqué en dos temas principales:
 
-The previous one is an abbreviated version of the real one, but:
+- Definir claramente y de forma conjunta los objetivos individuales y los del equipo.
+- Entender las causas primordiales que impedían que el equipo alcanzaran estos objetivos (desde la perspectiva de cada miembro).
 
-- It illustrates the scenario.
-- It provides you with some common situations I found in other teams, in other companies.
-- It states a couple of easy to fix, hard to detect situations.
+Para que el segundo punto se dé, hay una precondición que no había mencionado antes porque no era un problema en nuestro equipo (pero que podría serlo en el tuyo): Como Manager, tenés que asegurarte de crear un ambiente de trabajo seguro. Cada miembro del equipo debería poder llegar a vos (o incluso saltearse un nivel si fuera necesario) planteando sus pensamientos sin ningún tipo de temor. Por jemplo, no importa qué tan antinatural era para mi la pregunta "¿Por qué la predictibilidad es tan imporante?". Frené mi instinto natural de cortar esa conversación. En este caso, era significativa, pero incluso si no lo hubiese sido, era una gran oportunidad de crear relaciones de confianza. **Si no podés con esto, vos y tu equipo están condenados**.
+
+Resulta que había montones de posibles causas primordiales para tan baja predictibilidad. Estas pueden variar de equipo a equipo, pero en este caso:
+
+- Falta de comportamiento de equipo: Las Stories eran trabajadas por individuos y no por el equipo. Por lo tanto, no habia interacción durante las daily meetings, ni capacidad de maniobra para aquellas stories que iban camino a caerse. No habia un diseño unificado, y no se compartía conocimiento.
+- Visión de producto poco clara: El equipo no era consciente del panorama general, y no estaba recibiendo las especificaciones funcionales con suficiente tiempo como para entenderlas. Esto generaba estimaciones constantemente imprecisas.
+- Story Points sin convención: Hablando con uno de los desarrolladores, acordamos que una story debería haberse terminado ya que estaba estimada apropiadamente en 5 puntos, que parecía ser una medida de puntos factibles por desarrollador durante una sprint. No obstante, la story no fue completada. Cuando pregunté a otros desarrolladores acerca de su opinión acerca de la cantidad de story points por persona durante una sprint, no obtuve dos respuestas que coincidieran.
+- Ausencia de métricas: Como con casi todo, las estimaciones no pueden ser mejoradas si no pueden ser medidas. Y es muy poco probable que puedas ser predecible si tus estimaciones andan flojas. ¿Cuánto tiempo podés escribir código por día? ¿Qué tan imprecisas son tus estimaciones? ¿Cómo vamos con esta story? entre otras preguntas, deberían ser fáciles de responder si queremos controlar nuestra capacidad (primero) y nuestra predictibilidad (después).
+- Las herramientas y procesos se traban en la mitad: Las herramientas y los procesos son geniales. Implementados como corresponde, estos pueden prevenir bugs, acelerar la velocidad de desarrollo, asegurar deployments más tranquilos, entre una larga lista de beneficios. Pero cuando una herramienta no está funcionando como debe, esto puede convertirse en una pesadilla y una sentencia ```devs.forEach(frustrate)```. A nadie le gusta trabajar horas interminables, pero todos aceptamos que esto puede pasar de vez en cuando. Resulta que los esfuerzos adicionales causados por una "herramienta de test estúpida" que se queda sin recursos y se convierte en el mayor cuello de botella del departamento de ingeniería, no está ni remotamente cerca de ser aceptable para un grupo de gente inteligente. Además del efecto demotivador, ¿Cómo alguien podría reclamar predictibilidad cuando cosas inesperadas como estas pasan todo el tiempo?
+
+La anterior es una versión abreviada de lo que pasaba en la realidad, pero:
+
+
+- Ejemplifica el escenario.
+- Muestra algunas situaciones que encontré en otros equipos y en otras empresas.
+- Establece un par de situaciones fáciles de arreglar, pero difíciles de detectar.
+
 
 ## Chapter III: Goals driven actions
 
