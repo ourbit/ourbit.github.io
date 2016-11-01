@@ -5,9 +5,160 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//es/</link>
     <atom:link href="http://ourbit.github.io//es/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 25 Oct 2016 21:03:30 -0300</pubDate>
-    <lastBuildDate>Tue, 25 Oct 2016 21:03:30 -0300</lastBuildDate>
+    <pubDate>Tue, 01 Nov 2016 13:02:13 -0300</pubDate>
+    <lastBuildDate>Tue, 01 Nov 2016 13:02:13 -0300</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Acerca de la predictibilidad y definir claramente los objetivos del equipo</title>
+        <description>&lt;p&gt;Es responsabilidad de un Manager de Ingeniería garantizar la salud del equipo medida en términos de cualidades tales como performance, compromiso, responsabilidad y predictibilidad (entre un montón de otras). Sin embargo, esto no puede ser forzado por el Manager. En realidad el esfuerzo del equipo, y su correcta canalización son factores decisivos para alcanzar estos objetivos. Porque estos, son objetivos, ¿o no?&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;Bueno, esta primer discusión es interesante. ¿Cuál es el valor real de alcanzar estas cualidades? La compañía ¿puede vender “predictibilidad” a sus clientes? ¿Es la predictibilidad una &lt;em&gt;feature&lt;/em&gt; de la aplicación?&lt;/p&gt;
+
+&lt;h2 id=&quot;predictibilidad-una-cualidad-o-un-objetivo-del-equipo&quot;&gt;Predictibilidad: ¿Una cualidad o un objetivo del equipo?&lt;/h2&gt;
+
+&lt;p&gt;Si nos paramos en los zapatos de la “persona de producto”, podríamos decir que la predictibilidad es una forma de alcanzar los objetivos del equipo. Aún más, desde la perspectiva de producto, podríamos pensar que “predictibilidad” ni siquiera es algo (al menos hasta que el equipo deja de ser predecible). Pero desde el punto de vista del equipo, la predictibilidad es un objetivo en sí mismo. La parte engañosa para entender esto (entre otros tantos temas medio confusos) es analizar cuál es la causa y cuál el efecto. Hasta ahora, la predictibilidad parece ser la causa, y tener una nueva feature en tiempo y forma es el efecto. Esto es correcto. La predictibilidad es una causa, y por lo tanto no puede ser un efecto. ¿O si? ¡Por supuesto que sí! Cuando analizamos relaciones de “causa-efecto” siempre debemos recordar que todo se trata de una cadena. A-&amp;gt;B-&amp;gt;C-&amp;gt;…Z. Ahora, digamos que una feaure en tiempo y forma es &lt;strike&gt;el&lt;/strike&gt; un posible efecto causado por la predictibilidad (entre otro conjunto de causas). Y ahora, la parte importante: ¿Cuáles son las causas para lograr predictibilidad (como efecto/objetivo)?&lt;/p&gt;
+
+&lt;p&gt;Esta larga introducción no es solo el efecto de mi incapacidad de resumir. Estoy intentando establecer 2 hechos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La predictibilidad es un objetivo del equipo (en medio de una cadena de causas y efectos).&lt;/li&gt;
+  &lt;li&gt;El equipo necesita sentir su propia inclinación por ser predecible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora si, es una responsabilidad del Manager de Ingeniería alentar al equipo a lograrlo, y &lt;strong&gt;proveer las herramientas necesarias para que esto ocurra&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pasemos a la historia&lt;/p&gt;
+
+&lt;h2 id=&quot;captulo-i-un-equipo-consciente&quot;&gt;Capítulo I: Un equipo consciente&lt;/h2&gt;
+
+&lt;p&gt;Mi equipo y yo la estábamos pasando mal. El roadmap estaba en un punto intermedio entre intenso e imposible. No parabamos de comprometer funcionalidades de más (y no cumplir), la predictibilidad era baja y cayendo rápidamente (por debajo del 40% durante varias sprints seguidas), y a pesar de que los refuerzos estaban comenzando a llegar, el esfuerzo inicial (ramp up) estaba por dejarnos en una situación incluso peor (al menos temporalmente). De a poco, managers de mayor jerarquía empezaban a aparecerse en nuestras daily meetings intentando descifrar lo que estaba pasando. Yo llamé a una reunión “no regular” en donde estaba a punto de tirar todas mis ideas arriba de la mesa cuando de repente, lo impensado. Uno de los miembros del equipo preguntó “¿Cuál es el problema con la predictibilidad? ¿Por qué de pronto es tan importante ser predecibles? ¿Por qué nos estamos preocupando tanto por los compromisos que no estamos cumpliendo?”. Yo estaba desconcertado. No podía pensar que esas preguntas estaban impulsadas por dudas legítimas, y tuve que frenarme de responder a alguien que, en ese momento, pensé que me estaba “trolleando”.&lt;/p&gt;
+
+&lt;p&gt;Y por suerte me frené, porque eso me obligó a comenzar un diálogo con esta persona y el equipo entero para descubrir que no había un entendimiento compartido acerca de lo que estábamos intentando lograr.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lección 1&lt;/strong&gt;: Asegurate de que todos estén en el barco. Entiendan que la predictibilidad es un objetivo del equipo y como tal, necesita ser definida y comunicada de una manera &lt;a href=&quot;https://en.wikipedia.org/wiki/SMART_criteria&quot;&gt;S.M.A.R.T&lt;/a&gt;. Como mencioné al comienzo, es imposible para un manager lograr este objetivo por sí mismo. Es un objetivo del equipo, y va a ser un logro del equipo.&lt;/p&gt;
+
+&lt;h2 id=&quot;captulo-ii-causas-primordiales&quot;&gt;Capítulo II: Causas primordiales&lt;/h2&gt;
+
+&lt;p&gt;Yo ya era un manager experimentado, y había sido uno exitoso. Conocía todo tipo de trucos y métodos para hacer que las cosas pasaran. O al menos eso pensaba. Había estado intentando impulsar algunas ideas en el equipo que, en mi opinión, nos iban a llevar a mejorar la manera en la que estábamos trabajando (Predictibilidad incluida). Pero por alguna razón, sprint tras sprint no lograba que el equipo implementara estas ideas. Cada tanto solía pensar “ni estamos tratando”. La mayoría de estas ideas dependían de la implementación de algún mecanismo de seguimiento de tiempo, y no es novedad que esto no les gusta a los desarrolladores. Bueno, esto no es del todo cierto, y a decir verdad, es hasta un enunciado injusto. El “problema” real es que los developers generalmente son gente inteligente. Si tu equipo no está poblado con esta especie, estás en grandes problemas. La gente inteligente tiende a evitar los trámites sin sentido y, siendo honestos, salvo que haya una buena razón detrás de esto, realizar seguimiento del tiempo es exáctamente eso.&lt;/p&gt;
+
+&lt;p&gt;Durante una de las reuniones individuales que tuve con los miembros del equipo (luego del incidente “honestamente-no-un-troll”), me enfoqué en dos temas principales:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Definir claramente y de forma conjunta los objetivos individuales y los del equipo.&lt;/li&gt;
+  &lt;li&gt;Entender las causas primordiales que impedían que el equipo alcanzara estos objetivos (desde la perspectiva de cada miembro).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para que el segundo punto se dé, hay una precondición que no había mencionado antes porque no era un problema en nuestro equipo (pero que podría serlo en el tuyo): Como Manager, tenés que asegurarte de crear un ambiente de trabajo seguro. Cada miembro del equipo debería poder llegar a vos (o incluso saltarse un nivel si fuera necesario) planteando sus pensamientos sin ningún tipo de temor. Por ejemplo, no importa qué tan antinatural era para mi la pregunta “¿Por qué la predictibilidad es tan importante?”. Frené mi instinto natural de cortar esa conversación. En este caso, era significativa, pero incluso si no lo hubiese sido, era una gran oportunidad de crear relaciones de confianza. &lt;strong&gt;Si no podés con esto, vos y tu equipo están condenados&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Resulta que había montones de posibles causas primordiales para tan baja predictibilidad. Estas pueden variar de equipo a equipo, pero en este caso:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Falta de comportamiento de equipo: Las Stories eran trabajadas por individuos y no por el equipo. Por lo tanto, no había interacción durante las daily meetings, ni capacidad de maniobra para aquellas stories que iban camino a caerse. No había un diseño unificado, y no se compartía conocimiento.&lt;/li&gt;
+  &lt;li&gt;Visión de producto poco clara: El equipo no era consciente del panorama general, y no estaba recibiendo las especificaciones funcionales con suficiente tiempo como para entenderlas. Esto generaba estimaciones constantemente imprecisas.&lt;/li&gt;
+  &lt;li&gt;Story Points sin convención: Hablando con uno de los desarrolladores, acordamos que una story debería haberse terminado ya que estaba estimada apropiadamente en 5 puntos, que parecía ser una medida de puntos factibles por desarrollador durante una sprint. No obstante, la story no fue completada. Cuando pregunté a otros desarrolladores acerca de su opinión acerca de la cantidad de story points por persona durante una sprint, no obtuve dos respuestas que coincidieran.&lt;/li&gt;
+  &lt;li&gt;Ausencia de métricas: Como con casi todo, las estimaciones no pueden ser mejoradas si no pueden ser medidas. Y es muy poco probable que puedas ser predecible si tus estimaciones andan flojas. ¿Cuánto tiempo podés escribir código por día? ¿Qué tan imprecisas son tus estimaciones? ¿Cómo vamos con esta story? entre otras preguntas, deberían ser fáciles de responder si queremos controlar nuestra capacidad (primero) y nuestra predictibilidad (después).&lt;/li&gt;
+  &lt;li&gt;Las herramientas y procesos se traban en la mitad: Las herramientas y los procesos son geniales. Implementados como corresponde, estos pueden prevenir bugs, acelerar la velocidad de desarrollo, asegurar deployments más tranquilos, entre una larga lista de beneficios. Pero cuando una herramienta no está funcionando como debe, esto puede convertirse en una pesadilla y una sentencia &lt;code&gt;devs.forEach(frustrate)&lt;/code&gt;. A nadie le gusta trabajar horas interminables, pero todos aceptamos que esto puede pasar de vez en cuando. Resulta que los esfuerzos adicionales causados por una “herramienta de test estúpida” que se queda sin recursos y se convierte en el mayor cuello de botella del departamento de ingeniería, no está ni remotamente cerca de ser aceptable para un grupo de gente inteligente. Además del efecto demotivador, ¿Cómo alguien podría reclamar predictibilidad cuando cosas inesperadas como estas pasan todo el tiempo?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La anterior es una versión abreviada de lo que pasaba en la realidad, pero:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ejemplifica el escenario.&lt;/li&gt;
+  &lt;li&gt;Muestra algunas situaciones que encontré en otros equipos y en otras empresas.&lt;/li&gt;
+  &lt;li&gt;Establece un par de situaciones fáciles de arreglar, pero difíciles de detectar.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;chapter-iii-acciones-impulsadas-por-objetivos&quot;&gt;Chapter III: Acciones impulsadas por objetivos&lt;/h2&gt;
+
+&lt;p&gt;No era cuestión de conocer las respuestas, sino de hacer las preguntas. Como mencioné, estaba (y siempre estuve) listo para aparecer con mi caja de herramientas, solucionar los problemas y salvar el día, cuando mi equipo me enseñó una valiosa lección: primero acordemos los objetivos y luego discutamos acerca de cómo alcanzarlos. Una vez que todos coincidimos en que queríamos ser predecibles (y por qué lo necesitábamos), sugerir las herramientas fue mucho más sencillo. Pero más importante que esto:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;El equipo propuso algunas de estas herramientas.&lt;/li&gt;
+  &lt;li&gt;El equipo me solicitó sugerir aquellas herramientas que ellos no conocían.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Todos sabemos cuan importante es, pero muy frecuentemente necesitamos un gran equipo para recordarnos que &lt;strong&gt;no somos la persona más inteligente de la sala&lt;/strong&gt;, e incluso si lo fuéramos, no hay forma de ser más inteligentes que el equipo entero. Si vos pensás que lo sos, te tengo una mala noticia (podés elegir cual):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Necesitás un equipo más inteligente.&lt;/li&gt;
+  &lt;li&gt;Tu equipo &lt;strong&gt;definitivamente&lt;/strong&gt; necesita un manager más inteligente. Apuesto que esta segunda es la correcta, incluso si vos elegiste la otra.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Los objetivos eran una cadena (o un árbol) de causas y efectos&lt;/strong&gt;. Estos objetivos podían agruparse como un gran hito: remover/mitigar las “causas primordiales” (mencionadas en el capítulo anterior).&lt;/p&gt;
+
+&lt;p&gt;Entonces, a modo de resumen, acordamos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Insistir al equipo correspondiente para que arreglara los problemas con las herramientas, siendo flexibles en soportar temporalmente el esfuerzo adicional requerido para poder trabajar.&lt;/li&gt;
+  &lt;li&gt;Mantener registro del tiempo invertido en lidiar con las herramientas y elaborar reportes para ayudar a los otros managers a priorizar correctamente los arreglos.&lt;/li&gt;
+  &lt;li&gt;Dedicar el equipo entero a trabajar en el mismo set de funcionalidades durante las sprints.&lt;/li&gt;
+  &lt;li&gt;Registrar el tiempo invertido en construir las funcionalidades (tiempo de trabajo continuo e ininterrumpido por día).&lt;/li&gt;
+  &lt;li&gt;Registrar el esfuerzo restante a nivel tarea (antes estábamos viendo decaer los puntos cuando cerrábamos una historia). Este tema merece su propio artículo si no estás en tema. Pero básicamente hay que recordar que “Estimación Original” - “Tiempo dedicado” no siempre es igual a “Esfuerzo Restante”. Tener la capacidad de detectar esta diferencia tan pronto como sea posible &lt;strong&gt;es una herramienta decisiva&lt;/strong&gt; al momento de ser predecibles.&lt;/li&gt;
+  &lt;li&gt;Mostrar el progreso parcial durante las daily meetings (burn-down chart con granularidad fina).&lt;/li&gt;
+  &lt;li&gt;Discutir acerca de cualquier desvío significativo tan pronto como este apareciera.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Por supuesto que esto es solo un resumen. Ni siquiera puedo recordar cuántos detalles fueron definidos sobre la marcha y si todas estas fueran las acciones originales que acordamos.&lt;/p&gt;
+
+&lt;h2 id=&quot;captulo-iv-la-parlisis-causada-por-demasiados-cambios&quot;&gt;Capítulo IV: La parálisis causada por “demasiados cambios”&lt;/h2&gt;
+
+&lt;p&gt;Estábamos por comenzar un gran refactor en la forma en que solíamos trabajar. Cuando escribimos código, tenemos (o deberíamos tener) una gran cantidad de tests unitarios, y estamos bastante seguros de no estar rompiendo nada. Pero esto es diferente. No existen frameworks de tests unitarios para personas.&lt;/p&gt;
+
+&lt;p&gt;No nos paralizamos una vez que acordamos y tomamos las decisiones como equipo. Pero no puedo evitar pensar que, antes de esto, conocer todo el trabajo implicado en este refactor era un freno para al menos comenzar con las discusiones.&lt;/p&gt;
+
+&lt;p&gt;Yo solía pasar mucho tiempo pensando cómo articular todas las acciones necesarias. Mientras esto es algo bueno, &lt;strong&gt;planear&lt;/strong&gt; puede convertirse en una trampa. &lt;strong&gt;Siempre asegurate de que “planear” es tu herramienta para organizar los esfuerzos de tu equipo, y no una excusa para procrastinar profesionalmente&lt;/strong&gt;. Si no sabés como hacer esto, usá el viejo análisis “causa efecto”. Pensá cuáles son los objetivos que querés alcanzar construyendo un plan.&lt;/p&gt;
+
+&lt;p&gt;En este caso, planear la forma en que íbamos a proceder no tenía sentido. Pero implementar todos los cambios al mismo tiempo nos habría llevado a una situación donde:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;No íbamos a tener claridad acerca de qué cambios producían qué resultados.&lt;/li&gt;
+  &lt;li&gt;No íbamos a ser capaces de identificar si algún cambio era en realidad un retroceso.&lt;/li&gt;
+  &lt;li&gt;Los cambios requieren aprendizaje. Demasiados cambios implican aprender demasiadas cosas al mismo tiempo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nunca dejes que este tipo de cuestiones te frenen. Necesitás empezar con algo, medir los primeros resultados y decidir basado en las métricas arrojadas. Una vez más, &lt;strong&gt;no sos la persona más inteligente de la sala&lt;/strong&gt;. Discutí con tu equipo acerca de los cambios a implementar al principio, recolectá datos, presentalos en la reunión de retrospectiva y discutan otra vez acerca de “qué sigue”.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;Para el final de la tercera sprint desde que el equipo comenzó este refactor (ítems logrados):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;El comportamiento del equipo mejoró radicalmente. Cualquier miembro del equipo era capaz de acudir en ayuda de cualquier otro.&lt;/li&gt;
+  &lt;li&gt;El equipo era capaz de identificar las stories que estaban en riesgo y los motivos de las demoras (subestimación, problemas con las herramientas, bajo rendimiento individual).&lt;/li&gt;
+  &lt;li&gt;El equipo tenía suficientes datos para tomar decisiones (comenzar con pruebas parciales antes de que la story estuviera completa, cambiar a una story diferente para evitar riesgos).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para el final de la cuarta sprint:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;El equipo estimaba más rápido y las estimaciones eran más precisas.&lt;/li&gt;
+  &lt;li&gt;La visión de producto era compartida por el equipo entero.&lt;/li&gt;
+  &lt;li&gt;Los desvíos respecto del roadmap eran previstos y se tomaban medidas correctivas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;“Ítems logrados”-&amp;gt;”Predictibilidad”-&amp;gt;”Features en tiempo y forma”&lt;/strong&gt;. Todos eslabones en la cadena.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Oct 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2016/10/10/about-predictability-and-team-goals/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2016/10/10/about-predictability-and-team-goals/</guid>
+        
+        <category>Predictability</category>
+        
+        <category>Accountability</category>
+        
+        <category>Team</category>
+        
+        <category>Building</category>
+        
+        <category>Management</category>
+        
+        <category>Goals</category>
+        
+        <category>Communication</category>
+        
+        <category>Expectations</category>
+        
+        
+      </item>
     
       <item>
         <title>Los acrónimos realmente apestan</title>
@@ -1182,17 +1333,6 @@ Atte.&lt;/p&gt;
         <pubDate>Fri, 21 Nov 2014 18:37:00 -0300</pubDate>
         <link>http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</link>
         <guid isPermaLink="true">http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Legislando lo que prosperó anárquicamente</title>
-        <description>Es claro que el titulo es tendencioso. Decir que Internet es un ente anárquico es, desde mi humilde opinión, una falacia no menor. Internet contiene lo que un numeroso grupo de individuos (personas físicas o jurídicas) publica, al menos conceptualmente y sin entrar en detalles técnicos que no aportan al tema a desarrollar. &lt;!--MORE--&gt;Estas personas se rigen por legislaciones existentes (algunas correspondientes a sus países y otras comunes al globo). Si yo violo una ley existente, ya sea por publicar un contenido no debido en una red, o por arrojar basura en la vía pública, no estoy realizando nada que no ocurriera antes de internet (masiva). Lo que quizás provee internet es cierta impunidad que brinda el anonimato. Estas características permitieron que internet se desarrollara y llegara a ser el lugar en donde millones de personas podemos compartir contenidos y potenciar nuestras capacidades. Quienes entendemos internet no podemos imaginarla de otra manera. Y creo que aquí es momento de mencionar algo que puede ser controversial: &quot;No es incorrecto legislar internet&quot;. Todos podemos querer que nuestros derechos de autor se vean resguardados al tiempo que queremos utilizar el medio que facilita su &quot;violación&quot; para difundir lo que queremos proteger. Probablemente, si el cine no fuera un gran negocio, su difusión sería limitada, y eso también sería una lástima. Lo que creo que no se puede dejar de lado, es el análisis COSTO-BENEFICIO de aplicar una ley. De alguna manera, se realiza este análisis (quizás de forma implícita) ante situaciones mucho más graves. Por ejemplo: tras muchos años de ver CANSADOS, que los accidentes de tránsito causados por conductores ebrios se cobran miles de vidas al año, nadie piensa en prohibir el alcohol. Se sigue penalizando su consumo al momento de manejar. Prohibir el alcohol sería, teóricamente, una medida más eficaz para evitar tragedias (Enorme beneficio). Pero el costo es también muy elevado, y sobretodo &lt;b&gt;corta libertades.&lt;/b&gt;&amp;nbsp;Si yo soy una persona responsable, que quiere disfrutar un buen vino con un plato de carne, sería ilógico que esta práctica se me&amp;nbsp;prohíba&amp;nbsp;(al menos bajo las normas culturales de mi región). Prohibir el alcohol, cambiaría rotundamente los hábitos de los individuos. Transformaría el objeto a legislar en algo completamente distinto. Imponer una legislación demasiado estricta sobre internet, haciendo que sitios que funcionan como herramientas para compartir todo tipo de contenidos, cierren, es cambiar la escencia de lo legislado: empeorar internet, prohibirme cenar con vino, enjaularme por ser Argentino.&lt;br /&gt;Pero más allá del análisis conceptual y el impacto negativo que tendría sobre internet, la aplicación de las leyes que intentaron aprobarse, e incluso más allá de lo retrógrado que esto sea (hoy noté el inmenso retroceso tecnológico y cultural que representa haber tenido que resguardar archivos de una cuenta de MediaFire en el disco rígido de una PC, y dejar de compartirlos en caso que este sitio cierre), lo que molesta, es la motivación. No hay una motivación real de cuidar a un artista (ya sea escritor, cineasta, músico o fotógrafo). La intención real, es &lt;b&gt;no perder un negocio.&lt;/b&gt;&amp;nbsp;Y no voy a juzgar a nadie que quiera conservar su medio de vida. Ni siquiera voy a juzgar a aquellos que quieran conservar su billetera abultada gracias a sus negocios.&lt;br /&gt;&lt;br /&gt;Pero sí me animo a juzgar a todos aquellos quienes en lugar de pensar creativamente, para adaptar sus negocios a nuevas eras, intenten imponer restricciones que modifiquen la escencia de una herramienta que fomenta la generación y sinergia de conocimiento, en pos del beneficio propio y sobretodo, &lt;b&gt;la comodidad.&lt;/b&gt;&amp;nbsp;Y luego de juzgarlos, me gustaría poder castigar, a todo aquel que además de intentarlo, lo haga por la fuerza, gracias a los favoritismos que un gobierno, y sus servicios de inteligencia, pueda tener, imponiendo el miedo con &quot;castigos ejemplares&quot; sentenciando a cárcel a personas que desarrollaron un negocio montado en software que permite almacenar archivos, pero dejando impunes y fomentando genocidios.
-</description>
-        <pubDate>Fri, 27 Jan 2012 10:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero.es/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2012/01/27/legislando-lo-que-prospero.es/</guid>
         
         
       </item>
