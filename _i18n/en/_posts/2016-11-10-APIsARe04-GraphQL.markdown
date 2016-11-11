@@ -12,11 +12,11 @@ During an event that took place on November 9, 2016 in Buenos Aires, [Horacio "Q
 
 ## About the event
 
-The event took place at the [Avature](http://avature.net/) offices in Buenos Aires and counted with around 50 guests in place plus 20 watching the online streaming. The presentation was shaped by a brief theoretical at the beginning, followed by a set of live demos covering the different aspects of the [GraphQL Spec](https://facebook.github.io/graphql/).  
+The event took place at the [Avature](http://avature.net/) offices in Buenos Aires and counted with around 50 guests in place plus 20 watching the online streaming. The presentation was shaped by a brief theoretical introduction, followed by a set of live demos covering the different aspects of the [GraphQL Spec](https://facebook.github.io/graphql/).  
 
 ![Traditional HTTP Request](/img/posts/APIsARe04.jpg)
 
-People was really engaged, asking tons of interesting questions about the capabilities of the language and some possibilities of applying it on their daily projects.
+People were really engaged, asking tons of interesting questions about the language capabilities and some possibilities of applying it on their daily projects.
 
 You can watch the entire presentation [here](https://www.youtube.com/watch?v=snsHBPwb3NI) and [download the slides](https://drive.google.com/open?id=0B6CdAm2r3U8mRnNfc1NTYjZiSEk­).
 
