@@ -148,6 +148,30 @@ $(window).scroll(function(e) {
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
 <div class="post-preview">
+    <a href="/es/2010/07/19/scroll-en-lenovo-thinkpad-t61.es/">
+        <h2 class="post-title">Scroll en Lenovo Thinkpad T61
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  19 de
+  
+  Julio
+    
+
+
+de 2010
+
+</p>
+    ¿Cómo hacer funcionar el scroll usando el botón del medio + el mouse antiguo?<br />Si tenés una Thinkpad y alguna vez anduviste en Windows o algún S.O. en donde funcionara "plug&amp;play" y estás ahora disfrutando de las ventajas de usar ubuntu, seguramente andás extrañando hacer scroll con el botón del medio + el mouse antiguo (si, el de los mil nombres).<br />Bueno, basta de introducción. Para que vuelva a funcionar:<br /><br />Paso 1: Crear el siguiente archivo<br />sudo gedit /usr/lib/X11/xorg.conf.d/20-thinkpad.conf<br /><br />Paso 2: Poner el siguiente texto dentro<br />Section "InputClass"<br />Identifier "Trackpoint Wheel Emulation"<br />MatchProduct "TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint"<br />MatchDevicePath "/dev/input/event*"<br />Option  "EmulateWheel"  "true"<br />Option  "EmulateWheelButton" "2"<br />Option  "Emulate3Buttons" "false"<br />Option  "XAxisMapping"  "6 7"<br />Option  "YAxisMapping"  "4 5"<br />EndSection<br /><br />Paso 3: Guardar el archivo, y <b>reiniciar</b> el equipo.<div><br /></div><div>Espero que les sirva.</div>
+    <p class="read-more"><a href="/es/2010/07/19/scroll-en-lenovo-thinkpad-t61.es/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
+<div class="post-preview">
     <a href="/es/2010/06/21/requerimientos-cripticos.es/">
         <h2 class="post-title">REQUERIMIENTOS CRÍPTICOS
         </h2>

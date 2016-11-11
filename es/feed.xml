@@ -5,9 +5,50 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://ourbit.github.io//es/</link>
     <atom:link href="http://ourbit.github.io//es/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Nov 2016 13:09:42 -0300</pubDate>
-    <lastBuildDate>Tue, 01 Nov 2016 13:09:42 -0300</lastBuildDate>
+    <pubDate>Thu, 10 Nov 2016 21:50:07 -0300</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2016 21:50:07 -0300</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>APIsAR Episodio IV - Introducción a GraphQL</title>
+        <description>&lt;p&gt;Durante un evento realizado el pasado 9 de Noviembre de 2016, en Buenos Aires &lt;a href=&quot;https://twitter.com/qcho86&quot;&gt;Horacio “Qcho” Gomez&lt;/a&gt; dió una introducción a &lt;a href=&quot;http://graphql.org/&quot;&gt;GraphQL&lt;/a&gt;, la tecnología desarrollada y utilizada por facebook para constuir sus propias APIs.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;acerca-del-evento&quot;&gt;Acerca del evento&lt;/h2&gt;
+
+&lt;p&gt;El evento ocurrió en las oficinas de &lt;a href=&quot;http://avature.net/&quot;&gt;Avature&lt;/a&gt; en donde se reunieron alrededor de 50 invitados más 20 que lo siguieron en vivo a través del streaming. La presentación contó con una breve introducción teórica seguida de una serie de “demos” cubriendo los distintos aspectos de la &lt;a href=&quot;https://facebook.github.io/graphql/&quot;&gt;Spec de GraphQL&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/APIsARe04.jpg&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La gente en el público se mostró activa, haciendo muchas preguntas interesantes acerca de las capacidades del lenguaje y la posibilidad de aplicarlas en sus proyectos diarios.&lt;/p&gt;
+
+&lt;p&gt;Podés ver la presentación entera &lt;a href=&quot;https://www.youtube.com/watch?v=snsHBPwb3NI&quot;&gt;aquí&lt;/a&gt; y &lt;a href=&quot;https://drive.google.com/open?id=0B6CdAm2r3U8mRnNfc1NTYjZiSEk­&quot;&gt;bajarte los slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/snsHBPwb3NI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;acerca-de-apisar&quot;&gt;Acerca de APIsAR&lt;/h2&gt;
+
+&lt;p&gt;APIsAR (de APIs Argentina) es la primer y única comunidad de Argentina que se encuentra para charlar y presentar temas relacionados con el ecosistema de las APIs. Fue fundada hace 3 años por &lt;a href=&quot;http://norbertoherz.com&quot;&gt;quien escribe&lt;/a&gt;, y al momento de escribir este artículo, cuenta con más de 600 miembros. Si querés recibir notificaciones acerca de los próxios encuentros, chequear los foros y contactarte con la gente del grupo, suscribite a la comunidad &lt;a href=&quot;http://meetup.com/APIsAR&quot;&gt;aquí&lt;/a&gt;. También podes seguir las noticias vía twitter (&lt;a href=&quot;http://twitter.com/APIsARgentina&quot;&gt;@APIsARgentina&lt;/a&gt;) y facebook (&lt;a href=&quot;http://facebook.com/APIsArgentina&quot;&gt;APIsArgentina&lt;/a&gt;), y mirar los episodios anteriores en el &lt;a href=&quot;https://www.youtube.com/channel/UCXGY6_mib3hmzz1TQJDoA3A&quot;&gt;canal de Youtube&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Por cualquier consulta, no dudes en contactarme &lt;a href=&quot;http://twitter.com/nohorbee&quot;&gt;@nohorbee&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Nov 2016 00:00:00 -0300</pubDate>
+        <link>http://ourbit.github.io//es/2016/11/10/APIsARe04-GraphQL/</link>
+        <guid isPermaLink="true">http://ourbit.github.io//es/2016/11/10/APIsARe04-GraphQL/</guid>
+        
+        <category>API</category>
+        
+        <category>Meetup</category>
+        
+        <category>APIsAR</category>
+        
+        <category>GraphQL</category>
+        
+        <category>Avature</category>
+        
+        
+      </item>
     
       <item>
         <title>Acerca de la predictibilidad y definir claramente los objetivos del equipo</title>
@@ -1322,17 +1363,6 @@ Atte.&lt;/p&gt;
         <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
         <link>http://ourbit.github.io//es/2015/07/30/spam-caso-real/</link>
         <guid isPermaLink="true">http://ourbit.github.io//es/2015/07/30/spam-caso-real/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>De Chrome a Safari ida y vuelta</title>
-        <description>¿Casi 3 años sin poner nada acá y aparecer de repente con poca información? No quiero faltarles el respeto, pero por algún lado hay que empezar (si queremos empezar).&lt;br /&gt;&lt;br /&gt;Hace un tiempo largo ya me convertí en usuario de Apple, sobretodo por las MacBook. Lo charlé con fundamentalistas, fanáticos, hinchas, simpatizantes, seres racionales, opositores, y &lt;i&gt;odiadores&lt;/i&gt; de todo lo que Mac representa y todos entendieron los motivos por los cuales no me muevo de Mac.&lt;!--MORE--&gt;&lt;br /&gt;&lt;br /&gt;Recientemente, instalé Yosemite en una nueva Retina Display de 15''. Todo perfecto, la integración con iPhone mejoró considerablemente, y no tuve demasiados problemas con las herramientas de desarrollo u otras.&lt;br /&gt;&lt;br /&gt;Pero un par de días más tarde, todo empezó a funcionar raro (como en los tiempos de Windows). La Mac se colgaba, todo andaba &quot;trabado&quot;. Empecé a ver los motivos y al abrir el &quot;Monitor&quot; tenía aproximadamente 25 procesos &quot;Google Chrome Helper&quot; consumiendo memoria, procesador, y en estado &quot;Not responding&quot;. No esperé demasiado (y ya tenía curiosidad por ver cómo andaba Safari) así que cerré todo y cambié.&lt;br /&gt;&lt;br /&gt;La realidad es que Safari en Mac es superior en múltiples aspectos:&lt;br /&gt;- La velocidad mejora &lt;b&gt;notablemente&lt;/b&gt;.&lt;br /&gt;- El consumo de recursos disminuye &lt;b&gt;notablemente.&lt;/b&gt;&lt;br /&gt;- User Experience: Mejora salvo por unos detalles, que lograron hacer que vuelva a intentar Chrome:&lt;br /&gt;&lt;br /&gt;1. &quot;Abrir las últimas ventanas o pestañas cerradas&quot; simplemente no funciona (o no es consistente). Algunas veces, abre como corresponde. Pero otras, por ejemplo si Safari no pudo filtrar un pop-up, esta funcionalidad va a abrir ese pop-up cada vez que lo intentemos. El shortcut de una ventana cerrada es CMD+Z, lo cual dificulta UNDO en un FORM (depende del campo, se ejecuta una u otra función).&lt;br /&gt;2. Los &quot;Tabs&quot; no tienen favicon. Las pestañas llegan a achicarse hasta un punto en donde comienzan a desaparecer, y navegarlas se vuelve completamente anti-intuitivo.&lt;br /&gt;3. Las &quot;Developer Tools&quot;. Una vez que están habilitadas (porque no vienen por &lt;i&gt;default&lt;/i&gt;), no nos aportan demasiado. En especial los &lt;i&gt;Timelines. &lt;/i&gt;Si fuera por los &lt;i&gt;timelines&lt;/i&gt;, las páginas nunca fueron solicitadas.&lt;br /&gt;&lt;br /&gt;El hecho de que la comunidad de desarrolladores de &quot;extensions&quot; también sea más numerosa para Chrome, influye.&lt;br /&gt;&lt;br /&gt;Volví a Chrome. Voy a tener que pelear con los problemas de consumo de recursos (sobretodo de los programas que usen el Chrome Helper) hasta que se solucione.&lt;br /&gt;&lt;br /&gt;De paso: Instalé también la versión más beta &lt;a href=&quot;https://www.google.com/intl/en/chrome/browser/canary.html&quot; target=&quot;_blank&quot;&gt;Chrome Canary&lt;/a&gt;&amp;nbsp;para ir probando nuevas funcionalidades. No se cuánto lo vaya a usar, ya que no puedo ponerlo como &lt;i&gt;default browser&lt;/i&gt;, pero veremos como evoluciona.&lt;br /&gt;&lt;br /&gt;Nota: Espero retomar la costumbre de escribir cada tanto por aquí. Consideremos este post como una prueba piloto.
-</description>
-        <pubDate>Fri, 21 Nov 2014 18:37:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2014/11/21/de-chrome-safari-ida-y-vuelta.es/</guid>
         
         
       </item>
