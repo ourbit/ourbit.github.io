@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//2015/09/09/from-api-to-streaming-api/">
+    <link rel="canonical" href="http://localhost:4000/2015/09/09/from-api-to-streaming-api/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -177,7 +177,7 @@ Furthermore, the <em>API</em> could send just the changes that impacted the reso
 <p>1- Client 1 sends a <em>request</em> with method <em>GET</em> in order to request a book with id 123321.<br />
 2- The server returns a <em>response</em> to the client 1 with a <em>200 OK</em> code and a <em>JSON</em> containing the book information</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
@@ -190,7 +190,7 @@ Furthermore, the <em>API</em> could send just the changes that impacted the reso
 4- The server sends a <em>response</em> to the client 2 with a <em>200 OK</em> code.<br />
 5- The server sends a  <em>response</em> to the client 1 with a <em>200 OK</em> code and a <em>JSON</em> with the book information.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
@@ -206,7 +206,7 @@ The process where <em>APIs proactively</em> notify the client about changes on t
 
 <p>Although the example shows the benefits of implementing <em>Push Notifications</em> as a feature of our <em>Streaming API</em>, the impact regarding to the performance is not neatly visible. Even though is true that the client won’t be periodically sending <em>requests</em> in order to check if the resource changed, each time the <em>API</em> makes a <em>push</em> it will be sending the complete resource to the client. By implementing a <em>differential</em> logic (server side), our <em>API</em> would be able to just notify the updates when sending a <em>push</em>. Considering our previous example, this could go like this:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;op&quot;</span><span class="o">:</span> <span class="s2">&quot;PATCH&quot;</span><span class="p">,</span>
   <span class="s2">&quot;/Edition&quot;</span><span class="o">:</span> <span class="s2">&quot;5th&quot;</span>
 <span class="p">}</span></code></pre></figure>
@@ -263,10 +263,10 @@ This is exactly what <a href="http://streamdata.io">streamdata.io</a> does.</p>
 
 <p>Considering the service provided by <a href="https://bitcoinaverage.com">BitcoinAverage</a>, and looking at a simple method of its  <a href="https://bitcoinaverage.com/api"><em>API</em></a>, we will write a simple code that allows us to query the following resource every 5 seconds: https://api.bitcoinaverage.com/ticker/global/EUR/</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
       <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
          <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
           <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
@@ -276,9 +276,9 @@ This is exactly what <a href="http://streamdata.io">streamdata.io</a> does.</p>
           <span class="p">}</span>
         <span class="p">});</span>
       <span class="p">},</span> <span class="mi">5000</span><span class="p">)</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></figure>
 
 <p>By using <a href="https://jquery.com/">JQuery</a> for getting the benefits of the <code>ajax</code> method and the <code>setInterval</code> function (that lets us execute a function repeatedly on a time interval basis) we get the following response on the console:</p>
 
@@ -308,10 +308,10 @@ This is exactly what <a href="http://streamdata.io">streamdata.io</a> does.</p>
 
 <p>Having accomplished these steps, the following code accesses the same <em>API</em> from the previous example but receiving <em>Push notifications</em> instead.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./js/streamdataio.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./js/streamdataio.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="kd">var</span> <span class="nx">myEventSource</span> <span class="o">=</span>
       <span class="nx">streamdataio</span><span class="p">.</span><span class="nx">createEventSource</span><span class="p">(</span><span class="s2">&quot;https://api.bitcoinaverage.com/ticker/global/EUR/&quot;</span><span class="p">,</span><span class="o">*</span><span class="sr">/APP TOKEN/</span><span class="o">*</span><span class="p">);</span>
     <span class="nx">myEventSource</span><span class="p">.</span><span class="nx">onData</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
@@ -328,10 +328,10 @@ This is exactly what <a href="http://streamdata.io">streamdata.io</a> does.</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
      <span class="nx">myEventSource</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>See the console<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>See the console<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></figure>
 
 <p><strong>Note:</strong> The “APP TOKEN” must be replaced with the one generated for the application. Remember that <em>JavaScript</em> runs on any client/browser and because of that, it’s not a good idea to place the <em>Token</em> on that code. This is only valid for proof of concept and examples.</p>
 
@@ -464,7 +464,7 @@ But we won’t always count with a <em>Streaming API</em>. We are often hitting 
                     </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; OurBit 2016</p>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2017</p>
             </div>
         </div>
     </div>

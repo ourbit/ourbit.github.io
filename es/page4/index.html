@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//es/page4/">
+    <link rel="canonical" href="http://localhost:4000/es/page4/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/es/css/bootstrap.min.css">
@@ -147,6 +147,30 @@ $(window).scroll(function(e) {
   	<div class="row">
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
+<div class="post-preview">
+    <a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones.es/">
+        <h2 class="post-title">Estadísticas y Gráficos en aplicaciones Web
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  20 de
+  
+  Abril
+    
+
+
+de 2011
+
+</p>
+    Para el proyecto en el que estoy trabajando, nos ha llegado un requerimiento de generar un gráfico de líneas (basado en ejes X, Y) indicando las tendencias de un determinado comportamiento. <div>El proyecto utiliza actualmente <a href="http://www.sencha.com/">ExtJs</a>, y desde ya, fue considerado como primer opción, el motor de gráficos que este incluye. Uno de los problemas con que nos topamos al realizar la prueba de tecnología, es que al no presentarse un dato Y para un valor X, automáticamente lo tomaba como CERO, haciéndo que las líneas descendieran. Esto no es un comportamiento deseable en muchas situaciones (siempre depende de Qué se esté midiendo). Una vez descartado, comenzamos a evaluar otros frameworks. <a href="http://jquery.com/">JQuery</a>, cuenta con varios plugins para generar gráficos (muy buenos debo decir), pero se nos pidió no "mezclar" dos frameworks basados en Jscript (no es una decisión muy feliz, pero lo aceptamos). Luego de buscar bastante, el arquitecto en jefe de la aplicación, sugirió que investigáramos <a href="http://www.fusioncharts.com/">FusionCharts </a>(Más precisamente su división PowerCharts), y quien les escribe, se ha encargado de la prueba de tecnología llegando a conclusiones muy favorables:</div><div><ul><li>Es altamente configurable (se puede especificar cada leyenda que aparece en pantalla, colores, escalas, tipo de gráfico, estilo de líneas, transparencias, etc. No solo del gráfico en general, o de una línea particular, sino también entre cualquier segmento entre 2 puntos e incluso cualquiera de los puntos).</li><li>Por defecto, utiliza un archivo Flash para realizar los gráficos (esta versión comienza con una animación de lo que se esta dibujando). Si se detecta (automáticamente) que el navegador no soporta flash, el gráfico se renderiza 100% mediante Jscript (esto es útil para teléfonos celulares, o simplemente si no queremos instalar Shockwave en las máquinas de los usuarios).</li><li>Sin realizar demasiado trabajo, arranca de quienes observan expresiones del estilo "WOW", y esto, muchas veces, hace la diferencia entre una aplicación exitosa y un hermoso algoritmo inutilizable.</li><li>Es muy sencillo de utilizar y está bien documentado.</li><li>Maneja una amplia variedad de tipos de gráficos.</li></ul>Aclaro que el framework es pago, aunque se puede descargar una versión de prueba FULL (solo incluye una marca de agua en el margen superior izquierdo del gráfico).</div><div><a href="http://nohorbee.com.ar/ourbit/FusionChartPost/pocFusion/MyFirstChart/pocChart.html">Aquí </a>dejo una prueba de tecnología, con algunos comentarios basados en los requerimientos que se me presentaron.</div>
+    <p class="read-more"><a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones.es/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
 <div class="post-preview">
     <a href="/es/2011/04/15/el-universo-de-las-ideas.es/">
         <h2 class="post-title">El universo de las ideas
@@ -398,30 +422,6 @@ de 2010
 <hr>
 <br />
 
-<div class="post-preview">
-    <a href="/es/2010/07/29/eclipse-no-arranca-widget-disposed-too.es/">
-        <h2 class="post-title">Eclipse no arranca "Widget disposed too early"
-        </h2>
-        
-    </a>
-    <p class="post-meta">Publicado por nohorbee el 
-    
-  
-  29 de
-  
-  Julio
-    
-
-
-de 2010
-
-</p>
-    Me topé hoy con un problema con el que ya me había topado, solo que las veces anteriores me rendí antes de tiempo, y hoy encontré una solución, MÁS QUE SENCILLA.<div>Al intentar iniciar una IDE built on eclipse, luego de especificar el workspace, arrojaba un error que decía que debía chequear el LOG de la carpeta .metadata, y eso hice (si no las encontrás, es porque están oculta, así que "View Hidden Files" obligatorio).</div><div>No me gusta citar LOGS enteros pero aquí la línea que me hizo algo de ruido, y que finalmente me llevó al resultado: "<span class="Apple-style-span"  style="  white-space: pre; font-family:monospace;"><span class="Apple-style-span" style="font-size: medium;">Widget disposed too early!</span></span>" (si, con la típica font de un log).</div><div>Buscando una solución, leí varios foros y según las explicaciones, el problema está relacionado con el browser integrado que utiliza el eclipse.</div><div>Entre las miles de soluciones propuestas, una muy simple que funcionó:</div><div>- Abrir el eclipse.ini (se encuentra en el mismo directorio que el launcher de eclipse, aunque puede llamarse diferente si la IDE se llama de otra forma, Ej.: Rational Software Architect, Data Studio Developer, MyEclipse).</div><div>- Incluir la siguiente línea al final del archivo:       "<span class="Apple-style-span" style="font-size: small;">-</span><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;">Dorg.eclipse.swt.browser.XULRunnerPath=/usr/lib/xulrunner".</span></span></div><div><span class="Apple-style-span"  style="font-family:'courier new';"><span class="Apple-style-span" style="font-size: small;"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; "><div>Antes de reiniciar, es conveniente borrar la carpeta que se utilizaba como workspace cuando arrojó el error (para evitar cualquier que cualquier estado inconsistente previo, complique la situación).</div><div>- Reiniciar la IDE.</div><div><br /></div><div>Contame si te funcionó. Espero que si.</div></span></span></span></div>
-    <p class="read-more"><a href="/es/2010/07/29/eclipse-no-arranca-widget-disposed-too.es/" class="read-more">Seguir leyendo &rarr;</a></p>
-</div>
-<hr>
-<br />
-
 
 <!-- Pager -->
 
@@ -513,7 +513,7 @@ de 2010
                     </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; OurBit 2016</p>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2017</p>
             </div>
         </div>
     </div>

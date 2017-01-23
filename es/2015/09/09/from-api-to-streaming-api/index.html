@@ -26,7 +26,7 @@
 
     </script>
 
-    <link rel="canonical" href="http://ourbit.github.io//es/2015/09/09/from-api-to-streaming-api/">
+    <link rel="canonical" href="http://localhost:4000/es/2015/09/09/from-api-to-streaming-api/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/es/css/bootstrap.min.css">
@@ -184,7 +184,7 @@ Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referent
 <p>1- El cliente 1 envía un <em>request</em> con método <em>GET</em> para solicitar el libro con id 123321.<br />
 2- El servidor devuelve un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
@@ -197,7 +197,7 @@ Adicionalmente, la <em>API</em> podría enviar solo las “novedades” referent
 4- El servidor envía un <em>response</em> al cliente 2 con código <em>200 OK</em>.<br />
 5- El servidor envía un <em>response</em> al cliente 1 con código <em>200 OK</em> y un <em>JSON</em> con la información del libro.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
   <span class="s2">&quot;title&quot;</span><span class="o">:</span> <span class="s2">&quot;My book&quot;</span><span class="p">,</span>
   <span class="s2">&quot;ISBN&quot;</span><span class="o">:</span> <span class="mi">123321</span><span class="p">,</span>
@@ -213,14 +213,14 @@ Al proceso por el cual las <em>APIs</em> notifican <em>proactivamente</em> al cl
 
 <p>A pesar de que en el ejemplo se puede ver la conveniencia de implementar <em>Push Notifications</em> como parte de nuestra <em>Streaming API</em>, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un <em>request</em> periódicamente para verificar si el recurso cambió, cada vez que la <em>API</em> haga un <em>push</em> se estará enviando el recurso completo al cliente. Implementando una lógica <em>diferencial</em> en el servidor, nuestra <em>API</em> podría enviar solo las actualizaciones al momento de realizar un <em>push</em>. Para nuestro ejemplo, esto podría ser:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="p">{</span>
   <span class="s2">&quot;op&quot;</span><span class="o">:</span> <span class="s2">&quot;PATCH&quot;</span><span class="p">,</span>
   <span class="s2">&quot;/Edition&quot;</span><span class="o">:</span> <span class="s2">&quot;5th&quot;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Este <em>JSON</em> informa al cliente que se ha modificado el campo “Edition” y su nuevo valor. El cliente podrá actualizar su modelo apropiadamente con esta información. De esta forma, sin importar que tan grande sea el recurso solicitado, el <em>push</em> solo envía los campos que han cambiado desde la última actualización.</p>
 
-<h3 id="tiempo-mximo-de-request">Tiempo máximo de request</h3>
+<h3 id="tiempo-máximo-de-request">Tiempo máximo de request</h3>
 
 <p>Es una buena práctica evitar <em>requests</em> de tiempo infinito. Las conexiones pueden tener un <em>timeout</em> o incluso podrían perderse por condiciones físicas de los servidores o la red. El impacto en código puede generalizarse:</p>
 
@@ -270,10 +270,10 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <p>Tomando el servicio provisto por <a href="https://bitcoinaverage.com">BitcoinAverage</a>, y viendo algún método simple de su <a href="https://bitcoinaverage.com/api"><em>API</em></a>, escribimos un código sencillo que nos permita consultar cada 5 segundos, el siguiente reucrso: https://api.bitcoinaverage.com/ticker/global/EUR/</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
       <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
          <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
           <span class="nx">dataType</span><span class="o">:</span> <span class="s2">&quot;json&quot;</span><span class="p">,</span>
@@ -283,9 +283,9 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
           <span class="p">}</span>
         <span class="p">});</span>
       <span class="p">},</span> <span class="mi">5000</span><span class="p">)</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></figure>
 
 <p>Utilizando <a href="https://jquery.com/">JQuery</a> para obtener los beneficios del método <code>ajax</code>, y la función <code>setInterval</code> que nos permite ejecutar una función repetidas veces espaciadas por un intervalo de tiempo, obtenemos la siguiente respuesta en la consola:</p>
 
@@ -315,10 +315,10 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <p>Con estos pasos cumplidos, el siguiente código accede a la misma <em>API</em> del ejemplo anterior pero recibiendo <em>Push notifications</em>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./js/streamdataio.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./js/streamdataio.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="kd">var</span> <span class="nx">myEventSource</span> <span class="o">=</span>
       <span class="nx">streamdataio</span><span class="p">.</span><span class="nx">createEventSource</span><span class="p">(</span><span class="s2">&quot;https://api.bitcoinaverage.com/ticker/global/EUR/&quot;</span><span class="p">,</span><span class="o">*</span><span class="sr">/APP TOKEN/</span><span class="o">*</span><span class="p">);</span>
     <span class="nx">myEventSource</span><span class="p">.</span><span class="nx">onData</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
@@ -335,10 +335,10 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
      <span class="nx">myEventSource</span><span class="p">.</span><span class="nx">open</span><span class="p">();</span>
-    <span class="nt">&lt;/script&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>See the console<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>See the console<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></figure>
 
 <p><strong>Nota:</strong> Se debe reemplazar el “APP TOKEN” por el generado para su aplicación. Recuerden que <em>JavaScript</em> puede correr en un cliente cualquiera (browser) por lo que no debe incluirse el <em>Token</em> en dicho código. Esto es válido solo para pruebas y ejemplos.</p>
 
@@ -363,7 +363,7 @@ Esto es precisamente lo que hace <a href="http://streamdata.io">streamdata.io</a
 
 <p>Se puede observar un solo <em>request</em> a una <em>url</em> perteneciente a <em>streamdata</em> (el <em>proxy</em>) y como parámetros, el <em>token</em> (sólo aquellos clientes que lo conozcan podrán acceder a la aplicación de <em>streamdata.io</em>) y la <em>url</em> del <em>request</em> original. Ese request estuvo abierto por 2.5 minutos recibiendo notificaciones cada vez que el recurso cambiaba en el servidor.</p>
 
-<h2 id="conclusin">Conclusión</h2>
+<h2 id="conclusión">Conclusión</h2>
 
 <p>Es clara la practicidad e incluso posibles mejoras en <em>performance</em> al utilizar una <em>Stremaing API</em>. Basta con pensar en las <em>web applications</em> actuales para ver la utilidad de recibir notificaciones cuando cambia el modelo en nuestro servidor.<br />
 Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos consultando una <em>API</em> propia y muchas veces, nuestra <em>API</em> ya existe y no hay tiempo o dinero para cambiarla (convertirla en una <em>streaming API</em>). Mediante un <em>proxy</em> se puede emular el comportamiento de una <em>streaming API</em> e incluso si no contáramos con el tiempo para implementar esta solución, es posible utilizar una plataforma como <em>streamdata.io</em> la cual provee esta funcionalidad como un servicio en la nube.</p>
@@ -471,7 +471,7 @@ Pero no siempre contamos con una <em>Streaming API</em>. A menudo no estamos con
                     </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; OurBit 2016</p>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2017</p>
             </div>
         </div>
     </div>

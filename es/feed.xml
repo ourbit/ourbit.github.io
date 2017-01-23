@@ -3,11 +3,64 @@
   <channel>
     <title>OurBit</title>
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
-    <link>http://ourbit.github.io//es/</link>
-    <atom:link href="http://ourbit.github.io//es/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 10 Nov 2016 21:50:07 -0300</pubDate>
-    <lastBuildDate>Thu, 10 Nov 2016 21:50:07 -0300</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <link>http://localhost:4000/es/</link>
+    <atom:link href="http://localhost:4000/es/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 23 Jan 2017 18:21:29 -0300</pubDate>
+    <lastBuildDate>Mon, 23 Jan 2017 18:21:29 -0300</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>La teoría &quot;Dueño vs. Víctima&quot; y las trampas de usarla para todo</title>
+        <description>&lt;p&gt;Si ya tengo su atención, déjenme decirles que este no es el artículo donde se vaya a explicar el significado de la teoría, el cual se puede encontrar en un sin fin de lugares. De todos modos se va a tratar de manera general, ya que estamos hablando del tema. Este artículo es más bien acerca de las trampas en las que cae la gente cuando intenta leer gente, y como el mal uso de esta teoría puede llevarnos a perdernos mensajes importantes.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;De manera resumida, la teoría “dueño vs. víctima” dice que hay (al menos) 2 tipos de actitudes cuando enfrentamos una situación, y que además, usamos diferentes lenguajes dependiendo de qué actitud hayamos tomado. Voy a tomar un ejemplo al azar de &lt;a href=&quot;(http://evelynbrooks.com/do-you-use-victim-language/)&quot;&gt;este artículo&lt;/a&gt;, pero por favor, léanlo entero para entender mejor el concepto si es que todavía no lo conocen:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Víctima: Me vuelve loco!&lt;/li&gt;
+  &lt;li&gt;Dueño: Me vuelvo loco cuando esto pasa.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Habiendo dicho esto, la teoría puede usarse por cualquiera que esté intentando mejorar sus capacidades de comunicación, o por gente intentando identificar este comportamiento en otros (colegas, parientes, famosos, etc). El artículo está principalmente orientado a este segundo grupo.&lt;/p&gt;
+
+&lt;h1 id=&quot;un-comportamiento-repetido&quot;&gt;Un comportamiento repetido&lt;/h1&gt;
+
+&lt;p&gt;Recuerdo (quizás) 15 años atrás, mucha gente hablando de PNL (que en realidad había sido estudiada y desarrollada en la década del 70). Se volvió popular entre mi círculo profesional, principalmente porque se enseñaba en la universidad por algunos profesores que hablaban del tema como si fuera una especie de superpoder que se podía desarrollar simplemente leyendo un par de libros, aprendiendo algunos trucos para finalmente leerle la mente a alguien. Los ejemplos que se daban durante las clases eran adoptados rápidamente por los estudiantes y, lo que es peor, todos pensaban que analizar señales independientes era el uso correcto de este nuevo superpoder. Entonces, si mirabas arriba a la derecha, estabas usando la parte creativa de tu cerebro, ergo, estabas imaginando algo, y por lo tanto, estabas mintiendo. La gran trampa: No se puede aislar una expresión y sacar una conclusión. Las expresiones son evaluadas en conjunto, y lo que es más complicado, no se analizan sino que se perciben. Hay un punto en el cual se está lo suficientemente entrenado para empezar a “tener impresiones” más allá de lo que se está diciendo, pero sin entender del todo qué es lo que nos llevó a tener esa impresión. Se vuelve natural. De todos modos, no importa que tan buenos nos volvamos, si todavía estamos intentando “leer gente” lo estamos entendiendo todo mal. PNL is acerca de entender que las personas se comunican de maneras diferentes, y de esa forma, podemos contar con más herramientas para entender y enviar mejores mensajes.&lt;/p&gt;
+
+&lt;p&gt;Vi a “usuarios” de la teoría “Dueño vs. víctima” caer en esta misma trampa, convirtiendo este maravilloso concepto en una máquina de etiquetar ¿Cuál es el objetivo de meter a alguien en la caja de víctimas?&lt;/p&gt;
+
+&lt;h1 id=&quot;trucos-sencillos-para-escapar-de-este-patrón&quot;&gt;Trucos sencillos para escapar de este patrón&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Conocer la teoría en profundidad: Puede que hayas escuchado al respecto en el pasillo, o como una conversación al pasar en medio de una reunión. Incluso puede que hayas leído algún artículo incompleto (como este). El buen material siempre va a hablar de los orígenes de la teoría y su potencial al momento de ayudar gente a superar situaciones complicadas.&lt;/li&gt;
+  &lt;li&gt;Intentar tomar un enfoque holístico: Comentar acerca de una frustración en voz alta de vez en cuando no convierte a nadie en una “víctima” (del mismo modo que encargarte de algún problema cada tanto no te convierte en un dueño). El contexto lo es todo cuando analizamos comportamientos.&lt;/li&gt;
+  &lt;li&gt;Evitar etiquetar personas: “Ella es dueño” o “El es víctima” son solamente válidos si te referís a que alguien está en un estado en un momento particular. Si no pensás que esta realidad puede cambiar ¿para qué invertir tiempo intentando entender la teoría?&lt;/li&gt;
+  &lt;li&gt;Comprender que hacer: Detectar este tipo de conducta puede tener un impacto tremendo para el equipo y la compañía. Pero primero tiene que ser útil a la persona a la que querés ayudar a manejar un problema.&lt;/li&gt;
+  &lt;li&gt;Evitar utilizarla en la conversación: “Noté que utilizas algo de lenguaje de víctima cuando hablás” es definitivamente una mala forma de abordar a la persona. Primero que nada, es tan solo nuestra impresión. En segundo lugar, solamente expone algo que es obvio para nosotros, pero no está agregando ningún valor en el camino a superar la fase. Mejor intentar con “Ey ¿estás teniendo problemas con esto?”.&lt;/li&gt;
+  &lt;li&gt;Ser honesto con uno mismo: ¿Qué tan a menudo nos prestamos atención y analizamos si no estamos en ese lugar? ¿Cómo lidiaríamos con eso? ¿Serviría nuestra experiencia para otros en esa situación?&lt;/li&gt;
+  &lt;li&gt;Evaluar la situación uno mismo: Esto no debería ser una excusa pero, ¿alguna vez notaste a una víctima utilizando lenguaje de víctima? Esto se debe a que &lt;strong&gt;una víctima ES una víctima&lt;/strong&gt;. Por lo general, es casi imposible cambiar esa realidad. Pero ayudar a alguien a procesar esa realidad de forma diferente es más sencillo y factible.&lt;/li&gt;
+  &lt;li&gt;Buscar un mentor: Si considerás que no estás siendo capáz de ayudar a alguien y que podés mejorar, identificá a gente que sea muy buena analizando conductas y pediles ayuda y coaching para dominar el arte de &lt;strong&gt;ayudar a alguien más&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Jan 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/es/2017/01/23/Victim-Vs-Owner/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2017/01/23/Victim-Vs-Owner/</guid>
+        
+        <category>Dueño</category>
+        
+        <category>Víctima</category>
+        
+        <category>Management</category>
+        
+        <category>Comunicación</category>
+        
+        <category>PNL</category>
+        
+        
+      </item>
     
       <item>
         <title>APIsAR Episodio IV - Introducción a GraphQL</title>
@@ -34,8 +87,8 @@
 &lt;p&gt;Por cualquier consulta, no dudes en contactarme &lt;a href=&quot;http://twitter.com/nohorbee&quot;&gt;@nohorbee&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Nov 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/11/10/APIsARe04-GraphQL/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/11/10/APIsARe04-GraphQL/</guid>
+        <link>http://localhost:4000/es/2016/11/10/APIsARe04-GraphQL/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2016/11/10/APIsARe04-GraphQL/</guid>
         
         <category>API</category>
         
@@ -73,7 +126,7 @@
 
 &lt;p&gt;Pasemos a la historia&lt;/p&gt;
 
-&lt;h2 id=&quot;captulo-i-un-equipo-consciente&quot;&gt;Capítulo I: Un equipo consciente&lt;/h2&gt;
+&lt;h2 id=&quot;capítulo-i-un-equipo-consciente&quot;&gt;Capítulo I: Un equipo consciente&lt;/h2&gt;
 
 &lt;p&gt;Mi equipo y yo la estábamos pasando mal. El roadmap estaba en un punto intermedio entre intenso e imposible. No parabamos de comprometer funcionalidades de más (y no cumplir), la predictibilidad era baja y cayendo rápidamente (por debajo del 40% durante varias sprints seguidas), y a pesar de que los refuerzos estaban comenzando a llegar, el esfuerzo inicial (ramp up) estaba por dejarnos en una situación incluso peor (al menos temporalmente). De a poco, managers de mayor jerarquía empezaban a aparecerse en nuestras daily meetings intentando descifrar lo que estaba pasando. Yo llamé a una reunión “no regular” en donde estaba a punto de tirar todas mis ideas arriba de la mesa cuando de repente, lo impensado. Uno de los miembros del equipo preguntó “¿Cuál es el problema con la predictibilidad? ¿Por qué de pronto es tan importante ser predecibles? ¿Por qué nos estamos preocupando tanto por los compromisos que no estamos cumpliendo?”. Yo estaba desconcertado. No podía pensar que esas preguntas estaban impulsadas por dudas legítimas, y tuve que frenarme de responder a alguien que, en ese momento, pensé que me estaba “trolleando”.&lt;/p&gt;
 
@@ -81,7 +134,7 @@
 
 &lt;p&gt;&lt;strong&gt;Lección 1&lt;/strong&gt;: Asegurate de que todos estén en el barco. Entiendan que la predictibilidad es un objetivo del equipo y como tal, necesita ser definida y comunicada de una manera &lt;a href=&quot;https://en.wikipedia.org/wiki/SMART_criteria&quot;&gt;S.M.A.R.T&lt;/a&gt;. Como mencioné al comienzo, es imposible para un manager lograr este objetivo por sí mismo. Es un objetivo del equipo, y va a ser un logro del equipo.&lt;/p&gt;
 
-&lt;h2 id=&quot;captulo-ii-causas-primordiales&quot;&gt;Capítulo II: Causas primordiales&lt;/h2&gt;
+&lt;h2 id=&quot;capítulo-ii-causas-primordiales&quot;&gt;Capítulo II: Causas primordiales&lt;/h2&gt;
 
 &lt;p&gt;Yo ya era un manager experimentado, y había sido uno exitoso. Conocía todo tipo de trucos y métodos para hacer que las cosas pasaran. O al menos eso pensaba. Había estado intentando impulsar algunas ideas en el equipo que, en mi opinión, nos iban a llevar a mejorar la manera en la que estábamos trabajando (Predictibilidad incluida). Pero por alguna razón, sprint tras sprint no lograba que el equipo implementara estas ideas. Cada tanto solía pensar “ni estamos tratando”. La mayoría de estas ideas dependían de la implementación de algún mecanismo de seguimiento de tiempo, y no es novedad que esto no les gusta a los desarrolladores. Bueno, esto no es del todo cierto, y a decir verdad, es hasta un enunciado injusto. El “problema” real es que los developers generalmente son gente inteligente. Si tu equipo no está poblado con esta especie, estás en grandes problemas. La gente inteligente tiende a evitar los trámites sin sentido y, siendo honestos, salvo que haya una buena razón detrás de esto, realizar seguimiento del tiempo es exáctamente eso.&lt;/p&gt;
 
@@ -112,7 +165,7 @@
   &lt;li&gt;Establece un par de situaciones fáciles de arreglar, pero difíciles de detectar.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;captulo-iii-acciones-impulsadas-por-objetivos&quot;&gt;Capítulo III: Acciones impulsadas por objetivos&lt;/h2&gt;
+&lt;h2 id=&quot;capítulo-iii-acciones-impulsadas-por-objetivos&quot;&gt;Capítulo III: Acciones impulsadas por objetivos&lt;/h2&gt;
 
 &lt;p&gt;No era cuestión de conocer las respuestas, sino de hacer las preguntas. Como mencioné, estaba (y siempre estuve) listo para aparecer con mi caja de herramientas, solucionar los problemas y salvar el día, cuando mi equipo me enseñó una valiosa lección: primero acordemos los objetivos y luego discutamos acerca de cómo alcanzarlos. Una vez que todos coincidimos en que queríamos ser predecibles (y por qué lo necesitábamos), sugerir las herramientas fue mucho más sencillo. Pero más importante que esto:&lt;/p&gt;
 
@@ -143,7 +196,7 @@
 
 &lt;p&gt;Por supuesto que esto es solo un resumen. Ni siquiera puedo recordar cuántos detalles fueron definidos sobre la marcha y si todas estas fueran las acciones originales que acordamos.&lt;/p&gt;
 
-&lt;h2 id=&quot;captulo-iv-la-parlisis-causada-por-demasiados-cambios&quot;&gt;Capítulo IV: La parálisis causada por “demasiados cambios”&lt;/h2&gt;
+&lt;h2 id=&quot;capítulo-iv-la-parálisis-causada-por-demasiados-cambios&quot;&gt;Capítulo IV: La parálisis causada por “demasiados cambios”&lt;/h2&gt;
 
 &lt;p&gt;Estábamos por comenzar un gran refactor en la forma en que solíamos trabajar. Cuando escribimos código, tenemos (o deberíamos tener) una gran cantidad de tests unitarios, y estamos bastante seguros de no estar rompiendo nada. Pero esto es diferente. No existen frameworks de tests unitarios para personas.&lt;/p&gt;
 
@@ -160,7 +213,7 @@
 
 &lt;p&gt;Nunca dejes que este tipo de cuestiones te frenen. Necesitás empezar con algo, medir los primeros resultados y decidir basado en las métricas arrojadas. Una vez más, &lt;strong&gt;no sos la persona más inteligente de la sala&lt;/strong&gt;. Discutí con tu equipo acerca de los cambios a implementar al principio, recolectá datos, presentalos en la reunión de retrospectiva y discutan otra vez acerca de “qué sigue”.&lt;/p&gt;
 
-&lt;h2 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h2&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
 &lt;p&gt;Para el final de la tercera sprint desde que el equipo comenzó este refactor (ítems logrados):&lt;/p&gt;
 &lt;ul&gt;
@@ -179,8 +232,8 @@
 &lt;p&gt;&lt;strong&gt;“Ítems logrados”-&amp;gt;”Predictibilidad”-&amp;gt;”Features en tiempo y forma”&lt;/strong&gt;. Todos eslabones en la cadena.&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Nov 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/11/01/about-predictability-and-team-goals/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/11/01/about-predictability-and-team-goals/</guid>
+        <link>http://localhost:4000/es/2016/11/01/about-predictability-and-team-goals/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2016/11/01/about-predictability-and-team-goals/</guid>
         
         <category>Predictability</category>
         
@@ -220,8 +273,8 @@
 &lt;/blockquote&gt;
 </description>
         <pubDate>Tue, 04 Oct 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/10/04/ass/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/10/04/ass/</guid>
+        <link>http://localhost:4000/es/2016/10/04/ass/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2016/10/04/ass/</guid>
         
         <category>Elon</category>
         
@@ -250,7 +303,7 @@ Sin embargo, llevado a la práctica no es tan sencillo. El trabajo del arquitect
 
 &lt;!--MORE--&gt;
 
-&lt;h2 id=&quot;introduccin&quot;&gt;Introducción&lt;/h2&gt;
+&lt;h2 id=&quot;introducción&quot;&gt;Introducción&lt;/h2&gt;
 
 &lt;p&gt;No hay duda de que la Ingeniería de Software ha evolucionado constantemente durante las últimas cinco décadas. Los sistemas operativos nos han provisto cada vez mejor de una capa de abstracción de las complejidades del hardware moderno. Los procesos Lean y Agile nos han permitido iterar más velozmente. Tecnologías más económicos y accesibles han disminuido la barrera para obtener equipos de alta performance y han abierto la puerta a solucionar problemas más ambiciosos en diversos campos tales como la medicina, la industria aeroespacial, ámbito académico o comercio electrónico.&lt;/p&gt;
 
@@ -271,18 +324,18 @@ Sin embargo, llevado a la práctica no es tan sencillo. El trabajo del arquitect
 
 &lt;p&gt;El lector atento debería ser advertido de que algunas de las patologías serán particularmente más acertadas para Arquitectos de Software en situaciones específicas como ser compañías con equipos de desarrollo distribuidos geográficamente, o compañías de tamaño medio a grande. En cualquier caso, creemos que las mismas abarcan temas relevantes a la forma de pensar acerca de los Arquitectos de Software, su rol, su carrera, y finalmente, su impacto.&lt;/p&gt;
 
-&lt;h2 id=&quot;las-patologas&quot;&gt;Las Patologías&lt;/h2&gt;
+&lt;h2 id=&quot;las-patologías&quot;&gt;Las Patologías&lt;/h2&gt;
 
 &lt;p&gt;En las siguientes subsecciones describiremos algunas de las patologías mencionadas anteriormente en términos de cómo detectarlas y resolverlas&lt;/p&gt;
 
-&lt;h3 id=&quot;el-sndrome-del-mejor-desarrollador-sin-impacto&quot;&gt;El Síndrome del mejor desarrollador sin impacto&lt;/h3&gt;
+&lt;h3 id=&quot;el-síndrome-del-mejor-desarrollador-sin-impacto&quot;&gt;El Síndrome del mejor desarrollador sin impacto&lt;/h3&gt;
 &lt;p&gt;&lt;big&gt;&lt;i&gt;“Esta funcionalidad es extremadamente compleja. Debería estar escribiéndola yo mismo”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;descripcin&quot;&gt;Descripción&lt;/h4&gt;
+&lt;h4 id=&quot;descripción&quot;&gt;Descripción&lt;/h4&gt;
 
 &lt;p&gt;De acuerdo al Principio de Pareto, acordamos que el 80% de la complejidad de una aplicación proviene del 20% de sus funcionalidades. Siendo el Arquitecto de Software el mejor programador del equipo, todo parece indicar que gran parte de estas funcionalidades deberían ser escritas por el.&lt;/p&gt;
 
-&lt;h4 id=&quot;sntomas-y-diagnstico&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+&lt;h4 id=&quot;síntomas-y-diagnóstico&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Arquitecto de Software con stress: “Nunca encuentro el tiempo para trabajar en estas funcionalidades”&lt;/li&gt;
@@ -304,11 +357,11 @@ Sin embargo, llevado a la práctica no es tan sencillo. El trabajo del arquitect
 &lt;h3 id=&quot;el-dilema-del-especialista-que-todo-lo-sabe&quot;&gt;El dilema del especialista que todo lo sabe&lt;/h3&gt;
 &lt;p&gt;&lt;big&gt;&lt;i&gt;“El mundo es demasiado grande para que yo lo domine totalmente”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;descripcin-1&quot;&gt;Descripción&lt;/h4&gt;
+&lt;h4 id=&quot;descripción-1&quot;&gt;Descripción&lt;/h4&gt;
 
 &lt;p&gt;Front-end, back-end, orientado a objetos, funcional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Realidad Virtual, COBOL, Mainframes, Docker, APIs, Scala. La lista de tecnologías sigue creciendo. La capacidad del Arquitecto de Software no es infinita, así como tampoco lo es el tiempo que cualquier ser humano puede emplear en un set de tareas. De todos modos, pareciera como si al Arquitecto de Software se le pidiera que domine la lista entera. No podemos elegir ambas: ser especialistas y generalistas, ¿o si?&lt;/p&gt;
 
-&lt;h4 id=&quot;sntomas-y-diagnstico-1&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+&lt;h4 id=&quot;síntomas-y-diagnóstico-1&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Arquitecto de Software dubitativo: “Todos me preguntan acerca de todo y no hay forma de tener una buena respuesta a todas las preguntas”&lt;/li&gt;
@@ -345,11 +398,11 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 &lt;h3 id=&quot;un-pie-en-cada-continente&quot;&gt;Un pie en cada continente&lt;/h3&gt;
 &lt;p&gt;&lt;big&gt;&lt;i&gt;“Todavía no me pongo al día con todos los libros sobre soft skills y ya me estoy olvidando qué hacer después de atrapar una excepción”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;descripcin-2&quot;&gt;Descripción&lt;/h4&gt;
+&lt;h4 id=&quot;descripción-2&quot;&gt;Descripción&lt;/h4&gt;
 
 &lt;p&gt;El camino y los primeros pasos para convertirse en un Arquitecto de Software son realmente emocionantes. Empezamos a abstraernos de un montón de detalles innecesarios, dejamos de lidiar con funcionalidades tediosas, y empezamos a encarar desafíos más a la altura. También comenzamos a pasar más tiempo dibujando, hablando, enseñando, reuniéndonos, y menos tiempo escribiendo código. Y de repente, allí estamos, con esa sensación de que aún no somos lo suficientemente buenos en todo lo nuevo pero ya estamos muy lejos de donde empezamos. Viajamos lejos de casa y ahora estamos en el medio del océano. Una mezcla entre un Ingeniero de Software oxidado y un Arquitecto de Software inexperto.&lt;/p&gt;
 
-&lt;h4 id=&quot;sntomas-y-diagnstico-2&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+&lt;h4 id=&quot;síntomas-y-diagnóstico-2&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Éxito por accidente: “Siento que la gente me elogia por cosas que se dieron por casualidad y no como resultado de mi trabajo”&lt;/li&gt;
@@ -374,14 +427,14 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 
 &lt;p&gt;Quizá la parte más difícil es vencer el miedo de ser transparente y reflexivo acerca de esto con alguien, un amigo, un colega, o un jefe. Una vez que reconocemos y hacemos las paces con estos temas, todo se vuelve más fácil y estamos listos para dejarlo atrás y liberar nuestro potencial como Arquitectos de Software.&lt;/p&gt;
 
-&lt;h3 id=&quot;el-dilema-del-mentor-sin-preparacin&quot;&gt;El dilema del mentor sin preparación&lt;/h3&gt;
+&lt;h3 id=&quot;el-dilema-del-mentor-sin-preparación&quot;&gt;El dilema del mentor sin preparación&lt;/h3&gt;
 &lt;p&gt;&lt;big&gt;&lt;i&gt;“Si querías que fuera mentor de otros, deberías haberme preparado para eso”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;descripcin-3&quot;&gt;Descripción&lt;/h4&gt;
+&lt;h4 id=&quot;descripción-3&quot;&gt;Descripción&lt;/h4&gt;
 
 &lt;p&gt;Incluir “mentoring” como parte de las responsabilidades del Arquitecto de Software tiene amplio consenso. Se espera que los Arquitectos de Software pasen tiempo con los Ingenieros aconsejándolos acerca de cómo desarrollar las habilidades faltantes, aprender nuevas técnicas de programación, frameworks y en general, preparándolos para dar el siguiente paso. Sin embargo a medida que los desarrolladores avanzan en sus carreras y eventualmente se convierten en Arquitectos de Software, empiezan a necesitar habilidades para las cuales no han sido entrenados, como el “mentoring” en sí mismo.&lt;/p&gt;
 
-&lt;h4 id=&quot;sntomas-y-diagnstico-3&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+&lt;h4 id=&quot;síntomas-y-diagnóstico-3&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Cuello de botella para “mentoring”: “Todos quieren que los ayude a crecer ¿Qué está ocurriendo?” La mayoría de los desarrolladores comienzan a buscar “mentoring” en el mismo Arquitecto de Software&lt;/li&gt;
@@ -397,15 +450,15 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 
 &lt;p&gt;Cabe mencionar que, a pesar de que no entraremos en temas antropológicos o sociológicos tales como la capacidad del ser humano de adquirir nuevos conocimientos, entendemos que algunas personas tienen una tendencia más natural al mentoreo. Incluso cuando un Arquitecto de Software debería ayudar a los Ingenieros de Software a desarrollar sus soft skills, cualquiera que aspire a convertirse en un Arquitecto de Software debería aprender sobre mentoreo en general. Una posibilidad para los Arquitectos de Software es buscar ayuda respecto del mentoreo en el liderazgo más senior de la organización de ingeniería (como ser VPs o Senior Directors).&lt;/p&gt;
 
-&lt;h3 id=&quot;el-sndrome-de-la-prdida-de-enfoque&quot;&gt;El síndrome de la pérdida de enfoque&lt;/h3&gt;
+&lt;h3 id=&quot;el-síndrome-de-la-pérdida-de-enfoque&quot;&gt;El síndrome de la pérdida de enfoque&lt;/h3&gt;
 
 &lt;p&gt;&lt;big&gt;&lt;i&gt;“Cuando me siento y me concentro por 20 minutos sin interrupción, logro construir cosas asombrosas! ¿Cómo no hago esto 8 horas por día?”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;descripcin-4&quot;&gt;Descripción&lt;/h4&gt;
+&lt;h4 id=&quot;descripción-4&quot;&gt;Descripción&lt;/h4&gt;
 
 &lt;p&gt;Como Paul Graham describe en su ensayo “Maker’s Schedule, Manager’s Schedule”, mientras que la agenda de un manager puede cambiar cada hora, para los constructores ir a una reunión es como arrojar una excepción, lo cual puede ser muy costoso en términos de performance. A medida que estudiamos el rol y analizamos sus contradicciones, nos preguntamos: ¿Qué agenda seguimos los Arquitectos de Software?&lt;/p&gt;
 
-&lt;h4 id=&quot;sntomas-y-diagnstico-4&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
+&lt;h4 id=&quot;síntomas-y-diagnóstico-4&quot;&gt;Síntomas y Diagnóstico&lt;/h4&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Adaptarse a los managers: “Los managers me arrastran a reuniones en cualquier momento”&lt;/li&gt;
@@ -430,7 +483,7 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 &lt;/ul&gt;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h2&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
 &lt;p&gt;Mientras que la analogía con las patologías puede ser algo trillada, creemos que hay valor en estudiarlas como las trampas habituales en el rol del Arquitecto de Software.&lt;/p&gt;
 
@@ -439,8 +492,8 @@ De este modo, como un Arquitecto de Software, asegúrate de dominar las habilida
 &lt;p&gt;Esperamos que el análisis de estas patologías ayude a disparar más discusiones acerca de cómo debería evolucionar el rol del Arquitecto de Software, cómo evaluar su impacto, cómo deben crecer y cómo deben ser &lt;em&gt;coacheados&lt;/em&gt;. Esta es nuestra humilde pero sentida contribución al respecto.&lt;/p&gt;
 </description>
         <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/07/14/a-compendium-software-architects-pathologies/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/07/14/a-compendium-software-architects-pathologies/</guid>
+        <link>http://localhost:4000/es/2016/07/14/a-compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2016/07/14/a-compendium-software-architects-pathologies/</guid>
         
         <category>Software</category>
         
@@ -478,13 +531,13 @@ Independientemente de los resultados de estos análisis, tengo una pequeña list
 
 &lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Flujo de la aplicación&quot; /&gt;&lt;/p&gt;
 
-&lt;h2 id=&quot;cmo-comenzar&quot;&gt;Cómo comenzar&lt;/h2&gt;
+&lt;h2 id=&quot;cómo-comenzar&quot;&gt;Cómo comenzar&lt;/h2&gt;
 
 &lt;p&gt;El principal objetivo de Nobel es que cualquier persona con mínimos conocimientos sobre programación en Arduino, pueda desarrollar su propio dispositivo controlado remotamente vía HTTP. Habiendo dicho esto, es necesario: - Contar con una placa Arduino y las herramientas de desarrollo instaladas. - Contar con un &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;. - Contar con conocimientos básicos de Swagger o RAML. - Tener instalado &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;En la &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;documentación de Nobel&lt;/a&gt; se puede encontrar toda la información necesaria para entender su funcionamiento en profundidad, así como un &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;ejemplo práctico&lt;/a&gt; para tener nuestro primer dispositivo funcionando en minutos.&lt;/p&gt;
 
-&lt;h2 id=&quot;para-qu&quot;&gt;Para qué&lt;/h2&gt;
+&lt;h2 id=&quot;para-qué&quot;&gt;Para qué&lt;/h2&gt;
 
 &lt;p&gt;La intención de Nobel es solucionar una problemática relativamente compleja: Exponer una API REST utilizando una placa Arduino. De esta forma, los desarrolladores pueden concentrarse en construir sus propios dispositivos. Ahora podés pensar en aquellos proyectos que venías postergando y comenzar a controlar tus propios dispositivos de forma remota.&lt;/p&gt;
 
@@ -494,8 +547,8 @@ Independientemente de los resultados de estos análisis, tengo una pequeña list
 
 </description>
         <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2016/04/24/nobel-02-swagger-support/</guid>
+        <link>http://localhost:4000/es/2016/04/24/nobel-02-swagger-support/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2016/04/24/nobel-02-swagger-support/</guid>
         
         <category>Nobel</category>
         
@@ -559,8 +612,8 @@ A diferencia de la &lt;em&gt;escalabilidad vertical&lt;/em&gt;, en este paradigm
 Como veremos también, el hecho de que estos nodos levanten tan rápidamente, es una combinación de las capacidades de la tecnología (que reutiliza el Kernel de un solo Sistema Operativo que ya está corriendo) y el diseño de componentes pequeños que levantarán al mismo tiempo en distintos nodos (reduciendo el tiempo de arranque y paralelizandolo).&lt;/p&gt;
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2015/12/03/docker-in-action-IoIII/</guid>
+        <link>http://localhost:4000/es/2015/12/03/docker-in-action-IoIII/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2015/12/03/docker-in-action-IoIII/</guid>
         
         <category>Docker</category>
         
@@ -602,7 +655,7 @@ Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades
 &lt;p&gt;1- El cliente 1 envía un &lt;em&gt;request&lt;/em&gt; con método &lt;em&gt;GET&lt;/em&gt; para solicitar el libro con id 123321.&lt;br /&gt;
 2- El servidor devuelve un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -615,7 +668,7 @@ Adicionalmente, la &lt;em&gt;API&lt;/em&gt; podría enviar solo las “novedades
 4- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 2 con código &lt;em&gt;200 OK&lt;/em&gt;.&lt;br /&gt;
 5- El servidor envía un &lt;em&gt;response&lt;/em&gt; al cliente 1 con código &lt;em&gt;200 OK&lt;/em&gt; y un &lt;em&gt;JSON&lt;/em&gt; con la información del libro.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -631,14 +684,14 @@ Al proceso por el cual las &lt;em&gt;APIs&lt;/em&gt; notifican &lt;em&gt;proacti
 
 &lt;p&gt;A pesar de que en el ejemplo se puede ver la conveniencia de implementar &lt;em&gt;Push Notifications&lt;/em&gt; como parte de nuestra &lt;em&gt;Streaming API&lt;/em&gt;, no se ve un impacto en cuanto a la performance. Si bien es cierto que el cliente no estará enviando un &lt;em&gt;request&lt;/em&gt; periódicamente para verificar si el recurso cambió, cada vez que la &lt;em&gt;API&lt;/em&gt; haga un &lt;em&gt;push&lt;/em&gt; se estará enviando el recurso completo al cliente. Implementando una lógica &lt;em&gt;diferencial&lt;/em&gt; en el servidor, nuestra &lt;em&gt;API&lt;/em&gt; podría enviar solo las actualizaciones al momento de realizar un &lt;em&gt;push&lt;/em&gt;. Para nuestro ejemplo, esto podría ser:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PATCH&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Este &lt;em&gt;JSON&lt;/em&gt; informa al cliente que se ha modificado el campo “Edition” y su nuevo valor. El cliente podrá actualizar su modelo apropiadamente con esta información. De esta forma, sin importar que tan grande sea el recurso solicitado, el &lt;em&gt;push&lt;/em&gt; solo envía los campos que han cambiado desde la última actualización.&lt;/p&gt;
 
-&lt;h3 id=&quot;tiempo-mximo-de-request&quot;&gt;Tiempo máximo de request&lt;/h3&gt;
+&lt;h3 id=&quot;tiempo-máximo-de-request&quot;&gt;Tiempo máximo de request&lt;/h3&gt;
 
 &lt;p&gt;Es una buena práctica evitar &lt;em&gt;requests&lt;/em&gt; de tiempo infinito. Las conexiones pueden tener un &lt;em&gt;timeout&lt;/em&gt; o incluso podrían perderse por condiciones físicas de los servidores o la red. El impacto en código puede generalizarse:&lt;/p&gt;
 
@@ -688,10 +741,10 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;p&gt;Tomando el servicio provisto por &lt;a href=&quot;https://bitcoinaverage.com&quot;&gt;BitcoinAverage&lt;/a&gt;, y viendo algún método simple de su &lt;a href=&quot;https://bitcoinaverage.com/api&quot;&gt;&lt;em&gt;API&lt;/em&gt;&lt;/a&gt;, escribimos un código sencillo que nos permita consultar cada 5 segundos, el siguiente reucrso: https://api.bitcoinaverage.com/ticker/global/EUR/&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
          &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
           &lt;span class=&quot;nx&quot;&gt;dataType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;json&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -701,9 +754,9 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
           &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
       &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Utilizando &lt;a href=&quot;https://jquery.com/&quot;&gt;JQuery&lt;/a&gt; para obtener los beneficios del método &lt;code&gt;ajax&lt;/code&gt;, y la función &lt;code&gt;setInterval&lt;/code&gt; que nos permite ejecutar una función repetidas veces espaciadas por un intervalo de tiempo, obtenemos la siguiente respuesta en la consola:&lt;/p&gt;
 
@@ -733,10 +786,10 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;p&gt;Con estos pasos cumplidos, el siguiente código accede a la misma &lt;em&gt;API&lt;/em&gt; del ejemplo anterior pero recibiendo &lt;em&gt;Push notifications&lt;/em&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./js/streamdataio.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./js/streamdataio.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;streamdataio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.bitcoinaverage.com/ticker/global/EUR/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/APP TOKEN/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
@@ -753,10 +806,10 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
         &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
      &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;See the console&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;See the console&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Se debe reemplazar el “APP TOKEN” por el generado para su aplicación. Recuerden que &lt;em&gt;JavaScript&lt;/em&gt; puede correr en un cliente cualquiera (browser) por lo que no debe incluirse el &lt;em&gt;Token&lt;/em&gt; en dicho código. Esto es válido solo para pruebas y ejemplos.&lt;/p&gt;
 
@@ -781,14 +834,14 @@ Esto es precisamente lo que hace &lt;a href=&quot;http://streamdata.io&quot;&gt;
 
 &lt;p&gt;Se puede observar un solo &lt;em&gt;request&lt;/em&gt; a una &lt;em&gt;url&lt;/em&gt; perteneciente a &lt;em&gt;streamdata&lt;/em&gt; (el &lt;em&gt;proxy&lt;/em&gt;) y como parámetros, el &lt;em&gt;token&lt;/em&gt; (sólo aquellos clientes que lo conozcan podrán acceder a la aplicación de &lt;em&gt;streamdata.io&lt;/em&gt;) y la &lt;em&gt;url&lt;/em&gt; del &lt;em&gt;request&lt;/em&gt; original. Ese request estuvo abierto por 2.5 minutos recibiendo notificaciones cada vez que el recurso cambiaba en el servidor.&lt;/p&gt;
 
-&lt;h2 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h2&gt;
+&lt;h2 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h2&gt;
 
 &lt;p&gt;Es clara la practicidad e incluso posibles mejoras en &lt;em&gt;performance&lt;/em&gt; al utilizar una &lt;em&gt;Stremaing API&lt;/em&gt;. Basta con pensar en las &lt;em&gt;web applications&lt;/em&gt; actuales para ver la utilidad de recibir notificaciones cuando cambia el modelo en nuestro servidor.&lt;br /&gt;
 Pero no siempre contamos con una &lt;em&gt;Streaming API&lt;/em&gt;. A menudo no estamos consultando una &lt;em&gt;API&lt;/em&gt; propia y muchas veces, nuestra &lt;em&gt;API&lt;/em&gt; ya existe y no hay tiempo o dinero para cambiarla (convertirla en una &lt;em&gt;streaming API&lt;/em&gt;). Mediante un &lt;em&gt;proxy&lt;/em&gt; se puede emular el comportamiento de una &lt;em&gt;streaming API&lt;/em&gt; e incluso si no contáramos con el tiempo para implementar esta solución, es posible utilizar una plataforma como &lt;em&gt;streamdata.io&lt;/em&gt; la cual provee esta funcionalidad como un servicio en la nube.&lt;/p&gt;
 </description>
         <pubDate>Wed, 09 Sep 2015 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2015/09/09/from-api-to-streaming-api/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2015/09/09/from-api-to-streaming-api/</guid>
+        <link>http://localhost:4000/es/2015/09/09/from-api-to-streaming-api/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2015/09/09/from-api-to-streaming-api/</guid>
         
         <category>API</category>
         
@@ -813,7 +866,7 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
 
 &lt;p&gt;Tomemos como ejemplo un conjunto de personas:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;176&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;22&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Jane Doe&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;weight&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
@@ -822,7 +875,7 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
 
 &lt;p&gt;Ahora, recorramos este &lt;em&gt;array&lt;/em&gt; y por cada persona imprimamos “&lt;em&gt;Name&lt;/em&gt; is &lt;em&gt;age&lt;/em&gt; years old”.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -839,7 +892,7 @@ Un aspecto que me resulta particularmente interesante es el denominado “expres
 
 &lt;p&gt;Comencemos por quitar la línea dentro del &lt;em&gt;for&lt;/em&gt; y ubicarla dentro de una función que reciba una &lt;em&gt;persona&lt;/em&gt; como parámetro e imprima el patrón especificado.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot; - &amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
@@ -862,7 +915,7 @@ No hicimos más que &lt;em&gt;encapsular&lt;/em&gt; una funcionalidad para ocult
 &lt;p&gt;Si bien el código se ha vuelto un poco más expresivo, parece estar más preocupado por la variable &lt;em&gt;i&lt;/em&gt;, su inicialización, y su cota, que por la persona en sí misma.&lt;br /&gt;
 Afortunadamente hay otras formas de recorrer un &lt;em&gt;array&lt;/em&gt;. Por ejemplo el método &lt;code&gt;Array.prototype.forEach(function)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Si leemos nuevamente el código:&lt;/p&gt;
 
@@ -876,7 +929,7 @@ En primer lugar, algo a destacar de &lt;em&gt;Javascript&lt;/em&gt; es que &lt;e
 A diferencia del &lt;em&gt;for&lt;/em&gt; que es una instrucción, el &lt;em&gt;forEach&lt;/em&gt; es un método del objeto &lt;em&gt;Array&lt;/em&gt; (o de su &lt;em&gt;prototipo&lt;/em&gt;). Combinando estos conceptos, &lt;em&gt;forEach&lt;/em&gt; recorre el &lt;em&gt;array&lt;/em&gt; y en cada iteración invoca a la función que recibió como parámetro. En dicha invocación, &lt;em&gt;forEach&lt;/em&gt; le pasa como parámetro a la otra función, el elemento que está siendo iterado.&lt;br /&gt;
 Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -893,10 +946,10 @@ Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt
 
 &lt;p&gt;El &lt;em&gt;forEach&lt;/em&gt; no devuelve ningún resultado, pero entre las acciones realizadas dentro de la función invocada, es posible modificar el &lt;em&gt;array&lt;/em&gt; que está siendo iterado (lo cual, como veremos, deberá hacerse con cuidado).&lt;/p&gt;
 
-&lt;h3 id=&quot;no-apto-para-menores-de-25-aos&quot;&gt;No apto para menores de 25 años&lt;/h3&gt;
+&lt;h3 id=&quot;no-apto-para-menores-de-25-años&quot;&gt;No apto para menores de 25 años&lt;/h3&gt;
 &lt;p&gt;Supongamos que en un bar muy exclusivo no se admiten menores de 25 años. Podríamos intentar escribir un código que elimine del &lt;em&gt;array&lt;/em&gt; aquellas personas que no alcancen dicha edad. El código podría ser:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -907,7 +960,7 @@ Una implementación muy básica del &lt;em&gt;forEach&lt;/em&gt; podría ser:&lt
 
 &lt;p&gt;Si ejecutamos este código, vamos a obtener el siguiente resultado:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;John Doe - 27&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;John Doe - 27&lt;/span&gt;
 &lt;span class=&quot;go&quot;&gt;Jane Doe - 24&lt;/span&gt;
 &lt;span class=&quot;go&quot;&gt;Julian Doe - 32&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -931,7 +984,7 @@ Comencemos por atacar este segundo problema (al menos parte del mismo).&lt;/p&gt
 &lt;p&gt;Esta es una característica de &lt;em&gt;Javascript&lt;/em&gt; que, bien utilizada, nos permite escribir código expresivo y altamente reutilizable.&lt;br /&gt;
 Tomemos por ejemplo el siguiente código:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -939,13 +992,13 @@ Tomemos por ejemplo el siguiente código:&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;olderThan25&lt;/em&gt; está devolviendo una función que recibe una persona y devuelve &lt;em&gt;true&lt;/em&gt; si la persona es mayor de (o tiene exactos) 25 años. Es decir que, al asignar el resultado de su ejecución a la variable &lt;em&gt;older&lt;/em&gt;, &lt;code&gt;older(person)&lt;/code&gt; realizará la evaluación antes mencionada.&lt;br /&gt;
 Entonces,&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;older&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;John Doe Jr.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;age&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;imprime &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Siguiendo este mismo concepto, podemos aún lograr un código más reutilizable e incluso más expresivo. Pasemos como parámetro el “umbral” de edad que queremos evaluar.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;threshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -954,7 +1007,7 @@ Entonces,&lt;/p&gt;
 &lt;p&gt;Ahora, podemos crear cuantas funciones queramos con diferentes umbrales de edad, y nomenclarlas de forma tal que representen lo que hacen.&lt;br /&gt;
 Aplicando al código anterior (que intentaba remover a los menores de 25 años):&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;splice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -988,7 +1041,7 @@ El método &lt;em&gt;filter&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
 
 &lt;p&gt;Teniendo en cuenta este nuevo método, el siguiente código resuelve el requerimiento expresado anteriormente:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;printPattern&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Respecto de su expresividad, puede ser leído como:&lt;/p&gt;
 
@@ -1003,7 +1056,7 @@ El método &lt;em&gt;filter&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
 &lt;p&gt;Hemos logrado trabajar con cada persona de nuestro grupo, y realizar operaciones con cada una de ellas. Pero muchas veces, es necesario trabajar con el grupo como un todo.&lt;br /&gt;
 Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascensor. Por motivos de seguridad, los ascensores más modernos incluyen una balanza para asegurarse de que no se haya superado el peso máximo soportado por el mismo. Intentemos evitar la vergüenza de escuchar la chicharra indicando que nos hemos excedido y calculemos el peso total previamente:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
@@ -1019,7 +1072,7 @@ Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascen
 
 &lt;p&gt;Paso a paso. Primero consideremos la sensibilidad de la gente respecto de su peso e intentemos mantener cierta confidencialidad. Obtengamos un nuevo &lt;em&gt;array&lt;/em&gt; que solo tenga los pesos de las personas de nuestro grupo.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1032,11 +1085,11 @@ Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascen
   &lt;li&gt;La función obtiene el peso de la persona y lo asigna a la posición indicada en el nuevo &lt;em&gt;array&lt;/em&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weights&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;imprime&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span class=&quot;go&quot;&gt;[ 176, 22, 127, 160 ]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-console&quot; data-lang=&quot;console&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;go&quot;&gt;[ 176, 22, 127, 160 ]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h3 id=&quot;arrayprototypemap&quot;&gt;Array.prototype.map&lt;/h3&gt;
 
@@ -1044,11 +1097,11 @@ Supongamos que &lt;em&gt;nuestras&lt;/em&gt; personas están subiendo a un ascen
 Es decir, que el código que escribimos anteriormente “mapea las personas con/por su peso”.&lt;br /&gt;
 Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la siguiente manera:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;De hecho, definiendo &lt;em&gt;weight&lt;/em&gt; como una función que dada una persona, devuelva su peso, la línea anterior hace &lt;strong&gt;exactamente&lt;/strong&gt; lo que dice.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;El método &lt;em&gt;map&lt;/em&gt;, recibe los mismos 2 parámetros que &lt;em&gt;filter&lt;/em&gt;:&lt;/p&gt;
 
@@ -1071,7 +1124,7 @@ Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la s
 
 &lt;p&gt;Si siguiéramos el enfoque anterior, pero aprovechando la función &lt;em&gt;map&lt;/em&gt;, nuestro código quedaría así:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;totalWeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
@@ -1084,11 +1137,11 @@ Sería bueno poder escribir eso mismo en &lt;em&gt;Javascript&lt;/em&gt; de la s
 &lt;p&gt;El término &lt;em&gt;reduce&lt;/em&gt; resulta, al menos para mi, poco descriptivo respecto del objetivo de este método. Otros lenguajes (asociados al paradigma &lt;em&gt;funcional&lt;/em&gt;) suelen referirse a esta función como &lt;a href=&quot;https://en.wikipedia.org/wiki/Fold_(higher-order_function)&quot;&gt;&lt;em&gt;fold&lt;/em&gt;&lt;/a&gt;. Pero una buena forma de entenderlo es pensar en &lt;em&gt;reduce&lt;/em&gt; como “resumir”. Queremos encontrar un solo valor que &lt;em&gt;resuma&lt;/em&gt; de alguna manera a todos los demás. Por ejemplo, 10 resume a 4, 3, 2 y 1 si consideramos a la suma como forma de resumir. 24 resume a 4, 3, 2, 1 si consideramos a la multiplicación como forma de resumir.&lt;br /&gt;
 Entonces, Definiendo &lt;em&gt;sum&lt;/em&gt; como&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;y considerando el siguiente código&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;se podría leer: resumir mediante la suma, el peso de las personas. O, sumar el peso de las personas.&lt;/p&gt;
 
@@ -1121,7 +1174,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
   &lt;li&gt;Iterar y preguntar&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;areOlder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1131,7 +1184,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
   &lt;li&gt;Reducir mediante el operador lógico “Y”&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousOlder18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1140,7 +1193,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
   &lt;li&gt;Mapear al &lt;em&gt;array&lt;/em&gt; de edades y reducir mediante el operador lógico “Y”&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPreviousGreater18&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;greaterThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
@@ -1150,7 +1203,7 @@ Hay muchas formas de lograrlo. Entre ellas:&lt;/p&gt;
 
 &lt;p&gt;Todas estas soluciones tienen un problema (u oportunidad de mejora): Evalúan todo el &lt;em&gt;array&lt;/em&gt; sin importar lo que ocurra. En nuestro caso, evaluando el segundo elemento podríamos concluir que no todas las personas son mayores de 18. En evaluaciones de expresiones &lt;em&gt;booleanas&lt;/em&gt; esto se conoce como “evaluación de cortocircuito”.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; true&lt;/span&gt;
 &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;whatever&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// -&amp;gt; false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;En ambos casos, es innecesario evaluar &lt;em&gt;whatever&lt;/em&gt;.&lt;/p&gt;
@@ -1164,7 +1217,7 @@ La forma de solucionar esto es &lt;em&gt;rompiendo&lt;/em&gt; las iteraciones cu
 
 &lt;p&gt;Volviendo al tema de la &lt;em&gt;expresividad&lt;/em&gt;, ninguna de las soluciones resultan demasiado expresivas (hagan el ejercicio de identificar lo que cada una está diciendo y lo que cada una está haciendo). El enunciado debería ser más sencillo. Verificar que todas las personas sean mayores de 18.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;every&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Esta solución dice y hace exactamente lo que buscamos. Devuelve &lt;em&gt;true&lt;/em&gt; si todas las personas son mayores de 18 años. Caso contrario, devuelve &lt;em&gt;false&lt;/em&gt;.&lt;br /&gt;
 Además de ser altamente expresiva, &lt;em&gt;every&lt;/em&gt; respeta la evaluación de cortocircuito, es decir que dejará de iterar ni bien encuentre una persona que no cumpla la condición.&lt;/p&gt;
@@ -1186,12 +1239,12 @@ Además de ser altamente expresiva, &lt;em&gt;every&lt;/em&gt; respeta la evalua
 
 &lt;p&gt;&lt;em&gt;every&lt;/em&gt; devuelve &lt;em&gt;true&lt;/em&gt; si todos los elementos iterados cumplieron con la condición, y &lt;em&gt;false&lt;/em&gt; si al menos un elemento no lo hace (y deja de iterar cuando lo encuentra).&lt;/p&gt;
 
-&lt;h3 id=&quot;en-busca-de-una-pelcula-apta&quot;&gt;En busca de una película apta&lt;/h3&gt;
+&lt;h3 id=&quot;en-busca-de-una-película-apta&quot;&gt;En busca de una película apta&lt;/h3&gt;
 
 &lt;p&gt;Las restricciones de edad en las películas deben ser respetadas. Y si bien nuestras personas no  encontraron ninguna película apta para todo público, apareció un nuevo estreno que puede ser vista por menores con la supervisión de un adulto. Dejando de lado el criterio del adulto, escribamos la solución que nos permita evaluar si alguna persona es mayor de 18 años. Pero antes de comenzar a mostrar todas las alternativas (como hicimos con el caso anterior &lt;em&gt;every&lt;/em&gt;) pensemos ¿no existirá algún otro método que diga y haga lo estamos buscando?&lt;br /&gt;
 Mi respuesta rápida es &lt;strong&gt;sí&lt;/strong&gt;:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;El método &lt;em&gt;some&lt;/em&gt; recibe 2 parámetros:&lt;/p&gt;
 
@@ -1216,28 +1269,28 @@ Mi respuesta rápida es &lt;strong&gt;sí&lt;/strong&gt;:&lt;/p&gt;
 Consideremos el siguiente problema: Debo obtener un &lt;em&gt;array&lt;/em&gt; con las personas con peso menor a 130 libras, que tengan más de 10 años.&lt;br /&gt;
 Con todo lo que hemos visto, naturalmente podríamos pensar que la siguiente solución es ideal:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;La realidad es que esta solución no es ideal, tan solo es expresiva.&lt;br /&gt;
 Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, estamos iterando 2 &lt;em&gt;arrays&lt;/em&gt;. Si &lt;em&gt;persons&lt;/em&gt; contiene N elementos y M son mayores de 10, la solución anterior recorrerá N + M elementos. La siguiente solución puede ser un poco menos expresiva pero nos asegura que solo se recorrerán N elementos:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;persons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;considerando&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10AndsofterThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;olderThan10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;softerThan130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Al negociar un aspecto por otro, es necesario considerar el caso de uso. Si nuestros &lt;em&gt;arrays&lt;/em&gt; contienen familias (es decir, pocos elementos), quizá podamos darnos el lujo de tener el código más expresivo. Si estamos procesando el padrón electoral completo, mejor preocuparse por la &lt;em&gt;performance&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;conclusin&quot;&gt;Conclusión&lt;/h3&gt;
+&lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
 
 &lt;p&gt;La misma sintaxis de &lt;em&gt;Javascript&lt;/em&gt; nos permite trabajar con partes buenas de los paradigmas &lt;em&gt;estructurado&lt;/em&gt;, &lt;em&gt;orientado a objetos&lt;/em&gt; y &lt;em&gt;funcional&lt;/em&gt;. Las buenas prácticas de cada paradigma pueden favorecernos a la hora de mejorar algunos aspectos de nuestro código. En la mayoría de los casos, al mejorar un aspecto, estaremos empeorando otros (Ej: Mayor Expresividad -&amp;gt; Menor Performance). Muchas veces estos aspectos se conjugarán de formas más complejas (Ej: Mayor Performance y Buena Expresividad -&amp;gt; Poca Flexibilidad). Es parte de nuestro trabajo cuando escribimos una pieza de código, evaluar qué aspectos queremos favorecer y cuáles podemos castigar. La mayoría de las veces caeremos en la trampa y favoreceremos los aspectos que más nos gusten. Eso es algo a evitar. Para saber qué aspectos favorecer, la mejor opción es analizar el caso de uso.&lt;/p&gt;
 </description>
         <pubDate>Thu, 13 Aug 2015 00:00:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2015/08/13/expressive-code-javscript/</guid>
+        <link>http://localhost:4000/es/2015/08/13/expressive-code-javscript/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/2015/08/13/expressive-code-javscript/</guid>
         
         <category>javascript</category>
         
@@ -1291,7 +1344,7 @@ Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, 
   &lt;li&gt;&lt;em&gt;Highlight&lt;/em&gt; de código: Escencial para un Blog dónde haya snippets.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Bienvenidos al nuevo OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -1308,62 +1361,13 @@ Al filtrar, estamos iterando el &lt;em&gt;array&lt;/em&gt;. Al filtrar 2 veces, 
 &lt;p&gt;Si tienen dudas, espero su contacto.&lt;/p&gt;
 </description>
         <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
-        <link>http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
+        <link>http://localhost:4000/es/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
+        <guid isPermaLink="true">http://localhost:4000/es/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
         
         
         <category>jekyll</category>
         
         <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>SPAM - Caso Real</title>
-        <description>&lt;p&gt;Quienes entendemos (y un poco más) de tecnología, solemos advertir, explicar, &lt;em&gt;retar&lt;/em&gt; a nuestros conocidos y familiares cuando vemos que están usando mal el &lt;em&gt;mail&lt;/em&gt;. En particular, un concepto simple pero que siempre se suele dejar de lado (por desconocimiento u olvido, a todos nos puede pasar).
-&lt;!--MORE--&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;para-principiantes&quot;&gt;Para principiantes&lt;/h2&gt;
-&lt;p&gt;Cuando enviamos un &lt;em&gt;mail&lt;/em&gt;, tenemos que especificar las direcciones de los destinatarios. Pero hay 3 formas de hacerlo:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Para: A quienes está dirigido el &lt;em&gt;mail&lt;/em&gt;. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Copia Carbón: Gente en copia porque no son los principales destinatarios, pero queremos que estén enterados. &lt;strong&gt;Todos los destinatarios pueden ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Copia Oculta: Gente a la que queremos que le llegue el &lt;em&gt;mail&lt;/em&gt;, sin que los demás se enteren. &lt;strong&gt;Nadie más que el remitente y el destinatario puede ver las direcciones que se escriban en este campo.&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Y es esta última opción la que sugerimos/rogamos utilizar cuando no podés evitar mandar ese &lt;em&gt;PPT&lt;/em&gt; con música de fondo y fotos de volcanes o cachorros siendo salvados por bomberos voluntarios. Es decir, si lo vas a mandar de todos modos, y a un montón de gente, al menos no publiques/compartas las direcciones con todo el mundo.&lt;br /&gt;
-Personalmente me dio buenos resultados explicar &lt;strong&gt;por qué&lt;/strong&gt; está mal compartir las direcciones. Al enviar estas direcciones, y ser públicas para cualquiera, quien la recibe puede utilizarla para enviarme contenido que no me interesa (lo cual, en gran volumen, representa una molesta pérdida de tiempo). Pero aún peor: Muchos de tus contactos de confianza van a reenviar tu &lt;em&gt;mail&lt;/em&gt; (porque les resultó digno de ser compartido) y a su vez, sus contactos lo reenviarán en una cadena que podría propagarse hasta que todos hayamos recibido ese &lt;em&gt;mail&lt;/em&gt; (quizá más de una vez).&lt;br /&gt;
-En toda esa cadena, &lt;strong&gt;al menos&lt;/strong&gt; uno de los eventuales destinatarios, se dedica a recolectar direcciones de &lt;em&gt;mail&lt;/em&gt; y armar “bases de datos” de los mismos. Estas bases de datos, o listas con gran cantidad de contactos tienen gran valor para empresas que publicitan sus productos y/o servicios vía internet, y por lo tanto, están dispuestas a pagar por ellas. Al final del recorrido, lo que ocurre es que uno empieza a recibir &lt;em&gt;mail&lt;/em&gt; no solicitado, de interés nulo, y &lt;strong&gt;en abundancia.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;caso-real&quot;&gt;Caso real&lt;/h2&gt;
-
-&lt;p&gt;Esta mañana, un empleado de una compañía dedicada a proyectos de inversión, envió las novedades e imágenes de la demolición de un espacio para un nuevo emprendimiento. &lt;strong&gt;Mis felicitaciones a ellos, de paso.&lt;/strong&gt; Yo no conozco a esta persona, por lo que estimo que obtuvo mi &lt;em&gt;mail&lt;/em&gt; gracias a alguna cadena previa enviada de manera incorrecta. Pero aquí lo curioso: Puso a todos los destinatarios en el campo “Para”. Si, ese error que un familiar comete y al que le advertimos, explicamos, &lt;em&gt;retamos&lt;/em&gt;, fue cometido por un &lt;strong&gt;profesional de la industria del envío del &lt;em&gt;mail&lt;/em&gt; masivo (probablemente certificado por el instituto nacional del envío de correo electrónico y otras competencias altamente redituables, mejor conocido como el INdEdCEyOCAR).&lt;/strong&gt; Y obviamente, si a un familiar se lo marco, cómo no arremeter ante tal falta de profesionalismo. Respondí su &lt;em&gt;mail&lt;/em&gt; moviendo a los otros destinatarios desde el campo “Para” al campo “Copia Oculta” (si bien el mal estaba hecho, con esto evitaba cualquier problema que pudiera surgir por algún “Responder a Todos”). Puse en el campo “Copia Carbón” la dirección info@&lt;em&gt;laempresaencuestion&lt;/em&gt;.com (que obtuve de internet) a modo de “comunicame con un supervisor”. Y escribí mi respuesta:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Hola &lt;em&gt;XXXX&lt;/em&gt;,&lt;br /&gt;
-Te agradecería que la próxima vez que envíes un correo no solicitado (A.K.A SPAM) lo hagas utilizando la opción Copia Oculta (o BCC) para que no todos puedan ver mis datos de contacto así como yo no debería ver los datos de todas las personas que están recibiendo este mensaje.&lt;br /&gt;
-Atte.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Aparentemente, el &lt;em&gt;mal&lt;/em&gt; ya está hecho. Uno tiene a minimizar estas cuestiones al nivel de “bueno, como mucho, recibis correo no deseado”. Pero al poner en copia (oculta) a las otras &lt;em&gt;víctimas&lt;/em&gt; de esta práctica ocurrieron algunas cosas que habitualmente se nos pasan por alto.&lt;/p&gt;
-
-&lt;h2 id=&quot;consecuencias&quot;&gt;Consecuencias&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Muchas de las direcciones de destino eran pertenecientes a &lt;em&gt;mails&lt;/em&gt; laborales. Es decir que esta gente podrá empezar a recibir SPAM en sus correos laborales.&lt;/li&gt;
-  &lt;li&gt;30 de Julio: Muchas de las personas tenían configurado la respuesta automática “Estoy de vacaciones hasta el día tal”. Es decir que, &lt;strong&gt;cualquiera de estas 400 personas podría saber que alguien (con nombre y apellido) probablemente no esté en casa&lt;/strong&gt; hasta dentro de unos días. Y déjenme decirles que, obtener el domicilio y otros datos de una persona con solo tener su nombre no es precisamente algo demasiado complicado (aunque no sea exacto).&lt;/li&gt;
-  &lt;li&gt;Las direcciones inexistentes (o inválidas) son informadas ya que uno recibe el correo típico de “Correo no entregado” (Undelivered mail). Por lo que puedo asumir que las demás direcciones son válidas y usarlas con fines comerciales.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;En mi caso particular, las posibilidades que acabo de mencionar no se encuentran dentro del grupo de mis actividades, lo cual deja conformes solo a quienes me conocen y confían en mi. El resto puede dudar. Pero hay otras 399 personas en esa cadena. 399 personas que tienen mi dirección de correo. 399 personas que quizá tengan tu dirección de correo.&lt;/p&gt;
-
-&lt;p&gt;Es una época en donde lo que podemos hacer sentados en nuestros escritorios es cada vez más crítico. Podemos transferir dinero, contar nuestro itinerario, publicar nuestro estado de ánimo, mostrar fotos, publicar nuestros pensamientos y opiniones libremente, entre otras. Pero cada acción que hacemos, puede ser observada por otros. El uso consciente de las herramientas informáticas es la única forma real de asegurarnos que esos otros, sean el público al que apuntamos y nadie más.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Jul 2015 14:45:00 -0300</pubDate>
-        <link>http://ourbit.github.io//es/2015/07/30/spam-caso-real/</link>
-        <guid isPermaLink="true">http://ourbit.github.io//es/2015/07/30/spam-caso-real/</guid>
-        
         
       </item>
     
