@@ -5,9 +5,48 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 24 Jan 2017 14:29:13 -0300</pubDate>
-    <lastBuildDate>Tue, 24 Jan 2017 14:29:13 -0300</lastBuildDate>
+    <pubDate>Fri, 05 May 2017 10:20:42 -0300</pubDate>
+    <lastBuildDate>Fri, 05 May 2017 10:20:42 -0300</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>APIsAR Episode V - API Management with Azure</title>
+        <description>&lt;p&gt;During an event that took place on May 3, 2017 in Buenos Aires, &lt;a href=&quot;https://twitter.com/germankuber&quot;&gt;German Küber&lt;/a&gt; facilitated a presentation about API Management with &lt;a href=&quot;https://azure.microsoft.com/en-us/&quot;&gt;Azure&lt;/a&gt;, the API Platform developed and commercialized by Microsoft.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;about-the-event&quot;&gt;About the event&lt;/h2&gt;
+
+&lt;p&gt;The event took place at the &lt;a href=&quot;http://avature.net/&quot;&gt;Avature&lt;/a&gt; offices in Buenos Aires and counted with around 30 guests in place plus 15 watching the online streaming. The presentation contained a mix of theoretical explanation about the concepts to be managed, and the way of doing it by making use of the platform features.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/APIsARe05.jpg&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;People attended the event and committed themselves to proposing topics for future episodes. After that, we all enjoyed some snacks and drinks provided by the Venue, meanwhile multiple conversations were being held (philosophy and theology included!)&lt;/p&gt;
+
+&lt;p&gt;You can watch the entire presentation &lt;a href=&quot;https://www.youtube.com/watch?v=DYSffb3rNsE&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DYSffb3rNsE&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;about-apisar&quot;&gt;About APIsAR&lt;/h2&gt;
+
+&lt;p&gt;APIsAR (stands for APIs Argentina) is the first and only group in Argentina that meets to discuss and present topics related with the APIs ecosystem. I founded it &lt;a href=&quot;http://norbertoherz.com&quot;&gt;myself&lt;/a&gt; 3 years ago and it counts with more than 700 members at the moment of writing this post. If you want to receive notifications about upcoming meetups, check the forums and engage with its community, join the Meetup group &lt;a href=&quot;http://meetup.com/APIsAR&quot;&gt;here&lt;/a&gt;. You can also follow its news via twitter (&lt;a href=&quot;http://twitter.com/APIsARgentina&quot;&gt;@APIsARgentina&lt;/a&gt;) and facebook (&lt;a href=&quot;http://facebook.com/APIsArgentina&quot;&gt;APIsArgentina&lt;/a&gt;), and watch the previous episodes on its &lt;a href=&quot;https://www.youtube.com/channel/UCXGY6_mib3hmzz1TQJDoA3A&quot;&gt;Youtube channel&lt;/a&gt;. You can also join the &lt;a href=&quot;https://apisar-slack-inviter.herokuapp.com/&quot;&gt;community slack channel&lt;/a&gt; to get engaged with the topics and discuss with subject matter experts.&lt;/p&gt;
+
+&lt;p&gt;If you have further questions, don’t hesitate to reach me &lt;a href=&quot;http://twitter.com/nohorbee&quot;&gt;@nohorbee&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/05/05/APIsARe05-Azure/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/05/APIsARe05-Azure/</guid>
+        
+        <category>APIsAR</category>
+        
+        <category>meetup</category>
+        
+        <category>APIs</category>
+        
+        <category>Azure</category>
+        
+        
+      </item>
     
       <item>
         <title>Owner vs. Victim theory and the pitfall of overusing it</title>
@@ -1310,57 +1349,6 @@ When filtering, we are iterating the &lt;em&gt;array&lt;/em&gt;. When filtering 
         
         <category>some</category>
         
-        
-      </item>
-    
-      <item>
-        <title>Moving to GitHub Pages</title>
-        <description>&lt;p&gt;With this (not that) recent desires of writing at ourBit again, I realized that the tools provided by &lt;em&gt;blogger by Google&lt;/em&gt; were not good enough or didn’t fulfill requirements that, in my opinion, should be provided by a &lt;em&gt;blogging&lt;/em&gt; platform out of the box&lt;!--MORE--&gt;.&lt;/p&gt;
-
-&lt;p&gt;After researching other tools that could help me with this task (&lt;em&gt;Wordpress, Joomla&lt;/em&gt;, etc), I concluded that non of these would meet my expectations by one reason or another. Basically, I am biased to think that the main reason is that, even though these are good platforms, all of them are targeted to a user not specialized enogh for using another kind of tools.&lt;/p&gt;
-
-&lt;p&gt;That’s how I remembered having used &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; in the past, for building some static page, and so I started evaluating it as an alternative.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Jekyll&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;is definitively not providing better tools than the other platforms&lt;/strong&gt;. It doesn’t count with a comments feature, it doesn’t create a new blog in minutes with its corresponding archives, one-click-apply templates, etc. What ends up being a priority here is the &lt;strong&gt;flexibility&lt;/strong&gt;, which turns &lt;em&gt;Jekyll&lt;/em&gt; into a &lt;strong&gt;candidate tool for developers&lt;/strong&gt; (or other professionals with IT knowledge enough) to becoming their tailored &lt;em&gt;blogging&lt;/em&gt; “platform”.&lt;/p&gt;
-
-&lt;p&gt;The ramp up time was about 1 hour (nothing more). In my case, I already had some experience so it was just a matter of revisiting some concepts, looking for some configuration details and start rolling. Well, almost. Once I had everything working, I started to think about the design. I didn’t want anything fancy but comfortable to read (and obviously, I wanted something that matches my personal tastes). Well, my design skills are close to null, hence, I decided to look for free &lt;em&gt;templates (or themes)&lt;/em&gt; and adapt one of them. I ran into &lt;a href=&quot;https://github.com/IronSummitMedia/startbootstrap-clean-blog&quot;&gt;CleanBlog&lt;/a&gt; by &lt;a href=&quot;https://github.com/davidtmiller&quot;&gt;David Miller&lt;/a&gt; to whom I give thanks for publishing this material. Adapting and applying it to the already running blog was a matter of minutes.&lt;/p&gt;
-
-&lt;h3 id=&quot;why-am-i-choosing-jekyll-y-github-pages&quot;&gt;Why am I choosing &lt;em&gt;Jekyll y GitHub Pages&lt;/em&gt;?&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The possibility of counting with &lt;em&gt;Open Source&lt;/em&gt; tools.&lt;/li&gt;
-  &lt;li&gt;Ads-Free: This is free. No strings attached.&lt;/li&gt;
-  &lt;li&gt;Flexibility and Extensibility: I can build plugins and tools on top of the platform.&lt;/li&gt;
-  &lt;li&gt;Simplicity:Creating Posts is as simple as writing a text file and follow the GitHub worflow for publishing.&lt;/li&gt;
-  &lt;li&gt;Capability of receiving &lt;em&gt;Pull Requests&lt;/em&gt;: I’;’m interested on having readers suggesting fixes, or even having them publishing on this blog. &lt;strong&gt;I hope you send your Posts via Pull Requests&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; Support: This might be a personal taste, but I find very simple and convenient to write in &lt;em&gt;Markdown&lt;/em&gt; instead of dealing with &lt;em&gt;WYSIWYG&lt;/em&gt; editors that end failing when attempting to go beyond their capabilities&lt;/li&gt;
-  &lt;li&gt;Code Highlight: Mandatory for a snippet containing blog&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;})(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Welcome to the new OurBit&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;These are just a few reasons. You should find yours. I suggest you to invest 1 hour in learning how to use it (maybe it won’t convince you as a &lt;em&gt;Blogging&lt;/em&gt; tool, but it worth knowing how &lt;em&gt;Jekyll and GitHub Pages&lt;/em&gt; works).&lt;/p&gt;
-
-&lt;p&gt;Here are some links for kicking off&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;Jekyll Themes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Please, don’t hesitate to reach me if you have any doubt.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Aug 2015 15:43:21 -0300</pubDate>
-        <link>http://localhost:4000/jekyll/update/2015/08/03/moving-to-gh-pages/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/08/03/moving-to-gh-pages/</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
         
       </item>
     

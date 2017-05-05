@@ -148,6 +148,37 @@ $(window).scroll(function(e) {
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
 <div class="post-preview">
+    <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu.es/">
+        <h2 class="post-title">Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  6 de
+  
+  Mayo
+    
+
+
+de 2011
+
+</p>
+    Días atrás, instalé en una netbook Ubuntu 11.04 Natty Narwhal. Todo anduvo bastante bien, ningún problema con el Hardware de la máquina. Cuando lo conecté a un monitor externo, noté que a diferencia de sus antecesores (10.04 y 10.10), este no me ofrecía más resoluciones que las del monitor predeterminado de la netbook (lo cual claramente no está bien, ya que la placa de video se banca más resolución).<div>Luego de investigar unos minutos, dí con <a href="https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions">https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions</a>, en donde explican perfectamente como solucionar este y otros problemas relacionados con las resoluciones.</div><div>Básicamente, hay que especificarlas manualmente. La buena noticia es que puede especificarse diferentes sets de resoluciones para las diferentes salidas de la PC. En este caso, la salida que yo necesitaba modificar era la VGA1.</div><div>Los comandos son básicamente 2:</div><div>- xrandr : trabaja sobre el archivo que contiene esas entradas.</div><div>- cvt: dada una resolución, nos da los datos que necesitamos para configurarla.</div><div>
+<br /></div><div>Los pasos serían: CVT para averiguar los datos, xrandr --newmode para crear el modo, xrandr --addmode para agregar el modo a la salida correspondiente.</div><div>
+<br /></div><div>Si ejecutamos estos pasos en la consola, serán válidos para UNA sesión solamente. Para hacerlos permanente hay que ejecutarlos cada vez que se inicia la sesión o, mejor aún para evitar pequeños destellos debido a ajustes de resolución, al iniciar el SO.</div><div>
+<br /></div><div>Esta última opción se logra agregando los comandos correspondientes al archivo /etc/gdm/Init/Default , justo antes de la línea: <span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">initctl -q emit login-session-start DISPLAY_MANAGER=gdm</span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">
+<br /></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; "><meta equiv="content-type" content="text/html; charset=utf-8"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; ">En mi caso, nuevamente considerando el uso de GDM y la salida VGA1, ejecuté todos los CVT, y agregué las siguientes líneas (te pueden ahorrar media horita) :</span></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; "><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; ">
+<br /></span></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); line-height: 19px; "><span class="Apple-style-span" style="color: rgb(0, 0, 0); line-height: normal; "><span class="Apple-style-span"  ><div>xrandr --newmode "1920x1200"  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync</div><div>xrandr --addmode VGA1 1920x1200</div><div>xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync</div><div>xrandr --addmode VGA1 1920x1080</div><div>xrandr --newmode "1680x1050"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync</div><div>xrandr --addmode VGA1 1680x1050</div><div>xrandr --newmode "1600x1200"  161.00  1600 1712 1880 2160  1200 1203 1207 1245 -hsync +vsync</div><div>xrandr --addmode VGA1 1600x1200</div><div>xrandr --newmode "1600x900"  118.25  1600 1696 1856 2112  900 903 908 934 -hsync +vsync</div><div>xrandr --addmode VGA1 1600x900</div><div>xrandr --newmode "1440x900"  106.50  1440 1528 1672 1904  900 903 909 934 -hsync +vsync</div><div>xrandr --addmode VGA1 1440x900</div><div>xrandr --newmode "1400x1050"  121.75  1400 1488 1632 1864  1050 1053 1057 1089 -hsync +vsync</div><div>xrandr --addmode VGA1 1400x1050</div><div>xrandr --newmode "1360x768"   84.75  1360 1432 1568 1776  768 771 781 798 -hsync +vsync</div><div>xrandr --addmode VGA1 1360x768</div><div>xrandr --newmode "1280x1024"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x1024</div><div>xrandr --newmode "1280x800"   83.50  1280 1352 1480 1680  800 803 809 831 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x800</div><div>xrandr --newmode "1280x720"   74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x720</div><div>xrandr --newmode "1024x768"   63.50  1024 1072 1176 1328  768 771 775 798 -hsync +vsync</div><div>xrandr --addmode VGA1 1024x768</div></span></span></span></div><div>
+<br /></div><div>Recordá que tenés que reiniciar para que los cambios tengan efecto.</div><div>
+<br /></div><div>Espero que les sirva.</div><meta equiv="content-type" content="text/html; charset=utf-8"><meta equiv="content-type" content="text/html; charset=utf-8">
+    <p class="read-more"><a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu.es/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
+<div class="post-preview">
     <a href="/es/2011/04/20/estadisticas-y-graficos-en-aplicaciones.es/">
         <h2 class="post-title">Estadísticas y Gráficos en aplicaciones Web
         </h2>
@@ -394,30 +425,6 @@ de 2010
 <br /></div><div>Todos los comandos de DB2 tienen infinidad de opciones, y los mencionados no son la excepción, pero para simplificar, preferí ir directo al punto. En los links adjuntos, paso algunas fuentes que usé, y siempre pueden ver la documentación de TODOS los comandos de DB2 en <a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html">http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html</a> .</div><div>
 <br /></div><div>Links útiles:</div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/pworld/0112mccluney.html">Backup &amp; Restore</a></div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0403melnyk/index.html">DB2 cloning databases across different platforms</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
     <p class="read-more"><a href="/es/2010/09/10/copiando-una-base-de-datos-db2.es/" class="read-more">Seguir leyendo &rarr;</a></p>
-</div>
-<hr>
-<br />
-
-<div class="post-preview">
-    <a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger.es/">
-        <h2 class="post-title">Actualizar twitter con posts en blogger
-        </h2>
-        
-    </a>
-    <p class="post-meta">Publicado por nohorbee el 
-    
-  
-  30 de
-  
-  Julio
-    
-
-
-de 2010
-
-</p>
-    Son infinitas las cosas que se pueden hacer hoy en día mediante RSS o herramientas de feeding. En particular, hoy me interesó poder hacerles llegar a todos, las novedades de este y algún otro blog mediante mi cuenta de Twitter. Para esto, podría haber desarrollado algún programejo que corriera un un cron en algún servidor, chequeando cambios en los feeds de los sites, y luego, mediante la API de twitter, publicar las novedades en mi cuenta.<div>Pero he aquí, que <a href="http://twitterfeed.com/">twitterfeed</a>, lo hace automáticamente (claro, una vez que lo configuramos).</div><div>Les recomiendo ingresar e intentarlo. Si tienen alguna duda, consulten aquí.</div>
-    <p class="read-more"><a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger.es/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
 <hr>
 <br />

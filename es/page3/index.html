@@ -148,6 +148,30 @@ $(window).scroll(function(e) {
   		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
   			
 <div class="post-preview">
+    <a href="/es/2011/10/05/steve-jobs.es/">
+        <h2 class="post-title">Steve Jobs
+        </h2>
+        
+    </a>
+    <p class="post-meta">Publicado por nohorbee el 
+    
+  
+  5 de
+  
+  Octubre
+    
+
+
+de 2011
+
+</p>
+    Falleció hoy quien posiblemente sea "Ejemplo e Icono" de cómo hacer buenos negocios, pelear todas, y pensar creatívamente.<br />Más allá de todos sus logros, y lo que esta persona representaba en el mundo de la tecnología, un mensaje que siempre me gustó, y perfectamente expuesto en un discurso.<br /><br /><div style="text-align: center;"><object style="height: 390px; width: 640px;"><param name="movie" value="http://www.youtube.com/v/4hv5QtUzKBQ?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/4hv5QtUzKBQ?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object></div><div style="text-align: left;">RIP Steve Jobs</div>
+    <p class="read-more"><a href="/es/2011/10/05/steve-jobs.es/" class="read-more">Seguir leyendo &rarr;</a></p>
+</div>
+<hr>
+<br />
+
+<div class="post-preview">
     <a href="/es/2011/10/05/vida-real-como-experiencia-didactica.es/">
         <h2 class="post-title">Vida real como experiencia didáctica (aplicada a un patrón de diseño)
         </h2>
@@ -448,37 +472,6 @@ de 2011
 <br /><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; font-size: 11pt; background-color: transparent;"></span>
 <br /><h2 style="font-family: 'Times New Roman'; font-size: medium; white-space: normal; "><span style="font-size: 18pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: bold; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">Conclusión</span></h2><span style="font-size: 11pt; font-family: Arial; color: rgb(0, 0, 0); background-color: transparent; font-weight: normal; font-style: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap; ">No hace falta ser un experto para implementar una aplicación en CakePHP, y poder publicar su API respetando el modelo arquitectónico REST. Sin embargo, esta simple labor, nos permite implementar soluciones orientadas a servicios en las cuales la vista se encuentra totalmente desacoplada del modelo. Un equipo de desarrollo podría definir la API de la capa negocios, y luego desarrollar en paralelo distintos clientes e incluso dicho modelo.</span></span></span></div></span></div>
     <p class="read-more"><a href="/es/2011/06/01/soa-rest-sobre-cakephp-consumido-por.es/" class="read-more">Seguir leyendo &rarr;</a></p>
-</div>
-<hr>
-<br />
-
-<div class="post-preview">
-    <a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu.es/">
-        <h2 class="post-title">Resoluciones no soportadas en #Ubuntu 11.04 Natty Narwhal #NattyNarwhal
-        </h2>
-        
-    </a>
-    <p class="post-meta">Publicado por nohorbee el 
-    
-  
-  6 de
-  
-  Mayo
-    
-
-
-de 2011
-
-</p>
-    Días atrás, instalé en una netbook Ubuntu 11.04 Natty Narwhal. Todo anduvo bastante bien, ningún problema con el Hardware de la máquina. Cuando lo conecté a un monitor externo, noté que a diferencia de sus antecesores (10.04 y 10.10), este no me ofrecía más resoluciones que las del monitor predeterminado de la netbook (lo cual claramente no está bien, ya que la placa de video se banca más resolución).<div>Luego de investigar unos minutos, dí con <a href="https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions">https://wiki.ubuntu.com/X/Config/Resolution#Adding undetected resolutions</a>, en donde explican perfectamente como solucionar este y otros problemas relacionados con las resoluciones.</div><div>Básicamente, hay que especificarlas manualmente. La buena noticia es que puede especificarse diferentes sets de resoluciones para las diferentes salidas de la PC. En este caso, la salida que yo necesitaba modificar era la VGA1.</div><div>Los comandos son básicamente 2:</div><div>- xrandr : trabaja sobre el archivo que contiene esas entradas.</div><div>- cvt: dada una resolución, nos da los datos que necesitamos para configurarla.</div><div>
-<br /></div><div>Los pasos serían: CVT para averiguar los datos, xrandr --newmode para crear el modo, xrandr --addmode para agregar el modo a la salida correspondiente.</div><div>
-<br /></div><div>Si ejecutamos estos pasos en la consola, serán válidos para UNA sesión solamente. Para hacerlos permanente hay que ejecutarlos cada vez que se inicia la sesión o, mejor aún para evitar pequeños destellos debido a ajustes de resolución, al iniciar el SO.</div><div>
-<br /></div><div>Esta última opción se logra agregando los comandos correspondientes al archivo /etc/gdm/Init/Default , justo antes de la línea: <span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">initctl -q emit login-session-start DISPLAY_MANAGER=gdm</span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; ">
-<br /></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; "><meta equiv="content-type" content="text/html; charset=utf-8"><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; ">En mi caso, nuevamente considerando el uso de GDM y la salida VGA1, ejecuté todos los CVT, y agregué las siguientes líneas (te pueden ahorrar media horita) :</span></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); font-family: monospace; font-size: 13px; line-height: 19px; "><span class="Apple-style-span" style="font-family: Georgia, serif; font-size: 16px; color: rgb(0, 0, 0); line-height: normal; ">
-<br /></span></span></div><div><span class="Apple-style-span" style="color: rgb(51, 51, 51); line-height: 19px; "><span class="Apple-style-span" style="color: rgb(0, 0, 0); line-height: normal; "><span class="Apple-style-span"  ><div>xrandr --newmode "1920x1200"  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync</div><div>xrandr --addmode VGA1 1920x1200</div><div>xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync</div><div>xrandr --addmode VGA1 1920x1080</div><div>xrandr --newmode "1680x1050"  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync</div><div>xrandr --addmode VGA1 1680x1050</div><div>xrandr --newmode "1600x1200"  161.00  1600 1712 1880 2160  1200 1203 1207 1245 -hsync +vsync</div><div>xrandr --addmode VGA1 1600x1200</div><div>xrandr --newmode "1600x900"  118.25  1600 1696 1856 2112  900 903 908 934 -hsync +vsync</div><div>xrandr --addmode VGA1 1600x900</div><div>xrandr --newmode "1440x900"  106.50  1440 1528 1672 1904  900 903 909 934 -hsync +vsync</div><div>xrandr --addmode VGA1 1440x900</div><div>xrandr --newmode "1400x1050"  121.75  1400 1488 1632 1864  1050 1053 1057 1089 -hsync +vsync</div><div>xrandr --addmode VGA1 1400x1050</div><div>xrandr --newmode "1360x768"   84.75  1360 1432 1568 1776  768 771 781 798 -hsync +vsync</div><div>xrandr --addmode VGA1 1360x768</div><div>xrandr --newmode "1280x1024"  109.00  1280 1368 1496 1712  1024 1027 1034 1063 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x1024</div><div>xrandr --newmode "1280x800"   83.50  1280 1352 1480 1680  800 803 809 831 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x800</div><div>xrandr --newmode "1280x720"   74.50  1280 1344 1472 1664  720 723 728 748 -hsync +vsync</div><div>xrandr --addmode VGA1 1280x720</div><div>xrandr --newmode "1024x768"   63.50  1024 1072 1176 1328  768 771 775 798 -hsync +vsync</div><div>xrandr --addmode VGA1 1024x768</div></span></span></span></div><div>
-<br /></div><div>Recordá que tenés que reiniciar para que los cambios tengan efecto.</div><div>
-<br /></div><div>Espero que les sirva.</div><meta equiv="content-type" content="text/html; charset=utf-8"><meta equiv="content-type" content="text/html; charset=utf-8">
-    <p class="read-more"><a href="/es/2011/05/06/resoluciones-no-soportadas-en-ubuntu.es/" class="read-more">Seguir leyendo &rarr;</a></p>
 </div>
 <hr>
 <br />
