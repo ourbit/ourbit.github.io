@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>"Copiando" una base de datos DB2 - OurBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55d608d53393428d" async="async"></script>
+    <!-- Post Header -->
+    <!--Google Analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66576431-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <link rel="canonical" href="http://ourbit.norbertoherz.com/es/2010/09/10/copiando-una-base-de-datos-db2.es/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/es/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/es/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/es/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/es/">OurBit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/es/">Inicio</a>
+                </li>
+                <li>
+                    <a href="/es/archives">archivo</a>
+                </li>
+                <li><a>|</a></li>
+                <li>
+                  
+                      <a href="http://norbertoherz.com/es">norbertoherz.com</a>
+                  
+
+                </li>
+                <li>
+                
+                    
+                    <a href="/2010/09/10/copiando-una-base-de-datos-db2.es/" >English Version</a>
+                
+                </li>
+
+                <!--  -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/es/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/es/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>"Copiando" una base de datos DB2</h1>
+                    
+                    <span class="meta">Publicado por nohorbee el
+                      
+                      
+  
+  10 de
+  
+  Septiembre
+    
+
+
+de 2010
+
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+  				Si algo tiene DB2 (de bueno y de malo) es que para realizar casi cualquier operación, existen muchas maneras diferentes de hacerlo (más de las necesarias quizas). Pero esto lleva a tener que conocer las diferentes precondiciones para cada procedimiento.<div>En este caso, algo que debería ser sencillo, puede resultar un poco engorroso (la documentación está dando vueltas por allí, pero algo desorganizada). </div><div>¿Como copiar una base de datos? Existen diversas maneras de hacerlo.</div><div><ul><li>Opción 1: Backup &amp; Restore: Esta opción es útil cuando se quiera realizar una copia de seguridad para ser restaurada más tarde en el mismo server del cual se origina, o incluso, en máquinas con características similares (sobretodo, sistema operativo). Existen 2 tipos, pero más allá de sus diferencias técnicas, quiero hacer hincapié en sus pre-requisitos y sus pos-condiciones:<ul><li>Online Backup: La principal ventaja, es que no existe la necesidad de desconectar todas las aplicaciones que estén haciendo uso de la base de datos. Una desventaja: NO SE PUEDE RESTAURAR EN UN ENTORNO CON DISTINTO SISTEMA OPERATIVO (y por este motivo empezó mi búsqueda).</li><li>Offline Backup: No tiene el problema de la restauración en otras plataformas, pero, claro está, necesita que todas las aplicaciones que estén accediendo a la base, cierren sus conexiones. (Nota: para saber que aplicaciones tienen conexión, ver el comando db2 list applications).</li></ul></li><li>Opción 2: DB2move: Estando en el entorno de la base que quiere hacer copiada, DB2move <database> export, realiza una exportación de todos los datos, generando una buena cantidad de archivos dentro de la carpeta donde se ejecuta el comando. Luego, haciendo DB2move <database> load, estando en la carpeta que contiene los archivos, los datos se cargan a la base de datos indicadas. He aquí, que esa base, debe existir y tener la misma estructura de tablas y schemas que la original (incluso constrains). Afortunadamente, esto es facil de obtener también: db2look -d <database> -e -a -o <file> genera el DDL y lo almacena en el file especificado (usando la base de datos, pero no creandola). Luego, Creando la base de datos (CREATE command) y corriendo db2 -tvf <file>, somos capaces de crear la estructura de base de datos, para luego poder correr el db2move <database> load que terminará de importar los datos.</li></ul>Pasando en limpio, los pasos de esta segunda opción serían:</div><div>1. Generar el DDL: db2look -d <database> -e -a -o <file></div><div>2. Generar el export de datos: db2move <database> export</div><div>3. Suponiendo que estamos conectados a un servidor remoto y queremos pasarlo a alguna otra terminal, copiar la carpeta con el archivo con ddl y los exports a la nueva terminal.</div><div>4. En la terminal, db2 create database <database></div><div>5. Generar la estructura: db2 -tvf <file></div><div>5. Importar los datos: db2move <database> load</div><div>
+<br /></div><div>Todos los comandos de DB2 tienen infinidad de opciones, y los mencionados no son la excepción, pero para simplificar, preferí ir directo al punto. En los links adjuntos, paso algunas fuentes que usé, y siempre pueden ver la documentación de TODOS los comandos de DB2 en <a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html">http://www.ibm.com/developerworks/data/library/techarticle/dm-0406dang/index.html</a> .</div><div>
+<br /></div><div>Links útiles:</div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/pworld/0112mccluney.html">Backup &amp; Restore</a></div><div><a href="http://www.ibm.com/developerworks/data/library/techarticle/dm-0403melnyk/index.html">DB2 cloning databases across different platforms</a></div><meta equiv="content-type" content="text/html; charset=utf-8">
+
+                  <!-- <hr>
+
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/es/2010/07/30/actualizar-twitter-con-posts-en-blogger.es/" data-toggle="tooltip" data-placement="top" title="Actualizar twitter con posts en blogger">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/es/2010/11/04/estetica-mac-en-ubuntu.es/" data-toggle="tooltip" data-placement="top" title="Estética MAC en Ubuntu">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES * * */
+                      var disqus_shortname = 'ourbitblog';
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+              </div>
+          </div>
+      </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/es/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="skype:norberto.herz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://twitter.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <li>
+                        <a href="https://www.linkedin.com/pub/norberto-herz/5/887/177">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://github.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/es/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/es/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/es/js/clean-blog.min.js "></script>
+
+<script type="text/javascript">
+var addthis_share = addthis_share || {}
+addthis_share = {
+  passthrough : {
+    twitter: {
+      via: "nohorbee"
+    }
+  }
+}
+</script>
+
+
+</body>
+
+</html>

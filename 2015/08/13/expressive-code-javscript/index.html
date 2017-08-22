@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Writing expressive code in Javascript using foreforEach, filter, map, reduce, every and some methods">
+
+    <title>Expressive code in Javascript - OurBit</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55d608d53393428d" async="async"></script>
+    <!-- Post Header -->
+    <!--Google Analytics-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66576431-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <link rel="canonical" href="http://ourbit.norbertoherz.com/2015/08/13/expressive-code-javscript/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/clean-blog.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">OurBit</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/archives">Archives</a>
+                </li>
+                <li><a>|</a></li>
+                <li>
+                  
+                      <a href="http://norbertoherz.com/">norbertoherz.com</a>
+                  
+
+                </li>
+                <li>
+                
+                    
+                    <a href="/es/2015/08/13/expressive-code-javscript/" >Versión en Español</a>
+                
+                </li>
+
+                <!--  -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+    <script>
+$(window).scroll(function(e) {
+
+
+     if($(window).scrollTop() <= $(document).height()/2) {
+        oVal = ($(window).scrollTop() / 170);
+    } else {
+        oVal = ($(document).height() -
+        $(window).scrollTop() -
+        $(window).height()) / 170;
+
+    }
+
+
+
+    $(".blur").css("opacity", oVal);
+    
+
+});
+</script>
+
+<div class="img-src" style="background-image: url('/img/header-background.jpg')"></div>
+<div class="img-src blur" style="background-image: url('/img/header-background-blur.jpg')"></div>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Expressive code in Javascript</h1>
+                    
+                    <h2 class="subheading">High order functions</h2>
+                    
+                    <span class="meta">Posted by nohorbee on
+                      
+                      
+  August 13, 2015
+
+
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Post Content -->
+<article>
+    <div class="content-wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+  				<p>There are many (maybe too many) aspects to take care of when writing a piece of code: <em>performance, maintainability and readability</em>, for mentioning a few of them.<br />
+One aspect I find particularly interesting is “expressiveness” which means “the ability of enunciate what is being done”.</p>
+
+<p>Since I am a <em>Javascript Hipster (“I loved it before it was catching on”)</em> I would like to show some examples of how <em>Javascript</em> lets us be really expressive working with <em>arrays</em> (and some particular functions): <em>forEach, filter, map, reduce, every</em> and <em>some</em>.
+<!--MORE--></p>
+
+<p>Even though “Expressiveness” is an attribute often associated to the language, all of them let us be more or less expressive when writing different pieces of code that do the same. Because of that, it would be more precise to say that a piece of code is “expressive” if it is capable of really enunciate what is it doing.</p>
+
+<p>Let’s consider, for example, this group of people:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">persons</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">176</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe Jr.&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">22</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Jane Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">127</span><span class="p">},</span>
+  <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Julian Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">32</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="o">:</span> <span class="mi">160</span><span class="p">}</span>
+<span class="p">];</span></code></pre></figure>
+
+<p>Now, let’s traverse this <em>array</em> and, for each person, print “<em>Name</em> is <em>age</em> years old”.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">persons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">age</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>This piece of code is fairly straightforward, short and readable enough. Though, that doesn’t make it necessarily <strong>expressive</strong>. What we were trying to do: Print “<em>Name</em> is <em>age</em> years old” per each person. This is what our code is actually saying:</p>
+
+<ol>
+  <li>Initialize a variable named <em>i</em> with the value <em>0</em>.</li>
+  <li>As long as the variable is lower than the persons quantity, increment it and run the following code block:<br />
+  2.1. Get the name of the person at the index equals to the previously initialized variable.<br />
+  2.2. Concatenate a space, a hyphen and then another space.<br />
+  2.3. Concatenate the age of the person at the index equals to the previously initialized variable.<br />
+  2.4. Log the result on the console.</li>
+</ol>
+
+<p>Let’s start by extracting the code inside the <em>for</em> to a function receiving a <em>person</em> as parameter. The function prints the specified pattern.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">printPattern</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">persons</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">printPattern</span><span class="p">(</span><span class="nx">persons</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>If you are now thinking “this is not even related to <em>Javascript</em> and its <em>arrays</em> functions”, you are right. <em>All you need is to have a little patience</em>.<br />
+We just <em>encapsulated</em> a functionality in order to hide it complexity. Even though <em>encapsulation</em> is a concept mainly related to the Object Oriented Programming paradigm, it can be achieved in so many different ways and <em>functions</em> are an ancient way of doing it. The goal of <em>encapsulating</em> code is not to make it more expressive, but it does it in most of the cases as a collateral effect.</p>
+
+<p>If we read the new code (skipping the new function description):</p>
+
+<ol>
+  <li>Initialize a variable named  <em>i</em> with the value <em>0</em>.</li>
+  <li>As long as the variable is lower to the persons quantity, increment it and</li>
+  <li>Print the pattern for the person at the index equals to the previously initialized variable.</li>
+</ol>
+
+<h3 id="arrayprototypeforeach">Array.Prototype.forEach</h3>
+<p>Though the code has turned into something a little bit more expressive, it seems to be more concerned for the variable <em>i</em>, its initialization and limit than focused on the person itself.
+Fortunately, there are other ways of traversing an <em>array</em>. For example, the  <code>Array.prototype.forEach(function)</code> method.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
+
+<p>If we read this new code:</p>
+
+<ol>
+  <li>For each person, print the pattern.</li>
+</ol>
+
+<p>This way, this piece of code <em>does</em> and <em>expresses</em> exactly what we want it to.
+However, regardless reading it is much simpler, it’s necessary to understand what’s going on behind the curtain.<br />
+For starter, something to highlight about <em>Javascript</em> is that <em>everything (or almost everything) is a message.</em> This means that objects, functions, methods and values are messages (or expressions) and hence, can be passed as parameters.
+Unlike the <em>for</em> that is a statement, the <em>forEach</em> is a method belonging to the object <em>Array</em> (or its <em>prototype</em>). Combining these concepts, <em>forEach</em> traverses the <em>array</em> and invokes the function it received as parameter, on each iteration. During that invocation <em>forEach</em> passes to the other function, the element that is being iterated.
+This could be a homemade <em>forEach</em> impleentation:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">forEach</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">func</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">func</span><span class="p">(</span><span class="k">this</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Additionally <em>forEach</em> receives a second (and optional) parameter that represents a function that will be invoked when the <em>array</em> traversing is over.
+This could look useless for the examples we are working on, however, it becomes essential when working on an asynchronous development scenario (as you would have working with <a href="http://nodejs.org">NodeJS</a>).</p>
+
+<p>There are 2 other parameters that <strong><em>forEach</em></strong> <em>passes to the other function</em>:</p>
+
+<ul>
+  <li><em>index</em>: The index of the element being iterated.</li>
+  <li><em>array</em>: The full <em>array</em>.</li>
+</ul>
+
+<p><em>forEach</em> does not return any result, but it’s possible to modify the <em>array</em> being iterated inside the function it calls (we will learn that it must be done carefully).</p>
+
+<h3 id="not-suitable-for-under-25s">Not suitable for under 25s</h3>
+<p>Let’s suppose that a really exclusive bar is not suitable for under 25s. We could try to write a piece of code that removes from the <em>array</em> those people that don’t match that criteria. The piece of code looks like:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="mi">25</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
+
+<p><strong>Note</strong>: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice"><em>splice</em></a> is useful for removing elements from an <em>array</em>.</p>
+
+<p>If we run this code, we will get the following output:</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span></span><span class="go">John Doe - 27</span>
+<span class="go">Jane Doe - 24</span>
+<span class="go">Julian Doe - 32</span></code></pre></figure>
+
+<p>For some reason, Jane Doe successfully beat our bar’s security and slunk. That reason is cause of countless <em>bugs</em> on countless pieces of code.<br />
+On each iteration <em>index</em> is incremented by 1. First time (<em>index=0</em>) we find John Doe, 27 years old. It is kept in the <em>array</em>. Second time (<em>index=1</em>) we find John Doe Jr, 3 years old (who, of course, <em>shall not pass</em>). When we remove him from the <em>array</em> Jane Doe is moved to the <em>index 1</em> and Julian Doe to the <em>index 2</em>. Third time (<em>index=2</em>) Julian Doe appears. This means that Jane Doe has been skipped. <strong>It’s like if the security guy turned away each time he pull someone away from the bar, and at that moment let anybody go in regardless its age.</strong>
+It’s usually not a good idea to modify the <em>array</em> being iterated. As a workaround we could use an auxiliary <em>array</em> and overwrite the original once the iteration is over.</p>
+
+<p>Regardless of the previous code malfunctioning, let’s analyze its <strong>expressivity</strong>:</p>
+
+<ol>
+  <li>For each person:<br />
+  1.1. Check if it’s age is greater or equals than 25.<br />
+  1.2. If it isn’t, remove 1 position from the <em>array</em> starting at <em>index</em>.</li>
+  <li>For each person, print the pattern (special care to the code in order to understand that it means “for each person that has been kept in the <em>array</em>).</li>
+</ol>
+
+<p>It doesn’t seem to be that bad, but we are still aware of the <em>array</em>, the <em>index</em> and the comparison logic. Furthermore, if we wanted to reuse this code for removing people younger than 18 we would need to duplicate it.
+Let’s start by tackling this second issue</p>
+
+<h3 id="functions-creating-functions">Functions creating functions</h3>
+<p>This is a <em>Javascript</em> feature that, properly used, allows us to write expressive and highly reusable code.
+Let’s take this code as an example:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">olderThan25</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="mi">25</span><span class="p">)</span> <span class="p">}</span>
+ <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">older</span> <span class="o">=</span> <span class="nx">olderThan25</span><span class="p">();</span></code></pre></figure>
+
+<p><em>olderThan25</em> is returning a function that receives a person and returns <em>true</em> if that person is older than 25. It means that, when we assign the result of its execution to the <em>older</em> variable, <code>older(person)</code> will perform the previously mentioned evaluation.<br />
+Thus,</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">older</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;John Doe Jr.&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">}));</span></code></pre></figure>
+
+<p>outputs <code>false</code></p>
+
+<p>Applying this same concept we can achieve a more reusable and even more expressive piece of code. Let’s pass the “age threshold” we want to evaluate as a parameter</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">olderThan</span><span class="p">(</span><span class="nx">threshold</span><span class="p">)</span> <span class="p">{</span>
+   <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">!</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="o">&lt;</span><span class="nx">threshold</span><span class="p">)</span> <span class="p">}</span>
+ <span class="p">}</span>
+<span class="kd">var</span> <span class="nx">olderThan25</span> <span class="o">=</span> <span class="nx">olderThan</span><span class="p">(</span><span class="mi">25</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">olderThan3</span> <span class="o">=</span> <span class="nx">olderThan</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span></code></pre></figure>
+
+<p>Now we can create as many functions we want with different thresholds and name these in a way that represent what it’s being done.<br />
+Applied to the previous code (that was trying to remove people younger than 25):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">olderThan25</span><span class="p">(</span><span class="nx">person</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">arr</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>The code is still not working (the problem described above is still there).</li>
+  <li>Even though the readability has improved, it’s still being read as “if the person is older than 25, remove 1 position from the <em>array</em> starting at <em>index</em>”. Expressivity is almost the same.</li>
+</ul>
+
+<h3 id="arrayprototypefilter">Array.Prototype.filter</h3>
+
+<p>Fortunately <em>JavaScript</em> gives us an <em>array</em> method that does exactly what we are looking for.
+The <em>filter</em> method receives 2 parameters:</p>
+
+<ul>
+  <li><em>callback</em>: The function that evaluates the condition that defines if the element being iterated belongs to the set. It needs to return <em>true</em> if the element belongs, and <em>false</em> otherwise.</li>
+  <li><em>contextObject</em> (optional): The object that will be used as <em>this</em> inside the <em>callback</em> function.</li>
+</ul>
+
+<p>At the same time,  <em>filter</em> passes 3 parameters to <em>callback</em> (the same way <em>forEach</em> does):</p>
+
+<ul>
+  <li><em>element</em>: The element being iterated.</li>
+  <li><em>index</em>: The position of that element inside the <em>array</em>.</li>
+  <li><em>array</em>: The <em>array</em> being iterated.</li>
+</ul>
+
+<p>Unlike the <em>forEach</em>, <em>filter</em> does return a <strong>new</strong> <em>array</em> with the elements that match the test performed by <em>callback</em>.</p>
+
+<p>Considering this new method, the next piece of code solves the requirement:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan25</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">printPattern</span><span class="p">);</span></code></pre></figure>
+
+<p>About its expressivity, it could be read as:</p>
+
+<ol>
+  <li>Filter those persons <strong>not</strong> older than 25 and print the pattern for each one.</li>
+</ol>
+
+<p>An issue about this method expressivity is its name <em>filter</em> (and/or the fact that it removes the element when <em>callback</em> returns <em>false</em>). This would make us to read “filter older than 25”, when we are doing exactly the opposite. <em>Well, nothing is perfect</em>.</p>
+
+<h3 id="watch-your-weight">Watch your weight</h3>
+
+<p>We have succeeded at working with each person in our group and performing operations with each one of them. But lot of times we’ll need to work with the group as a whole.<br />
+Let’s suppose that <em>our</em> persons are stepping into an elevator. For security reasons, moderns elevators use a scale in order to make sure that the maximum allowed weight is not exceeded. Let’s try to avoid the shame of hearing the buzzer and calculate the total weight in advance:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">totalWeight</span> <span class="o">+=</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span> <span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></figure>
+
+<p>Some observations about this code:</p>
+
+<ul>
+  <li>As we have seen, <em>forEach</em> receives a function as its first parameter. This far, we used to create the function as a previous step and pass its name as parameter. However, since <em>function</em> is an expression that returns a function, <em>Javascript</em> syntax lets us to define the function in place. This function in particular has no name. These kind of functions are called <strong>anonymous functions</strong>. Functions categorization would worth its own post.</li>
+  <li>Since <em>forEach</em> is not returning any value, it’s necessary to define an external variable that accumulates the successive sums.</li>
+  <li>The code we are going to write is not <em>automatically</em> more expressive than the one we wrote above (<strong>IMO</strong>), but doubtless, it turns amazingly easy to get when we understand the meaning and importance of <em>map</em> and <em>reduce</em> methods.</li>
+</ul>
+
+<p>Step by step. Let’s first consider how sensitive people are about their weight and let’s try to keep it confidential. Let’s obtain a new <em>array</em> that only contains the weight of the people in our group.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">weights</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">weights</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span> <span class="o">=</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span><span class="p">;</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>This code can be read as:</p>
+
+<ol>
+  <li>Declare an empty <em>weights</em> array.</li>
+  <li>For each person, invoke a function that receives the person and its index inside the original <em>array</em>.</li>
+  <li>The function gets the person weight and assign it to that index but in the new <em>array</em>.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">weights</span><span class="p">);</span></code></pre></figure>
+
+<p>outputs</p>
+
+<figure class="highlight"><pre><code class="language-console" data-lang="console"><span></span><span class="go">[ 176, 22, 127, 160 ]</span></code></pre></figure>
+
+<h3 id="arrayprototypemap">Array.prototype.map</h3>
+
+<p>In general, we call “<a href="https://en.wikipedia.org/wiki/Map_(mathematics)">to map</a>” to the process of associating elements from one set with elements from a different set. This means that the code above “maps people with/by their corresponding weights”.
+It would be nice to be able to write that same thing in <em>Javascript</em> the following way:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">);</span></code></pre></figure>
+
+<p>As a matter of fact, if we defined <em>weight</em> as a function that returns the weight of a person, the code above does <strong>exactly</strong> what it says.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">weight</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">weight</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p>The <em>map</em> method receives the same 2 parameters than <em>filter</em>:</p>
+
+<ul>
+  <li><em>callback</em>: The function that determines the association criteria (it must return the value to map to each element).</li>
+  <li><em>contextObject</em> (optional): The object that will be used as <em>this</em> inside the <em>callback</em> function.</li>
+</ul>
+
+<p>At the same time <em>map</em> passes 3 parameters to <em>callback</em> (the same way <em>forEach</em> and <em>filter</em> do):</p>
+
+<ul>
+  <li><em>element</em>: The element being iterated.</li>
+  <li><em>index</em>: The <em>index</em> of that element in the <em>array</em>.</li>
+  <li><em>array</em>: The <em>array</em> being iterated.</li>
+</ul>
+
+<p><em>map</em> returns a <strong>new</strong> <em>array</em> with the elements of the second set. In our case it returns an <em>array</em> with people weights.</p>
+
+<p>Going back to our example, each weight doesn’t help us to determine whether is dangerous to activate the elevator or not. We still need to get the total weight.</p>
+
+<p>Following the previous approach, and taking advantage of the <em>map</em> function, our code would look like this:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">totalWeight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">weight</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">totalWeight</span> <span class="o">+=</span> <span class="nx">weight</span> <span class="p">;</span>
+<span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">totalWeight</span><span class="p">);</span></code></pre></figure>
+
+<p>It means that we first get the weights <em>array</em> and then we iterate it performing the sum. This is a small (almost trivial) improvement in comparison with our last version.</p>
+
+<h3 id="arrayprototypereduce">Array.prototype.reduce</h3>
+
+<p>The term <em>reduce</em> is, IMO, not too much descriptive in regards to the goal of this method. Other languages (associated to the <em>functional</em> paradigm) usually refers to this function as <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)"><em>fold</em></a>. A good approach to understand it is to think about <em>reduce</em> as “summarize”. We want to find a single value that <em>summarizes</em> every other values. For example, 10 summarizes 4, 3, 2 and 1 if we consider the addition as a way of summarizing. 24 summarizes 4, 3, 2, 1 if we consider multiplication as a way of summarizing.<br />
+So, defining sum as:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="p">;</span> <span class="p">}</span></code></pre></figure>
+
+<p>and considering the following piece of code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span> <span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">weight</span><span class="p">).</span><span class="nx">reduce</span><span class="p">(</span><span class="nx">sum</span><span class="p">);</span></code></pre></figure>
+
+<p>we could read: summarize by sum the weight of the people. Or, sum the weight of the people.</p>
+
+<p><em>reduce</em> method receives 2 parameters:</p>
+
+<ul>
+  <li><em>callback</em>: The function containing the reduction logic (the way of summarizing).</li>
+  <li><em>initialValue</em> (optional): The initial value of the <em>acummulator</em>.</li>
+</ul>
+
+<p>At the same time, <em>reduce</em> passes 4 parameters to <em>callback</em>:</p>
+
+<ul>
+  <li><em>previousValue</em>: The result of <em>callback</em> last execution, or <em>initialValue</em> (the first time it’s executed).</li>
+  <li><em>currentValue</em>: The value being iterated.</li>
+  <li><em>index</em>: The position of that value inside the <em>array</em>.</li>
+  <li><em>array</em>: The <em>array</em> being iterated.</li>
+</ul>
+
+<p><em>reduce</em> returns an <strong>only</strong> value that matches the result of <em>callback</em> last execution.</p>
+
+<p>There are some qualities of <em>reduce</em> that could label it as a recursive method. Instead of thinking <em>reduce</em> as a function that iterates the <em>array</em> applying <em>callback</em>, we could think about it as a function that takes the <em>array</em> first position and applies <em>callback</em> passing the current position and the result of <em>reduce</em> for a second <em>array</em> that goes from the original <em>array</em> second position to the last one. This is meaningless when using it, but knowing this, will help us to understand how it works, why it <strong>accumulates</strong> and how the <em>initialValue</em> works.</p>
+
+<h3 id="a-visit-to-the-drive-in-cinema">A visit to the drive-in cinema</h3>
+
+<p>People get out of the elevator, jumped into the car and drove to the drive-in cinema. They choose a not suitable for under 18s movie. We need to figure out if <strong>every</strong> person in the car matches the criteria.</p>
+
+<p>There are several ways of achieving this. For example:</p>
+
+<ul>
+  <li>Iterate and query</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">areOlder</span> <span class="o">=</span> <span class="nx">areOlder</span> <span class="o">&amp;&amp;</span> <span class="nx">olderThan18</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>We are using the <em>olderThan(threshold)</em> in order to generate the function <em>olderThan18</em>.</p>
+
+<ul>
+  <li>Reduce by applying the logical “AND”</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousOlder18</span><span class="p">,</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">isPreviousOlder18</span> <span class="o">&amp;&amp;</span> <span class="nx">olderThan18</span><span class="p">(</span><span class="nx">person</span><span class="p">));</span>
+<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li>Mapping the ages <em>array</em> and reduce by applying the logical “AND”</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">person</span><span class="p">.</span><span class="nx">age</span><span class="p">;</span>
+<span class="p">}).</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">isPreviousGreater18</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="nx">isPreviousGreater18</span> <span class="o">&amp;&amp;</span> <span class="nx">greaterThan18</span><span class="p">(</span><span class="nx">age</span><span class="p">));</span>
+<span class="p">},</span><span class="kc">true</span><span class="p">);</span></code></pre></figure>
+
+<p>This one is similar to the previous one, but before <em>reducing</em> we get the ages <em>array</em> and hence, instead of using a function that receives a person and compares it age, we are now using a similar one that simply compares the age. <em>greaterThan18</em> is generated in a similar way than <em>olderThan18</em>.</p>
+
+<p>All these solutions have the same problem (or improvement opportunity): These are evaluating the entire <em>array</em> regardless what happens with each element. In our case, evaluating the second element we could tell that not every people are older than 18. In <em>boolean</em> evaluations, this is known as “short circuit evaluation”.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kc">true</span> <span class="o">||</span> <span class="nx">whatever</span> <span class="c1">// -&gt; true</span>
+<span class="kc">false</span> <span class="o">&amp;&amp;</span> <span class="nx">whatever</span> <span class="c1">// -&gt; false</span></code></pre></figure>
+
+<p>In both cases, evaluating <em>whatever</em> is useless.</p>
+
+<p>This seems to be meaningless in a 4 elements <em>array</em>. However, what would happen if we had a bus, train, or plain trying to enter the drive-in cinema? Aside from the probable venue space issue, our solutions would be using unnecesary processing cycles A.K.A <strong>bad performance</strong>.<br />
+The way of solving this issue is <em>breaking</em> the iterations when evaluation is no longer needed. The instruction <em>break</em> does exactly that, but is not suitable for the methods we are using (as it is for the classic <em>for</em>). There are other “techniques” for quitting these methods, but none of them is smart nor recommended (for example, we could assign 0 to the <em>array.length</em> if we didn’t need to keep working with the <em>array</em>. We could also make a copy of that <em>array</em> if we wanted to change its length without any problem. Or we could just <em>throw an exception</em> and <em>catch it</em> immediately after the method call).</p>
+
+<p>But there is a reason for this problem to appear when using these methods. On the <em>forEach</em> case, that reason is even explicit at its name. <em>For Each</em> element in the <em>array</em> implies that <em>all</em> of its elements will be iterated.</p>
+
+<h3 id="every-some">Every-Some</h3>
+
+<p>Going back to the <strong>expressiveness</strong> topic, none of our solutions turned to be too much expressive (do the exercise yourselves of identifying what is being said by each one and what is being done). The statement should be simpler. Verify that every person is older than 18.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></figure>
+
+<p>This solution says and does exactly what we are looking for. It returns <em>true</em> if every people in the array are older than 18. Otherwise, it returns <em>false</em>.
+In addition of being highly expressive, <em>every</em> respects the short circuit evaluation. This means that it will stop iterating as soon as it founds a not matching person.</p>
+
+<p><em>every</em> method receives 2 parameters:</p>
+
+<ul>
+  <li><em>callback</em>: The function evaluating the condition to match (it must return <em>true</em> or <em>false</em>).</li>
+  <li><em>contextObject</em> (optional): The object that will be used as <em>this</em> inside the <em>callback</em> function.</li>
+</ul>
+
+<p>At the same time, <em>every</em> passes 3 parameters to <em>callback</em> (the same way that the other methods do):</p>
+
+<ul>
+  <li><em>element</em>: The element being iterated.</li>
+  <li><em>index</em>: The <em>index</em> of that element inside the <em>array</em>.</li>
+  <li><em>array</em>: The <em>array</em> being iterated.</li>
+</ul>
+
+<p><em>every</em> returns <em>true</em> if all its elements match the condition, or <em>false</em> as soon as it find one element that doesn’t.</p>
+
+<h3 id="looking-for-a-suitable-movie">Looking for a suitable movie</h3>
+
+<p>Movies age restrictions must be observed. Although our people didn’t find any “suitable for all audiences”, a new release has just appeared and it can be watched even by children with adult supervision. Putting aside these adults criteria, let’s write a solution that evaluates if at least one person is older than 18. Before showing all the alternatives (the way we did for the previous scenario <em>every</em>), let’s think: wouldn’t exist any other method capable of saying and doing what we are looking for?
+The short answer is <strong>yes</strong>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">olderThan18</span><span class="p">);</span></code></pre></figure>
+
+<p><em>some</em> method receives 2 parameters:</p>
+
+<ul>
+  <li><em>callback</em>: The function evaluating the condition to match (it must return <em>true</em> or <em>false</em>).</li>
+  <li><em>contextObject</em> (optional): The object that will be used as <em>this</em> inside the <em>callback</em> function.</li>
+</ul>
+
+<p>At the same time, <em>every</em> passes 3 parameters to <em>callback</em> (the same way that the other methods do):</p>
+
+<ul>
+  <li><em>element</em>: The element being iterated.</li>
+  <li><em>index</em>: The <em>index</em> of that element inside the <em>array</em>.</li>
+  <li><em>array</em>: The <em>array</em> being iterated.</li>
+</ul>
+
+<p><em>some</em> returns <em>false</em> if none of its elements matches the condition, or <em>false</em> as soon as it find one element that does.</p>
+
+<h3 id="performance">Performance</h3>
+
+<p>As I mentioned at the very beginning, <em>expressivity</em> is just one of many aspects that must be considered. Many times this aspects run into conflict and it’s necessary to evaluate which one is the most important.<br />
+Let’s consider the following problem: I must get an <em>array</em> with people with weight under 130 pounds and older than 10.
+Using what we have seen, we could naturally think that the following solution is the ideal one:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">softerThan130</span><span class="p">);</span></code></pre></figure>
+
+<p>As a matter of fact, this solution is not ideal. It’s just expressive.
+When filtering, we are iterating the <em>array</em>. When filtering twice, we are iterating 2 <em>arrays</em>. If <em>persons</em> contains N elements and M are older than 10, the solution will iterate N + M elements. The following solution might be a little bit less expressive, but we can be sure that only N elements will be iterated:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">persons</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">olderThan10AndsofterThan130</span><span class="p">)</span></code></pre></figure>
+
+<p>considering</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">olderThan10AndsofterThan130</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">olderThan10</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">softerThan130</span><span class="p">(</span><span class="nx">person</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>When compromising aspects, it’s necessary to consider the use case. If our <em>arrays</em> are containing families (a few elements), we might allow ourselves to have the most expressive code. But if we were processing the entire electoral roll, we should better worry about the <em>performance</em>.</p>
+
+<h3 id="summary">Summary</h3>
+
+<p><em>Javascript</em> syntax is powerful enough to let us work with the good parts of the <em>procedural</em>, <em>object oriented</em> and <em>functional</em> paradigms. Good practices of each paradigm could give us advantages when trying to improve some aspect of our code. Most of the times, when improving one aspect, we will be worsening others (For example: More Expressivity -&gt; Less Performance). In occasions, these aspects will be related in more complex ways (For example: More Performance and Good Expressivity -&gt; Less Flexibility). It’s part of our job when writing a piece of code, to evaluate which aspects we want to favor and which ones we will be punishing. Most of the times we will jump into the pitfall and favor those aspects that we like the most. That’s something to avoid. In order to know which aspects should be improved, the best option is to consider the use case.</p>
+
+
+                  <!-- <hr>
+
+                  <ul class="pager">
+                      
+                      <li class="previous">
+                          <a href="/jekyll/update/2015/08/03/moving-to-gh-pages/" data-toggle="tooltip" data-placement="top" title="Moving to GitHub Pages">&larr; Previous Post</a>
+                      </li>
+                      
+                      
+                      <li class="next">
+                          <a href="/2015/09/09/from-api-to-streaming-api/" data-toggle="tooltip" data-placement="top" title="From API to Streaming API">Next Post &rarr;</a>
+                      </li>
+                      
+                  </ul> -->
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                      /* * * CONFIGURATION VARIABLES * * */
+                      var disqus_shortname = 'ourbitblog';
+
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+              </div>
+          </div>
+      </div>
+    </div>
+</article>
+
+<hr>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="skype:norberto.herz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-skype fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://twitter.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="https://www.facebook.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+                    <li>
+                        <a href="https://www.linkedin.com/pub/norberto-herz/5/887/177">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    
+                    <li>
+                        <a href="https://github.com/nohorbee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; OurBit 2017</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/clean-blog.min.js "></script>
+
+<script type="text/javascript">
+var addthis_share = addthis_share || {}
+addthis_share = {
+  passthrough : {
+    twitter: {
+      via: "nohorbee"
+    }
+  }
+}
+</script>
+
+
+</body>
+
+</html>

@@ -5,9 +5,950 @@
     <description>Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 22 Aug 2017 17:39:41 -0300</pubDate>
-    <lastBuildDate>Tue, 22 Aug 2017 17:39:41 -0300</lastBuildDate>
+    <pubDate>Tue, 22 Aug 2017 17:54:11 -0300</pubDate>
+    <lastBuildDate>Tue, 22 Aug 2017 17:54:11 -0300</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>That's not our code</title>
+        <description>&lt;p&gt;The first time I read about the “Conway’s Law” was in the context of an excellent book: &lt;a href=&quot;http://shop.oreilly.com/product/0636920033158.do&quot;&gt;“Building Microservices” by Sam Newman&lt;/a&gt;. The law states that: “Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization’s communication structure”.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;When talking about Microservices, we usually say that not only are these a way to get independent components, but also to have autonomous teams building and operating those components. It seems we are saying that some properties from our systems (or components, or services, or applications) are also desirable for our organization. Furthermore, speaking about teams’ autonomy, we could end up saying that the same way components should be highly cohesive and lowly coupled to others, teams should mimic that behavior. Well, while this sounds tempting, it could also be extremely dangerous for an Engineering organization.&lt;/p&gt;
+
+&lt;p&gt;For components, it is true that we want to encapsulate behaviors in a way that we can request something to be done by knowing how to ask (let’s remember that lowly coupled is not “totally decoupled”). Great encapsulation is usually measured by how good the implementation details are hidden: Component A does not know anything about Component B implementation.&lt;/p&gt;
+
+&lt;p&gt;Let’s imagine how this could end up being transposed to a couple of teams. Team A owns Component A and Team B owns Component B. Component A requests a service from Component B by hitting its API. Everything goes smoothly until Component B fails. At that stage, the plot thickens: For Team B, the bug is a minor one, while Team A considers it critical. Now let’s make it spicy: Imagine Team B is overloaded so, nevermind about the criticality, the bug will not be fixed in an acceptable time. Instinctively, anybody could say “Hey, let’s have anybody from Team A fixing this bug on the component owned by Team B” and, assuming that Team A has some capacity to tackle it, that would be a viable solution. However, that would violate the Encapsulation principle at team level.&lt;/p&gt;
+
+&lt;p&gt;If we had a strict policy about this, our organization would be limited by a ridiculously inflexible dogma. A component must avoid knowing its peers’ implementation details. That’s good design. But at an organizational level, it’s just poor judgment. As a developer, it won’t hurt to go further and see how that works.&lt;/p&gt;
+
+&lt;p&gt;We could re-think this by considering &lt;strong&gt;ownership as an organizational concept, but not necessarily an operational one&lt;/strong&gt;. “This is mine or yours” works like a charm when organizing modules on a monolith, or services on distributed applications. However, when operating, that should be more like a rule of thumb. We should be more strict when working on something planned (like our roadmap) and more flexible for unplanned situations (like emerging bugs).&lt;/p&gt;
+
+&lt;p&gt;We can learn from great experiences involving open source libraries. When we start using one of these libraries, we are promised that by doing so, we will be able to focus on our functionality and forget the complexity of handling &lt;em&gt;insert whatever thing that library is supposed to do transparently&lt;/em&gt;. Suddenly, you find a bug, and it will kill your architecture unless you hack a smart workaround in your beautiful code that can easily be removed once the bug is fixed. But that’s not the way open source works. Instead of that, you should invest that time in fixing the bug and making the library better. If you do so, you will:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Avoid a hack in your code.&lt;/li&gt;
+  &lt;li&gt;Avoid a hack in others’ code.&lt;/li&gt;
+  &lt;li&gt;Make the library more robust.&lt;/li&gt;
+  &lt;li&gt;Become a contributor and encourage others to follow your leads.&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Win a Nobel price&lt;/del&gt; just kidding, you are just doing your job, but you might get some recognition for that, too.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, to do so, you will need to understand more than just how that library works. You will need to know how it is built.&lt;/p&gt;
+
+&lt;p&gt;Going back to our Engineering organization, you might be thinking: we are a couple of dozens of teams with around ten devs each. It is not the best use of my time to spend it reading the entire code just in case. That is correct. Actually, if every developer did that, there would not be any new features or bugs fixed. &lt;strong&gt;Ever&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Luckily, that’s not necessary either. As an Engineering organization, we must ensure that:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Teams that own components are free enough to quickly ramp somebody up on a small piece of them.&lt;/li&gt;
+  &lt;li&gt;The code is as easy to understand as possible. After all, a good and clean code should be readable.&lt;/li&gt;
+  &lt;li&gt;Tech-leads or Architects are involved and they understand and build cross-teams code.&lt;/li&gt;
+  &lt;li&gt;Devs are always curious and eager: “That’s not ours” should be an organizational decision and not just a bad habit.&lt;/li&gt;
+  &lt;li&gt;This happens as little as possible: Breaking the ownership policy should be measured. Tendencies should be identified and acted upon. After all, it is true that this situation is less efficient than working on our own well-known code.&lt;/li&gt;
+  &lt;li&gt;Teams change: Rotate people, take them outside the comfort zone. Most of the time, people want to change from time to time. If you find a group of people that are not willing to do so, show them how good could it be. If the attitude remains, don’t hesitate in going further.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other ways Conway’s Law will appear that won’t be this harmful to your Engineering organization. For instance, the described scenario could be seen as “load balancing”.&lt;/p&gt;
+
+&lt;p&gt;Keeping the right mindset and the correct culture is key in order to have an organization that understands their boundaries and when it is right to cross them.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Aug 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/08/22/That-is-not-our-code/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/22/That-is-not-our-code/</guid>
+        
+        <category>Conway</category>
+        
+        <category>Ownership</category>
+        
+        <category>Organization</category>
+        
+        <category>Encapsulation</category>
+        
+        <category>Autonomy</category>
+        
+        <category>Engineering</category>
+        
+        <category>Culture</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>APIsAR Episode V - API Management with Azure</title>
+        <description>&lt;p&gt;During an event that took place on May 3, 2017 in Buenos Aires, &lt;a href=&quot;https://twitter.com/germankuber&quot;&gt;German Küber&lt;/a&gt; facilitated a presentation about API Management with &lt;a href=&quot;https://azure.microsoft.com/en-us/&quot;&gt;Azure&lt;/a&gt;, the API Platform developed and commercialized by Microsoft.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;about-the-event&quot;&gt;About the event&lt;/h2&gt;
+
+&lt;p&gt;The event took place at the &lt;a href=&quot;http://avature.net/&quot;&gt;Avature&lt;/a&gt; offices in Buenos Aires and counted with around 30 guests in place plus 15 watching the online streaming. The presentation contained a mix of theoretical explanation about the concepts to be managed, and the way of doing it by making use of the platform features.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/APIsARe05.jpg&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;People attended the event and committed themselves to proposing topics for future episodes. After that, we all enjoyed some snacks and drinks provided by the Venue, meanwhile multiple conversations were being held (philosophy and theology included!)&lt;/p&gt;
+
+&lt;p&gt;You can watch the entire presentation &lt;a href=&quot;https://www.youtube.com/watch?v=DYSffb3rNsE&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DYSffb3rNsE&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;about-apisar&quot;&gt;About APIsAR&lt;/h2&gt;
+
+&lt;p&gt;APIsAR (stands for APIs Argentina) is the first and only group in Argentina that meets to discuss and present topics related with the APIs ecosystem. I founded it &lt;a href=&quot;http://norbertoherz.com&quot;&gt;myself&lt;/a&gt; 3 years ago and it counts with more than 700 members at the moment of writing this post. If you want to receive notifications about upcoming meetups, check the forums and engage with its community, join the Meetup group &lt;a href=&quot;http://meetup.com/APIsAR&quot;&gt;here&lt;/a&gt;. You can also follow its news via twitter (&lt;a href=&quot;http://twitter.com/APIsARgentina&quot;&gt;@APIsARgentina&lt;/a&gt;) and facebook (&lt;a href=&quot;http://facebook.com/APIsArgentina&quot;&gt;APIsArgentina&lt;/a&gt;), and watch the previous episodes on its &lt;a href=&quot;https://www.youtube.com/channel/UCXGY6_mib3hmzz1TQJDoA3A&quot;&gt;Youtube channel&lt;/a&gt;. You can also join the &lt;a href=&quot;https://apisar-slack-inviter.herokuapp.com/&quot;&gt;community slack channel&lt;/a&gt; to get engaged with the topics and discuss with subject matter experts.&lt;/p&gt;
+
+&lt;p&gt;If you have further questions, don’t hesitate to reach me &lt;a href=&quot;http://twitter.com/nohorbee&quot;&gt;@nohorbee&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/05/05/APIsARe05-Azure/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/05/APIsARe05-Azure/</guid>
+        
+        <category>APIsAR</category>
+        
+        <category>meetup</category>
+        
+        <category>APIs</category>
+        
+        <category>Azure</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Owner vs. Victim theory and the pitfall of overusing it</title>
+        <description>&lt;p&gt;If I already have your attention, let me tell you that this is not the place where you will find the meaning of the “Owner vs. Victim” theory which can be found in bazillions of different sources. It will be generally explained, though, since we are talking about it. This article is more about the pitfalls of people reading people and how misusing this theory could lead you to miss important communications.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;In a nutshell, the owner vs. victim theory states that there are (at least) 2 kind of attitudes when facing the same situation and, furthermore, different languages are used by persons depending on the position they take. I will take a random example from &lt;a href=&quot;http://evelynbrooks.com/do-you-use-victim-language/&quot;&gt;this article&lt;/a&gt;, but please, read it to better understand the concept if you didn’t know about it:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Victim: He makes me so mad!&lt;/li&gt;
+  &lt;li&gt;Owner: I feel mad when this happens.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That said, the theory can be used by anyone trying to improve his or her own communication skills, or by people trying to identify these behaviors in others (colleagues, relatives, celebrities, etc). The article is mostly oriented to this second group.&lt;/p&gt;
+
+&lt;h1 id=&quot;some-repeated-behavior&quot;&gt;Some repeated behavior&lt;/h1&gt;
+
+&lt;p&gt;I remember (maybe) 15 years ago, a lot of people talking about NLP (that was actually developed in the 70s). It caught on along my professional circle, mainly driven by a couple of university professors that talked about it as if it was some kind of superpower that you could develop by simply reading a couple of books, learning some cheap tricks to finally read somebody else’s mind. The examples given during classes were quickly adopted by the students and what is worst, everyone started to think that analyzing independent signals was the proper use of this new superpower. So, if you rolled your eyes up-right, you was using your creative brain, so you was imagining something, hence, you was lying. The big pitfall here: you can’t isolate an expression and jump into a conclusion. Expressions are evaluated all together and what is harder, you don’t analyze these, you perceive these. There should be a moment where you are trained enough to start having impressions beyond what is being said, but without knowing exactly what you saw that raised that particular flag. It becomes natural. Anyway, no matter how good you get at it, if you are still trying to “read people” you are getting it all wrong. NLP is about understanding that different people communicate in different manners so you can count with more tools to understand and deliver messages.&lt;/p&gt;
+
+&lt;p&gt;I have seen the Owner vs. Victim theory “users” running into that same pitfall turning this wonderful concept into a label maker. What is the point of putting somebody into the victim container?&lt;/p&gt;
+
+&lt;h1 id=&quot;simple-tricks-to-escape-this-pattern&quot;&gt;Simple tricks to escape this pattern&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Know this theory in deep: You might have heard about it at the office hall, as a passing conversation during a meeting, or even read about this in some incomplete article (like this one). Good material will always mention the origins of the theory and the real power of using it to help people to overcome challenging situations.&lt;/li&gt;
+  &lt;li&gt;Try to embrace a holistic approach: Exposing a frustration out loud every now and then doesn’t convert a person into a victim (the same way than taking care of a problem once in a lifetime won’t make you an owner). Context is everything when analyzing behaviors.&lt;/li&gt;
+  &lt;li&gt;Avoid labeling people: “She is an owner” or “He is a victim” are only valid if you mean that somebody is at some state at a particular moment. If you don’t think that this is something that can change, what is the point of spending time understanding the theory?&lt;/li&gt;
+  &lt;li&gt;Understand what to do: Detecting this kind of behavior could be tremendously impactful for your team and your company. But it first needs to be handy for the person you want to help to deal with the problem.&lt;/li&gt;
+  &lt;li&gt;Avoid using it in the conversation: “I notice some victim language in the way you are speaking” is definitively not the way to approach the subject. First of all, it is just your impression. Second, it is not valuable for the person in that place. It just states something that was obvious for you and doesn’t add any value in the path to overcoming the phase. Try with “Hey, are you having a hard time with this?” instead.&lt;/li&gt;
+  &lt;li&gt;Keep yourself honest: How often are you listening to yourself and analyzing if you are not at that place? How would you deal with it? Is your experience valuable for others in that situation?&lt;/li&gt;
+  &lt;li&gt;Assess the situation yourself: This shouldn’t be an excuse but, have you ever seen a victim using victim language? That’s because a &lt;strong&gt;victim is a victim&lt;/strong&gt;. Changing that reality is usually close to impossible. But helping somebody to process that reality in a different way is simpler and more feasible.&lt;/li&gt;
+  &lt;li&gt;Look for a mentor: If you think that you are not being capable of helping somebody out and that you could get better at it, identify people that are great at analyzing behaviors and ask them for help and coaching to master the art of &lt;strong&gt;helping somebody else&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Jan 2017 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2017/01/23/Victim-Vs-Owner/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/23/Victim-Vs-Owner/</guid>
+        
+        <category>Owner</category>
+        
+        <category>Victim</category>
+        
+        <category>Management</category>
+        
+        <category>Communication</category>
+        
+        <category>NLP</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>APIsAR Episode IV - Introduction to GraphQL</title>
+        <description>&lt;p&gt;During an event that took place on November 9, 2016 in Buenos Aires, &lt;a href=&quot;https://twitter.com/qcho86&quot;&gt;Horacio “Qcho” Gomez&lt;/a&gt; presented an introduction to &lt;a href=&quot;http://graphql.org/&quot;&gt;GraphQL&lt;/a&gt;, the technology developed and used by facebook to build their own APIs.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;about-the-event&quot;&gt;About the event&lt;/h2&gt;
+
+&lt;p&gt;The event took place at the &lt;a href=&quot;http://avature.net/&quot;&gt;Avature&lt;/a&gt; offices in Buenos Aires and counted with around 50 guests in place plus 20 watching the online streaming. The presentation was shaped by a brief theoretical introduction, followed by a set of live demos covering the different aspects of the &lt;a href=&quot;https://facebook.github.io/graphql/&quot;&gt;GraphQL Spec&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/APIsARe04.jpg&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;People were really engaged, asking tons of interesting questions about the language capabilities and some possibilities of applying it on their daily projects.&lt;/p&gt;
+
+&lt;p&gt;You can watch the entire presentation &lt;a href=&quot;https://www.youtube.com/watch?v=snsHBPwb3NI&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://drive.google.com/open?id=0B6CdAm2r3U8mRnNfc1NTYjZiSEk­&quot;&gt;download the slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/snsHBPwb3NI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;about-apisar&quot;&gt;About APIsAR&lt;/h2&gt;
+
+&lt;p&gt;APIsAR (stands for APIs Argentina) is the first and only group in Argentina that meets to discuss and present topics related with the APIs ecosystem. I founded it &lt;a href=&quot;http://norbertoherz.com&quot;&gt;myself&lt;/a&gt; 3 years ago and it counts with more than 600 members at the moment of writing this post. If you want to receive notifications about upcoming meetups, check the forums and engage with its community, join the Meetup group &lt;a href=&quot;http://meetup.com/APIsAR&quot;&gt;here&lt;/a&gt;. You can also follow its news via twitter (&lt;a href=&quot;http://twitter.com/APIsARgentina&quot;&gt;@APIsARgentina&lt;/a&gt;) and facebook (&lt;a href=&quot;http://facebook.com/APIsArgentina&quot;&gt;APIsArgentina&lt;/a&gt;), and watch the previous episodes on its &lt;a href=&quot;https://www.youtube.com/channel/UCXGY6_mib3hmzz1TQJDoA3A&quot;&gt;Youtube channel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you have further questions, don’t hesitate to reach me &lt;a href=&quot;http://twitter.com/nohorbee&quot;&gt;@nohorbee&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 10 Nov 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/11/10/APIsARe04-GraphQL/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/10/APIsARe04-GraphQL/</guid>
+        
+        <category>API</category>
+        
+        <category>Meetup</category>
+        
+        <category>APIsAR</category>
+        
+        <category>GraphQL</category>
+        
+        <category>Avature</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>About predictability and clearly defining team goals</title>
+        <description>&lt;p&gt;It’s an Engineering Manager responsibility to guarantee the team health measured in terms of qualities such as performance, commitment, accountability and predictability (among lot of others). However this can’t be forced by the Manager. It’s actually the team effort and its proper channelling the decisive factors for achieving these goals. Because these are goals, aren’t these?&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;Well, that’s an interesting first discussion. What is the real value of having these qualities accomplished? Can the company sell “predictability” to its customers? Is predictability a new application feature?&lt;/p&gt;
+
+&lt;h2 id=&quot;predictability-a-team-quality-or-a-team-goal&quot;&gt;Predictability: A team quality or a team goal?&lt;/h2&gt;
+
+&lt;p&gt;If we stand on the “product guy” shoes, we could say that predictability is a way of achieving the team goals. Even more, from the product perspective, we might think “predictability” is not even a thing (until the team is no longer predictable). But from the team standpoint, predictability is a goal itself. The tricky part for understanding this (among a lot of other confusing issues) is which one is the cause and which one the effect. This far, predictability seems to be the cause, and a new feature in time is the effect. That’s right. Predictability is a cause, hence, it can’t be an effect, can it?. Of course it can! when we analyze “cause and effect” relationships, we always need to remember that it’s all about a chain. A-&amp;gt;B-&amp;gt;C-&amp;gt;…-&amp;gt;Z. Now, let’s say that a feature in time is &lt;strike&gt;the&lt;/strike&gt; a possible effect caused by Predictability (among other causes). And the key of this analysis: So, which are the causes for predictability (as an effect/goal)?&lt;/p&gt;
+
+&lt;p&gt;This long introduction is not just the effect of me being long-winded. I’m just trying to establish these 2 facts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Predictability is a team goal (in the middle of a cause-effect chain).&lt;/li&gt;
+  &lt;li&gt;The team needs to feel its own bias for being a predictable one.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now, it’s an Engineering Manager responsibility to encourage the team to go for it, and to &lt;strong&gt;provide the necessary tools for this to be achieved&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s jump to the story&lt;/p&gt;
+
+&lt;h2 id=&quot;chapter-i-a-self-aware-team&quot;&gt;Chapter I: A self-aware team&lt;/h2&gt;
+
+&lt;p&gt;My team and I were having a really bad time. The roadmap was at some point between aggressive and impossible. We weren’t stopping to over-commit (and of course, under-achieve), the predictability was low and falling fast (lower than 40% several sprints in a row), and even though backups were starting to arrive, the ramp up effort was going to led us to an even worst scenario (at least, temporarily). Little by little, higher level managers started to jump into our daily meetings trying to figure out what was going on. I called up to a non-regular meeting where I was going to throw all my ideas on the table and suddenly, the unthinkable. One of the team-members asked “What’s the deal with predictability? Why suddenly is so important to be predictable? Why are we worrying this bad about commitments that are falling?”. I was astonished. I couldn’t honestly think that these questions were powered by legit doubts and I needed to hold myself back from answering to somebody that, at that moment, I thought was simply trolling me.&lt;/p&gt;
+
+&lt;p&gt;And luckily I did it, because that forced me to start a dialogue with this person and the entire team to discover that there was no common understanding of what we were trying to accomplish.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 1&lt;/strong&gt;: Make sure that we are all on board. Identify that Predictability is a team goal and hence, it needs to be defined and communicated &lt;a href=&quot;https://en.wikipedia.org/wiki/SMART_criteria&quot;&gt;S.M.A.R.T&lt;/a&gt;-ishly. As said, it is impossible for a manager to achieve this goal by himself/herself. It’s a team goal, and it will become a team’s achievement.&lt;/p&gt;
+
+&lt;h2 id=&quot;chapter-ii-root-causes&quot;&gt;Chapter II: Root causes&lt;/h2&gt;
+
+&lt;p&gt;I was already an experienced manager, and had been a successful one. I knew all sort of tricks and methods to make things happen. Or that’s what I thought. I had been trying to push some ideas to the team that were, in my opinion, going to lead us to improve the way we were working (Predictability included). But for some reason, sprint after sprint I failed to make the team to implement those. “We are not even trying”, I used to think from time to time. Most of these ideas required to implement some sort of time-tracking mechanism, and it’s no news that developers don’t like it at all. Well, that’s actually not true and even a quite a bit unfair enunciate. The real “problem” is that, developers are usually smart people. If your team is not populated with this specie, you are in big troubles. Smart people trend to avoid running meaningless errands and, being honest, unless there is a good reason behind it, time-tracking is exactly that.&lt;/p&gt;
+
+&lt;p&gt;During the one-on-one meetings I had with the members of the team (after the “honestly-not-a-troll” incident) I focused a lot in two main topics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jointly define the team and individual goals clearly.&lt;/li&gt;
+  &lt;li&gt;Understand the root causes that were stopping the team from achieving those (from every team member perspective).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For the second item there is an important precondition that I hadn’t mention because it was not a problem in our team (but it could be in yours): As a manager you must make sure that you create a safety work environment. Every team member should be able to reach you (and even a skip level if necessary) with his/her thoughts without any kind of fear. For example: No matter how unnatural it was for me having a team member asking “Why is predictability that important?”. I refrained my natural instinct to cut that conversation off. It was meaningful, but even if it wasn’t, it’s always a great chance to build strong and trust relationships. &lt;strong&gt;If you can’t accomplish this, you and your team are doomed&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As it turned out, there were plenty of possible root causes for the low predictability. It could vary from team to team, but in this case:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lack of team behavior: Stories were being tackled by individuals, not the team. Hence, there was no interaction during the daily meetings, almost no maneuver capability for stories that were in path to not being completed, no unified design, and no knowledge sharing.&lt;/li&gt;
+  &lt;li&gt;Unclear product vision: The team was not aware of the big picture, and didn’t receive the functional specs with time enough to understand those. This caused constant highly imprecise estimations.&lt;/li&gt;
+  &lt;li&gt;No convention over story points: Talking with one of the devs, we agreed that a story should have been finished since it was properly estimated in 5 points which seemed to be the doable points per person during a sprint. Nevertheless, the story had not been completed. When I asked other devs about their opinion about how many story points they thought was the average per person, I didn’t receive even a matching pair of answers.&lt;/li&gt;
+  &lt;li&gt;Lack of metrics: Like (almost) everything, estimations can’t be improved if you can’t measure these. And it is very unlikely that you are predictable if your estimations suck. How much time are we able to code per day? How inaccurate are our estimations? How are we doing with this story? among other questions, should be easy to answer if we want to control our capacity (first) and our predictability (then).&lt;/li&gt;
+  &lt;li&gt;Tools and processes stuck in the middle: Tools and processes are great. Properly implemented can proactively avoid bugs, accelerate the development speed, assure smoother deployments, among a long list of perks. But when some tool is misbehaving, it could be a real nightmare and a &lt;code&gt;devs.forEach(frustrate)&lt;/code&gt; statement. Nobody likes to work endlessly hours, but we all accept it can happen from time to time. It turns out that additional efforts caused by a “stupid test tool” going out of resources and becoming the biggest engineering bottleneck is not even close to be acceptable by a group of smart people. On top of the demotivating effect, how can anybody claim predictability when unexpected things like this happen all the time?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The previous one is an abbreviated version of the real one, but:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It illustrates the scenario.&lt;/li&gt;
+  &lt;li&gt;It provides you with some common situations I found in other teams, in other companies.&lt;/li&gt;
+  &lt;li&gt;It states a couple of easy to fix, hard to detect situations.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;chapter-iii-goals-driven-actions&quot;&gt;Chapter III: Goals driven actions&lt;/h2&gt;
+
+&lt;p&gt;It was not a matter of knowing the answers, but asking the questions. As said, I was (and always have been) ready to jump in with my toolbox to fix the problems and make the day, when the team taught me a valuable lesson: let’s first agree on the goals and then discuss about how to get there. Once we agreed we wanted to be predictable (and why we wanted/needed it) coming up with the tools was much easier. But most important:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The team proposed some of these.&lt;/li&gt;
+  &lt;li&gt;The team requested me to come up with those tools they didn’t know.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We all know how important this is, but very often, we need a great team to remind us that &lt;strong&gt;We are not the smartest persons in the room”&lt;/strong&gt; and even if we were, there is no way of being smarter than an entire team. If you think you are, I have some bad news (choose the one you feel more comfortable with):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You need a smarter team.&lt;/li&gt;
+  &lt;li&gt;Your team &lt;strong&gt;really&lt;/strong&gt; needs a smarter manager. I bet that this is the real one, even if you choose the other one.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The goals were a chain (or a tree) of causes and effects&lt;/strong&gt;. These goals could be grouped as a milestone: remove/mitigate the “root causes” (mentioned on the last chapter).&lt;/p&gt;
+
+&lt;p&gt;So, in a nutshell, we agreed on:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Urging the corresponding team to fix the issues with the tools, compromising on temporarily leveraging the additional effort required to operate.&lt;/li&gt;
+  &lt;li&gt;Keeping track of the time spent in dealing with the tools, elaborating reports to help other managers to set the proper priority to this.&lt;/li&gt;
+  &lt;li&gt;Having the entire team working on the same features during the sprint.&lt;/li&gt;
+  &lt;li&gt;Tracking the time spent building the features (continuous, uninterrupted work per day).&lt;/li&gt;
+  &lt;li&gt;Tracking the remaining effort at a task level (we were just burning down the points for a complete story). This topic deserves its own article if you have no idea of what it means. But basically remember that the “Original Estimate” - “Time Spent” is not always equals to “Remaining Effort”. Being able to detect that difference as early as possible &lt;strong&gt;is a great and decisive tool&lt;/strong&gt; at the time of being predictable.&lt;/li&gt;
+  &lt;li&gt;Displaying the partial progress on the daily meetings (fine granular burn-down chart).&lt;/li&gt;
+  &lt;li&gt;Discussing about any meaningful deviation as soon as these appeared.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Of course this is just a summary. I can’t even remember how many details we defined on the fly and if all of these were the original actions we agreed.&lt;/p&gt;
+
+&lt;h2 id=&quot;chapter-iv-the-too-many-changes-paralysis&quot;&gt;Chapter IV: The “too many changes” paralysis&lt;/h2&gt;
+
+&lt;p&gt;We were going to start a major refactor in the way we were used to working. When coding, we count (or should) with a lot of unit tests before refactoring, and we are pretty sure that we are not breaking anything. But this is different. There is not such a thing like unit testing frameworks for people.&lt;/p&gt;
+
+&lt;p&gt;We didn’t freeze once we agreed and made a team decision. But I can’t avoid thinking that before doing this, knowing all the work that was going to be needed to refactor the team, was a major stopper for us to even start the discussions.&lt;/p&gt;
+
+&lt;p&gt;I used to spend a lot of time thinking about how to articulate all the actions that were needed. While this is a good thing to do, &lt;strong&gt;planning&lt;/strong&gt; could become a trap. &lt;strong&gt;Always make sure that planning is your tool to organize your team efforts, and not an excuse for professionally procrastinate&lt;/strong&gt;. If you don’t know how to do this, use the old “cause-effect” framework. Think about which are the goals you want to achieve by building a plan.&lt;/p&gt;
+
+&lt;p&gt;In this case, planning the way we were going to proceed made no sense. But implementing all the changes at the same time would have led us to a situation where:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We were not going to be clear on which changes produced which results.&lt;/li&gt;
+  &lt;li&gt;We were not going to be able to identify if some change was actually a downgrade.&lt;/li&gt;
+  &lt;li&gt;Changes require a learning process. Too many changes imply learning too many things at the same time.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Never let this kind of issues to stop you. You need to start with something, measure the first results and decide based on the thrown metrics. Again, &lt;strong&gt;you are not the smartest person in the room&lt;/strong&gt;. Discuss with your team about the changes to implement first, collect the data, present it during the retrospective meeting, and discuss again about what’s next.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;At the end of the third sprint since the team started this refactor (achieved items):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The team behavior dramatically improved. Any team member was able to jump into help another one.&lt;/li&gt;
+  &lt;li&gt;The team was able to identify which stories were at risk and the reasons for the delays (underestimation, issues with the tools, individual underperform).&lt;/li&gt;
+  &lt;li&gt;The team had data enough to make informed decisions (start partial tests before the story was completed, jump into a different story to avoid risks).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By the end of the fourth sprint:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The team was estimating quicker and more precisely.&lt;/li&gt;
+  &lt;li&gt;The product vision was shared by the entire team.&lt;/li&gt;
+  &lt;li&gt;Deviations in the roadmap were being foreseen and corrective actions were being taken.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;“Achieved items”-&amp;gt;”Predictability”-&amp;gt;”Features in time”&lt;/strong&gt;. All links on the chain.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 01 Nov 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/11/01/about-predictability-and-team-goals/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/01/about-predictability-and-team-goals/</guid>
+        
+        <category>Predictability</category>
+        
+        <category>Accountability</category>
+        
+        <category>Team</category>
+        
+        <category>Building</category>
+        
+        <category>Management</category>
+        
+        <category>Goals</category>
+        
+        <category>Communication</category>
+        
+        <category>Expectations</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Acronyms seriously suck</title>
+        <description>&lt;p&gt;While I was reading “Elon Musk”, on a bus while commuting home, I couldn’t help laughing of an email he sent to all SpaceX employees regarding to the misuse or excessive use of acronyms. The subject line was: “Acronyms Seriously Suck” (you can figure out the acronym for it by yourselves).&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;p&gt;It made me remember my time working at IBM Argentina, where this antipattern was so popular that there was even a rumor saying that once upon a time, acronyms had been forbidden (and I believe it. Even the company name is an acronym!)&lt;/p&gt;
+
+&lt;p&gt;This is a clearly showing it is not always true that “Less is More”. Sometimes, “Enough is simply and exactly Enough”. Enjoy!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There is a creeping tendency to use made up acronyms at SpaceX. Excessive use of made up acronyms is a significant impediment to communication and keeping communication good as we grow is incredibly important. Individually, a few acronyms here and there may not seem so bad, but if a thousand people are making these up, over time the result will be a huge glossary that we have to issue to new employees. No one can actually remember all these acronyms and people don’t want to seem dumb in a meeting, so they just sit there in ignorance. This is particularly tough on new employees.&lt;/p&gt;
+
+  &lt;p&gt;That needs to stop immediately or I will take drastic action. I have given enough warnings over the years. Unless an acronym is approved by me, it should not enter the SpaceX glossary. If there is an existing acronym that cannot reasonably be justified, it should be eliminated, as I have requested in the past.&lt;/p&gt;
+
+  &lt;p&gt;For example, there should be no “HTS” [horizontal test stand] or “VTS” [vertical test stand] designations for test stands. Those are particularly dumb, as they contain unnecessary words. A “stand” at our test site is obviously a &lt;em&gt;test&lt;/em&gt; stand. VTS-3 is four syllables compared with “Tripod,” which is two, so the bloody acronym version actually takes longer to say than the name! The key test for an acronym is to ask whether it helps or hurts communication. An acronym that most engineers outside of SpaceX already know, such as GUI, is fine to use. It is also ok to make up a few acronyms/contractions every now and again, assuming I have approved them, eg MVac and M9 instead of Merlin 1C-Vacuum or Merlin 1C-Sea Level, but those need to be kept to a minimum.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 04 Oct 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/10/04/ass/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/04/ass/</guid>
+        
+        <category>Elon</category>
+        
+        <category>Musk</category>
+        
+        <category>SpaceX</category>
+        
+        <category>Tesla</category>
+        
+        <category>SolarCity</category>
+        
+        <category>Acronyms</category>
+        
+        <category>fun</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>A Compendium of Software Architects’ Pathologies</title>
+        <description>&lt;p&gt;&lt;em&gt;By &lt;a href=&quot;https://ar.linkedin.com/in/mchicote&quot;&gt;Marcos Chicote&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/guidodecaso&quot;&gt;Guido de Caso&lt;/a&gt;, and &lt;a href=&quot;https://twitter.com/nohorbee&quot;&gt;Norberto Herz&lt;/a&gt;&lt;/em&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Soon after the field of software architectures was formally born thanks to the work of Garlan, Shaw, Notkin and others in the early 90s, the role of the “Software Architect” emerged in the software development landscape. Following the definitions of the Software Architecture community, the architect’s job is to define the high level design of a software system or, in other words, make the principal design decisions that build a bridge between requirements and implementation.&lt;br /&gt;
+However, in practice things are not that simple, and the architect’s job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects, including symptoms and prognosis, with the goal of sparking more discussions about this role and its desired evolution.&lt;/p&gt;
+
+&lt;!--MORE--&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;There is no doubt that Software Engineering has been constantly evolving over the last five decades. Operating systems have provided an ever improving layer to abstract us away from the complexities of modern hardware. Lean and agile processes have allowed for faster iteration. Cheaper and more accessible data center technologies have lowered the barrier to entry for high performance computing and opened the gate to tackling more ambitious problems diverse fields such as medicine, the aerospatial industry, academy or e-commerce.&lt;/p&gt;
+
+&lt;p&gt;The way engineers organize ourselves to go build software that solves these complex problems has also shifted. From individuals writing programs for mainframes to big corporations with multiple product lines and platforms. The role of Software Architects appeared as such mostly in the context of multi-tier applications where the amount of implementation choices grew exponentially. &lt;a href=&quot;http://dl.acm.org/citation.cfm?id=579257&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;http://www.bredemeyer.com/pdf_files/role.pdf&quot;&gt;[2]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Software Architects’ responsibilities and duties are varied and depend heavily on the company and environment. There are slight variations of these responsibilities depending on whether we consider an Application Architect or an Enterprise Architect. But, regardless of such differences we can define the Software Architect’s scope as driven by these areas:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Subdividing the design of large applications into smaller and more manageable parts.&lt;/li&gt;
+  &lt;li&gt;Identifying technologies, frameworks, patterns, process improvements and best practices that are to be adopted by an organization and communicating these to developers, establishing thus key mentorship relations.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But while this enumeration serves the purpose of a Software Architect’s job description template, it does not answer questions such as what traits or tasks separate the most impactful Software Architects from their peers. How is the Software Architect career path defined and where do Software Architects come from. How can they walk the fine balance between becoming great generalists as opposed to incredible specialists.&lt;/p&gt;
+
+&lt;p&gt;In this article we set out to explore and discuss some of these topics. We do so via a series of apparent contradictions or fallacies arising from the tension between driving forces at stake in a Software Architect’s career: to be a mentor vs. to be an evangelist, to be coding vs. to be in meetings and other key dilemmas.&lt;/p&gt;
+
+&lt;p&gt;We introduce these apparent contradictions as pathologies. Pathology is rooted in the Ancient Greek concept of pathos (πάθος), meaning “experience” or “suffering”, and -logia (-λογία), “study of”. We hope that this article can spark interesting discussions among fellow Software Architects and make us reflect about certain common issues that we face in our professional practice.&lt;/p&gt;
+
+&lt;p&gt;The careful reader should be warned that some of the following will be particularly more suited for Software Architects in specific situations such as companies with geographically distributed development teams or companies of medium to large size. In any case, we believe that these encompass various relevant topics when it comes to how we think about Software Architects, their role, their career and, ultimately, their impact.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-pathologies&quot;&gt;The Pathologies&lt;/h2&gt;
+
+&lt;p&gt;In the next subsections we will describe some of the aforementioned pathologies in terms of how to detect and how to resolve them.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-impactless-best-coder-syndrome&quot;&gt;The Impactless Best Coder Syndrome&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“This functionality is extremely complex. I should be coding it myself”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;According to the Pareto Principle we acknowledge that 80% of an application’s complexity comes from the 20% of its functionalities. Being the Software Architect the best coder in the team seems to indicate that a big piece of these functionalities should be written by no one else.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Stressed Software Architect: “I can never find the time to work on these functionalities”&lt;/li&gt;
+  &lt;li&gt;Missing or poorly written blueprints: “The high level design is complete, the remaining parts can be inferred”&lt;/li&gt;
+  &lt;li&gt;Stressed Developer: “The blueprints don’t make sense. My peers seem to be writing different applications”&lt;/li&gt;
+  &lt;li&gt;Uncomfortable Senior Developer: “This functionality could be written by somebody else. I should be coding the top 20%”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Before jumping to the correct treatment, we propose to discuss the concept of whether the Software Architect is indeed the best coder on the team. Even though it is true that a good Software Architect should have outstanding coding abilities, the role demands a fairly different and more rounded skillset when compared to that of a developer’s. That said, it makes sense that not every Software Architect raised from being the best developer of a team, but a really good one who found a way of growing another skillset as well.&lt;/p&gt;
+
+&lt;p&gt;We argue that the best developer should be the one responsible for coding the most complex functionalities, while the Software Architect should be the one making those functionalities easier to code. Putting in place a great high level design tends to simplify things by avoiding ambiguities, and identifying reuse opportunities. In many cases, when these opportunities are clear enough, the benefits of using some libraries and frameworks, or the necessity of writing some new ones rise. That is the job of a good Software Architect too.&lt;/p&gt;
+
+&lt;p&gt;So, as a Software Architect, put a great architecture in order: build a great design, write the best blueprints, find the simplification opportunities and execute these by writing or using the proper frameworks, help the definition and adoption of the team’s best practices and development processes. That way you should not have to  think “I should be coding this” as often. Instead you will realize that your contributions are enabling a great part of every single functionality.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-know-it-all-specialist-dilemma&quot;&gt;The Know-it-all Specialist Dilemma&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“The world is too big for me to master it all”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-1&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Front-end, back-end, object oriented, functional, AngularJS, Java, Node.js, REST, Polymer, Machine Learning, IoT, Virtual Reality, COBOL, Mainframes, Docker, APIs, Scala. The list of technologies and frameworks goes on and on. The Software Architect’s bandwidth is not infinite, as it is not the time any human has to spend on any set of tasks. Yet it seems as if Software Architects were demanded to master the entire list. We can not choose both being specialists and generalists, or can we?&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-1&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Waverer Software Architect: “Everyone asks me about everything and there is no way I can have a good answer for all the questions”&lt;/li&gt;
+  &lt;li&gt;Lack of ownership: “I’m not an expert on the subject, so, I simply can’t make a decision on this”&lt;/li&gt;
+  &lt;li&gt;Multi-directional decisions: “I’m not sure why we are doing it this way. It seems like if everyone has made it own call”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-1&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;A Software Architect should be a generalist by nature. Even if she or he possesses deep knowledge about a particular technology, the driver to success is the capability of combining a wide range set of skills that can only be achieved by understanding how far to dig on something. Though, there are a set of areas that a Software Architect should master. The following list includes some of them:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Software principles: The Software Architect needs to master subjects such as the software quality attributes: scalability, availability, resiliency, securability, maintainability, among others &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/ee658094.aspx&quot;&gt;[1]&lt;/a&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_system_quality_attributes&quot;&gt;[2]&lt;/a&gt;. It is also required to understand and be able to design applications in a way that enables statelessness, layering, decoupling &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/bb402962.aspx&quot;&gt;[3]&lt;/a&gt;. Note that these concepts are technology independent, even though different technologies achieve them in different ways.&lt;/li&gt;
+  &lt;li&gt;Leadership: Being able to become a Technical Leader for the team is crucial. Mastering principles and behaviors such as coaching and mentoring becomes really handy for Software Architects.&lt;/li&gt;
+  &lt;li&gt;Communication: Designing is all about making decisions. These decisions should contemplate knowledge and experience, but are also the result of understanding different stakeholders’ needs. The design becomes even richer when key members from the development team provide their input in the form of vision and ideas. Furthermore, once the design is in place, it needs to be shared so it can be built. The Software Architect is the central point where all these ends meet. Mastering communication skills is not optional for their role.&lt;/li&gt;
+  &lt;li&gt;Research: As said, a Software Architect should be a generalist by nature. Being a good researcher is the perfect way of being up to date with the latest in technology trends. A Software Architect should be able to choose which technologies to know and have a fairly good understanding of these.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this in mind, it is correct to say that a Software Architect is a specialist in architecture topics, and since architecture is about generalisms, they are specialists in being generalists.&lt;/p&gt;
+
+&lt;p&gt;The reason why the list of technologies mentioned on this pathology’s description is virtually infinite is basically that there are so many professionals developing new and exciting technologies everyday. Thus, the way of running a project from the architectural point of view is to exchange knowledge with a bigger team that will be the real knowledge owner.
+So, as a  Software Architect, make sure to master the aforementioned skills and you will be able to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Put together an architecture that guarantees high software quality attributes.&lt;/li&gt;
+  &lt;li&gt;Understand which technologies requires most attention at every moment.&lt;/li&gt;
+  &lt;li&gt;Incorporate general knowledge of these technologies, and make decisions on which ones are needed for a particular project.&lt;/li&gt;
+  &lt;li&gt;Conduct investigations to push the team to use these technologies.&lt;/li&gt;
+  &lt;li&gt;Lead the team to build great applications.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;one-feet-on-each-continent&quot;&gt;One Feet on Each Continent&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“I haven’t caught up with all the latest books on soft skills, and I’m already starting to forget what to do after catching an exception”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-2&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;The path and first steps for becoming a Software Architect are really exciting. We start getting abstracted from a lot of unnecessary and dirty details, we stop dealing with tedious functionalities, and we start facing more “suitable” challenges. We also start spending more time sketching, talking, teaching, meeting, and less time coding. And suddenly there we are, feeling that we are not yet good enough at the new stuff, and yet too far away from where we started. We journeyed far from home and now we are in the middle of the ocean between a rusty Software Engineer and an inexpert Software Architect.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-2&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Succeed by accident: “I feel that people praise me for things that were just happenstance and not the result of my work”&lt;/li&gt;
+  &lt;li&gt;Fear of being discovered: “I’m afraid someone is going to find out that I’m not ready to be a Software Architect”.&lt;/li&gt;
+  &lt;li&gt;Repeatability: “I don’t know how I ended up here, and I’m pretty sure I won’t be able to grow and level up again”&lt;/li&gt;
+  &lt;li&gt;Pursuing external validation: “Someone should check that every one of my decisions is correct”.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-2&quot;&gt;Prognosis&lt;/h4&gt;
+&lt;p&gt;It is not easy to cope with these feelings but there is something that can help: you are not alone. Actually, these symptoms (among others) are most common than most of us believe and, on top of that, these are grouped under the name of “Impostor Syndrome”&lt;a href=&quot;https://counseling.caltech.edu/general/InfoandResources/Impostor&quot;&gt;[1]&lt;/a&gt;, that was discovered by Dr. Pauline R. Clance in 1978&lt;a href=&quot;https://en.wikipedia.org/wiki/Impostor_syndrome&quot;&gt;[2]&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are several ways to overcome this syndrome, including but not limited to&lt;a href=&quot;http://www.apa.org/gradpsych/2013/11/fraud.aspx&quot;&gt;[3]&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Talking to your mentors&lt;/li&gt;
+  &lt;li&gt;Recognizing your expertise&lt;/li&gt;
+  &lt;li&gt;Remembering what you do well&lt;/li&gt;
+  &lt;li&gt;Realizing no one is perfect&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But maybe the most difficult part is to defeat the fear of being transparent and reflective about this with somebody, be it a friend, a colleague or your boss. Once that we recognize and make peace with this, everything becomes easier and we are ready to put this behind and unleash our full potential as Software Architects.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-unprepared-mentor-conundrum&quot;&gt;The Unprepared Mentor Conundrum&lt;/h3&gt;
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“If you wanted me to mentor others you should have prepared me for that”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-3&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Broad consensus exists on including technical mentoring as part of a Software Architect’s responsibilities. Software Architects are expected to spend time with Software Engineers beneath them in the career path advising them on how to develop key missing skills, learn new programming techniques or frameworks and, generally speaking, preparing them to take the next step in the ladder. However as developers progress in their careers and eventually become Software Architects, they require abilities and skills on which they have not been trained on, such as mentoring itself.&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-3&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mentoring bottleneck: “Everyone wants me to help them grow, what’s going on?” most Software Engineers start seeking mentoring from the same Software Architect.&lt;/li&gt;
+  &lt;li&gt;Shallow empathy: “I don’t feel connected to those I am mentoring”. Mentoring relationships often generate a close relationship between mentor and protégé. If empathy flattens, mentoring is probably failing.&lt;/li&gt;
+  &lt;li&gt;Inefficient communication: “I can’t get developers to follow my lead on system design” Software Engineers do not understand a system design or can not see why it was designed that way.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-3&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Software Architects should be encouraged to give mentorship to their protégés on all skills required to climb up the career ladder. Particularly on skills needed on higher positions such as Software Architect itself. If mentoring is limited to  technical skills only, it will quite likely fall short once Software Engineers reach a leading position.&lt;/p&gt;
+
+&lt;p&gt;It is worth mentioning that, even though we will not get into anthropological and sociological issues like the human capacity to acquire new skills, we do recognize that some people have a more natural tendency for mentorship. Even when Software Architects should help Software Engineers develop soft skills, anyone aspiring to become a Software Architect should learn about mentorship in general. One possibility is for Software Architects to seek guidance from senior leadership in the engineering organization (e.g., VP or Senior Director level) on how to become great mentors.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-lost-focus-syndrome&quot;&gt;The Lost Focus Syndrome&lt;/h3&gt;
+
+&lt;p&gt;&lt;big&gt;&lt;i&gt;“When I sit and focus for 20 minutes straight I get to build amazing things! How come I am not doing that 8 hours a day?”&lt;/i&gt;&lt;/big&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;description-4&quot;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;As Paul Graham states on the essay Maker’s Schedule, Manager’s Schedule while managers are on schedules that can change every hour, for makers having a meeting is like throwing an exception, which can be very expensive in terms of performance. As we study the role and analyze its contradictions we wonder: what schedule do Software Architects follow?&lt;/p&gt;
+
+&lt;h4 id=&quot;symptoms-and-diagnosis-4&quot;&gt;Symptoms and Diagnosis&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Adapt to managers: “Managers are dragging me into meetings at any time”.&lt;/li&gt;
+  &lt;li&gt;Wasted time: “I’m a maker, I build working software that goes into production, that is my main responsibility, not answering managers questions”.&lt;/li&gt;
+  &lt;li&gt;Sparse schedule: “Let me code for four hours straight and I’ll blow your mind”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In most organizations Software Architects are not managers and therefore do not live by their schedule. And yet proving that they are in the maker’s schedule can encounter some difficulties.&lt;/p&gt;
+
+&lt;p&gt;As mentioned on section “The impactless best coder syndrome”, Software Architects should not necessarily be responsible for coding even the most complex functionalities and this could be used to make a case against Software Architects being makers. However, as discussed, Software Architects are responsible for building software in a more transversal manner, defining best practices and development processes, or writing frameworks and blueprints. Such duties are undeniable characteristics of a maker.&lt;/p&gt;
+
+&lt;p&gt;Transversal components often affect a variety of different actors and have a profound impact on production environments, new features and complex bugs. Software Architects are recurringly called into meetings to analyze and comment on these different topics, taking them time away from designing and mentoring developers. The more a Software Architect builds the  more meetings she will be pulled into, presenting an interesting dylemma.&lt;/p&gt;
+
+&lt;h4 id=&quot;prognosis-4&quot;&gt;Prognosis&lt;/h4&gt;
+
+&lt;p&gt;Software Architects are makers and, as such, need time to make. Building software, even at the architectural level, requires concentration and focus. Software Architects, as any prestigious position, are frequently consulted on a wide array of topics and will be summoned into meetings. Instead of fighting against it we propose guidelines to minimize the impact of meetings on your real responsibilities:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Software Architects are advised to have everyone understand that they are makers and they have to be deeply invested in the process of building great software. Peer’s understanding of the Software Architect position and priorities is crucial to minimize invitations to spurious meetings.&lt;/li&gt;
+  &lt;li&gt;Office hours: Software Architects should set aside time to be available to others. Instead of having managers push Software Architects into adapting to their schedule we advocate Software Architects to create mechanisms to have managers adapt themselves.&lt;/li&gt;
+  &lt;li&gt;Delegate: Not every meeting you are invited to needs a Software Architect. Delegation to tech leads or specialists will not only save your precious time, it will also help others grow.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;While the analogy with medical pathologies may be a bit farfetched, we do believe that there is a lot of value in studying and reflecting about common pitfalls in the Software Architect role.&lt;/p&gt;
+
+&lt;p&gt;As we discussed when we opened this article, Software Engineering has changed quite dramatically from its humble origins in the last century but it yet remains a pretty novel and somewhat adolescent field of study. It is understandable then that an even newer role such as that of the Software Architect has been yet barely standardized or studied.&lt;/p&gt;
+
+&lt;p&gt;We hope that the analysis of the pathologies here presented can help spark more discussion about topics such as how the Software Architect’s role should evolve, how can we evaluate their impact, how can we grow them and coach them. This is our humble yet heartfelt contribution in that spirit.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Jul 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/07/14/a-compendium-software-architects-pathologies/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/07/14/a-compendium-software-architects-pathologies/</guid>
+        
+        <category>Software</category>
+        
+        <category>Architecture</category>
+        
+        <category>Role</category>
+        
+        <category>Management</category>
+        
+        <category>Pitfall</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Nobel 0.2 supports Swagger and RAML</title>
+        <description>&lt;p&gt;Time ago, while I was working with the team building &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt;, I took advantage of a hackathon to build the first version of &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel&lt;/a&gt;. Briefly, Nobel is an application that uses an API high level definition written with (&lt;a href=&quot;http://swagger.io/&quot;&gt;Swagger&lt;/a&gt; or &lt;a href=&quot;http://raml.org&quot;&gt;RAML&lt;/a&gt; to generate the &lt;a href=&quot;http://www.arduino.cc/&quot;&gt;Arduino&lt;/a&gt; code implementing that API. That first version only supported RAML as the definition language. Recently working and researching a bit more about Swagger and its toolset, I was able to add support for this language as well.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;swagger-or-raml&quot;&gt;Swagger or RAML&lt;/h2&gt;
+
+&lt;p&gt;I think I’ve seen more than 25 posts talking about this (here I share a couple of links with you: &lt;a href=&quot;http://modeling-languages.com/modeling-web-api-comparing/&quot;&gt;1&lt;/a&gt; &lt;a href=&quot;http://iasaglobal.org/swagger-vs-raml/&quot;&gt;2&lt;/a&gt; &lt;a href=&quot;https://www.ibm.com/developerworks/community/blogs/c06ef551-0127-483d-a104-cdd02b1cee31/entry/swagger_apiary_raml_versus_rest?lang=en&quot;&gt;3&lt;/a&gt;). Regardless of these analysis results, I’ve a short list of self opinions after having been working with both:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I find RAML easier to understand and write. I consider that the language expressivity is higher.&lt;/li&gt;
+  &lt;li&gt;RAML used YAML from the beginning, while Swagger requested us to write the definition with plain JSON.&lt;/li&gt;
+  &lt;li&gt;Swagger has a greater community and its toolset seem to be more complete and robust.&lt;/li&gt;
+  &lt;li&gt;When Swagger 2.0 was launched, the improvement of the language expressivity was remarkable . Though, the trend of translating the old JSON to the new YAML 1:1 stops from making it comparable to RAML.&lt;/li&gt;
+  &lt;li&gt;While RAML 1.0 release brought interesting news to the table (on November 2015), the Node.js parser is still “beta” which makes that the cornerstone for writing a great branch of tools is not robust enough for being production ready.&lt;/li&gt;
+  &lt;li&gt;The object returned by the RAML (0.8) parser is much more intuitive and easy to “browse” than the one returned by the Swagger (2.0) parser.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regardless of this analysis, nothing stops me from making the tool support both language. This is due to the capacity of creating an intermediate object that is the one used for generating the Arduino source code. The next diagram shows that behavior&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/nobel-flow.png&quot; alt=&quot;Nobel - Application Flow&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;p&gt;Nobel’s main goal is to give people with a minimum knowledge on Arduino coding the chance of building their own device controlled remotely via HTTP. That said, it is required: - An Arduino board and the development toolset installed. - An &lt;a href=&quot;https://www.arduino.cc/en/Main/ArduinoEthernetShield&quot;&gt;Ethernet Shield&lt;/a&gt;. - Basic knowledge of Swagger or RAML. - &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; installed.&lt;/p&gt;
+
+&lt;p&gt;Reading the &lt;a href=&quot;https://www.npmjs.com/package/nobel&quot;&gt;Nobel’s documentation&lt;/a&gt; you will find all the information needed to deeply understand its behavior. You will also find a &lt;a href=&quot;https://www.npmjs.com/package/nobel#hands-on-example&quot;&gt;walkthrough example&lt;/a&gt; for having your first device working in minutes.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-for&quot;&gt;What for&lt;/h2&gt;
+
+&lt;p&gt;The goal of Nobel is to solve a relatively complex problem: Exposing a REST API over an Arduino board. This way developers can focus on building their own devices. Now you can think about those projects you have been delaying, and start controlling your own devices remotely.&lt;/p&gt;
+
+&lt;h2 id=&quot;contribute&quot;&gt;Contribute&lt;/h2&gt;
+
+&lt;p&gt;Nobel is an Open Source application. You can contribute by improving the code, adding new features, testing and reporting bugs. Here is the link to the &lt;a href=&quot;https://github.com/nohorbee/nobel&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Apr 2016 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2016/04/24/nobel-02-swagger-support/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/04/24/nobel-02-swagger-support/</guid>
+        
+        <category>Nobel</category>
+        
+        <category>APIs</category>
+        
+        <category>Arduino</category>
+        
+        <category>IoT</category>
+        
+        <category>codegen</category>
+        
+        <category>RAML</category>
+        
+        <category>Swagger</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Docker in acción I</title>
+        <description>&lt;p&gt;Several years ago, speaking of &lt;em&gt;scalability&lt;/em&gt; used to bring up a series of surprises of all kind. People talking about &lt;em&gt;scalability&lt;/em&gt; as a &lt;em&gt;hardware&lt;/em&gt; quality, people getting too much surprised when listening that it’s not the &lt;em&gt;hardware&lt;/em&gt; just scaling, but the applications being written in such a way that can &lt;em&gt;scale&lt;/em&gt;, and for sure, the little distinction between &lt;em&gt;horizontal and vertical scaling&lt;/em&gt;.&lt;br /&gt;
+Fortunately these days, the concept has been digested, explained, and apparently understood. However, I’m still curious about getting why this topic was source of so much confusion.
+I’m not sure which ones is the cause and which one the effect of this &lt;em&gt;new era&lt;/em&gt;, but virtualization plays a starring role, and specially the &lt;em&gt;containers based virtualization&lt;/em&gt;.
+This is the first of a three posts saga, in which I’ll be covering some &lt;em&gt;scalability&lt;/em&gt; fundamentals, &lt;em&gt;DevOps&lt;/em&gt; rol/culture, &lt;em&gt;Docker&lt;/em&gt; introduction, installation walkthrough, first steps, and &lt;em&gt;docker registry&lt;/em&gt; configuration. This first post is about &lt;em&gt;DevOps&lt;/em&gt; and &lt;em&gt;scalability&lt;/em&gt;.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;devops&quot;&gt;DevOps&lt;/h2&gt;
+
+&lt;p&gt;For so long, the developer role was well defined and set appart from the operator’s. The developer &lt;strong&gt;built&lt;/strong&gt; software while the operator was in charge of &lt;strong&gt;infrastructure&lt;/strong&gt; and software packages &lt;strong&gt;deployment&lt;/strong&gt;. The software industry was proud of this separation claiming that the developer could (and should) be completely abstracted from hardware and deployment, in order to focus in writing and refactoring code. &lt;strong&gt;Finding developers having troubles trying to write&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;scalable&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;code is not that surprising anymore&lt;/strong&gt;.&lt;br /&gt;
+Not only was the developer totally isolated from hardware and the platform running the programs, but also was unworried about that infrastructure &lt;em&gt;topology&lt;/em&gt;. It was not necessary to know if the server was going to be running on an &lt;em&gt;Intel, AMD or other vendor&lt;/em&gt;, neither to worry about the OS (for instance, &lt;em&gt;Java&lt;/em&gt; was supposed to be multi-platform thanks to the &lt;em&gt;JVM&lt;/em&gt; exposing a unified one). But it also seemed to be unnecessary knowing if the server was going to be running in 1 or 10 machines, if it was going to be a &lt;em&gt;cluster&lt;/em&gt;, what would happen if a machine was down, etc. As a direct consequence, and this is just one of many examples, storing the &lt;em&gt;logged in&lt;/em&gt; user data on the &lt;em&gt;HTTP session&lt;/em&gt; was so simple and useful that had been quickly adopted as a &lt;em&gt;web applications&lt;/em&gt; development dogma.&lt;/p&gt;
+
+&lt;p&gt;Even though many of these abstractions turned to be reasonably profitable (reasonably: it isn’t that distractive to know the hardware where our application will run), others have become extremely inconvenient. &lt;em&gt;Scalable&lt;/em&gt; applications development is a clear example of the troubles that come with the total abstraction.&lt;br /&gt;
+&lt;em&gt;DevOps&lt;/em&gt; concept stands up as an alternative to this abstraction (or a redefinition at least). Though most of the companies think about &lt;em&gt;DevOps&lt;/em&gt; as a role mostly biased to the &lt;em&gt;Ops&lt;/em&gt; part, the concept represents a culture where collaboration between developers and operators benefits frequent and reliable development, testing and &lt;em&gt;releases&lt;/em&gt;. As a (positive) side effect, developers get into infrastructure early enough to consider it when writing applications (and dismissing that information that doesn’t add any value).&lt;/p&gt;
+
+&lt;h2 id=&quot;scalability&quot;&gt;Scalability&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;An application scales if it’s able keep its performance over a workload increase&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;vertical-scalability&quot;&gt;Vertical Scalability&lt;/h3&gt;
+
+&lt;p&gt;More powerful processors, with more &lt;em&gt;cores&lt;/em&gt;, can process more &lt;em&gt;threads&lt;/em&gt;. More memory can store more running processes’ data, and that way, an application can support a higher workload. This kind of scalability is known as &lt;em&gt;vertical scalability&lt;/em&gt;. A (relative) advantage of this approach, is that it can be achieved by taking advantage of most popular languages capabilities (such as JAVA). But a big disadvantage is that, at some point, the relationship &lt;em&gt;performance increase&lt;/em&gt; over  &lt;em&gt;workload increase&lt;/em&gt; becomes asymptotic.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScaling.png&quot; alt=&quot;Vertical Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The previous image shows that as far as the workload increases, the performance increase becomes harder, until reaching the point of no increasing any longer. This means that every user will experience a performance degree, or even worst, a complete system interruption.&lt;br /&gt;
+When &lt;em&gt;verticaly scaling&lt;/em&gt;, by adding a more powerful server we are able to improve the performance. However, when comparing the curves against the &lt;em&gt;perfect scalability&lt;/em&gt; the moment when the new server stops supporting the workload happens pretty earlier than achieving the &lt;em&gt;perfect scalability&lt;/em&gt;. A progression over this behaviour would conclude that, at some point, investing in more powerful (and expensive) hardware won’t help us to achieve the &lt;em&gt;perfect scalability&lt;/em&gt;, but it will reach a &lt;strong&gt;scalability limit&lt;/strong&gt; (also asymptotic).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/verticalScalingSummary.png&quot; alt=&quot;Vertical Scalability - Gain / Power&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;horizontal-scalability&quot;&gt;Horizontal Scalability&lt;/h3&gt;
+
+&lt;p&gt;In order to overcome the limitations of &lt;em&gt;vertical scalability&lt;/em&gt;, a paradigm rupture occured and, in place of thinking about more powerful machines, the key seems to be to think about more qunatity of less powerful machines.&lt;/p&gt;
+
+&lt;p&gt;Unlike with &lt;em&gt;vertical scalability&lt;/em&gt;, in this paradigm, the infrastructure administration becomes more complex, and the development needs to consider the fact that the software will be distributed among different machines (with physically separated resources). But, in addition to overcomming &lt;em&gt;vertical scalability&lt;/em&gt; limitations, the fact of being able to &lt;em&gt;scale&lt;/em&gt; by augmenting the quantity of machines (or nodes) ends up being cheaper and furthermore, by taking advantage of the advanced virtualization techniques such as the ones offered by &lt;em&gt;Docker&lt;/em&gt;, administration can be automated to dynamically adapt to the changing workload in realtime.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/horizontalScaling.png&quot; alt=&quot;Horizontal Scalability - Performance / Workload&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The previous image shows that there is a moment when the server is no longer able to support the workload. At that moment (when the performance curve touches the &lt;em&gt;perfect scalability&lt;/em&gt;, or maybe a little bit earlier), it’s time to start a new server. This way, by aproximation, the workload/performance relationship can be maintained close to the &lt;em&gt;perfect scalability&lt;/em&gt;. Furthermore, if the new server starts automatically and quickly enough, the provisioning could be done in an &lt;em&gt;on-demand&lt;/em&gt; way.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Container based virtualization&lt;/em&gt; aims exactly to provide a solution for that requirement. As it will be covered on the following post, &lt;em&gt;Docker&lt;/em&gt; offers a more efficient &lt;em&gt;virtualization&lt;/em&gt; than the traditional &lt;em&gt;Virtual Machines&lt;/em&gt;. And even though the benefits appear immediately, they become a real difference when thinking of small nodes that &lt;em&gt;start&lt;/em&gt; in seconds when it’s necessary.&lt;br /&gt;
+We will also see that, the reason for these nodes to start that quickly, is a combination of the technology capabilities (that reuses a unique OS Kernel that is already running) and the good design: small components that start at the same time in different nodes (reducing the starting time by starting in parallel).&lt;/p&gt;
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2015/12/03/docker-in-action-IoIII/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/03/docker-in-action-IoIII/</guid>
+        
+        <category>Docker</category>
+        
+        <category>Container</category>
+        
+        <category>Microservices</category>
+        
+        <category>DevOps</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>From API to Streaming API</title>
+        <description>&lt;p&gt;There are so many pros on building an &lt;em&gt;API&lt;/em&gt; that exposes our application resources. It’s particularly important to achieve reducing tiers coupling to the minimum, but even better, &lt;strong&gt;this allows different applications to access our resources&lt;/strong&gt;. For well designed &lt;em&gt;APIs&lt;/em&gt; this will also happen in an intuitive way.&lt;br /&gt;
+But even the best &lt;em&gt;APIs&lt;/em&gt; could be implemented in a way that the client needs to make a call every time it needs to know the state of a resource. For this case, the &lt;em&gt;API&lt;/em&gt; will have to return the entire resource every time it’s requested.&lt;br /&gt;
+But, wouldn’t it be more efficient if the &lt;em&gt;API&lt;/em&gt; only returned what has changed since the last time it was queried? And wouldn’t it be even more efficient if the client didn’t need to call the &lt;em&gt;API&lt;/em&gt; to check if something changed?&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;Streaming APIs&lt;/em&gt;&lt;/strong&gt; (when implemented properly) try to solve exactly that. On this post we will see how these could be implemented and how &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; works in order to turn a traditional &lt;em&gt;API&lt;/em&gt; into a &lt;em&gt;Streaming API&lt;/em&gt;.
+&lt;!--MORE--&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;streaming-apis&quot;&gt;Streaming APIs&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;A &lt;em&gt;Streaming API&lt;/em&gt; is capable of sending notifications to the client.&lt;/strong&gt;&lt;br /&gt;
+In traditional &lt;em&gt;HTTP&lt;/em&gt; (base protocol for &lt;em&gt;webAPIs&lt;/em&gt;) schemas, the client sends a &lt;em&gt;request&lt;/em&gt; to the server. The server receives it, understands, even call the proper &lt;em&gt;listeners&lt;/em&gt; (if any) and ends returning a &lt;em&gt;response&lt;/em&gt; to the client. On this schema, once the server sent the &lt;em&gt;response&lt;/em&gt;, it can’t send anything else to the client until this one makes a new &lt;em&gt;request&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/traditional-request.png&quot; alt=&quot;Traditional HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But it’s possible for our server to receive the &lt;em&gt;request&lt;/em&gt;, process it and even send a &lt;em&gt;response&lt;/em&gt;, but leave it &lt;em&gt;on-hold&lt;/em&gt; instead of closing it. This way the server could keep sending information to the client for a long period of time. This technique is better known as &lt;strong&gt;&lt;em&gt;long polling&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/long-polling-request.png&quot; alt=&quot;Long Polling HTTP Request&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By &lt;em&gt;long polling&lt;/em&gt;, our &lt;em&gt;API&lt;/em&gt; could receive a call and provide the resource that is being requested as a first &lt;em&gt;response&lt;/em&gt;. But instead of closing the connection, the &lt;em&gt;API&lt;/em&gt; could send new &lt;em&gt;responses&lt;/em&gt; in case the resource changes after the first &lt;em&gt;response&lt;/em&gt;.&lt;br /&gt;
+Furthermore, the &lt;em&gt;API&lt;/em&gt; could send just the changes that impacted the resource.&lt;/p&gt;
+
+&lt;p&gt;Let’s consider the following example&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/streaming-API-example.png&quot; alt=&quot;Streaming API example&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1- Client 1 sends a &lt;em&gt;request&lt;/em&gt; with method &lt;em&gt;GET&lt;/em&gt; in order to request a book with id 123321.&lt;br /&gt;
+2- The server returns a &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; containing the book information&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;4th&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s assume a complex structure with a lot of fields&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;3- Client 2 sends a &lt;em&gt;request&lt;/em&gt; with method &lt;em&gt;PATCH&lt;/em&gt; in order to modify the book edition (now “5th”).&lt;br /&gt;
+4- The server sends a &lt;em&gt;response&lt;/em&gt; to the client 2 with a &lt;em&gt;200 OK&lt;/em&gt; code.&lt;br /&gt;
+5- The server sends a  &lt;em&gt;response&lt;/em&gt; to the client 1 with a &lt;em&gt;200 OK&lt;/em&gt; code and a &lt;em&gt;JSON&lt;/em&gt; with the book information.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;My book&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;ISBN&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;123321&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;Year&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Let&amp;#39;s assume a complex structure with a lot of fields&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; We are not going into any discussion about which methods should be used (&lt;em&gt;PATCH&lt;/em&gt; o &lt;em&gt;PUT&lt;/em&gt;) or which &lt;em&gt;HTTP&lt;/em&gt; codes. This topics deserve their own post.&lt;/p&gt;
+
+&lt;p&gt;Because the server implements &lt;em&gt;long polling&lt;/em&gt;, the &lt;em&gt;API&lt;/em&gt; is able to notify the client that the previously requested resource has changed, without having the client sending a second &lt;em&gt;request&lt;/em&gt;.&lt;br /&gt;
+The process where &lt;em&gt;APIs proactively&lt;/em&gt; notify the client about changes on the resources is known as &lt;em&gt;Push Notification&lt;/em&gt;. It worth clarifying that &lt;em&gt;long polling&lt;/em&gt; is not the only way of achieving this behaviour. &lt;a href=&quot;https://www.websocket.org/&quot;&gt;&lt;em&gt;WebSockets&lt;/em&gt;&lt;/a&gt; is another specification that does the trick.&lt;/p&gt;
+
+&lt;p&gt;Although the example shows the benefits of implementing &lt;em&gt;Push Notifications&lt;/em&gt; as a feature of our &lt;em&gt;Streaming API&lt;/em&gt;, the impact regarding to the performance is not neatly visible. Even though is true that the client won’t be periodically sending &lt;em&gt;requests&lt;/em&gt; in order to check if the resource changed, each time the &lt;em&gt;API&lt;/em&gt; makes a &lt;em&gt;push&lt;/em&gt; it will be sending the complete resource to the client. By implementing a &lt;em&gt;differential&lt;/em&gt; logic (server side), our &lt;em&gt;API&lt;/em&gt; would be able to just notify the updates when sending a &lt;em&gt;push&lt;/em&gt;. Considering our previous example, this could go like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;op&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;PATCH&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;/Edition&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5th&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This &lt;em&gt;JSON&lt;/em&gt; informs the client that the field “Edition” has changed. It also informs its new value. The client is now able to update its model according to this information. This way regardless how big a resource is, the &lt;em&gt;push&lt;/em&gt; is only sending the fields that have changed since the last update.&lt;/p&gt;
+
+&lt;h3 id=&quot;request-timeout&quot;&gt;Request timeout&lt;/h3&gt;
+
+&lt;p&gt;Avoiding infinite time &lt;em&gt;requests&lt;/em&gt; is a good practice. Connections could &lt;em&gt;timeout&lt;/em&gt; or even could be loss because of servers or network physical conditions. The code impact could be described (in a general way) as&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Server: Checks that the &lt;em&gt;response&lt;/em&gt; is open before sending data.&lt;/li&gt;
+  &lt;li&gt;Client: Check that the &lt;em&gt;request&lt;/em&gt; is active. Otherwise, make a new &lt;em&gt;request&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In case of having too short &lt;em&gt;timeouts&lt;/em&gt;, each new &lt;em&gt;request&lt;/em&gt; would be receiving the complete resource (again). A known solution consists in sending the server the &lt;em&gt;timestamp&lt;/em&gt; of the last received notification. This way, for every &lt;em&gt;request&lt;/em&gt; that is not the first one, the server could respond with the updates happened since that &lt;em&gt;timestamp&lt;/em&gt;. For a proper implementation, the server side logic should hold a change log of every resource.&lt;/p&gt;
+
+&lt;p&gt;This far we have covered an explanation about &lt;em&gt;Streaming APIs&lt;/em&gt; and some impelmentation approaches. It’s not this post goal to show a whole concrete example.&lt;/p&gt;
+
+&lt;h2 id=&quot;from-an-api-to-a-streaming-api&quot;&gt;From an API to a Streaming API&lt;/h2&gt;
+
+&lt;p&gt;But, what happens when an &lt;em&gt;API&lt;/em&gt; is not a &lt;em&gt;Streaming API&lt;/em&gt;? The short answer is: We use it as a regular &lt;em&gt;API&lt;/em&gt;. It means that, each time we need to know the state of a resource, we will be sending a &lt;em&gt;request&lt;/em&gt;.&lt;br /&gt;
+A more complete answer includes a &lt;em&gt;proxy&lt;/em&gt; implementation capable of intercepting a &lt;em&gt;request&lt;/em&gt;, storing the &lt;em&gt;response&lt;/em&gt;, informing it to the original client, and repeat the operation as many time as needed. This &lt;em&gt;proxy&lt;/em&gt; implements &lt;em&gt;long polling&lt;/em&gt; which means that it is able to notify the client as soon as a change on a resource is detected. Next diagram shows this scenario.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/streaming-API-proxy.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s see what happens on each of the instants (1-4):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Client 1 &lt;em&gt;requests&lt;/em&gt; the “book” with id “123321”.&lt;br /&gt;
+  1.1 The &lt;em&gt;request&lt;/em&gt; is not got by the server but by a &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
+  1.2 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;request&lt;/em&gt; to the server.&lt;br /&gt;
+  1.3 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
+  1.4 The &lt;em&gt;proxy&lt;/em&gt; redirects the &lt;em&gt;response&lt;/em&gt; to the client.&lt;/li&gt;
+  &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (and it will do that every  X seconds).&lt;br /&gt;
+  2.1 The server returns a &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
+  2.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects no changes.&lt;br /&gt;
+  2.3 The &lt;em&gt;proxy&lt;/em&gt; doesn’t &lt;em&gt;Push&lt;/em&gt; anything to the client.&lt;/li&gt;
+  &lt;li&gt;Client 2 sends a &lt;em&gt;request&lt;/em&gt; with a &lt;em&gt;PATCH&lt;/em&gt; method.&lt;br /&gt;
+  3.1 The client sends the &lt;em&gt;request&lt;/em&gt; directly to the server (there is no reason for involving &lt;strong&gt;this kind of&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;proxy&lt;/em&gt;&lt;/strong&gt; for a “write” operation).&lt;br /&gt;
+  3.2 The server sends the &lt;em&gt;response&lt;/em&gt; confirming the operation.&lt;/li&gt;
+  &lt;li&gt;The &lt;em&gt;proxy&lt;/em&gt; sends a new &lt;em&gt;request&lt;/em&gt; to the server (one of those being sent every X segundos).&lt;br /&gt;
+  4.1 The server sends a  &lt;em&gt;response&lt;/em&gt; to the &lt;em&gt;proxy&lt;/em&gt;.&lt;br /&gt;
+  4.2 The &lt;em&gt;proxy&lt;/em&gt; compares the fetched resource during this &lt;em&gt;request&lt;/em&gt; with the previous one and detects changes.&lt;br /&gt;
+  4.3 The &lt;em&gt;proxy&lt;/em&gt; sends a &lt;em&gt;Push&lt;/em&gt; to the client informing the changes (ideally, just the news instead of the complete resource).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This way, and without modifying a single line of the &lt;em&gt;API&lt;/em&gt; code, we can emulate the behaviour of a &lt;em&gt;streaming API&lt;/em&gt; (from the client perspective at least).&lt;/p&gt;
+
+&lt;p&gt;What is most interesting about this implementation is that it’s not hard to make it generic for virtually every existing &lt;em&gt;API&lt;/em&gt;. It means that we could implement a platform that offers this logic to an &lt;em&gt;API&lt;/em&gt; users turning it into a &lt;em&gt;streaming API&lt;/em&gt; transparently for both, the &lt;em&gt;API&lt;/em&gt; provider and the client.&lt;br /&gt;
+This is exactly what &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; does.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-using-streamdataio&quot;&gt;Example using streamdata.io&lt;/h3&gt;
+
+&lt;p&gt;Considering the service provided by &lt;a href=&quot;https://bitcoinaverage.com&quot;&gt;BitcoinAverage&lt;/a&gt;, and looking at a simple method of its  &lt;a href=&quot;https://bitcoinaverage.com/api&quot;&gt;&lt;em&gt;API&lt;/em&gt;&lt;/a&gt;, we will write a simple code that allows us to query the following resource every 5 seconds: https://api.bitcoinaverage.com/ticker/global/EUR/&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;dataType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;json&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.bitcoinaverage.com/ticker/global/EUR/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;By using &lt;a href=&quot;https://jquery.com/&quot;&gt;JQuery&lt;/a&gt; for getting the benefits of the &lt;code&gt;ajax&lt;/code&gt; method and the &lt;code&gt;setInterval&lt;/code&gt; function (that lets us execute a function repeatedly on a time interval basis) we get the following response on the console:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/setIntervalClientConsole.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As it can be seen, the &lt;em&gt;requests&lt;/em&gt; are being sent every 5 seconds and the complete object is being returned regardless if it was modified.&lt;/p&gt;
+
+&lt;p&gt;From the &lt;em&gt;Network&lt;/em&gt; perspective we can also discover an interesting thing&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/setIntervalClientNetwork.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each &lt;em&gt;request&lt;/em&gt; is proven by a new &lt;em&gt;GET&lt;/em&gt;. Also, some &lt;em&gt;HTTP&lt;/em&gt; response codes are &lt;em&gt;200 OK&lt;/em&gt; while others are &lt;em&gt;304 Not Modified&lt;/em&gt;. This last code points that the resource hasn’t changed since last time it has been requested.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-streamdataio&quot;&gt;Using streamdata.io&lt;/h3&gt;
+
+&lt;p&gt;Steps for getting started with &lt;a href=&quot;http://streamdata.io&quot;&gt;streamdata.io&lt;/a&gt; are really simple and can be found on its web site. As a summary:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create an account.&lt;/li&gt;
+  &lt;li&gt;Once logged in we will see the Home page with a &lt;em&gt;dashboard&lt;/em&gt; in it.&lt;/li&gt;
+  &lt;li&gt;Create an application (let’s call it “OutBitApp” for this example).&lt;/li&gt;
+  &lt;li&gt;Access the application.&lt;/li&gt;
+  &lt;li&gt;Check the configuration and make sure that the “Client Request Signature” option is disabled (&lt;strong&gt;only for this example, we want to avoid any not mandatory complexity&lt;/strong&gt;).&lt;/li&gt;
+  &lt;li&gt;On that same screen we can see (and renew) the &lt;em&gt;App Token&lt;/em&gt; (it will be required for authenticating the client code).&lt;/li&gt;
+  &lt;li&gt;Follow the instructions at the &lt;a href=&quot;https://github.com/streamdataio/streamdataio-js-sdk&quot;&gt;official GH repo&lt;/a&gt; in order to generate the &lt;em&gt;SDK&lt;/em&gt; that lets us interact with &lt;em&gt;streamdata.io&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Having accomplished these steps, the following code accesses the same &lt;em&gt;API&lt;/em&gt; from the previous example but receiving &lt;em&gt;Push notifications&lt;/em&gt; instead.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./js/streamdataio.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;streamdataio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;https://api.bitcoinaverage.com/ticker/global/EUR/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/APP TOKEN/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;init&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onPatch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;update&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;error&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onOpen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;open&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;myEventSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;See the console&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The “APP TOKEN” must be replaced with the one generated for the application. Remember that &lt;em&gt;JavaScript&lt;/em&gt; runs on any client/browser and because of that, it’s not a good idea to place the &lt;em&gt;Token&lt;/em&gt; on that code. This is only valid for proof of concept and examples.&lt;/p&gt;
+
+&lt;p&gt;Let’s check the response at the console:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientConsole.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Even though these are hidden, objects are not being logged in regular intervals. This is due to the client only logs those when it receives a &lt;em&gt;response&lt;/em&gt; and this only happens when the observed resource changes.&lt;/li&gt;
+  &lt;li&gt;The first received object (logged after an “init”) is similar to the one on the previous example, it means, the complete object. The following ones (logged after an “update”) are actually &lt;em&gt;arrays of objects&lt;/em&gt;..&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let’s analyze one of these &lt;em&gt;arrays&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientparticularUpdate.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each object in the &lt;em&gt;array&lt;/em&gt; indicates that an attribute has been replaced, and its new value is specified. Not every &lt;em&gt;array&lt;/em&gt; has the same length (4, 1 and 2 as can be seen on the previous image). This indicates the quantity of changes that has been detected on each &lt;em&gt;response&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, let’s see what happens on the &lt;em&gt;network&lt;/em&gt; view:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/posts/longPollingClientNetwork.png&quot; alt=&quot;Streaming API proxy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It can be seen an ONLY &lt;em&gt;request&lt;/em&gt; to a &lt;em&gt;url&lt;/em&gt; belonging to &lt;em&gt;streamdata&lt;/em&gt; (the &lt;em&gt;proxy&lt;/em&gt;) and as parameters, the &lt;em&gt;token&lt;/em&gt; (only those clients knowing it will be able to access the app at &lt;em&gt;streamdata.io&lt;/em&gt;) and the &lt;em&gt;url&lt;/em&gt; of the original &lt;em&gt;request&lt;/em&gt;. That request has been opened for 2.5 minutes receiving notifications every time the resource changed at the server.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;It’s clear how practical and even how &lt;em&gt;performant&lt;/em&gt; using a &lt;em&gt;Streaming API&lt;/em&gt; could be. Only thinking of the current &lt;em&gt;web applications&lt;/em&gt; helps us understanding how useful is to receive notifications when the model changes at the server.&lt;br /&gt;
+But we won’t always count with a &lt;em&gt;Streaming API&lt;/em&gt;. We are often hitting a 3rd party &lt;em&gt;API&lt;/em&gt; and lot of times, our &lt;em&gt;API&lt;/em&gt; already exists and we don’t count with time or money enough to change it (turn it into a &lt;em&gt;streaming API&lt;/em&gt;). By implementing a &lt;em&gt;proxy&lt;/em&gt; we can emulate that behaviour, and even if we didn’t count with the resources for implementing this solution, it would be possible to take advantage of a platform like &lt;em&gt;streamdata.io&lt;/em&gt; that provides this functionality as a service in the cloud.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 09 Sep 2015 00:00:00 -0300</pubDate>
+        <link>http://localhost:4000/2015/09/09/from-api-to-streaming-api/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/09/09/from-api-to-streaming-api/</guid>
+        
+        <category>API</category>
+        
+        <category>Streaming</category>
+        
+        <category>Long</category>
+        
+        <category>Polling</category>
+        
+        
+      </item>
     
   </channel>
 </rss>
