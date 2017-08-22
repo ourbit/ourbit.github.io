@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'A Compendium of Software Architects’ Pathologies'
-author: nohorbee
+author: Norberto Herz
 tags: Software Architecture Role Management Pitfall
 description: "The architect's job is full of pitfalls and contradictions. We describe what we call are five pathologies that can affect software architects"
 ---

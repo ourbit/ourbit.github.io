@@ -2,7 +2,7 @@
 layout: post
 title:  "Moving to GitHub Pages"
 date:   2015-08-03 18:43:21
-author: nohorbee
+author: Norberto Herz
 categories: jekyll update
 ---
 

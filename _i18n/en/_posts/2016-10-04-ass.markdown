@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Acronyms seriously suck'
-author: nohorbee
+author: Norberto Herz
 tags: Elon Musk SpaceX Tesla SolarCity Acronyms fun
 description: "How Elon Musk once dealt with the excessive use of acronyms on SpaceX (the company that will take us to Mars)"
 ---

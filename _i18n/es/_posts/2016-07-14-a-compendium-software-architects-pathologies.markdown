@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Una recopilación de patologías de los Arquitectos de Software'
-author: nohorbee
+author: Norberto Herz
 tags: Software Arquitercura Rol Management Trampas
 description: "El trabajo del arquitecto está lleno de trampas y contradicciones. En este artículo describimos cinco patologías que pueden afectar a los arquitectos de software"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'About predictability and clearly defining team goals'
-author: nohorbee
+author: Norberto Herz
 tags: Predictability Accountability Team Building Management Goals Communication Expectations
 description: "A short story/leasson learned about achieving predictability as a team, while defining clear goals and expectations by communicating effectively"
 ---

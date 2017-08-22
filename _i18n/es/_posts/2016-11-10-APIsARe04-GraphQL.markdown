@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'APIsAR Episodio IV - Introducción a GraphQL'
-author: nohorbee
+author: Norberto Herz
 tags: API Meetup APIsAR GraphQL Avature
 description: "Un breve resumen de APIsAR - Episodio IV. El evento de APIs en Argentina cubrió algunos conceptos básicos de GraphQL"
 ---

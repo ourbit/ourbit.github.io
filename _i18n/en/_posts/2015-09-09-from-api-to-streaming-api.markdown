@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'From API to Streaming API'
-author: nohorbee
+author: Norberto Herz
 tags: API Streaming Long Polling
 description: "Understanding the differences between an API and a Streaming API and using streamdata.io for converting one into another without writing a single line of code"
 ---

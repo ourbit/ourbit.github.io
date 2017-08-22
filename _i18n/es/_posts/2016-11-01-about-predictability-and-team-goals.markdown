@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Acerca de la predictibilidad y definir claramente los objetivos del equipo'
-author: nohorbee
+author: Norberto Herz
 tags: Predictability Accountability Team Building Management Goals Communication Expectations
 description: "Un cuento corto y lecciones aprendidas acerca de alcanzar predictibilidad como un equipo, y definir claramente objetivos y expectativas mediante una comunicación efectiva"
 ---

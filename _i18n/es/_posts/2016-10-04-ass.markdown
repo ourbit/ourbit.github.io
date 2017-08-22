@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Los acrónimos realmente apestan'
-author: nohorbee
+author: Norberto Herz
 tags: Elon Musk SpaceX Tesla SolarCity Acronyms fun
 description: "Cómo una vez Elon Musk lidió con el uso excesivo de acrónimos en SpaceX (la empresa que nos llevará a Marte)"
 ---

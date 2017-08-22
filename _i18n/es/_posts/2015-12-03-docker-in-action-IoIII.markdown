@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Docker en acción I'
-author: nohorbee
+author: Norberto Herz
 tags: Docker Container Microservices DevOps
 description: "Entendiendo los conceptos de DevOps y la transformación cultural que estos traen aparejada"
 #description: "Entendiendo los conceptos básicos detrás de Docker, y usándolos para instalar una Docker Registry"

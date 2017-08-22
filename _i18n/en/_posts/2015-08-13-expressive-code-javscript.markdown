@@ -2,7 +2,7 @@
 layout: post
 title: 'Expressive code in Javascript'
 subtitle: High order functions
-author: nohorbee
+author: Norberto Herz
 tags: javascript expressive code array prototype functions forEach map reduce filter every some
 description: "Writing expressive code in Javascript using foreforEach, filter, map, reduce, every and some methods"
 ---

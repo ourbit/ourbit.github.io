@@ -2,7 +2,7 @@
 layout: post
 title: SPAM - Caso Real
 date: '2015-07-30T14:45:00.001-03:00'
-author: nohorbee
+author: Norberto Herz
 tags:
 modified_time: '2015-07-30T14:50:38.736-03:00'
 blogger_id: tag:blogger.com,1999:blog-8314627212095006227.post-5686390158582115512

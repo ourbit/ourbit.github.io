@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "That's not our code"
-author: nohorbee
+author: Norberto Herz
 tags: Conway Ownership Organization Encapsulation Autonomy Engineering Culture
 description: "The mantra your engineering organization should avoid"
 ---

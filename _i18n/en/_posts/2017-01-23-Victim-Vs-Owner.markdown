@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Owner vs. Victim theory and the pitfall of overusing it'
-author: nohorbee
+author: Norberto Herz
 tags: Owner Victim Management Communication NLP
 description: "A point of view about the pitfalls associated to overusing the theory or not understanding its full potential"
 ---

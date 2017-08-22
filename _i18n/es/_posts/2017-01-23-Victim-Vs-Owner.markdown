@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'La teoría "Dueño vs. Víctima" y las trampas de usarla para todo'
-author: nohorbee
+author: Norberto Herz
 tags: Dueño Víctima Management Comunicación PNL
 description: "Un punto de vista acerca de las trampas más comunes asociadas al abuso de la teoría, o de no comprender su potencial"
 ---

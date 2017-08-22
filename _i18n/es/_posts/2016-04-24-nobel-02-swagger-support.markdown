@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Nobel 0.2 soporta Swagger y RAML'
-author: nohorbee
+author: Norberto Herz
 tags: Nobel APIs Arduino IoT codegen RAML Swagger
 description: "Nobel: The code generator that exposes a REST API for your Arduino board"
 ---

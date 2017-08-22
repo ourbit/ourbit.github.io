@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'APIsAR Episodio V - API Management con Azure'
-author: nohorbee
+author: Norberto Herz
 tags: APIsAR meetup APIs Azure
 description: "Un breve resumen de APIsAR - Episodio V. El evento de APIs en Argentina cubrió algunos conceptos básicos de Azure"
 ---
