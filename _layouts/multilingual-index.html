@@ -1,0 +1,32 @@
+---
+layout: page
+---
+
+{% assign posts=site.posts | where:"lang", page.lang %}
+{% for post in posts limit:10%}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">{{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+    </a>
+    <p class="post-meta">{% if post.author %}{{site.lang.publishedby[page.lang]}} {{ post.author }}{% else %}{{ site.title }}{% endif %}
+      {{ site.lang.publishedon[page.lang] }} <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: site.lang.dateFormat[page.lang] }}</time></p>
+    {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+    <p class="read-more"><a href="{{ post.url | prepend: site.baseurl }}" class="read-more">{{ site.lang.more[page.lang] }} &rarr;</a></p>
+</div>
+<hr>
+<br />
+{% endfor %}
+
+<!-- Pager -->
+
+<ul class="pager">
+    <li class="older">
+        <a href="{{ site.baseurl }}/{{ site.navigation.archives[page.lang].path }}"> {{ site.lang.older[page.lang] }} . . .</a>
+    </li>
+</ul>

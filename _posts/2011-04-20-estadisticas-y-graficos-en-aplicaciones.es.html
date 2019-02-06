@@ -1,0 +1,23 @@
+---
+layout: post
+lang: es
+title: Estadísticas y Gráficos en aplicaciones Web
+date: '2011-04-20T23:53:00.000-03:00'
+author: Norberto Herz
+tags:
+- ExtJs
+- FusionChart
+- charts
+- estadistica
+- JQuery
+- JSON
+- grafico
+- XML
+- WEB
+- Jscript
+modified_time: '2011-04-21T00:49:58.612-03:00'
+blogger_id: tag:blogger.com,1999:blog-8314627212095006227.post-3566973465723008563
+blogger_orig_url: http://ourbit.blogspot.com/2011/04/estadisticas-y-graficos-en-aplicaciones.html
+---
+
+Para el proyecto en el que estoy trabajando, nos ha llegado un requerimiento de generar un gráfico de líneas (basado en ejes X, Y) indicando las tendencias de un determinado comportamiento. <div>El proyecto utiliza actualmente <a href="http://www.sencha.com/">ExtJs</a>, y desde ya, fue considerado como primer opción, el motor de gráficos que este incluye. Uno de los problemas con que nos topamos al realizar la prueba de tecnología, es que al no presentarse un dato Y para un valor X, automáticamente lo tomaba como CERO, haciéndo que las líneas descendieran. Esto no es un comportamiento deseable en muchas situaciones (siempre depende de Qué se esté midiendo). Una vez descartado, comenzamos a evaluar otros frameworks. <a href="http://jquery.com/">JQuery</a>, cuenta con varios plugins para generar gráficos (muy buenos debo decir), pero se nos pidió no "mezclar" dos frameworks basados en Jscript (no es una decisión muy feliz, pero lo aceptamos). Luego de buscar bastante, el arquitecto en jefe de la aplicación, sugirió que investigáramos <a href="http://www.fusioncharts.com/">FusionCharts </a>(Más precisamente su división PowerCharts), y quien les escribe, se ha encargado de la prueba de tecnología llegando a conclusiones muy favorables:</div><div><ul><li>Es altamente configurable (se puede especificar cada leyenda que aparece en pantalla, colores, escalas, tipo de gráfico, estilo de líneas, transparencias, etc. No solo del gráfico en general, o de una línea particular, sino también entre cualquier segmento entre 2 puntos e incluso cualquiera de los puntos).</li><li>Por defecto, utiliza un archivo Flash para realizar los gráficos (esta versión comienza con una animación de lo que se esta dibujando). Si se detecta (automáticamente) que el navegador no soporta flash, el gráfico se renderiza 100% mediante Jscript (esto es útil para teléfonos celulares, o simplemente si no queremos instalar Shockwave en las máquinas de los usuarios).</li><li>Sin realizar demasiado trabajo, arranca de quienes observan expresiones del estilo "WOW", y esto, muchas veces, hace la diferencia entre una aplicación exitosa y un hermoso algoritmo inutilizable.</li><li>Es muy sencillo de utilizar y está bien documentado.</li><li>Maneja una amplia variedad de tipos de gráficos.</li></ul>Aclaro que el framework es pago, aunque se puede descargar una versión de prueba FULL (solo incluye una marca de agua en el margen superior izquierdo del gráfico).</div><div><a href="http://nohorbee.com.ar/ourbit/FusionChartPost/pocFusion/MyFirstChart/pocChart.html">Aquí </a>dejo una prueba de tecnología, con algunos comentarios basados en los requerimientos que se me presentaron.</div>

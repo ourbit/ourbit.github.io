@@ -1,0 +1,55 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ site.baseurl }}/{{ site.navigation.home[page.lang].path }}">{{ site.title[page.lang] }}</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+
+                  {% assign links=site.navigation %}
+                  {% for link in links %}
+                    <li>
+
+                        {% if link[1][page.lang].path %}
+                          {% assign url = link[1][page.lang].path %}
+                          <a href="{{ site.baseurl }}/{{ url }}">{{ link[1][page.lang].title }}</a>
+                        {% else if link[1][page.lang].url %}
+                          {% assign url = link[1][page.lang].url %}
+                          <a href="{{ url }}">{{ link[1][page.lang].title }}</a>
+                        {% endif %}
+
+                    </li>
+                  {% endfor %}
+                <li>
+                   {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
+                   {% for post in posts %}
+                      {% if post.lang!=page.lang %}
+                      <a href="{{ post.url | prepend: site.baseurl }}" class="{{ post.lang }}">{{ site.lang.version[post.lang] }}</a>
+                      {% endif %}
+                   {% endfor %} <!--For posts-->
+
+                   {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
+                   {% for thispage in pages %}
+                     {% if thispage.lang != page.lang %}
+                       <a href="{{ thispage.url | prepend: site.baseurl }}" class="{{ thispage.lang }}">{{ site.lang.version[thispage.lang] }}</a>
+                     {% endif %}
+                   {% endfor %} <!--For pages-->
+                </li>
+
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

@@ -1,0 +1,78 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title:
+  en: OurBit
+  es: OurBit
+description:
+  en: Ourbit is a blog dedicated to IT topics such as programming, management, qa, and technology in general.
+  es: Ourbit es un blof dedicado a temas de IT como ser programación, management, qa y tecnología en general.
+index:
+  en: index.html
+  es: index.es.html
+archives:
+  en: /archives.xml
+  es: /archives.es.xml
+navigation:
+  home:
+    en:
+      title: "Home"
+      path: "index.html"
+    es:
+      title: "Inicio"
+      path: "index.es.html"
+  archives:
+    en:
+      title: "Archives"
+      path: "archive.html"
+    es:
+      title: "Archivo"
+      path: "archive.es.html"
+  split:
+    en:
+      title: "|"
+    es:
+      title: "|"
+  about:
+    en:
+      title: "norbertoherz.com"
+      url: "http://norbertoherz.com"
+    es:
+      title: "norbertoherz.com"
+      url: "http://norbertoherz.com/es"
+lang:
+  version:
+    en: "English Version"
+    es: "Versión en Español"
+  publishedby:
+    en: "Published by"
+    es: "Publicado por"
+  publishedon:
+    en: "on"
+    es: "el"
+  more:
+    en: "Read more"
+    es: "Seguir leyendo"
+  dateFormat:
+    en: "%m-%d-%Y"
+    es: "%d-%m-%Y"
+  older:
+    en: "Older Posts"
+    es: "Posts más antiguos"
+
+header-img: img/header-background.jpg
+header-img-blur: img/header-background-blur.jpg
+
+baseurl: "/ourbit-qa-en" # the subpath of your site, e.g. /blog
+url: "http://ourbit.norbertoherz.com" # the base hostname & protocol for your site
+twitter_username: nohorbee
+github_username:  nohorbee
+facebook_username:  nohorbee
+
+# Build settings
+markdown: kramdown
