@@ -68,7 +68,7 @@ lang:
 header-img: img/header-background.jpg
 header-img-blur: img/header-background-blur.jpg
 
-baseurl: "/ourbit-qa-en" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ourbit.norbertoherz.com" # the base hostname & protocol for your site
 twitter_username: nohorbee
 github_username:  nohorbee
