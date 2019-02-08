@@ -11,7 +11,7 @@ layout: default
                 <div class="site-heading">
                     <h1>{% if page.title.size[page.lang] > 0 %}{{ page.title[page.lang] }}{% else %}{{ site.title[page.lang] }}{% endif %}</h1>
                     <hr class="small">
-                    <span class="subheading">{{ page.description }}</span>
+                    <span class="subheading">{% if page.slogan %}{{ page.slogan }}{% else %}{{ page.description }}{% endif %}</span>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ lang: es
 author: Norberto Herz
 tags: APIsAR meetup APIs Azure
 description: "Un breve resumen de APIsAR - Episodio V. El evento de APIs en Argentina cubrió algunos conceptos básicos de Azure"
+image: APIsARe05.jpg
 ---
 
 Durante un evento realizado el pasado 3 de Mayo de 2017, en Buenos Aires [German Küber](https://twitter.com/germankuber) dió una presentación acerca de API Management con [Azure](https://azure.microsoft.com/en-us/), la plataforma desarrollada y comercializada por Microsoft.
@@ -17,7 +18,7 @@ Durante un evento realizado el pasado 3 de Mayo de 2017, en Buenos Aires [German
 
 El evento ocurrió en las oficinas de [Avature](http://avature.net/) en donde se reunieron alrededor de 30 invitados más 15 que lo siguieron en vivo a través del streaming. La presentación se basó en una mezcla de explicaciones teóricas acerca de los conceptos a manejar de una API, y la forma de hacerlo utilizando las funcionalidades de la plataforma.
 
-![Traditional HTTP Request](/img/posts/APIsARe05.jpg)
+![Foto del evento]({{ site.baseurl | prepend: 'http://ourbit.norbertoherz.com' }}/img/posts/APIsARe05.jpg)
 
 La gente asisitó al evento y se comprometió a propner temas para próximos episodios. Luego, disfrutamos de salgunos snacks y bebidas provistos por la sede, mientras se iban dando varias conversaciones (¡filosofóa y teología incluidos!)
 

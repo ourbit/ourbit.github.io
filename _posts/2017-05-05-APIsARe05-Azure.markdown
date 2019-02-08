@@ -6,6 +6,7 @@ lang: en
 author: Norberto Herz
 tags: APIsAR meetup APIs Azure
 description: "An overview of the 5th episode of APIsAR meetup group in Argentina"
+image: APIsARe05.jpg
 ---
 
 During an event that took place on May 3, 2017 in Buenos Aires, [German Küber](https://twitter.com/germankuber) facilitated a presentation about API Management with [Azure](https://azure.microsoft.com/en-us/), the API Platform developed and commercialized by Microsoft.
@@ -16,7 +17,7 @@ During an event that took place on May 3, 2017 in Buenos Aires, [German Küber](
 
 The event took place at the [Avature](http://avature.net/) offices in Buenos Aires and counted with around 30 guests in place plus 15 watching the online streaming. The presentation contained a mix of theoretical explanation about the concepts to be managed, and the way of doing it by making use of the platform features.
 
-![Traditional HTTP Request](/img/posts/APIsARe05.jpg)
+![Pic from the event]({{ site.baseurl | prepend: 'http://ourbit.norbertoherz.com' }}/img/posts/APIsARe05.jpg)
 
 People attended the event and committed themselves to proposing topics for future episodes. After that, we all enjoyed some snacks and drinks provided by the Venue, meanwhile multiple conversations were being held (philosophy and theology included!)
 

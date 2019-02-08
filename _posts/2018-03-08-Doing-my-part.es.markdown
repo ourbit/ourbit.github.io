@@ -5,7 +5,7 @@ ref: doingmypart
 lang: es
 author: Norberto Herz
 tags: Engineering Tech Culture International Women Day Diversity Inclusion Gender-bias Violence Sexism Feminism Machism Patriarchy
-description: "Finding my place to support Women fighting for her rights"
+description: "Encontrando mi lugar desde el cual apoyar que pelean por sus derechos"
 ---
 
 El abuso hacia una minoría está mal. Siempre estuvo mal, pero en esta época, es simplemente inaceptable. Un enunciado simple, ¿no? Es algo en lo que todos podríamos estar de acuerdo. Y sin embargo, el abuso sigue allí.
