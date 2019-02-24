@@ -39,7 +39,7 @@ Provide a quick description of the document, the goals, and intentions. Feel fre
 
 ### Disclaimer
 The new manager probably knows how to do her job. It is important to clarify that it's not your intention to teach, train, or mentor but to give knowledge regarding a specific context. Mine was like this: "This document aims to transfer knowledge in a context, which means, describe the state of the art of different aspects of the team. You will find personal opinions regarding management and the result of building a team answering a punctual management style. By all means, it is not my intention to impose that management style to you. You will see by yourself and probably detect improvement opportunities or simply things you would like to do differently. The description of the current scenario should help you to mind the gap and analyze how those changes could impact so you can make an informed decision.
-Additionally, I am intending to be as concise as possible so we can use this document during the hand-off period. That means this document is not a substitute for the Knowledge Transfer and Handover processes but a guide to organizing it."
+Additionally, I am intending to be as concise as possible so we can use this document during the hand-off period. That means this document is not a substitute for the Knowledge Transfer and Handover processes but a guide to organizing it".
 
 ### Table of contents
 You should always include one. It's free and it helps the reader to realize how the document is structured
@@ -51,7 +51,8 @@ You should always include one. It's free and it helps the reader to realize how 
 Explain the logic of the team. How they are working? What are they used to do? What are their core values? Are they autonomous and self-governed? How do they handle communications? Think of splitting the topics into subsections.
 
 ### Individuals
-Take some time to write about each team member. Take into account that, even this document should be confidential, leaks happen. Don't put information that should be only transmitted during a meeting. I repeated this structure for each team member:
+Take some time to write about each team member. Take into account that, even this document should be confidential, leaks happen. Don't put information that should be only transmitted during a meeting.
+I repeated this structure for each team member:
 #### Person (Role)
 Context
 What is she doing in the team? Is she taking more responsibilities than the job description ones? How did she get here? Tell the story.   
@@ -66,7 +67,7 @@ Describe how the team organizes its work. Is it divided into iterations? Which o
 ## On-going projects
 Describe the big assignments the team is already working on. What is the state of each project? Is there a story behind that worth telling? Is there any documentation to read? Who is working with each project?
 ## Vision
-Share what had you planned with the team. Include stakeholders to consider, if you have already spoken about it with them, if it's just an idea or something that has been explored, etc.
+Share what your strategic plans for the team. Include stakeholders to consider, if you have already spoken about it with them, if it's just an idea or something that has been explored, etc.
 
 --------------------------------------------------------------------
 --------------------------------------------------------------------
