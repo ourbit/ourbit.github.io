@@ -7,6 +7,10 @@ This is heavily relying on Jekyll and GitHub for being built. It is bilingual, r
 
 ## QA
 I decided to go for a QA environment. This is achieved by forking the blog into a different organization (ourbit-qa). That way I can see the changes on github before impacting the productive one. When doing so, it's important to configure and test with the proper `base-url` and roll it back when merging the pull request in Prod.
+This is intended for big or structural changes. Not needed for just publishing a new post.
+
+## Publishing a new POST
+It can be done by adding the proper files in gh-pages. However, it's strongly recommended to create branches for doing that. If needed, fork to a private repo to store the post until published.
 
 ---
 
