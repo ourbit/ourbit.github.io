@@ -78,3 +78,5 @@ facebook_username:  nohorbee
 
 # Build settings
 markdown: kramdown
+
+future: false

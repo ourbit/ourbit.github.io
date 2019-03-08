@@ -77,3 +77,5 @@ ___
 
 # Conclusion
 I’ve recently applied this to two teams. It took some time to put all the information together but it’s worth it. At the end of the process, it saved more time, we didn’t miss anything important, and important topics are now documented. Furthermore, it’s an excellent way to guarantee that the transition goes as smoothly as possible and that the teams you have worked so hard to build are safe in informed hands. Additionally, this is a great and professional way of “wishing” the new managers good “luck”!
+
+*You can read [this post on Life at Avature Blog](https://lifeatavature.net/team-hand-off-document/) too*

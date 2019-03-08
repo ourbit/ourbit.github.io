@@ -11,6 +11,8 @@ image: handoff.jpg
 
 Recientemente tuve que transferir los equipos con los que estuve trabajando durante los últimos 2 años. Afortunadamente, fue porque fui ascendido y comencé a dirigir un nuevo departamento que (lamentablemente) no incluye a mis anteriores equipos. Pensando acerca de la transferencia de conocimientos, me di cuenta de que, a menos que tomara algunas notas, sería casi imposible llevar cuenta de la gran cantidad de información a transmitir. No se trataba únicamente de contar en qué estaban trabajando los equipos, sino también de transmitir la visión que tenía para el futuro de los mismos. Por este motivo, comencé a tomar notas de lo que me venía a la cabeza, con la idea de escribir un documento de transferencia como una forma de organizar las conversaciones a tener.
 
+<!-- MORE -->
+
 Cuando terminé, pensé que era una buena idea para un artículo. Luego de *googlear* un poco, encontré este [post de Lara Hogan](https://larahogan.me/blog/manager-handoffs/) acerca del tema, el cual estará por siempre mejor escrito que el mio. Sin embargo, como mi enfoque y proceso fueron distintos, esto no me desalentó, por el contrario, me inspiró a escribir mi propia experiencia. Y por supuesto, como soy un lector de su blog, tendré que repensar si no lo había leído antes, para luego olvidarlo, y más tarde recordarlo en forma de "nueva idea".
 
 
@@ -93,3 +95,6 @@ Compartir lo planes estratégicos para el equipo. Incluir puntos de contacto (*s
 # Conclusión
 
 Apliqué recientemente este proceso a dos equipos. Si bien me tomó algo de tiempo juntar toda la información y redactar el documento, al final del proceso, ahorré más tiempo del que habría utilizado en reuniones sin guía, no quedó nada importante afuera, y los temas importantes quedaron documentados. Mejor aún, me resulta una manera excelente de garantizar que la transición sea tan prolija como sea posible y que los equipos que a los que invertí tanto esfuerzo, queden seguros y en manos informadas. Adicionalmente, es una gran forma de "*desearle buena suerte*" a los nuevos managers.
+
+
+*También podés leer [este artículo en Life at Avature Blog](https://lifeatavature.net/team-hand-off-document/)*
