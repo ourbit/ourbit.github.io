@@ -14,7 +14,7 @@ image: humansrobot.jpg
 
 <!--MORE-->
 
-Years ago, while planning your vacations, you probably looked for accommodation by calling or booking directly with the hotel. Some companies like [booking.com](http://booking.com) made it easy by letting you look up at several hotels on a single search. However, the game-changer was Airbnb. Airbnb provides accommodation by owning literally zero places for you to stay. What Airbnb has, is an amazingly available software that let owners publish their homes, and users book them.
+Years ago, while planning your vacations, you probably looked for accommodation by calling or booking directly with the hotel. Some companies like [booking.com](http://booking.com) made it easy by letting you look up at several hotels on a single search. However, the game-changer was [Airbnb](https://www.airbnb.com/). Airbnb provides accommodation by owning literally zero places for you to stay. What Airbnb has, is an amazingly available software that let owners publish their homes, and users book them.
 
 What about [Uber](http://uber.com)? How many cars do they own? How many drivers do they employ?
 
