@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Talento emergente"
-ref: growthtalent
-lang: es
+title: "Test"
+ref: testtest
+lang: en
 author: Norberto Herz
 tags: Talent Software Junior Emerging Growth Hire Hiring
 description: "¿Por qué y cómo las empresas deben invertir en capacitar nuevos talentos en la industria del software?"
