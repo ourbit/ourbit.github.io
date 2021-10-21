@@ -1,0 +1,17 @@
+---
+layout: post
+title: "Talento emergente"
+ref: growthtalent
+lang: es
+author: Norberto Herz
+tags: Talent Software Junior Emerging Growth Hire Hiring
+description: "¿Por qué y cómo las empresas deben invertir en capacitar nuevos talentos en la industria del software?"
+image: growthtalent.jpg
+---
+
+Just a post to check if the jekyll version, rb, github and all the stuff are stil there and I don't suffer when I want to go back on business
+
+<!--MORE-->
+
+Lorem ipsum, really? Yes, Really!
+I want to go with Next.js powered blog soon! I have no that much time
